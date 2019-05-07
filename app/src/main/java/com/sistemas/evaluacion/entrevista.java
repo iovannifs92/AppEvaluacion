@@ -95,7 +95,7 @@ public class entrevista extends AppCompatActivity {
         //endregion
 
         //region SP32 # Personas con las que vive actualmente
-        int prueba=0;
+        int prueba=1;
         sP32 = (Spinner) findViewById(R.id.sP32);
         String [] nPersonas={"0","1","2","3","4"};
         sP32.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,nPersonas));
