@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FFC107</color>
+
+    <color name="myBlue">#7198DD</color>
+    <color name="myWhite">#FFF</color>
+    <color name="myPeach">#f8a055</color>
+    <color name="myRed">#ff5f70</color>
+    <color name="Cyan">#00BCD4</color>
+    <color name="Teal">#009688</color>
+
+    <color name="colorSecundario">#455AE6</color>
+
+
+</resources>

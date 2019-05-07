@@ -1,0 +1,120 @@
+<resources>
+    <string name="app_name">Evaluación</string>
+    <string name="title_activity_encuesta">encuesta</string>
+    <string name="formato_fecha">dd/mm/yyyy</string>
+    <string name="p9">9. Para alcanzar la calidad educativa es necesario apoyar a
+        los estudiantes en desventaja en función de su necesidades y de las carencias de su entorno.
+        Por lo que usted ha visto actualmente ¿qué tanta equidad hay en la educación en nuestro país?</string>
+    <string name="p10">10. Y utilizando la misma escala ¿Cómo calificaría las condiciones para estudiar en su Estado en particular?</string>
+    <string name="p11">11. Cuando los individuos acceden a una educación de calidad, sus familias y la comunidad obtienen mayor bienestar.
+    ¿Usted cómo calificaría la calidad que tiene hoy en día la educación en nuestro país?</string>
+    <string name="p12">12. ¿Y cómo calificaría la calidad que tiene hoy en día la educación en su Estado?</string>
+    <string name="p13">13. De las siguientes medidas, ¿cuál considera usted que sería la acción más importante para que todos los estudiantes puedan tener educación con calidad?</string>
+    <string name="p14">14. Para dar paso aun Nuevo Acuerdo Nacional en Educación ¿Cuál de las siguientes opciones considera que debe realizarse primero
+    para garantizar la educación para todos?</string>
+    <string name="p15">15. ¿Cuál considera que es la acción más importante para brindar iguales oportunidades a todas las niñas, niños y jóvenes del país?</string>
+    <string name="p16">16. ¿Cuál considera que es la acción que más contribuiría a la mejora continua del sistema educativo nacional</string>
+    <string name="p17">17. ¿Cuál de las siguientes acciones, considera más importante para mejorar la formación continua de los docentes?</string>
+    <string name="p18">18. Por lo que usted ha visto, ¿cuál (es) de los siguientes problemas se presentan en las escuelas de su comunidad? (Marque los que sí)</string>
+    <string name="p19">19. ¿Qué acciones propondría usted para que la sociedad reconozca más la aportación de los profesores?</string>
+    <string name="p20">20.Una educación pública de calidad y equidad requiere repensar el papel de cada uno para mejorar la educación del país, en ese sentido
+    ¿usted qué estaría dispuesto a hacer para aportar a la mejora de la educación de México?</string>
+    <string name="p21">21. Ya para terminar, ¿qué le pareció que nos hayamos acercado para conocer su opinión para la construcción de un Nuevo Acuerdo Nacional para la Educación?</string>
+    <string name="p22">22. Nivel de estudios</string>
+    <string name="p23">23.Sexo</string>
+    <string name="p24">24. Edad</string>
+    <string name="p25">25. Ocupación</string>
+
+    <string name="e1">Nombre</string>
+    <string name="e2">Alias</string>
+    <string name="e3">Fecha de nacimiento</string>
+    <string name="e4">Edad</string>
+    <string name="e5">Lugar de nacimiento</string>
+    <string name="e6">Sexo</string>
+    <string name="e7">Calle y número</string>
+    <string name="e8">Colonia o fraccionamiento</string>
+    <string name="e9">Municipio</string>
+    <string name="e10">Estado</string>
+    <string name="e11">Tipo de domicilio</string>
+    <string name="e12">Descripción de como llegar al domicilio y características</string>
+    <string name="e13">¿Cuánto tiempo lleva radicando en el domicilio?</string>
+    <string name="e14">¿Horario en el que se localiza en el domicilio?</string>
+    <string name="e15">Teléfono de casa</string>
+    <string name="e16">Celular Familiar</string>
+    <string name="e17">Nombre de padre</string>
+    <string name="e18">Domicilio del padre</string>
+    <string name="e19">Nombre de la madre</string>
+    <string name="e20">Domicilio de la madre</string>
+    <string name="e21">Calle y número</string>
+    <string name="e22">Colonia o fraccionamiento</string>
+    <string name="e23">Municipio</string>
+    <string name="e24">Estado</string>
+    <string name="e25">Tipo de domicilio</string>
+    <string name="e26">Descripción de como llegar al domicilio y características</string>
+    <string name="e27">¿Cuánto tiempo lleva radicando en el domicilio?</string>
+    <string name="e28">¿Horario en el que se localiza en el domicilio?</string>
+    <string name="e29">Estado civil</string>
+    <string name="e30">Tiempo</string>
+    <string name="e31">Hijos</string>
+    <string name="e32">¿Con cuántas personas vive actualmente?</string>
+    <string name="e33">Nombre</string>
+    <string name="e34">Parentesco</string>
+    <string name="e35">Edad</string>
+    <string name="e36">Ocupación</string>
+    <string name="e37">¿Desde cuándo habita?</string>
+    <string name="e38">Observaciones (si no habita con familiares preguntar el motivo y donde habitan los mismos)</string>
+    <string name="e39">Nombre</string>
+    <string name="e40">Relación</string>
+    <string name="e41">¿Recientemente se cambio de domicilio (a partir de un año)?</string>
+    <string name="e42">Domicilio</string>
+    <string name="e43">Edad</string>
+    <string name="e44">Teléfono</string>
+    <string name="e45">Dirección</string>
+    <string name="e46">Tipo de domicilio</string>
+    <string name="e47">Motivo mudanza</string>
+    <string name="e48">¿Estudia?</string>
+    <string name="e49">Nombre de la institución donde actualmente estudia</string>
+    <string name="e50">Último grado de estudios</string>
+    <string name="e51">¿Trabaja?</string>
+    <string name="e52">Nombre del empleo</string>
+    <string name="e53">Dirección </string>
+    <string name="e54">Nombre del Patrón</string>
+    <string name="e55">Teléfono</string>
+    <string name="e56">Fecha de inicio</string>
+    <string name="e57">Días/horario</string>
+    <string name="e58">Salario Semanal</string>
+    <string name="e59">En caso de no laborar, ¿Cómo subsiste económicamente?</string>
+    <string name="e60">¿Ha viajado fuera de la República Mexicana?</string>
+    <string name="e61">País</string>
+    <string name="e62">Estado</string>
+    <string name="e63">Ciudad</string>
+    <string name="e64">Fecha de ingreso</string>
+    <string name="e65">Fecha de salida</string>
+    <string name="e66">¿Tiene Familiares o personas con relación de amistad en el extranjero?</string>
+    <string name="e67">Nombre</string>
+    <string name="e68">Relación con el entrevistado</string>
+    <string name="e69">País</string>
+    <string name="e70">Estado</string>
+    <string name="e71">Ciudad</string>
+    <string name="e72">Frecuencia de contacto</string>
+    <string name="e73">¿Tiene Familiares o personas con relación de amistad en otros estados de la República?</string>
+    <string name="e74">Nombre</string>
+    <string name="e75">Relación con el entrevistado</string>
+    <string name="e76">Estado</string>
+    <string name="e77">Ciudad</string>
+    <string name="e78">Frecuencia de contacto</string>
+    <string name="e79">¿Cuenta con pasaporte expedido por la SER y/o VISA vigente?</string>
+    <string name="e80">¿Consume algún tipo de sustancia?</string>
+    <string name="e81">Frecuencia</string>
+    <string name="e82">Cantidad</string>
+    <string name="e83">Fecha de último consumo</string>
+    <string name="e84">¿Padece alguna enfermedad o condición física que afecte su salud?</string>
+    <string name="e85">Específique</string>
+    <string name="e86">Nombre del entrevistador</string>
+    <string name="e87">Folio</string>
+    <string name="e88">Fecha de entrevista</string>
+    <string name="e89">Observaciones finales</string>
+
+
+
+</resources>

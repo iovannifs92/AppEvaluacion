@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sistemas.evaluacion.MainActivity"
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="300px"
+        android:layout_height="300px"
+        android:src="@mipmap/dgep"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"/>
+
+    <Button
+        android:id="@+id/btnCambiarActivity"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:text="Crear nueva Entrevista"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="20dp"
+        android:theme="@style/PrimaryColoredButton"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="sans-serif"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="12sp"
+        android:text="Entrevistas realizadas:"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tvLista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="sans-serif"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="12sp"
+        android:text="#"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/btnExport"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:text="Exportar Entrevistas"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:theme="@style/PrimaryColoredButton"
+        android:textColor="#FFFFFF"/>
+
+
+
+</LinearLayout>
