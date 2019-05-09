@@ -20,6 +20,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
+
         db.execSQL(COMMENTS_TABLE_CREATE);
     }
     @Override

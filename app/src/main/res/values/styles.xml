@@ -10,8 +10,13 @@
     </style>
 
     <style name="PrimaryColoredButton" parent="Widget.AppCompat.Button.Colored">
-        <item name="colorButtonNormal">@color/Cyan</item>
-        <item name="colorControlHighlight">@color/Teal</item>
+        <item name="colorButtonNormal">#0B8200</item>
+        <item name="colorControlHighlight">#054000</item>
+    </style>
+
+    <style name="SecondaryColoredButton" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">#0C1282</item>
+        <item name="colorControlHighlight">#060940</item>
     </style>
 
     <style name="FlatButton" parent="Theme.AppCompat.Light">

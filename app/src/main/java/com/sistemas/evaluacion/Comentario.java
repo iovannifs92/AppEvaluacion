@@ -7,8 +7,13 @@ public class Comentario {
     String r2;
     String r3, r4, r5, r6, r8, r8a, r9, r10, r11, r12, r13, r14, r15, r16, r17, r18, r19, r20, r21, r21a, r22, r22a, r23, r24, r25;
 
+
+
     //Constructor
-    public Comentario(int _id, String _r1,String _r2, String _r3, String _r4, String _r5,String _r6, String _r8, String _r8a, String _r9, String _r10, String _r11, String _r12, String _r13, String _r14, String _r15, String _r16, String _r17, String _r18, String _r19, String _r20, String _r21, String _r21a, String _r22, String _r22a, String _r23, String _r24, String _r25){
+    public Comentario(int _id, String _r1,String _r2, String _r3, String _r4, String _r5,String _r6, String _r8,
+                      String _r8a, String _r9, String _r10, String _r11, String _r12, String _r13, String _r14,
+                      String _r15, String _r16, String _r17, String _r18, String _r19, String _r20, String _r21,
+                      String _r21a, String _r22, String _r22a, String _r23, String _r24, String _r25){
         this.id=_id;
         this.r1=_r1;
         this.r2=_r2;

@@ -25,7 +25,7 @@
         android:text="Crear nueva Entrevista"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="20dp"
-        android:theme="@style/PrimaryColoredButton"
+        android:theme="@style/SecondaryColoredButton"
         android:textColor="#FFFFFF" />
 
     <TextView
@@ -57,7 +57,7 @@
         android:text="Exportar Entrevistas"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        android:theme="@style/PrimaryColoredButton"
+        android:theme="@style/SecondaryColoredButton"
         android:textColor="#FFFFFF"/>
 
 

@@ -22,22 +22,42 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
 
     private static final String TAG = "Entrevista";
 
-    private EditText p3, et33, et33_1, et33_2, et33_3, et34, et34_1, et34_2, et34_3,
+    private TextView tvP38,persona1,persona2,persona3,persona4, personaE1, personaE2,
+            personaEstado1, personaEstado2, tv33, tv33_1, tv33_2, tv33_3, tv34, tv34_1,
+            tv34_2, tv34_3, tv35, tv35_1, tv35_2, tv35_3, tv36, tv36_1, tv36_2, tv36_3,
+            tv37, tv37_1, tv37_2, tv37_3, tvP45, tvP46, tvP47, tvP49, tvP52, tvP53, tvP54,
+            tvP55, tvP56, tvP57, tvP58, tvP59, tvP61, tvP62, tvP63, tvP64, tvP65, tvP67,
+            tvP68, tvP69, tvP70, tvP71, tvP72, tvP67_1, tvP68_1, tvP69_1, tvP70_1, tvP71_1,
+            tvP72_1, tvP74, tvP75, tvP76, tvP77, tvP78, tvP74_1, tvP75_1, tvP76_1, tvP77_1,
+            tvP78_1, tvP90_alcohol, tvP91_alcohol, tvP92_alcohol, tvP90_tabaco, tvP91_tabaco,
+            tvP92_tabaco, tvP90_marihuana, tvP91_marihuana, tvP92_marihuana, tvP90_pastillas,
+            tvP91_pastillas, tvP92_pastillas, tvP90_solventes, tvP91_solventes, tvP92_solventes,
+            tvP90_cristal, tvP91_cristal, tvP92_cristal, tvP90_cocaina, tvP91_cocaina, tvP92_cocaina,
+            tvP90_otroConsumo, tvP91_otroConsumo, tvP92_otroConsumo, tvP93_otroConsumo, tvP95;
+
+    private EditText etP3, et33, et33_1, et33_2, et33_3, et34, et34_1, et34_2, et34_3,
             et35, et35_1, et35_2, et35_3, et36, et36_1, et36_2, et36_3, et37, et37_1,
             et37_2, et37_3, etP38, etP45, etP47, etP49, etP52, etP53, etP54 , etP55,
-            etP56, etP57, etP58, etP59, etP62, etP63, etP64, etP65;
+            etP56, etP57, etP58, etP59, etP61, etP62, etP63, etP64, etP65, etP67, etP68, etP69, etP69_1, etP70,
+            etP71, etP72, etP67_1, etP68_1, etP70_1, etP71_1, etP72_1, etP74, etP75, etP77,
+            etP78, etP74_1, etP75_1, etP76, etP76_1, etP77_1, etP78_1, etP91_alcohol, etP92_alcohol, etP91_tabaco,
+            etP92_tabaco, etP91_marihuana, etP92_marihuana, etP91_pastillas, etP92_pastillas,
+            etP91_solventes, etP92_solventes, etP91_cristal, etP92_cristal, etP91_cocaina,
+            etP92_cocaina, etP91_otroConsumo, etP92_otroConsumo, etP93_otroConsumo, etP95, etP98;
+
     private DatePickerDialog.OnDateSetListener mDateSetListener;
+
     private Spinner sP6, sP11, sP13, sP25, sP29, sP32, sP44, sP46, sP48, sP50, sP51,
-                    sP60, sP61;
-    private TextView tvP38,persona1,persona2,persona3,persona4,tv33, tv33_1, tv33_2,
-            tv33_3, tv34, tv34_1, tv34_2, tv34_3, tv35, tv35_1, tv35_2, tv35_3, tv36,
-            tv36_1, tv36_2, tv36_3, tv37, tv37_1, tv37_2, tv37_3, tvP45, tvP46, tvP47,
-            tvP49, tvP52, tvP53, tvP54, tvP55, tvP56, tvP57, tvP58, tvP59, tvP61, tvP62,
-            tvP63, tvP64, tvP65;
+                    sP60, sP66, sP73, sP79, sP80, sP82,
+                    sP90_alcohol, sP83, sP90_tabaco, sP84, sP90_marihuana, sP85, sP90_pastillas,
+                    sP86,sP90_solventes, sP87, sP90_cristal, sP88, sP90_cocaina, sP89, sP90_otroConsumo,
+                    sP94;
+
 
     private String [] tipoDomicilio={"Rentada", "Prestada", "Propia", "Familiar", "Situación de calle", "Irregular"};
     private String [] tiempoRadicando={"Menos de un mes", "Un mes", "Entre 1 y 3 meses", "Entre 3 y 6 meses", "Entre 6 meses y un año", "Entre 1 y 3 años", "Entre 3 y 6 años", "Más de 6 años"};
     private String [] nosi={"No", "Si"};
+    private String [] frecuenciaConsumo={"No consume", "Diariamente", "Cada Tercer día", "Semanalmente", "Quincenalmente", "Mensualmente", "Anualmente"};
     private String r32="0";
 
     @Override
@@ -46,36 +66,8 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
         setContentView(R.layout.activity_entrevista);
 
         //region P3 Fecha-Nacimiento
-        p3=(EditText) findViewById(R.id.etP3);
-
-        p3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Calendar cal = Calendar.getInstance();
-                int year = cal.get(Calendar.YEAR);
-                int month = cal.get(Calendar.MONTH);
-                int day = cal.get(Calendar.DAY_OF_MONTH);
-
-                DatePickerDialog dialog = new DatePickerDialog(
-                        entrevista.this,
-                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
-                        mDateSetListener,
-                        year,month,day);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                dialog.show();
-            }
-        });
-
-        mDateSetListener = new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                month = month + 1;
-                Log.d(TAG, "onDateSet: dd/mm/yyy: " + day + "/" + month + "/" + year);
-
-                String date =  day+ "/" +month  + "/" + year;
-                p3.setText(date);
-            }
-        };
+        etP3=(EditText) findViewById(R.id.etP3);
+        etP3.setOnClickListener(this);
         //endregion
 
         //region SP6 Sexo
@@ -585,34 +577,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
         etP59=(EditText) findViewById(R.id.etP59);
 
         //region etP56 DatePicker
-        etP56.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Calendar cal = Calendar.getInstance();
-                int year = cal.get(Calendar.YEAR);
-                int month = cal.get(Calendar.MONTH);
-                int day = cal.get(Calendar.DAY_OF_MONTH);
-
-                DatePickerDialog dialog = new DatePickerDialog(
-                        entrevista.this,
-                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
-                        mDateSetListener,
-                        year,month,day);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                dialog.show();
-            }
-        });
-
-        mDateSetListener = new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                month = month + 1;
-                Log.d(TAG, "onDateSet: dd/mm/yyy: " + day + "/" + month + "/" + year);
-
-                String date =  day+ "/" +month  + "/" + year;
-                etP56.setText(date);
-            }
-        };
+        etP56.setOnClickListener(this);
         //endregion
 
         sP51.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -675,7 +640,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
         tvP64 =(TextView) findViewById(R.id.tvP64);
         tvP65 =(TextView) findViewById(R.id.tvP65);
 
-        sP61 = (Spinner) findViewById(R.id.sP61);
+        etP61 = (EditText) findViewById(R.id.etP61);
 
         etP62=(EditText) findViewById(R.id.etP62);
         etP63=(EditText) findViewById(R.id.etP63);
@@ -684,38 +649,10 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
 
         //region DatePicker etP64 Fecha ingreso
         etP64.setOnClickListener(this);
-
         //endregion
 
         //region DatePicker etP65 Fecha salida
-        etP65.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Calendar cal = Calendar.getInstance();
-                int year = cal.get(Calendar.YEAR);
-                int month = cal.get(Calendar.MONTH);
-                int day = cal.get(Calendar.DAY_OF_MONTH);
-
-                DatePickerDialog dialog = new DatePickerDialog(
-                        entrevista.this,
-                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
-                        mDateSetListener,
-                        year,month,day);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                dialog.show();
-            }
-        });
-
-        mDateSetListener = new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                month = month + 1;
-                Log.d(TAG, "onDateSet: dd/mm/yyy: " + day + "/" + month + "/" + year);
-
-                String date =  day+ "/" +month  + "/" + year;
-                etP65.setText(date);
-            }
-        };
+        etP65.setOnClickListener(this);
         //endregion
 
         sP60.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -728,7 +665,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                     tvP63.setVisibility(View.VISIBLE);
                     tvP64.setVisibility(View.VISIBLE);
                     tvP65.setVisibility(View.VISIBLE);
-                    sP61.setVisibility(View.VISIBLE);
+                    etP61.setVisibility(View.VISIBLE);
                     etP62.setVisibility(View.VISIBLE);
                     etP63.setVisibility(View.VISIBLE);
                     etP64.setVisibility(View.VISIBLE);
@@ -740,7 +677,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                     tvP63.setVisibility(View.GONE);
                     tvP64.setVisibility(View.GONE);
                     tvP65.setVisibility(View.GONE);
-                    sP61.setVisibility(View.GONE);
+                    etP61.setVisibility(View.GONE);
                     etP62.setVisibility(View.GONE);
                     etP63.setVisibility(View.GONE);
                     etP64.setVisibility(View.GONE);
@@ -757,24 +694,778 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
 
         //endregion
 
-        //region
+        //region sP66 Familiares en el extranjero
+        sP66 = (Spinner) findViewById(R.id.sP66);
+        sP66.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,nosi));
 
+        //region Declaración variables
+        personaE1=(TextView) findViewById(R.id.personaE1);
+        personaE2=(TextView) findViewById(R.id.personaE2);
+
+        tvP67=(TextView) findViewById(R.id.tvP67);
+        tvP68=(TextView) findViewById(R.id.tvP68);
+        tvP69=(TextView) findViewById(R.id.tvP69);
+        tvP70=(TextView) findViewById(R.id.tvP70);
+        tvP71=(TextView) findViewById(R.id.tvP71);
+        tvP72=(TextView) findViewById(R.id.tvP72);
+
+        etP67=(EditText) findViewById(R.id.etP67);
+        etP68=(EditText) findViewById(R.id.etP68);
+        etP70=(EditText) findViewById(R.id.etP70);
+        etP71=(EditText) findViewById(R.id.etP71);
+        etP72=(EditText) findViewById(R.id.etP72);
+
+        etP69=(EditText) findViewById(R.id.etP69);
+
+        tvP67_1=(TextView) findViewById(R.id.tvP67_1);
+        tvP68_1=(TextView) findViewById(R.id.tvP68_1);
+        tvP69_1=(TextView) findViewById(R.id.tvP69_1);
+        tvP70_1=(TextView) findViewById(R.id.tvP70_1);
+        tvP71_1=(TextView) findViewById(R.id.tvP71_1);
+        tvP72_1=(TextView) findViewById(R.id.tvP72_1);
+
+        etP67_1=(EditText) findViewById(R.id.etP67_1);
+        etP68_1=(EditText) findViewById(R.id.etP68_1);
+        etP70_1=(EditText) findViewById(R.id.etP70_1);
+        etP71_1=(EditText) findViewById(R.id.etP71_1);
+        etP72_1=(EditText) findViewById(R.id.etP72_1);
+
+        etP69_1=(EditText) findViewById(R.id.etP69_1);
+        //endregion
+
+        sP66.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem=parent.getSelectedItem().toString();
+                if(selectedItem=="Si"){
+                    //region VISIBLE
+                    personaE1.setVisibility(View.VISIBLE);
+                    personaE2.setVisibility(View.VISIBLE);
+                    tvP67.setVisibility(View.VISIBLE);
+                    tvP68.setVisibility(View.VISIBLE);
+                    tvP69.setVisibility(View.VISIBLE);
+                    tvP70.setVisibility(View.VISIBLE);
+                    tvP71.setVisibility(View.VISIBLE);
+                    tvP72.setVisibility(View.VISIBLE);
+
+                    etP69.setVisibility(View.VISIBLE);
+
+                    etP67.setVisibility(View.VISIBLE);
+                    etP68.setVisibility(View.VISIBLE);
+                    etP70.setVisibility(View.VISIBLE);
+                    etP71.setVisibility(View.VISIBLE);
+                    etP72.setVisibility(View.VISIBLE);
+
+                    tvP67_1.setVisibility(View.VISIBLE);
+                    tvP68_1.setVisibility(View.VISIBLE);
+                    tvP69_1.setVisibility(View.VISIBLE);
+                    tvP70_1.setVisibility(View.VISIBLE);
+                    tvP71_1.setVisibility(View.VISIBLE);
+                    tvP72_1.setVisibility(View.VISIBLE);
+
+                    etP69_1.setVisibility(View.VISIBLE);
+
+                    etP67_1.setVisibility(View.VISIBLE);
+                    etP68_1.setVisibility(View.VISIBLE);
+                    etP70_1.setVisibility(View.VISIBLE);
+                    etP71_1.setVisibility(View.VISIBLE);
+                    etP72_1.setVisibility(View.VISIBLE);
+                    //endregion
+                }
+                else{
+                    //region GONE
+                    personaE1.setVisibility(View.GONE);
+                    personaE2.setVisibility(View.GONE);
+                    tvP67.setVisibility(View.GONE);
+                    tvP68.setVisibility(View.GONE);
+                    tvP69.setVisibility(View.GONE);
+                    tvP70.setVisibility(View.GONE);
+                    tvP71.setVisibility(View.GONE);
+                    tvP72.setVisibility(View.GONE);
+
+                    etP69.setVisibility(View.GONE);
+
+                    etP67.setVisibility(View.GONE);
+                    etP68.setVisibility(View.GONE);
+                    etP70.setVisibility(View.GONE);
+                    etP71.setVisibility(View.GONE);
+                    etP72.setVisibility(View.GONE);
+
+                    tvP67_1.setVisibility(View.GONE);
+                    tvP68_1.setVisibility(View.GONE);
+                    tvP69_1.setVisibility(View.GONE);
+                    tvP70_1.setVisibility(View.GONE);
+                    tvP71_1.setVisibility(View.GONE);
+                    tvP72_1.setVisibility(View.GONE);
+
+                    etP69_1.setVisibility(View.GONE);
+
+                    etP67_1.setVisibility(View.GONE);
+                    etP68_1.setVisibility(View.GONE);
+                    etP70_1.setVisibility(View.GONE);
+                    etP71_1.setVisibility(View.GONE);
+                    etP72_1.setVisibility(View.GONE);
+                    //endregion
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                return;
+            }
+        });
+
+
+
+        //endregion
+
+        //region sP73 Familiares en otros estados
+        sP73 = (Spinner) findViewById(R.id.sP73);
+        sP73.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,nosi));
+
+        //region Declaración de variables
+        personaEstado1=(TextView) findViewById(R.id.personaEstado1);
+        personaEstado2=(TextView) findViewById(R.id.personaEstado2);
+
+        tvP74=(TextView) findViewById(R.id.tvP74);
+        tvP75=(TextView) findViewById(R.id.tvP75);
+        tvP76=(TextView) findViewById(R.id.tvP76);
+        tvP77=(TextView) findViewById(R.id.tvP77);
+        tvP78=(TextView) findViewById(R.id.tvP78);
+
+        etP74=(EditText) findViewById(R.id.etP74);
+        etP75=(EditText) findViewById(R.id.etP75);
+        etP77=(EditText) findViewById(R.id.etP77);
+        etP78=(EditText) findViewById(R.id.etP78);
+
+        etP76=(EditText) findViewById(R.id.etP76);
+
+        tvP74_1=(TextView) findViewById(R.id.tvP74_1);
+        tvP75_1=(TextView) findViewById(R.id.tvP75_1);
+        tvP76_1=(TextView) findViewById(R.id.tvP76_1);
+        tvP77_1=(TextView) findViewById(R.id.tvP77_1);
+        tvP78_1=(TextView) findViewById(R.id.tvP78_1);
+
+        etP74_1=(EditText) findViewById(R.id.etP74_1);
+        etP75_1=(EditText) findViewById(R.id.etP75_1);
+        etP77_1=(EditText) findViewById(R.id.etP77_1);
+        etP78_1=(EditText) findViewById(R.id.etP78_1);
+
+        etP76_1=(EditText) findViewById(R.id.etP76_1);
+        //endregion
+
+        sP73.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem=parent.getSelectedItem().toString();
+                if(selectedItem=="Si"){
+                    //region VISIBLE
+                    personaEstado1.setVisibility(View.VISIBLE);
+                    personaEstado2.setVisibility(View.VISIBLE);
+
+                    tvP74.setVisibility(View.VISIBLE);
+                    tvP75.setVisibility(View.VISIBLE);
+                    tvP76.setVisibility(View.VISIBLE);
+                    tvP77.setVisibility(View.VISIBLE);
+                    tvP78.setVisibility(View.VISIBLE);
+
+                    etP74.setVisibility(View.VISIBLE);
+                    etP75.setVisibility(View.VISIBLE);
+                    etP77.setVisibility(View.VISIBLE);
+                    etP78.setVisibility(View.VISIBLE);
+
+                    etP76.setVisibility(View.VISIBLE);
+
+                    tvP74_1.setVisibility(View.VISIBLE);
+                    tvP75_1.setVisibility(View.VISIBLE);
+                    tvP76_1.setVisibility(View.VISIBLE);
+                    tvP77_1.setVisibility(View.VISIBLE);
+                    tvP78_1.setVisibility(View.VISIBLE);
+
+                    etP74_1.setVisibility(View.VISIBLE);
+                    etP75_1.setVisibility(View.VISIBLE);
+                    etP77_1.setVisibility(View.VISIBLE);
+                    etP78_1.setVisibility(View.VISIBLE);
+
+                    etP76_1.setVisibility(View.VISIBLE);
+                    //endregion
+                }
+                else{
+                    //region GONE
+                    personaEstado1.setVisibility(View.GONE);
+                    personaEstado2.setVisibility(View.GONE);
+
+                    tvP74.setVisibility(View.GONE);
+                    tvP75.setVisibility(View.GONE);
+                    tvP76.setVisibility(View.GONE);
+                    tvP77.setVisibility(View.GONE);
+                    tvP78.setVisibility(View.GONE);
+
+                    etP74.setVisibility(View.GONE);
+                    etP75.setVisibility(View.GONE);
+                    etP77.setVisibility(View.GONE);
+                    etP78.setVisibility(View.GONE);
+
+                    etP76.setVisibility(View.GONE);
+
+                    tvP74_1.setVisibility(View.GONE);
+                    tvP75_1.setVisibility(View.GONE);
+                    tvP76_1.setVisibility(View.GONE);
+                    tvP77_1.setVisibility(View.GONE);
+                    tvP78_1.setVisibility(View.GONE);
+
+                    etP74_1.setVisibility(View.GONE);
+                    etP75_1.setVisibility(View.GONE);
+                    etP77_1.setVisibility(View.GONE);
+                    etP78_1.setVisibility(View.GONE);
+
+                    etP76_1.setVisibility(View.GONE);
+                    //endregion
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                return;
+            }
+        });
+
+        //endregion
+
+        //region sP79 Tiene Pasaporte
+        sP79 = (Spinner) findViewById(R.id.sP79);
+        sP79.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,nosi));
+        //endregion
+
+        //region sP80 Tiene VISA
+        sP80 = (Spinner) findViewById(R.id.sP80);
+        sP80.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,nosi));
+        //endregion
+
+        //region sP82 Tomas Alcohol
+        sP82 = (Spinner) findViewById(R.id.sP82);
+        sP82.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,nosi));
+
+        //region Declaración de variables
+        tvP90_alcohol=(TextView) findViewById(R.id.tvP90_alcohol);
+        tvP91_alcohol=(TextView) findViewById(R.id.tvP91_alcohol);
+        tvP92_alcohol=(TextView) findViewById(R.id.tvP92_alcohol);
+
+        etP91_alcohol=(EditText) findViewById(R.id.etP91_alcohol);
+        etP92_alcohol=(EditText) findViewById(R.id.etP92_alcohol);//DatePicker
+
+        sP90_alcohol=(Spinner) findViewById(R.id.sP90_alcohol);
+        //endregion
+
+        sP90_alcohol.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,frecuenciaConsumo));
+        etP92_alcohol.setOnClickListener(this);
+
+        sP82.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem=parent.getSelectedItem().toString();
+                if (selectedItem=="Si"){
+                    tvP90_alcohol.setVisibility(View.VISIBLE);
+                    tvP91_alcohol.setVisibility(View.VISIBLE);
+                    tvP92_alcohol.setVisibility(View.VISIBLE);
+
+                    sP90_alcohol.setVisibility(View.VISIBLE);
+
+                    etP91_alcohol.setVisibility(View.VISIBLE);
+                    etP92_alcohol.setVisibility(View.VISIBLE);
+                }
+                else{
+                    tvP90_alcohol.setVisibility(View.GONE);
+                    tvP91_alcohol.setVisibility(View.GONE);
+                    tvP92_alcohol.setVisibility(View.GONE);
+
+                    sP90_alcohol.setVisibility(View.GONE);
+
+                    etP91_alcohol.setVisibility(View.GONE);
+                    etP92_alcohol.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                return;
+            }
+        });
+
+        //endregion
+
+        //region sP83 Consume Tabaco
+        sP83 = (Spinner) findViewById(R.id.sP83);
+        sP83.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,nosi));
+
+        //region Declaración de variables
+        tvP90_tabaco=(TextView) findViewById(R.id.tvP90_tabaco);
+        tvP91_tabaco=(TextView) findViewById(R.id.tvP91_tabaco);
+        tvP92_tabaco=(TextView) findViewById(R.id.tvP92_tabaco);
+
+        etP91_tabaco=(EditText) findViewById(R.id.etP91_tabaco);
+        etP92_tabaco=(EditText) findViewById(R.id.etP92_tabaco);//DatePicker
+
+        sP90_tabaco=(Spinner) findViewById(R.id.sP90_tabaco);
+        //endregion
+
+        sP90_tabaco.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,frecuenciaConsumo));
+        etP92_tabaco.setOnClickListener(this);
+
+        sP83.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem=parent.getSelectedItem().toString();
+                if (selectedItem=="Si"){
+                    tvP90_tabaco.setVisibility(View.VISIBLE);
+                    tvP91_tabaco.setVisibility(View.VISIBLE);
+                    tvP92_tabaco.setVisibility(View.VISIBLE);
+
+                    sP90_tabaco.setVisibility(View.VISIBLE);
+
+                    etP91_tabaco.setVisibility(View.VISIBLE);
+                    etP92_tabaco.setVisibility(View.VISIBLE);
+                }
+                else{
+                    tvP90_tabaco.setVisibility(View.GONE);
+                    tvP91_tabaco.setVisibility(View.GONE);
+                    tvP92_tabaco.setVisibility(View.GONE);
+
+                    sP90_tabaco.setVisibility(View.GONE);
+
+                    etP91_tabaco.setVisibility(View.GONE);
+                    etP92_tabaco.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                return;
+            }
+        });
+
+        //endregion
+
+        //region sP84 Consume Marihuana
+        sP84 = (Spinner) findViewById(R.id.sP84);
+        sP84.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,nosi));
+
+        //region Declaración de variables
+        tvP90_marihuana=(TextView) findViewById(R.id.tvP90_marihuana);
+        tvP91_marihuana=(TextView) findViewById(R.id.tvP91_marihuana);
+        tvP92_marihuana=(TextView) findViewById(R.id.tvP92_marihuana);
+
+        etP91_marihuana=(EditText) findViewById(R.id.etP91_marihuana);
+        etP92_marihuana=(EditText) findViewById(R.id.etP92_marihuana);//DatePicker
+
+        sP90_marihuana=(Spinner) findViewById(R.id.sP90_marihuana);
+        //endregion
+
+        sP90_marihuana.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,frecuenciaConsumo));
+        etP92_marihuana.setOnClickListener(this);
+
+        sP84.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem=parent.getSelectedItem().toString();
+                if (selectedItem=="Si"){
+                    tvP90_marihuana.setVisibility(View.VISIBLE);
+                    tvP91_marihuana.setVisibility(View.VISIBLE);
+                    tvP92_marihuana.setVisibility(View.VISIBLE);
+
+                    sP90_marihuana.setVisibility(View.VISIBLE);
+
+                    etP91_marihuana.setVisibility(View.VISIBLE);
+                    etP92_marihuana.setVisibility(View.VISIBLE);
+                }
+                else{
+                    tvP90_marihuana.setVisibility(View.GONE);
+                    tvP91_marihuana.setVisibility(View.GONE);
+                    tvP92_marihuana.setVisibility(View.GONE);
+
+                    sP90_marihuana.setVisibility(View.GONE);
+
+                    etP91_marihuana.setVisibility(View.GONE);
+                    etP92_marihuana.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                return;
+            }
+        });
+
+        //endregion
+
+        //region sP85 Consume Pastillas
+        sP85 = (Spinner) findViewById(R.id.sP85);
+        sP85.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,nosi));
+
+        //region Declaración de variables
+        tvP90_pastillas=(TextView) findViewById(R.id.tvP90_pastillas);
+        tvP91_pastillas=(TextView) findViewById(R.id.tvP91_pastillas);
+        tvP92_pastillas=(TextView) findViewById(R.id.tvP92_pastillas);
+
+        etP91_pastillas=(EditText) findViewById(R.id.etP91_pastillas);
+        etP92_pastillas=(EditText) findViewById(R.id.etP92_pastillas);//DatePicker
+
+        sP90_pastillas=(Spinner) findViewById(R.id.sP90_pastillas);
+        //endregion
+
+        sP90_pastillas.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,frecuenciaConsumo));
+        etP92_pastillas.setOnClickListener(this);
+
+        sP85.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem=parent.getSelectedItem().toString();
+                if (selectedItem=="Si"){
+                    tvP90_pastillas.setVisibility(View.VISIBLE);
+                    tvP91_pastillas.setVisibility(View.VISIBLE);
+                    tvP92_pastillas.setVisibility(View.VISIBLE);
+
+                    sP90_pastillas.setVisibility(View.VISIBLE);
+
+                    etP91_pastillas.setVisibility(View.VISIBLE);
+                    etP92_pastillas.setVisibility(View.VISIBLE);
+                }
+                else{
+                    tvP90_pastillas.setVisibility(View.GONE);
+                    tvP91_pastillas.setVisibility(View.GONE);
+                    tvP92_pastillas.setVisibility(View.GONE);
+
+                    sP90_pastillas.setVisibility(View.GONE);
+
+                    etP91_pastillas.setVisibility(View.GONE);
+                    etP92_pastillas.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                return;
+            }
+        });
+
+
+        //endregion
+
+        //region sP86 Consume Solventes
+        sP86 = (Spinner) findViewById(R.id.sP86);
+        sP86.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,nosi));
+
+        //region Declaración de variables
+        tvP90_solventes=(TextView) findViewById(R.id.tvP90_solventes);
+        tvP91_solventes=(TextView) findViewById(R.id.tvP91_solventes);
+        tvP92_solventes=(TextView) findViewById(R.id.tvP92_solventes);
+
+        etP91_solventes=(EditText) findViewById(R.id.etP91_solventes);
+        etP92_solventes=(EditText) findViewById(R.id.etP92_solventes);//DatePicker
+
+        sP90_solventes=(Spinner) findViewById(R.id.sP90_solventes);
+        //endregion
+
+        sP90_solventes.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,frecuenciaConsumo));
+        etP92_solventes.setOnClickListener(this);
+
+        sP86.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem=parent.getSelectedItem().toString();
+                if (selectedItem=="Si"){
+                    tvP90_solventes.setVisibility(View.VISIBLE);
+                    tvP91_solventes.setVisibility(View.VISIBLE);
+                    tvP92_solventes.setVisibility(View.VISIBLE);
+
+                    sP90_solventes.setVisibility(View.VISIBLE);
+
+                    etP91_solventes.setVisibility(View.VISIBLE);
+                    etP92_solventes.setVisibility(View.VISIBLE);
+                }
+                else{
+                    tvP90_solventes.setVisibility(View.GONE);
+                    tvP91_solventes.setVisibility(View.GONE);
+                    tvP92_solventes.setVisibility(View.GONE);
+
+                    sP90_solventes.setVisibility(View.GONE);
+
+                    etP91_solventes.setVisibility(View.GONE);
+                    etP92_solventes.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                return;
+            }
+        });
+
+        //endregion
+
+        //region sP87 Consume Cristal
+        sP87 = (Spinner) findViewById(R.id.sP87);
+        sP87.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,nosi));
+
+        //region Declaración de variables
+        tvP90_cristal=(TextView) findViewById(R.id.tvP90_cristal);
+        tvP91_cristal=(TextView) findViewById(R.id.tvP91_cristal);
+        tvP92_cristal=(TextView) findViewById(R.id.tvP92_cristal);
+
+        etP91_cristal=(EditText) findViewById(R.id.etP91_cristal);
+        etP92_cristal=(EditText) findViewById(R.id.etP92_cristal);//DatePicker
+
+        sP90_cristal=(Spinner) findViewById(R.id.sP90_cristal);
+        //endregion
+
+        sP90_cristal.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,frecuenciaConsumo));
+        etP92_cristal.setOnClickListener(this);
+
+        sP87.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem=parent.getSelectedItem().toString();
+                if (selectedItem=="Si"){
+                    tvP90_cristal.setVisibility(View.VISIBLE);
+                    tvP91_cristal.setVisibility(View.VISIBLE);
+                    tvP92_cristal.setVisibility(View.VISIBLE);
+
+                    sP90_cristal.setVisibility(View.VISIBLE);
+
+                    etP91_cristal.setVisibility(View.VISIBLE);
+                    etP92_cristal.setVisibility(View.VISIBLE);
+                }
+                else{
+                    tvP90_cristal.setVisibility(View.GONE);
+                    tvP91_cristal.setVisibility(View.GONE);
+                    tvP92_cristal.setVisibility(View.GONE);
+
+                    sP90_cristal.setVisibility(View.GONE);
+
+                    etP91_cristal.setVisibility(View.GONE);
+                    etP92_cristal.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                return;
+            }
+        });
+
+        //endregion
+
+        //region sP88 Consume cocaina
+        sP88 = (Spinner) findViewById(R.id.sP88);
+        sP88.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,nosi));
+
+        //region Declaración de variables
+        tvP90_cocaina=(TextView) findViewById(R.id.tvP90_cocaina);
+        tvP91_cocaina=(TextView) findViewById(R.id.tvP91_cocaina);
+        tvP92_cocaina=(TextView) findViewById(R.id.tvP92_cocaina);
+
+        etP91_cocaina=(EditText) findViewById(R.id.etP91_cocaina);
+        etP92_cocaina=(EditText) findViewById(R.id.etP92_cocaina);//DatePicker
+
+        sP90_cocaina=(Spinner) findViewById(R.id.sP90_cocaina);
+        //endregion
+
+        sP90_cocaina.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,frecuenciaConsumo));
+        etP92_cocaina.setOnClickListener(this);
+
+        sP88.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem=parent.getSelectedItem().toString();
+                if (selectedItem=="Si"){
+                    tvP90_cocaina.setVisibility(View.VISIBLE);
+                    tvP91_cocaina.setVisibility(View.VISIBLE);
+                    tvP92_cocaina.setVisibility(View.VISIBLE);
+
+                    sP90_cocaina.setVisibility(View.VISIBLE);
+
+                    etP91_cocaina.setVisibility(View.VISIBLE);
+                    etP92_cocaina.setVisibility(View.VISIBLE);
+                }
+                else{
+                    tvP90_cocaina.setVisibility(View.GONE);
+                    tvP91_cocaina.setVisibility(View.GONE);
+                    tvP92_cocaina.setVisibility(View.GONE);
+
+                    sP90_cocaina.setVisibility(View.GONE);
+
+                    etP91_cocaina.setVisibility(View.GONE);
+                    etP92_cocaina.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                return;
+            }
+        });
+
+        //endregion
+
+
+        //region sP89 Otro Consumo
+
+        sP89 = (Spinner) findViewById(R.id.sP89);
+        sP89.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,nosi));
+
+        //region Declaración de variables
+        tvP90_otroConsumo=(TextView) findViewById(R.id.tvP90_otroConsumo);
+        tvP91_otroConsumo=(TextView) findViewById(R.id.tvP91_otroConsumo);
+        tvP92_otroConsumo=(TextView) findViewById(R.id.tvP92_otroConsumo);
+        tvP93_otroConsumo=(TextView) findViewById(R.id.tvP93_otroConsumo);
+
+        etP91_otroConsumo=(EditText) findViewById(R.id.etP91_otroConsumo);
+        etP92_otroConsumo=(EditText) findViewById(R.id.etP92_otroConsumo);//DatePicker
+        etP93_otroConsumo=(EditText) findViewById(R.id.etP93_otroConsumo);
+
+        sP90_otroConsumo=(Spinner) findViewById(R.id.sP90_otroConsumo);
+        //endregion
+
+        sP90_otroConsumo.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,frecuenciaConsumo));
+        etP92_otroConsumo.setOnClickListener(this);
+
+        sP89.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem=parent.getSelectedItem().toString();
+                if (selectedItem=="Si"){
+                    tvP90_otroConsumo.setVisibility(View.VISIBLE);
+                    tvP91_otroConsumo.setVisibility(View.VISIBLE);
+                    tvP92_otroConsumo.setVisibility(View.VISIBLE);
+                    tvP93_otroConsumo.setVisibility(View.VISIBLE);
+
+                    sP90_otroConsumo.setVisibility(View.VISIBLE);
+
+                    etP91_otroConsumo.setVisibility(View.VISIBLE);
+                    etP92_otroConsumo.setVisibility(View.VISIBLE);
+                    etP93_otroConsumo.setVisibility(View.VISIBLE);
+                }
+                else{
+                    tvP90_otroConsumo.setVisibility(View.GONE);
+                    tvP91_otroConsumo.setVisibility(View.GONE);
+                    tvP92_otroConsumo.setVisibility(View.GONE);
+                    tvP93_otroConsumo.setVisibility(View.GONE);
+
+                    sP90_otroConsumo.setVisibility(View.GONE);
+
+                    etP91_otroConsumo.setVisibility(View.GONE);
+                    etP92_otroConsumo.setVisibility(View.GONE);
+                    etP93_otroConsumo.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                return;
+            }
+        });
+
+        //endregion
+
+        //region sP94 Padece enfermedad
+        sP94 = (Spinner) findViewById(R.id.sP94);
+        sP94.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,nosi));
+
+        //region Declaración de variables
+        tvP95=(TextView) findViewById(R.id.tvP95);
+        etP95=(EditText) findViewById(R.id.etP95);
+        //endregion
+
+        sP94.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem=parent.getSelectedItem().toString();
+                if(selectedItem=="Si"){
+                    tvP95.setVisibility(View.VISIBLE);
+                    etP95.setVisibility(View.VISIBLE);
+                }
+                else{
+                    tvP95.setVisibility(View.GONE);
+                    etP95.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                return;
+            }
+        });
+
+        //endregion
+
+        //region etP98 Fecha Entrevista
+        etP98=(EditText) findViewById(R.id.etP98);
+        etP98.setOnClickListener(this);
+        //endregion
+
+
+        //region
         //endregion
 
     }
 
-    private void showDatePickerDialog() {
-        DatePickerFragment newFragment = new DatePickerFragment();
+    private void showDatePickerDialog(final EditText editText) {
+        DatePickerFragment newFragment = DatePickerFragment.newInstance(new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                // +1 because january is zero
+                final String selectedDate = day + " / " + (month+1) + " / " + year;
+                editText.setText(selectedDate);
+            }
+        });
         newFragment.show(getSupportFragmentManager(), "datePicker");
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+            case R.id.etP3:
+                showDatePickerDialog(etP3);
+                break;
+            case R.id.etP56:
+                showDatePickerDialog(etP56);
+                break;
             case R.id.etP64:
-                showDatePickerDialog();
+                showDatePickerDialog(etP64);
+                break;
+            case R.id.etP65:
+                showDatePickerDialog(etP65);
+                break;
+            case R.id.etP92_alcohol:
+                showDatePickerDialog(etP92_alcohol);
+                break;
+            case R.id.etP92_tabaco:
+                showDatePickerDialog(etP92_tabaco);
+                break;
+            case R.id.etP92_marihuana:
+                showDatePickerDialog(etP92_marihuana);
+                break;
+            case R.id.etP92_pastillas:
+                showDatePickerDialog(etP92_pastillas);
+                break;
+            case R.id.etP92_solventes:
+                showDatePickerDialog(etP92_solventes);
+                break;
+            case R.id.etP92_cristal:
+                showDatePickerDialog(etP92_cristal);
+                break;
+            case R.id.etP92_cocaina:
+                showDatePickerDialog(etP92_cocaina);
+                break;
+            case R.id.etP92_otroConsumo:
+                showDatePickerDialog(etP92_otroConsumo);
+                break;
+            case R.id.etP98:
+                showDatePickerDialog(etP98);
                 break;
         }
     }
+
+
 
 }

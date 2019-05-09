@@ -103,17 +103,27 @@
     <string name="e76">Estado</string>
     <string name="e77">Ciudad</string>
     <string name="e78">Frecuencia de contacto</string>
-    <string name="e79">¿Cuenta con pasaporte expedido por la SER y/o VISA vigente?</string>
-    <string name="e80">¿Consume algún tipo de sustancia?</string>
-    <string name="e81">Frecuencia</string>
-    <string name="e82">Cantidad</string>
-    <string name="e83">Fecha de último consumo</string>
-    <string name="e84">¿Padece alguna enfermedad o condición física que afecte su salud?</string>
-    <string name="e85">Específique</string>
-    <string name="e86">Nombre del entrevistador</string>
-    <string name="e87">Folio</string>
-    <string name="e88">Fecha de entrevista</string>
-    <string name="e89">Observaciones finales</string>
+    <string name="e79">¿Cuenta con pasaporte expedido por la SER?</string>
+    <string name="e80">¿Cuenta con VISA vigente?</string>
+    <string name="e81">Observaciones</string>
+    <string name="e82">¿Tomas alcohol?</string>
+    <string name="e83">¿Fumas o Consumes Tabaco?</string>
+    <string name="e84">¿Fumas o Consumes Marihuana?</string>
+    <string name="e85">¿Tomas pastillas?</string>
+    <string name="e86">¿Inhalas algún tipo de solvente?</string>
+    <string name="e87">¿Fumas o Consumes Cristal?</string>
+    <string name="e88">¿Fumas o Consumes Cocaína?</string>
+    <string name="e89">¿Fumas o Consumes alguna otra sustancia psicotrópicas y/o estupefacientes?</string>
+    <string name="e90">Frecuencia</string>
+    <string name="e91">Cantidad</string>
+    <string name="e92">Fecha de último consumo</string>
+    <string name="e93">¿Cuál es el nombre de lo que consumes?</string>
+    <string name="e94">¿Padece alguna enfermedad o condición física que afecte su salud?</string>
+    <string name="e95">Específique</string>
+    <string name="e96">Nombre del entrevistador</string>
+    <string name="e97">Folio</string>
+    <string name="e98">Fecha de entrevista</string>
+    <string name="e99">Observaciones finales</string>
 
 
 
