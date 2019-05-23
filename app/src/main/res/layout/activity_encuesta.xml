@@ -38,7 +38,7 @@
                 android:ems="10"
                 android:focusable="false"
                 android:focusableInTouchMode="false"
-                android:inputType="date"
+                android:inputType="text"
                 android:layout_marginBottom="20dp"/>
 
             <TextView

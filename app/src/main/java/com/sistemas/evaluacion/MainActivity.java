@@ -2,23 +2,29 @@ package com.sistemas.evaluacion;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.app.Activity;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.util.ArrayList;
 
+import com.sistemas.evaluacion.entidades.datosGenerales;
+
 public class MainActivity extends AppCompatActivity {
 
+    //region Variables Globales
     private MyOpenHelper db;
-    private ArrayList<Comentario> lista;
+    private ArrayList<datosGenerales> lista;
+    //private ArrayList<Comentario> lista;
     private TextView tvLista;
-
+    public String tamaño="";
     ListToCSV convierte=new ListToCSV();
+    //endregion
 
+    //region Metodos
+
+    //region OnCreate
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,9 +32,9 @@ public class MainActivity extends AppCompatActivity {
         db=new MyOpenHelper(this);
 
         //Contamos el número de registros
-
-        lista=db.getComments();
-        String tamaño=""+(lista.size());
+        lista=db.getDatosGenerales();
+        //lista=db.getComments();
+        tamaño=""+(lista.size());
         tvLista = (TextView) findViewById(R.id.tvLista);
         tvLista.setText(tamaño);
         //final List<String> list=lista;
@@ -40,11 +46,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent= new Intent(view.getContext(), entrevista.class);
+                //Intent intent= new Intent(view.getContext(), encuesta.class);
                 startActivity(intent);
                 //Toast.makeText(getApplicationContext(), "Presiono boton para ir a segundo activity", Toast.LENGTH_SHORT).show();
             }
         });
-
         Button btnExport= (Button) findViewById(R.id.btnExport);
         btnExport.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,4 +66,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    //endregion
+
+    //endregion
+
+    //region Codigo prueba
+    /*Button btnCambioActivityVerificacion=(Button) findViewById(R.id.btnCambiarActivityVerificacion);
+        btnCambioActivityVerificacion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(view.getContext(), verificacion.class);
+                startActivity(intent);
+            }
+        });*/
+    //endregion
+
 }

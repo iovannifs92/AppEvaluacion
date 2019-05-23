@@ -28,6 +28,15 @@
         android:theme="@style/SecondaryColoredButton"
         android:textColor="#FFFFFF" />
 
+    <!--<Button
+        android:id="@+id/btnCambiarActivityVerificacion"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:text="Realizar Verificación"
+        android:layout_marginBottom="20dp"
+        android:theme="@style/SecondaryColoredButton"
+        android:textColor="#FFFFFF" />-->
+
     <TextView
         android:id="@+id/textView15"
         android:layout_width="match_parent"

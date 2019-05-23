@@ -24,8 +24,8 @@ public class ListToCSV {
 
             if (sd.canWrite()) {
                 String  currentDBPath= "//data//" + "com.sistemas.evaluacion"
-                        + "//databases//" + "comments.sqlite";
-                String backupDBPath  = "/Encuestas/T9EncuestaAndroid.sqlite";
+                        + "//databases//" + "evaluacion.sqlite";
+                String backupDBPath  = "/Entrevistas/T1EntrevistasEvaluacion.sqlite";
                 File currentDB = new File(data, currentDBPath);
                 File backupDB = new File(sd, backupDBPath);
 

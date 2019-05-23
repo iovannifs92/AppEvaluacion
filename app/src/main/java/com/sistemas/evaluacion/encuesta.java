@@ -52,7 +52,7 @@ public class encuesta extends AppCompatActivity {
 
 
         //region 1. Fecha
-        SimpleDateFormat formatoFecha= new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        SimpleDateFormat formatoFecha= new SimpleDateFormat("dd/MM/yyyy_HHmmss", Locale.getDefault());
         String fechaFormato=formatoFecha.format(Calendar.getInstance().getTime());
         fecha.setText(fechaFormato);
         r1=fecha.getText().toString();

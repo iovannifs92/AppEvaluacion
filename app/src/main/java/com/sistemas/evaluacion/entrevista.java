@@ -1,27 +1,35 @@
 package com.sistemas.evaluacion;
 
 import android.app.DatePickerDialog;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
-
-import java.util.Calendar;
+import android.widget.Toast;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
+import com.sistemas.evaluacion.entidades.datosGenerales;
 
 public class entrevista extends AppCompatActivity implements View.OnClickListener {
 
+    //region Variables Globales
     private static final String TAG = "Entrevista";
+    private MyOpenHelper db;
+    private ArrayList<datosGenerales> lista;
+    private boolean vivePadres=false;
 
+    //region TextView
     private TextView tvP38,persona1,persona2,persona3,persona4, personaE1, personaE2,
             personaEstado1, personaEstado2, tv33, tv33_1, tv33_2, tv33_3, tv34, tv34_1,
             tv34_2, tv34_3, tv35, tv35_1, tv35_2, tv35_3, tv36, tv36_1, tv36_2, tv36_3,
@@ -34,37 +42,78 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
             tvP91_pastillas, tvP92_pastillas, tvP90_solventes, tvP91_solventes, tvP92_solventes,
             tvP90_cristal, tvP91_cristal, tvP92_cristal, tvP90_cocaina, tvP91_cocaina, tvP92_cocaina,
             tvP90_otroConsumo, tvP91_otroConsumo, tvP92_otroConsumo, tvP93_otroConsumo, tvP95;
+    //endregion
 
+    //region EditText
     private EditText etP3, et33, et33_1, et33_2, et33_3, et34, et34_1, et34_2, et34_3,
             et35, et35_1, et35_2, et35_3, et36, et36_1, et36_2, et36_3, et37, et37_1,
-            et37_2, et37_3, etP38, etP45, etP47, etP49, etP52, etP53, etP54 , etP55,
-            etP56, etP57, etP58, etP59, etP61, etP62, etP63, etP64, etP65, etP67, etP68, etP69, etP69_1, etP70,
-            etP71, etP72, etP67_1, etP68_1, etP70_1, etP71_1, etP72_1, etP74, etP75, etP77,
-            etP78, etP74_1, etP75_1, etP76, etP76_1, etP77_1, etP78_1, etP91_alcohol, etP92_alcohol, etP91_tabaco,
+            et37_2, et37_3, etP38, etP45, etP47, etP49, etP52, etP53, etP55,
+            etP56, etP58, etP59, etP61, etP62, etP63, etP64, etP65, etP67, etP68, etP69, etP69_1, etP70,
+            etP71, etP67_1, etP68_1, etP70_1, etP71_1, etP74, etP75, etP77,
+            etP74_1, etP75_1, etP76, etP76_1, etP77_1, etP91_alcohol, etP92_alcohol, etP91_tabaco,
             etP92_tabaco, etP91_marihuana, etP92_marihuana, etP91_pastillas, etP92_pastillas,
             etP91_solventes, etP92_solventes, etP91_cristal, etP92_cristal, etP91_cocaina,
             etP92_cocaina, etP91_otroConsumo, etP92_otroConsumo, etP93_otroConsumo, etP95, etP98;
 
-    private DatePickerDialog.OnDateSetListener mDateSetListener;
+    private EditText etP97, etP1, etP2, etP4, etP5, etP7, etP8, etP9, etP10, etP12, etP14, etP15,
+            etP16, etP17, etP18, etP19, etP20, etP21, etP22, etP23, etP24, etP26, etP28, etP30,
+            etP31, etP39, etP40, etP41, etP42, etP43, etP39_1, etP40_1, etP41_1, etP42_1, etP43_1, etP81, etP96, etP99;
+    //endregion
 
-    private Spinner sP6, sP11, sP13, sP25, sP29, sP32, sP44, sP46, sP48, sP50, sP51,
-                    sP60, sP66, sP73, sP79, sP80, sP82,
-                    sP90_alcohol, sP83, sP90_tabaco, sP84, sP90_marihuana, sP85, sP90_pastillas,
-                    sP86,sP90_solventes, sP87, sP90_cristal, sP88, sP90_cocaina, sP89, sP90_otroConsumo,
-                    sP94;
+    //region Spinner
+    private Spinner sP6, sP8, sP11, sP13, sP21_1, sP22, sP25, sP27, sP29, sP32, sP32_1, sP44, sP46, sP48, sP50, sP51,
+            sP54, sP57, sP60, sP66, sP72, sP72_1, sP73, sP78, sP78_1, sP79, sP80, sP82,
+            sP90_alcohol, sP83, sP90_tabaco, sP84, sP90_marihuana, sP85, sP90_pastillas,
+            sP86,sP90_solventes, sP87, sP90_cristal, sP88, sP90_cocaina, sP89, sP90_otroConsumo,
+            sP94, sP100;
+    //endregion
+
+    //region LinearLayout
+    private LinearLayout llDomicilioSec;
+    //endregion
+
+    //region Button
+    private Button btnGuardar;
+    //endregion
+
+    //region String
+    private String r1,r2,r3,r4,r5,r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r17, r18, r19, r20, r21,
+            r22, r23, r24, r25, r26, r27, r28, r29, r30, r31, r33, r34, r35, r36, r37, r33_1, r34_1,
+            r35_1, r36_1, r37_1, r33_2, r34_2, r35_2, r36_2, r37_2, r33_3, r34_3, r35_3, r36_3, r37_3, r38,
+            r39, r40, r41, r42, r43, r39_1, r40_1, r41_1, r42_1, r43_1, r44, r45, r46, r47, r48, r49, r50,
+            r51, r52, r53, r54, r55, r56, r57, r58, r59, r60, r61, r62, r63, r64, r65, r66,
+            r67, r68, r69, r70, r71, r72, r67_1, r68_1, r69_1, r70_1, r71_1, r72_1, r73,
+            r74, r75, r76, r77, r78, r74_1, r75_1, r76_1, r77_1, r78_1, r79, r80, r81, r82, r83, r84, r85, r86, r87, r88, r89,
+            r90_alcohol, r91_alcohol, r92_alcohol, r90_tabaco, r91_tabaco, r92_tabaco, r90_marihuana, r91_marihuana, r92_marihuana,
+            r90_pastillas, r91_pastillas, r92_pastillas, r90_solventes, r91_solventes, r92_solventes,
+            r90_cristal, r91_cristal, r92_cristal, r90_cocaina, r91_cocaina, r92_cocaina, r93_otroConsumo, r90_otroConsumo, r91_otroConsumo, r92_otroConsumo, r94, r95,
+            r96, r98, r99, r100;
+    private String FOLIO;
 
 
-    private String [] tipoDomicilio={"Rentada", "Prestada", "Propia", "Familiar", "Situación de calle", "Irregular"};
-    private String [] tiempoRadicando={"Menos de un mes", "Un mes", "Entre 1 y 3 meses", "Entre 3 y 6 meses", "Entre 6 meses y un año", "Entre 1 y 3 años", "Entre 3 y 6 años", "Más de 6 años"};
+    private String [] tipoDomicilio={"NA","Rentada", "Prestada", "Propia", "Familiar", "Situación de calle", "Irregular"};
+    private String [] tiempoRadicando={"NA","Menos de un mes", "Un mes", "Entre 1 y 3 meses", "Entre 3 y 6 meses", "Entre 6 meses y un año", "Entre 1 y 3 años", "Entre 3 y 6 años", "Más de 6 años"};
     private String [] nosi={"No", "Si"};
     private String [] frecuenciaConsumo={"No consume", "Diariamente", "Cada Tercer día", "Semanalmente", "Quincenalmente", "Mensualmente", "Anualmente"};
+    private String [] tipoEntrevista={"Normal", "Verificación"};
+    private String [] ocupacion={"NA","Informal", "Formal"};
+    private String [] colfracc={"NA","Colonia", "Fraccionamiento"};
+    private String [] diasLaboral={"NA","Lunes a Viernes","Lunes a Domingo","Lunes a Sábado","Fines de Semana","Sin días Establecidos","Otro"};
+    private String [] frecuenciaContacto={"NA", "Diariamente", "Semanalmente","Quincenalmente","Mensualmente","Anualmente"};
     private String r32="0";
+    //endregion
+    //endregion
 
+    //region Métodos
+    //region OnCreate
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entrevista);
 
+        db=new MyOpenHelper(this);
+
+        //region Programación de Formulario
         //region P3 Fecha-Nacimiento
         etP3=(EditText) findViewById(R.id.etP3);
         etP3.setOnClickListener(this);
@@ -76,6 +125,11 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
         sP6.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,sexo));
         //endregion Sexo Se
 
+        //region sP8 Colonia o fraccionamiento
+        sP8 = (Spinner) findViewById(R.id.sP8);
+        sP8.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,colfracc));
+        //endregion
+
         //region SP11 Tipo Domicilio
         sP11 = (Spinner) findViewById(R.id.sP11);
         sP11.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,tipoDomicilio));
@@ -86,14 +140,51 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
         sP13.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,tiempoRadicando));
         //endregion
 
+        //region sP21_1 Domicilio Secundario
+        sP21_1 = (Spinner) findViewById(R.id.sP21_1);
+        sP21_1.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,nosi));
+
+        llDomicilioSec=(LinearLayout) findViewById(R.id.llDomicilioSec);
+
+        sP21_1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem=parent.getSelectedItem().toString();
+                if(selectedItem=="Si"){
+                    llDomicilioSec.setVisibility(View.VISIBLE);
+                }
+                else {
+                    llDomicilioSec.setVisibility(View.GONE);
+                }
+
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                return;
+            }
+        });
+        //endregion
+
+        //region sP22 Colonia o Fraccionamiento Secundario
+        sP22 = (Spinner) findViewById(R.id.sP22);
+        sP22.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,colfracc));
+        //endregion
+
         //region SP25 Tipo de domicilio secundario
         sP25 = (Spinner) findViewById(R.id.sP25);
         sP25.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,tipoDomicilio));
         //endregion
 
+        //region sP27 tiempo radicando secundario
+        sP27 = (Spinner) findViewById(R.id.sP27);
+        sP27.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,tiempoRadicando));
+        //endregion
+
         //region SP29 Estado Civil
         sP29 = (Spinner) findViewById(R.id.sP29);
-        String [] estadoCivil={"Soltero(a)", "Casado(a)","Unión Libre"};
+        String [] estadoCivil={"Soltero(a)", "Casado(a)","Unión Libre", "Divorciado (a)", "Viudo (a)"};
         sP29.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,estadoCivil));
         //endregion
 
@@ -101,6 +192,18 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
         sP32 = (Spinner) findViewById(R.id.sP32);
         String [] nPersonas={"0","1","2","3","4"};
         sP32.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,nPersonas));
+
+        sP32_1 = (Spinner) findViewById(R.id.sP32_1);
+        sP32_1.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,nosi));
+
+        etP7=(EditText) findViewById(R.id.etP7);
+        etP8=(EditText) findViewById(R.id.etP8);
+
+        etP18=(EditText) findViewById(R.id.etP18);
+        etP20=(EditText) findViewById(R.id.etP20);
+        etP17=(EditText) findViewById(R.id.etP17);
+        etP19=(EditText) findViewById(R.id.etP19);
+
 
         tvP38=(TextView) findViewById(R.id.tvP38);
         etP38=(EditText) findViewById(R.id.etP38);
@@ -121,6 +224,30 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
 
         tv37=(TextView) findViewById(R.id.tv37);
         et37=(EditText) findViewById(R.id.etP37);
+
+        sP32_1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem=parent.getSelectedItem().toString();
+                if(position!=0){
+                    String dom= etP7.getText().toString()+" "+ sP8.getSelectedItem().toString()+" "+ etP8.getText().toString();
+                    etP18.setText(dom, TextView.BufferType.EDITABLE);
+                    etP20.setText(dom, TextView.BufferType.EDITABLE);
+                    vivePadres=true;
+                }
+                else{
+                    etP18.setText("");
+                    etP20.setText("");
+                    vivePadres=false;
+
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         //endregion
 
@@ -179,13 +306,14 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
 
         //endregion
 
+
         sP32.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                r32=parent.getSelectedItem().toString();
                 String selectedItem=parent.getSelectedItem().toString();
                 switch (selectedItem){
                     case "0":
+                        viveConPadres();
                         tvP38.setVisibility(View.VISIBLE);
                         etP38.setVisibility(View.VISIBLE);
                         //region _0
@@ -242,6 +370,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                         //endregion
                         break;
                     case "1":
+                        viveConPadres();
                         tvP38.setVisibility(View.GONE);
                         etP38.setVisibility(View.GONE);
                         //region _0
@@ -297,6 +426,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                         //endregion
                         break;
                     case "2":
+                        viveConPadres();
                         tvP38.setVisibility(View.GONE);
                         etP38.setVisibility(View.GONE);
                         //region _0
@@ -353,6 +483,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                         //endregion
                         break;
                     case "3":
+                        viveConPadres();
                         tvP38.setVisibility(View.GONE);
                         etP38.setVisibility(View.GONE);
                         //region _0
@@ -409,6 +540,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                         //endregion
                         break;
                     case "4":
+                        viveConPadres();
                         //region _0
                         persona1.setVisibility(View.VISIBLE);
                         tv33.setVisibility(View.VISIBLE);
@@ -558,6 +690,12 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
         sP51 = (Spinner) findViewById(R.id.sP51);
         sP51.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,nosi));
 
+        sP54=(Spinner) findViewById(R.id.sP54);
+        sP54.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,ocupacion));
+
+        sP57=(Spinner) findViewById(R.id.sP57);
+        sP57.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,diasLaboral));
+
         tvP52=(TextView) findViewById(R.id.tvP52);
         tvP53=(TextView) findViewById(R.id.tvP53);
         tvP54=(TextView) findViewById(R.id.tvP54);
@@ -569,10 +707,10 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
 
         etP52=(EditText) findViewById(R.id.etP52);
         etP53=(EditText) findViewById(R.id.etP53);
-        etP54=(EditText) findViewById(R.id.etP54);
+
         etP55=(EditText) findViewById(R.id.etP55);
         etP56=(EditText) findViewById(R.id.etP56);
-        etP57=(EditText) findViewById(R.id.etP57);
+
         etP58=(EditText) findViewById(R.id.etP58);
         etP59=(EditText) findViewById(R.id.etP59);
 
@@ -595,10 +733,10 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                     tvP59.setVisibility(View.GONE);
                     etP52.setVisibility(View.VISIBLE);
                     etP53.setVisibility(View.VISIBLE);
-                    etP54.setVisibility(View.VISIBLE);
+                    sP54.setVisibility(View.VISIBLE);
                     etP55.setVisibility(View.VISIBLE);
                     etP56.setVisibility(View.VISIBLE);
-                    etP57.setVisibility(View.VISIBLE);
+                    sP57.setVisibility(View.VISIBLE);
                     etP58.setVisibility(View.VISIBLE);
                     etP59.setVisibility(View.GONE);
                 }
@@ -613,10 +751,10 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                     tvP59.setVisibility(View.VISIBLE);
                     etP52.setVisibility(View.GONE);
                     etP53.setVisibility(View.GONE);
-                    etP54.setVisibility(View.GONE);
+                    sP54.setVisibility(View.GONE);
                     etP55.setVisibility(View.GONE);
                     etP56.setVisibility(View.GONE);
-                    etP57.setVisibility(View.GONE);
+                    sP57.setVisibility(View.GONE);
                     etP58.setVisibility(View.GONE);
                     etP59.setVisibility(View.VISIBLE);
                 }
@@ -698,6 +836,11 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
         sP66 = (Spinner) findViewById(R.id.sP66);
         sP66.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,nosi));
 
+        sP72 = (Spinner) findViewById(R.id.sP72);
+        sP72.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,frecuenciaContacto));
+        sP72_1 = (Spinner) findViewById(R.id.sP72_1);
+        sP72_1.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,frecuenciaContacto));
+
         //region Declaración variables
         personaE1=(TextView) findViewById(R.id.personaE1);
         personaE2=(TextView) findViewById(R.id.personaE2);
@@ -713,7 +856,6 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
         etP68=(EditText) findViewById(R.id.etP68);
         etP70=(EditText) findViewById(R.id.etP70);
         etP71=(EditText) findViewById(R.id.etP71);
-        etP72=(EditText) findViewById(R.id.etP72);
 
         etP69=(EditText) findViewById(R.id.etP69);
 
@@ -728,7 +870,6 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
         etP68_1=(EditText) findViewById(R.id.etP68_1);
         etP70_1=(EditText) findViewById(R.id.etP70_1);
         etP71_1=(EditText) findViewById(R.id.etP71_1);
-        etP72_1=(EditText) findViewById(R.id.etP72_1);
 
         etP69_1=(EditText) findViewById(R.id.etP69_1);
         //endregion
@@ -754,7 +895,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                     etP68.setVisibility(View.VISIBLE);
                     etP70.setVisibility(View.VISIBLE);
                     etP71.setVisibility(View.VISIBLE);
-                    etP72.setVisibility(View.VISIBLE);
+                    sP72.setVisibility(View.VISIBLE);
 
                     tvP67_1.setVisibility(View.VISIBLE);
                     tvP68_1.setVisibility(View.VISIBLE);
@@ -769,7 +910,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                     etP68_1.setVisibility(View.VISIBLE);
                     etP70_1.setVisibility(View.VISIBLE);
                     etP71_1.setVisibility(View.VISIBLE);
-                    etP72_1.setVisibility(View.VISIBLE);
+                    sP72_1.setVisibility(View.VISIBLE);
                     //endregion
                 }
                 else{
@@ -789,7 +930,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                     etP68.setVisibility(View.GONE);
                     etP70.setVisibility(View.GONE);
                     etP71.setVisibility(View.GONE);
-                    etP72.setVisibility(View.GONE);
+                    sP72.setVisibility(View.GONE);
 
                     tvP67_1.setVisibility(View.GONE);
                     tvP68_1.setVisibility(View.GONE);
@@ -804,7 +945,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                     etP68_1.setVisibility(View.GONE);
                     etP70_1.setVisibility(View.GONE);
                     etP71_1.setVisibility(View.GONE);
-                    etP72_1.setVisibility(View.GONE);
+                    sP72_1.setVisibility(View.GONE);
                     //endregion
                 }
             }
@@ -823,6 +964,11 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
         sP73 = (Spinner) findViewById(R.id.sP73);
         sP73.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,nosi));
 
+        sP78 = (Spinner) findViewById(R.id.sP78);
+        sP78.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,frecuenciaContacto));
+        sP78_1 = (Spinner) findViewById(R.id.sP78_1);
+        sP78_1.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,frecuenciaContacto));
+
         //region Declaración de variables
         personaEstado1=(TextView) findViewById(R.id.personaEstado1);
         personaEstado2=(TextView) findViewById(R.id.personaEstado2);
@@ -836,7 +982,6 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
         etP74=(EditText) findViewById(R.id.etP74);
         etP75=(EditText) findViewById(R.id.etP75);
         etP77=(EditText) findViewById(R.id.etP77);
-        etP78=(EditText) findViewById(R.id.etP78);
 
         etP76=(EditText) findViewById(R.id.etP76);
 
@@ -849,7 +994,6 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
         etP74_1=(EditText) findViewById(R.id.etP74_1);
         etP75_1=(EditText) findViewById(R.id.etP75_1);
         etP77_1=(EditText) findViewById(R.id.etP77_1);
-        etP78_1=(EditText) findViewById(R.id.etP78_1);
 
         etP76_1=(EditText) findViewById(R.id.etP76_1);
         //endregion
@@ -872,7 +1016,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                     etP74.setVisibility(View.VISIBLE);
                     etP75.setVisibility(View.VISIBLE);
                     etP77.setVisibility(View.VISIBLE);
-                    etP78.setVisibility(View.VISIBLE);
+                    sP78.setVisibility(View.VISIBLE);
 
                     etP76.setVisibility(View.VISIBLE);
 
@@ -885,7 +1029,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                     etP74_1.setVisibility(View.VISIBLE);
                     etP75_1.setVisibility(View.VISIBLE);
                     etP77_1.setVisibility(View.VISIBLE);
-                    etP78_1.setVisibility(View.VISIBLE);
+                    sP78_1.setVisibility(View.VISIBLE);
 
                     etP76_1.setVisibility(View.VISIBLE);
                     //endregion
@@ -904,7 +1048,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                     etP74.setVisibility(View.GONE);
                     etP75.setVisibility(View.GONE);
                     etP77.setVisibility(View.GONE);
-                    etP78.setVisibility(View.GONE);
+                    sP78.setVisibility(View.GONE);
 
                     etP76.setVisibility(View.GONE);
 
@@ -917,7 +1061,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                     etP74_1.setVisibility(View.GONE);
                     etP75_1.setVisibility(View.GONE);
                     etP77_1.setVisibility(View.GONE);
-                    etP78_1.setVisibility(View.GONE);
+                    sP78_1.setVisibility(View.GONE);
 
                     etP76_1.setVisibility(View.GONE);
                     //endregion
@@ -1400,15 +1544,318 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
 
         //region etP98 Fecha Entrevista
         etP98=(EditText) findViewById(R.id.etP98);
-        etP98.setOnClickListener(this);
+        SimpleDateFormat formatoFecha= new SimpleDateFormat("dd/ MM / yyyy HH:mm:ss");
+        String fechaFormato=formatoFecha.format(new Date());
+        etP98.setText(fechaFormato);
+        //etP98.setOnClickListener(this);
         //endregion
 
 
-        //region
+        //region etP97 FOLIO
+        lista=db.getDatosGenerales();
+        String tamaño=""+((lista.size())+1);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd", Locale.getDefault());
+        Date date = new Date();
+        String fecha = dateFormat.format(date);
+        etP97=(EditText) findViewById(R.id.etP97);
+        etP97.setText("E1-"+fecha+"-"+tamaño);
+        //endregion
+
+        //region sp100
+        sP100 = (Spinner) findViewById(R.id.sP100);
+        sP100.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,tipoEntrevista));
+        //endregion
+
+
+
+        final Date inicio=new Date();
+
+
+        //endregion
+
+        //region Guardar Datos
+
+        btnGuardar=(Button) findViewById(R.id.btnGuardar);
+
+        btnGuardar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //region Obtener Valores de formulario
+
+                //region 1. DATOS GENERALES
+
+                //region Definicion de variables
+                etP1=(EditText) findViewById(R.id.etP1);
+                etP2=(EditText) findViewById(R.id.etP2);
+                etP3=(EditText) findViewById(R.id.etP3);
+                etP4=(EditText) findViewById(R.id.etP4);
+                etP5=(EditText) findViewById(R.id.etP5);
+
+                etP96=(EditText) findViewById(R.id.etP96);
+                etP99=(EditText) findViewById(R.id.etP99);
+
+
+                r1=etP1.getText().toString().toUpperCase();
+                r2=etP2.getText().toString().toUpperCase();
+                r3=etP3.getText().toString().toUpperCase();
+                r4=etP4.getText().toString().toUpperCase();
+                r5=etP5.getText().toString().toUpperCase();
+                r6=sP6.getSelectedItem().toString().toUpperCase();
+                r98=etP98.getText().toString().toUpperCase();
+                r96=etP96.getText().toString().toUpperCase();
+                r99=etP99.getText().toString().toUpperCase();
+                r100=sP100.getSelectedItem().toString().toUpperCase();
+
+                Date fin=new Date();
+                int min=fechasDiferenciaEnDias(inicio, fin);
+                //endregion
+
+                //region 1. DATOS GENERALES domicilio
+
+                etP9=(EditText) findViewById(R.id.etP9);
+                etP10=(EditText) findViewById(R.id.etP10);
+
+                etP12=(EditText) findViewById(R.id.etP12);
+
+                etP14=(EditText) findViewById(R.id.etP14);
+                etP15=(EditText) findViewById(R.id.etP15);
+                etP16=(EditText) findViewById(R.id.etP16);
+
+                etP21=(EditText) findViewById(R.id.etP21);
+                etP22=(EditText) findViewById(R.id.etP22);
+                etP23=(EditText) findViewById(R.id.etP23);
+                etP24=(EditText) findViewById(R.id.etP24);
+
+                etP26=(EditText) findViewById(R.id.etP26);
+                etP28=(EditText) findViewById(R.id.etP28);
+
+                etP30=(EditText) findViewById(R.id.etP30);
+                etP31=(EditText) findViewById(R.id.etP31);
+
+                r7=etP7.getText().toString().toUpperCase();
+                r8=((sP8.getSelectedItem().toString()+" ")+(etP8.getText().toString())).toUpperCase();
+                r9=etP9.getText().toString().toUpperCase();
+                r10=etP10.getText().toString().toUpperCase();
+                r11=sP11.getSelectedItem().toString().toUpperCase();
+                r12=etP12.getText().toString().toUpperCase();
+                r13=sP13.getSelectedItem().toString().toUpperCase();
+                r14=etP14.getText().toString().toUpperCase();
+                r15=etP15.getText().toString().toUpperCase();
+                r16=etP16.getText().toString().toUpperCase();
+                r17=etP17.getText().toString().toUpperCase();
+                r18=etP18.getText().toString().toUpperCase();
+                r19=etP19.getText().toString().toUpperCase();
+                r20=etP20.getText().toString().toUpperCase();
+                r21=etP21.getText().toString().toUpperCase();
+                r22=((sP22.getSelectedItem().toString()+" ")+(etP22.getText().toString())).toUpperCase();
+                r23=etP23.getText().toString().toUpperCase();
+                r24=etP24.getText().toString().toUpperCase();
+                r25=sP25.getSelectedItem().toString().toUpperCase();
+                r26=etP26.getText().toString().toUpperCase();
+                r27=sP27.getSelectedItem().toString().toUpperCase();
+                r28=etP28.getText().toString().toUpperCase();
+                r29=sP29.getSelectedItem().toString().toUpperCase();
+                r30=etP30.getText().toString().toUpperCase();
+                r31=etP31.getText().toString().toUpperCase();
+
+                //region Definición de variables
+                //endregion
+
+                //endregion
+
+                //endregion
+
+                //region 2. DATOS FAMILIARES Y PERSONAS CON LAS QUE HABITA EL IMPUTADO
+
+                //region Datos Familiares
+
+                r32=sP32.getSelectedItem().toString().toUpperCase();
+                r33=et33.getText().toString().toUpperCase();
+                r34=et34.getText().toString().toUpperCase();
+                r35=et35.getText().toString().toUpperCase();
+                r36=et36.getText().toString().toUpperCase();
+                r37=et37.getText().toString().toUpperCase();
+                r33_1=et33_1.getText().toString().toUpperCase();
+                r34_1=et34_1.getText().toString().toUpperCase();
+                r35_1=et35_1.getText().toString().toUpperCase();
+                r36_1=et36_1.getText().toString().toUpperCase();
+                r37_1=et37_1.getText().toString().toUpperCase();
+                r33_2=et33_2.getText().toString().toUpperCase();
+                r34_2=et34_2.getText().toString().toUpperCase();
+                r35_2=et35_2.getText().toString().toUpperCase();
+                r36_2=et36_2.getText().toString().toUpperCase();
+                r37_2=et37_2.getText().toString().toUpperCase();
+                r33_3=et33_3.getText().toString().toUpperCase();
+                r34_3=et34_3.getText().toString().toUpperCase();
+                r35_3=et35_3.getText().toString().toUpperCase();
+                r36_3=et36_3.getText().toString().toUpperCase();
+                r37_3=et37_3.getText().toString().toUpperCase();
+                r38=etP38.getText().toString().toUpperCase();
+
+                //endregion
+
+                //region Referencias
+                etP39=(EditText) findViewById(R.id.etP39);
+                etP40=(EditText) findViewById(R.id.etP40);
+                etP41=(EditText) findViewById(R.id.etP41);
+                etP42=(EditText) findViewById(R.id.etP42);
+                etP43=(EditText) findViewById(R.id.etP43);
+                etP39_1=(EditText) findViewById(R.id.etP39_1);
+                etP40_1=(EditText) findViewById(R.id.etP40_1);
+                etP41_1=(EditText) findViewById(R.id.etP41_1);
+                etP42_1=(EditText) findViewById(R.id.etP42_1);
+                etP43_1=(EditText) findViewById(R.id.etP43_1);
+
+
+                r39=etP39.getText().toString().toUpperCase();
+                r40=etP40.getText().toString().toUpperCase();
+                r41=etP41.getText().toString().toUpperCase();
+                r42=etP42.getText().toString().toUpperCase();
+                r43=etP43.getText().toString().toUpperCase();
+                r39_1=etP39_1.getText().toString().toUpperCase();
+                r40_1=etP40_1.getText().toString().toUpperCase();
+                r41_1=etP41_1.getText().toString().toUpperCase();
+                r42_1=etP42_1.getText().toString().toUpperCase();
+                r43_1=etP43_1.getText().toString().toUpperCase();
+
+                r44=sP44.getSelectedItem().toString().toUpperCase();
+                r45=etP45.getText().toString().toUpperCase();
+                r46=sP46.getSelectedItem().toString().toUpperCase();
+                r47=etP47.getText().toString().toUpperCase();
+
+                //endregion
+
+                //endregion
+
+                //region 3 y 4 HISTORIAL ESCOLAR Y LABORAL OCUPACIONAL
+                r48=sP48.getSelectedItem().toString().toUpperCase();
+                r49=etP49.getText().toString().toUpperCase();
+                r50=sP50.getSelectedItem().toString().toUpperCase();
+
+                r51=sP51.getSelectedItem().toString().toUpperCase();
+                r52=etP52.getText().toString().toUpperCase();
+                r53=etP53.getText().toString().toUpperCase();
+                r54=sP54.getSelectedItem().toString().toUpperCase();
+                r55=etP55.getText().toString().toUpperCase();
+                r56=etP56.getText().toString().toUpperCase();
+                r57=sP57.getSelectedItem().toString().toUpperCase();
+                r58=etP58.getText().toString().toUpperCase();
+                r59=etP59.getText().toString().toUpperCase();
+                //endregion
+
+                //region 5. INFORMACIÓN DE FACILIDADES PARA ABANDONAR EL ESTADO
+                etP81=(EditText) findViewById(R.id.etP81);
+
+                r60=sP60.getSelectedItem().toString().toUpperCase();
+                r61=etP61.getText().toString().toUpperCase();
+                r62=etP62.getText().toString().toUpperCase();
+                r63=etP63.getText().toString().toUpperCase();
+                r64=etP64.getText().toString().toUpperCase();
+                r65=etP65.getText().toString().toUpperCase();
+                r66=sP66.getSelectedItem().toString().toUpperCase();
+                r67=etP67.getText().toString().toUpperCase();
+                r68=etP68.getText().toString().toUpperCase();
+                r69=etP69.getText().toString().toUpperCase();
+                r70=etP70.getText().toString().toUpperCase();
+                r71=etP71.getText().toString().toUpperCase();
+                r72=sP72.getSelectedItem().toString().toUpperCase();
+                r67_1=etP67_1.getText().toString().toUpperCase();
+                r68_1=etP68_1.getText().toString().toUpperCase();
+                r69_1=etP69_1.getText().toString().toUpperCase();
+                r70_1=etP70_1.getText().toString().toUpperCase();
+                r71_1=etP71_1.getText().toString().toUpperCase();
+                r72_1=sP72_1.getSelectedItem().toString().toUpperCase();
+                r73=sP73.getSelectedItem().toString().toUpperCase();
+                r74=etP74.getText().toString().toUpperCase();
+                r75=etP75.getText().toString().toUpperCase();
+                r76=etP76.getText().toString().toUpperCase();
+                r77=etP77.getText().toString().toUpperCase();
+                r78=sP78.getSelectedItem().toString().toUpperCase();
+                r74_1=etP74_1.getText().toString().toUpperCase();
+                r75_1=etP75_1.getText().toString().toUpperCase();
+                r76_1=etP76_1.getText().toString().toUpperCase();
+                r77_1=etP77_1.getText().toString().toUpperCase();
+                r78_1=sP78_1.getSelectedItem().toString().toUpperCase();
+                r79=sP79.getSelectedItem().toString().toUpperCase();
+                r80=sP80.getSelectedItem().toString().toUpperCase();
+                r81=etP81.getText().toString().toUpperCase();
+
+                //endregion
+
+                //region 6. SALUD Y CONDICIÓN FÍSICA
+                r82=sP82.getSelectedItem().toString().toUpperCase();
+                r90_alcohol=sP90_alcohol.getSelectedItem().toString().toUpperCase();
+                r91_alcohol=etP91_alcohol.getText().toString().toUpperCase();
+                r92_alcohol=etP92_alcohol.getText().toString().toUpperCase();
+                r83=sP83.getSelectedItem().toString().toUpperCase();
+                r90_tabaco=sP90_tabaco.getSelectedItem().toString().toUpperCase();
+                r91_tabaco=etP91_tabaco.getText().toString().toUpperCase();
+                r92_tabaco=etP92_tabaco.getText().toString().toUpperCase();
+                r84=sP84.getSelectedItem().toString().toUpperCase();
+                r90_marihuana=sP90_marihuana.getSelectedItem().toString().toUpperCase();
+                r91_marihuana=etP91_marihuana.getText().toString().toUpperCase();
+                r92_marihuana=etP92_marihuana.getText().toString().toUpperCase();
+                r85=sP85.getSelectedItem().toString().toUpperCase();
+                r90_pastillas=sP90_pastillas.getSelectedItem().toString().toUpperCase();
+                r91_pastillas=etP91_pastillas.getText().toString().toUpperCase();
+                r92_pastillas=etP92_pastillas.getText().toString().toUpperCase();
+                r86=sP86.getSelectedItem().toString().toUpperCase();
+                r90_solventes=sP90_solventes.getSelectedItem().toString().toUpperCase();
+                r91_solventes=etP91_solventes.getText().toString().toUpperCase();
+                r92_solventes=etP92_solventes.getText().toString().toUpperCase();
+                r87=sP87.getSelectedItem().toString().toUpperCase();
+                r90_cristal=sP90_cristal.getSelectedItem().toString().toUpperCase();
+                r91_cristal=etP91_cristal.getText().toString().toUpperCase();
+                r92_cristal=etP92_cristal.getText().toString().toUpperCase();
+                r88=sP88.getSelectedItem().toString().toUpperCase();
+                r90_cocaina=sP90_cocaina.getSelectedItem().toString().toUpperCase();
+                r91_cocaina=etP91_cocaina.getText().toString().toUpperCase();
+                r92_cocaina=etP92_cocaina.getText().toString().toUpperCase();
+                r89=sP89.getSelectedItem().toString().toUpperCase();
+                r93_otroConsumo=etP93_otroConsumo.getText().toString().toUpperCase();
+                r90_otroConsumo=sP90_otroConsumo.getSelectedItem().toString().toUpperCase();
+                r91_otroConsumo=etP91_otroConsumo.getText().toString().toUpperCase();
+                r92_otroConsumo=etP92_otroConsumo.getText().toString().toUpperCase();
+                r94=sP94.getSelectedItem().toString().toUpperCase();
+                r95=etP95.getText().toString().toUpperCase();
+                //endregion
+
+                r98=etP98.getText().toString().toUpperCase();// dato de fecha de entrevista
+
+
+
+                FOLIO=etP97.getText().toString().toUpperCase();
+
+                //endregion
+
+                //region Insertar a Base de Datos
+                db.insertarDatosGenerales(r1,r2,r3,r4,r5, r6, FOLIO, r98, min, r96, r99, r100);
+                db.insertarDatosGeneralesDomicilio(r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r17, r18, r19, r20, r21, r22,
+                        r23, r24, r25, r26, r27, r28, r29, r30, r31, FOLIO);
+                db.insertarDatosFamiliares(r32, r33, r34,r35, r36, r37, r33_1, r34_1,r35_1, r36_1, r37_1, r33_2, r34_2,r35_2, r36_2, r37_2,
+                        r33_3, r34_3,r35_3, r36_3, r37_3, r38, FOLIO);
+                db.insertarDatosReferencias(r39, r40, r41, r42, r43, r39_1, r40_1, r41_1, r42_1, r43_1, r44, r45, r46, r47, FOLIO);
+                db.insertarDatosEscolarLaboral(r48, r49, r50, r51, r52, r53, r54, r55, r56, r57, r58, r59, FOLIO);
+                db.insertarDatosAbandonoEstado(r60, r61, r62, r63, r64, r65, r66, r67, r68, r69, r70, r71, r72, r67_1, r68_1, r69_1, r70_1, r71_1, r72_1, r73, r74,
+                        r75, r76, r77, r78, r74_1, r75_1, r76_1, r77_1, r78_1, r79, r80, r81, FOLIO);
+                db.insertarDatosSalud(r82, r90_alcohol, r91_alcohol, r92_alcohol, r83, r90_tabaco, r91_tabaco, r92_tabaco, r84, r90_marihuana, r91_marihuana, r92_marihuana,
+                        r85, r90_pastillas, r91_pastillas, r92_pastillas, r86, r90_solventes, r91_solventes, r92_solventes, r87, r90_cristal, r91_cristal, r92_cristal,
+                        r88, r90_cocaina, r91_cocaina, r92_cocaina, r89, r93_otroConsumo, r90_otroConsumo, r91_otroConsumo, r92_otroConsumo, r94, r95, FOLIO);
+                Toast.makeText(getApplicationContext(),"Datos Guardados", Toast.LENGTH_SHORT).show();
+
+                Intent intent= new Intent(v.getContext(), MainActivity.class);
+                startActivity(intent);
+                //endregion
+
+            }
+        });
         //endregion
 
     }
+    //endregion
 
+    //region Crear y seleccionar DatePicker
     private void showDatePickerDialog(final EditText editText) {
         DatePickerFragment newFragment = DatePickerFragment.newInstance(new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -1460,12 +1907,75 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
             case R.id.etP92_otroConsumo:
                 showDatePickerDialog(etP92_otroConsumo);
                 break;
-            case R.id.etP98:
+
+            /*case R.id.etP98:
                 showDatePickerDialog(etP98);
-                break;
+                break;*/
         }
     }
+    //endregion
 
+    //region fechasDiferenciaEnDias
+    public static int fechasDiferenciaEnDias(Date fechaInicial, Date fechaFinal) {
 
+        String diferenciaFinal="";
+
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd H:m:s");
+        String fechaInicioString = df.format(fechaInicial);
+        try {
+            fechaInicial = df.parse(fechaInicioString);
+        }
+        catch (ParseException ex) {
+        }
+
+        String fechaFinalString = df.format(fechaFinal);
+        try {
+            fechaFinal = df.parse(fechaFinalString);
+        }
+        catch (ParseException ex) {
+        }
+
+        int diferencia=(int) ((fechaFinal.getTime()-fechaInicial.getTime())/1000);
+        /*int dias=0;
+        int horas=0;
+        int minutos=0;
+        if(diferencia>86400) {
+            dias=(int)Math.floor(diferencia/86400);
+            diferencia=diferencia-(dias*86400);
+        }
+        if(diferencia>3600) {
+            horas=(int)Math.floor(diferencia/3600);
+            diferencia=diferencia-(horas*3600);
+        }
+        if(diferencia>60) {
+            minutos=(int)Math.floor(diferencia/60);
+            diferencia=diferencia-(minutos*60);
+        }*/
+
+        int minutos=(int)Math.floor(diferencia/60);
+
+        return minutos;
+    }
+    //endregion
+
+    //region viveConPadres
+    public void viveConPadres(){
+        if (vivePadres==true){
+            et33.setText(etP17.getText().toString());
+            et34.setText("Papá");
+            et33_1.setText(etP19.getText().toString());
+            et34_1.setText("Mamá");
+        }
+        else{
+            et33.setText("");
+            et34.setText("");
+            et33_1.setText("");
+            et34_1.setText("");
+        }
+
+    }
+
+    //endregion
+    //endregion
 
 }

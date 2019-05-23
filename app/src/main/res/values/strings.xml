@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Evaluación</string>
+    <!--region Encuesta AMLO-->}<string name="app_name">Evaluación</string>
     <string name="title_activity_encuesta">encuesta</string>
     <string name="formato_fecha">dd/mm/yyyy</string>
     <string name="p9">9. Para alcanzar la calidad educativa es necesario apoyar a
@@ -24,15 +24,19 @@
     <string name="p23">23.Sexo</string>
     <string name="p24">24. Edad</string>
     <string name="p25">25. Ocupación</string>
+    <!--endregion-->
 
+    <!--region Entrevista-->
+    <!--region DATOS GENERALES DEL IMPUTADO-->
     <string name="e1">Nombre</string>
     <string name="e2">Alias</string>
     <string name="e3">Fecha de nacimiento</string>
     <string name="e4">Edad</string>
     <string name="e5">Lugar de nacimiento</string>
     <string name="e6">Sexo</string>
+
     <string name="e7">Calle y número</string>
-    <string name="e8">Colonia o fraccionamiento</string>
+    <string name="e8">Nombre de la Colonia o fraccionamiento</string>
     <string name="e9">Municipio</string>
     <string name="e10">Estado</string>
     <string name="e11">Tipo de domicilio</string>
@@ -45,6 +49,7 @@
     <string name="e18">Domicilio del padre</string>
     <string name="e19">Nombre de la madre</string>
     <string name="e20">Domicilio de la madre</string>
+    <string name="e21_1">¿Actualmente cuenta con un domicilio secundario?</string>
     <string name="e21">Calle y número</string>
     <string name="e22">Colonia o fraccionamiento</string>
     <string name="e23">Municipio</string>
@@ -56,34 +61,49 @@
     <string name="e29">Estado civil</string>
     <string name="e30">Tiempo</string>
     <string name="e31">Hijos</string>
+    <!--endregion-->
+
+    <!--region DATOS FAMILIARES Y PERSONAS CON LAS QUE HABITA EL IMPUTADO-->
     <string name="e32">¿Con cuántas personas vive actualmente?</string>
+    <string name="e32_1">¿Actualmente vive con sus padres?</string>
     <string name="e33">Nombre</string>
     <string name="e34">Parentesco</string>
     <string name="e35">Edad</string>
     <string name="e36">Ocupación</string>
     <string name="e37">¿Desde cuándo habita?</string>
     <string name="e38">Observaciones (si no habita con familiares preguntar el motivo y donde habitan los mismos)</string>
+
     <string name="e39">Nombre</string>
     <string name="e40">Relación</string>
     <string name="e41">Domicilio</string>
     <string name="e42">Edad</string>
     <string name="e43">Teléfono</string>
+
     <string name="e44">¿Recientemente se cambio de domicilio (a partir de un año)?</string>
     <string name="e45">Dirección</string>
     <string name="e46">Tipo de domicilio</string>
     <string name="e47">Motivo mudanza</string>
+    <!--endregion-->
+
+    <!--region HISTORIAL ESCOLAR-->
     <string name="e48">¿Actualmente Estudia?</string>
     <string name="e49">Nombre de la institución donde actualmente estudia</string>
     <string name="e50">Último grado de estudios</string>
+    <!--endregion-->
+
+    <!--region HISTORIAL LABORAL OCUPACIONAL-->
     <string name="e51">¿Actualmente Trabaja?</string>
     <string name="e52">Nombre del empleo</string>
     <string name="e53">Dirección </string>
-    <string name="e54">Nombre del Patrón</string>
-    <string name="e55">Teléfono</string>
+    <string name="e54">¿Qué tipo de trabajo es?</string>
+    <string name="e55">Horario</string>
     <string name="e56">Fecha de inicio</string>
-    <string name="e57">Días/horario</string>
+    <string name="e57">Días laborales</string>
     <string name="e58">Salario Semanal</string>
     <string name="e59">En caso de no laborar, ¿Cómo subsiste económicamente?</string>
+    <!--endregion-->
+
+    <!--region INFORMACIÓN DE FACILIDADES PARA ABANDONAR EL ESTADO-->
     <string name="e60">¿Ha viajado fuera de la República Mexicana?</string>
     <string name="e61">País</string>
     <string name="e62">Estado</string>
@@ -91,21 +111,25 @@
     <string name="e64">Fecha de ingreso</string>
     <string name="e65">Fecha de salida</string>
     <string name="e66">¿Tiene Familiares o personas con relación de amistad en el extranjero?</string>
-    <string name="e67">Nombre</string>
+    <string name="e67">Nombre</string> <!--Dos personas-->
     <string name="e68">Relación con el entrevistado</string>
     <string name="e69">País</string>
     <string name="e70">Estado</string>
     <string name="e71">Ciudad</string>
     <string name="e72">Frecuencia de contacto</string>
     <string name="e73">¿Tiene Familiares o personas con relación de amistad en otros estados de la República?</string>
-    <string name="e74">Nombre</string>
+    <string name="e74">Nombre</string> <!--Dos personas-->
     <string name="e75">Relación con el entrevistado</string>
     <string name="e76">Estado</string>
     <string name="e77">Ciudad</string>
     <string name="e78">Frecuencia de contacto</string>
+
     <string name="e79">¿Cuenta con pasaporte expedido por la SER?</string>
     <string name="e80">¿Cuenta con VISA vigente?</string>
     <string name="e81">Observaciones</string>
+    <!--endregion-->
+
+    <!--region SALUD Y CONDICIÓN FÍSICA-->
     <string name="e82">¿Tomas alcohol?</string>
     <string name="e83">¿Fumas o Consumes Tabaco?</string>
     <string name="e84">¿Fumas o Consumes Marihuana?</string>
@@ -114,17 +138,23 @@
     <string name="e87">¿Fumas o Consumes Cristal?</string>
     <string name="e88">¿Fumas o Consumes Cocaína?</string>
     <string name="e89">¿Fumas o Consumes alguna otra sustancia psicotrópicas y/o estupefacientes?</string>
+
     <string name="e90">Frecuencia</string>
     <string name="e91">Cantidad</string>
     <string name="e92">Fecha de último consumo</string>
+
     <string name="e93">¿Cuál es el nombre de lo que consumes?</string>
+
     <string name="e94">¿Padece alguna enfermedad o condición física que afecte su salud?</string>
     <string name="e95">Específique</string>
+    <!--endregion-->
+
+    <!--region DATOS FINALES-->
     <string name="e96">Nombre del entrevistador</string>
     <string name="e97">Folio</string>
     <string name="e98">Fecha de entrevista</string>
     <string name="e99">Observaciones finales</string>
-
-
-
+    <string name="e100">Tipo de entrevista</string>
+    <!--endregion-->
+    <!--endregion-->
 </resources>
