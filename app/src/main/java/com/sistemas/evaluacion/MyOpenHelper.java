@@ -9,9 +9,6 @@ import java.util.ArrayList;
 
 import com.sistemas.evaluacion.entidades.datosGenerales;
 
-
-
-
 public class MyOpenHelper extends SQLiteOpenHelper {
 
     //region Crear Tablas
