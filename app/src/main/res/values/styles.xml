@@ -20,7 +20,7 @@
     </style>
 
     <style name="FlatButton" parent="Theme.AppCompat.Light">
-        <item name="android:textColor">@color/Cyan</item>
+        <item name="android:textColor">@color/myBlue</item>
         <item name="colorControlHighlight">@color/Teal</item>
     </style>
 

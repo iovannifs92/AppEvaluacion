@@ -460,6 +460,10 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         return res;
     }
 
+    public void nada(){
+        System.out.println("si llego");
+    }
+
     //endregion
 
 }

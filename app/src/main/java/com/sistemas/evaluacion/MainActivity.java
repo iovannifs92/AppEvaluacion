@@ -10,6 +10,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import com.sistemas.evaluacion.entidades.datosGenerales;
+import com.sistemas.evaluacion.MyOpenHelper;
 
 public class MainActivity extends AppCompatActivity {
 

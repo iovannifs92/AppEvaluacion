@@ -1,5 +1,6 @@
 <resources>
-    <!--region Encuesta AMLO-->}<string name="app_name">Evaluación</string>
+    <!--region Encuesta AMLO-->}
+    <string name="app_name">Evaluación</string>
     <string name="title_activity_encuesta">encuesta</string>
     <string name="formato_fecha">dd/mm/yyyy</string>
     <string name="p9">9. Para alcanzar la calidad educativa es necesario apoyar a
@@ -157,4 +158,13 @@
     <string name="e100">Tipo de entrevista</string>
     <!--endregion-->
     <!--endregion-->
+
+    <string name="title_activity_main_menu">Evaluación de Riesgos</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">SCORPIO</string>
+    <string name="nav_header_subtitle">DGEP</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
 </resources>

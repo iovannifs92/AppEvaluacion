@@ -1845,7 +1845,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                         r88, r90_cocaina, r91_cocaina, r92_cocaina, r89, r93_otroConsumo, r90_otroConsumo, r91_otroConsumo, r92_otroConsumo, r94, r95, FOLIO);
                 Toast.makeText(getApplicationContext(),"Datos Guardados", Toast.LENGTH_SHORT).show();
 
-                Intent intent= new Intent(v.getContext(), MainActivity.class);
+                Intent intent= new Intent(v.getContext(), MainMenu.class);
                 startActivity(intent);
                 //endregion
 
