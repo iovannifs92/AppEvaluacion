@@ -46,8 +46,10 @@ public class MainMenu extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();*/
+                Intent intent= new Intent(view.getContext(), entrevista.class);
+                startActivity(intent);
             }
         });
 
@@ -70,19 +72,6 @@ public class MainMenu extends AppCompatActivity
 
         //db.nada();
 
-
-
-        //Ir a segundo activity
-        Button btnCambioActivity= (Button) findViewById(R.id.btnCambiarActivity);
-        btnCambioActivity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent= new Intent(view.getContext(), entrevista.class);
-                //Intent intent= new Intent(view.getContext(), encuesta.class);
-                startActivity(intent);
-                //Toast.makeText(getApplicationContext(), "Presiono boton para ir a segundo activity", Toast.LENGTH_SHORT).show();
-            }
-        });
         Button btnExport= (Button) findViewById(R.id.btnExport);
         btnExport.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,6 +127,12 @@ public class MainMenu extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+
+        switch(id){
+            case R.id.nav_car:
+                Toast.makeText(getApplicationContext(),"Hola desde carro", Toast.LENGTH_SHORT).show();
+                break;
+        }
 
         if (id == R.id.nav_camera) {
             // Handle the camera action
