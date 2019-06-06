@@ -159,6 +159,7 @@
     <!--endregion-->
     <!--endregion-->
 
+    <!--region Drawer Menu-->
     <string name="title_activity_main_menu">Evaluación de Riesgos</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -166,5 +167,18 @@
     <string name="nav_header_subtitle">DGEP</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <!--endregion-->
+
+    <!--region Consulta Domicilio-->
+    <string name="cdCalle">Calle Número</string>
+    <string name="cdColonia">Colonia/Fracc</string>
+    <string name="cdMunicipio">Municipio</string>
+    <string name="cdEstado">Estado</string>
+    <!--endregion-->
+
+    <!--region-->
+    <!--endregion-->
+
+
 
 </resources>

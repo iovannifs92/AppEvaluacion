@@ -130,7 +130,8 @@ public class MainMenu extends AppCompatActivity
 
         switch(id){
             case R.id.nav_car:
-                Toast.makeText(getApplicationContext(),"Hola desde carro", Toast.LENGTH_SHORT).show();
+                Intent intent= new Intent(this, ConsultaDomicilio.class);
+                startActivity(intent);
                 break;
         }
 

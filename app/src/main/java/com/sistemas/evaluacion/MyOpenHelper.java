@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 
 import com.sistemas.evaluacion.entidades.datosGenerales;
+import com.sistemas.evaluacion.entidades.datosDomicilio;
 
 public class MyOpenHelper extends SQLiteOpenHelper {
 
