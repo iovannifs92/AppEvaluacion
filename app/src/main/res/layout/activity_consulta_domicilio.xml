@@ -26,6 +26,12 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="20dp"/>
 
+        <Button
+            android:id="@+id/GMapsLauncher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ir a domicilio" />
+
         <RelativeLayout
             android:layout_marginTop="30dp"
             android:layout_width="match_parent"

@@ -417,6 +417,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         c.close();
         return lista;
     }
+    //endregion
 
     public ArrayList<datosGenerales> getDatosGenerales(){
         ArrayList<datosGenerales> lista=new ArrayList<datosGenerales>();
@@ -454,6 +455,55 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         return lista;
     }
 
+    //region Obtener los datos del domicilio en la base de datos
+    public ArrayList<datosDomicilio> getDomicilios(){
+        ArrayList<datosDomicilio> lista = new ArrayList<datosDomicilio>();
+        Cursor c=db.rawQuery("select _id, e7, e8, e9, e10, e11, e12, e13, e14, e15, e16, e17, e18, e19, e20, e21, e22, e23, e24, e25, e26, e27, e28, e29, e30, e31, Folio" + "  from imputado_datos_domicilio",  null);
+        if (c != null && c.getCount()>0) {
+            c.moveToFirst();
+            do {
+                String e7 = c.getString(c.getColumnIndex("e7"));
+                String e8 = c.getString(c.getColumnIndex("e8"));
+                String e9 = c.getString(c.getColumnIndex("e9"));
+                String e10 = c.getString(c.getColumnIndex("e10"));
+                String e11 = c.getString(c.getColumnIndex("e11"));
+                String e12 = c.getString(c.getColumnIndex("e12"));
+                String e13 = c.getString(c.getColumnIndex("e13"));
+                String e14 = c.getString(c.getColumnIndex("e14"));
+                String e15 = c.getString(c.getColumnIndex("e15"));
+                String e16 = c.getString(c.getColumnIndex("e16"));
+                String e17 = c.getString(c.getColumnIndex("e17"));
+                String e18 = c.getString(c.getColumnIndex("e18"));
+                String e19 = c.getString(c.getColumnIndex("e19"));
+                String e20 = c.getString(c.getColumnIndex("e20"));
+                String e21 = c.getString(c.getColumnIndex("e21"));
+                String e22 = c.getString(c.getColumnIndex("e22"));
+                String e23 = c.getString(c.getColumnIndex("e23"));
+                String e24 = c.getString(c.getColumnIndex("e24"));
+                String e25 = c.getString(c.getColumnIndex("e25"));
+                String e26 = c.getString(c.getColumnIndex("e26"));
+                String e27 = c.getString(c.getColumnIndex("e27"));
+                String e28 = c.getString(c.getColumnIndex("e28"));
+                String e29 = c.getString(c.getColumnIndex("e29"));
+                String e30 = c.getString(c.getColumnIndex("e30"));
+                String e31 = c.getString(c.getColumnIndex("e31"));
+                String Folio = c.getString(c.getColumnIndex("Folio"));
+
+                int id = c.getInt(c.getColumnIndex("_id"));
+                datosDomicilio dato = new datosDomicilio(id, e7, e8, e9, e10, e11, e12, e13, e14,
+                        e15, e16, e17, e18, e19, e20, e21, e22, e23, e24, e25, e26, e27, e28, e29,
+                        e30, e31, Folio);
+
+                //Añadimos la direccion a la lista
+                lista.add(dato);
+            } while (c.moveToNext());
+        }
+
+        //Cerramos el cursor
+        c.close();
+        return lista;
+    }
+
     public Cursor raw() {
 
         SQLiteDatabase db = this.getReadableDatabase();
@@ -464,7 +514,5 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     public void nada(){
         System.out.println("si llego");
     }
-
-    //endregion
 
 }
