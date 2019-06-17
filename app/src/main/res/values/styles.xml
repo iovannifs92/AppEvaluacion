@@ -15,8 +15,8 @@
     </style>
 
     <style name="SecondaryColoredButton" parent="Widget.AppCompat.Button.Colored">
-        <item name="colorButtonNormal">#0C1282</item>
-        <item name="colorControlHighlight">#060940</item>
+        <item name="colorButtonNormal">#233460</item>
+        <item name="colorControlHighlight">#80AEAB</item>
     </style>
 
     <style name="FlatButton" parent="Theme.AppCompat.Light">
