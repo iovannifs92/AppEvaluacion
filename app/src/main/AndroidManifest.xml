@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ConsultaDomicilio"></activity>
+        <activity android:name=".ConsultaDomicilio" />
         <activity
             android:name=".MainMenu"
             android:label="@string/title_activity_main_menu"
@@ -29,7 +29,7 @@
             android:name=".encuesta"
             android:label="@string/title_activity_encuesta"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
