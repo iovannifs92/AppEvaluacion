@@ -7,20 +7,21 @@ package com.sistemas.evaluacion.entidades;
 //dd.e10 as Estado,
 //dd.e11 as Tipo_Domicilo,
 //dd.e12 as Descripción_Domicilio, dd.e13 as Tiempo_Radicando, dd.e14 as Horario_Localización, dd.e15 as Telefono_Casa, dd.e16 as Celular,
-//dd.e17 as Nombre_Papá, dd.e18 as Domicilio_Papá, dd.e19 as Nombre_Mamá, dd.e20 as Domicilio_Mamá, dd.e21 as DomSecundario_Calle,
-//dd.e22 as DomSecundario_Colonia_Fraccionamiento, dd.e23 as DomSecundario_Municipio, dd.e24 as DomSecundario_Estado, dd.e25 as DomSecundario_Tipo_Domicilio,
-//dd.e26 DomSecundario_Descripción, dd.e27 as DomSecundario_Tiempo_Radicando, dd.e28 as DomSecundario_Horario_Localización, dd.e29 as Estado_Civil,
-//dd.e30 as Tiempo, dd.e31 as Hijos,
+//dde32_1 as vive_Padres, dd.e17 as Nombre_Papá, dd.e18 as Domicilio_Papá, dd.e19 as Nombre_Mamá, dd.e20 as Domicilio_Mamá,
+//dd.e21 as DomSecundario_Calle, dd.e22 as DomSecundario_Colonia_Fraccionamiento, dd.e23 as DomSecundario_Municipio,
+//dd.e24 as DomSecundario_Estado, dd.e25 as DomSecundario_Tipo_Domicilio, dd.e26 DomSecundario_Descripción,
+//dd.e27 as DomSecundario_Tiempo_Radicando, dd.e28 as DomSecundario_Horario_Localización, dd.e29 as Estado_Civil, dd.e30 as Tiempo,
+//dd.e31 as Hijos,
 //endregion
 
 public class datosDomicilio {
     int id;
-    String e7, e8, e9, e10, e11, e12, e13, e14, e15, e16, e17, e18, e19, e20, e21, e22, e23, e24, e25, e26, e27, e28, e29, e30, e31, Folio;
+    String e7, e8, e9, e10, e11, e12, e13, e14, e15, e16, e32_1, e17, e18, e19, e20, e21, e22, e23, e24, e25, e26, e27, e28, e29, e30, e31, Folio;
 
     //region Constructor
     public datosDomicilio(int id, String e7, String e8, String e9, String e10, String e11, String e12, String e13, String e14, String e15, String e16,
-                          String e17, String e18, String e19, String e20, String e21, String e22, String e23, String e24, String e25, String e26, String e27,
-                          String e28, String e29, String e30, String e31, String folio) {
+                          String e32_1, String e17, String e18, String e19, String e20, String e21, String e22, String e23, String e24, String e25,
+                          String e26, String e27, String e28, String e29, String e30, String e31, String folio) {
         this.id = id;
         this.e7 = e7;
         this.e8 = e8;
@@ -32,6 +33,7 @@ public class datosDomicilio {
         this.e14 = e14;
         this.e15 = e15;
         this.e16 = e16;
+        this.e32_1 = e32_1;
         this.e17 = e17;
         this.e18 = e18;
         this.e19 = e19;
@@ -139,6 +141,14 @@ public class datosDomicilio {
 
     public void setE16(String e16) {
         this.e16 = e16;
+    }
+
+    public String getE32_1() {
+        return e32_1;
+    }
+
+    public void setE32_1(String e32_1) {
+        this.e32_1 = e32_1;
     }
 
     public String getE17() {

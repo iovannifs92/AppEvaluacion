@@ -1,4 +1,4 @@
-package com.sistemas.evaluacion;
+package com.sistemas.evaluacion.entidades;
 
 //region Diccionario
 //Escolar
@@ -22,7 +22,9 @@ public class datosEscolarLaboral {
     String e48, e49, e50, e51, e52, e53, e54, e55, e57, e56, e58, e59, Folio;
 
     //region Constructor
-    public datosEscolarLaboral(int id, e48, e49, e50, e51, e52, e53, e54, e55, e57, e56, e58, e59, String folio){
+    public datosEscolarLaboral(int id, String e48, String e49, String e50, String e51, String e52,
+                               String e53, String e54, String e55, String e57, String e56,
+                               String e58, String e59, String folio){
         this.id = id;
         this.e48 = e48;
         this.e49 = e49;

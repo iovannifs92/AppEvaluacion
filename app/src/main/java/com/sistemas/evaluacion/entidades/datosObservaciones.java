@@ -1,11 +1,12 @@
 package com.sistemas.evaluacion.entidades;
 
-public class datosObservacion {
+public class datosObservaciones {
     int id;
     String field, observation, Folio;
 
-    public datosObservacion(int id, String field, String observation, String folio){
+    public datosObservaciones(int id, String field, String observation, String folio){
         this.id = id;;
+        this.field = field;
         this.observation = observation;
         Folio = folio;
     }

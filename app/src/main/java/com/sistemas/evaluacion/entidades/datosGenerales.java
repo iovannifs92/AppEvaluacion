@@ -4,14 +4,16 @@ public class datosGenerales {
 
     //region Variables Globales
     int id;
-    String nombre, alias, fNacimiento, edad, lNacimiento, sexo, folio, fEntrevista, duracionE, entrevistador, observacionesF, tipo;
+    String nombre, alias, fNacimiento, edad, lNacimiento, sexo, folio, fEntrevista, duracionE, entrevistador, observacionesF, tipo, tieneDomicilioS,
+            otrosHabitantes;
     //endregion
 
     //region Constructor
     public datosGenerales(int id, String nombre, String alias, String fNacimiento,
                           String edad, String lNacimiento, String sexo, String folio,
                           String fEntrevista, String duracionE, String entrevistador,
-                          String observacionesF, String tipo) {
+                          String observacionesF, String tipo, String tieneDomicilioS,
+                          String otrosHabitantes) {
         this.id = id;
         this.nombre = nombre;
         this.alias = alias;
@@ -25,6 +27,8 @@ public class datosGenerales {
         this.entrevistador = entrevistador;
         this.observacionesF = observacionesF;
         this.tipo = tipo;
+        this.tieneDomicilioS = tieneDomicilioS;
+        this.otrosHabitantes = otrosHabitantes;
     }
     //endregion
 
@@ -131,6 +135,22 @@ public class datosGenerales {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    public String getTieneDomicilioS() {
+        return tieneDomicilioS;
+    }
+
+    public void setTieneDomicilioS(String tieneDomicilioS) {
+        this.tieneDomicilioS = tieneDomicilioS;
+    }
+
+    public String getOtrosHabitantes() {
+        return otrosHabitantes;
+    }
+
+    public void setOtrosHabitantes(String otrosHabitantes) {
+        this.otrosHabitantes = otrosHabitantes;
     }
     //endregion
 
