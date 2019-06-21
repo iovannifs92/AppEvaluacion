@@ -133,6 +133,10 @@ public class MainMenu extends AppCompatActivity
                 Intent intent= new Intent(this, ConsultaDomicilio.class);
                 startActivity(intent);
                 break;
+            case R.id.bd_nube:
+                Intent intent2= new Intent(this, SincronizarBD.class);
+                startActivity(intent2);
+                break;
         }
 
         if (id == R.id.nav_camera) {
@@ -143,7 +147,7 @@ public class MainMenu extends AppCompatActivity
 
         } else if (id == R.id.nav_manage) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.bd_nube) {
 
         } else if (id == R.id.nav_send) {
 
