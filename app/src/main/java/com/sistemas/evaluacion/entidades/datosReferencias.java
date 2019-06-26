@@ -1,13 +1,30 @@
 package com.sistemas.evaluacion.entidades;
 
+//region Diccionario
+//dh.39 as Nombre1,
+//dh.40 as Relación1,
+//dh.41 as Domicilio1,
+//dh.42 as Edad1,
+//dh.43 as Teléfono1,
+//dh.39_1 as Nombre2,
+//dh.40_1 as Relación2,
+//dh.41_1 as Domicilio2,
+//dh.42_1 as Edad2,
+//dh.43_1 as Teléfono2,
+//dh.44 as Tiene_Cambio_Domicilio,
+//dh.45 as Dirección,
+//dh.46 as Tipo_Domicilio,
+//dh.47 as Motivo_Mudanza,
+//endregion
+
 public class datosReferencias {
     int id;
-    String e39,  e40,  e41,  e42,  e43,  e39_1,  e40_1,  e41_1,  e42_1,  e43_1,  e44,  e45,  e46,  e47, Folio;
+    String e39, e40, e41, e42, e43, e39_1, e40_1, e41_1, e42_1, e43_1, e44, e45, e46, e47, Folio;
 
     //region Constructor
-
-    public datosReferencias(int id, String e39, String e40, String e41, String e42, String e43, String e39_1, String e40_1, String e41_1, String e42_1,
-                            String e43_1, String e44, String e45, String e46, String e47, String folio) {
+    public datosReferencias(int id, String e39, String e40, String e41, String e42, String e43,
+                            String e39_1, String e40_1, String e41_1, String e42_1, String e43_1,
+                            String e44, String e45, String e46, String e47, String folio){
         this.id = id;
         this.e39 = e39;
         this.e40 = e40;
@@ -25,7 +42,6 @@ public class datosReferencias {
         this.e47 = e47;
         Folio = folio;
     }
-
     //endregion
 
     //region Get Set

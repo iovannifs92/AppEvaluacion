@@ -1,18 +1,62 @@
 package com.sistemas.evaluacion.entidades;
 
+//region Diccionario
+//ds.e82 as Consume_Alcohol,
+//ds.e90_alcohol as Alcohol_Frecuencia,
+//ds.e91_alcohol as Alcohol_Cantidad,
+//ds.e92_alcohol as Alcohol_Ultima_Fecha,
+//ds.e83 as Consume_Tabaco,
+//ds.e90_tabaco as Marihuana_Frecuencia,
+//ds.e91_tabaco as Marihuana_Cantidad,
+//ds.e92_tabaco as Marihuana_Ultima_Fecha,
+//ds.e84 as Consume_Marihuana,
+//ds.e90_marihuana as Alcohol_Frecuencia,
+//ds.e91_marihuana as Alcohol_Cantidad,
+//ds.e92_marihuana as Alcohol_Ultima_Fecha,
+//ds.e85 as Consume_Pastillas,
+//ds.e90_pastillas as Pastillas_Frecuencia,
+//ds.e91_pastillas as Pastillas_Cantidad,
+//ds.e92_pastillas as Pastillas_Ultima_Fecha,
+//ds.e86 as Consume_Solvente,
+//ds.e90_solventes as Solventes_Frecuencia,
+//ds.e91_solventes as Solventes_Cantidad,
+//ds.e92_solventes as Solventes_Ultima_Fecha,
+//ds.e87 as Consume_Cristal,
+//ds.e90_cristal as Cristal_Frecuencia,
+//ds.e91_cristal as Cristal_Cantidad,
+//ds.e92_cristal as Cristal_Ultima_Fecha,
+//ds.e88 as Consume_Cocaina,
+//ds.e90_cocaina as Cocaina_Frecuencia,
+//ds.e91_cocaina as Cocaina_Cantidad,
+//ds.e92_cocaina as Cocaina_Ultima_Fecha,
+//ds.e89 as Consume_Otro,
+//ds.e90_otroConsumo as Otro_Frecuencia,
+//ds.e91_otroConsumo as Otro_Cantidad,
+//ds.e92_otroConsumo as Otro_Ultima_Fecha,
+//ds.e93_otroConsumo as Nombre_Otro,
+//ds.e94 as Tiene_Enfermedad,
+//ds.e95 as Especifique_Enfermedad,
+//endregion
+
 public class datosSalud {
     int id;
-    String  e82,  e90_alcohol,  e91_alcohol,  e92_alcohol,  e83,  e90_tabaco,  e91_tabaco,  e92_tabaco, e84,  e90_marihuana,  e91_marihuana,  e92_marihuana,
-            e85,  e90_pastillas,  e91_pastillas,  e92_pastillas, e86,  e90_solventes,  e91_solventes,  e92_solventes,  e87,  e90_cristal,  e91_cristal,
-            e92_cristal, e88,  e90_cocaina,  e91_cocaina,  e92_cocaina,  e89,  e93_otroConsumo,  e90_otroConsumo,  e91_otroConsumo,  e92_otroConsumo,  e94,  e95,  Folio;
+    String e82, e90_alcohol, e91_alcohol, e92_alcohol, e83, e90_tabaco, e91_tabaco, e92_tabaco, e84,
+            e90_marihuana, e91_marihuana, e92_marihuana, e85, e90_pastillas, e91_pastillas,
+            e92_pastillas, e86, e90_solventes, e91_solventes, e92_solventes, e87, e90_cristal,
+            e91_cristal, e92_cristal, e88, e90_cocaina, e91_cocaina, e92_cocaina, e89,
+            e93_otroConsumo, e90_otroConsumo, e91_otroConsumo, e92_otroConsumo, e94, e95, Folio;
 
     //region Constructor
-
-    public datosSalud(int id, String e82, String e90_alcohol, String e91_alcohol, String e92_alcohol, String e83, String e90_tabaco, String e91_tabaco, String e92_tabaco,
-                      String e84, String e90_marihuana, String e91_marihuana, String e92_marihuana, String e85, String e90_pastillas, String e91_pastillas, String e92_pastillas,
-                      String e86, String e90_solventes, String e91_solventes, String e92_solventes, String e87, String e90_cristal, String e91_cristal, String e92_cristal, String e88,
-                      String e90_cocaina, String e91_cocaina, String e92_cocaina, String e89, String e93_otroConsumo, String e90_otroConsumo, String e91_otroConsumo, String e92_otroConsumo,
-                      String e94, String e95, String folio) {
+    public datosSalud(int id, String e82, String e90_alcohol, String e91_alcohol,
+                      String e92_alcohol, String e83, String e90_tabaco, String e91_tabaco,
+                      String e92_tabaco, String e84, String e90_marihuana, String e91_marihuana,
+                      String e92_marihuana, String e85, String e90_pastillas, String e91_pastillas,
+                      String e92_pastillas, String e86, String e90_solventes, String e91_solventes,
+                      String e92_solventes, String e87, String e90_cristal, String e91_cristal,
+                      String e92_cristal, String e88, String e90_cocaina, String e91_cocaina,
+                      String e92_cocaina, String e89, String e93_otroConsumo,
+                      String e90_otroConsumo, String e91_otroConsumo, String e92_otroConsumo,
+                      String e94, String e95, String folio){
         this.id = id;
         this.e82 = e82;
         this.e90_alcohol = e90_alcohol;
@@ -51,7 +95,6 @@ public class datosSalud {
         this.e95 = e95;
         Folio = folio;
     }
-
     //endregion
 
     //region Get Set

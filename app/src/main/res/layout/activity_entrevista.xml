@@ -643,7 +643,7 @@
                     android:layout_marginBottom="20dp"/>
 
 
-                <!--region Personas vivieno con el imputado 1-->
+                <!--region Personas viviendo con el imputado 1-->
                 <TextView
                     android:id="@+id/persona1"
                     android:layout_width="match_parent"
@@ -734,7 +734,7 @@
                     android:layout_marginBottom="20dp"/>
                 <!--endregion 1-->
 
-                <!--region Personas vivieno con el imputado 2-->
+                <!--region Personas viviendo con el imputado 2-->
                 <TextView
                     android:id="@+id/persona2"
                     android:layout_width="match_parent"
@@ -824,7 +824,7 @@
                     android:layout_marginBottom="20dp"/>
                 <!--endregion-->
 
-                <!--region Personas vivieno con el imputado 3-->
+                <!--region Personas viviendo con el imputado 3-->
                 <TextView
                     android:id="@+id/persona3"
                     android:layout_width="match_parent"
@@ -914,7 +914,7 @@
                     android:layout_marginBottom="20dp"/>
                 <!--endregion-->
 
-                <!--region Personas vivieno con el imputado 4-->
+                <!--region Personas viviendo con el imputado 4-->
                 <TextView
                     android:id="@+id/persona4"
                     android:layout_width="match_parent"
@@ -1480,7 +1480,6 @@
                     android:id="@+id/tvP59"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="invisible"
                     android:text="@string/e59" />
 
                 <EditText
@@ -1489,8 +1488,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
                     android:ems="10"
-                    android:inputType="text"
-                    android:visibility="invisible"/>
+                    android:inputType="text"/>
                 <!--endregion-->
             </LinearLayout>
             <!--endregion-->

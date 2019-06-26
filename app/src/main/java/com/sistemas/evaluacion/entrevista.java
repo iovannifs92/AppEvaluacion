@@ -59,7 +59,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
             etP92_cocaina, etP91_otroConsumo, etP92_otroConsumo, etP93_otroConsumo, etP95, etP98;
 
     private EditText etP97, etP1, etP2, etP4, etP5, etP7, etP8, etP9, etP10, etP12, etP14, etP15,
-            etP16, etP17, etP18, etP19, etP20, etP21, etP22, etP23, etP24, etP26, etP28, etP30,
+            etP16, etP17, etP18, etP19, etP20, etP21_1, etP21, etP22, etP23, etP24, etP26, etP28, etP30,
             etP31, etP39, etP40, etP41, etP42, etP43, etP39_1, etP40_1, etP41_1, etP42_1, etP43_1, etP81, etP96, etP99;
     //endregion
 
@@ -80,8 +80,8 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
     //endregion
 
     //region String
-    private String r1,r2,r3,r4,r5,r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r17, r18, r19, r20, r21,
-            r22, r23, r24, r25, r26, r27, r28, r29, r30, r31, r33, r34, r35, r36, r37, r33_1, r34_1,
+    private String r1,r2,r3,r4,r5,r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r32_1, r17, r18, r19, r20,
+            r21_1, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31, r33, r34, r35, r36, r37, r33_1, r34_1,
             r35_1, r36_1, r37_1, r33_2, r34_2, r35_2, r36_2, r37_2, r33_3, r34_3, r35_3, r36_3, r37_3, r38,
             r39, r40, r41, r42, r43, r39_1, r40_1, r41_1, r42_1, r43_1, r44, r45, r46, r47, r48, r49, r50,
             r51, r52, r53, r54, r55, r56, r57, r58, r59, r60, r61, r62, r63, r64, r65, r66,
@@ -233,7 +233,13 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selectedItem=parent.getSelectedItem().toString();
                 if(position!=0){
-                    String dom= etP7.getText().toString()+" "+ sP8.getSelectedItem().toString()+" "+ etP8.getText().toString();
+                    String dom;
+                    if(sP8.getSelectedItem().toString().equals("NA")) {
+                        dom = etP7.getText().toString() + " " + etP8.getText().toString();
+                    }
+                    else {
+                        dom = etP7.getText().toString() + " " + sP8.getSelectedItem().toString() + " " + etP8.getText().toString();
+                    }
                     etP18.setText(dom, TextView.BufferType.EDITABLE);
                     etP20.setText(dom, TextView.BufferType.EDITABLE);
                     vivePadres=true;
@@ -1607,6 +1613,8 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                 r96=etP96.getText().toString().toUpperCase();
                 r99=etP99.getText().toString().toUpperCase();
                 r100=sP100.getSelectedItem().toString().toUpperCase();
+                r21_1=sP21_1.getSelectedItem().toString().toUpperCase();
+                r32=sP32.getSelectedItem().toString().toUpperCase();
 
                 Date fin=new Date();
                 int min=fechasDiferenciaEnDias(inicio, fin);
@@ -1644,6 +1652,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                 r14=etP14.getText().toString().toUpperCase();
                 r15=etP15.getText().toString().toUpperCase();
                 r16=etP16.getText().toString().toUpperCase();
+                r32_1=sP32_1.getSelectedItem().toString().toUpperCase();
                 r17=etP17.getText().toString().toUpperCase();
                 r18=etP18.getText().toString().toUpperCase();
                 r19=etP19.getText().toString().toUpperCase();
@@ -1831,9 +1840,9 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                 //endregion
 
                 //region Insertar a Base de Datos
-                db.insertarDatosGenerales(r1,r2,r3,r4,r5, r6, FOLIO, r98, min, r96, r99, r100);
-                db.insertarDatosGeneralesDomicilio(r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r17, r18, r19, r20, r21, r22,
-                        r23, r24, r25, r26, r27, r28, r29, r30, r31, FOLIO);
+                db.insertarDatosGenerales(r1,r2,r3,r4,r5, r6, FOLIO, r98, min, r96, r99, r100, r21_1, r32);
+                db.insertarDatosGeneralesDomicilio(r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r32_1, r17,
+                        r18, r19, r20, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31, FOLIO);
                 db.insertarDatosFamiliares(r32, r33, r34,r35, r36, r37, r33_1, r34_1,r35_1, r36_1, r37_1, r33_2, r34_2,r35_2, r36_2, r37_2,
                         r33_3, r34_3,r35_3, r36_3, r37_3, r38, FOLIO);
                 db.insertarDatosReferencias(r39, r40, r41, r42, r43, r39_1, r40_1, r41_1, r42_1, r43_1, r44, r45, r46, r47, FOLIO);

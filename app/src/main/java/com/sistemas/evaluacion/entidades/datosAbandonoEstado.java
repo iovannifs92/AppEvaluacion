@@ -1,17 +1,55 @@
 package com.sistemas.evaluacion.entidades;
 
-public class datosAbandonoEstado {
+//region Diccionario
+//dae.e60 as Ha_Viajado_Fuera,
+//dae.e61 as País,
+//dae.e62 as Estado,
+//dae.e63 as Ciudad,
+//dae.e64 as Fecha_ingreso,
+//dae.e65 as Fecha_Salida,
+//dae.e66 as Tiene_Familiares_Extranjeros,
+//dae.e67 as eNombre1,
+//dae.e68 as extRelación1,
+//dae.e69 as extPaís1,
+//dae.e70 as extEstado1,
+//dae.e71 as extCiudad1,
+//dae.e72 as extFrequencia_Contacto1,
+//dae.e67_1 as extNombre2,
+//dae.e68_1 as extRelación2,
+//dae.e69_1 as extPaís2,
+//dae.e70_1 as extEstado2,
+//dae.e71_1 as extCiudad2,
+//dae.e72_1 as extFrequencia_Contacto2,
+//dae.e73 as Tiene_Familiares_Estados,
+//dae.e74 as estNombre1,
+//dae.e75 as estRelación1,
+//dae.e76 as estEstado1,
+//dae.e77 as estCiudad1,
+//dae.e78 as estFrequencia_Contacto1,
+//dae.e74_1 as estNombre2,
+//dae.e75_1 as estRelación2,
+//dae.e76_1 as estEstado2,
+//dae.e77_1 as estCiudad2,
+//dae.e78_1 as estFrequencia_Contacto2,
+//dae.e79 as Tiene_Pasaporte,
+//dae.e80 as Tiene_VISA,
+//dae.e81 as Observaciones,
+//endregion
 
+public class datosAbandonoEstado {
     int id;
-    String  e60,  e61,  e62,  e63,  e64,  e65,  e66, e67,  e68,  e69,  e70,  e71,  e72, e67_1,  e68_1,  e69_1,
-            e70_1,  e71_1,  e72_1, e73,  e74,  e75,  e76,  e77,  e78, e74_1,  e75_1,  e76_1,  e77_1,  e78_1, e79,  e80,  e81,  Folio;
+    String e60, e61, e62, e63, e64, e65, e66, e67, e68, e69, e70, e71, e72, e67_1, e68_1, e69_1,
+            e70_1, e71_1, e72_1, e73, e74, e75, e76, e77, e78, e74_1, e75_1, e76_1, e77_1, e78_1,
+            e79, e80, e81, Folio;
 
     //region Constructor
-
-    public datosAbandonoEstado(int id, String e60, String e61, String e62, String e63, String e64, String e65, String e66, String e67,
-                               String e68, String e69, String e70, String e71, String e72, String e67_1, String e68_1, String e69_1, String e70_1,
-                               String e71_1, String e72_1, String e73, String e74, String e75, String e76, String e77, String e78, String e74_1, String e75_1,
-                               String e76_1, String e77_1, String e78_1, String e79, String e80, String e81, String folio) {
+    public datosAbandonoEstado(int id, String e60, String e61, String e62, String e63, String e64,
+                               String e65, String e66, String e67, String e68, String e69,
+                               String e70, String e71, String e72, String e67_1, String e68_1,
+                               String e69_1, String e70_1, String e71_1, String e72_1, String e73,
+                               String e74, String e75, String e76, String e77, String e78,
+                               String e74_1, String e75_1, String e76_1, String e77_1, String e78_1,
+                               String e79, String e80, String e81, String folio){
         this.id = id;
         this.e60 = e60;
         this.e61 = e61;
@@ -48,7 +86,6 @@ public class datosAbandonoEstado {
         this.e81 = e81;
         Folio = folio;
     }
-
     //endregion
 
     //region Get Set
