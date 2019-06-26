@@ -18,6 +18,17 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"/>
 
+    <Button
+        android:id="@+id/btnAlert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sincroniza Base de Datos"
+        android:theme="@style/PrimaryColoredButton"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"/>
+
     <TextView
         android:id="@+id/tvMuestraResultados"
         android:layout_width="match_parent"

@@ -9,6 +9,11 @@ import java.util.ArrayList;
 
 import com.sistemas.evaluacion.entidades.datosGenerales;
 import com.sistemas.evaluacion.entidades.datosDomicilio;
+import com.sistemas.evaluacion.entidades.datosFamiliares;
+import com.sistemas.evaluacion.entidades.datosReferencias;
+import com.sistemas.evaluacion.entidades.datosEscolarLaboral;
+import com.sistemas.evaluacion.entidades.datosAbandonoEstado;
+import com.sistemas.evaluacion.entidades.datosSalud;
 
 public class MyOpenHelper extends SQLiteOpenHelper {
 
@@ -419,6 +424,8 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     }
     //endregion
 
+    //region Obtener Datos Generales
+
     public ArrayList<datosGenerales> getDatosGenerales(){
         ArrayList<datosGenerales> lista=new ArrayList<datosGenerales>();
         Cursor c=db.rawQuery("select _id, Nombre, Alias, FNacimiento, Edad, LNacimiento, Sexo, Folio, FEntrevista, DuraciónE, Entrevistador, ObservacionesF, Tipo" +
@@ -454,6 +461,8 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         c.close();
         return lista;
     }
+
+    //endregion
 
     //region Obtener los datos del domicilio en la base de datos
     public ArrayList<datosDomicilio> getDomicilios(){
@@ -503,16 +512,243 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         c.close();
         return lista;
     }
+    //endregion
+
+    //region Obtener datos de familiares
+    public ArrayList<datosFamiliares> getFamiliares(){
+        ArrayList<datosFamiliares> lista = new ArrayList<datosFamiliares>();
+        Cursor c=db.rawQuery("select _id, e32,  e33,  e34,  e35,  e36,  e37,  e33_1,  e34_1,  e35_1,  e36_1,  e37_1,  e33_2,  e34_2,  e35_2,  e36_2,  e37_2, e33_3,  e34_3,  e35_3,  e36_3,  e37_3,  e38,  Folio from imputado_datos_familiares",null);
+        if (c != null && c.getCount()>0) {
+            c.moveToFirst();
+            do {
+                String e32=c.getString(c.getColumnIndex("e32"));
+                String e33=c.getString(c.getColumnIndex("e33"));
+                String e34=c.getString(c.getColumnIndex("e34"));
+                String e35=c.getString(c.getColumnIndex("e35"));
+                String e36=c.getString(c.getColumnIndex("e36"));
+                String e37=c.getString(c.getColumnIndex("e37"));
+                String e33_1=c.getString(c.getColumnIndex("e33_1"));
+                String e34_1=c.getString(c.getColumnIndex("e34_1"));
+                String e35_1=c.getString(c.getColumnIndex("e35_1"));
+                String e36_1=c.getString(c.getColumnIndex("e36_1"));
+                String e37_1=c.getString(c.getColumnIndex("e37_1"));
+                String e33_2=c.getString(c.getColumnIndex("e33_2"));
+                String e34_2=c.getString(c.getColumnIndex("e34_2"));
+                String e35_2=c.getString(c.getColumnIndex("e35_2"));
+                String e36_2=c.getString(c.getColumnIndex("e36_2"));
+                String e37_2=c.getString(c.getColumnIndex("e37_2"));
+                String e33_3=c.getString(c.getColumnIndex("e33_3"));
+                String e34_3=c.getString(c.getColumnIndex("e34_3"));
+                String e35_3=c.getString(c.getColumnIndex("e35_3"));
+                String e36_3=c.getString(c.getColumnIndex("e36_3"));
+                String e37_3=c.getString(c.getColumnIndex("e37_3"));
+                String e38=c.getString(c.getColumnIndex("e38"));
+                String Folio=c.getString(c.getColumnIndex("Folio"));
+
+                int id = c.getInt(c.getColumnIndex("_id"));
+                datosFamiliares dato = new datosFamiliares(id, e32,  e33,  e34,  e35,  e36,  e37,  e33_1,  e34_1,  e35_1,  e36_1,
+                        e37_1,  e33_2,  e34_2,  e35_2,  e36_2,  e37_2, e33_3,  e34_3,  e35_3,  e36_3,  e37_3,  e38,  Folio);
+                //Añadimos la direccion a la lista
+                lista.add(dato);
+            } while (c.moveToNext());
+        }
+        //Cerramos el cursor
+        c.close();
+        return lista;
+    }
+    //endregion
+
+    //region Obtener los datos de referencias
+    public ArrayList<datosReferencias> getReferencias(){
+        ArrayList<datosReferencias> lista = new ArrayList<datosReferencias>();
+        Cursor c=db.rawQuery("select _id, e39,  e40,  e41,  e42,  e43,  e39_1,  e40_1,  e41_1,  e42_1,  e43_1,  e44,  e45,  e46,  e47, Folio from imputado_datos_referencias",null);
+        if (c != null && c.getCount()>0) {
+            c.moveToFirst();
+            do {
+                String e39=c.getString(c.getColumnIndex("e39"));
+                String e40=c.getString(c.getColumnIndex("e40"));
+                String e41=c.getString(c.getColumnIndex("e41"));
+                String e42=c.getString(c.getColumnIndex("e42"));
+                String e43=c.getString(c.getColumnIndex("e43"));
+                String e39_1=c.getString(c.getColumnIndex("e39_1"));
+                String e40_1=c.getString(c.getColumnIndex("e40_1"));
+                String e41_1=c.getString(c.getColumnIndex("e41_1"));
+                String e42_1=c.getString(c.getColumnIndex("e42_1"));
+                String e43_1=c.getString(c.getColumnIndex("e43_1"));
+                String e44=c.getString(c.getColumnIndex("e44"));
+                String e45=c.getString(c.getColumnIndex("e45"));
+                String e46=c.getString(c.getColumnIndex("e46"));
+                String e47=c.getString(c.getColumnIndex("e47"));
+                String Folio=c.getString(c.getColumnIndex("Folio"));
+
+                int id = c.getInt(c.getColumnIndex("_id"));
+                datosReferencias dato = new datosReferencias(id, e39,  e40,  e41,  e42,  e43,  e39_1,  e40_1,  e41_1,  e42_1,  e43_1,  e44,  e45,  e46,  e47, Folio);
+                //Añadimos la direccion a la lista
+                lista.add(dato);
+            } while (c.moveToNext());
+        }
+        //Cerramos el cursor
+        c.close();
+        return lista;
+    }
+    //endregion
+
+    //region Obtener los datos Escolares y Laborales
+    public ArrayList<datosEscolarLaboral> getEscolarLaboral(){
+        ArrayList<datosEscolarLaboral> lista = new ArrayList<datosEscolarLaboral>();
+        Cursor c=db.rawQuery("select _id, e48,  e49,  e50,  e51,  e52,  e53,  e54, e55,  e56,  e57,  e58,  e59,  Folio from imputado_datos_historial_escolar_laboral",null);
+        if (c != null && c.getCount()>0) {
+            c.moveToFirst();
+            do {
+                String e48=c.getString(c.getColumnIndex("e48"));
+                String e49=c.getString(c.getColumnIndex("e49"));
+                String e50=c.getString(c.getColumnIndex("e50"));
+                String e51=c.getString(c.getColumnIndex("e51"));
+                String e52=c.getString(c.getColumnIndex("e52"));
+                String e53=c.getString(c.getColumnIndex("e53"));
+                String e54=c.getString(c.getColumnIndex("e54"));
+                String e55=c.getString(c.getColumnIndex("e55"));
+                String e56=c.getString(c.getColumnIndex("e56"));
+                String e57=c.getString(c.getColumnIndex("e57"));
+                String e58=c.getString(c.getColumnIndex("e58"));
+                String e59=c.getString(c.getColumnIndex("e59"));
+                String Folio=c.getString(c.getColumnIndex("Folio"));
+
+                int id = c.getInt(c.getColumnIndex("_id"));
+                datosEscolarLaboral dato = new datosEscolarLaboral(id, e48,  e49,  e50,  e51,  e52,  e53,  e54, e55,  e56,  e57,  e58,  e59,  Folio);
+                //Añadimos la direccion a la lista
+                lista.add(dato);
+            } while (c.moveToNext());
+        }
+        //Cerramos el cursor
+        c.close();
+        return lista;
+    }
+    //endregion
+
+    //region Obtener los datos Abandono Estado
+    public ArrayList<datosAbandonoEstado> getAbandonoEstado(){
+        ArrayList<datosAbandonoEstado> lista = new ArrayList<datosAbandonoEstado>();
+        Cursor c=db.rawQuery("select _id, e60,  e61,  e62,  e63,  e64,  e65,  e66, e67,  e68,  e69,  e70,  e71,  e72, e67_1,  e68_1,  e69_1, e70_1,  e71_1,  " +
+                "e72_1, e73,  e74,  e75,  e76,  e77,  e78, e74_1,  e75_1,  e76_1,  e77_1,  e78_1, e79,  e80,  e81,  Folio from imputados_datos_abandono_estado",null);
+        if (c != null && c.getCount()>0) {
+            c.moveToFirst();
+            do {
+                String e60=c.getString(c.getColumnIndex("e60"));
+                String e61=c.getString(c.getColumnIndex("e61"));
+                String e62=c.getString(c.getColumnIndex("e62"));
+                String e63=c.getString(c.getColumnIndex("e63"));
+                String e64=c.getString(c.getColumnIndex("e64"));
+                String e65=c.getString(c.getColumnIndex("e65"));
+                String e66=c.getString(c.getColumnIndex("e66"));
+                String e67=c.getString(c.getColumnIndex("e67"));
+                String e68=c.getString(c.getColumnIndex("e68"));
+                String e69=c.getString(c.getColumnIndex("e69"));
+                String e70=c.getString(c.getColumnIndex("e70"));
+                String e71=c.getString(c.getColumnIndex("e71"));
+                String e72=c.getString(c.getColumnIndex("e72"));
+                String e67_1=c.getString(c.getColumnIndex("e67_1"));
+                String e68_1=c.getString(c.getColumnIndex("e68_1"));
+                String e69_1=c.getString(c.getColumnIndex("e69_1"));
+                String e70_1=c.getString(c.getColumnIndex("e70_1"));
+                String e71_1=c.getString(c.getColumnIndex("e71_1"));
+                String e72_1=c.getString(c.getColumnIndex("e72_1"));
+                String e73=c.getString(c.getColumnIndex("e73"));
+                String e74=c.getString(c.getColumnIndex("e74"));
+                String e75=c.getString(c.getColumnIndex("e75"));
+                String e76=c.getString(c.getColumnIndex("e76"));
+                String e77=c.getString(c.getColumnIndex("e77"));
+                String e78=c.getString(c.getColumnIndex("e78"));
+                String e74_1=c.getString(c.getColumnIndex("e74_1"));
+                String e75_1=c.getString(c.getColumnIndex("e75_1"));
+                String e76_1=c.getString(c.getColumnIndex("e76_1"));
+                String e77_1=c.getString(c.getColumnIndex("e77_1"));
+                String e78_1=c.getString(c.getColumnIndex("e78_1"));
+                String e79=c.getString(c.getColumnIndex("e79"));
+                String e80=c.getString(c.getColumnIndex("e80"));
+                String e81=c.getString(c.getColumnIndex("e81"));
+
+                String Folio=c.getString(c.getColumnIndex("Folio"));
+
+                int id = c.getInt(c.getColumnIndex("_id"));
+                datosAbandonoEstado dato = new datosAbandonoEstado(id, e60,  e61,  e62,  e63,  e64,  e65,  e66, e67,  e68,  e69,  e70,  e71,  e72, e67_1,  e68_1,  e69_1,
+                        e70_1,  e71_1,  e72_1, e73,  e74,  e75,  e76,  e77,  e78, e74_1,  e75_1,  e76_1,  e77_1,  e78_1, e79,  e80,  e81,  Folio);
+                //Añadimos la direccion a la lista
+                lista.add(dato);
+            } while (c.moveToNext());
+        }
+        //Cerramos el cursor
+        c.close();
+        return lista;
+    }
+    //endregion
+
+    //region Obtener los datos Salud
+    public ArrayList<datosSalud> getSalud(){
+        ArrayList<datosSalud> lista = new ArrayList<datosSalud>();
+        Cursor c=db.rawQuery("select _id, e82,  e90_alcohol,  e91_alcohol,  e92_alcohol,  e83,  e90_tabaco,  e91_tabaco,  e92_tabaco, e84,  e90_marihuana,  e91_marihuana,  e92_marihuana, e85,  " +
+                "e90_pastillas,  e91_pastillas,  e92_pastillas, e86,  e90_solventes,  e91_solventes,  e92_solventes,  e87,  e90_cristal,  e91_cristal, e92_cristal, e88,  e90_cocaina,  e91_cocaina,  e92_cocaina,  " +
+                "e89,  e93_otroConsumo,  e90_otroConsumo,  e91_otroConsumo,  e92_otroConsumo,  e94,  e95,  Folio from imputado_datos_salud",null);
+        if (c != null && c.getCount()>0) {
+            c.moveToFirst();
+            do {
+                String e82=c.getString(c.getColumnIndex("e82"));
+                String e90_alcohol=c.getString(c.getColumnIndex("e90_alcohol"));
+                String e91_alcohol=c.getString(c.getColumnIndex("e91_alcohol"));
+                String e92_alcohol=c.getString(c.getColumnIndex("e92_alcohol"));
+                String e83=c.getString(c.getColumnIndex("e83"));
+                String e90_tabaco=c.getString(c.getColumnIndex("e90_tabaco"));
+                String e91_tabaco=c.getString(c.getColumnIndex("e91_tabaco"));
+                String e92_tabaco=c.getString(c.getColumnIndex("e92_tabaco"));
+                String e84=c.getString(c.getColumnIndex("e84"));
+                String e90_marihuana=c.getString(c.getColumnIndex("e90_marihuana"));
+                String e91_marihuana=c.getString(c.getColumnIndex("e91_marihuana"));
+                String e92_marihuana=c.getString(c.getColumnIndex("e92_marihuana"));
+                String e85=c.getString(c.getColumnIndex("e85"));
+                String e90_pastillas=c.getString(c.getColumnIndex("e90_pastillas"));
+                String e91_pastillas=c.getString(c.getColumnIndex("e91_pastillas"));
+                String e92_pastillas=c.getString(c.getColumnIndex("e92_pastillas"));
+                String e86=c.getString(c.getColumnIndex("e86"));
+                String e90_solventes=c.getString(c.getColumnIndex("e90_solventes"));
+                String e91_solventes=c.getString(c.getColumnIndex("e91_solventes"));
+                String e92_solventes=c.getString(c.getColumnIndex("e92_solventes"));
+                String e87=c.getString(c.getColumnIndex("e87"));
+                String e90_cristal=c.getString(c.getColumnIndex("e90_cristal"));
+                String e91_cristal=c.getString(c.getColumnIndex("e91_cristal"));
+                String e92_cristal=c.getString(c.getColumnIndex("e92_cristal"));
+                String e88=c.getString(c.getColumnIndex("e88"));
+                String e90_cocaina=c.getString(c.getColumnIndex("e90_cocaina"));
+                String e91_cocaina=c.getString(c.getColumnIndex("e91_cocaina"));
+                String e92_cocaina=c.getString(c.getColumnIndex("e92_cocaina"));
+                String e89=c.getString(c.getColumnIndex("e89"));
+                String e93_otroConsumo=c.getString(c.getColumnIndex("e93_otroConsumo"));
+                String e90_otroConsumo=c.getString(c.getColumnIndex("e90_otroConsumo"));
+                String e91_otroConsumo=c.getString(c.getColumnIndex("e91_otroConsumo"));
+                String e92_otroConsumo=c.getString(c.getColumnIndex("e92_otroConsumo"));
+                String e94=c.getString(c.getColumnIndex("e94"));
+                String e95=c.getString(c.getColumnIndex("e95"));
+
+                String Folio=c.getString(c.getColumnIndex("Folio"));
+
+                int id = c.getInt(c.getColumnIndex("_id"));
+                datosSalud dato = new datosSalud(id, e82,  e90_alcohol,  e91_alcohol,  e92_alcohol,  e83,  e90_tabaco,  e91_tabaco,  e92_tabaco, e84,  e90_marihuana,  e91_marihuana,  e92_marihuana, e85,  e90_pastillas,
+                        e91_pastillas,  e92_pastillas, e86,  e90_solventes,  e91_solventes,  e92_solventes,  e87,  e90_cristal,  e91_cristal, e92_cristal, e88,  e90_cocaina,  e91_cocaina,  e92_cocaina,  e89,
+                        e93_otroConsumo,  e90_otroConsumo,  e91_otroConsumo,  e92_otroConsumo,  e94,  e95,  Folio);
+                //Añadimos la direccion a la lista
+                lista.add(dato);
+            } while (c.moveToNext());
+        }
+        //Cerramos el cursor
+        c.close();
+        return lista;
+    }
+    //endregion
 
     public Cursor raw() {
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res = db.rawQuery("SELECT * FROM " + DB_NAME , new String[]{});
         return res;
-    }
-
-    public void nada(){
-        System.out.println("si llego");
     }
 
 }
