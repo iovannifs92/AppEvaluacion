@@ -133,13 +133,17 @@ public class MainMenu extends AppCompatActivity
                 Intent intent= new Intent(this, ConsultaDomicilio.class);
                 startActivity(intent);
                 break;
-            case R.id.bd_nube:
-                Intent intent2= new Intent(this, SincronizarBD.class);
+            case R.id.nav_verificacion:
+                Intent intent2= new Intent(this, verificacion.class);
                 startActivity(intent2);
+                break;
+            case R.id.bd_nube:
+                Intent intent3= new Intent(this, SincronizarBD.class);
+                startActivity(intent3);
                 break;
         }
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_verificacion) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
 

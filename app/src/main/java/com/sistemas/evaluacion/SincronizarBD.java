@@ -22,6 +22,7 @@ import com.android.volley.toolbox.Volley;
 import com.sistemas.evaluacion.entidades.datosGenerales;
 import com.sistemas.evaluacion.entidades.datosDomicilio;
 import com.sistemas.evaluacion.entidades.datosFamiliares;
+import com.sistemas.evaluacion.entidades.datosHabitantes;
 import com.sistemas.evaluacion.entidades.datosReferencias;
 import com.sistemas.evaluacion.entidades.datosEscolarLaboral;
 import com.sistemas.evaluacion.entidades.datosAbandonoEstado;
@@ -37,7 +38,7 @@ public class SincronizarBD extends AppCompatActivity {
     private TextView tvMuestraResultados;
     private EditText etPass;
     String textoSincronizado="", pass="",url,
-            nombre, alias, fNacimiento, edad, lNacimiento, sexo, folio, fEntrevista, duracionE, entrevistador, observacionesF, tipo,
+            nombre, alias, fNacimiento, edad, lNacimiento, sexo, folio, fEntrevista, duracionE, entrevistador, observacionesF, tipo, tieneDomicilio, otrosHabitantes,
             e7, e8, e9, e10, e11, e12, e13, e14, e15, e16, e17, e18, e19, e20, e21, e22, e23, e24, e25, e26, e27, e28, e29, e30, e31,
             e32,  e33,  e34,  e35,  e36,  e37,  e33_1,  e34_1,  e35_1,  e36_1,  e37_1,  e33_2,  e34_2,  e35_2,  e36_2,  e37_2, e33_3,  e34_3,  e35_3,  e36_3,  e37_3,  e38,
             e39,  e40,  e41,  e42,  e43,  e39_1,  e40_1,  e41_1,  e42_1,  e43_1,  e44,  e45,  e46,  e47,
@@ -122,18 +123,18 @@ public class SincronizarBD extends AppCompatActivity {
     private void cargarWebService() {
         ArrayList<datosGenerales> lista;
         ArrayList<datosDomicilio> listaDomicilio;
-        ArrayList<datosFamiliares> listaFamiliares;
+        ArrayList<datosHabitantes> listaHabitantes;
         ArrayList<datosReferencias> listaReferencias;
         ArrayList<datosEscolarLaboral> listaEscolarLaboral;
         ArrayList<datosAbandonoEstado> listaAbandonoEstado;
         ArrayList<datosSalud> listaSalud;
         lista = db.getDatosGenerales();
         listaDomicilio=db.getDomicilios();
-        listaFamiliares=db.getFamiliares();
+        listaHabitantes=db.getHabitantes();
         listaReferencias=db.getReferencias();
-        listaEscolarLaboral=db.getEscolarLaboral();
-        listaAbandonoEstado=db.getAbandonoEstado();
-        listaSalud=db.getSalud();
+        listaEscolarLaboral=db.getHistorialEscolarLaboral();
+        listaAbandonoEstado=db.getDatosAbandonoEstado();
+        listaSalud=db.getDatosSalud();
         progreso = new ProgressDialog(this);
         progreso.setMessage("Cargando...");
         progreso.show();
@@ -154,6 +155,8 @@ public class SincronizarBD extends AppCompatActivity {
             entrevistador=lista.get(i).getEntrevistador();
             observacionesF=lista.get(i).getObservacionesF();
             tipo=lista.get(i).getTipo();
+            tieneDomicilio=lista.get(i).getTieneDomicilioS();
+            otrosHabitantes=lista.get(i).getOtrosHabitantes();
             //endregion
 
             //region Get Datos Domicilio
@@ -185,28 +188,28 @@ public class SincronizarBD extends AppCompatActivity {
             //endregion
 
             //region Get Datos Familiares
-            e32=listaFamiliares.get(i).getE32();
-            e33=listaFamiliares.get(i).getE33();
-            e34=listaFamiliares.get(i).getE34();
-            e35=listaFamiliares.get(i).getE35();
-            e36=listaFamiliares.get(i).getE36();
-            e37=listaFamiliares.get(i).getE37();
-            e33_1=listaFamiliares.get(i).getE33_1();
-            e34_1=listaFamiliares.get(i).getE34_1();
-            e35_1=listaFamiliares.get(i).getE35_1();
-            e36_1=listaFamiliares.get(i).getE36_1();
-            e37_1=listaFamiliares.get(i).getE37_1();
-            e33_2=listaFamiliares.get(i).getE33_2();
-            e34_2=listaFamiliares.get(i).getE34_2();
-            e35_2=listaFamiliares.get(i).getE35_2();
-            e36_2=listaFamiliares.get(i).getE36_2();
-            e37_2=listaFamiliares.get(i).getE37_2();
-            e33_3=listaFamiliares.get(i).getE33_3();
-            e34_3=listaFamiliares.get(i).getE34_3();
-            e35_3=listaFamiliares.get(i).getE35_3();
-            e36_3=listaFamiliares.get(i).getE36_3();
-            e37_3=listaFamiliares.get(i).getE37_3();
-            e38=listaFamiliares.get(i).getE38();
+            e32=listaHabitantes.get(i).getE32();
+            e33=listaHabitantes.get(i).getE33();
+            e34=listaHabitantes.get(i).getE34();
+            e35=listaHabitantes.get(i).getE35();
+            e36=listaHabitantes.get(i).getE36();
+            e37=listaHabitantes.get(i).getE37();
+            e33_1=listaHabitantes.get(i).getE33_1();
+            e34_1=listaHabitantes.get(i).getE34_1();
+            e35_1=listaHabitantes.get(i).getE35_1();
+            e36_1=listaHabitantes.get(i).getE36_1();
+            e37_1=listaHabitantes.get(i).getE37_1();
+            e33_2=listaHabitantes.get(i).getE33_2();
+            e34_2=listaHabitantes.get(i).getE34_2();
+            e35_2=listaHabitantes.get(i).getE35_2();
+            e36_2=listaHabitantes.get(i).getE36_2();
+            e37_2=listaHabitantes.get(i).getE37_2();
+            e33_3=listaHabitantes.get(i).getE33_3();
+            e34_3=listaHabitantes.get(i).getE34_3();
+            e35_3=listaHabitantes.get(i).getE35_3();
+            e36_3=listaHabitantes.get(i).getE36_3();
+            e37_3=listaHabitantes.get(i).getE37_3();
+            e38=listaHabitantes.get(i).getE38();
             //endregion
 
             //region Get Datos Referencias
@@ -328,6 +331,8 @@ public class SincronizarBD extends AppCompatActivity {
                     "&Entrevistador="+entrevistador+
                     "&ObservacionesF="+observacionesF+
                     "&Tipo="+tipo+
+                    "&TieneDomicilio"+tieneDomicilio+
+                    "&OtrosHabitantes"+otrosHabitantes+
                     "&e7="+e7+
                     "&e8="+e8+
                     "&e9="+e9+
