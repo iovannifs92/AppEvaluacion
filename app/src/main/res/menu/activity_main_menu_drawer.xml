@@ -9,6 +9,10 @@
             android:icon="@drawable/ic_directions_car_black_24dp"
             android:title="Ir a Dirección de Imputado" />
         <item
+            android:id="@+id/nav_check"
+            android:icon="@drawable/ic_playlist_add_check_black_24dp"
+            android:title="Verificar Entrevista" />
+        <item
             android:id="@+id/nav_camera"
             android:icon="@drawable/ic_menu_camera"
             android:title="Import" />
