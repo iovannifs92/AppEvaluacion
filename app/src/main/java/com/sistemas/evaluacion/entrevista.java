@@ -27,6 +27,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
     private static final String TAG = "Entrevista";
     private MyOpenHelper db;
     private ArrayList<datosGenerales> lista;
+    private static final int PICK_ADDRESS_REQUEST = 1;
 
     //region Boolean
     private boolean vivePadres=false, datosGenerales=false, datosFamiliares=false, datosEscolares=false, datosLaborales=false, datosFAestado=false, datosSalud=false;
@@ -56,9 +57,10 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
             etP74_1, etP75_1, etP76, etP76_1, etP77_1, etP91_alcohol, etP92_alcohol, etP91_tabaco,
             etP92_tabaco, etP91_marihuana, etP92_marihuana, etP91_pastillas, etP92_pastillas,
             etP91_solventes, etP92_solventes, etP91_cristal, etP92_cristal, etP91_cocaina,
-            etP92_cocaina, etP91_otroConsumo, etP92_otroConsumo, etP93_otroConsumo, etP95, etP98;
+            etP92_cocaina, etP91_otroConsumo, etP92_otroConsumo, etP93_otroConsumo, etP95, etP98,
+            etP101, etP102;
 
-    private EditText etP97, etP1, etP2, etP4, etP5, etP7, etP8, etP9, etP10, etP12, etP14, etP15,
+    private EditText etP97, etP1, etP2, etP4, etP5, etP7, etP7_1, etP8, etP9, etP10, etP12, etP14, etP15,
             etP16, etP17, etP18, etP19, etP20, etP21_1, etP21, etP22, etP23, etP24, etP26, etP28, etP30,
             etP31, etP39, etP40, etP41, etP42, etP43, etP39_1, etP40_1, etP41_1, etP42_1, etP43_1, etP81, etP96, etP99;
     //endregion
@@ -76,11 +78,11 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
     //endregion
 
     //region Button
-    private Button btnGuardar, btnDatosGenerales, btnDatosFamiliares, btnHistorialEscolar, btnHistorialLaboral, btnFAEstado,btnSalud;
+    private Button btnGuardar, btnDatosGenerales, btnDatosFamiliares, btnHistorialEscolar, btnHistorialLaboral, btnFAEstado, btnSalud, btnFind;
     //endregion
 
     //region String
-    private String r1,r2,r3,r4,r5,r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r32_1, r17, r18, r19, r20,
+    private String r1,r2,r3,r4,r5,r6, r7, r7_1, r8, r9, r10, r11, r12, r13, r14, r15, r16, r32_1, r17, r18, r19, r20,
             r21_1, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31, r33, r34, r35, r36, r37, r33_1, r34_1,
             r35_1, r36_1, r37_1, r33_2, r34_2, r35_2, r36_2, r37_2, r33_3, r34_3, r35_3, r36_3, r37_3, r38,
             r39, r40, r41, r42, r43, r39_1, r40_1, r41_1, r42_1, r43_1, r44, r45, r46, r47, r48, r49, r50,
@@ -92,7 +94,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
             r90_cristal, r91_cristal, r92_cristal, r90_cocaina, r91_cocaina, r92_cocaina, r93_otroConsumo, r90_otroConsumo, r91_otroConsumo, r92_otroConsumo, r94, r95,
             r96, r98, r99, r100;
     private String FOLIO;
-
+    private String confirmedMainLatitude, confirmedMainLongitude;
 
     private String [] tipoDomicilio={"NA","Rentada", "Prestada", "Propia", "Familiar", "Situación de calle", "Irregular"};
     private String [] tiempoRadicando={"NA","Menos de un mes", "Un mes", "Entre 1 y 3 meses", "Entre 3 y 6 meses", "Entre 6 meses y un año", "Entre 1 y 3 años", "Entre 3 y 6 años", "Más de 6 años"};
@@ -200,7 +202,10 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
         sP32_1.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,nosi));
 
         etP7=(EditText) findViewById(R.id.etP7);
+        etP7_1=(EditText) findViewById(R.id.etP7_1);
         etP8=(EditText) findViewById(R.id.etP8);
+        etP9=(EditText) findViewById(R.id.etP9);
+        etP10=(EditText) findViewById(R.id.etP10);
 
         etP18=(EditText) findViewById(R.id.etP18);
         etP20=(EditText) findViewById(R.id.etP20);
@@ -235,10 +240,10 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                 if(position!=0){
                     String dom;
                     if(sP8.getSelectedItem().toString().equals("NA")) {
-                        dom = etP7.getText().toString() + " " + etP8.getText().toString();
+                        dom = etP7.getText().toString() + etP7_1.getText().toString() + " " + etP8.getText().toString();
                     }
                     else {
-                        dom = etP7.getText().toString() + " " + sP8.getSelectedItem().toString() + " " + etP8.getText().toString();
+                        dom = etP7.getText().toString() + etP7_1.getText().toString() + " " + sP8.getSelectedItem().toString() + " " + etP8.getText().toString();
                     }
                     etP18.setText(dom, TextView.BufferType.EDITABLE);
                     etP20.setText(dom, TextView.BufferType.EDITABLE);
@@ -248,7 +253,6 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                     etP18.setText("");
                     etP20.setText("");
                     vivePadres=false;
-
                 }
             }
 
@@ -1580,6 +1584,60 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
 
         //endregion
 
+        //region Sends the address to the map
+        btnFind = (Button) findViewById(R.id.btnFind);
+
+        btnFind.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String address = "";
+                //street
+                if(etP7.getText().toString().isEmpty() == false) {
+                    address += etP7.getText().toString();
+                }
+                //number
+                if(etP7_1.getText().toString().isEmpty() == false) {
+                    if(address.isEmpty() == false) {
+                        address += " ";
+                    }
+                    address += etP7_1.getText().toString();
+                }
+                //neighborhood
+                if(etP8.getText().toString().isEmpty() == false) {
+                    if(address.isEmpty() == false) {
+                        address += ", ";
+                    }
+
+                    if(sP8.getSelectedItem().toString().equals("NA") == false) {
+                        address += sP8.getSelectedItem().toString() + " ";
+                    }
+
+                    address += etP8.getText().toString();
+                }
+                //municipality
+                if(etP9.getText().toString().isEmpty() == false) {
+                    if(address.isEmpty() == false) {
+                        address += ", ";
+                    }
+                    address += etP9.getText().toString();
+                }
+                //state
+                if(etP10.getText().toString().isEmpty() == false) {
+                    if(address.isEmpty() == false) {
+                        address += ", ";
+                    }
+                    address += etP10.getText().toString();
+                }
+
+                if(address.isEmpty() == false) {
+                    Intent intent = new Intent(v.getContext(), MapsActivity.class);
+                    intent.putExtra("address", address);
+                    startActivityForResult(intent, PICK_ADDRESS_REQUEST);
+                }
+            }
+        });
+        //endregion
+
         //region Guardar Datos
 
         btnGuardar=(Button) findViewById(R.id.btnGuardar);
@@ -1622,9 +1680,6 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
 
                 //region 1. DATOS GENERALES domicilio
 
-                etP9=(EditText) findViewById(R.id.etP9);
-                etP10=(EditText) findViewById(R.id.etP10);
-
                 etP12=(EditText) findViewById(R.id.etP12);
 
                 etP14=(EditText) findViewById(R.id.etP14);
@@ -1643,7 +1698,13 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                 etP31=(EditText) findViewById(R.id.etP31);
 
                 r7=etP7.getText().toString().toUpperCase();
-                r8=((sP8.getSelectedItem().toString()+" ")+(etP8.getText().toString())).toUpperCase();
+                r7_1=etP7_1.getText().toString().toUpperCase();
+                if(sP8.getSelectedItem().toString().equals("NA") == true) {
+                    r8 = (etP8.getText().toString()).toUpperCase();
+                }
+                else {
+                    r8 = ((sP8.getSelectedItem().toString() + " ") + (etP8.getText().toString())).toUpperCase();
+                }
                 r9=etP9.getText().toString().toUpperCase();
                 r10=etP10.getText().toString().toUpperCase();
                 r11=sP11.getSelectedItem().toString().toUpperCase();
@@ -1841,8 +1902,8 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
 
                 //region Insertar a Base de Datos
                 db.insertarDatosGenerales(r1,r2,r3,r4,r5, r6, FOLIO, r98, min, r96, r99, r100, r21_1, r32);
-                db.insertarDatosGeneralesDomicilio(r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r32_1, r17,
-                        r18, r19, r20, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31, FOLIO);
+                db.insertarDatosGeneralesDomicilio(r7, r7_1, r8, r9, r10, r11, r12, r13, r14, r15, r16, r32_1, r17,
+                        r18, r19, r20, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31, confirmedMainLatitude, confirmedMainLongitude, FOLIO);
                 db.insertarDatosFamiliares(r32, r33, r34,r35, r36, r37, r33_1, r34_1,r35_1, r36_1, r37_1, r33_2, r34_2,r35_2, r36_2, r37_2,
                         r33_3, r34_3,r35_3, r36_3, r37_3, r38, FOLIO);
                 db.insertarDatosReferencias(r39, r40, r41, r42, r43, r39_1, r40_1, r41_1, r42_1, r43_1, r44, r45, r46, r47, FOLIO);
@@ -1962,6 +2023,38 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
         });
         //endregion
 
+    }
+    //endregion
+
+    //region Display the address from the map
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent resultIntent) {
+        if (requestCode == PICK_ADDRESS_REQUEST) {
+            if (resultCode == RESULT_OK) {
+                String confirmedStreet = "";
+                String confirmedNumber = "";
+                String confirmedNeighborhood = "";
+                String confirmedMunicipality = "";
+                String confirmedState = "";
+
+                Bundle bundle = resultIntent.getExtras();
+                if (bundle != null) {
+                    confirmedStreet = bundle.getString("confirmedStreet");
+                    etP7.setText(confirmedStreet);
+                    confirmedNumber = bundle.getString("confirmedNumber");
+                    etP7_1.setText(confirmedNumber);
+                    confirmedNeighborhood = bundle.getString("confirmedNeighborhood");
+                    etP8.setText(confirmedNeighborhood);
+                    confirmedMunicipality = bundle.getString("confirmedMunicipality");
+                    etP9.setText(confirmedMunicipality);
+                    confirmedState = bundle.getString("confirmedState");
+                    etP10.setText(confirmedState);
+
+                    confirmedMainLatitude = bundle.getString("confirmedLatitude");
+                    confirmedMainLongitude = bundle.getString("confirmedLongitude");
+                }
+            }
+        }
     }
     //endregion
 

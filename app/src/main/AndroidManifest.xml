@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".MapsActivity"></activity>
         <activity android:name=".ConsultaDomicilio" />
         <activity
             android:name=".MainMenu"
@@ -30,6 +31,10 @@
             android:label="@string/title_activity_encuesta"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDprg7hqrFZ1pdrHvmZ8uH4ITG8seMPbig" />
     </application>
 
 </manifest>

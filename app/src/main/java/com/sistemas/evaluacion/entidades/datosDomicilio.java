@@ -1,7 +1,8 @@
 package com.sistemas.evaluacion.entidades;
 
 //region Diccionario
-//dd.e7 as Calle_Numero,
+//dd.e7 as Calle,
+//dd.e7_1 as Numero,
 //dd.e8 as Colonia_Fraccionamiento,
 //dd.e9 as Municipio,
 //dd.e10 as Estado,
@@ -11,19 +12,21 @@ package com.sistemas.evaluacion.entidades;
 //dd.e21 as DomSecundario_Calle, dd.e22 as DomSecundario_Colonia_Fraccionamiento, dd.e23 as DomSecundario_Municipio,
 //dd.e24 as DomSecundario_Estado, dd.e25 as DomSecundario_Tipo_Domicilio, dd.e26 DomSecundario_Descripción,
 //dd.e27 as DomSecundario_Tiempo_Radicando, dd.e28 as DomSecundario_Horario_Localización, dd.e29 as Estado_Civil, dd.e30 as Tiempo,
-//dd.e31 as Hijos,
+//dd.e31 as Hijos, dd.e101 as Latitud, dd.e101 as Longitud
 //endregion
 
 public class datosDomicilio {
     int id;
-    String e7, e8, e9, e10, e11, e12, e13, e14, e15, e16, e32_1, e17, e18, e19, e20, e21, e22, e23, e24, e25, e26, e27, e28, e29, e30, e31, Folio;
+    String e7, e7_1, e8, e9, e10, e11, e12, e13, e14, e15, e16, e32_1, e17, e18, e19, e20, e21, e22, e23, e24, e25, e26, e27, e28, e29, e30,
+            e31, e101, e102, Folio;
 
     //region Constructor
-    public datosDomicilio(int id, String e7, String e8, String e9, String e10, String e11, String e12, String e13, String e14, String e15, String e16,
+    public datosDomicilio(int id, String e7, String e7_1, String e8, String e9, String e10, String e11, String e12, String e13, String e14, String e15, String e16,
                           String e32_1, String e17, String e18, String e19, String e20, String e21, String e22, String e23, String e24, String e25,
-                          String e26, String e27, String e28, String e29, String e30, String e31, String folio) {
+                          String e26, String e27, String e28, String e29, String e30, String e31, String e101, String e102, String folio) {
         this.id = id;
         this.e7 = e7;
+        this.e7_1 = e7_1;
         this.e8 = e8;
         this.e9 = e9;
         this.e10 = e10;
@@ -49,6 +52,8 @@ public class datosDomicilio {
         this.e29 = e29;
         this.e30 = e30;
         this.e31 = e31;
+        this.e101 = e101;
+        this.e102 = e102;
         Folio = folio;
     }
     //endregion
@@ -69,6 +74,14 @@ public class datosDomicilio {
 
     public void setE7(String e7) {
         this.e7 = e7;
+    }
+
+    public String getE7_1() {
+        return e7_1;
+    }
+
+    public void setE7_1(String e7_1) {
+        this.e7_1 = e7_1;
     }
 
     public String getE8() {
@@ -269,6 +282,22 @@ public class datosDomicilio {
 
     public void setE31(String e31) {
         this.e31 = e31;
+    }
+
+    public String getE101() {
+        return e101;
+    }
+
+    public void setE101(String e101) {
+        this.e101 = e101;
+    }
+
+    public String getE102() {
+        return e102;
+    }
+
+    public void setE102(String e102) {
+        this.e102 = e102;
     }
 
     public String getFolio() {

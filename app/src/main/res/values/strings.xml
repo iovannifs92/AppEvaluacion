@@ -36,7 +36,8 @@
     <string name="e5">Lugar de nacimiento</string>
     <string name="e6">Sexo</string>
 
-    <string name="e7">Calle y número</string>
+    <string name="e7">Calle</string>
+    <string name="e7_1">Número</string>
     <string name="e8">Nombre de la Colonia o fraccionamiento</string>
     <string name="e9">Municipio</string>
     <string name="e10">Estado</string>
@@ -174,11 +175,13 @@
     <string name="cdColonia">Colonia/Fracc</string>
     <string name="cdMunicipio">Municipio</string>
     <string name="cdEstado">Estado</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <!--endregion-->
 
     <!--region-->
     <!--endregion-->
-
 
 
 </resources>
