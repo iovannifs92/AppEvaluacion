@@ -33,8 +33,8 @@ public class MyOpenHelper extends SQLiteOpenHelper {
 
     //region Tabla imputado_datos_domicilio
     private static final String CREATE_TABLE_IMPUTADO_DATOS_DOMICILIO="CREATE TABLE imputado_datos_domicilio (_id INTEGER PRIMARY KEY AUTOINCREMENT," +
-            "e7 TEXT, e8 TEXT, e9 TEXT, e10 TEXT, e11 TEXT, e12 TEXT, e13 TEXT, e14 TEXT, e15 TEXT, e16 TEXT, e32_1 TEXT, e17 TEXT, e18 TEXT, e19 TEXT, e20 TEXT," +
-            "e21 TEXT, e22 TEXT, e23 TEXT, e24 TEXT, e25 TEXT, e26 TEXT, e27 TEXT, e28 TEXT, e29 TEXT, e30 TEXT, e31 TEXT, Folio TEXT)";
+            "e7 TEXT, e7_1 TEXT, e8 TEXT, e9 TEXT, e10 TEXT, e11 TEXT, e12 TEXT, e13 TEXT, e14 TEXT, e15 TEXT, e16 TEXT, e32_1 TEXT, e17 TEXT, e18 TEXT, e19 TEXT, e20 TEXT," +
+            "e21 TEXT, e22 TEXT, e23 TEXT, e24 TEXT, e25 TEXT, e26 TEXT, e27 TEXT, e28 TEXT, e29 TEXT, e30 TEXT, e31 TEXT, e101 TEXT, e102 TEXT, Folio TEXT)";
     //endregion
 
     //region Tabla imputado_datos_familiares
@@ -164,12 +164,13 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     //endregion
 
     //region Insertar Datos Generales Domicilio
-    public void insertarDatosGeneralesDomicilio(String e7, String e8, String e9, String e10, String e11, String e12, String e13, String e14, String e15,
+    public void insertarDatosGeneralesDomicilio(String e7, String e7_1, String e8, String e9, String e10, String e11, String e12, String e13, String e14, String e15,
                                                 String e16, String e32_1, String e17, String e18, String e19, String e20, String e21, String e22, String e23,
-                                                String e24, String e25, String e26, String e27, String e28, String e29, String e30, String e31, String folio){
+                                                String e24, String e25, String e26, String e27, String e28, String e29, String e30, String e31, String e101,
+                                                String e102, String folio){
         ContentValues dato=new ContentValues();
         dato.put("e7", e7);
-        dato.put("e7", e7);
+        dato.put("e7_1", e7_1);
         dato.put("e8", e8);
         dato.put("e9", e9);
         dato.put("e10", e10);
@@ -195,6 +196,8 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         dato.put("e29", e29);
         dato.put("e30", e30);
         dato.put("e31", e31);
+        dato.put("e101", e101);
+        dato.put("e102", e102);
         dato.put("Folio", folio);
 
         db.insert("imputado_datos_domicilio", null, dato);
@@ -495,13 +498,14 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     //region Obtener los datos del domicilio en la base de datos
     public ArrayList<datosDomicilio> getDomicilios(){
         ArrayList<datosDomicilio> lista = new ArrayList<datosDomicilio>();
-        Cursor c=db.rawQuery("select _id, e7, e8, e9, e10, e11, e12, e13, e14, e15, e16, e32_1, " +
-                "e17, e18, e19, e20, e21, e22, e23, e24, e25, e26, e27, e28, e29, e30, e31, Folio" +
+        Cursor c=db.rawQuery("select _id, e7, e7_1, e8, e9, e10, e11, e12, e13, e14, e15, e16, e32_1, " +
+                "e17, e18, e19, e20, e21, e22, e23, e24, e25, e26, e27, e28, e29, e30, e31, e101, e102, Folio" +
                 "  from imputado_datos_domicilio",  null);
         if (c != null && c.getCount()>0) {
             c.moveToFirst();
             do {
                 String e7 = c.getString(c.getColumnIndex("e7"));
+                String e7_1 = c.getString(c.getColumnIndex("e7_1"));
                 String e8 = c.getString(c.getColumnIndex("e8"));
                 String e9 = c.getString(c.getColumnIndex("e9"));
                 String e10 = c.getString(c.getColumnIndex("e10"));
@@ -527,12 +531,14 @@ public class MyOpenHelper extends SQLiteOpenHelper {
                 String e29 = c.getString(c.getColumnIndex("e29"));
                 String e30 = c.getString(c.getColumnIndex("e30"));
                 String e31 = c.getString(c.getColumnIndex("e31"));
+                String e101 = c.getString(c.getColumnIndex("e101"));
+                String e102 = c.getString(c.getColumnIndex("e102"));
                 String Folio = c.getString(c.getColumnIndex("Folio"));
 
                 int id = c.getInt(c.getColumnIndex("_id"));
-                datosDomicilio dato = new datosDomicilio(id, e7, e8, e9, e10, e11, e12, e13, e14,
+                datosDomicilio dato = new datosDomicilio(id, e7, e7_1, e8, e9, e10, e11, e12, e13, e14,
                         e15, e16, e32_1, e17, e18, e19, e20, e21, e22, e23, e24, e25, e26, e27, e28, e29,
-                        e30, e31, Folio);
+                        e30, e31, e101, e102, Folio);
 
                 //Añadimos la direccion a la lista
                 lista.add(dato);

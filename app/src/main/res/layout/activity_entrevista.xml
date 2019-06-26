@@ -193,6 +193,20 @@
                     android:layout_marginBottom="20dp"/>
 
                 <TextView
+                    android:id="@+id/tvP7_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e7_1" />
+
+                <EditText
+                    android:id="@+id/etP7_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
                     android:id="@+id/tvP8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -267,6 +281,14 @@
                     android:ems="10"
                     android:inputType="textMultiLine"
                     android:layout_marginBottom="20dp"/>
+
+                <Button
+                    android:id="@+id/btnFind"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/SecondaryColoredButton"
+                    android:textColor="#FFFFFF"
+                    android:text="Buscar domicilio" />
 
                 <TextView
                     android:id="@+id/tvDPrincipalCierre"
