@@ -1,14 +1,20 @@
 package com.sistemas.evaluacion.fragments;
 
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
+import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +23,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -27,8 +35,9 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.TileOverlayOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.sistemas.evaluacion.CustomMapTileProvider;
-import com.sistemas.evaluacion.MainActivity;
 import com.sistemas.evaluacion.MapsActivity;
 import com.sistemas.evaluacion.R;
 import com.sistemas.evaluacion.entrevista;
@@ -37,10 +46,16 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
-public class MapsFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnMarkerDragListener {
+public class MapsFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnMarkerDragListener,
+        GoogleMap.OnMyLocationClickListener, GoogleMap.OnMyLocationButtonClickListener,
+        ActivityCompat.OnRequestPermissionsResultCallback {
+
+    //Request code for location permission request.
+    private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
 
     //region Global variables
     private View rootView;
+
     private GoogleMap gMap;
     private MapView mapView;
     private Marker loc;
@@ -49,6 +64,14 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback, Google
     private Marker marker;
     private List<Address> addresses;
     private Geocoder geocoder;
+    private double currLat;
+    private double currLong;
+    private FusedLocationProviderClient fusedLocationClient;
+
+    // A default location at the center of Durango to use when location permission is not granted.
+    private final LatLng defaultLocation = new LatLng(24.0252891, -104.6613149);
+    private static final int DEFAULT_ZOOM = 15;
+
     //region EditText
     private EditText eTextLat;
     private EditText eTextLong;
@@ -92,16 +115,11 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback, Google
     public void onMapReady(GoogleMap googleMap) {
         gMap = googleMap;
 
-        gMap.addTileOverlay(new TileOverlayOptions().tileProvider(new CustomMapTileProvider(getResources().getAssets())));
+        //Sets needed listeners
+        gMap.setOnMyLocationButtonClickListener(this);
+        gMap.setOnMyLocationClickListener(this);
 
-        LatLng newLatLong = new LatLng(24+1/60., -(104+38/60.));
-        /*CameraPosition camera = new CameraPosition.Builder()
-                .target(newLatLong)
-                .zoom(10)
-                .bearing(0)
-                .tilt(0)
-                .build();
-        gMap.animateCamera(CameraUpdateFactory.newCameraPosition(camera));*/
+        enableMyLocation();
 
         //region Get the address from the interview format
         String address = "";
@@ -110,24 +128,59 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback, Google
             address = bundle.getString("address");
         }
 
-        /*geocoder = new Geocoder(getContext(), Locale.getDefault());
+        geocoder = new Geocoder(getContext(), Locale.getDefault());
         try {
             addresses = geocoder.getFromLocationName(address, 1);
-        } catch (IOException e) {
+
+            //Warn if no address is found
+            if(addresses.size() == 0) {
+                Toast.makeText(getContext(), "No se encontro el domicilio", Toast.LENGTH_LONG).show();
+                getActivity().finish();
+                return;
+            }
+
+            currLat = addresses.get(0).getLatitude();
+            currLong = addresses.get(0).getLongitude();
+        }
+        catch (IOException e) {
             e.printStackTrace();
+
+            currLat = defaultLocation.latitude;
+            currLong = defaultLocation.longitude;
+
+            // Construct a FusedLocationProviderClient.
+            fusedLocationClient = LocationServices.getFusedLocationProviderClient(getActivity());
+
+            //region If there is no network to retrieve the address, try to center at the current location
+            Task<Location> locationResult = fusedLocationClient.getLastLocation();
+            locationResult.addOnCompleteListener(getActivity(), new OnCompleteListener<Location>() {
+                @Override
+                public void onComplete(@NonNull Task<Location> task) {
+                    if (task.isSuccessful()) {
+                        // Set the map's camera position to the current location of the device.
+                        Location lastLoc;
+                        lastLoc = task.getResult();
+                        currLat = lastLoc.getLatitude();
+                        currLong = lastLoc.getLongitude();
+
+                        marker.setPosition(new LatLng(currLat, currLong));
+
+                        onMarkerDragEnd(marker);
+                        //Initialize the zoom level
+                        CameraUpdate zoom = CameraUpdateFactory.zoomTo(DEFAULT_ZOOM);
+                        gMap.animateCamera(zoom);
+                    }
+                    else {
+                        gMap.getUiSettings().setMyLocationButtonEnabled(false);
+                    }
+                }
+            });
+            //endregion
         }
         //endregion
 
-        //Warn if no address is found
-        if(addresses.size() == 0) {
-            Toast.makeText(getContext(), "No se encontro el domicilio", Toast.LENGTH_LONG).show();
-            getActivity().finish();
-            return;
-        }
+        LatLng newLatLong = new LatLng(currLat, currLong);
 
-        double latitude = addresses.get(0).getLatitude();
-        double longitude = addresses.get(0).getLongitude();
-        LatLng newLatLong = new LatLng(latitude, longitude);*/
         marker = gMap.addMarker(new MarkerOptions()
                 .position(newLatLong)
                 .draggable(true));
@@ -168,10 +221,78 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback, Google
 
         onMarkerDragEnd(marker);
         //Initialize the zoom level
-        CameraUpdate zoom = CameraUpdateFactory.zoomTo(15);
+        CameraUpdate zoom = CameraUpdateFactory.zoomTo(DEFAULT_ZOOM);
         gMap.animateCamera(zoom);
+
+        //Cache map for offline use
+        gMap.addTileOverlay(new TileOverlayOptions().tileProvider(new CustomMapTileProvider(getResources().getAssets())));
     }
     //endregion
+
+    @Override
+    public void onMyLocationClick(@NonNull Location location) {
+
+    }
+
+    @Override
+    public boolean onMyLocationButtonClick() {
+        // Return false so that we don't consume the event and the default behavior still occurs
+        // (the camera animates to the user's current position).
+        return false;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
+        if (requestCode != LOCATION_PERMISSION_REQUEST_CODE) {
+            return;
+        }
+
+        if (isPermissionGranted(permissions, grantResults,
+                Manifest.permission.ACCESS_FINE_LOCATION)) {
+            // Enable the my location layer if the permission has been granted.
+            enableMyLocation();
+        }
+    }
+
+    //Checks if the result contains a PackageManager.PERMISSION_GRANTED result for a
+    //permission from a runtime permissions request.
+    public static boolean isPermissionGranted(String[] grantPermissions, int[] grantResults,
+                                              String permission) {
+        for (int i = 0; i < grantPermissions.length; i++) {
+            if (permission.equals(grantPermissions[i])) {
+                return grantResults[i] == PackageManager.PERMISSION_GRANTED;
+            }
+        }
+        return false;
+    }
+
+    //Requests the fine location permission. If a rationale with an additional explanation should
+    //be shown to the user, displays a dialog that triggers the request.
+    public static void requestPermission(AppCompatActivity activity, int requestId,
+                                         String permission, boolean finishActivity) {
+        if (ActivityCompat.shouldShowRequestPermissionRationale(activity, permission)) {
+            //TODO: Show rationale and request permission.
+            //Always allow location access
+        } else {
+            // Location permission has not been granted yet, request it.
+            ActivityCompat.requestPermissions(activity, new String[]{permission}, requestId);
+
+        }
+    }
+
+    //Enables the My Location layer if the fine location permission has been granted.
+    private void enableMyLocation(){
+        if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+            // Permission to access the location is missing.
+            requestPermission((AppCompatActivity)getActivity(), LOCATION_PERMISSION_REQUEST_CODE,
+                    Manifest.permission.ACCESS_FINE_LOCATION, true);
+        } else if (gMap != null) {
+            // Access to the location has been granted to the app.
+            gMap.setMyLocationEnabled(true);
+        }
+    }
 
     @Override
     public void onMarkerDragStart(Marker marker) {
@@ -190,15 +311,15 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback, Google
         double newLat = marker.getPosition().latitude;
         double newLong = marker.getPosition().longitude;
 
-        /*try {
+        try {
             addresses = geocoder.getFromLocation(newLat, newLong, 1);
+
+            String gMapAddress = addresses.get(0).getAddressLine(0);
+            tViewAddress = (TextView) rootView.findViewById(R.id.address);
+            tViewAddress.setText(gMapAddress);
         } catch (IOException e) {
             e.printStackTrace();
-        }*/
-
-        /*String gMapAddress = addresses.get(0).getAddressLine(0);
-        tViewAddress = (TextView) rootView.findViewById(R.id.address);
-        tViewAddress.setText(gMapAddress);*/
+        }
         //endregion
 
         LatLng newLatLong = new LatLng(newLat, newLong);
@@ -208,3 +329,4 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback, Google
     }
     //endregion
 }
+

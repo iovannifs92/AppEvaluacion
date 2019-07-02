@@ -1,3 +1,4 @@
+//https://stackoverflow.com/questions/14784841/tileprovider-using-local-tiles
 package com.sistemas.evaluacion;
 
 import android.content.res.AssetManager;
