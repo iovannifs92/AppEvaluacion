@@ -55,7 +55,6 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback, Google
 
     //region Global variables
     private View rootView;
-
     private GoogleMap gMap;
     private MapView mapView;
     private Marker loc;
@@ -67,8 +66,9 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback, Google
     private double currLat;
     private double currLong;
     private FusedLocationProviderClient fusedLocationClient;
+    private boolean locationPermissionGranted;
 
-    // A default location at the center of Durango to use when location permission is not granted.
+    // A default location to use when location permission is not granted.
     private final LatLng defaultLocation = new LatLng(24.0252891, -104.6613149);
     private static final int DEFAULT_ZOOM = 15;
 
@@ -115,6 +115,9 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback, Google
     public void onMapReady(GoogleMap googleMap) {
         gMap = googleMap;
 
+        //Cache map for offline use
+        gMap.addTileOverlay(new TileOverlayOptions().tileProvider(new CustomMapTileProvider(getResources().getAssets())));
+
         //Sets needed listeners
         gMap.setOnMyLocationButtonClickListener(this);
         gMap.setOnMyLocationClickListener(this);
@@ -127,6 +130,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback, Google
         if (bundle != null) {
             address = bundle.getString("address");
         }
+        //endregion
 
         geocoder = new Geocoder(getContext(), Locale.getDefault());
         try {
@@ -152,32 +156,39 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback, Google
             fusedLocationClient = LocationServices.getFusedLocationProviderClient(getActivity());
 
             //region If there is no network to retrieve the address, try to center at the current location
-            Task<Location> locationResult = fusedLocationClient.getLastLocation();
-            locationResult.addOnCompleteListener(getActivity(), new OnCompleteListener<Location>() {
-                @Override
-                public void onComplete(@NonNull Task<Location> task) {
-                    if (task.isSuccessful()) {
-                        // Set the map's camera position to the current location of the device.
-                        Location lastLoc;
-                        lastLoc = task.getResult();
-                        currLat = lastLoc.getLatitude();
-                        currLong = lastLoc.getLongitude();
+            //Get the best and most recent location of the device, which may be null in rare
+            //cases when a location is not available.
+            try{
+                if(locationPermissionGranted){
+                    Task<Location> locationResult = fusedLocationClient.getLastLocation();
+                    locationResult.addOnCompleteListener(getActivity(), new OnCompleteListener<Location>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Location> task) {
+                            if (task.isSuccessful()) {
+                                // Set the map's camera position to the current location of the device.
+                                Location lastLoc;
+                                lastLoc = task.getResult();
+                                currLat = lastLoc.getLatitude();
+                                currLong = lastLoc.getLongitude();
 
-                        marker.setPosition(new LatLng(currLat, currLong));
+                                marker.setPosition(new LatLng(currLat, currLong));
 
-                        onMarkerDragEnd(marker);
-                        //Initialize the zoom level
-                        CameraUpdate zoom = CameraUpdateFactory.zoomTo(DEFAULT_ZOOM);
-                        gMap.animateCamera(zoom);
-                    }
-                    else {
-                        gMap.getUiSettings().setMyLocationButtonEnabled(false);
-                    }
+                                onMarkerDragEnd(marker);
+                                //Initialize the zoom level
+                                CameraUpdate zoom = CameraUpdateFactory.zoomTo(DEFAULT_ZOOM);
+                                gMap.animateCamera(zoom);
+                            }
+                            else {
+                                gMap.getUiSettings().setMyLocationButtonEnabled(false);
+                            }
+                        }
+                    });
                 }
-            });
+            } catch(SecurityException se)  {
+                se.printStackTrace();
+            }
             //endregion
         }
-        //endregion
 
         LatLng newLatLong = new LatLng(currLat, currLong);
 
@@ -191,24 +202,35 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback, Google
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String finalSubAdminArea = addresses.get(0).getSubAdminArea();
-                String finalState = addresses.get(0).getAdminArea();
-                String finalZipCode = addresses.get(0).getPostalCode();
-                String finalNeighborhood = addresses.get(0).getSubLocality();
-                String finalStreet = addresses.get(0).getThoroughfare();
-                String finalNumber = addresses.get(0).getSubThoroughfare();
+                Intent intent = new Intent(v.getContext(), entrevista.class);
 
-                double lat = addresses.get(0).getLatitude();
+                if(addresses != null) {
+                    String finalSubAdminArea = addresses.get(0).getSubAdminArea();
+                    String finalState = addresses.get(0).getAdminArea();
+                    String finalZipCode = addresses.get(0).getPostalCode();
+                    String finalNeighborhood = addresses.get(0).getSubLocality();
+                    String finalStreet = addresses.get(0).getThoroughfare();
+                    String finalNumber = addresses.get(0).getSubThoroughfare();
+
+                    intent.putExtra("confirmedStreet", finalStreet);
+                    intent.putExtra("confirmedNumber", finalNumber);
+                    intent.putExtra("confirmedNeighborhood", finalNeighborhood);
+                    intent.putExtra("confirmedMunicipality", finalSubAdminArea);
+                    intent.putExtra("confirmedState", finalState);
+                }
+                else{
+                    intent.putExtra("confirmedStreet", "");
+                    intent.putExtra("confirmedNumber", "");
+                    intent.putExtra("confirmedNeighborhood", "");
+                    intent.putExtra("confirmedMunicipality", "");
+                    intent.putExtra("confirmedState", "");
+                }
+
+                double lat = marker.getPosition().latitude;
                 String finalLatitude = String.valueOf(lat);
-                double lon = addresses.get(0).getLongitude();
+                double lon = marker.getPosition().longitude;
                 String finalLongitude = String.valueOf(lon);
 
-                Intent intent = new Intent(v.getContext(), entrevista.class);
-                intent.putExtra("confirmedStreet", finalStreet);
-                intent.putExtra("confirmedNumber", finalNumber);
-                intent.putExtra("confirmedNeighborhood", finalNeighborhood);
-                intent.putExtra("confirmedMunicipality", finalSubAdminArea);
-                intent.putExtra("confirmedState", finalState);
                 intent.putExtra("confirmedLatitude", finalLatitude);
                 intent.putExtra("confirmedLongitude", finalLongitude);
                 getActivity().setResult(MapsActivity.RESULT_OK, intent);
@@ -223,9 +245,6 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback, Google
         //Initialize the zoom level
         CameraUpdate zoom = CameraUpdateFactory.zoomTo(DEFAULT_ZOOM);
         gMap.animateCamera(zoom);
-
-        //Cache map for offline use
-        gMap.addTileOverlay(new TileOverlayOptions().tileProvider(new CustomMapTileProvider(getResources().getAssets())));
     }
     //endregion
 
@@ -288,9 +307,12 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback, Google
             // Permission to access the location is missing.
             requestPermission((AppCompatActivity)getActivity(), LOCATION_PERMISSION_REQUEST_CODE,
                     Manifest.permission.ACCESS_FINE_LOCATION, true);
-        } else if (gMap != null) {
-            // Access to the location has been granted to the app.
-            gMap.setMyLocationEnabled(true);
+        } else {
+            locationPermissionGranted = true;
+            if (gMap != null) {
+                // Access to the location has been granted to the app.
+                gMap.setMyLocationEnabled(true);
+            }
         }
     }
 

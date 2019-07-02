@@ -5250,22 +5250,22 @@ public class verificacion extends AppCompatActivity {
 
                         //region Insertar Observaciones a Base de Datos
                         if(ctvP1.isChecked() == false && etP1.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e1", r1, folio);
+                            db.insertarObservaciones("Nombre", r1, folio);
                         }
                         if(ctvP2.isChecked() == false && etP2.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e2", r2, folio);
+                            db.insertarObservaciones("Alias", r2, folio);
                         }
                         if(ctvP3.isChecked() == false && etP3.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e3", r3, folio);
+                            db.insertarObservaciones("FNacimiento", r3, folio);
                         }
                         if(ctvP4.isChecked() == false && etP4.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e4", r4, folio);
+                            db.insertarObservaciones("Edad", r4, folio);
                         }
                         if(ctvP5.isChecked() == false && etP5.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e5", r5, folio);
+                            db.insertarObservaciones("LNacimiento", r5, folio);
                         }
                         if(ctvP6.isChecked() == false && etP6.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e6", r6, folio);
+                            db.insertarObservaciones("Sexo", r6, folio);
                         }
                         if(ctvP7.isChecked() == false && etP7.getText().toString().isEmpty() == false) {
                             db.insertarObservaciones("e7", r7, folio);
@@ -5313,7 +5313,7 @@ public class verificacion extends AppCompatActivity {
                             db.insertarObservaciones("e20", r20, folio);
                         }
                         if(ctvP21_1.isChecked() == false && etP21_1.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e21_1", r21_1, folio);
+                            db.insertarObservaciones("TieneDomicilioS", r21_1, folio);
                         }
                         if(ctvP21.isChecked() == false && etP21.getText().toString().isEmpty() == false) {
                             db.insertarObservaciones("e21", r21, folio);
@@ -5349,7 +5349,7 @@ public class verificacion extends AppCompatActivity {
                             db.insertarObservaciones("e31", r31, folio);
                         }
                         if(ctvP32.isChecked() == false && etP32.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e32", r32, folio);
+                            db.insertarObservaciones("OtrosHabitantes", r32, folio);
                         }
                         if(ctvP33.isChecked() == false && etP33.getText().toString().isEmpty() == false) {
                             db.insertarObservaciones("e33", r33, folio);
