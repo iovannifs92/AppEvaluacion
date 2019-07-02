@@ -12,6 +12,7 @@
             android:id="@+id/nav_verificacion"
             android:icon="@drawable/ic_playlist_add_check_black_24dp"
             android:title="Realizar Verificación" />
+        <!--
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_gallery"
@@ -20,10 +21,11 @@
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Slideshow" />
+        -->
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:title="Configuraciones" />
     </group>
 
     <item android:title="Communicate">
@@ -32,10 +34,12 @@
                 android:id="@+id/bd_nube"
                 android:icon="@drawable/ic_cloud_upload_black_24dp"
                 android:title="Sincronizar BD en la Nube" />
+            <!--
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
                 android:title="Send" />
+            -->
         </menu>
     </item>
 

@@ -21,12 +21,12 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.sistemas.evaluacion.entidades.datosGenerales;
 import com.sistemas.evaluacion.entidades.datosDomicilio;
-import com.sistemas.evaluacion.entidades.datosFamiliares;
 import com.sistemas.evaluacion.entidades.datosHabitantes;
 import com.sistemas.evaluacion.entidades.datosReferencias;
 import com.sistemas.evaluacion.entidades.datosEscolarLaboral;
 import com.sistemas.evaluacion.entidades.datosAbandonoEstado;
 import com.sistemas.evaluacion.entidades.datosSalud;
+import com.sistemas.evaluacion.entidades.datosObservaciones;
 
 import java.util.ArrayList;
 
@@ -39,13 +39,14 @@ public class SincronizarBD extends AppCompatActivity {
     private EditText etPass;
     String textoSincronizado="", pass="",url,
             nombre, alias, fNacimiento, edad, lNacimiento, sexo, folio, fEntrevista, duracionE, entrevistador, observacionesF, tipo, tieneDomicilio, otrosHabitantes,
-            e7, e8, e9, e10, e11, e12, e13, e14, e15, e16, e17, e18, e19, e20, e21, e22, e23, e24, e25, e26, e27, e28, e29, e30, e31,
+            e7, e8, e9, e10, e11, e12, e13, e14, e15, e16, e32_1, e17, e18, e19, e20, e21, e22, e23, e24, e25, e26, e27, e28, e29, e30, e31, e7_1, e101, e102,
             e32,  e33,  e34,  e35,  e36,  e37,  e33_1,  e34_1,  e35_1,  e36_1,  e37_1,  e33_2,  e34_2,  e35_2,  e36_2,  e37_2, e33_3,  e34_3,  e35_3,  e36_3,  e37_3,  e38,
             e39,  e40,  e41,  e42,  e43,  e39_1,  e40_1,  e41_1,  e42_1,  e43_1,  e44,  e45,  e46,  e47,
             e48,  e49,  e50,  e51,  e52,  e53,  e54, e55,  e56,  e57,  e58,  e59,
             e60,  e61,  e62,  e63,  e64,  e65,  e66, e67,  e68,  e69,  e70,  e71,  e72, e67_1,  e68_1,  e69_1, e70_1,  e71_1,  e72_1, e73,  e74,  e75,  e76,  e77,  e78, e74_1,  e75_1,  e76_1,  e77_1,  e78_1, e79,  e80,  e81,
             e82,  e90_alcohol,  e91_alcohol,  e92_alcohol,  e83,  e90_tabaco,  e91_tabaco,  e92_tabaco, e84,  e90_marihuana,  e91_marihuana,  e92_marihuana, e85,  e90_pastillas,  e91_pastillas,  e92_pastillas, e86,  e90_solventes,
-            e91_solventes,  e92_solventes,  e87,  e90_cristal,  e91_cristal, e92_cristal, e88,  e90_cocaina,  e91_cocaina,  e92_cocaina,  e89,  e93_otroConsumo,  e90_otroConsumo,  e91_otroConsumo,  e92_otroConsumo,  e94,  e95;
+            e91_solventes,  e92_solventes,  e87,  e90_cristal,  e91_cristal, e92_cristal, e88,  e90_cocaina,  e91_cocaina,  e92_cocaina,  e89,  e93_otroConsumo,  e90_otroConsumo,  e91_otroConsumo,  e92_otroConsumo,  e94,  e95,
+            field, observation;
     ProgressDialog progreso;
     RequestQueue request;
     StringRequest stringRequest;
@@ -128,6 +129,7 @@ public class SincronizarBD extends AppCompatActivity {
         ArrayList<datosEscolarLaboral> listaEscolarLaboral;
         ArrayList<datosAbandonoEstado> listaAbandonoEstado;
         ArrayList<datosSalud> listaSalud;
+        ArrayList<datosObservaciones> listaObservaciones;
         lista = db.getDatosGenerales();
         listaDomicilio=db.getDomicilios();
         listaHabitantes=db.getHabitantes();
@@ -135,6 +137,7 @@ public class SincronizarBD extends AppCompatActivity {
         listaEscolarLaboral=db.getHistorialEscolarLaboral();
         listaAbandonoEstado=db.getDatosAbandonoEstado();
         listaSalud=db.getDatosSalud();
+        listaObservaciones=db.getObservaciones();
         progreso = new ProgressDialog(this);
         progreso.setMessage("Cargando...");
         progreso.show();
@@ -170,6 +173,7 @@ public class SincronizarBD extends AppCompatActivity {
             e14=listaDomicilio.get(i).getE14();
             e15=listaDomicilio.get(i).getE15();
             e16=listaDomicilio.get(i).getE16();
+            e32_1=listaDomicilio.get(i).getE32_1();
             e17=listaDomicilio.get(i).getE17();
             e18=listaDomicilio.get(i).getE18();
             e19=listaDomicilio.get(i).getE19();
@@ -185,6 +189,9 @@ public class SincronizarBD extends AppCompatActivity {
             e29=listaDomicilio.get(i).getE29();
             e30=listaDomicilio.get(i).getE30();
             e31=listaDomicilio.get(i).getE31();
+            e7_1=listaDomicilio.get(i).getE7_1();
+            e101=listaDomicilio.get(i).getE101();
+            e102=listaDomicilio.get(i).getE102();
             //endregion
 
             //region Get Datos Familiares
@@ -318,6 +325,11 @@ public class SincronizarBD extends AppCompatActivity {
             e95=listaSalud.get(i).getE95();
             //endregion
 
+            //region Get Verificación Observaciones
+            field=listaObservaciones.get(i).getField();
+            observation=listaObservaciones.get(i).getObservation();
+            //endregion
+
             url = "http://10.6.60.182/ejemploBDRemota/registraImputadoDatos.php?" +
                     "Nombre="+nombre+
                     "&Alias="+alias+
@@ -331,9 +343,10 @@ public class SincronizarBD extends AppCompatActivity {
                     "&Entrevistador="+entrevistador+
                     "&ObservacionesF="+observacionesF+
                     "&Tipo="+tipo+
-                    "&TieneDomicilio"+tieneDomicilio+
-                    "&OtrosHabitantes"+otrosHabitantes+
+                    "&TieneDomicilio="+tieneDomicilio+
+                    "&OtrosHabitantes="+otrosHabitantes+
                     "&e7="+e7+
+                    "&e7_1="+e7_1+
                     "&e8="+e8+
                     "&e9="+e9+
                     "&e10="+e10+
@@ -343,6 +356,7 @@ public class SincronizarBD extends AppCompatActivity {
                     "&e14="+e14+
                     "&e15="+e15+
                     "&e16="+e16+
+                    "&e32_1="+e32_1+
                     "&e17="+e17+
                     "&e18="+e18+
                     "&e19="+e19+
@@ -358,6 +372,8 @@ public class SincronizarBD extends AppCompatActivity {
                     "&e29="+e29+
                     "&e30="+e30+
                     "&e31="+e31+
+                    "&e101="+e101+
+                    "&e102="+e102+
                     "&folio="+folio+
                     "&e32="+e32+
                     "&e33="+e33+
@@ -480,6 +496,9 @@ public class SincronizarBD extends AppCompatActivity {
                     "&e94="+e94+
                     "&e95="+e95+
                     "&folio6="+folio;
+                    /*"&field="+field+
+                    "&observation="+observation+
+                    "&folio7="+folio;*/
 
 
             url = (url.replace(" ", "%20")); //reemplazo espacios por %20

@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 
+import com.sistemas.evaluacion.entidades.DatosEntrevistador;
 import com.sistemas.evaluacion.entidades.datosAbandonoEstado;
 import com.sistemas.evaluacion.entidades.datosEscolarLaboral;
 import com.sistemas.evaluacion.entidades.datosGenerales;
@@ -14,6 +15,7 @@ import com.sistemas.evaluacion.entidades.datosDomicilio;
 import com.sistemas.evaluacion.entidades.datosHabitantes;
 import com.sistemas.evaluacion.entidades.datosObservaciones;
 import com.sistemas.evaluacion.entidades.datosReferencias;
+import com.sistemas.evaluacion.entidades.datosSalud;
 import com.sistemas.evaluacion.entidades.datosSalud;
 
 public class MyOpenHelper extends SQLiteOpenHelper {
@@ -34,7 +36,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     //region Tabla imputado_datos_domicilio
     private static final String CREATE_TABLE_IMPUTADO_DATOS_DOMICILIO="CREATE TABLE imputado_datos_domicilio (_id INTEGER PRIMARY KEY AUTOINCREMENT," +
             "e7 TEXT, e7_1 TEXT, e8 TEXT, e9 TEXT, e10 TEXT, e11 TEXT, e12 TEXT, e13 TEXT, e14 TEXT, e15 TEXT, e16 TEXT, e32_1 TEXT, e17 TEXT, e18 TEXT, e19 TEXT, e20 TEXT," +
-            "e21 TEXT, e22 TEXT, e23 TEXT, e24 TEXT, e25 TEXT, e26 TEXT, e27 TEXT, e28 TEXT, e29 TEXT, e30 TEXT, e31 TEXT, e101 TEXT, e102 TEXT, Folio TEXT)";
+            "e21 TEXT, e22 TEXT, e23 TEXT, e24 TEXT, e25 TEXT, e26 TEXT, e27 TEXT, e28 TEXT, e29 TEXT, e30 TEXT, e31 TEXT, e101 TEXT, e102 TEXT, Folio TEXT)"; //e7_1, e101, e102
     //endregion
 
     //region Tabla imputado_datos_familiares
@@ -75,6 +77,10 @@ public class MyOpenHelper extends SQLiteOpenHelper {
             "Campo TEXT, Observacion TEXT, Folio TEXT)";
     //endregion
 
+    //region Tabla entrevistador
+
+    private static final String CREATE_TABLE_ENTREVISTADOR="CREATE TABLE entrevistador(_id INTEGER PRIMARY KEY AUTOINCREMENT, codigo TEXT, nombre TEXT)";
+    private static final String INSERT_INTO_ENTREVISTADIR="INSERT INTO entrevistador (_id, codigo, nombre) VALUES(1, \"E1\", \"COMANDANTE\")";
     //endregion
 
     //region Definicion de la base de datos
@@ -98,6 +104,8 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_IMPUTADOS_ABANDONO_ESTADO);
         db.execSQL(CREATE_TABLE_IMPUTADOS_SALUD);
         db.execSQL(CREATE_TABLE_VERIFICACION_OBSERVACIONES);
+        db.execSQL(CREATE_TABLE_ENTREVISTADOR);
+        db.execSQL(INSERT_INTO_ENTREVISTADIR);
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -397,6 +405,15 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     }
 	//endregion
 
+    //region Actualiza tabla entrevistador
+    public void updateTableEntrevistador( String field, String codigo, String _id){
+        ContentValues cv = new ContentValues();
+        cv.put(field, codigo);
+        String[] args = new  String[]{_id};
+        db.update("entrevistador", cv, "_id=?", args);
+    }
+    //endregion
+
     //region Borrar un comentario a partir de su id
     public void borrar(int id){
         String[] args = new String[]{String.valueOf(id)};
@@ -549,6 +566,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         c.close();
         return lista;
     }
+    //endregion
 
     //region Obtener los datos de los familiares y habitantes en la base de datos
     public ArrayList<datosHabitantes> getHabitantes(){
@@ -795,6 +813,55 @@ public class MyOpenHelper extends SQLiteOpenHelper {
                         e92_cristal, e88, e90_cocaina, e91_cocaina, e92_cocaina, e89,
                         e93_otroConsumo, e90_otroConsumo, e91_otroConsumo, e92_otroConsumo, e94,
                         e95, Folio);
+
+                //Añadimos la direccion a la lista
+                lista.add(dato);
+            } while (c.moveToNext());
+        }
+
+        //Cerramos el cursor
+        c.close();
+        return lista;
+    }
+    //endregion
+
+    //region Obtener los datos de observaciones en la base de datos
+    public ArrayList<datosObservaciones> getObservaciones(){
+        ArrayList<datosObservaciones> lista = new ArrayList<datosObservaciones>();
+        Cursor c=db.rawQuery("select _id, Campo, Observacion , Folio from verificacion_observaciones",  null);
+        if (c != null && c.getCount()>0) {
+            c.moveToFirst();
+            do {
+                String Campo = c.getString(c.getColumnIndex("Campo"));
+                String Observacion = c.getString(c.getColumnIndex("Observacion"));
+                String Folio = c.getString(c.getColumnIndex("Folio"));
+
+                int id = c.getInt(c.getColumnIndex("_id"));
+                datosObservaciones dato = new datosObservaciones(id, Campo, Observacion , Folio);
+
+                //Añadimos la direccion a la lista
+                lista.add(dato);
+            } while (c.moveToNext());
+        }
+
+        //Cerramos el cursor
+        c.close();
+        return lista;
+    }
+    //endregion
+
+    //region Obtener datos de entrevistador
+    public ArrayList<DatosEntrevistador> getEntrevistador(){
+        ArrayList<DatosEntrevistador> lista = new ArrayList<DatosEntrevistador>();
+        Cursor c=db.rawQuery("select _id, codigo, nombre from entrevistador",  null);
+        if (c != null && c.getCount()>0) {
+            c.moveToFirst();
+            do {
+                String codigo = c.getString(c.getColumnIndex("codigo"));
+                String nombre = c.getString(c.getColumnIndex("nombre"));
+
+                int id = c.getInt(c.getColumnIndex("_id"));
+                DatosEntrevistador dato = new DatosEntrevistador(id, codigo, nombre);
 
                 //Añadimos la direccion a la lista
                 lista.add(dato);

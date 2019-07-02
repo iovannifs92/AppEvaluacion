@@ -1,6 +1,7 @@
 package com.sistemas.evaluacion;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Environment;
 import java.io.FileOutputStream;
 import java.nio.channels.*;
@@ -8,6 +9,7 @@ import java.io.File;
 import java.io.FileInputStream;
 
 public class ListToCSV {
+
     public boolean exportDB(Context context) {
         // TODO Auto-generated method stub
         boolean res=false;
@@ -25,7 +27,7 @@ public class ListToCSV {
             if (sd.canWrite()) {
                 String  currentDBPath= "//data//" + "com.sistemas.evaluacion"
                         + "//databases//" + "evaluacion.sqlite";
-                String backupDBPath  = "/Entrevistas/T1EntrevistasEvaluacion.sqlite";
+                String backupDBPath  = "/Entrevistas/"+MainMenu.entrevistador+"EntrevistasEvaluacion.sqlite";
                 File currentDB = new File(data, currentDBPath);
                 File backupDB = new File(sd, backupDBPath);
 

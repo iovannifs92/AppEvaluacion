@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.sistemas.evaluacion.entidades.datosGenerales;
+import com.sistemas.evaluacion.entidades.DatosEntrevistador;
 
 import java.util.ArrayList;
 
@@ -27,7 +28,8 @@ public class MainMenu extends AppCompatActivity
     //region Variables Globales
     private MyOpenHelper db;
     private ArrayList<datosGenerales> lista;
-    //private ArrayList<Comentario> lista;
+    private ArrayList<DatosEntrevistador> listaEntrevistador;
+    public static String entrevistador;
     private TextView tvLista;
     public String tamaño="";
     ListToCSV convierte=new ListToCSV();
@@ -69,6 +71,11 @@ public class MainMenu extends AppCompatActivity
         tamaño=""+(lista.size());
         tvLista = (TextView) findViewById(R.id.tvLista);
         tvLista.setText(tamaño);
+
+        //region entrevistador
+        listaEntrevistador=db.getEntrevistador();
+        entrevistador=listaEntrevistador.get(0).getCodigo();
+        //endregion
 
         //db.nada();
 
@@ -116,7 +123,8 @@ public class MainMenu extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            Intent intent= new Intent(this, Settings.class);
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);
@@ -141,9 +149,13 @@ public class MainMenu extends AppCompatActivity
                 Intent intent3= new Intent(this, SincronizarBD.class);
                 startActivity(intent3);
                 break;
+            case R.id.nav_manage:
+                Intent intent4= new Intent(this, Settings.class);
+                startActivity(intent4);
+                break;
         }
 
-        if (id == R.id.nav_verificacion) {
+        /*if (id == R.id.nav_verificacion) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
 
@@ -155,7 +167,7 @@ public class MainMenu extends AppCompatActivity
 
         } else if (id == R.id.nav_send) {
 
-        }
+        }*/
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

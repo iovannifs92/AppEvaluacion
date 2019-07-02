@@ -1,7 +1,10 @@
 package com.sistemas.evaluacion;
 
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,8 +26,12 @@ import com.sistemas.evaluacion.entidades.datosGenerales;
 
 public class entrevista extends AppCompatActivity implements View.OnClickListener {
 
+    public static SharedPreferences preference;
+    public static SharedPreferences.Editor pEditor;
+
+
     //region Variables Globales
-    private static final String TAG = "Entrevista";
+
     private MyOpenHelper db;
     private ArrayList<datosGenerales> lista;
     private static final int PICK_ADDRESS_REQUEST = 1;
@@ -115,6 +122,8 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entrevista);
+
+
 
         db=new MyOpenHelper(this);
 
@@ -1570,7 +1579,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
         Date date = new Date();
         String fecha = dateFormat.format(date);
         etP97=(EditText) findViewById(R.id.etP97);
-        etP97.setText("E1-"+fecha+"-"+tamaño);
+        etP97.setText(MainMenu.entrevistador+"-"+fecha+"-"+tamaño);
         //endregion
 
         //region sp100
@@ -1630,7 +1639,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                 }
 
                 if(address.isEmpty() == false) {
-                    Intent intent = new Intent(v.getContext(), MapsActivity.class);
+                    Intent intent = new Intent(v.getContext(), verificacion.class);
                     intent.putExtra("address", address);
                     startActivityForResult(intent, PICK_ADDRESS_REQUEST);
                 }

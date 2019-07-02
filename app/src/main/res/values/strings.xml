@@ -48,6 +48,7 @@
     <string name="e15">Teléfono de casa</string>
     <string name="e16">Celular Familiar</string>
     <string name="e17">Nombre de padre</string>
+    <string name="e32_1">¿Actualmente vive con sus padres?</string>
     <string name="e18">Domicilio del padre</string>
     <string name="e19">Nombre de la madre</string>
     <string name="e20">Domicilio de la madre</string>
@@ -67,7 +68,6 @@
 
     <!--region DATOS FAMILIARES Y PERSONAS CON LAS QUE HABITA EL IMPUTADO-->
     <string name="e32">¿Con cuántas personas vive actualmente?</string>
-    <string name="e32_1">¿Actualmente vive con sus padres?</string>
     <string name="e33">Nombre</string>
     <string name="e34">Parentesco</string>
     <string name="e35">Edad</string>
