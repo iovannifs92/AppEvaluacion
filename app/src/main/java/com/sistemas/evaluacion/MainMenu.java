@@ -136,9 +136,14 @@ public class MainMenu extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        Intent intent;
         switch(id){
             case R.id.nav_car:
-                Intent intent= new Intent(this, ConsultaDomicilio.class);
+                intent = new Intent(this, ConsultaDomicilio.class);
+                startActivity(intent);
+                break;
+            case R.id.nav_check:
+                intent= new Intent(this, verificacion.class);
                 startActivity(intent);
                 break;
             case R.id.nav_verificacion:
