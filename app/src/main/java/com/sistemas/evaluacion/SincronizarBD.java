@@ -38,7 +38,7 @@ public class SincronizarBD extends AppCompatActivity {
     private TextView tvMuestraResultados;
     private EditText etPass;
     String textoSincronizado="", pass="",url,
-            nombre, alias, fNacimiento, edad, lNacimiento, sexo, folio, fEntrevista, duracionE, entrevistador, observacionesF, tipo, tieneDomicilio, otrosHabitantes,
+            nombre, alias, fNacimiento, edad, lNacimiento, sexo, folio, fEntrevista, duracionE, entrevistador, observacionesF, tipo, tieneDomicilio, otrosHabitantes, entrevistado, antecedentePenal,
             e7, e8, e9, e10, e11, e12, e13, e14, e15, e16, e32_1, e17, e18, e19, e20, e21, e22, e23, e24, e25, e26, e27, e28, e29, e30, e31, e7_1, e101, e102,
             e32,  e33,  e34,  e35,  e36,  e37,  e33_1,  e34_1,  e35_1,  e36_1,  e37_1,  e33_2,  e34_2,  e35_2,  e36_2,  e37_2, e33_3,  e34_3,  e35_3,  e36_3,  e37_3,  e38,
             e39,  e40,  e41,  e42,  e43,  e39_1,  e40_1,  e41_1,  e42_1,  e43_1,  e44,  e45,  e46,  e47,
@@ -139,8 +139,8 @@ public class SincronizarBD extends AppCompatActivity {
         listaSalud=db.getDatosSalud();
         listaObservaciones=db.getObservaciones();
         progreso = new ProgressDialog(this);
-        progreso.setMessage("Cargando...");
-        progreso.show();
+        //progreso.setMessage("Cargando...");
+        //progreso.show();
 
         //region Ciclo FOR
         for(int i = 0; i < lista.size(); i++){
@@ -160,6 +160,8 @@ public class SincronizarBD extends AppCompatActivity {
             tipo=lista.get(i).getTipo();
             tieneDomicilio=lista.get(i).getTieneDomicilioS();
             otrosHabitantes=lista.get(i).getOtrosHabitantes();
+            entrevistado=lista.get(i).getEntrevistado();
+            antecedentePenal=lista.get(i).getAntecedentePenal();
             //endregion
 
             //region Get Datos Domicilio
@@ -326,8 +328,8 @@ public class SincronizarBD extends AppCompatActivity {
             //endregion
 
             //region Get Verificación Observaciones
-            field=listaObservaciones.get(i).getField();
-            observation=listaObservaciones.get(i).getObservation();
+            //field=listaObservaciones.get(i).getField();
+            //observation=listaObservaciones.get(i).getObservation();
             //endregion
 
             url = "http://10.6.60.182/ejemploBDRemota/registraImputadoDatos.php?" +
@@ -345,6 +347,8 @@ public class SincronizarBD extends AppCompatActivity {
                     "&Tipo="+tipo+
                     "&TieneDomicilio="+tieneDomicilio+
                     "&OtrosHabitantes="+otrosHabitantes+
+                    "&Entrevistado="+entrevistado+
+                    "&AntecedentePenal="+antecedentePenal+
                     "&e7="+e7+
                     "&e7_1="+e7_1+
                     "&e8="+e8+

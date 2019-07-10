@@ -152,6 +152,47 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"/>
 
+                <TextView
+                    android:id="@+id/tvP29"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e29" />
+
+                <Spinner
+                    android:id="@+id/sP29"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvP30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e30" />
+
+                <EditText
+                    android:id="@+id/etP30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:ems="10"
+                    android:inputType="text" />
+
+                <TextView
+                    android:id="@+id/tvP31"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e31" />
+
+                <EditText
+                    android:id="@+id/etP31"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:text="0"/>
+
                 <!--- <RadioGroup
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -166,6 +207,43 @@
                         android:layout_height="match_parent"
                         android:text="Femenino"/>
                 </RadioGroup> -->
+
+                <TextView
+                    android:id="@+id/tvAntecedentes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="ANTECEDENTES"
+                    android:background="@color/colorSecundario"
+                    android:textColor="@color/myWhite"
+                    android:textSize="20dp"
+                    android:textAlignment="center"/>
+
+                <TextView
+                    android:id="@+id/tvP1_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e1_1" />
+
+
+                <Spinner
+                    android:id="@+id/sP1_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvP1_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e1_2" />
+
+
+                <Spinner
+                    android:id="@+id/sP1_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
 
                 <TextView
                     android:id="@+id/tvDPrincipal"
@@ -288,17 +366,8 @@
                     android:layout_height="wrap_content"
                     android:theme="@style/SecondaryColoredButton"
                     android:textColor="#FFFFFF"
-                    android:text="Buscar domicilio" />
-
-                <TextView
-                    android:id="@+id/tvDPrincipalCierre"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
-                    android:background="@color/colorSecundario"
-                    android:textColor="@color/myWhite"
-                    android:textSize="20dp"
-                    android:textAlignment="center"/>
+                    android:text="Buscar domicilio"
+                    android:visibility="gone"/>
 
                 <TextView
                     android:id="@+id/tvP13"
@@ -571,60 +640,99 @@
                         android:inputType="text" />
 
                 </LinearLayout>
+                <!--endregion-->
+
+
+
 
                 <TextView
-                    android:id="@+id/tvDSecundarioCierre"
+                    android:id="@+id/tvDatosVictima"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
                     android:background="@color/colorSecundario"
                     android:textAlignment="center"
                     android:textColor="@color/myWhite"
+                    android:text="DATOS VICTIMA"
                     android:textSize="20dp" />
 
-
-                <!--endregion-->
-
                 <TextView
-                    android:id="@+id/tvP29"
+                    android:id="@+id/tvP101"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/e29" />
+                    android:text="@string/e101" />
 
                 <Spinner
-                    android:id="@+id/sP29"
+                    android:id="@+id/sP101"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"/>
 
-                <TextView
-                    android:id="@+id/tvP30"
+                <LinearLayout
+                    android:id="@+id/llDatosVictima"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/e30" />
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
-                <EditText
-                    android:id="@+id/etP30"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
-                    android:ems="10"
-                    android:inputType="text" />
+                    <TextView
+                        android:id="@+id/tv102"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e102" />
 
-                <TextView
-                    android:id="@+id/tvP31"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/e31" />
+                    <EditText
+                        android:id="@+id/etP102"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:layout_marginBottom="20dp"/>
 
-                <EditText
-                    android:id="@+id/etP31"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
-                    android:ems="10"
-                    android:inputType="number"
-                    android:text="0"/>
+                    <TextView
+                        android:id="@+id/tv103"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e103" />
+
+                    <EditText
+                        android:id="@+id/etP103"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:id="@+id/tv104"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e104" />
+
+                    <EditText
+                        android:id="@+id/etP104"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:id="@+id/tv105"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e105" />
+
+                    <EditText
+                        android:id="@+id/etP105"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:layout_marginBottom="20dp"/>
+
+
+                </LinearLayout>
 
 
 

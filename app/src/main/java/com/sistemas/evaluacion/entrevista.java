@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -65,7 +66,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
             etP92_tabaco, etP91_marihuana, etP92_marihuana, etP91_pastillas, etP92_pastillas,
             etP91_solventes, etP92_solventes, etP91_cristal, etP92_cristal, etP91_cocaina,
             etP92_cocaina, etP91_otroConsumo, etP92_otroConsumo, etP93_otroConsumo, etP95, etP98,
-            etP101, etP102;
+            etP102, etP103, etP104, etP105;
 
     private EditText etP97, etP1, etP2, etP4, etP5, etP7, etP7_1, etP8, etP9, etP10, etP12, etP14, etP15,
             etP16, etP17, etP18, etP19, etP20, etP21_1, etP21, etP22, etP23, etP24, etP26, etP28, etP30,
@@ -73,15 +74,15 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
     //endregion
 
     //region Spinner
-    private Spinner sP6, sP8, sP11, sP13, sP21_1, sP22, sP25, sP27, sP29, sP32, sP32_1, sP44, sP46, sP48, sP50, sP51,
+    private Spinner sP1_1, sP1_2, sP6, sP8, sP11, sP13, sP21_1, sP22, sP25, sP27, sP29, sP32, sP32_1, sP44, sP46, sP48, sP50, sP51,
             sP54, sP57, sP60, sP66, sP72, sP72_1, sP73, sP78, sP78_1, sP79, sP80, sP82,
             sP90_alcohol, sP83, sP90_tabaco, sP84, sP90_marihuana, sP85, sP90_pastillas,
             sP86,sP90_solventes, sP87, sP90_cristal, sP88, sP90_cocaina, sP89, sP90_otroConsumo,
-            sP94, sP100;
+            sP94, sP100, sP101;
     //endregion
 
     //region LinearLayout
-    private LinearLayout llDomicilioSec, llDatosGenerales, llDatosFamiliares, llDatosEscolares, llDatosLaborales, llFAEstado, llSalud;
+    private LinearLayout llDomicilioSec, llDatosGenerales, llDatosFamiliares, llDatosEscolares, llDatosLaborales, llFAEstado, llSalud, llDatosVictima;
     //endregion
 
     //region Button
@@ -89,7 +90,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
     //endregion
 
     //region String
-    private String r1,r2,r3,r4,r5,r6, r7, r7_1, r8, r9, r10, r11, r12, r13, r14, r15, r16, r32_1, r17, r18, r19, r20,
+    private String r1, r1_1, r1_2, r2,r3,r4,r5,r6, r7, r7_1, r8, r9, r10, r11, r12, r13, r14, r15, r16, r32_1, r17, r18, r19, r20,
             r21_1, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31, r33, r34, r35, r36, r37, r33_1, r34_1,
             r35_1, r36_1, r37_1, r33_2, r34_2, r35_2, r36_2, r37_2, r33_3, r34_3, r35_3, r36_3, r37_3, r38,
             r39, r40, r41, r42, r43, r39_1, r40_1, r41_1, r42_1, r43_1, r44, r45, r46, r47, r48, r49, r50,
@@ -99,7 +100,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
             r90_alcohol, r91_alcohol, r92_alcohol, r90_tabaco, r91_tabaco, r92_tabaco, r90_marihuana, r91_marihuana, r92_marihuana,
             r90_pastillas, r91_pastillas, r92_pastillas, r90_solventes, r91_solventes, r92_solventes,
             r90_cristal, r91_cristal, r92_cristal, r90_cocaina, r91_cocaina, r92_cocaina, r93_otroConsumo, r90_otroConsumo, r91_otroConsumo, r92_otroConsumo, r94, r95,
-            r96, r98, r99, r100;
+            r96, r98, r99, r100, r101, r102, r103, r104, r105;
     private String FOLIO;
     private String confirmedMainLatitude, confirmedMainLongitude;
 
@@ -113,6 +114,8 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
     private String [] diasLaboral={"NA","Lunes a Viernes","Lunes a Domingo","Lunes a Sábado","Fines de Semana","Sin días Establecidos","Otro"};
     private String [] frecuenciaContacto={"NA", "Diariamente", "Semanalmente","Quincenalmente","Mensualmente","Anualmente"};
     private String r32="0";
+    private String [] antecedentes={"No", "Si", "No sabe"};
+    private String [] dVictima={"NA", "Persona", "Tienda departamental", "No sabe", "Otro"};
     //endregion
     //endregion
 
@@ -131,6 +134,16 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
         //region P3 Fecha-Nacimiento
         etP3=(EditText) findViewById(R.id.etP3);
         etP3.setOnClickListener(this);
+        //endregion
+
+        //region sP1_1 Entrevistado
+        sP1_1=(Spinner) findViewById(R.id.sP1_1);
+        sP1_1.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,antecedentes));
+        //endregion
+
+        //region sP1_2 Antecedente Penal
+        sP1_2=(Spinner) findViewById(R.id.sP1_2);
+        sP1_2.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,antecedentes));
         //endregion
 
         //region SP6 Sexo
@@ -1572,6 +1585,31 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
         //etP98.setOnClickListener(this);
         //endregion
 
+        //region sP101 Datos Victima
+        sP101=(Spinner) findViewById(R.id.sP101);
+        sP101.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,dVictima));
+
+        llDatosVictima=(LinearLayout) findViewById(R.id.llDatosVictima);
+
+        sP101.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem=parent.getSelectedItem().toString();
+                if(selectedItem=="Persona"||selectedItem=="Tienda departamental"||selectedItem=="Otro"){
+                    llDatosVictima.setVisibility(View.VISIBLE);
+                }
+                else{
+                    llDatosVictima.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                return;
+            }
+        });
+        //endregion
+
         //region etP97 FOLIO
         lista=db.getDatosGenerales();
         String tamaño=""+((lista.size())+1);
@@ -1682,6 +1720,8 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                 r100=sP100.getSelectedItem().toString().toUpperCase();
                 r21_1=sP21_1.getSelectedItem().toString().toUpperCase();
                 r32=sP32.getSelectedItem().toString().toUpperCase();
+                r1_1=sP1_1.getSelectedItem().toString().toUpperCase();//Entrevistado
+                r1_2=sP1_2.getSelectedItem().toString().toUpperCase();//Antecedente Penal
 
                 Date fin=new Date();
                 int min=fechasDiferenciaEnDias(inicio, fin);
@@ -1901,6 +1941,20 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                 r95=etP95.getText().toString().toUpperCase();
                 //endregion
 
+                //region Datos Victima
+                etP102=(EditText) findViewById(R.id.etP102);
+                etP103=(EditText) findViewById(R.id.etP103);
+                etP104=(EditText) findViewById(R.id.etP104);
+                etP105=(EditText) findViewById(R.id.etP105);
+
+
+                r101=sP101.getSelectedItem().toString().toUpperCase();
+                r102=etP102.getText().toString().toUpperCase();
+                r103=etP103.getText().toString().toUpperCase();
+                r104=etP104.getText().toString().toUpperCase();
+                r105=etP105.getText().toString().toUpperCase();
+                //endregion
+
                 r98=etP98.getText().toString().toUpperCase();// dato de fecha de entrevista
 
 
@@ -1910,22 +1964,25 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                 //endregion
 
                 //region Insertar a Base de Datos
-                db.insertarDatosGenerales(r1,r2,r3,r4,r5, r6, FOLIO, r98, min, r96, r99, r100, r21_1, r32);
-                db.insertarDatosGeneralesDomicilio(r7, r7_1, r8, r9, r10, r11, r12, r13, r14, r15, r16, r32_1, r17,
-                        r18, r19, r20, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31, confirmedMainLatitude, confirmedMainLongitude, FOLIO);
-                db.insertarDatosFamiliares(r32, r33, r34,r35, r36, r37, r33_1, r34_1,r35_1, r36_1, r37_1, r33_2, r34_2,r35_2, r36_2, r37_2,
-                        r33_3, r34_3,r35_3, r36_3, r37_3, r38, FOLIO);
-                db.insertarDatosReferencias(r39, r40, r41, r42, r43, r39_1, r40_1, r41_1, r42_1, r43_1, r44, r45, r46, r47, FOLIO);
-                db.insertarDatosEscolarLaboral(r48, r49, r50, r51, r52, r53, r54, r55, r56, r57, r58, r59, FOLIO);
-                db.insertarDatosAbandonoEstado(r60, r61, r62, r63, r64, r65, r66, r67, r68, r69, r70, r71, r72, r67_1, r68_1, r69_1, r70_1, r71_1, r72_1, r73, r74,
-                        r75, r76, r77, r78, r74_1, r75_1, r76_1, r77_1, r78_1, r79, r80, r81, FOLIO);
-                db.insertarDatosSalud(r82, r90_alcohol, r91_alcohol, r92_alcohol, r83, r90_tabaco, r91_tabaco, r92_tabaco, r84, r90_marihuana, r91_marihuana, r92_marihuana,
-                        r85, r90_pastillas, r91_pastillas, r92_pastillas, r86, r90_solventes, r91_solventes, r92_solventes, r87, r90_cristal, r91_cristal, r92_cristal,
-                        r88, r90_cocaina, r91_cocaina, r92_cocaina, r89, r93_otroConsumo, r90_otroConsumo, r91_otroConsumo, r92_otroConsumo, r94, r95, FOLIO);
-                Toast.makeText(getApplicationContext(),"Datos Guardados", Toast.LENGTH_SHORT).show();
+                if(ValidaFormulario()) {
+                    db.insertarDatosGenerales(r1, r2, r3, r4, r5, r6, FOLIO, r98, min, r96, r99, r100, r21_1, r32,r1_1,r1_2);
+                    db.insertarDatosGeneralesDomicilio(r7, r7_1, r8, r9, r10, r11, r12, r13, r14, r15, r16, r32_1, r17,
+                            r18, r19, r20, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31, confirmedMainLatitude, confirmedMainLongitude, FOLIO);
+                    db.insertarDatosFamiliares(r32, r33, r34, r35, r36, r37, r33_1, r34_1, r35_1, r36_1, r37_1, r33_2, r34_2, r35_2, r36_2, r37_2,
+                            r33_3, r34_3, r35_3, r36_3, r37_3, r38, FOLIO);
+                    db.insertarDatosReferencias(r39, r40, r41, r42, r43, r39_1, r40_1, r41_1, r42_1, r43_1, r44, r45, r46, r47, FOLIO);
+                    db.insertarDatosEscolarLaboral(r48, r49, r50, r51, r52, r53, r54, r55, r56, r57, r58, r59, FOLIO);
+                    db.insertarDatosAbandonoEstado(r60, r61, r62, r63, r64, r65, r66, r67, r68, r69, r70, r71, r72, r67_1, r68_1, r69_1, r70_1, r71_1, r72_1, r73, r74,
+                            r75, r76, r77, r78, r74_1, r75_1, r76_1, r77_1, r78_1, r79, r80, r81, FOLIO);
+                    db.insertarDatosSalud(r82, r90_alcohol, r91_alcohol, r92_alcohol, r83, r90_tabaco, r91_tabaco, r92_tabaco, r84, r90_marihuana, r91_marihuana, r92_marihuana,
+                            r85, r90_pastillas, r91_pastillas, r92_pastillas, r86, r90_solventes, r91_solventes, r92_solventes, r87, r90_cristal, r91_cristal, r92_cristal,
+                            r88, r90_cocaina, r91_cocaina, r92_cocaina, r89, r93_otroConsumo, r90_otroConsumo, r91_otroConsumo, r92_otroConsumo, r94, r95, FOLIO);
+                    Toast.makeText(getApplicationContext(), "Datos Guardados", Toast.LENGTH_SHORT).show();
+                    db.insertarDatosVictima(r101, r102, r103, r104, r105, FOLIO);
 
-                Intent intent= new Intent(v.getContext(), MainMenu.class);
-                startActivity(intent);
+                    Intent intent = new Intent(v.getContext(), MainMenu.class);
+                    startActivity(intent);
+                }
                 //endregion
 
             }
@@ -2188,6 +2245,130 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
     }
 
     //endregion
+
+    //region ValidaFormulario
+    public boolean ValidaFormulario(){
+        String verifica="";
+        boolean validacion=true;
+
+        if(r66.equals("SI")){
+            if(r67.equals("")||r68.equals("")||r69.equals("")||r70.equals("")||r71.equals("")||r72.equals("")){
+                validacion=false;
+                verifica="\nDatos de familiares en el extranjero"+verifica;
+                llFAEstado.setVisibility(View.VISIBLE);
+                sP32.requestFocus();
+            }
+        }
+        if(r60.equals("SI")){
+            if(r61.equals("")||r62.equals("")||r63.equals("")||r64.equals("")||r65.equals("")){
+                validacion=false;
+                verifica="\nDatos de si ha Viajado fuera del país"+verifica;
+                llFAEstado.setVisibility(View.VISIBLE);
+                sP32.requestFocus();
+            }
+        }
+        if(r51.equals("SI")){
+            if(r52.equals("")||r58.equals("")){
+                validacion=false;
+                verifica="\nTrabajo"+verifica;
+                llDatosLaborales.setVisibility(View.VISIBLE);
+                sP51.requestFocus();
+            }
+        }
+        else if(r59.equals("")){
+            validacion=false;
+            verifica="\nTrabajo"+verifica;
+            llDatosLaborales.setVisibility(View.VISIBLE);
+            sP51.requestFocus();
+        }
+        if(r48.equals("SI")){
+            if(r49.equals("")||r50.equals("")){
+                validacion=false;
+                verifica="\nEstudios"+verifica;
+                llDatosEscolares.setVisibility(View.VISIBLE);
+                sP48.requestFocus();
+            }
+        }
+        if (!(r32.equals("0"))){
+            if(r33.equals("")||r34.equals("")||r35.equals("")||r36.equals("")||r37.equals("")){
+                validacion=false;
+                verifica="\nFamiliares con los que habita"+verifica;
+                llDatosFamiliares.setVisibility(View.VISIBLE);
+                sP32.requestFocus();
+            }
+        }
+        if(r29.equals("")){
+            validacion=false;
+            verifica="\nEstado Civil"+verifica;
+            llDatosGenerales.setVisibility(View.VISIBLE);
+            sP29.requestFocus();
+        }
+        if(r21_1.equals("SI")){
+            if(r21.equals("")||r22.equals("")||r23.equals("")||r24.equals("")){
+                validacion=false;
+                verifica="\nDomicilio Secundario"+verifica;
+                llDatosGenerales.setVisibility(View.VISIBLE);
+                etP21.requestFocus();
+            }
+        }
+        if(r17.equals("")||r19.equals("")){
+            validacion=false;
+            verifica="\nNombre de los padres"+verifica;
+            llDatosGenerales.setVisibility(View.VISIBLE);
+            etP17.requestFocus();
+        }
+        if(r13.equals("NA")){
+            validacion=false;
+            verifica="\nIngrese un valor en tiempo habitando en domicilio"+verifica;
+            llDatosGenerales.setVisibility(View.VISIBLE);
+            sP13.requestFocus();
+        }
+        if(r7.equals("")||r7_1.equals("")||r8.equals("")||r9.equals("")||r10.equals("")){
+            validacion=false;
+            verifica="\nDatos de domicilio"+verifica;
+            llDatosGenerales.setVisibility(View.VISIBLE);
+            etP7.requestFocus();
+        }
+        if(r5.equals("")){
+            validacion=false;
+            verifica="\nLugar de nacimiento"+verifica;
+            llDatosGenerales.setVisibility(View.VISIBLE);
+            etP5.requestFocus();
+        }
+        if(r3.equals("")){
+            validacion=false;
+            verifica="\nFecha de nacimiento"+verifica;
+            llDatosGenerales.setVisibility(View.VISIBLE);
+            etP3.requestFocus();
+        }
+        if(r1.equals("")){
+            validacion=false;
+            verifica="\nNombre"+verifica;
+            llDatosGenerales.setVisibility(View.VISIBLE);
+            etP1.requestFocus();
+            //etP1.setBackground(Color.parseColor();
+        }
+
+        if(!validacion){
+            Toast.makeText(getApplicationContext(), "Verifica los siguientes datos:"+verifica,Toast.LENGTH_SHORT).show();
+        }
+
+        return validacion;
+    }
+    //endregion
+    private long backPressedTime = 0;
+    @Override
+    public void onBackPressed() {        // to prevent irritating accidental logouts
+        long t = System.currentTimeMillis();
+        if (t - backPressedTime > 2000) {    // 2 secs
+            backPressedTime = t;
+            Toast.makeText(this, "Presiona nuevamente para salir al menu principal",
+                    Toast.LENGTH_SHORT).show();
+        } else {    // this guy is serious
+            // clean up
+            super.onBackPressed();       // bye
+        }
+    }
     //endregion
 
 }

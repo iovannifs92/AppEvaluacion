@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Assist">
+
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <!--region PREGUNTA 1-->
+            <Button
+                android:id="@+id/btnP1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="@color/colorPrimaryDark"
+                android:text="PREGUNTA 1"
+                android:textAlignment="center"
+                android:textColor="@color/myWhite"
+                android:textSize="30dp" />
+
+            <LinearLayout
+                android:id="@+id/llP1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tvP1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="10dp"
+                    android:text="@string/p1"
+                    android:textColor="@color/cardview_dark_background"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/tvP1a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/a"
+                    android:textSize="20dp" />
+
+                <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                    android:id="@+id/sp1a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#05ab9a" />
+
+                <TextView
+                    android:id="@+id/tvP1b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/b"
+                    android:textSize="20dp" />
+
+                <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                    android:id="@+id/sp1b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#05ab9a" />
+
+                <TextView
+                    android:id="@+id/tvP1c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/c"
+                    android:textSize="20dp" />
+
+                <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                    android:id="@+id/sp1c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#05ab9a" />
+
+                <TextView
+                    android:id="@+id/tvP1d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/d"
+                    android:textSize="20dp" />
+
+                <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                    android:id="@+id/sp1d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#05ab9a" />
+
+                <TextView
+                    android:id="@+id/tvP1e"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e"
+                    android:textSize="20dp" />
+
+                <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                    android:id="@+id/sp1e"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#05ab9a" />
+
+                <TextView
+                    android:id="@+id/tvP1f"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/f"
+                    android:textSize="20dp" />
+
+                <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                    android:id="@+id/sp1f"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#05ab9a" />
+
+                <TextView
+                    android:id="@+id/tvP1g"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/g"
+                    android:textSize="20dp" />
+
+                <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                    android:id="@+id/sp1g"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#05ab9a" />
+
+                <TextView
+                    android:id="@+id/tvP1h"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/h"
+                    android:textSize="20dp" />
+
+                <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                    android:id="@+id/sp1h"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#05ab9a" />
+
+                <TextView
+                    android:id="@+id/tvP1i"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/i"
+                    android:textSize="20dp" />
+
+                <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                    android:id="@+id/sp1i"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#05ab9a" />
+
+                <TextView
+                    android:id="@+id/tvP1j"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/j"
+                    android:textSize="20dp" />
+
+                <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                    android:id="@+id/sp1j"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#05ab9a" />
+
+                <EditText
+                    android:id="@+id/etP1j"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:visibility="gone"
+                    android:layout_marginBottom="20dp"/>
+
+            </LinearLayout>
+            <!--endregion-->
+
+            <!--region PREGUNTA 2-->
+            <Button
+                android:id="@+id/btnP2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="@color/colorPrimaryDark"
+                android:text="PREGUNTA 2"
+                android:textAlignment="center"
+                android:textColor="@color/myWhite"
+                android:textSize="30dp" />
+
+            <LinearLayout
+                android:id="@+id/llP2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tvP2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="10dp"
+                    android:text="@string/p2"
+                    android:textColor="@color/cardview_dark_background"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/tvP2a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/a"
+                    android:textSize="20dp"
+                    android:visibility="gone" />
+
+                <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                    android:id="@+id/sp2a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#05ab9a"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tvP2b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/b"
+                    android:textSize="20dp"
+                    android:visibility="gone" />
+
+                <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                    android:id="@+id/sp2b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#05ab9a"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tvP2c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/c"
+                    android:textSize="20dp" />
+
+                <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                    android:id="@+id/sP2c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#05ab9a" />
+
+                <TextView
+                    android:id="@+id/tvP2d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/d"
+                    android:textSize="20dp" />
+
+                <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                    android:id="@+id/sP2d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#05ab9a" />
+
+                <TextView
+                    android:id="@+id/tvP2e"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e"
+                    android:textSize="20dp" />
+
+                <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                    android:id="@+id/sP2e"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#05ab9a" />
+
+                <TextView
+                    android:id="@+id/tvP2f"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/f"
+                    android:textSize="20dp" />
+
+                <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                    android:id="@+id/sP2f"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#05ab9a" />
+
+                <TextView
+                    android:id="@+id/tvP2g"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/g"
+                    android:textSize="20dp" />
+
+                <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                    android:id="@+id/sP2g"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#05ab9a" />
+
+                <TextView
+                    android:id="@+id/tvP2h"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/h"
+                    android:textSize="20dp" />
+
+                <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                    android:id="@+id/sP2h"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#05ab9a" />
+
+                <TextView
+                    android:id="@+id/tvP2i"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/i"
+                    android:textSize="20dp" />
+
+                <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                    android:id="@+id/sP2i"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#05ab9a" />
+
+                <TextView
+                    android:id="@+id/tvP2j"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/j"
+                    android:textSize="20dp" />
+
+                <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                    android:id="@+id/sP2j"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#05ab9a" />
+
+
+            </LinearLayout>
+            <!--endregion-->
+
+            <!--region PREGUNTA 3-->
+            <Button
+                android:id="@+id/btnP3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="@color/colorPrimaryDark"
+                android:text="PREGUNTA 3"
+                android:textAlignment="center"
+                android:textColor="@color/myWhite"
+                android:textSize="30dp" />
+
+            <LinearLayout
+                android:id="@+id/llP3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tvP3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="10dp"
+                    android:text="@string/p3"
+                    android:textColor="@color/cardview_dark_background"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/tvP3a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/a"
+                    android:textSize="20dp"
+                    android:visibility="gone" />
+
+                <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                    android:id="@+id/sp3a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#05ab9a"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tvP3b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/b"
+                    android:textSize="20dp"
+                    android:visibility="gone" />
+
+                <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                    android:id="@+id/sp3b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#05ab9a"
+                    android:visibility="gone" />
+            </LinearLayout>
+            <!--endregion-->
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

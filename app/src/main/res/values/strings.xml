@@ -35,6 +35,8 @@
     <string name="e4">Edad</string>
     <string name="e5">Lugar de nacimiento</string>
     <string name="e6">Sexo</string>
+    <string name="e1_1">¿Fue entrevistado anteriormente?</string>
+    <string name="e1_2">¿Tiene algún antecedente penal?</string>
 
     <string name="e7">Calle</string>
     <string name="e7_1">Número</string>
@@ -158,6 +160,15 @@
     <string name="e99">Observaciones finales</string>
     <string name="e100">Tipo de entrevista</string>
     <!--endregion-->
+
+    <!--region DATOS VICTIMA-->
+    <string name="e101">¿Lo detuvieron por algun delito a un tercero?</string>
+    <string name="e102">Calle y número</string>
+    <string name="e103">Colonia</string>
+    <string name="e104">Municipio</string>
+    <string name="e105">Estado</string>
+    <!--endregion-->
+
     <!--endregion-->
 
     <!--region Drawer Menu-->
@@ -175,6 +186,28 @@
     <string name="cdColonia">Colonia/Fracc</string>
     <string name="cdMunicipio">Municipio</string>
     <string name="cdEstado">Estado</string>
+
+
+    <!--region ASSIST-->
+    <string name="a">Tabaco (cigarros, habanos, tabaco de mascar, pipa, etc.)</string>
+    <string name="b">Bebidas Alchohólicas (cerveza, vino, licores, etc.)</string>
+    <string name="c">Cannabis (marihuana, costo, hierba, hachis, etc.)</string>
+    <string name="d">Cocaína (coca, crack, etc.)</string>
+    <string name="e">Estimulantes de tipo Anfetaminas (speed, anfetaminas, éxtasis, etc.)</string>
+    <string name="f">Inhalantes (oxido nitroso, pegamento, gasolina, solvente para pintura, etc.)</string>
+    <string name="g">Sedantes o pastillas para dormir (diazepan, alprazolam, lunitrazepan, midazolam, etc.)</string>
+    <string name="h">Alucinogenos (LSD, metadona, morfina, buprenorfina, codeina, etc.)</string>
+    <string name="i">Opiáceos (heroína, metadona, morfina, buprenorfina, codeina, etc.)</string>
+    <string name="j">Otros, específique:</string>
+    <string name="p1">A lo largo de la vida ¿cuál de las siguientes sustancias ha consumido alguna vez? (sólo las que consumió sin receta médica)</string>
+    <string name="p2">En los últimos 3 meses ¿con qué frecuencia ha consumido las sustancias que mencionó?</string>
+    <string name="p3">En los últimos 3 meses ¿con qué frecuencia ha sentido un fuerte deseo o ansia de consumir?</string>
+    <string name="p4">En los últimos 3 meses ¿con qué frecuencia el consumo de... le ha causado problemas de salud, social, legales o económicos?</string>
+    <string name="p5">En los últimos 3 meses ¿con qué frecuencia dejó de hacer lo que habitualmente se esperaba de usted por el consumo de...?</string>
+    <string name="p6">¿Un amigo, un familiar o alguien más alguna vez ha mostrado preocupación por sus hábitos de consumo de...?</string>
+    <string name="p7">¿Ha intentado alguna vez reducir o eliminar el consumo de ...?</string>
+    <string name="p8">Alguna vez ha consumido alguna droga por vía inyectada? (solo las que consumió sin receta médica)</string>
+    <!--endregion-->
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

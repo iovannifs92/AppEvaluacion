@@ -142,13 +142,17 @@ public class MainMenu extends AppCompatActivity
                 intent = new Intent(this, ConsultaDomicilio.class);
                 startActivity(intent);
                 break;
-            case R.id.nav_check:
+            /*case R.id.nav_check:
                 intent= new Intent(this, verificacion.class);
                 startActivity(intent);
-                break;
+                break;*/
             case R.id.nav_verificacion:
                 Intent intent2= new Intent(this, verificacion.class);
                 startActivity(intent2);
+                break;
+            case R.id.nav_assist:
+                Intent intent5= new Intent(this, Assist.class);
+                startActivity(intent5);
                 break;
             case R.id.bd_nube:
                 Intent intent3= new Intent(this, SincronizarBD.class);

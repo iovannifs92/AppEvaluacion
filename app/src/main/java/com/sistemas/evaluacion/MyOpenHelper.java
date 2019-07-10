@@ -16,7 +16,7 @@ import com.sistemas.evaluacion.entidades.datosHabitantes;
 import com.sistemas.evaluacion.entidades.datosObservaciones;
 import com.sistemas.evaluacion.entidades.datosReferencias;
 import com.sistemas.evaluacion.entidades.datosSalud;
-import com.sistemas.evaluacion.entidades.datosSalud;
+import com.sistemas.evaluacion.entidades.datosVictima;
 
 public class MyOpenHelper extends SQLiteOpenHelper {
 
@@ -30,7 +30,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     //region Tabla imputado_datos_generales
     private static final String CREATE_TABLE_IMPUTADO_DATOS_GENERALES = "CREATE TABLE imputado_datos_generales(_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "Nombre TEXT, Alias TEXT, FNacimiento TEXT, Edad TEXTO, LNacimiento TEXT, Sexo TEXT, Folio TEXT, FEntrevista TEXT, DuraciónE INTEGER, Entrevistador TEXT, " +
-            "ObservacionesF TEXT, Tipo TEXT, TieneDomicilioS TEXT, OtrosHabitantes TEXT)";
+            "ObservacionesF TEXT, Tipo TEXT, TieneDomicilioS TEXT, OtrosHabitantes TEXT, Entrevistada TEXT, AntecedentePenal TEXT)";
     //endregion
 
     //region Tabla imputado_datos_domicilio
@@ -77,6 +77,10 @@ public class MyOpenHelper extends SQLiteOpenHelper {
             "Campo TEXT, Observacion TEXT, Folio TEXT)";
     //endregion
 
+    //region Tabla imputado_datos_victima
+    private static final String CREATE_TABLE_IMPUTADO_DATOS_VICTIMA="CREATE TABLE imputado_datos_victima(_id INTEGER PRIMARY KEY AUTOINCREMENT, e101 TEXT, e102 TEXT, e103 TEXT, e104 TEXT, e105 TEXT, Folio TEXT)";
+    //endregion
+
     //region Tabla entrevistador
 
     private static final String CREATE_TABLE_ENTREVISTADOR="CREATE TABLE entrevistador(_id INTEGER PRIMARY KEY AUTOINCREMENT, codigo TEXT, nombre TEXT)";
@@ -104,6 +108,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_IMPUTADOS_ABANDONO_ESTADO);
         db.execSQL(CREATE_TABLE_IMPUTADOS_SALUD);
         db.execSQL(CREATE_TABLE_VERIFICACION_OBSERVACIONES);
+        db.execSQL(CREATE_TABLE_IMPUTADO_DATOS_VICTIMA);
         db.execSQL(CREATE_TABLE_ENTREVISTADOR);
         db.execSQL(INSERT_INTO_ENTREVISTADIR);
     }
@@ -151,7 +156,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     //region Insertar Datos Generales
     public void insertarDatosGenerales(String nombre, String alias, String fNacimiento, String edad, String lNacimiento,
                                        String sexo, String folio, String fEntrevista, int duracionE, String entrevistador,
-                                       String observacionesF, String tipo, String tieneDomicilioS, String otrosHabitantes ){
+                                       String observacionesF, String tipo, String tieneDomicilioS, String otrosHabitantes, String Entrevistada, String AntecedentePenal){
         ContentValues dato=new ContentValues();
         dato.put("Nombre", nombre);
         dato.put("Alias", alias);
@@ -167,6 +172,8 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         dato.put("Tipo", tipo);
         dato.put("TieneDomicilioS", tieneDomicilioS);
         dato.put("OtrosHabitantes", otrosHabitantes);
+        dato.put("Entrevistada", Entrevistada);
+        dato.put("AntecedentePenal", AntecedentePenal);
         db.insert("imputado_datos_generales", null, dato);
     }
     //endregion
@@ -384,6 +391,20 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         db.insert("imputado_datos_salud", null, dato);
     }
     //endregion
+
+    //region Insertar Datos Victima
+    public void insertarDatosVictima(String e101, String e102, String e103, String e104, String e105, String folio) {
+        ContentValues dato = new ContentValues();
+        dato.put("e101", e101);
+        dato.put("e102", e102);
+        dato.put("e103", e103);
+        dato.put("e104", e104);
+        dato.put("e105", e105);
+
+        dato.put("Folio", folio);
+        db.insert("imputado_datos_victima", null, dato);
+    }
+    //endregion
     //endregion
 
     //region Insertar Datos Observaciones
@@ -477,7 +498,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     public ArrayList<datosGenerales> getDatosGenerales(){
         ArrayList<datosGenerales> lista=new ArrayList<datosGenerales>();
         Cursor c=db.rawQuery("select _id, Nombre, Alias, FNacimiento, Edad, LNacimiento, Sexo, Folio, FEntrevista, DuraciónE, Entrevistador, " +
-                "ObservacionesF, Tipo, TieneDomicilioS, OtrosHabitantes" + "  from imputado_datos_generales",  null);
+                "ObservacionesF, Tipo, TieneDomicilioS, OtrosHabitantes, Entrevistada, AntecedentePenal " + "  from imputado_datos_generales",  null);
         if (c != null && c.getCount()>0) {
             c.moveToFirst();
             do {
@@ -496,10 +517,13 @@ public class MyOpenHelper extends SQLiteOpenHelper {
                 String r100=c.getString(c.getColumnIndex("Tipo"));
                 String r21_1=c.getString(c.getColumnIndex("TieneDomicilioS"));
                 String r32=c.getString(c.getColumnIndex("OtrosHabitantes"));
+                String r1_1=c.getString(c.getColumnIndex("Entrevistada"));
+                String r1_2=c.getString(c.getColumnIndex("AntecedentePenal"));
+
 
 
                 int id=c.getInt(c.getColumnIndex("_id"));
-                datosGenerales dato =new datosGenerales(id,r1,r2, r3, r4, r5, r6, folio, r98, min, r96, r99, r100, r21_1, r32);
+                datosGenerales dato =new datosGenerales(id,r1,r2, r3, r4, r5, r6, folio, r98, min, r96, r99, r100, r21_1, r32, r1_1, r1_2);
                 //endregion
 
                 //Añadimos el comentario a la lista
@@ -815,6 +839,32 @@ public class MyOpenHelper extends SQLiteOpenHelper {
                         e95, Folio);
 
                 //Añadimos la direccion a la lista
+                lista.add(dato);
+            } while (c.moveToNext());
+        }
+
+        //Cerramos el cursor
+        c.close();
+        return lista;
+    }
+    //endregion
+
+    //region Obtener los datos de la vicitma en la base de datos
+    public ArrayList<datosVictima> getVictima(){
+        ArrayList<datosVictima> lista = new ArrayList<datosVictima>();
+        Cursor c=db.rawQuery("select _id, e101, e102, e103, e104, e105, Folio  from imputado_datos_victima",  null);
+        if (c != null && c.getCount()>0) {
+            c.moveToFirst();
+            do {
+                String e101 = c.getString(c.getColumnIndex("e101"));
+                String e102 = c.getString(c.getColumnIndex("e102"));
+                String e103 = c.getString(c.getColumnIndex("e103"));
+                String e104 = c.getString(c.getColumnIndex("e104"));
+                String e105 = c.getString(c.getColumnIndex("e105"));
+                String Folio = c.getString(c.getColumnIndex("Folio"));
+
+                int id = c.getInt(c.getColumnIndex("_id"));
+                datosVictima dato = new datosVictima(id, e101, e102, e103, e104, e105, Folio);
                 lista.add(dato);
             } while (c.moveToNext());
         }
