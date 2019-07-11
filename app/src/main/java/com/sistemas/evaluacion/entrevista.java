@@ -2350,7 +2350,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
         }
 
         if(!validacion){
-            Toast.makeText(getApplicationContext(), "Verifica los siguientes datos:"+verifica,Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Verifica los siguientes datos:"+verifica,Toast.LENGTH_LONG).show();
         }
 
         return validacion;

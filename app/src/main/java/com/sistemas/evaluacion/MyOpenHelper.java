@@ -36,7 +36,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     //region Tabla imputado_datos_domicilio
     private static final String CREATE_TABLE_IMPUTADO_DATOS_DOMICILIO="CREATE TABLE imputado_datos_domicilio (_id INTEGER PRIMARY KEY AUTOINCREMENT," +
             "e7 TEXT, e7_1 TEXT, e8 TEXT, e9 TEXT, e10 TEXT, e11 TEXT, e12 TEXT, e13 TEXT, e14 TEXT, e15 TEXT, e16 TEXT, e32_1 TEXT, e17 TEXT, e18 TEXT, e19 TEXT, e20 TEXT," +
-            "e21 TEXT, e22 TEXT, e23 TEXT, e24 TEXT, e25 TEXT, e26 TEXT, e27 TEXT, e28 TEXT, e29 TEXT, e30 TEXT, e31 TEXT, e101 TEXT, e102 TEXT, Folio TEXT)"; //e7_1, e101, e102
+            "e21 TEXT, e22 TEXT, e23 TEXT, e24 TEXT, e25 TEXT, e26 TEXT, e27 TEXT, e28 TEXT, e29 TEXT, e30 TEXT, e31 TEXT, e106 TEXT, e107 TEXT, Folio TEXT)";
     //endregion
 
     //region Tabla imputado_datos_familiares
@@ -74,7 +74,12 @@ public class MyOpenHelper extends SQLiteOpenHelper {
 
     //region Tabla verificacion_observaciones
     private static final String CREATE_TABLE_VERIFICACION_OBSERVACIONES="CREATE TABLE verificacion_observaciones (_id INTEGER PRIMARY KEY AUTOINCREMENT," +
-            "Campo TEXT, Observacion TEXT, Folio TEXT)";
+            "Campo TEXT, Observacion TEXT, Original TEXT, Folio TEXT)";
+    //endregion
+
+    //region Tabla verificacion_entrevistado
+    private static final String CREATE_TABLE_VERIFICACION_ENTREVISTADO="CREATE TABLE verificacion_entrevistado (_id INTEGER PRIMARY KEY AUTOINCREMENT," +
+            "VEntrevistado TEXT, VRelacion TEXT, Folio TEXT)";
     //endregion
 
     //region Tabla imputado_datos_victima
@@ -108,6 +113,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_IMPUTADOS_ABANDONO_ESTADO);
         db.execSQL(CREATE_TABLE_IMPUTADOS_SALUD);
         db.execSQL(CREATE_TABLE_VERIFICACION_OBSERVACIONES);
+        db.execSQL(CREATE_TABLE_VERIFICACION_ENTREVISTADO);
         db.execSQL(CREATE_TABLE_IMPUTADO_DATOS_VICTIMA);
         db.execSQL(CREATE_TABLE_ENTREVISTADOR);
         db.execSQL(INSERT_INTO_ENTREVISTADIR);
@@ -181,8 +187,8 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     //region Insertar Datos Generales Domicilio
     public void insertarDatosGeneralesDomicilio(String e7, String e7_1, String e8, String e9, String e10, String e11, String e12, String e13, String e14, String e15,
                                                 String e16, String e32_1, String e17, String e18, String e19, String e20, String e21, String e22, String e23,
-                                                String e24, String e25, String e26, String e27, String e28, String e29, String e30, String e31, String e101,
-                                                String e102, String folio){
+                                                String e24, String e25, String e26, String e27, String e28, String e29, String e30, String e31, String e106,
+                                                String e107, String folio){
         ContentValues dato=new ContentValues();
         dato.put("e7", e7);
         dato.put("e7_1", e7_1);
@@ -211,8 +217,8 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         dato.put("e29", e29);
         dato.put("e30", e30);
         dato.put("e31", e31);
-        dato.put("e101", e101);
-        dato.put("e102", e102);
+        dato.put("e106", e106);
+        dato.put("e107", e107);
         dato.put("Folio", folio);
 
         db.insert("imputado_datos_domicilio", null, dato);
@@ -408,15 +414,25 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     //endregion
 
     //region Insertar Datos Observaciones
-    public void insertarObservaciones(String Campo, String Observacion, String folio) {
+    public void insertarObservaciones(String campo, String observacion, String original, String folio) {
         ContentValues dato = new ContentValues();
-        dato.put("Campo", Campo);
-        dato.put("Observacion", Observacion);
-        dato.put("Folio", folio);
+        dato.put("Campo", campo);
+        dato.put("Observacion", observacion);
+        dato.put("Original", original);
         db.insert("verificacion_observaciones", null, dato);
     }
     //endregion
-	
+
+    //region Insertar datos de quien atiende la entrevista de verificación
+    public void insertarDatosVerificacion(String nombre, String relacion, String folio){
+        ContentValues dato=new ContentValues();
+        dato.put("VEntrevistado", nombre);
+        dato.put("VRelacion", relacion);
+        dato.put("Folio", folio);
+        db.insert("verificacion_entrevistado", null, dato);
+    }
+    //endregion
+
 	//region Actualiza una tabla a partir de una observacion
 	public void updateTable(String table, String field, String observation, String folio){
         ContentValues cv = new ContentValues();
@@ -540,7 +556,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     public ArrayList<datosDomicilio> getDomicilios(){
         ArrayList<datosDomicilio> lista = new ArrayList<datosDomicilio>();
         Cursor c=db.rawQuery("select _id, e7, e7_1, e8, e9, e10, e11, e12, e13, e14, e15, e16, e32_1, " +
-                "e17, e18, e19, e20, e21, e22, e23, e24, e25, e26, e27, e28, e29, e30, e31, e101, e102, Folio" +
+                "e17, e18, e19, e20, e21, e22, e23, e24, e25, e26, e27, e28, e29, e30, e31, e106, e107, Folio" +
                 "  from imputado_datos_domicilio",  null);
         if (c != null && c.getCount()>0) {
             c.moveToFirst();
@@ -572,14 +588,14 @@ public class MyOpenHelper extends SQLiteOpenHelper {
                 String e29 = c.getString(c.getColumnIndex("e29"));
                 String e30 = c.getString(c.getColumnIndex("e30"));
                 String e31 = c.getString(c.getColumnIndex("e31"));
-                String e101 = c.getString(c.getColumnIndex("e101"));
-                String e102 = c.getString(c.getColumnIndex("e102"));
+                String e106 = c.getString(c.getColumnIndex("e106"));
+                String e107 = c.getString(c.getColumnIndex("e107"));
                 String Folio = c.getString(c.getColumnIndex("Folio"));
 
                 int id = c.getInt(c.getColumnIndex("_id"));
                 datosDomicilio dato = new datosDomicilio(id, e7, e7_1, e8, e9, e10, e11, e12, e13, e14,
                         e15, e16, e32_1, e17, e18, e19, e20, e21, e22, e23, e24, e25, e26, e27, e28, e29,
-                        e30, e31, e101, e102, Folio);
+                        e30, e31, e106, e107, Folio);
 
                 //Añadimos la direccion a la lista
                 lista.add(dato);

@@ -27,15 +27,18 @@ import java.util.ArrayList;
 public class verificacion extends AppCompatActivity {
 
     //region Variables Globales
-    private Spinner sVerificationName;
     private MyOpenHelper db;
+
+    //region Spinner
+    private Spinner sVerificationName, sP108;
+    //endregion
 
     //region Boolean
     private boolean datosGenerales=false, datosFamiliares=false, datosEscolares=false, datosLaborales=false, datosFAestado=false, datosSalud=false;
     //endregion
 
     //region TextView
-    private TextView tvP1, tvP2, tvP3, tvP4, tvP5, tvP6, tvP7, tvP8, tvP9, tvP10, tvP11, tvP12,
+    private TextView tvP1, tvP2, tvP3, tvP4, tvP5, tvP6, tvP7,  tvP7_1, tvP8, tvP9, tvP10, tvP11, tvP12,
             tvP13, tvP14, tvP15, tvP16, tvP32_1, tvP17, tvP18, tvP19, tvP20, tvP21_1, tvP21, tvP22,
             tvP23, tvP24, tvP25, tvP26, tvP27, tvP28, tvP29, tvP30, tvP31, tvP32, tvP33, tvP34,
             tvP35, tvP36, tvP37, tvP33_1, tvP34_1, tvP35_1, tvP36_1, tvP37_1, tvP33_2, tvP34_2,
@@ -51,9 +54,9 @@ public class verificacion extends AppCompatActivity {
             tvP91_solventes, tvP92_solventes, tvP87, tvP90_cristal, tvP91_cristal, tvP92_cristal,
             tvP88, tvP90_cocaina, tvP91_cocaina, tvP92_cocaina, tvP89, tvP93_otroConsumo,
             tvP90_otroConsumo, tvP91_otroConsumo, tvP92_otroConsumo, tvP94, tvP95, tvP96, tvP97,
-            tvP99, tvP100, persona1, persona2, persona3, persona4, personaE1, personaE2,
+            tvP99, tvP109, tvP110, persona1, persona2, persona3, persona4, personaE1, personaE2,
             personaEstado1, personaEstado2;
-    private TextView tvO1, tvO2, tvO3, tvO4, tvO5, tvO6, tvO7, tvO8, tvO9, tvO10, tvO11, tvO12,
+    private TextView tvO1, tvO2, tvO3, tvO4, tvO5, tvO6, tvO7, tvO7_1, tvO8, tvO9, tvO10, tvO11, tvO12,
             tvO13, tvO14, tvO15, tvO16, tvO32_1, tvO17, tvO18, tvO19, tvO20, tvO21_1, tvO21, tvO22,
             tvO23, tvO24, tvO25, tvO26, tvO27, tvO28, tvO29, tvO30, tvO31, tvO32, tvO33, tvO34,
             tvO35, tvO36, tvO37, tvO33_1, tvO34_1, tvO35_1, tvO36_1, tvO37_1, tvO33_2, tvO34_2,
@@ -72,7 +75,7 @@ public class verificacion extends AppCompatActivity {
     //endregion
 
     //region EditText
-    private EditText etP1, etP2, etP3, etP4, etP5, etP6, etP7, etP8, etP9, etP10, etP11, etP12,
+    private EditText etP1, etP2, etP3, etP4, etP5, etP6, etP7, etP7_1, etP8, etP9, etP10, etP11, etP12,
             etP13, etP14, etP15, etP16, etP32_1, etP17, etP18, etP19, etP20, etP21_1, etP21, etP22,
             etP23, etP24, etP25, etP26, etP27, etP28, etP29, etP30, etP31, etP32, etP33, etP34,
             etP35, etP36, etP37, etP33_1, etP34_1, etP35_1, etP36_1, etP37_1, etP33_2, etP34_2,
@@ -87,11 +90,11 @@ public class verificacion extends AppCompatActivity {
             etP85, etP90_pastillas, etP91_pastillas, etP92_pastillas, etP86, etP90_solventes,
             etP91_solventes, etP92_solventes, etP87, etP90_cristal, etP91_cristal, etP92_cristal,
             etP88, etP90_cocaina, etP91_cocaina, etP92_cocaina, etP89, etP93_otroConsumo,
-            etP90_otroConsumo, etP91_otroConsumo, etP92_otroConsumo, etP94, etP95;
+            etP90_otroConsumo, etP91_otroConsumo, etP92_otroConsumo, etP94, etP95, etP109, etP110;
     //endregion
 
     //region CheckedTextView
-    private CheckedTextView ctvP1, ctvP2, ctvP3, ctvP4, ctvP5, ctvP6, ctvP7, ctvP8, ctvP9,
+    private CheckedTextView ctvP1, ctvP2, ctvP3, ctvP4, ctvP5, ctvP6, ctvP7, ctvP7_1, ctvP8, ctvP9,
             ctvP10, ctvP11, ctvP12, ctvP13, ctvP14, ctvP15, ctvP16, ctvP32_1, ctvP17, ctvP18,
             ctvP19, ctvP20, ctvP21_1, ctvP21, ctvP22, ctvP23, ctvP24, ctvP25, ctvP26,
             ctvP27, ctvP28, ctvP29, ctvP30, ctvP31, ctvP32, ctvP33, ctvP34, ctvP35, ctvP36, ctvP37,
@@ -120,7 +123,7 @@ public class verificacion extends AppCompatActivity {
     //endregion
 
     //region String
-    String r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r32_1, r17, r18,
+    String r1, r2, r3, r4, r5, r6, r7, r7_1, r8, r9, r10, r11, r12, r13, r14, r15, r16, r32_1, r17, r18,
             r19, r20, r21_1, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31, r32, r33, r34,
             r35, r36, r37, r33_1, r34_1, r35_1, r36_1, r37_1, r33_2, r34_2, r35_2, r36_2, r37_2,
             r33_3, r34_3, r35_3, r36_3, r37_3, r38, r39, r40, r41, r42, r43, r39_1, r40_1, r41_1,
@@ -132,7 +135,9 @@ public class verificacion extends AppCompatActivity {
             r90_pastillas, r91_pastillas, r92_pastillas, r86, r90_solventes, r91_solventes,
             r92_solventes, r87, r90_cristal, r91_cristal, r92_cristal, r88, r90_cocaina,
             r91_cocaina, r92_cocaina, r89, r93_otroConsumo, r90_otroConsumo, r91_otroConsumo,
-            r92_otroConsumo, r94, r95;
+            r92_otroConsumo, r94, r95, r109, r110;
+
+    String[] opers = {"Verificar", "Editar"};
     //endregion
     //endregion
 
@@ -163,25 +168,25 @@ public class verificacion extends AppCompatActivity {
         sVerificationName.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-                ArrayList<datosGenerales> lista;
+                final ArrayList<datosGenerales> lista;
                 lista = db.getDatosGenerales();
 
-                ArrayList<datosDomicilio> addresses;
+                final ArrayList<datosDomicilio> addresses;
                 addresses = db.getDomicilios();
 
-                ArrayList<datosHabitantes> habitantes;
+                final ArrayList<datosHabitantes> habitantes;
                 habitantes = db.getHabitantes();
 
-                ArrayList<datosReferencias> referencias;
+                final ArrayList<datosReferencias> referencias;
                 referencias = db.getReferencias();
 
-                ArrayList<datosEscolarLaboral> historialEscolarLaboral;
+                final ArrayList<datosEscolarLaboral> historialEscolarLaboral;
                 historialEscolarLaboral = db.getHistorialEscolarLaboral();
 
-                ArrayList<datosAbandonoEstado> listaAbandonoEstado;
+                final ArrayList<datosAbandonoEstado> listaAbandonoEstado;
                 listaAbandonoEstado = db.getDatosAbandonoEstado();
 
-                ArrayList<datosSalud> listaSalud;
+                final ArrayList<datosSalud> listaSalud;
                 listaSalud = db.getDatosSalud();
 
                 //region Verification beginning
@@ -228,6 +233,10 @@ public class verificacion extends AppCompatActivity {
                 ctvP7 = (CheckedTextView) findViewById(R.id.ctvP7);
                 tvO7 = (TextView)findViewById(R.id.tvO7);
                 etP7 = (EditText)findViewById(R.id.etP7);
+                tvP7_1 = (TextView) findViewById(R.id.tvP7_1);
+                ctvP7_1 = (CheckedTextView) findViewById(R.id.ctvP7_1);
+                tvO7_1 = (TextView)findViewById(R.id.tvO7_1);
+                etP7_1 = (EditText)findViewById(R.id.etP7_1);
                 tvP8 = (TextView) findViewById(R.id.tvP8);
                 ctvP8 = (CheckedTextView) findViewById(R.id.ctvP8);
                 tvO8 = (TextView)findViewById(R.id.tvO8);
@@ -829,6 +838,10 @@ public class verificacion extends AppCompatActivity {
                 //endregion
 
                 //region Initializes the verification elements
+                //Resets interviewee name and relationship
+                etP109.setText("");
+                etP110.setText("");
+
                 ctvP1.setText(lista.get(pos).getNombre());
                 ctvP1.setChecked(true);
                 ctvP1.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
@@ -877,6 +890,13 @@ public class verificacion extends AppCompatActivity {
                 tvO7.setVisibility(View.GONE);
                 etP7.setVisibility(View.GONE);
                 etP7.setText("");
+
+                ctvP7_1.setText(addresses.get(pos).getE7_1());
+                ctvP7_1.setChecked(true);
+                ctvP7_1.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                tvO7_1.setVisibility(View.GONE);
+                etP7_1.setVisibility(View.GONE);
+                etP7_1.setText("");
 
                 ctvP8.setText(addresses.get(pos).getE8());
                 ctvP8.setChecked(true);
@@ -2525,6 +2545,24 @@ public class verificacion extends AppCompatActivity {
                             ctvP7.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
                             tvO7.setVisibility(View.GONE);
                             etP7.setVisibility(View.GONE);
+                        }
+                    }
+                });
+
+                ctvP7_1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (ctvP7_1.isChecked()) {
+                            ctvP7_1.setChecked(false);
+                            ctvP7_1.setCheckMarkDrawable(R.drawable.ic_check_box_outline_blank_black_24dp);
+                            tvO7_1.setVisibility(View.VISIBLE);
+                            etP7_1.setVisibility(View.VISIBLE);
+                        }
+                        else {
+                            ctvP7_1.setChecked(true);
+                            ctvP7_1.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                            tvO7_1.setVisibility(View.GONE);
+                            etP7_1.setVisibility(View.GONE);
                         }
                     }
                 });
@@ -5104,6 +5142,7 @@ public class verificacion extends AppCompatActivity {
                         r5 = etP5.getText().toString().toUpperCase();
                         r6 = etP6.getText().toString().toUpperCase();
                         r7 = etP7.getText().toString().toUpperCase();
+                        r7_1 = etP7_1.getText().toString().toUpperCase();
                         r8 = etP8.getText().toString().toUpperCase();
                         r9 = etP9.getText().toString().toUpperCase();
                         r10 = etP10.getText().toString().toUpperCase();
@@ -5246,909 +5285,931 @@ public class verificacion extends AppCompatActivity {
                         r92_otroConsumo = etP92_otroConsumo.getText().toString().toUpperCase();
                         r94 = etP94.getText().toString().toUpperCase();
                         r95 = etP95.getText().toString().toUpperCase();
+                        r109 = etP109.getText().toString().toUpperCase();
+                        r110 = etP110.getText().toString().toUpperCase();
                         //endregion
 
                         //region Insertar Observaciones a Base de Datos
-                        if(ctvP1.isChecked() == false && etP1.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("Nombre", r1, folio);
-                        }
-                        if(ctvP2.isChecked() == false && etP2.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("Alias", r2, folio);
-                        }
-                        if(ctvP3.isChecked() == false && etP3.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("FNacimiento", r3, folio);
-                        }
-                        if(ctvP4.isChecked() == false && etP4.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("Edad", r4, folio);
-                        }
-                        if(ctvP5.isChecked() == false && etP5.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("LNacimiento", r5, folio);
-                        }
-                        if(ctvP6.isChecked() == false && etP6.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("Sexo", r6, folio);
-                        }
-                        if(ctvP7.isChecked() == false && etP7.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e7", r7, folio);
-                        }
-                        if(ctvP8.isChecked() == false && etP8.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e8", r8, folio);
-                        }
-                        if(ctvP9.isChecked() == false && etP9.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e9", r9, folio);
-                        }
-                        if(ctvP10.isChecked() == false && etP10.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e10", r10, folio);
-                        }
-                        if(ctvP11.isChecked() == false && etP11.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e11", r11, folio);
-                        }
-                        if(ctvP12.isChecked() == false && etP12.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e12", r12, folio);
-                        }
-                        if(ctvP13.isChecked() == false && etP13.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e13", r13, folio);
-                        }
-                        if(ctvP14.isChecked() == false && etP14.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e14", r14, folio);
-                        }
-                        if(ctvP15.isChecked() == false && etP15.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e15", r15, folio);
-                        }
-                        if(ctvP16.isChecked() == false && etP16.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e16", r16, folio);
-                        }
-                        if(ctvP32_1.isChecked() == false && etP32_1.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e32_1", r32_1, folio);
-                        }
-                        if(ctvP17.isChecked() == false && etP17.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e17", r17, folio);
-                        }
-                        if(ctvP18.isChecked() == false && etP18.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e18", r18, folio);
-                        }
-                        if(ctvP19.isChecked() == false && etP19.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e19", r19, folio);
-                        }
-                        if(ctvP20.isChecked() == false && etP20.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e20", r20, folio);
-                        }
-                        if(ctvP21_1.isChecked() == false && etP21_1.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("TieneDomicilioS", r21_1, folio);
-                        }
-                        if(ctvP21.isChecked() == false && etP21.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e21", r21, folio);
-                        }
-                        if(ctvP22.isChecked() == false && etP22.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e22", r22, folio);
-                        }
-                        if(ctvP23.isChecked() == false && etP23.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e23", r23, folio);
-                        }
-                        if(ctvP24.isChecked() == false && etP24.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e24", r24, folio);
-                        }
-                        if(ctvP25.isChecked() == false && etP25.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e25", r25, folio);
-                        }
-                        if(ctvP26.isChecked() == false && etP26.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e26", r26, folio);
-                        }
-                        if(ctvP27.isChecked() == false && etP27.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e27", r27, folio);
-                        }
-                        if(ctvP28.isChecked() == false && etP28.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e28", r28, folio);
-                        }
-                        if(ctvP29.isChecked() == false && etP29.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e29", r29, folio);
-                        }
-                        if(ctvP30.isChecked() == false && etP30.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e30", r30, folio);
-                        }
-                        if(ctvP31.isChecked() == false && etP31.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e31", r31, folio);
-                        }
-                        if(ctvP32.isChecked() == false && etP32.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("OtrosHabitantes", r32, folio);
-                        }
-                        if(ctvP33.isChecked() == false && etP33.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e33", r33, folio);
-                        }
-                        if(ctvP34.isChecked() == false && etP34.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e34", r34, folio);
-                        }
-                        if(ctvP35.isChecked() == false && etP35.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e35", r35, folio);
-                        }
-                        if(ctvP36.isChecked() == false && etP36.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e36", r36, folio);
-                        }
-                        if(ctvP37.isChecked() == false && etP37.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e37", r37, folio);
-                        }
-                        if(ctvP33_1.isChecked() == false && etP33_1.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e33_1", r33_1, folio);
-                        }
-                        if(ctvP34_1.isChecked() == false && etP34_1.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e34_1", r34_1, folio);
-                        }
-                        if(ctvP35_1.isChecked() == false && etP35_1.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e35_1", r35_1, folio);
-                        }
-                        if(ctvP36_1.isChecked() == false && etP36_1.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e36_1", r36_1, folio);
-                        }
-                        if(ctvP37_1.isChecked() == false && etP37_1.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e37_1", r37_1, folio);
-                        }
-                        if(ctvP33_2.isChecked() == false && etP33_2.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e33_2", r33_2, folio);
-                        }
-                        if(ctvP34_2.isChecked() == false && etP34_2.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e34_2", r34_2, folio);
-                        }
-                        if(ctvP35_2.isChecked() == false && etP35_2.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e35_2", r35_2, folio);
-                        }
-                        if(ctvP36_2.isChecked() == false && etP36_2.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e36_2", r36_2, folio);
-                        }
-                        if(ctvP37_2.isChecked() == false && etP37_2.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e37_2", r37_2, folio);
-                        }
-                        if(ctvP33_3.isChecked() == false && etP33_3.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e33_3", r33_3, folio);
-                        }
-                        if(ctvP34_3.isChecked() == false && etP34_3.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e34_3", r34_3, folio);
-                        }
-                        if(ctvP35_3.isChecked() == false && etP35_3.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e35_3", r35_3, folio);
-                        }
-                        if(ctvP36_3.isChecked() == false && etP36_3.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e36_3", r36_3, folio);
-                        }
-                        if(ctvP37_3.isChecked() == false && etP37_3.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e37_3", r37_3, folio);
-                        }
-                        if(ctvP38.isChecked() == false && etP38.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e38", r38, folio);
-                        }
-                        if(ctvP39.isChecked() == false && etP39.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e39", r39, folio);
-                        }
-                        if(ctvP40.isChecked() == false && etP40.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e40", r40, folio);
-                        }
-                        if(ctvP41.isChecked() == false && etP41.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e41", r41, folio);
-                        }
-                        if(ctvP42.isChecked() == false && etP42.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e42", r42, folio);
-                        }
-                        if(ctvP43.isChecked() == false && etP43.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e43", r43, folio);
-                        }
-                        if(ctvP39_1.isChecked() == false && etP39_1.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e39_1", r39_1, folio);
-                        }
-                        if(ctvP40_1.isChecked() == false && etP40_1.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e40_1", r40_1, folio);
-                        }
-                        if(ctvP41_1.isChecked() == false && etP41_1.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e41_1", r41_1, folio);
-                        }
-                        if(ctvP42_1.isChecked() == false && etP42_1.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e42_1", r42_1, folio);
-                        }
-                        if(ctvP43_1.isChecked() == false && etP43_1.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e43_1", r43_1, folio);
-                        }
-                        if(ctvP44.isChecked() == false && etP44.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e44", r44, folio);
-                        }
-                        if(ctvP45.isChecked() == false && etP45.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e45", r45, folio);
-                        }
-                        if(ctvP46.isChecked() == false && etP46.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e46", r46, folio);
-                        }
-                        if(ctvP47.isChecked() == false && etP47.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e47", r47, folio);
-                        }
-                        if(ctvP48.isChecked() == false && etP48.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e48", r48, folio);
-                        }
-                        if(ctvP49.isChecked() == false && etP49.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e49", r49, folio);
-                        }
-                        if(ctvP50.isChecked() == false && etP50.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e50", r50, folio);
-                        }
-                        if(ctvP51.isChecked() == false && etP51.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e51", r51, folio);
-                        }
-                        if(ctvP52.isChecked() == false && etP52.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e52", r52, folio);
-                        }
-                        if(ctvP53.isChecked() == false && etP53.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e53", r53, folio);
-                        }
-                        if(ctvP54.isChecked() == false && etP54.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e54", r54, folio);
-                        }
-                        if(ctvP55.isChecked() == false && etP55.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e55", r55, folio);
-                        }
-                        if(ctvP57.isChecked() == false && etP57.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e57", r57, folio);
-                        }
-                        if(ctvP56.isChecked() == false && etP56.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e56", r56, folio);
-                        }
-                        if(ctvP58.isChecked() == false && etP58.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e58", r58, folio);
-                        }
-                        if(ctvP59.isChecked() == false && etP59.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e59", r59, folio);
-                        }
-                        if(ctvP60.isChecked() == false && etP60.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e60", r60, folio);
-                        }
-                        if(ctvP61.isChecked() == false && etP61.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e61", r61, folio);
-                        }
-                        if(ctvP62.isChecked() == false && etP62.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e62", r62, folio);
-                        }
-                        if(ctvP63.isChecked() == false && etP63.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e63", r63, folio);
-                        }
-                        if(ctvP64.isChecked() == false && etP64.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e64", r64, folio);
-                        }
-                        if(ctvP65.isChecked() == false && etP65.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e65", r65, folio);
-                        }
-                        if(ctvP66.isChecked() == false && etP66.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e66", r66, folio);
-                        }
-                        if(ctvP67.isChecked() == false && etP67.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e67", r67, folio);
-                        }
-                        if(ctvP68.isChecked() == false && etP68.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e68", r68, folio);
-                        }
-                        if(ctvP69.isChecked() == false && etP69.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e69", r69, folio);
-                        }
-                        if(ctvP70.isChecked() == false && etP70.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e70", r70, folio);
-                        }
-                        if(ctvP71.isChecked() == false && etP71.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e71", r71, folio);
-                        }
-                        if(ctvP72.isChecked() == false && etP72.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e72", r72, folio);
-                        }
-                        if(ctvP67_1.isChecked() == false && etP67_1.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e67_1", r67_1, folio);
-                        }
-                        if(ctvP68_1.isChecked() == false && etP68_1.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e68_1", r68_1, folio);
-                        }
-                        if(ctvP69_1.isChecked() == false && etP69_1.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e69_1", r69_1, folio);
-                        }
-                        if(ctvP70_1.isChecked() == false && etP70_1.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e70_1", r70_1, folio);
-                        }
-                        if(ctvP71_1.isChecked() == false && etP71_1.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e71_1", r71_1, folio);
-                        }
-                        if(ctvP72_1.isChecked() == false && etP72_1.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e72_1", r72_1, folio);
-                        }
-                        if(ctvP73.isChecked() == false && etP73.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e73", r73, folio);
-                        }
-                        if(ctvP74.isChecked() == false && etP74.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e74", r74, folio);
-                        }
-                        if(ctvP75.isChecked() == false && etP75.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e75", r75, folio);
-                        }
-                        if(ctvP76.isChecked() == false && etP76.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e76", r76, folio);
-                        }
-                        if(ctvP77.isChecked() == false && etP77.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e77", r77, folio);
-                        }
-                        if(ctvP78.isChecked() == false && etP78.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e78", r78, folio);
-                        }
-                        if(ctvP74_1.isChecked() == false && etP74_1.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e74_1", r74_1, folio);
-                        }
-                        if(ctvP75_1.isChecked() == false && etP75_1.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e75_1", r75_1, folio);
-                        }
-                        if(ctvP76_1.isChecked() == false && etP76_1.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e76_1", r76_1, folio);
-                        }
-                        if(ctvP77_1.isChecked() == false && etP77_1.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e77_1", r77_1, folio);
-                        }
-                        if(ctvP78_1.isChecked() == false && etP78_1.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e78_1", r78_1, folio);
-                        }
-                        if(ctvP79.isChecked() == false && etP79.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e79", r79, folio);
-                        }
-                        if(ctvP80.isChecked() == false && etP80.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e80", r80, folio);
-                        }
-                        if(ctvP81.isChecked() == false && etP81.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e81", r81, folio);
-                        }
-                        if(ctvP82.isChecked() == false && etP82.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e82", r82, folio);
-                        }
-                        if(ctvP90_alcohol.isChecked() == false && etP90_alcohol.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e90_alcohol", r90_alcohol, folio);
-                        }
-                        if(ctvP91_alcohol.isChecked() == false && etP91_alcohol.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e91_alcohol", r91_alcohol, folio);
-                        }
-                        if(ctvP92_alcohol.isChecked() == false && etP92_alcohol.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e92_alcohol", r92_alcohol, folio);
-                        }
-                        if(ctvP83.isChecked() == false && etP83.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e83", r83, folio);
-                        }
-                        if(ctvP90_tabaco.isChecked() == false && etP90_tabaco.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e90_tabaco", r90_tabaco, folio);
-                        }
-                        if(ctvP91_tabaco.isChecked() == false && etP91_tabaco.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e91_tabaco", r91_tabaco, folio);
-                        }
-                        if(ctvP92_tabaco.isChecked() == false && etP92_tabaco.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e92_tabaco", r92_tabaco, folio);
-                        }
-                        if(ctvP84.isChecked() == false && etP84.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e84", r84, folio);
-                        }
-                        if(ctvP90_marihuana.isChecked() == false && etP90_marihuana.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e90_marihuana", r90_marihuana, folio);
-                        }
-                        if(ctvP91_marihuana.isChecked() == false && etP91_marihuana.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e91_marihuana", r91_marihuana, folio);
-                        }
-                        if(ctvP92_marihuana.isChecked() == false && etP92_marihuana.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e92_marihuana", r92_marihuana, folio);
-                        }
-                        if(ctvP85.isChecked() == false && etP85.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e85", r85, folio);
-                        }
-                        if(ctvP90_pastillas.isChecked() == false && etP90_pastillas.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e90_pastillas", r90_pastillas, folio);
-                        }
-                        if(ctvP91_pastillas.isChecked() == false && etP91_pastillas.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e91_pastillas", r91_pastillas, folio);
-                        }
-                        if(ctvP92_pastillas.isChecked() == false && etP92_pastillas.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e92_pastillas", r92_pastillas, folio);
-                        }
-                        if(ctvP86.isChecked() == false && etP86.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e86", r86, folio);
-                        }
-                        if(ctvP90_solventes.isChecked() == false && etP90_solventes.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e90_solventes", r90_solventes, folio);
-                        }
-                        if(ctvP91_solventes.isChecked() == false && etP91_solventes.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e91_solventes", r91_solventes, folio);
-                        }
-                        if(ctvP92_solventes.isChecked() == false && etP92_solventes.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e92_solventes", r92_solventes, folio);
-                        }
-                        if(ctvP87.isChecked() == false && etP87.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e87", r87, folio);
-                        }
-                        if(ctvP90_cristal.isChecked() == false && etP90_cristal.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e90_cristal", r90_cristal, folio);
-                        }
-                        if(ctvP91_cristal.isChecked() == false && etP91_cristal.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e91_cristal", r91_cristal, folio);
-                        }
-                        if(ctvP92_cristal.isChecked() == false && etP92_cristal.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e92_cristal", r92_cristal, folio);
-                        }
-                        if(ctvP88.isChecked() == false && etP88.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e88", r88, folio);
-                        }
-                        if(ctvP90_cocaina.isChecked() == false && etP90_cocaina.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e90_cocaina", r90_cocaina, folio);
-                        }
-                        if(ctvP91_cocaina.isChecked() == false && etP91_cocaina.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e91_cocaina", r91_cocaina, folio);
-                        }
-                        if(ctvP92_cocaina.isChecked() == false && etP92_cocaina.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e92_cocaina", r92_cocaina, folio);
-                        }
-                        if(ctvP89.isChecked() == false && etP89.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e89", r89, folio);
-                        }
-                        if(ctvP93_otroConsumo.isChecked() == false && etP93_otroConsumo.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e93_otroConsumo", r93_otroConsumo, folio);
-                        }
-                        if(ctvP90_otroConsumo.isChecked() == false && etP90_otroConsumo.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e90_otroConsumo", r90_otroConsumo, folio);
-                        }
-                        if(ctvP91_otroConsumo.isChecked() == false && etP91_otroConsumo.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e91_otroConsumo", r91_otroConsumo, folio);
-                        }
-                        if(ctvP92_otroConsumo.isChecked() == false && etP92_otroConsumo.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e92_otroConsumo", r92_otroConsumo, folio);
-                        }
-                        if(ctvP94.isChecked() == false && etP94.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e94", r94, folio);
-                        }
-                        if(ctvP95.isChecked() == false && etP95.getText().toString().isEmpty() == false) {
-                            db.insertarObservaciones("e95", r95, folio);
+                        String oper = sP108.getSelectedItem().toString();
+                        //== "Verificar"
+                        if(oper.equals(opers[0])) {
+                            if(ctvP1.isChecked() == false && r1.isEmpty() == false) {
+                                db.insertarObservaciones("Nombre", r1, lista.get(pos).getNombre(), folio);
+                            }
+                            if(ctvP2.isChecked() == false && r2.isEmpty() == false) {
+                                db.insertarObservaciones("Alias", r2, lista.get(pos).getAlias(), folio);
+                            }
+                            if(ctvP3.isChecked() == false && r3.isEmpty() == false) {
+                                db.insertarObservaciones("FNacimiento", r3, lista.get(pos).getfNacimiento(), folio);
+                            }
+                            if(ctvP4.isChecked() == false && r4.isEmpty() == false) {
+                                db.insertarObservaciones("Edad", r4, lista.get(pos).getEdad(), folio);
+                            }
+                            if(ctvP5.isChecked() == false && r5.isEmpty() == false) {
+                                db.insertarObservaciones("LNacimiento", r5, lista.get(pos).getlNacimiento(), folio);
+                            }
+                            if(ctvP6.isChecked() == false && r6.isEmpty() == false) {
+                                db.insertarObservaciones("Sexo", r6, lista.get(pos).getSexo(), folio);
+                            }
+                            if(ctvP7.isChecked() == false && r7.isEmpty() == false) {
+                                db.insertarObservaciones("e7", r7, addresses.get(pos).getE7(), folio);
+                            }
+                            if(ctvP7_1.isChecked() == false && r7_1.isEmpty() == false) {
+                                db.insertarObservaciones("e7_1", r7_1, addresses.get(pos).getE7_1(), folio);
+                            }
+                            if(ctvP8.isChecked() == false && r8.isEmpty() == false) {
+                                db.insertarObservaciones("e8", r8, addresses.get(pos).getE8(), folio);
+                            }
+                            if(ctvP9.isChecked() == false && r9.isEmpty() == false) {
+                                db.insertarObservaciones("e9", r9, addresses.get(pos).getE9(), folio);
+                            }
+                            if(ctvP10.isChecked() == false && r10.isEmpty() == false) {
+                                db.insertarObservaciones("e10", r10, addresses.get(pos).getE10(), folio);
+                            }
+                            if(ctvP11.isChecked() == false && r11.isEmpty() == false) {
+                                db.insertarObservaciones("e11", r11, addresses.get(pos).getE11(), folio);
+                            }
+                            if(ctvP12.isChecked() == false && r12.isEmpty() == false) {
+                                db.insertarObservaciones("e12", r12, addresses.get(pos).getE12(), folio);
+                            }
+                            if(ctvP13.isChecked() == false && r13.isEmpty() == false) {
+                                db.insertarObservaciones("e13", r13, addresses.get(pos).getE13(), folio);
+                            }
+                            if(ctvP14.isChecked() == false && r14.isEmpty() == false) {
+                                db.insertarObservaciones("e14", r14, addresses.get(pos).getE14(), folio);
+                            }
+                            if(ctvP15.isChecked() == false && r15.isEmpty() == false) {
+                                db.insertarObservaciones("e15", r15, addresses.get(pos).getE15(), folio);
+                            }
+                            if(ctvP16.isChecked() == false && r16.isEmpty() == false) {
+                                db.insertarObservaciones("e16", r16, addresses.get(pos).getE16(), folio);
+                            }
+                            if(ctvP32_1.isChecked() == false && r32_1.isEmpty() == false) {
+                                db.insertarObservaciones("e32_1", r32_1, addresses.get(pos).getE32_1(), folio);
+                            }
+                            if(ctvP17.isChecked() == false && r17.isEmpty() == false) {
+                                db.insertarObservaciones("e17", r17, addresses.get(pos).getE17(), folio);
+                            }
+                            if(ctvP18.isChecked() == false && r18.isEmpty() == false) {
+                                db.insertarObservaciones("e18", r18, addresses.get(pos).getE18(), folio);
+                            }
+                            if(ctvP19.isChecked() == false && r19.isEmpty() == false) {
+                                db.insertarObservaciones("e19", r19, addresses.get(pos).getE19(), folio);
+                            }
+                            if(ctvP20.isChecked() == false && r20.isEmpty() == false) {
+                                db.insertarObservaciones("e20", r20, addresses.get(pos).getE20(), folio);
+                            }
+                            if(ctvP21_1.isChecked() == false && r21_1.isEmpty() == false) {
+                                db.insertarObservaciones("TieneDomicilioS", r21_1, lista.get(pos).getTieneDomicilioS(), folio);
+                            }
+                            if(ctvP21.isChecked() == false && r21.isEmpty() == false) {
+                                db.insertarObservaciones("e21", r21, addresses.get(pos).getE21(), folio);
+                            }
+                            if(ctvP22.isChecked() == false && r22.isEmpty() == false) {
+                                db.insertarObservaciones("e22", r22, addresses.get(pos).getE22(), folio);
+                            }
+                            if(ctvP23.isChecked() == false && r23.isEmpty() == false) {
+                                db.insertarObservaciones("e23", r23, addresses.get(pos).getE23(), folio);
+                            }
+                            if(ctvP24.isChecked() == false && r24.isEmpty() == false) {
+                                db.insertarObservaciones("e24", r24, addresses.get(pos).getE24(), folio);
+                            }
+                            if(ctvP25.isChecked() == false && r25.isEmpty() == false) {
+                                db.insertarObservaciones("e25", r25, addresses.get(pos).getE25(), folio);
+                            }
+                            if(ctvP26.isChecked() == false && r26.isEmpty() == false) {
+                                db.insertarObservaciones("e26", r26, addresses.get(pos).getE26(), folio);
+                            }
+                            if(ctvP27.isChecked() == false && r27.isEmpty() == false) {
+                                db.insertarObservaciones("e27", r27, addresses.get(pos).getE27(), folio);
+                            }
+                            if(ctvP28.isChecked() == false && r28.isEmpty() == false) {
+                                db.insertarObservaciones("e28", r28, addresses.get(pos).getE28(), folio);
+                            }
+                            if(ctvP29.isChecked() == false && r29.isEmpty() == false) {
+                                db.insertarObservaciones("e29", r29, addresses.get(pos).getE29(), folio);
+                            }
+                            if(ctvP30.isChecked() == false && r30.isEmpty() == false) {
+                                db.insertarObservaciones("e30", r30, addresses.get(pos).getE30(), folio);
+                            }
+                            if(ctvP31.isChecked() == false && r31.isEmpty() == false) {
+                                db.insertarObservaciones("e31", r31, addresses.get(pos).getE31(), folio);
+                            }
+                            if(ctvP32.isChecked() == false && r32.isEmpty() == false) {
+                                db.insertarObservaciones("OtrosHabitantes", r32, lista.get(pos).getOtrosHabitantes(), folio);
+                            }
+                            if(ctvP33.isChecked() == false && r33.isEmpty() == false) {
+                                db.insertarObservaciones("e33", r33, habitantes.get(pos).getE33(), folio);
+                            }
+                            if(ctvP34.isChecked() == false && r34.isEmpty() == false) {
+                                db.insertarObservaciones("e34", r34, habitantes.get(pos).getE34(), folio);
+                            }
+                            if(ctvP35.isChecked() == false && r35.isEmpty() == false) {
+                                db.insertarObservaciones("e35", r35, habitantes.get(pos).getE35(), folio);
+                            }
+                            if(ctvP36.isChecked() == false && r36.isEmpty() == false) {
+                                db.insertarObservaciones("e36", r36, habitantes.get(pos).getE36(), folio);
+                            }
+                            if(ctvP37.isChecked() == false && r37.isEmpty() == false) {
+                                db.insertarObservaciones("e37", r37, habitantes.get(pos).getE37(), folio);
+                            }
+                            if(ctvP33_1.isChecked() == false && r33_1.isEmpty() == false) {
+                                db.insertarObservaciones("e33_1", r33_1, habitantes.get(pos).getE33_1(), folio);
+                            }
+                            if(ctvP34_1.isChecked() == false && r34_1.isEmpty() == false) {
+                                db.insertarObservaciones("e34_1", r34_1, habitantes.get(pos).getE34_1(), folio);
+                            }
+                            if(ctvP35_1.isChecked() == false && r35_1.isEmpty() == false) {
+                                db.insertarObservaciones("e35_1", r35_1, habitantes.get(pos).getE35_1(), folio);
+                            }
+                            if(ctvP36_1.isChecked() == false && r36_1.isEmpty() == false) {
+                                db.insertarObservaciones("e36_1", r36_1, habitantes.get(pos).getE36_1(), folio);
+                            }
+                            if(ctvP37_1.isChecked() == false && r37_1.isEmpty() == false) {
+                                db.insertarObservaciones("e37_1", r37_1, habitantes.get(pos).getE37_1(), folio);
+                            }
+                            if(ctvP33_2.isChecked() == false && r33_2.isEmpty() == false) {
+                                db.insertarObservaciones("e33_2", r33_2, habitantes.get(pos).getE33_2(), folio);
+                            }
+                            if(ctvP34_2.isChecked() == false && r34_2.isEmpty() == false) {
+                                db.insertarObservaciones("e34_2", r34_2, habitantes.get(pos).getE34_2(), folio);
+                            }
+                            if(ctvP35_2.isChecked() == false && r35_2.isEmpty() == false) {
+                                db.insertarObservaciones("e35_2", r35_2, habitantes.get(pos).getE35_2(), folio);
+                            }
+                            if(ctvP36_2.isChecked() == false && r36_2.isEmpty() == false) {
+                                db.insertarObservaciones("e36_2", r36_2, habitantes.get(pos).getE36_2(), folio);
+                            }
+                            if(ctvP37_2.isChecked() == false && r37_2.isEmpty() == false) {
+                                db.insertarObservaciones("e37_2", r37_2, habitantes.get(pos).getE37_2(), folio);
+                            }
+                            if(ctvP33_3.isChecked() == false && r33_3.isEmpty() == false) {
+                                db.insertarObservaciones("e33_3", r33_3, habitantes.get(pos).getE33_3(), folio);
+                            }
+                            if(ctvP34_3.isChecked() == false && r34_3.isEmpty() == false) {
+                                db.insertarObservaciones("e34_3", r34_3, habitantes.get(pos).getE34_3(), folio);
+                            }
+                            if(ctvP35_3.isChecked() == false && r35_3.isEmpty() == false) {
+                                db.insertarObservaciones("e35_3", r35_3, habitantes.get(pos).getE35_3(), folio);
+                            }
+                            if(ctvP36_3.isChecked() == false && r36_3.isEmpty() == false) {
+                                db.insertarObservaciones("e36_3", r36_3, habitantes.get(pos).getE36_3(), folio);
+                            }
+                            if(ctvP37_3.isChecked() == false && r37_3.isEmpty() == false) {
+                                db.insertarObservaciones("e37_3", r37_3, habitantes.get(pos).getE37_3(), folio);
+                            }
+                            if(ctvP38.isChecked() == false && r38.isEmpty() == false) {
+                                db.insertarObservaciones("e38", r38, habitantes.get(pos).getE38(), folio);
+                            }
+                            if(ctvP39.isChecked() == false && r39.isEmpty() == false) {
+                                db.insertarObservaciones("e39", r39, referencias.get(pos).getE39(), folio);
+                            }
+                            if(ctvP40.isChecked() == false && r40.isEmpty() == false) {
+                                db.insertarObservaciones("e40", r40, referencias.get(pos).getE40(), folio);
+                            }
+                            if(ctvP41.isChecked() == false && r41.isEmpty() == false) {
+                                db.insertarObservaciones("e41", r41, referencias.get(pos).getE41(), folio);
+                            }
+                            if(ctvP42.isChecked() == false && r42.isEmpty() == false) {
+                                db.insertarObservaciones("e42", r42, referencias.get(pos).getE42(), folio);
+                            }
+                            if(ctvP43.isChecked() == false && r43.isEmpty() == false) {
+                                db.insertarObservaciones("e43", r43, referencias.get(pos).getE43(), folio);
+                            }
+                            if(ctvP39_1.isChecked() == false && r39_1.isEmpty() == false) {
+                                db.insertarObservaciones("e39_1", r39_1, referencias.get(pos).getE39_1(), folio);
+                            }
+                            if(ctvP40_1.isChecked() == false && r40_1.isEmpty() == false) {
+                                db.insertarObservaciones("e40_1", r40_1, referencias.get(pos).getE40_1(), folio);
+                            }
+                            if(ctvP41_1.isChecked() == false && r41_1.isEmpty() == false) {
+                                db.insertarObservaciones("e41_1", r41_1, referencias.get(pos).getE41_1(), folio);
+                            }
+                            if(ctvP42_1.isChecked() == false && r42_1.isEmpty() == false) {
+                                db.insertarObservaciones("e42_1", r42_1, referencias.get(pos).getE42_1(), folio);
+                            }
+                            if(ctvP43_1.isChecked() == false && r43_1.isEmpty() == false) {
+                                db.insertarObservaciones("e43_1", r43_1, referencias.get(pos).getE43_1(), folio);
+                            }
+                            if(ctvP44.isChecked() == false && r44.isEmpty() == false) {
+                                db.insertarObservaciones("e44", r44, referencias.get(pos).getE44(), folio);
+                            }
+                            if(ctvP45.isChecked() == false && r45.isEmpty() == false) {
+                                db.insertarObservaciones("e45", r45, referencias.get(pos).getE45(), folio);
+                            }
+                            if(ctvP46.isChecked() == false && r46.isEmpty() == false) {
+                                db.insertarObservaciones("e46", r46, referencias.get(pos).getE46(), folio);
+                            }
+                            if(ctvP47.isChecked() == false && r47.isEmpty() == false) {
+                                db.insertarObservaciones("e47", r47, referencias.get(pos).getE47(), folio);
+                            }
+                            if(ctvP48.isChecked() == false && r48.isEmpty() == false) {
+                                db.insertarObservaciones("e48", r48, historialEscolarLaboral.get(pos).getE48(), folio);
+                            }
+                            if(ctvP49.isChecked() == false && r49.isEmpty() == false) {
+                                db.insertarObservaciones("e49", r49, historialEscolarLaboral.get(pos).getE49(), folio);
+                            }
+                            if(ctvP50.isChecked() == false && r50.isEmpty() == false) {
+                                db.insertarObservaciones("e50", r50, historialEscolarLaboral.get(pos).getE50(), folio);
+                            }
+                            if(ctvP51.isChecked() == false && r51.isEmpty() == false) {
+                                db.insertarObservaciones("e51", r51, historialEscolarLaboral.get(pos).getE51(), folio);
+                            }
+                            if(ctvP52.isChecked() == false && r52.isEmpty() == false) {
+                                db.insertarObservaciones("e52", r52, historialEscolarLaboral.get(pos).getE52(), folio);
+                            }
+                            if(ctvP53.isChecked() == false && r53.isEmpty() == false) {
+                                db.insertarObservaciones("e53", r53, historialEscolarLaboral.get(pos).getE53(), folio);
+                            }
+                            if(ctvP54.isChecked() == false && r54.isEmpty() == false) {
+                                db.insertarObservaciones("e54", r54, historialEscolarLaboral.get(pos).getE54(), folio);
+                            }
+                            if(ctvP55.isChecked() == false && r55.isEmpty() == false) {
+                                db.insertarObservaciones("e55", r55, historialEscolarLaboral.get(pos).getE55(), folio);
+                            }
+                            if(ctvP57.isChecked() == false && r57.isEmpty() == false) {
+                                db.insertarObservaciones("e57", r57, historialEscolarLaboral.get(pos).getE57(), folio);
+                            }
+                            if(ctvP56.isChecked() == false && r56.isEmpty() == false) {
+                                db.insertarObservaciones("e56", r56, historialEscolarLaboral.get(pos).getE56(), folio);
+                            }
+                            if(ctvP58.isChecked() == false && r58.isEmpty() == false) {
+                                db.insertarObservaciones("e58", r58, historialEscolarLaboral.get(pos).getE58(), folio);
+                            }
+                            if(ctvP59.isChecked() == false && r59.isEmpty() == false) {
+                                db.insertarObservaciones("e59", r59, historialEscolarLaboral.get(pos).getE59(), folio);
+                            }
+                            if(ctvP60.isChecked() == false && r60.isEmpty() == false) {
+                                db.insertarObservaciones("e60", r60, listaAbandonoEstado.get(pos).getE60(), folio);
+                            }
+                            if(ctvP61.isChecked() == false && r61.isEmpty() == false) {
+                                db.insertarObservaciones("e61", r61, listaAbandonoEstado.get(pos).getE61(), folio);
+                            }
+                            if(ctvP62.isChecked() == false && r62.isEmpty() == false) {
+                                db.insertarObservaciones("e62", r62, listaAbandonoEstado.get(pos).getE62(), folio);
+                            }
+                            if(ctvP63.isChecked() == false && r63.isEmpty() == false) {
+                                db.insertarObservaciones("e63", r63, listaAbandonoEstado.get(pos).getE63(), folio);
+                            }
+                            if(ctvP64.isChecked() == false && r64.isEmpty() == false) {
+                                db.insertarObservaciones("e64", r64, listaAbandonoEstado.get(pos).getE64(), folio);
+                            }
+                            if(ctvP65.isChecked() == false && r65.isEmpty() == false) {
+                                db.insertarObservaciones("e65", r65, listaAbandonoEstado.get(pos).getE65(), folio);
+                            }
+                            if(ctvP66.isChecked() == false && r66.isEmpty() == false) {
+                                db.insertarObservaciones("e66", r66, listaAbandonoEstado.get(pos).getE66(), folio);
+                            }
+                            if(ctvP67.isChecked() == false && r67.isEmpty() == false) {
+                                db.insertarObservaciones("e67", r67, listaAbandonoEstado.get(pos).getE67(), folio);
+                            }
+                            if(ctvP68.isChecked() == false && r68.isEmpty() == false) {
+                                db.insertarObservaciones("e68", r68, listaAbandonoEstado.get(pos).getE68(), folio);
+                            }
+                            if(ctvP69.isChecked() == false && r69.isEmpty() == false) {
+                                db.insertarObservaciones("e69", r69, listaAbandonoEstado.get(pos).getE69(), folio);
+                            }
+                            if(ctvP70.isChecked() == false && r70.isEmpty() == false) {
+                                db.insertarObservaciones("e70", r70, listaAbandonoEstado.get(pos).getE70(), folio);
+                            }
+                            if(ctvP71.isChecked() == false && r71.isEmpty() == false) {
+                                db.insertarObservaciones("e71", r71, listaAbandonoEstado.get(pos).getE71(), folio);
+                            }
+                            if(ctvP72.isChecked() == false && r72.isEmpty() == false) {
+                                db.insertarObservaciones("e72", r72, listaAbandonoEstado.get(pos).getE72(), folio);
+                            }
+                            if(ctvP67_1.isChecked() == false && r67_1.isEmpty() == false) {
+                                db.insertarObservaciones("e67_1", r67_1, listaAbandonoEstado.get(pos).getE67_1(), folio);
+                            }
+                            if(ctvP68_1.isChecked() == false && r68_1.isEmpty() == false) {
+                                db.insertarObservaciones("e68_1", r68_1, listaAbandonoEstado.get(pos).getE68_1(), folio);
+                            }
+                            if(ctvP69_1.isChecked() == false && r69_1.isEmpty() == false) {
+                                db.insertarObservaciones("e69_1", r69_1, listaAbandonoEstado.get(pos).getE69_1(), folio);
+                            }
+                            if(ctvP70_1.isChecked() == false && r70_1.isEmpty() == false) {
+                                db.insertarObservaciones("e70_1", r70_1, listaAbandonoEstado.get(pos).getE70_1(), folio);
+                            }
+                            if(ctvP71_1.isChecked() == false && r71_1.isEmpty() == false) {
+                                db.insertarObservaciones("e71_1", r71_1, listaAbandonoEstado.get(pos).getE71_1(), folio);
+                            }
+                            if(ctvP72_1.isChecked() == false && r72_1.isEmpty() == false) {
+                                db.insertarObservaciones("e72_1", r72_1, listaAbandonoEstado.get(pos).getE72_1(), folio);
+                            }
+                            if(ctvP73.isChecked() == false && r73.isEmpty() == false) {
+                                db.insertarObservaciones("e73", r73, listaAbandonoEstado.get(pos).getE73(), folio);
+                            }
+                            if(ctvP74.isChecked() == false && r74.isEmpty() == false) {
+                                db.insertarObservaciones("e74", r74, listaAbandonoEstado.get(pos).getE74(), folio);
+                            }
+                            if(ctvP75.isChecked() == false && r75.isEmpty() == false) {
+                                db.insertarObservaciones("e75", r75, listaAbandonoEstado.get(pos).getE75(), folio);
+                            }
+                            if(ctvP76.isChecked() == false && r76.isEmpty() == false) {
+                                db.insertarObservaciones("e76", r76, listaAbandonoEstado.get(pos).getE76(), folio);
+                            }
+                            if(ctvP77.isChecked() == false && r77.isEmpty() == false) {
+                                db.insertarObservaciones("e77", r77, listaAbandonoEstado.get(pos).getE77(), folio);
+                            }
+                            if(ctvP78.isChecked() == false && r78.isEmpty() == false) {
+                                db.insertarObservaciones("e78", r78, listaAbandonoEstado.get(pos).getE78(), folio);
+                            }
+                            if(ctvP74_1.isChecked() == false && r74_1.isEmpty() == false) {
+                                db.insertarObservaciones("e74_1", r74_1, listaAbandonoEstado.get(pos).getE74_1(), folio);
+                            }
+                            if(ctvP75_1.isChecked() == false && r75_1.isEmpty() == false) {
+                                db.insertarObservaciones("e75_1", r75_1, listaAbandonoEstado.get(pos).getE75_1(), folio);
+                            }
+                            if(ctvP76_1.isChecked() == false && r76_1.isEmpty() == false) {
+                                db.insertarObservaciones("e76_1", r76_1, listaAbandonoEstado.get(pos).getE76_1(), folio);
+                            }
+                            if(ctvP77_1.isChecked() == false && r77_1.isEmpty() == false) {
+                                db.insertarObservaciones("e77_1", r77_1, listaAbandonoEstado.get(pos).getE77_1(), folio);
+                            }
+                            if(ctvP78_1.isChecked() == false && r78_1.isEmpty() == false) {
+                                db.insertarObservaciones("e78_1", r78_1, listaAbandonoEstado.get(pos).getE78_1(), folio);
+                            }
+                            if(ctvP79.isChecked() == false && r79.isEmpty() == false) {
+                                db.insertarObservaciones("e79", r79, listaAbandonoEstado.get(pos).getE79(), folio);
+                            }
+                            if(ctvP80.isChecked() == false && r80.isEmpty() == false) {
+                                db.insertarObservaciones("e80", r80, listaAbandonoEstado.get(pos).getE80(), folio);
+                            }
+                            if(ctvP81.isChecked() == false && r81.isEmpty() == false) {
+                                db.insertarObservaciones("e81", r81, listaAbandonoEstado.get(pos).getE81(), folio);
+                            }
+                            if(ctvP82.isChecked() == false && r82.isEmpty() == false) {
+                                db.insertarObservaciones("e82", r82, listaSalud.get(pos).getE82(), folio);
+                            }
+                            if(ctvP90_alcohol.isChecked() == false && r90_alcohol.isEmpty() == false) {
+                                db.insertarObservaciones("e90_alcohol", r90_alcohol, listaSalud.get(pos).getE90_alcohol(), folio);
+                            }
+                            if(ctvP91_alcohol.isChecked() == false && r91_alcohol.isEmpty() == false) {
+                                db.insertarObservaciones("e91_alcohol", r91_alcohol, listaSalud.get(pos).getE91_alcohol(), folio);
+                            }
+                            if(ctvP92_alcohol.isChecked() == false && r92_alcohol.isEmpty() == false) {
+                                db.insertarObservaciones("e92_alcohol", r92_alcohol, listaSalud.get(pos).getE92_alcohol(), folio);
+                            }
+                            if(ctvP83.isChecked() == false && r83.isEmpty() == false) {
+                                db.insertarObservaciones("e83", r83, listaSalud.get(pos).getE83(), folio);
+                            }
+                            if(ctvP90_tabaco.isChecked() == false && r90_tabaco.isEmpty() == false) {
+                                db.insertarObservaciones("e90_tabaco", r90_tabaco, listaSalud.get(pos).getE90_tabaco(), folio);
+                            }
+                            if(ctvP91_tabaco.isChecked() == false && r91_tabaco.isEmpty() == false) {
+                                db.insertarObservaciones("e91_tabaco", r91_tabaco, listaSalud.get(pos).getE91_tabaco(), folio);
+                            }
+                            if(ctvP92_tabaco.isChecked() == false && r92_tabaco.isEmpty() == false) {
+                                db.insertarObservaciones("e92_tabaco", r92_tabaco, listaSalud.get(pos).getE92_tabaco(), folio);
+                            }
+                            if(ctvP84.isChecked() == false && r84.isEmpty() == false) {
+                                db.insertarObservaciones("e84", r84, listaSalud.get(pos).getE84(), folio);
+                            }
+                            if(ctvP90_marihuana.isChecked() == false && r90_marihuana.isEmpty() == false) {
+                                db.insertarObservaciones("e90_marihuana", r90_marihuana, listaSalud.get(pos).getE90_marihuana(), folio);
+                            }
+                            if(ctvP91_marihuana.isChecked() == false && r91_marihuana.isEmpty() == false) {
+                                db.insertarObservaciones("e91_marihuana", r91_marihuana, listaSalud.get(pos).getE91_marihuana(), folio);
+                            }
+                            if(ctvP92_marihuana.isChecked() == false && r92_marihuana.isEmpty() == false) {
+                                db.insertarObservaciones("e92_marihuana", r92_marihuana, listaSalud.get(pos).getE92_marihuana(), folio);
+                            }
+                            if(ctvP85.isChecked() == false && r85.isEmpty() == false) {
+                                db.insertarObservaciones("e85", r85, listaSalud.get(pos).getE85(), folio);
+                            }
+                            if(ctvP90_pastillas.isChecked() == false && r90_pastillas.isEmpty() == false) {
+                                db.insertarObservaciones("e90_pastillas", r90_pastillas, listaSalud.get(pos).getE90_pastillas(), folio);
+                            }
+                            if(ctvP91_pastillas.isChecked() == false && r91_pastillas.isEmpty() == false) {
+                                db.insertarObservaciones("e91_pastillas", r91_pastillas, listaSalud.get(pos).getE91_pastillas(), folio);
+                            }
+                            if(ctvP92_pastillas.isChecked() == false && r92_pastillas.isEmpty() == false) {
+                                db.insertarObservaciones("e92_pastillas", r92_pastillas, listaSalud.get(pos).getE92_pastillas(), folio);
+                            }
+                            if(ctvP86.isChecked() == false && r86.isEmpty() == false) {
+                                db.insertarObservaciones("e86", r86, listaSalud.get(pos).getE86(), folio);
+                            }
+                            if(ctvP90_solventes.isChecked() == false && r90_solventes.isEmpty() == false) {
+                                db.insertarObservaciones("e90_solventes", r90_solventes, listaSalud.get(pos).getE90_solventes(), folio);
+                            }
+                            if(ctvP91_solventes.isChecked() == false && r91_solventes.isEmpty() == false) {
+                                db.insertarObservaciones("e91_solventes", r91_solventes, listaSalud.get(pos).getE91_solventes(), folio);
+                            }
+                            if(ctvP92_solventes.isChecked() == false && r92_solventes.isEmpty() == false) {
+                                db.insertarObservaciones("e92_solventes", r92_solventes, listaSalud.get(pos).getE92_solventes(), folio);
+                            }
+                            if(ctvP87.isChecked() == false && r87.isEmpty() == false) {
+                                db.insertarObservaciones("e87", r87, listaSalud.get(pos).getE87(), folio);
+                            }
+                            if(ctvP90_cristal.isChecked() == false && r90_cristal.isEmpty() == false) {
+                                db.insertarObservaciones("e90_cristal", r90_cristal, listaSalud.get(pos).getE90_cristal(), folio);
+                            }
+                            if(ctvP91_cristal.isChecked() == false && r91_cristal.isEmpty() == false) {
+                                db.insertarObservaciones("e91_cristal", r91_cristal, listaSalud.get(pos).getE91_cristal(), folio);
+                            }
+                            if(ctvP92_cristal.isChecked() == false && r92_cristal.isEmpty() == false) {
+                                db.insertarObservaciones("e92_cristal", r92_cristal, listaSalud.get(pos).getE92_cristal(), folio);
+                            }
+                            if(ctvP88.isChecked() == false && r88.isEmpty() == false) {
+                                db.insertarObservaciones("e88", r88, listaSalud.get(pos).getE88(), folio);
+                            }
+                            if(ctvP90_cocaina.isChecked() == false && r90_cocaina.isEmpty() == false) {
+                                db.insertarObservaciones("e90_cocaina", r90_cocaina, listaSalud.get(pos).getE90_cocaina(), folio);
+                            }
+                            if(ctvP91_cocaina.isChecked() == false && r91_cocaina.isEmpty() == false) {
+                                db.insertarObservaciones("e91_cocaina", r91_cocaina, listaSalud.get(pos).getE91_cocaina(), folio);
+                            }
+                            if(ctvP92_cocaina.isChecked() == false && r92_cocaina.isEmpty() == false) {
+                                db.insertarObservaciones("e92_cocaina", r92_cocaina, listaSalud.get(pos).getE92_cocaina(), folio);
+                            }
+                            if(ctvP89.isChecked() == false && r89.isEmpty() == false) {
+                                db.insertarObservaciones("e89", r89, listaSalud.get(pos).getE89(), folio);
+                            }
+                            if(ctvP93_otroConsumo.isChecked() == false && r93_otroConsumo.isEmpty() == false) {
+                                db.insertarObservaciones("e93_otroConsumo", r93_otroConsumo, listaSalud.get(pos).getE93_otroConsumo(), folio);
+                            }
+                            if(ctvP90_otroConsumo.isChecked() == false && r90_otroConsumo.isEmpty() == false) {
+                                db.insertarObservaciones("e90_otroConsumo", r90_otroConsumo, listaSalud.get(pos).getE90_otroConsumo(), folio);
+                            }
+                            if(ctvP91_otroConsumo.isChecked() == false && r91_otroConsumo.isEmpty() == false) {
+                                db.insertarObservaciones("e91_otroConsumo", r91_otroConsumo, listaSalud.get(pos).getE91_otroConsumo(), folio);
+                            }
+                            if(ctvP92_otroConsumo.isChecked() == false && r92_otroConsumo.isEmpty() == false) {
+                                db.insertarObservaciones("e92_otroConsumo", r92_otroConsumo, listaSalud.get(pos).getE92_otroConsumo(), folio);
+                            }
+                            if(ctvP94.isChecked() == false && r94.isEmpty() == false) {
+                                db.insertarObservaciones("e94", r94, listaSalud.get(pos).getE94(), folio);
+                            }
+                            if(ctvP95.isChecked() == false && r95.isEmpty() == false) {
+                                db.insertarObservaciones("e95", r95, listaSalud.get(pos).getE95(), folio);
+                            }
+
+                            //Save the interviewee information
+                            db.insertarDatosVerificacion(r109, r110, folio);
                         }
                         //endregion
 
                         //region Updates the database with the observations
-                        if(ctvP1.isChecked() == false && etP1.getText().toString().isEmpty() == false) {
+                        if(ctvP1.isChecked() == false && r1.isEmpty() == false) {
                             db.updateTable("imputado_datos_generales", "Nombre", r1, folio);
                         }
-                        if(ctvP2.isChecked() == false && etP2.getText().toString().isEmpty() == false) {
+                        if(ctvP2.isChecked() == false && r2.isEmpty() == false) {
                             db.updateTable("imputado_datos_generales", "Alias", r2, folio);
                         }
-                        if(ctvP3.isChecked() == false && etP3.getText().toString().isEmpty() == false) {
+                        if(ctvP3.isChecked() == false && r3.isEmpty() == false) {
                             db.updateTable("imputado_datos_generales", "FEntrevista", r3, folio);
                         }
-                        if(ctvP4.isChecked() == false && etP4.getText().toString().isEmpty() == false) {
+                        if(ctvP4.isChecked() == false && r4.isEmpty() == false) {
                             db.updateTable("imputado_datos_generales", "Edad", r4, folio);
                         }
-                        if(ctvP5.isChecked() == false && etP5.getText().toString().isEmpty() == false) {
+                        if(ctvP5.isChecked() == false && r5.isEmpty() == false) {
                             db.updateTable("imputado_datos_generales", "LNacimiento", r5, folio);
                         }
-                        if(ctvP6.isChecked() == false && etP6.getText().toString().isEmpty() == false) {
+                        if(ctvP6.isChecked() == false && r6.isEmpty() == false) {
                             db.updateTable("imputado_datos_generales", "Sexo", r6, folio);
                         }
-                        if(ctvP7.isChecked() == false && etP7.getText().toString().isEmpty() == false) {
+                        if(ctvP7.isChecked() == false && r7.isEmpty() == false) {
                             db.updateTable("imputado_datos_domicilio", "e7", r7, folio);
                         }
-                        if(ctvP8.isChecked() == false && etP8.getText().toString().isEmpty() == false) {
+                        if(ctvP7_1.isChecked() == false && r7_1.isEmpty() == false) {
+                            db.updateTable("imputado_datos_domicilio", "e7_1", r7_1, folio);
+                        }
+                        if(ctvP8.isChecked() == false && r8.isEmpty() == false) {
                             db.updateTable("imputado_datos_domicilio", "e8", r8, folio);
                         }
-                        if(ctvP9.isChecked() == false && etP9.getText().toString().isEmpty() == false) {
+                        if(ctvP9.isChecked() == false && r9.isEmpty() == false) {
                             db.updateTable("imputado_datos_domicilio", "e9", r9, folio);
                         }
-                        if(ctvP10.isChecked() == false && etP10.getText().toString().isEmpty() == false) {
+                        if(ctvP10.isChecked() == false && r10.isEmpty() == false) {
                             db.updateTable("imputado_datos_domicilio", "e10", r10, folio);
                         }
-                        if(ctvP11.isChecked() == false && etP11.getText().toString().isEmpty() == false) {
+                        if(ctvP11.isChecked() == false && r11.isEmpty() == false) {
                             db.updateTable("imputado_datos_domicilio", "e11", r11, folio);
                         }
-                        if(ctvP12.isChecked() == false && etP12.getText().toString().isEmpty() == false) {
+                        if(ctvP12.isChecked() == false && r12.isEmpty() == false) {
                             db.updateTable("imputado_datos_domicilio", "e12", r12, folio);
                         }
-                        if(ctvP13.isChecked() == false && etP13.getText().toString().isEmpty() == false) {
+                        if(ctvP13.isChecked() == false && r13.isEmpty() == false) {
                             db.updateTable("imputado_datos_domicilio", "e13", r13, folio);
                         }
-                        if(ctvP14.isChecked() == false && etP14.getText().toString().isEmpty() == false) {
+                        if(ctvP14.isChecked() == false && r14.isEmpty() == false) {
                             db.updateTable("imputado_datos_domicilio", "e14", r14, folio);
                         }
-                        if(ctvP15.isChecked() == false && etP15.getText().toString().isEmpty() == false) {
+                        if(ctvP15.isChecked() == false && r15.isEmpty() == false) {
                             db.updateTable("imputado_datos_domicilio", "e15", r15, folio);
                         }
-                        if(ctvP16.isChecked() == false && etP16.getText().toString().isEmpty() == false) {
+                        if(ctvP16.isChecked() == false && r16.isEmpty() == false) {
                             db.updateTable("imputado_datos_domicilio", "e16", r16, folio);
                         }
-                        if(ctvP32_1.isChecked() == false && etP32_1.getText().toString().isEmpty() == false) {
+                        if(ctvP32_1.isChecked() == false && r32_1.isEmpty() == false) {
                             db.updateTable("imputado_datos_domicilio", "e32_1", r32_1, folio);
                         }
-                        if(ctvP17.isChecked() == false && etP17.getText().toString().isEmpty() == false) {
+                        if(ctvP17.isChecked() == false && r17.isEmpty() == false) {
                             db.updateTable("imputado_datos_domicilio", "e17", r17, folio);
                         }
-                        if(ctvP18.isChecked() == false && etP18.getText().toString().isEmpty() == false) {
+                        if(ctvP18.isChecked() == false && r18.isEmpty() == false) {
                             db.updateTable("imputado_datos_domicilio", "e18", r18, folio);
                         }
-                        if(ctvP19.isChecked() == false && etP19.getText().toString().isEmpty() == false) {
+                        if(ctvP19.isChecked() == false && r19.isEmpty() == false) {
                             db.updateTable("imputado_datos_domicilio", "e19", r19, folio);
                         }
-                        if(ctvP20.isChecked() == false && etP20.getText().toString().isEmpty() == false) {
+                        if(ctvP20.isChecked() == false && r20.isEmpty() == false) {
                             db.updateTable("imputado_datos_domicilio", "e20", r20, folio);
                         }
-                        if(ctvP21_1.isChecked() == false && etP21_1.getText().toString().isEmpty() == false) {
+                        if(ctvP21_1.isChecked() == false && r21_1.isEmpty() == false) {
                             db.updateTable("imputado_datos_generales", "TieneDomicilioS", r21_1, folio);
                         }
-                        if(ctvP21.isChecked() == false && etP21.getText().toString().isEmpty() == false) {
+                        if(ctvP21.isChecked() == false && r21.isEmpty() == false) {
                             db.updateTable("imputado_datos_domicilio", "e21", r21, folio);
                         }
-                        if(ctvP22.isChecked() == false && etP22.getText().toString().isEmpty() == false) {
+                        if(ctvP22.isChecked() == false && r22.isEmpty() == false) {
                             db.updateTable("imputado_datos_domicilio", "e22", r22, folio);
                         }
-                        if(ctvP23.isChecked() == false && etP23.getText().toString().isEmpty() == false) {
+                        if(ctvP23.isChecked() == false && r23.isEmpty() == false) {
                             db.updateTable("imputado_datos_domicilio", "e23", r23, folio);
                         }
-                        if(ctvP24.isChecked() == false && etP24.getText().toString().isEmpty() == false) {
+                        if(ctvP24.isChecked() == false && r24.isEmpty() == false) {
                             db.updateTable("imputado_datos_domicilio", "e24", r24, folio);
                         }
-                        if(ctvP25.isChecked() == false && etP25.getText().toString().isEmpty() == false) {
+                        if(ctvP25.isChecked() == false && r25.isEmpty() == false) {
                             db.updateTable("imputado_datos_domicilio", "e25", r25, folio);
                         }
-                        if(ctvP26.isChecked() == false && etP26.getText().toString().isEmpty() == false) {
+                        if(ctvP26.isChecked() == false && r26.isEmpty() == false) {
                             db.updateTable("imputado_datos_domicilio", "e26", r26, folio);
                         }
-                        if(ctvP27.isChecked() == false && etP27.getText().toString().isEmpty() == false) {
+                        if(ctvP27.isChecked() == false && r27.isEmpty() == false) {
                             db.updateTable("imputado_datos_domicilio", "e27", r27, folio);
                         }
-                        if(ctvP28.isChecked() == false && etP28.getText().toString().isEmpty() == false) {
+                        if(ctvP28.isChecked() == false && r28.isEmpty() == false) {
                             db.updateTable("imputado_datos_domicilio", "e28", r28, folio);
                         }
-                        if(ctvP29.isChecked() == false && etP29.getText().toString().isEmpty() == false) {
+                        if(ctvP29.isChecked() == false && r29.isEmpty() == false) {
                             db.updateTable("imputado_datos_domicilio", "e29", r29, folio);
                         }
-                        if(ctvP30.isChecked() == false && etP30.getText().toString().isEmpty() == false) {
+                        if(ctvP30.isChecked() == false && r30.isEmpty() == false) {
                             db.updateTable("imputado_datos_domicilio", "e30", r30, folio);
                         }
-                        if(ctvP31.isChecked() == false && etP31.getText().toString().isEmpty() == false) {
+                        if(ctvP31.isChecked() == false && r31.isEmpty() == false) {
                             db.updateTable("imputado_datos_domicilio", "e31", r31, folio);
                         }
-                        if(ctvP32.isChecked() == false && etP32.getText().toString().isEmpty() == false) {
+                        if(ctvP32.isChecked() == false && r32.isEmpty() == false) {
                             db.updateTable("imputado_datos_generales", "OtrosHabitantes", r32, folio);
                         }
-                        if(ctvP33.isChecked() == false && etP33.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_habitantes", "e33", r33, folio);
-						}
-						if(ctvP34.isChecked() == false && etP34.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_habitantes", "e34", r34, folio);
-						}
-						if(ctvP35.isChecked() == false && etP35.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_habitantes", "e35", r35, folio);
-						}
-						if(ctvP36.isChecked() == false && etP36.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_habitantes", "e36", r36, folio);
-						}
-						if(ctvP37.isChecked() == false && etP37.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_habitantes", "e37", r37, folio);
-						}
-						if(ctvP33_1.isChecked() == false && etP33_1.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_habitantes", "e33_1", r33_1, folio);
-						}
-						if(ctvP34_1.isChecked() == false && etP34_1.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_habitantes", "e34_1", r34_1, folio);
-						}
-						if(ctvP35_1.isChecked() == false && etP35_1.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_habitantes", "e35_1", r35_1, folio);
-						}
-						if(ctvP36_1.isChecked() == false && etP36_1.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_habitantes", "e36_1", r36_1, folio);
-						}
-						if(ctvP37_1.isChecked() == false && etP37_1.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_habitantes", "e37_1", r37_1, folio);
-						}
-						if(ctvP33_2.isChecked() == false && etP33_2.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_habitantes", "e33_2", r33_2, folio);
-						}
-						if(ctvP34_2.isChecked() == false && etP34_2.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_habitantes", "e34_2", r34_2, folio);
-						}
-						if(ctvP35_2.isChecked() == false && etP35_2.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_habitantes", "e35_2", r35_2, folio);
-						}
-						if(ctvP36_2.isChecked() == false && etP36_2.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_habitantes", "e36_2", r36_2, folio);
-						}
-						if(ctvP37_2.isChecked() == false && etP37_2.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_habitantes", "e37_2", r37_2, folio);
-						}
-						if(ctvP33_3.isChecked() == false && etP33_3.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_habitantes", "e33_3", r33_3, folio);
-						}
-						if(ctvP34_3.isChecked() == false && etP34_3.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_habitantes", "e34_3", r34_3, folio);
-						}
-						if(ctvP35_3.isChecked() == false && etP35_3.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_habitantes", "e35_3", r35_3, folio);
-						}
-						if(ctvP36_3.isChecked() == false && etP36_3.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_habitantes", "e36_3", r36_3, folio);
-						}
-						if(ctvP37_3.isChecked() == false && etP37_3.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_habitantes", "e37_3", r37_3, folio);
-						}
-						if(ctvP38.isChecked() == false && etP38.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_habitantes", "e38", r38, folio);
-						}
-                        if(ctvP39.isChecked() == false && etP39.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_referencias", "e39", r39, folio);
-						}
-						if(ctvP40.isChecked() == false && etP40.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_referencias", "e40", r40, folio);
-						}
-						if(ctvP41.isChecked() == false && etP41.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_referencias", "e41", r41, folio);
-						}
-						if(ctvP42.isChecked() == false && etP42.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_referencias", "e42", r42, folio);
-						}
-						if(ctvP43.isChecked() == false && etP43.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_referencias", "e43", r43, folio);
-						}
-						if(ctvP39_1.isChecked() == false && etP39_1.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_referencias", "e39_1", r39_1, folio);
-						}
-						if(ctvP40_1.isChecked() == false && etP40_1.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_referencias", "e40_1", r40_1, folio);
-						}
-						if(ctvP41_1.isChecked() == false && etP41_1.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_referencias", "e41_1", r41_1, folio);
-						}
-						if(ctvP42_1.isChecked() == false && etP42_1.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_referencias", "e42_1", r42_1, folio);
-						}
-						if(ctvP43_1.isChecked() == false && etP43_1.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_referencias", "e43_1", r43_1, folio);
-						}
-						if(ctvP44.isChecked() == false && etP44.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_referencias", "e44", r44, folio);
-						}
-						if(ctvP45.isChecked() == false && etP45.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_referencias", "e45", r45, folio);
-						}
-						if(ctvP46.isChecked() == false && etP46.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_referencias", "e46", r46, folio);
-						}
-						if(ctvP47.isChecked() == false && etP47.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_referencias", "e47", r47, folio);
-						}
-                        if(ctvP48.isChecked() == false && etP48.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_historial_escolar_laboral", "e48", r48, folio);
-						}
-						if(ctvP49.isChecked() == false && etP49.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_historial_escolar_laboral", "e49", r49, folio);
-						}
-						if(ctvP50.isChecked() == false && etP50.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_historial_escolar_laboral", "e50", r50, folio);
-						}
-						if(ctvP51.isChecked() == false && etP51.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_historial_escolar_laboral", "e51", r51, folio);
-						}
-						if(ctvP52.isChecked() == false && etP52.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_historial_escolar_laboral", "e52", r52, folio);
-						}
-						if(ctvP53.isChecked() == false && etP53.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_historial_escolar_laboral", "e53", r53, folio);
-						}
-						if(ctvP54.isChecked() == false && etP54.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_historial_escolar_laboral", "e54", r54, folio);
-						}
-						if(ctvP55.isChecked() == false && etP55.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_historial_escolar_laboral", "e55", r55, folio);
-						}
-						if(ctvP57.isChecked() == false && etP57.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_historial_escolar_laboral", "e57", r57, folio);
-						}
-						if(ctvP56.isChecked() == false && etP56.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_historial_escolar_laboral", "e56", r56, folio);
-						}
-						if(ctvP58.isChecked() == false && etP58.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_historial_escolar_laboral", "e58", r58, folio);
-						}
-						if(ctvP59.isChecked() == false && etP59.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_historial_escolar_laboral", "e59", r59, folio);
-						}
-                        if(ctvP60.isChecked() == false && etP60.getText().toString().isEmpty() == false) {
-							db.updateTable("imputados_datos_abandono_estado", "e60", r60, folio);
-						}
-						if(ctvP61.isChecked() == false && etP61.getText().toString().isEmpty() == false) {
-							db.updateTable("imputados_datos_abandono_estado", "e61", r61, folio);
-						}
-						if(ctvP62.isChecked() == false && etP62.getText().toString().isEmpty() == false) {
-							db.updateTable("imputados_datos_abandono_estado", "e62", r62, folio);
-						}
-						if(ctvP63.isChecked() == false && etP63.getText().toString().isEmpty() == false) {
-							db.updateTable("imputados_datos_abandono_estado", "e63", r63, folio);
-						}
-						if(ctvP64.isChecked() == false && etP64.getText().toString().isEmpty() == false) {
-							db.updateTable("imputados_datos_abandono_estado", "e64", r64, folio);
-						}
-						if(ctvP65.isChecked() == false && etP65.getText().toString().isEmpty() == false) {
-							db.updateTable("imputados_datos_abandono_estado", "e65", r65, folio);
-						}
-						if(ctvP66.isChecked() == false && etP66.getText().toString().isEmpty() == false) {
-							db.updateTable("imputados_datos_abandono_estado", "e66", r66, folio);
-						}
-						if(ctvP67.isChecked() == false && etP67.getText().toString().isEmpty() == false) {
-							db.updateTable("imputados_datos_abandono_estado", "e67", r67, folio);
-						}
-						if(ctvP68.isChecked() == false && etP68.getText().toString().isEmpty() == false) {
-							db.updateTable("imputados_datos_abandono_estado", "e68", r68, folio);
-						}
-						if(ctvP69.isChecked() == false && etP69.getText().toString().isEmpty() == false) {
-							db.updateTable("imputados_datos_abandono_estado", "e69", r69, folio);
-						}
-						if(ctvP70.isChecked() == false && etP70.getText().toString().isEmpty() == false) {
-							db.updateTable("imputados_datos_abandono_estado", "e70", r70, folio);
-						}
-						if(ctvP71.isChecked() == false && etP71.getText().toString().isEmpty() == false) {
-							db.updateTable("imputados_datos_abandono_estado", "e71", r71, folio);
-						}
-						if(ctvP72.isChecked() == false && etP72.getText().toString().isEmpty() == false) {
-							db.updateTable("imputados_datos_abandono_estado", "e72", r72, folio);
-						}
-						if(ctvP67_1.isChecked() == false && etP67_1.getText().toString().isEmpty() == false) {
-							db.updateTable("imputados_datos_abandono_estado", "e67_1", r67_1, folio);
-						}
-						if(ctvP68_1.isChecked() == false && etP68_1.getText().toString().isEmpty() == false) {
-							db.updateTable("imputados_datos_abandono_estado", "e68_1", r68_1, folio);
-						}
-						if(ctvP69_1.isChecked() == false && etP69_1.getText().toString().isEmpty() == false) {
-							db.updateTable("imputados_datos_abandono_estado", "e69_1", r69_1, folio);
-						}
-						if(ctvP70_1.isChecked() == false && etP70_1.getText().toString().isEmpty() == false) {
-							db.updateTable("imputados_datos_abandono_estado", "e70_1", r70_1, folio);
-						}
-						if(ctvP71_1.isChecked() == false && etP71_1.getText().toString().isEmpty() == false) {
-							db.updateTable("imputados_datos_abandono_estado", "e71_1", r71_1, folio);
-						}
-						if(ctvP72_1.isChecked() == false && etP72_1.getText().toString().isEmpty() == false) {
-							db.updateTable("imputados_datos_abandono_estado", "e72_1", r72_1, folio);
-						}
-						if(ctvP73.isChecked() == false && etP73.getText().toString().isEmpty() == false) {
-							db.updateTable("imputados_datos_abandono_estado", "e73", r73, folio);
-						}
-						if(ctvP74.isChecked() == false && etP74.getText().toString().isEmpty() == false) {
-							db.updateTable("imputados_datos_abandono_estado", "e74", r74, folio);
-						}
-						if(ctvP75.isChecked() == false && etP75.getText().toString().isEmpty() == false) {
-							db.updateTable("imputados_datos_abandono_estado", "e75", r75, folio);
-						}
-						if(ctvP76.isChecked() == false && etP76.getText().toString().isEmpty() == false) {
-							db.updateTable("imputados_datos_abandono_estado", "e76", r76, folio);
-						}
-						if(ctvP77.isChecked() == false && etP77.getText().toString().isEmpty() == false) {
-							db.updateTable("imputados_datos_abandono_estado", "e77", r77, folio);
-						}
-						if(ctvP78.isChecked() == false && etP78.getText().toString().isEmpty() == false) {
-							db.updateTable("imputados_datos_abandono_estado", "e78", r78, folio);
-						}
-						if(ctvP74_1.isChecked() == false && etP74_1.getText().toString().isEmpty() == false) {
-							db.updateTable("imputados_datos_abandono_estado", "e74_1", r74_1, folio);
-						}
-						if(ctvP75_1.isChecked() == false && etP75_1.getText().toString().isEmpty() == false) {
-							db.updateTable("imputados_datos_abandono_estado", "e75_1", r75_1, folio);
-						}
-						if(ctvP76_1.isChecked() == false && etP76_1.getText().toString().isEmpty() == false) {
-							db.updateTable("imputados_datos_abandono_estado", "e76_1", r76_1, folio);
-						}
-						if(ctvP77_1.isChecked() == false && etP77_1.getText().toString().isEmpty() == false) {
-							db.updateTable("imputados_datos_abandono_estado", "e77_1", r77_1, folio);
-						}
-						if(ctvP78_1.isChecked() == false && etP78_1.getText().toString().isEmpty() == false) {
-							db.updateTable("imputados_datos_abandono_estado", "e78_1", r78_1, folio);
-						}
-						if(ctvP79.isChecked() == false && etP79.getText().toString().isEmpty() == false) {
-							db.updateTable("imputados_datos_abandono_estado", "e79", r79, folio);
-						}
-						if(ctvP80.isChecked() == false && etP80.getText().toString().isEmpty() == false) {
-							db.updateTable("imputados_datos_abandono_estado", "e80", r80, folio);
-						}
-						if(ctvP81.isChecked() == false && etP81.getText().toString().isEmpty() == false) {
-							db.updateTable("imputados_datos_abandono_estado", "e81", r81, folio);
-						}
-                        if(ctvP82.isChecked() == false && etP82.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e82", r82, folio);
-						}
-						if(ctvP90_alcohol.isChecked() == false && etP90_alcohol.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e90_alcohol", r90_alcohol, folio);
-						}
-						if(ctvP91_alcohol.isChecked() == false && etP91_alcohol.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e91_alcohol", r91_alcohol, folio);
-						}
-						if(ctvP92_alcohol.isChecked() == false && etP92_alcohol.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e92_alcohol", r92_alcohol, folio);
-						}
-						if(ctvP83.isChecked() == false && etP83.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e83", r83, folio);
-						}
-						if(ctvP90_tabaco.isChecked() == false && etP90_tabaco.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e90_tabaco", r90_tabaco, folio);
-						}
-						if(ctvP91_tabaco.isChecked() == false && etP91_tabaco.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e91_tabaco", r91_tabaco, folio);
-						}
-						if(ctvP92_tabaco.isChecked() == false && etP92_tabaco.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e92_tabaco", r92_tabaco, folio);
-						}
-						if(ctvP84.isChecked() == false && etP84.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e84", r84, folio);
-						}
-						if(ctvP90_marihuana.isChecked() == false && etP90_marihuana.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e90_marihuana", r90_marihuana, folio);
-						}
-						if(ctvP91_marihuana.isChecked() == false && etP91_marihuana.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e91_marihuana", r91_marihuana, folio);
-						}
-						if(ctvP92_marihuana.isChecked() == false && etP92_marihuana.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e92_marihuana", r92_marihuana, folio);
-						}
-						if(ctvP85.isChecked() == false && etP85.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e85", r85, folio);
-						}
-						if(ctvP90_pastillas.isChecked() == false && etP90_pastillas.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e90_pastillas", r90_pastillas, folio);
-						}
-						if(ctvP91_pastillas.isChecked() == false && etP91_pastillas.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e91_pastillas", r91_pastillas, folio);
-						}
-						if(ctvP92_pastillas.isChecked() == false && etP92_pastillas.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e92_pastillas", r92_pastillas, folio);
-						}
-						if(ctvP86.isChecked() == false && etP86.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e86", r86, folio);
-						}
-						if(ctvP90_solventes.isChecked() == false && etP90_solventes.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e90_solventes", r90_solventes, folio);
-						}
-						if(ctvP91_solventes.isChecked() == false && etP91_solventes.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e91_solventes", r91_solventes, folio);
-						}
-						if(ctvP92_solventes.isChecked() == false && etP92_solventes.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e92_solventes", r92_solventes, folio);
-						}
-						if(ctvP87.isChecked() == false && etP87.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e87", r87, folio);
-						}
-						if(ctvP90_cristal.isChecked() == false && etP90_cristal.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e90_cristal", r90_cristal, folio);
-						}
-						if(ctvP91_cristal.isChecked() == false && etP91_cristal.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e91_cristal", r91_cristal, folio);
-						}
-						if(ctvP92_cristal.isChecked() == false && etP92_cristal.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e92_cristal", r92_cristal, folio);
-						}
-						if(ctvP88.isChecked() == false && etP88.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e88", r88, folio);
-						}
-						if(ctvP90_cocaina.isChecked() == false && etP90_cocaina.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e90_cocaina", r90_cocaina, folio);
-						}
-						if(ctvP91_cocaina.isChecked() == false && etP91_cocaina.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e91_cocaina", r91_cocaina, folio);
-						}
-						if(ctvP92_cocaina.isChecked() == false && etP92_cocaina.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e92_cocaina", r92_cocaina, folio);
-						}
-						if(ctvP89.isChecked() == false && etP89.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e89", r89, folio);
-						}
-						if(ctvP93_otroConsumo.isChecked() == false && etP93_otroConsumo.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e93_otroConsumo", r93_otroConsumo, folio);
-						}
-						if(ctvP90_otroConsumo.isChecked() == false && etP90_otroConsumo.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e90_otroConsumo", r90_otroConsumo, folio);
-						}
-						if(ctvP91_otroConsumo.isChecked() == false && etP91_otroConsumo.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e91_otroConsumo", r91_otroConsumo, folio);
-						}
-						if(ctvP92_otroConsumo.isChecked() == false && etP92_otroConsumo.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e92_otroConsumo", r92_otroConsumo, folio);
-						}
-						if(ctvP94.isChecked() == false && etP94.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e94", r94, folio);
-						}
-						if(ctvP95.isChecked() == false && etP95.getText().toString().isEmpty() == false) {
-							db.updateTable("imputado_datos_salud", "e95", r95, folio);
-						}
+                        if(ctvP33.isChecked() == false && r33.isEmpty() == false) {
+                            db.updateTable("imputado_datos_habitantes", "e33", r33, folio);
+                        }
+                        if(ctvP34.isChecked() == false && r34.isEmpty() == false) {
+                            db.updateTable("imputado_datos_habitantes", "e34", r34, folio);
+                        }
+                        if(ctvP35.isChecked() == false && r35.isEmpty() == false) {
+                            db.updateTable("imputado_datos_habitantes", "e35", r35, folio);
+                        }
+                        if(ctvP36.isChecked() == false && r36.isEmpty() == false) {
+                            db.updateTable("imputado_datos_habitantes", "e36", r36, folio);
+                        }
+                        if(ctvP37.isChecked() == false && r37.isEmpty() == false) {
+                            db.updateTable("imputado_datos_habitantes", "e37", r37, folio);
+                        }
+                        if(ctvP33_1.isChecked() == false && r33_1.isEmpty() == false) {
+                            db.updateTable("imputado_datos_habitantes", "e33_1", r33_1, folio);
+                        }
+                        if(ctvP34_1.isChecked() == false && r34_1.isEmpty() == false) {
+                            db.updateTable("imputado_datos_habitantes", "e34_1", r34_1, folio);
+                        }
+                        if(ctvP35_1.isChecked() == false && r35_1.isEmpty() == false) {
+                            db.updateTable("imputado_datos_habitantes", "e35_1", r35_1, folio);
+                        }
+                        if(ctvP36_1.isChecked() == false && r36_1.isEmpty() == false) {
+                            db.updateTable("imputado_datos_habitantes", "e36_1", r36_1, folio);
+                        }
+                        if(ctvP37_1.isChecked() == false && r37_1.isEmpty() == false) {
+                            db.updateTable("imputado_datos_habitantes", "e37_1", r37_1, folio);
+                        }
+                        if(ctvP33_2.isChecked() == false && r33_2.isEmpty() == false) {
+                            db.updateTable("imputado_datos_habitantes", "e33_2", r33_2, folio);
+                        }
+                        if(ctvP34_2.isChecked() == false && r34_2.isEmpty() == false) {
+                            db.updateTable("imputado_datos_habitantes", "e34_2", r34_2, folio);
+                        }
+                        if(ctvP35_2.isChecked() == false && r35_2.isEmpty() == false) {
+                            db.updateTable("imputado_datos_habitantes", "e35_2", r35_2, folio);
+                        }
+                        if(ctvP36_2.isChecked() == false && r36_2.isEmpty() == false) {
+                            db.updateTable("imputado_datos_habitantes", "e36_2", r36_2, folio);
+                        }
+                        if(ctvP37_2.isChecked() == false && r37_2.isEmpty() == false) {
+                            db.updateTable("imputado_datos_habitantes", "e37_2", r37_2, folio);
+                        }
+                        if(ctvP33_3.isChecked() == false && r33_3.isEmpty() == false) {
+                            db.updateTable("imputado_datos_habitantes", "e33_3", r33_3, folio);
+                        }
+                        if(ctvP34_3.isChecked() == false && r34_3.isEmpty() == false) {
+                            db.updateTable("imputado_datos_habitantes", "e34_3", r34_3, folio);
+                        }
+                        if(ctvP35_3.isChecked() == false && r35_3.isEmpty() == false) {
+                            db.updateTable("imputado_datos_habitantes", "e35_3", r35_3, folio);
+                        }
+                        if(ctvP36_3.isChecked() == false && r36_3.isEmpty() == false) {
+                            db.updateTable("imputado_datos_habitantes", "e36_3", r36_3, folio);
+                        }
+                        if(ctvP37_3.isChecked() == false && r37_3.isEmpty() == false) {
+                            db.updateTable("imputado_datos_habitantes", "e37_3", r37_3, folio);
+                        }
+                        if(ctvP38.isChecked() == false && r38.isEmpty() == false) {
+                            db.updateTable("imputado_datos_habitantes", "e38", r38, folio);
+                        }
+                        if(ctvP39.isChecked() == false && r39.isEmpty() == false) {
+                            db.updateTable("imputado_datos_referencias", "e39", r39, folio);
+                        }
+                        if(ctvP40.isChecked() == false && r40.isEmpty() == false) {
+                            db.updateTable("imputado_datos_referencias", "e40", r40, folio);
+                        }
+                        if(ctvP41.isChecked() == false && r41.isEmpty() == false) {
+                            db.updateTable("imputado_datos_referencias", "e41", r41, folio);
+                        }
+                        if(ctvP42.isChecked() == false && r42.isEmpty() == false) {
+                            db.updateTable("imputado_datos_referencias", "e42", r42, folio);
+                        }
+                        if(ctvP43.isChecked() == false && r43.isEmpty() == false) {
+                            db.updateTable("imputado_datos_referencias", "e43", r43, folio);
+                        }
+                        if(ctvP39_1.isChecked() == false && r39_1.isEmpty() == false) {
+                            db.updateTable("imputado_datos_referencias", "e39_1", r39_1, folio);
+                        }
+                        if(ctvP40_1.isChecked() == false && r40_1.isEmpty() == false) {
+                            db.updateTable("imputado_datos_referencias", "e40_1", r40_1, folio);
+                        }
+                        if(ctvP41_1.isChecked() == false && r41_1.isEmpty() == false) {
+                            db.updateTable("imputado_datos_referencias", "e41_1", r41_1, folio);
+                        }
+                        if(ctvP42_1.isChecked() == false && r42_1.isEmpty() == false) {
+                            db.updateTable("imputado_datos_referencias", "e42_1", r42_1, folio);
+                        }
+                        if(ctvP43_1.isChecked() == false && r43_1.isEmpty() == false) {
+                            db.updateTable("imputado_datos_referencias", "e43_1", r43_1, folio);
+                        }
+                        if(ctvP44.isChecked() == false && r44.isEmpty() == false) {
+                            db.updateTable("imputado_datos_referencias", "e44", r44, folio);
+                        }
+                        if(ctvP45.isChecked() == false && r45.isEmpty() == false) {
+                            db.updateTable("imputado_datos_referencias", "e45", r45, folio);
+                        }
+                        if(ctvP46.isChecked() == false && r46.isEmpty() == false) {
+                            db.updateTable("imputado_datos_referencias", "e46", r46, folio);
+                        }
+                        if(ctvP47.isChecked() == false && r47.isEmpty() == false) {
+                            db.updateTable("imputado_datos_referencias", "e47", r47, folio);
+                        }
+                        if(ctvP48.isChecked() == false && r48.isEmpty() == false) {
+                            db.updateTable("imputado_datos_historial_escolar_laboral", "e48", r48, folio);
+                        }
+                        if(ctvP49.isChecked() == false && r49.isEmpty() == false) {
+                            db.updateTable("imputado_datos_historial_escolar_laboral", "e49", r49, folio);
+                        }
+                        if(ctvP50.isChecked() == false && r50.isEmpty() == false) {
+                            db.updateTable("imputado_datos_historial_escolar_laboral", "e50", r50, folio);
+                        }
+                        if(ctvP51.isChecked() == false && r51.isEmpty() == false) {
+                            db.updateTable("imputado_datos_historial_escolar_laboral", "e51", r51, folio);
+                        }
+                        if(ctvP52.isChecked() == false && r52.isEmpty() == false) {
+                            db.updateTable("imputado_datos_historial_escolar_laboral", "e52", r52, folio);
+                        }
+                        if(ctvP53.isChecked() == false && r53.isEmpty() == false) {
+                            db.updateTable("imputado_datos_historial_escolar_laboral", "e53", r53, folio);
+                        }
+                        if(ctvP54.isChecked() == false && r54.isEmpty() == false) {
+                            db.updateTable("imputado_datos_historial_escolar_laboral", "e54", r54, folio);
+                        }
+                        if(ctvP55.isChecked() == false && r55.isEmpty() == false) {
+                            db.updateTable("imputado_datos_historial_escolar_laboral", "e55", r55, folio);
+                        }
+                        if(ctvP57.isChecked() == false && r57.isEmpty() == false) {
+                            db.updateTable("imputado_datos_historial_escolar_laboral", "e57", r57, folio);
+                        }
+                        if(ctvP56.isChecked() == false && r56.isEmpty() == false) {
+                            db.updateTable("imputado_datos_historial_escolar_laboral", "e56", r56, folio);
+                        }
+                        if(ctvP58.isChecked() == false && r58.isEmpty() == false) {
+                            db.updateTable("imputado_datos_historial_escolar_laboral", "e58", r58, folio);
+                        }
+                        if(ctvP59.isChecked() == false && r59.isEmpty() == false) {
+                            db.updateTable("imputado_datos_historial_escolar_laboral", "e59", r59, folio);
+                        }
+                        if(ctvP60.isChecked() == false && r60.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e60", r60, folio);
+                        }
+                        if(ctvP61.isChecked() == false && r61.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e61", r61, folio);
+                        }
+                        if(ctvP62.isChecked() == false && r62.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e62", r62, folio);
+                        }
+                        if(ctvP63.isChecked() == false && r63.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e63", r63, folio);
+                        }
+                        if(ctvP64.isChecked() == false && r64.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e64", r64, folio);
+                        }
+                        if(ctvP65.isChecked() == false && r65.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e65", r65, folio);
+                        }
+                        if(ctvP66.isChecked() == false && r66.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e66", r66, folio);
+                        }
+                        if(ctvP67.isChecked() == false && r67.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e67", r67, folio);
+                        }
+                        if(ctvP68.isChecked() == false && r68.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e68", r68, folio);
+                        }
+                        if(ctvP69.isChecked() == false && r69.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e69", r69, folio);
+                        }
+                        if(ctvP70.isChecked() == false && r70.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e70", r70, folio);
+                        }
+                        if(ctvP71.isChecked() == false && r71.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e71", r71, folio);
+                        }
+                        if(ctvP72.isChecked() == false && r72.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e72", r72, folio);
+                        }
+                        if(ctvP67_1.isChecked() == false && r67_1.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e67_1", r67_1, folio);
+                        }
+                        if(ctvP68_1.isChecked() == false && r68_1.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e68_1", r68_1, folio);
+                        }
+                        if(ctvP69_1.isChecked() == false && r69_1.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e69_1", r69_1, folio);
+                        }
+                        if(ctvP70_1.isChecked() == false && r70_1.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e70_1", r70_1, folio);
+                        }
+                        if(ctvP71_1.isChecked() == false && r71_1.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e71_1", r71_1, folio);
+                        }
+                        if(ctvP72_1.isChecked() == false && r72_1.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e72_1", r72_1, folio);
+                        }
+                        if(ctvP73.isChecked() == false && r73.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e73", r73, folio);
+                        }
+                        if(ctvP74.isChecked() == false && r74.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e74", r74, folio);
+                        }
+                        if(ctvP75.isChecked() == false && r75.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e75", r75, folio);
+                        }
+                        if(ctvP76.isChecked() == false && r76.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e76", r76, folio);
+                        }
+                        if(ctvP77.isChecked() == false && r77.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e77", r77, folio);
+                        }
+                        if(ctvP78.isChecked() == false && r78.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e78", r78, folio);
+                        }
+                        if(ctvP74_1.isChecked() == false && r74_1.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e74_1", r74_1, folio);
+                        }
+                        if(ctvP75_1.isChecked() == false && r75_1.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e75_1", r75_1, folio);
+                        }
+                        if(ctvP76_1.isChecked() == false && r76_1.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e76_1", r76_1, folio);
+                        }
+                        if(ctvP77_1.isChecked() == false && r77_1.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e77_1", r77_1, folio);
+                        }
+                        if(ctvP78_1.isChecked() == false && r78_1.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e78_1", r78_1, folio);
+                        }
+                        if(ctvP79.isChecked() == false && r79.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e79", r79, folio);
+                        }
+                        if(ctvP80.isChecked() == false && r80.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e80", r80, folio);
+                        }
+                        if(ctvP81.isChecked() == false && r81.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e81", r81, folio);
+                        }
+                        if(ctvP82.isChecked() == false && r82.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e82", r82, folio);
+                        }
+                        if(ctvP90_alcohol.isChecked() == false && r90_alcohol.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e90_alcohol", r90_alcohol, folio);
+                        }
+                        if(ctvP91_alcohol.isChecked() == false && r91_alcohol.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e91_alcohol", r91_alcohol, folio);
+                        }
+                        if(ctvP92_alcohol.isChecked() == false && r92_alcohol.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e92_alcohol", r92_alcohol, folio);
+                        }
+                        if(ctvP83.isChecked() == false && r83.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e83", r83, folio);
+                        }
+                        if(ctvP90_tabaco.isChecked() == false && r90_tabaco.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e90_tabaco", r90_tabaco, folio);
+                        }
+                        if(ctvP91_tabaco.isChecked() == false && r91_tabaco.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e91_tabaco", r91_tabaco, folio);
+                        }
+                        if(ctvP92_tabaco.isChecked() == false && r92_tabaco.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e92_tabaco", r92_tabaco, folio);
+                        }
+                        if(ctvP84.isChecked() == false && r84.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e84", r84, folio);
+                        }
+                        if(ctvP90_marihuana.isChecked() == false && r90_marihuana.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e90_marihuana", r90_marihuana, folio);
+                        }
+                        if(ctvP91_marihuana.isChecked() == false && r91_marihuana.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e91_marihuana", r91_marihuana, folio);
+                        }
+                        if(ctvP92_marihuana.isChecked() == false && r92_marihuana.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e92_marihuana", r92_marihuana, folio);
+                        }
+                        if(ctvP85.isChecked() == false && r85.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e85", r85, folio);
+                        }
+                        if(ctvP90_pastillas.isChecked() == false && r90_pastillas.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e90_pastillas", r90_pastillas, folio);
+                        }
+                        if(ctvP91_pastillas.isChecked() == false && r91_pastillas.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e91_pastillas", r91_pastillas, folio);
+                        }
+                        if(ctvP92_pastillas.isChecked() == false && r92_pastillas.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e92_pastillas", r92_pastillas, folio);
+                        }
+                        if(ctvP86.isChecked() == false && r86.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e86", r86, folio);
+                        }
+                        if(ctvP90_solventes.isChecked() == false && r90_solventes.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e90_solventes", r90_solventes, folio);
+                        }
+                        if(ctvP91_solventes.isChecked() == false && r91_solventes.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e91_solventes", r91_solventes, folio);
+                        }
+                        if(ctvP92_solventes.isChecked() == false && r92_solventes.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e92_solventes", r92_solventes, folio);
+                        }
+                        if(ctvP87.isChecked() == false && r87.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e87", r87, folio);
+                        }
+                        if(ctvP90_cristal.isChecked() == false && r90_cristal.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e90_cristal", r90_cristal, folio);
+                        }
+                        if(ctvP91_cristal.isChecked() == false && r91_cristal.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e91_cristal", r91_cristal, folio);
+                        }
+                        if(ctvP92_cristal.isChecked() == false && r92_cristal.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e92_cristal", r92_cristal, folio);
+                        }
+                        if(ctvP88.isChecked() == false && r88.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e88", r88, folio);
+                        }
+                        if(ctvP90_cocaina.isChecked() == false && r90_cocaina.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e90_cocaina", r90_cocaina, folio);
+                        }
+                        if(ctvP91_cocaina.isChecked() == false && r91_cocaina.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e91_cocaina", r91_cocaina, folio);
+                        }
+                        if(ctvP92_cocaina.isChecked() == false && r92_cocaina.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e92_cocaina", r92_cocaina, folio);
+                        }
+                        if(ctvP89.isChecked() == false && r89.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e89", r89, folio);
+                        }
+                        if(ctvP93_otroConsumo.isChecked() == false && r93_otroConsumo.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e93_otroConsumo", r93_otroConsumo, folio);
+                        }
+                        if(ctvP90_otroConsumo.isChecked() == false && r90_otroConsumo.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e90_otroConsumo", r90_otroConsumo, folio);
+                        }
+                        if(ctvP91_otroConsumo.isChecked() == false && r91_otroConsumo.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e91_otroConsumo", r91_otroConsumo, folio);
+                        }
+                        if(ctvP92_otroConsumo.isChecked() == false && r92_otroConsumo.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e92_otroConsumo", r92_otroConsumo, folio);
+                        }
+                        if(ctvP94.isChecked() == false && r94.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e94", r94, folio);
+                        }
+                        if(ctvP95.isChecked() == false && r95.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_salud", "e95", r95, folio);
+                        }
                         //endregion
 
-                        Toast.makeText(getApplicationContext(), "Entrevista Actualizada", Toast.LENGTH_SHORT).show();
+                        //Verificación
+                        if(oper.equals(opers[0])) {
+                            Toast.makeText(getApplicationContext(), "Entrevista Verificada", Toast.LENGTH_SHORT).show();
+                        }
+                        //Edición
+                        else {
+                            Toast.makeText(getApplicationContext(), "Entrevista Actualizada", Toast.LENGTH_SHORT).show();
+                        }
 
                         Intent intent= new Intent(v.getContext(), MainMenu.class);
                         startActivity(intent);
@@ -6163,6 +6224,40 @@ public class verificacion extends AppCompatActivity {
             }
         });
         //endregion
+
+        sP108 = (Spinner) findViewById(R.id.sP108);
+        sP108.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, opers));
+
+        tvP109 = (TextView) findViewById(R.id.tvP109);
+        etP109 = (EditText) findViewById(R.id.etP109);
+        tvP110 = (TextView) findViewById(R.id.tvP110);
+        etP110 = (EditText) findViewById(R.id.etP110);
+
+        sP108.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                //Verificación
+                if(position == 0){
+                    tvP109.setVisibility(View.VISIBLE);
+                    etP109.setVisibility(View.VISIBLE);
+                    tvP110.setVisibility(View.VISIBLE);
+                    etP110.setVisibility(View.VISIBLE);
+                }
+                //Edición
+                else{
+                    tvP109.setVisibility(View.GONE);
+                    etP109.setVisibility(View.GONE);
+                    tvP110.setVisibility(View.GONE);
+                    etP110.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         //region Separators
         btnDatosGenerales=(Button) findViewById(R.id.btnDatosGenerales);

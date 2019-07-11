@@ -78,8 +78,8 @@ public class ConsultaDomicilio extends AppCompatActivity {
 
                 int pos=sConsultaDomicilio.getSelectedItemPosition();
                 Uri gmmIntentUri;
-                if(addresses.get(pos).getE101() != null && addresses.get(pos).getE102() != null) {
-                    gmmIntentUri = Uri.parse("http://maps.google.com/maps?daddr=" + addresses.get(pos).getE101() + "," + addresses.get(pos).getE102());
+                if(addresses.get(pos).getE106() != null && addresses.get(pos).getE107() != null) {
+                    gmmIntentUri = Uri.parse("http://maps.google.com/maps?daddr=" + addresses.get(pos).getE106() + "," + addresses.get(pos).getE107());
                 }
                 else {
                     gmmIntentUri = Uri.parse("http://maps.google.com/maps?daddr=" + Uri.encode(addresses.get(pos).getE7() + " " +

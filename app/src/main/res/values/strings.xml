@@ -169,6 +169,14 @@
     <string name="e105">Estado</string>
     <!--endregion-->
 
+    <!--e106 latitud del domicilio-->
+    <!--e107 longitud del domicilio-->
+    <!--region Verificación-->
+    <string name="e108">Tipo de operación</string>
+    <string name="e109">Entrevistado</string>
+    <string name="e110">Relación con el imputado</string>
+    <!--endregion-->
+
     <!--endregion-->
 
     <!--region Drawer Menu-->

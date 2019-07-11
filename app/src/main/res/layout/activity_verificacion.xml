@@ -56,18 +56,44 @@
 					android:layout_marginBottom="20dp"/>
 
 				<TextView
-					android:id="@+id/tv100"
+					android:id="@+id/tv108"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:text="@string/e100" />
+					android:text="@string/e108" />
+
+				<Spinner
+					android:id="@+id/sP108"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginBottom="20dp" />
 
 				<TextView
-					android:id="@+id/tvP100"
+					android:id="@+id/tvP109"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:layout_marginBottom="20dp"
-					android:text="VERIFICACIÓN"
-					/>
+					android:text="@string/e109" />
+
+				<EditText
+					android:id="@+id/etP109"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:ems="10"
+					android:inputType="text"
+					android:layout_marginBottom="20dp"/>
+
+				<TextView
+					android:id="@+id/tvP110"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="@string/e110" />
+
+				<EditText
+					android:id="@+id/etP110"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:ems="10"
+					android:inputType="text"
+					android:layout_marginBottom="20dp"/>
 
 				<!--region 1-->
 				<Button
@@ -276,6 +302,31 @@
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:id="@+id/tvP7_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e7_1" />
+
+                    <CheckedTextView
+                        android:id="@+id/ctvP7_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:id="@+id/tvO7_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Observaciones"/>
+
+                    <EditText
+                        android:id="@+id/etP7_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"/>
 
 					<TextView
 						android:id="@+id/tvP8"
@@ -4339,7 +4390,7 @@
 					android:id="@+id/btnGuardarObservaciones"
 					android:layout_width="match_parent"
 					android:layout_height="100dp"
-					android:text="Guardar Observaciones"
+					android:text="Guardar Cambios"
 					android:layout_marginTop="20dp"
 					android:theme="@style/PrimaryColoredButton"
 					android:textColor="#FFFFFF"

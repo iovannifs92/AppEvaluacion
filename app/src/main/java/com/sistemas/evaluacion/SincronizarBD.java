@@ -192,8 +192,8 @@ public class SincronizarBD extends AppCompatActivity {
             e30=listaDomicilio.get(i).getE30();
             e31=listaDomicilio.get(i).getE31();
             e7_1=listaDomicilio.get(i).getE7_1();
-            e101=listaDomicilio.get(i).getE101();
-            e102=listaDomicilio.get(i).getE102();
+            e101=listaDomicilio.get(i).getE106();
+            e102=listaDomicilio.get(i).getE107();
             //endregion
 
             //region Get Datos Familiares
@@ -330,6 +330,10 @@ public class SincronizarBD extends AppCompatActivity {
             //region Get Verificación Observaciones
             //field=listaObservaciones.get(i).getField();
             //observation=listaObservaciones.get(i).getObservation();
+            //endregion
+
+            //region Get Verificación Entrevistado
+            //Agregar tabla verificacion_entrevistado a SincronizarBD
             //endregion
 
             url = "http://10.6.60.182/ejemploBDRemota/registraImputadoDatos.php?" +
