@@ -45,7 +45,7 @@ public class verificacion extends AppCompatActivity {
             tvP35_2, tvP36_2, tvP37_2, tvP33_3, tvP34_3, tvP35_3, tvP36_3, tvP37_3, tvP38, tvP39,
             tvP40, tvP41, tvP42, tvP43, tvP39_1, tvP40_1, tvP41_1, tvP42_1, tvP43_1, tvP44, tvP45,
             tvP46, tvP47, tvP48, tvP49, tvP50, tvP51, tvP52, tvP53, tvP54, tvP55, tvP57, tvP56,
-            tvP58, tvP59, tvP60, tvP61, tvP62, tvP63, tvP64, tvP65, tvP66, tvP67, tvP68, tvP69,
+            tvP58, tvP51_1, tvP59, tvP60, tvP61, tvP62, tvP63, tvP64, tvP65, tvP66, tvP67, tvP68, tvP69,
             tvP70, tvP71, tvP72, tvP67_1, tvP68_1, tvP69_1, tvP70_1, tvP71_1, tvP72_1, tvP73, tvP74,
             tvP75, tvP76, tvP77, tvP78, tvP74_1, tvP75_1, tvP76_1, tvP77_1, tvP78_1, tvP79, tvP80,
             tvP81, tvP82, tvP90_alcohol, tvP91_alcohol, tvP92_alcohol, tvP83, tvP90_tabaco,
@@ -63,7 +63,7 @@ public class verificacion extends AppCompatActivity {
             tvO35_2, tvO36_2, tvO37_2, tvO33_3, tvO34_3, tvO35_3, tvO36_3, tvO37_3, tvO38, tvO39,
             tvO40, tvO41, tvO42, tvO43, tvO39_1, tvO40_1, tvO41_1, tvO42_1, tvO43_1, tvO44, tvO45,
             tvO46, tvO47, tvO48, tvO49, tvO50, tvO51, tvO52, tvO53, tvO54, tvO55, tvO57, tvO56,
-            tvO58, tvO59, tvO60, tvO61, tvO62, tvO63, tvO64, tvO65, tvO66, tvO67, tvO68, tvO69,
+            tvO58, tvO51_1, tvO59, tvO60, tvO61, tvO62, tvO63, tvO64, tvO65, tvO66, tvO67, tvO68, tvO69,
             tvO70, tvO71, tvO72, tvO67_1, tvO68_1, tvO69_1, tvO70_1, tvO71_1, tvO72_1, tvO73, tvO74,
             tvO75, tvO76, tvO77, tvO78, tvO74_1, tvO75_1, tvO76_1, tvO77_1, tvO78_1, tvO79, tvO80,
             tvO81, tvO82, tvO90_alcohol, tvO91_alcohol, tvO92_alcohol, tvO83, tvO90_tabaco,
@@ -82,7 +82,7 @@ public class verificacion extends AppCompatActivity {
             etP35_2, etP36_2, etP37_2, etP33_3, etP34_3, etP35_3, etP36_3, etP37_3, etP38, etP39,
             etP40, etP41, etP42, etP43, etP39_1, etP40_1, etP41_1, etP42_1, etP43_1, etP44, etP45,
             etP46, etP47, etP48, etP49, etP50, etP51, etP52, etP53, etP54, etP55, etP57, etP56,
-            etP58, etP59, etP60, etP61, etP62, etP63, etP64, etP65, etP66, etP67, etP68, etP69,
+            etP58, etP51_1, etP59, etP60, etP61, etP62, etP63, etP64, etP65, etP66, etP67, etP68, etP69,
             etP70, etP71, etP72, etP67_1, etP68_1, etP69_1, etP70_1, etP71_1, etP72_1, etP73, etP74,
             etP75, etP76, etP77, etP78, etP74_1, etP75_1, etP76_1, etP77_1, etP78_1, etP79, etP80,
             etP81, etP82, etP90_alcohol, etP91_alcohol, etP92_alcohol, etP83, etP90_tabaco,
@@ -102,7 +102,7 @@ public class verificacion extends AppCompatActivity {
             ctvP36_2, ctvP37_2, ctvP33_3, ctvP34_3, ctvP35_3, ctvP36_3, ctvP37_3, ctvP38, ctvP39,
             ctvP40, ctvP41, ctvP42, ctvP43, ctvP39_1, ctvP40_1, ctvP41_1, ctvP42_1, ctvP43_1,
             ctvP44, ctvP45, ctvP46, ctvP47, ctvP48, ctvP49, ctvP50, ctvP51, ctvP52, ctvP53, ctvP54,
-            ctvP55, ctvP57, ctvP56, ctvP58, ctvP59, ctvP60, ctvP61, ctvP62, ctvP63, ctvP64, ctvP65,
+            ctvP55, ctvP57, ctvP56, ctvP58, ctvP51_1, ctvP59, ctvP60, ctvP61, ctvP62, ctvP63, ctvP64, ctvP65,
             ctvP66, ctvP67, ctvP68, ctvP69, ctvP70, ctvP71, ctvP72, ctvP67_1, ctvP68_1, ctvP69_1,
             ctvP70_1, ctvP71_1, ctvP72_1, ctvP73, ctvP74, ctvP75, ctvP76, ctvP77, ctvP78, ctvP74_1,
             ctvP75_1, ctvP76_1, ctvP77_1, ctvP78_1, ctvP79, ctvP80, ctvP81, ctvP82, ctvP90_alcohol,
@@ -128,7 +128,7 @@ public class verificacion extends AppCompatActivity {
             r35, r36, r37, r33_1, r34_1, r35_1, r36_1, r37_1, r33_2, r34_2, r35_2, r36_2, r37_2,
             r33_3, r34_3, r35_3, r36_3, r37_3, r38, r39, r40, r41, r42, r43, r39_1, r40_1, r41_1,
             r42_1, r43_1, r44, r45, r46, r47, r48, r49, r50, r51, r52, r53, r54, r55, r57, r56, r58,
-            r59, r60, r61, r62, r63, r64, r65, r66, r67, r68, r69, r70, r71, r72, r67_1, r68_1,
+            r51_1, r59, r60, r61, r62, r63, r64, r65, r66, r67, r68, r69, r70, r71, r72, r67_1, r68_1,
             r69_1, r70_1, r71_1, r72_1, r73, r74, r75, r76, r77, r78, r74_1, r75_1, r76_1, r77_1,
             r78_1, r79, r80, r81, r82, r90_alcohol, r91_alcohol, r92_alcohol, r83, r90_tabaco,
             r91_tabaco, r92_tabaco, r84, r90_marihuana, r91_marihuana, r92_marihuana, r85,
@@ -544,6 +544,10 @@ public class verificacion extends AppCompatActivity {
                 ctvP58 = (CheckedTextView) findViewById(R.id.ctvP58);
                 tvO58 = (TextView)findViewById(R.id.tvO58);
                 etP58 = (EditText)findViewById(R.id.etP58);
+                tvP51_1 = (TextView) findViewById(R.id.tvP51_1);
+                ctvP51_1 = (CheckedTextView) findViewById(R.id.ctvP51_1);
+                tvO51_1 = (TextView)findViewById(R.id.tvO51_1);
+                etP51_1 = (EditText)findViewById(R.id.etP51_1);
                 tvP59 = (TextView) findViewById(R.id.tvP59);
                 ctvP59 = (CheckedTextView) findViewById(R.id.ctvP59);
                 tvO59 = (TextView)findViewById(R.id.tvO59);
@@ -1596,6 +1600,13 @@ public class verificacion extends AppCompatActivity {
                 etP58.setVisibility(View.GONE);
                 etP58.setText("");
 
+                ctvP51_1.setText(historialEscolarLaboral.get(pos).getE51_1());
+                ctvP51_1.setChecked(true);
+                ctvP51_1.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                tvO51_1.setVisibility(View.GONE);
+                etP51_1.setVisibility(View.GONE);
+                etP51_1.setText("");
+
                 ctvP59.setText(historialEscolarLaboral.get(pos).getE59());
                 ctvP59.setChecked(true);
                 ctvP59.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
@@ -1618,8 +1629,8 @@ public class verificacion extends AppCompatActivity {
                     ctvP56.setVisibility(View.VISIBLE);
                     tvP58.setVisibility(View.VISIBLE);
                     ctvP58.setVisibility(View.VISIBLE);
-                    tvP59.setVisibility(View.VISIBLE);
-                    ctvP59.setVisibility(View.VISIBLE);
+                    tvP59.setVisibility(View.GONE);
+                    ctvP59.setVisibility(View.GONE);
                 }
                 else{
                     tvP52.setVisibility(View.GONE);
@@ -1636,8 +1647,8 @@ public class verificacion extends AppCompatActivity {
                     ctvP56.setVisibility(View.GONE);
                     tvP58.setVisibility(View.GONE);
                     ctvP58.setVisibility(View.GONE);
-                    tvP59.setVisibility(View.GONE);
-                    ctvP59.setVisibility(View.GONE);
+                    tvP59.setVisibility(View.VISIBLE);
+                    ctvP59.setVisibility(View.VISIBLE);
                 }
                 //endregion
 
@@ -3881,6 +3892,24 @@ public class verificacion extends AppCompatActivity {
                     }
                 });
 
+                ctvP51_1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (ctvP51_1.isChecked()) {
+                            ctvP51_1.setChecked(false);
+                            ctvP51_1.setCheckMarkDrawable(R.drawable.ic_check_box_outline_blank_black_24dp);
+                            tvO51_1.setVisibility(View.VISIBLE);
+                            etP51_1.setVisibility(View.VISIBLE);
+                        }
+                        else {
+                            ctvP51_1.setChecked(true);
+                            ctvP51_1.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                            tvO51_1.setVisibility(View.GONE);
+                            etP51_1.setVisibility(View.GONE);
+                        }
+                    }
+                });
+
                 ctvP59.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -5216,6 +5245,7 @@ public class verificacion extends AppCompatActivity {
                         r57 = etP57.getText().toString().toUpperCase();
                         r56 = etP56.getText().toString().toUpperCase();
                         r58 = etP58.getText().toString().toUpperCase();
+                        r51_1 = etP51_1.getText().toString().toUpperCase();
                         r59 = etP59.getText().toString().toUpperCase();
                         r60 = etP60.getText().toString().toUpperCase();
                         r61 = etP61.getText().toString().toUpperCase();
@@ -5535,6 +5565,9 @@ public class verificacion extends AppCompatActivity {
                             }
                             if(ctvP58.isChecked() == false && r58.isEmpty() == false) {
                                 db.insertarObservaciones("e58", r58, historialEscolarLaboral.get(pos).getE58(), folio);
+                            }
+                            if(ctvP51_1.isChecked() == false && r51_1.isEmpty() == false) {
+                                db.insertarObservaciones("e51_1", r51_1, historialEscolarLaboral.get(pos).getE51_1(), folio);
                             }
                             if(ctvP59.isChecked() == false && r59.isEmpty() == false) {
                                 db.insertarObservaciones("e59", r59, historialEscolarLaboral.get(pos).getE59(), folio);
@@ -5992,6 +6025,9 @@ public class verificacion extends AppCompatActivity {
                         }
                         if(ctvP58.isChecked() == false && r58.isEmpty() == false) {
                             db.updateTable("imputado_datos_historial_escolar_laboral", "e58", r58, folio);
+                        }
+                        if(ctvP51_1.isChecked() == false && r51_1.isEmpty() == false) {
+                            db.updateTable("imputado_datos_historial_escolar_laboral", "e51_1", r51_1, folio);
                         }
                         if(ctvP59.isChecked() == false && r59.isEmpty() == false) {
                             db.updateTable("imputado_datos_historial_escolar_laboral", "e59", r59, folio);

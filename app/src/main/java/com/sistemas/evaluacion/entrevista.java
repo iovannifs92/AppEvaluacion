@@ -75,7 +75,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
 
     //region Spinner
     private Spinner sP1_1, sP1_2, sP6, sP8, sP11, sP13, sP21_1, sP22, sP25, sP27, sP29, sP32, sP32_1, sP44, sP46, sP48, sP50, sP51,
-            sP54, sP57, sP60, sP66, sP72, sP72_1, sP73, sP78, sP78_1, sP79, sP80, sP82,
+            sP54, sP57, sP51_1, sP60, sP66, sP72, sP72_1, sP73, sP78, sP78_1, sP79, sP80, sP82,
             sP90_alcohol, sP83, sP90_tabaco, sP84, sP90_marihuana, sP85, sP90_pastillas,
             sP86,sP90_solventes, sP87, sP90_cristal, sP88, sP90_cocaina, sP89, sP90_otroConsumo,
             sP94, sP100, sP101;
@@ -94,7 +94,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
             r21_1, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31, r33, r34, r35, r36, r37, r33_1, r34_1,
             r35_1, r36_1, r37_1, r33_2, r34_2, r35_2, r36_2, r37_2, r33_3, r34_3, r35_3, r36_3, r37_3, r38,
             r39, r40, r41, r42, r43, r39_1, r40_1, r41_1, r42_1, r43_1, r44, r45, r46, r47, r48, r49, r50,
-            r51, r52, r53, r54, r55, r56, r57, r58, r59, r60, r61, r62, r63, r64, r65, r66,
+            r51, r52, r53, r54, r55, r56, r57, r58, r51_1, r59, r60, r61, r62, r63, r64, r65, r66,
             r67, r68, r69, r70, r71, r72, r67_1, r68_1, r69_1, r70_1, r71_1, r72_1, r73,
             r74, r75, r76, r77, r78, r74_1, r75_1, r76_1, r77_1, r78_1, r79, r80, r81, r82, r83, r84, r85, r86, r87, r88, r89,
             r90_alcohol, r91_alcohol, r92_alcohol, r90_tabaco, r91_tabaco, r92_tabaco, r90_marihuana, r91_marihuana, r92_marihuana,
@@ -116,6 +116,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
     private String r32="0";
     private String [] antecedentes={"No", "Si", "No sabe"};
     private String [] dVictima={"NA", "Persona", "Tienda departamental", "No sabe", "Otro"};
+    private String [] seguro={"No", "IMSS", "ISSSTE", "Seguro Popular", "Privado", "Otro"};
     //endregion
     //endregion
 
@@ -730,6 +731,9 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
 
         sP57=(Spinner) findViewById(R.id.sP57);
         sP57.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,diasLaboral));
+
+        sP51_1 = (Spinner) findViewById(R.id.sP51_1);
+        sP51_1.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,seguro));
 
         tvP52=(TextView) findViewById(R.id.tvP52);
         tvP53=(TextView) findViewById(R.id.tvP53);
@@ -1861,6 +1865,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                 r56=etP56.getText().toString().toUpperCase();
                 r57=sP57.getSelectedItem().toString().toUpperCase();
                 r58=etP58.getText().toString().toUpperCase();
+                r51_1=sP51_1.getSelectedItem().toString().toUpperCase();
                 r59=etP59.getText().toString().toUpperCase();
                 //endregion
 
@@ -1971,7 +1976,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                     db.insertarDatosFamiliares(r32, r33, r34, r35, r36, r37, r33_1, r34_1, r35_1, r36_1, r37_1, r33_2, r34_2, r35_2, r36_2, r37_2,
                             r33_3, r34_3, r35_3, r36_3, r37_3, r38, FOLIO);
                     db.insertarDatosReferencias(r39, r40, r41, r42, r43, r39_1, r40_1, r41_1, r42_1, r43_1, r44, r45, r46, r47, FOLIO);
-                    db.insertarDatosEscolarLaboral(r48, r49, r50, r51, r52, r53, r54, r55, r56, r57, r58, r59, FOLIO);
+                    db.insertarDatosEscolarLaboral(r48, r49, r50, r51, r52, r53, r54, r55, r56, r57, r58, r51_1, r59, FOLIO);
                     db.insertarDatosAbandonoEstado(r60, r61, r62, r63, r64, r65, r66, r67, r68, r69, r70, r71, r72, r67_1, r68_1, r69_1, r70_1, r71_1, r72_1, r73, r74,
                             r75, r76, r77, r78, r74_1, r75_1, r76_1, r77_1, r78_1, r79, r80, r81, FOLIO);
                     db.insertarDatosSalud(r82, r90_alcohol, r91_alcohol, r92_alcohol, r83, r90_tabaco, r91_tabaco, r92_tabaco, r84, r90_marihuana, r91_marihuana, r92_marihuana,

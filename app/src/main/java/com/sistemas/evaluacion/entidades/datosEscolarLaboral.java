@@ -14,17 +14,18 @@ package com.sistemas.evaluacion.entidades;
 //del.e56 as Fecha_Inicio,
 //del.e57 as Dias_Laborales,
 //del.e58 as Salario_Semanal,
+//del.e51_1 as Seguro,
 //del.e59 as Como_Subsiste,
 //endregion
 
 public class datosEscolarLaboral {
     int id;
-    String e48, e49, e50, e51, e52, e53, e54, e55, e57, e56, e58, e59, Folio;
+    String e48, e49, e50, e51, e52, e53, e54, e55, e57, e56, e58, e51_1, e59, Folio;
 
     //region Constructor
     public datosEscolarLaboral(int id, String e48, String e49, String e50, String e51, String e52,
                                String e53, String e54, String e55, String e57, String e56,
-                               String e58, String e59, String folio){
+                               String e58, String e51_1, String e59, String folio){
         this.id = id;
         this.e48 = e48;
         this.e49 = e49;
@@ -37,6 +38,7 @@ public class datosEscolarLaboral {
         this.e57 = e57;
         this.e56 = e56;
         this.e58 = e58;
+        this.e51_1 = e51_1;
         this.e59 = e59;
         Folio = folio;
     }
@@ -138,6 +140,14 @@ public class datosEscolarLaboral {
 
     public void setE58(String e58) {
         this.e58 = e58;
+    }
+
+    public String getE51_1() {
+        return e51_1;
+    }
+
+    public void setE51_1(String e51_1) {
+        this.e51_1 = e51_1;
     }
 
     public String getE59() {
