@@ -108,9 +108,9 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
     private String [] tiempoRadicando={"NA","Menos de un mes", "Un mes", "Entre 1 y 3 meses", "Entre 3 y 6 meses", "Entre 6 meses y un año", "Entre 1 y 3 años", "Entre 3 y 6 años", "Más de 6 años"};
     private String [] nosi={"No", "Si"};
     private String [] frecuenciaConsumo={"No consume", "Diariamente", "Cada Tercer día", "Semanalmente", "Quincenalmente", "Mensualmente", "Anualmente"};
-    private String [] tipoEntrevista={"Normal", "Verificación"};
+    private String [] tipoEntrevista={"Normal", "Adolescente", "PPL"};
     private String [] ocupacion={"NA","Informal", "Formal"};
-    private String [] colfracc={"NA","Colonia", "Fraccionamiento"};
+    private String [] colfracc={"NA","Colonia", "Fraccionamiento","Domicilio Conocido", "Ejido"};
     private String [] diasLaboral={"NA","Lunes a Viernes","Lunes a Domingo","Lunes a Sábado","Fines de Semana","Sin días Establecidos","Otro"};
     private String [] frecuenciaContacto={"NA", "Diariamente", "Semanalmente","Quincenalmente","Mensualmente","Anualmente"};
     private String r32="0";
