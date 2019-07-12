@@ -43,7 +43,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
 
     //region TextView
     private TextView tvP38,persona1,persona2,persona3,persona4, personaE1, personaE2,
-            personaEstado1, personaEstado2, tv33, tv33_1, tv33_2, tv33_3, tv34, tv34_1,
+            personaEstado1, personaEstado2, tvP31_2, tv33, tv33_1, tv33_2, tv33_3, tv34, tv34_1,
             tv34_2, tv34_3, tv35, tv35_1, tv35_2, tv35_3, tv36, tv36_1, tv36_2, tv36_3,
             tv37, tv37_1, tv37_2, tv37_3, tvP45, tvP46, tvP47, tvP49, tvP52, tvP53, tvP54,
             tvP55, tvP56, tvP57, tvP58, tvP59, tvP61, tvP62, tvP63, tvP64, tvP65, tvP67,
@@ -70,11 +70,11 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
 
     private EditText etP97, etP1, etP2, etP4, etP5, etP7, etP7_1, etP8, etP9, etP10, etP12, etP14, etP15,
             etP16, etP17, etP18, etP19, etP20, etP21_1, etP21, etP22, etP23, etP24, etP26, etP28, etP30,
-            etP31, etP39, etP40, etP41, etP42, etP43, etP39_1, etP40_1, etP41_1, etP42_1, etP43_1, etP81, etP96, etP99;
+            etP31, etP31_2, etP39, etP40, etP41, etP42, etP43, etP39_1, etP40_1, etP41_1, etP42_1, etP43_1, etP81, etP96, etP99;
     //endregion
 
     //region Spinner
-    private Spinner sP1_1, sP1_2, sP6, sP8, sP11, sP13, sP21_1, sP22, sP25, sP27, sP29, sP32, sP32_1, sP44, sP46, sP48, sP50, sP51,
+    private Spinner sP1_1, sP1_2, sP6, sP8, sP11, sP13, sP21_1, sP22, sP25, sP27, sP29, sP31_1, sP32, sP32_1, sP44, sP46, sP48, sP50, sP51,
             sP54, sP57, sP51_1, sP60, sP66, sP72, sP72_1, sP73, sP78, sP78_1, sP79, sP80, sP82,
             sP90_alcohol, sP83, sP90_tabaco, sP84, sP90_marihuana, sP85, sP90_pastillas,
             sP86,sP90_solventes, sP87, sP90_cristal, sP88, sP90_cocaina, sP89, sP90_otroConsumo,
@@ -91,7 +91,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
 
     //region String
     private String r1, r1_1, r1_2, r2,r3,r4,r5,r6, r7, r7_1, r8, r9, r10, r11, r12, r13, r14, r15, r16, r32_1, r17, r18, r19, r20,
-            r21_1, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31, r33, r34, r35, r36, r37, r33_1, r34_1,
+            r21_1, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31, r31_1, r31_2, r33, r34, r35, r36, r37, r33_1, r34_1,
             r35_1, r36_1, r37_1, r33_2, r34_2, r35_2, r36_2, r37_2, r33_3, r34_3, r35_3, r36_3, r37_3, r38,
             r39, r40, r41, r42, r43, r39_1, r40_1, r41_1, r42_1, r43_1, r44, r45, r46, r47, r48, r49, r50,
             r51, r52, r53, r54, r55, r56, r57, r58, r51_1, r59, r60, r61, r62, r63, r64, r65, r66,
@@ -214,6 +214,37 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
         sP29 = (Spinner) findViewById(R.id.sP29);
         String [] estadoCivil={"Soltero(a)", "Casado(a)","Unión Libre", "Divorciado (a)", "Viudo (a)"};
         sP29.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,estadoCivil));
+        //endregion
+
+        //region SP31_1 Tipo de delito
+        sP31_1 = (Spinner) findViewById(R.id.sP31_1);
+        //robo simple, violencia familiar, lesiones menores a 15 dias
+        String [] delito={"Otro", "Robo", "Robo Simple", "Violación", "Violencia Familiar", "Daños y Lesiones",
+                "Lesiones menores a 15 dias", "Contra la Salud", "Comercio o Suministro", "Portación de Armas de Fuego"};
+        sP31_1.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,delito));
+
+        tvP31_2=(TextView) findViewById(R.id.tvP31_2);
+        etP31_2=(EditText) findViewById(R.id.etP31_2);
+
+        sP31_1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem=parent.getSelectedItem().toString();
+                if(selectedItem=="Otro"){
+                    tvP31_2.setVisibility(View.VISIBLE);
+                    etP31_2.setVisibility(View.VISIBLE);
+                }
+                else {
+                    tvP31_2.setVisibility(View.GONE);
+                    etP31_2.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                return;
+            }
+        });
         //endregion
 
         //region SP32 # Personas con las que vive actualmente
@@ -1749,6 +1780,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
 
                 etP30=(EditText) findViewById(R.id.etP30);
                 etP31=(EditText) findViewById(R.id.etP31);
+                etP31_2=(EditText) findViewById(R.id.etP31_2);
 
                 r7=etP7.getText().toString().toUpperCase();
                 r7_1=etP7_1.getText().toString().toUpperCase();
@@ -1772,7 +1804,12 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                 r19=etP19.getText().toString().toUpperCase();
                 r20=etP20.getText().toString().toUpperCase();
                 r21=etP21.getText().toString().toUpperCase();
-                r22=((sP22.getSelectedItem().toString()+" ")+(etP22.getText().toString())).toUpperCase();
+                if(sP22.getSelectedItem().toString().equals("NA") == true) {
+                    r22 = (etP22.getText().toString()).toUpperCase();
+                }
+                else {
+                    r22 = ((sP22.getSelectedItem().toString() + " ") + (etP22.getText().toString())).toUpperCase();
+                }
                 r23=etP23.getText().toString().toUpperCase();
                 r24=etP24.getText().toString().toUpperCase();
                 r25=sP25.getSelectedItem().toString().toUpperCase();
@@ -1782,6 +1819,8 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                 r29=sP29.getSelectedItem().toString().toUpperCase();
                 r30=etP30.getText().toString().toUpperCase();
                 r31=etP31.getText().toString().toUpperCase();
+                r31_1=sP31_1.getSelectedItem().toString().toUpperCase();
+                r31_2=etP31_2.getText().toString().toUpperCase();
 
                 //region Definición de variables
                 //endregion
@@ -1970,7 +2009,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
 
                 //region Insertar a Base de Datos
                 if(ValidaFormulario()) {
-                    db.insertarDatosGenerales(r1, r2, r3, r4, r5, r6, FOLIO, r98, min, r96, r99, r100, r21_1, r32,r1_1,r1_2);
+                    db.insertarDatosGenerales(r1, r2, r3, r4, r5, r6, FOLIO, r98, min, r96, r99, r100, r21_1, r32,r1_1,r1_2, r31_1, r31_2);
                     db.insertarDatosGeneralesDomicilio(r7, r7_1, r8, r9, r10, r11, r12, r13, r14, r15, r16, r32_1, r17,
                             r18, r19, r20, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31, confirmedMainLatitude, confirmedMainLongitude, FOLIO);
                     db.insertarDatosFamiliares(r32, r33, r34, r35, r36, r37, r33_1, r34_1, r35_1, r36_1, r37_1, r33_2, r34_2, r35_2, r36_2, r37_2,

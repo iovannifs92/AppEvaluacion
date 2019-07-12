@@ -66,6 +66,8 @@
     <string name="e29">Estado civil</string>
     <string name="e30">Tiempo</string>
     <string name="e31">Hijos</string>
+    <string name="e31_1">Tipo de delito</string>
+    <string name="e31_2">Especifique</string>
     <!--endregion-->
 
     <!--region DATOS FAMILIARES Y PERSONAS CON LAS QUE HABITA EL IMPUTADO-->
@@ -151,7 +153,7 @@
     <string name="e93">¿Cuál es el nombre de lo que consumes?</string>
 
     <string name="e94">¿Padece alguna enfermedad o condición física que afecte su salud?</string>
-    <string name="e95">Específique</string>
+    <string name="e95">Especifique</string>
     <!--endregion-->
 
     <!--region DATOS FINALES-->
@@ -207,7 +209,7 @@
     <string name="g">Sedantes o pastillas para dormir (diazepan, alprazolam, lunitrazepan, midazolam, etc.)</string>
     <string name="h">Alucinogenos (LSD, metadona, morfina, buprenorfina, codeina, etc.)</string>
     <string name="i">Opiáceos (heroína, metadona, morfina, buprenorfina, codeina, etc.)</string>
-    <string name="j">Otros, específique:</string>
+    <string name="j">Otros, especifique:</string>
     <string name="p1">A lo largo de la vida ¿cuál de las siguientes sustancias ha consumido alguna vez? (sólo las que consumió sin receta médica)</string>
     <string name="p2">En los últimos 3 meses ¿con qué frecuencia ha consumido las sustancias que mencionó?</string>
     <string name="p3">En los últimos 3 meses ¿con qué frecuencia ha sentido un fuerte deseo o ansia de consumir?</string>
