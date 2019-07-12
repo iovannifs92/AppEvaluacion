@@ -268,6 +268,193 @@
 						android:layout_marginBottom="20dp"/>
 
 					<TextView
+						android:id="@+id/tvP29"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/e29" />
+
+					<CheckedTextView
+						android:id="@+id/ctvP29"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvO29"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Observaciones"/>
+
+					<EditText
+						android:id="@+id/etP29"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvP30"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/e30" />
+
+					<CheckedTextView
+						android:id="@+id/ctvP30"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"
+						android:ems="10"
+						android:inputType="text" />
+
+					<TextView
+						android:id="@+id/tvO30"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Observaciones"/>
+
+					<EditText
+						android:id="@+id/etP30"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvP31"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/e31" />
+
+					<CheckedTextView
+						android:id="@+id/ctvP31"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"
+						android:ems="10"
+						android:text="0"/>
+
+					<TextView
+						android:id="@+id/tvO31"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Observaciones"/>
+
+					<EditText
+						android:id="@+id/etP31"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvP31_1"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/e31_1" />
+
+					<CheckedTextView
+						android:id="@+id/ctvP31_1"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"
+						android:ems="10"/>
+
+					<TextView
+						android:id="@+id/tvO31_1"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Observaciones"/>
+
+					<EditText
+						android:id="@+id/etP31_1"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvP31_2"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/e31_2" />
+
+					<CheckedTextView
+						android:id="@+id/ctvP31_2"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"
+						android:ems="10"/>
+
+					<TextView
+						android:id="@+id/tvO31_2"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Observaciones"/>
+
+					<EditText
+						android:id="@+id/etP31_2"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvAntecedentes"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"
+						android:text="ANTECEDENTES"
+						android:background="@color/colorSecundario"
+						android:textColor="@color/myWhite"
+						android:textSize="20dp"
+						android:textAlignment="center"/>
+
+					<TextView
+						android:id="@+id/tvP1_1"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/e1_1" />
+
+					<CheckedTextView
+						android:id="@+id/ctvP1_1"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvO1_1"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Observaciones"/>
+
+					<EditText
+						android:id="@+id/etP1_1"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvP1_2"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/e1_2" />
+
+					<CheckedTextView
+						android:id="@+id/ctvP1_2"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvO1_2"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Observaciones"/>
+
+					<EditText
+						android:id="@+id/etP1_2"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"/>
+
+					<!--endregion-->
+
+					<TextView
 						android:id="@+id/tvDPrincipal"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
@@ -455,16 +642,6 @@
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:layout_marginBottom="20dp"/>
-
-					<TextView
-						android:id="@+id/tvDPrincipalCierre"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_marginBottom="20dp"
-						android:background="@color/colorSecundario"
-						android:textColor="@color/myWhite"
-						android:textSize="20dp"
-						android:textAlignment="center"/>
 
 					<TextView
 						android:id="@+id/tvP13"
@@ -945,51 +1122,27 @@
 
 					</LinearLayout>
 
+					<!--endregion-->
+
 					<TextView
-						android:id="@+id/tvDSecundarioCierre"
+						android:id="@+id/tvDatosVictima"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:layout_marginBottom="20dp"
 						android:background="@color/colorSecundario"
 						android:textAlignment="center"
 						android:textColor="@color/myWhite"
+						android:text="DATOS VICTIMA"
 						android:textSize="20dp" />
 
-
-					<!--endregion-->
-
 					<TextView
-						android:id="@+id/tvP29"
+						android:id="@+id/tvP101"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
-						android:text="@string/e29" />
+						android:text="@string/e101" />
 
 					<CheckedTextView
-						android:id="@+id/ctvP29"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_marginBottom="20dp"/>
-
-					<TextView
-						android:id="@+id/tvO29"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:text="Observaciones"/>
-
-					<EditText
-						android:id="@+id/etP29"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_marginBottom="20dp"/>
-
-					<TextView
-						android:id="@+id/tvP30"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:text="@string/e30" />
-
-					<CheckedTextView
-						android:id="@+id/ctvP30"
+						android:id="@+id/ctvP101"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:layout_marginBottom="20dp"
@@ -997,46 +1150,130 @@
 						android:inputType="text" />
 
 					<TextView
-						android:id="@+id/tvO30"
+						android:id="@+id/tvO101"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:text="Observaciones"/>
 
 					<EditText
-						android:id="@+id/etP30"
+						android:id="@+id/etP101"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:layout_marginBottom="20dp"/>
 
-					<TextView
-						android:id="@+id/tvP31"
+					<LinearLayout
+						android:id="@+id/llDatosVictima"
 						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:text="@string/e31" />
+						android:layout_height="match_parent"
+						android:orientation="vertical"
+						android:visibility="gone">
 
-					<CheckedTextView
-						android:id="@+id/ctvP31"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_marginBottom="20dp"
-						android:ems="10"
-						android:text="0"/>
+						<TextView
+							android:id="@+id/tvP102"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:text="@string/e102" />
 
-					<TextView
-						android:id="@+id/tvO31"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:text="Observaciones"/>
+						<CheckedTextView
+							android:id="@+id/ctvP102"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="20dp"
+							android:ems="10"
+							android:inputType="text" />
 
-					<EditText
-						android:id="@+id/etP31"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_marginBottom="20dp"/>
+						<TextView
+							android:id="@+id/tvO102"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:text="Observaciones"/>
 
+						<EditText
+							android:id="@+id/etP102"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="20dp"/>
 
+						<TextView
+							android:id="@+id/tvP103"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:text="@string/e103" />
 
-					<!--endregion-->
+						<CheckedTextView
+							android:id="@+id/ctvP103"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="20dp"
+							android:ems="10"
+							android:inputType="text" />
+
+						<TextView
+							android:id="@+id/tvO103"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:text="Observaciones"/>
+
+						<EditText
+							android:id="@+id/etP103"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="20dp"/>
+
+						<TextView
+							android:id="@+id/tvP104"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:text="@string/e104" />
+
+						<CheckedTextView
+							android:id="@+id/ctvP104"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="20dp"
+							android:ems="10"
+							android:inputType="text" />
+
+						<TextView
+							android:id="@+id/tvO104"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:text="Observaciones"/>
+
+						<EditText
+							android:id="@+id/etP104"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="20dp"/>
+
+						<TextView
+							android:id="@+id/tvP105"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:text="@string/e105" />
+
+						<CheckedTextView
+							android:id="@+id/ctvP105"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="20dp"
+							android:ems="10"
+							android:inputType="text" />
+
+						<TextView
+							android:id="@+id/tvO105"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:text="Observaciones"/>
+
+						<EditText
+							android:id="@+id/etP105"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="20dp"/>
+
+					</LinearLayout>
+
 				</LinearLayout>
 				<!--endregion DATOS GENERALES-->
 

@@ -193,6 +193,32 @@
                     android:inputType="number"
                     android:text="0"/>
 
+                <TextView
+                    android:id="@+id/tvP31_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e31_1" />
+
+                <Spinner
+                    android:id="@+id/sP31_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvP31_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e31_2" />
+
+                <EditText
+                    android:id="@+id/etP31_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:ems="10"
+                    android:inputType="text" />
+
                 <!--- <RadioGroup
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

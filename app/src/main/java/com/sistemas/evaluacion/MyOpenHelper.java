@@ -30,7 +30,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     //region Tabla imputado_datos_generales
     private static final String CREATE_TABLE_IMPUTADO_DATOS_GENERALES = "CREATE TABLE imputado_datos_generales(_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "Nombre TEXT, Alias TEXT, FNacimiento TEXT, Edad TEXTO, LNacimiento TEXT, Sexo TEXT, Folio TEXT, FEntrevista TEXT, DuraciónE INTEGER, Entrevistador TEXT, " +
-            "ObservacionesF TEXT, Tipo TEXT, TieneDomicilioS TEXT, OtrosHabitantes TEXT, Entrevistada TEXT, AntecedentePenal TEXT)";
+            "ObservacionesF TEXT, Tipo TEXT, TieneDomicilioS TEXT, OtrosHabitantes TEXT, Entrevistada TEXT, AntecedentePenal TEXT, Delito TEXT, OtroDelito TEXT)";
     //endregion
 
     //region Tabla imputado_datos_domicilio
@@ -162,7 +162,8 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     //region Insertar Datos Generales
     public void insertarDatosGenerales(String nombre, String alias, String fNacimiento, String edad, String lNacimiento,
                                        String sexo, String folio, String fEntrevista, int duracionE, String entrevistador,
-                                       String observacionesF, String tipo, String tieneDomicilioS, String otrosHabitantes, String Entrevistada, String AntecedentePenal){
+                                       String observacionesF, String tipo, String tieneDomicilioS, String otrosHabitantes,
+                                       String entrevistada, String antecedentePenal, String delito, String otroDelito){
         ContentValues dato=new ContentValues();
         dato.put("Nombre", nombre);
         dato.put("Alias", alias);
@@ -178,8 +179,11 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         dato.put("Tipo", tipo);
         dato.put("TieneDomicilioS", tieneDomicilioS);
         dato.put("OtrosHabitantes", otrosHabitantes);
-        dato.put("Entrevistada", Entrevistada);
-        dato.put("AntecedentePenal", AntecedentePenal);
+        dato.put("Entrevistada", entrevistada);
+        dato.put("AntecedentePenal", antecedentePenal);
+        //TODO: agregar Delito, OtroDelito a sincronizarBD
+        dato.put("Delito", delito);
+        dato.put("OtroDelito", otroDelito);
         db.insert("imputado_datos_generales", null, dato);
     }
     //endregion
@@ -187,8 +191,8 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     //region Insertar Datos Generales Domicilio
     public void insertarDatosGeneralesDomicilio(String e7, String e7_1, String e8, String e9, String e10, String e11, String e12, String e13, String e14, String e15,
                                                 String e16, String e32_1, String e17, String e18, String e19, String e20, String e21, String e22, String e23,
-                                                String e24, String e25, String e26, String e27, String e28, String e29, String e30, String e31, String e106,
-                                                String e107, String folio){
+                                                String e24, String e25, String e26, String e27, String e28, String e29, String e30, String e31,
+                                                String e106, String e107, String folio){
         ContentValues dato=new ContentValues();
         dato.put("e7", e7);
         dato.put("e7_1", e7_1);
@@ -515,7 +519,8 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     public ArrayList<datosGenerales> getDatosGenerales(){
         ArrayList<datosGenerales> lista=new ArrayList<datosGenerales>();
         Cursor c=db.rawQuery("select _id, Nombre, Alias, FNacimiento, Edad, LNacimiento, Sexo, Folio, FEntrevista, DuraciónE, Entrevistador, " +
-                "ObservacionesF, Tipo, TieneDomicilioS, OtrosHabitantes, Entrevistada, AntecedentePenal " + "  from imputado_datos_generales",  null);
+                "ObservacionesF, Tipo, TieneDomicilioS, OtrosHabitantes, Entrevistada, AntecedentePenal, Delito, " +
+                "OtroDelito " + "  from imputado_datos_generales",  null);
         if (c != null && c.getCount()>0) {
             c.moveToFirst();
             do {
@@ -536,11 +541,13 @@ public class MyOpenHelper extends SQLiteOpenHelper {
                 String r32=c.getString(c.getColumnIndex("OtrosHabitantes"));
                 String r1_1=c.getString(c.getColumnIndex("Entrevistada"));
                 String r1_2=c.getString(c.getColumnIndex("AntecedentePenal"));
+                String r31_1=c.getString(c.getColumnIndex("Delito"));
+                String r31_2=c.getString(c.getColumnIndex("OtroDelito"));
 
 
 
                 int id=c.getInt(c.getColumnIndex("_id"));
-                datosGenerales dato =new datosGenerales(id,r1,r2, r3, r4, r5, r6, folio, r98, min, r96, r99, r100, r21_1, r32, r1_1, r1_2);
+                datosGenerales dato =new datosGenerales(id,r1,r2, r3, r4, r5, r6, folio, r98, min, r96, r99, r100, r21_1, r32, r1_1, r1_2, r31_1, r31_2);
                 //endregion
 
                 //Añadimos el comentario a la lista
