@@ -6,8 +6,15 @@
     android:orientation="vertical"
     tools:context=".Assist">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Elija a la persona para aplicar el ASSIST" />
 
-
+    <Spinner
+        android:id="@+id/sName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -57,6 +64,7 @@
                     android:id="@+id/sp1a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -70,6 +78,7 @@
                     android:id="@+id/sp1b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -83,6 +92,7 @@
                     android:id="@+id/sp1c"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -96,6 +106,7 @@
                     android:id="@+id/sp1d"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -109,6 +120,7 @@
                     android:id="@+id/sp1e"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -122,6 +134,7 @@
                     android:id="@+id/sp1f"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -135,6 +148,7 @@
                     android:id="@+id/sp1g"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -148,6 +162,7 @@
                     android:id="@+id/sp1h"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -161,6 +176,7 @@
                     android:id="@+id/sp1i"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -174,17 +190,18 @@
                     android:id="@+id/sp1j"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <EditText
                     android:id="@+id/etP1j"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
                     android:ems="10"
-                    android:inputType="text"
-                    android:visibility="gone"
                     android:hint="Específique"
-                    android:layout_marginBottom="20dp"/>
+                    android:inputType="text"
+                    android:visibility="gone" />
 
             </LinearLayout>
             <!--endregion-->
@@ -229,6 +246,7 @@
                     android:id="@+id/sp2a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a"
                     android:visibility="gone" />
 
@@ -244,6 +262,7 @@
                     android:id="@+id/sp2b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a"
                     android:visibility="gone" />
 
@@ -258,6 +277,7 @@
                     android:id="@+id/sP2c"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -271,6 +291,7 @@
                     android:id="@+id/sP2d"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -284,6 +305,7 @@
                     android:id="@+id/sP2e"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -297,6 +319,7 @@
                     android:id="@+id/sP2f"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -310,6 +333,7 @@
                     android:id="@+id/sP2g"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -323,6 +347,7 @@
                     android:id="@+id/sP2h"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -336,6 +361,7 @@
                     android:id="@+id/sP2i"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -349,7 +375,8 @@
                     android:id="@+id/sP2j"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColorHint="#05ab9a" />
+                    android:textColorHint="#05ab9a"
+                    android:focusable="false" />
 
 
             </LinearLayout>
@@ -396,6 +423,7 @@
                     android:id="@+id/sp3a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a"
                     android:visibility="gone" />
 
@@ -411,6 +439,7 @@
                     android:id="@+id/sp3b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a"
                     android:visibility="gone" />
 
@@ -425,6 +454,7 @@
                     android:id="@+id/sP3c"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -438,6 +468,7 @@
                     android:id="@+id/sP3d"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -451,6 +482,7 @@
                     android:id="@+id/sP3e"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -464,6 +496,7 @@
                     android:id="@+id/sP3f"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -477,6 +510,7 @@
                     android:id="@+id/sP3g"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -490,6 +524,7 @@
                     android:id="@+id/sP3h"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -503,6 +538,7 @@
                     android:id="@+id/sP3i"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -516,6 +552,7 @@
                     android:id="@+id/sP3j"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
             </LinearLayout>
@@ -562,6 +599,7 @@
                     android:id="@+id/sP4a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a"
                     android:visibility="gone" />
 
@@ -577,6 +615,7 @@
                     android:id="@+id/sP4b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a"
                     android:visibility="gone" />
 
@@ -591,6 +630,7 @@
                     android:id="@+id/sP4c"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -604,6 +644,7 @@
                     android:id="@+id/sP4d"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -617,6 +658,7 @@
                     android:id="@+id/sP4e"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -630,6 +672,7 @@
                     android:id="@+id/sP4f"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -643,6 +686,7 @@
                     android:id="@+id/sP4g"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -656,6 +700,7 @@
                     android:id="@+id/sP4h"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -669,6 +714,7 @@
                     android:id="@+id/sP4i"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -682,6 +728,7 @@
                     android:id="@+id/sP4j"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
             </LinearLayout>
@@ -728,6 +775,7 @@
                     android:id="@+id/sP5a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a"
                     android:visibility="gone" />
 
@@ -743,6 +791,7 @@
                     android:id="@+id/sP5b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a"
                     android:visibility="gone" />
 
@@ -757,6 +806,7 @@
                     android:id="@+id/sP5c"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -770,6 +820,7 @@
                     android:id="@+id/sP5d"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -783,6 +834,7 @@
                     android:id="@+id/sP5e"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -796,6 +848,7 @@
                     android:id="@+id/sP5f"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -809,6 +862,7 @@
                     android:id="@+id/sP5g"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -822,6 +876,7 @@
                     android:id="@+id/sP5h"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -835,6 +890,7 @@
                     android:id="@+id/sP5i"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -848,6 +904,7 @@
                     android:id="@+id/sP5j"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
             </LinearLayout>
@@ -893,6 +950,7 @@
                     android:id="@+id/sP6a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a"
                     android:visibility="gone" />
 
@@ -908,6 +966,7 @@
                     android:id="@+id/sP6b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a"
                     android:visibility="gone" />
 
@@ -922,6 +981,7 @@
                     android:id="@+id/sP6c"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -935,6 +995,7 @@
                     android:id="@+id/sP6d"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -948,6 +1009,7 @@
                     android:id="@+id/sP6e"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -961,6 +1023,7 @@
                     android:id="@+id/sP6f"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -974,6 +1037,7 @@
                     android:id="@+id/sP6g"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -987,6 +1051,7 @@
                     android:id="@+id/sP6h"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -1000,6 +1065,7 @@
                     android:id="@+id/sP6i"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -1013,6 +1079,7 @@
                     android:id="@+id/sP6j"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
             </LinearLayout>
@@ -1058,6 +1125,7 @@
                     android:id="@+id/sP7a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a"
                     android:visibility="gone" />
 
@@ -1073,6 +1141,7 @@
                     android:id="@+id/sP7b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a"
                     android:visibility="gone" />
 
@@ -1087,6 +1156,7 @@
                     android:id="@+id/sP7c"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -1100,6 +1170,7 @@
                     android:id="@+id/sP7d"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -1113,6 +1184,7 @@
                     android:id="@+id/sP7e"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -1126,6 +1198,7 @@
                     android:id="@+id/sP7f"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -1139,6 +1212,7 @@
                     android:id="@+id/sP7g"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -1152,6 +1226,7 @@
                     android:id="@+id/sP7h"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -1165,6 +1240,7 @@
                     android:id="@+id/sP7i"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -1178,6 +1254,7 @@
                     android:id="@+id/sP7j"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
             </LinearLayout>
@@ -1215,7 +1292,8 @@
                     android:id="@+id/sP8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColorHint="#05ab9a"/>
+                    android:focusable="false"
+                    android:textColorHint="#05ab9a" />
             </LinearLayout>
             <!--endregion-->
 
