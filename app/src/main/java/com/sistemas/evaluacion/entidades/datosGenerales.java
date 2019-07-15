@@ -4,7 +4,7 @@ public class datosGenerales {
 
     //region Variables Globales
     int id;
-    String nombre, alias, fNacimiento, edad, lNacimiento, sexo, folio, fEntrevista, duracionE, entrevistador, observacionesF, tipo, tieneDomicilioS,
+    String nombre, alias, fNacimiento, edad, lNacimiento, sexo, folio, fEntrevista, duracionE, entrevistador, observacionesF, tipo, assist, tieneDomicilioS,
             otrosHabitantes, entrevistado, antecedentePenal, delito, otroDelito;
     //endregion
 
@@ -12,7 +12,7 @@ public class datosGenerales {
     public datosGenerales(int id, String nombre, String alias, String fNacimiento,
                           String edad, String lNacimiento, String sexo, String folio,
                           String fEntrevista, String duracionE, String entrevistador,
-                          String observacionesF, String tipo, String tieneDomicilioS,
+                          String observacionesF, String tipo, String assist, String tieneDomicilioS,
                           String otrosHabitantes, String entrevistado, String antecedentePenal,
                           String delito, String otroDelito) {
         this.id = id;
@@ -28,6 +28,7 @@ public class datosGenerales {
         this.entrevistador = entrevistador;
         this.observacionesF = observacionesF;
         this.tipo = tipo;
+        this.assist = assist;
         this.tieneDomicilioS = tieneDomicilioS;
         this.otrosHabitantes = otrosHabitantes;
         this.entrevistado = entrevistado;
@@ -140,6 +141,14 @@ public class datosGenerales {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    public String getASSIST() {
+        return assist;
+    }
+
+    public void setASSIST(String assist) {
+        this.assist = assist;
     }
 
     public String getTieneDomicilioS() {
