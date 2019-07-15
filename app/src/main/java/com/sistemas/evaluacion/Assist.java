@@ -8,9 +8,13 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.sistemas.evaluacion.entidades.datosGenerales;
 import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
+
+import java.util.ArrayList;
 
 public class Assist extends AppCompatActivity implements View.OnClickListener{
 
@@ -22,6 +26,8 @@ public class Assist extends AppCompatActivity implements View.OnClickListener{
     EditText etP1j;
     String otro;
     int[] arrayControl={0,0,0,0,0,0,0,0,0,0};
+
+    private MyOpenHelper db;
 
     TextView tvP2a, tvP2b, tvP2c, tvP2d, tvP2e, tvP2f, tvP2g, tvP2h, tvP2i, tvP2j,
             tvP3a, tvP3b, tvP3c, tvP3d, tvP3e, tvP3f, tvP3g, tvP3h, tvP3i, tvP3j,
@@ -43,6 +49,8 @@ public class Assist extends AppCompatActivity implements View.OnClickListener{
                         sP7a, sP7b, sP7c, sP7d, sP7e, sP7f, sP7g, sP7h, sP7i, sP7j,
                         sP8;
 
+    Spinner sName;
+
     ArrayAdapter<String> array1, array2, array3;
 
     //endregion
@@ -54,6 +62,31 @@ public class Assist extends AppCompatActivity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_assist);
+
+        db=new MyOpenHelper(this);
+        db.getReadableDatabase();
+
+        ArrayList<datosGenerales> lista;
+        lista = db.getDatosGenerales();
+
+        ArrayList<String> names = new ArrayList<String>();
+        ArrayList<Integer> Idx = new ArrayList<Integer>();//Indice de la lista completa de imputados
+        //Delitos para el assist "Robo Simple", "Violencia Familiar", "Lesiones menores a 15 dias"
+        for(int i = 0; i < lista.size(); i++){
+            if((lista.get(i).getDelito().equals("ROBO SIMPLE") ||
+                    lista.get(i).getDelito().equals("VIOLENCIA FAMILIAR") ||
+                    lista.get(i).getDelito().equals("LESIONES MENORES A 15 DIAS")) &&
+                    lista.get(i).getAntecedentePenal().equals("NO") == false) {
+                names.add(lista.get(i).getNombre());
+                Idx.add(i);
+            }
+        }
+
+        sName = (Spinner) findViewById(R.id.sName);
+        sName.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, names));
+        if(lista.isEmpty() == false) {
+            sName.setSelection(names.size() - 1);
+        }
 
         array1= new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, lista1);
         array2= new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, lista2);
@@ -334,6 +367,145 @@ public class Assist extends AppCompatActivity implements View.OnClickListener{
         //endregion
 
         //region Control de preguntas 2-8 A-J
+        sName.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                //region Initialize selected person interview
+                for(int i = 0;i < arrayControl.length;i++) {
+                    arrayControl[i] = 0;
+                }
+
+                p1=false;
+                p2=false;
+                p3=false;
+                p4=false;
+                p5=false;
+                p6=false;
+                p7=false;
+                p8=false;
+
+                a=false;
+                b=false;
+                c=false;
+                d=false;
+                e=false;
+                f=false;
+                g=false;
+                h=false;
+                i=false;
+                j=false;
+
+                llP1.setVisibility(View.GONE);
+                llP2.setVisibility(View.GONE);
+                llP3.setVisibility(View.GONE);
+                llP4.setVisibility(View.GONE);
+                llP5.setVisibility(View.GONE);
+                llP6.setVisibility(View.GONE);
+                llP7.setVisibility(View.GONE);
+                llP8.setVisibility(View.GONE);
+
+                //region Lista 1
+                sP1a.setText("");
+                sP1b.setText("");
+                sP1c.setText("");
+                sP1d.setText("");
+                sP1e.setText("");
+                sP1f.setText("");
+                sP1g.setText("");
+                sP1h.setText("");
+                sP1i.setText("");
+                sP1j.setText("");
+                //endregion
+
+                //region Lista 2
+                sP2a.setText("");
+                sP2b.setText("");
+                sP2c.setText("");
+                sP2d.setText("");
+                sP2e.setText("");
+                sP2f.setText("");
+                sP2g.setText("");
+                sP2h.setText("");
+                sP2i.setText("");
+                sP2j.setText("");
+                //endregion
+
+                //region Lista 3
+                sP3a.setText("");
+                sP3b.setText("");
+                sP3c.setText("");
+                sP3d.setText("");
+                sP3e.setText("");
+                sP3f.setText("");
+                sP3g.setText("");
+                sP3h.setText("");
+                sP3i.setText("");
+                sP3j.setText("");
+                //endregion
+
+                //region Lista 4
+                sP4a.setText("");
+                sP4b.setText("");
+                sP4c.setText("");
+                sP4d.setText("");
+                sP4e.setText("");
+                sP4f.setText("");
+                sP4g.setText("");
+                sP4h.setText("");
+                sP4i.setText("");
+                sP4j.setText("");
+                //endregion
+
+                //region Lista 5
+                sP5a.setText("");
+                sP5b.setText("");
+                sP5c.setText("");
+                sP5d.setText("");
+                sP5e.setText("");
+                sP5f.setText("");
+                sP5g.setText("");
+                sP5h.setText("");
+                sP5i.setText("");
+                sP5j.setText("");
+                //endregion
+
+                //region Lista 6
+                sP6a.setText("");
+                sP6b.setText("");
+                sP6c.setText("");
+                sP6d.setText("");
+                sP6e.setText("");
+                sP6f.setText("");
+                sP6g.setText("");
+                sP6h.setText("");
+                sP6i.setText("");
+                sP6j.setText("");
+                //endregion
+
+                //region Lista 7
+                sP7a.setText("");
+                sP7b.setText("");
+                sP7c.setText("");
+                sP7d.setText("");
+                sP7e.setText("");
+                sP7f.setText("");
+                sP7g.setText("");
+                sP7h.setText("");
+                sP7i.setText("");
+                sP7j.setText("");
+                //endregion
+
+                sP8.setText("");
+
+                etP1j.setText("");
+                //endregion
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
         sP1a.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
