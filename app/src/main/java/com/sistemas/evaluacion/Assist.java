@@ -1,5 +1,6 @@
 package com.sistemas.evaluacion;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,9 +26,16 @@ public class Assist extends AppCompatActivity implements View.OnClickListener{
     String[] nosi={"NO", "SI"};
     EditText etP1j;
     String otro;
+    MyOpenHelper db;
     int[] arrayControl={0,0,0,0,0,0,0,0,0,0};
-
-    private MyOpenHelper db;
+    int[][] P = {{0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0},
+            {0, 2, 3, 4, 6},
+            {0, 3, 4, 5, 6},
+            {0, 4, 5, 6, 7},
+            {0, 5, 6, 7, 8},
+            {0, 6, 3, 0, 0},
+            {0, 6, 3, 0, 0}};
 
     TextView tvP2a, tvP2b, tvP2c, tvP2d, tvP2e, tvP2f, tvP2g, tvP2h, tvP2i, tvP2j,
             tvP3a, tvP3b, tvP3c, tvP3d, tvP3e, tvP3f, tvP3g, tvP3h, tvP3i, tvP3j,
@@ -35,8 +43,11 @@ public class Assist extends AppCompatActivity implements View.OnClickListener{
             tvP5a, tvP5b, tvP5c, tvP5d, tvP5e, tvP5f, tvP5g, tvP5h, tvP5i, tvP5j,
             tvP6a, tvP6b, tvP6c, tvP6d, tvP6e, tvP6f, tvP6g, tvP6h, tvP6i, tvP6j,
             tvP7a, tvP7b, tvP7c, tvP7d, tvP7e, tvP7f, tvP7g, tvP7h, tvP7i, tvP7j;
-    Button btnP1, btnP2, btnP3, btnP4, btnP5, btnP6, btnP7, btnP8;
-    LinearLayout llP1, llP2, llP3, llP4, llP5, llP6, llP7, llP8;
+
+    Button btnP1, btnP2, btnP3, btnP4, btnP5, btnP6, btnP7, btnP8, btnGuardarASSIST;
+
+    LinearLayout ll, llP1, llP2, llP3, llP4, llP5, llP6, llP7, llP8;
+
     boolean p1=false, p2=false, p3=false, p4=false, p5=false, p6=false, p7=false, p8=false,
             a=false, b=false, c=false, d=false, e=false, f=false, g=false, h=false, i=false, j=false;
 
@@ -70,13 +81,14 @@ public class Assist extends AppCompatActivity implements View.OnClickListener{
         lista = db.getDatosGenerales();
 
         ArrayList<String> names = new ArrayList<String>();
-        ArrayList<Integer> Idx = new ArrayList<Integer>();//Indice de la lista completa de imputados
+        final ArrayList<Integer> Idx = new ArrayList<Integer>();//Indice de la lista completa de imputados
         //Delitos para el assist "Robo Simple", "Violencia Familiar", "Lesiones menores a 15 dias"
         for(int i = 0; i < lista.size(); i++){
             if((lista.get(i).getDelito().equals("ROBO SIMPLE") ||
                     lista.get(i).getDelito().equals("VIOLENCIA FAMILIAR") ||
                     lista.get(i).getDelito().equals("LESIONES MENORES A 15 DIAS")) &&
-                    lista.get(i).getAntecedentePenal().equals("NO") == false) {
+                    lista.get(i).getAntecedentePenal().equals("NO") == false &&
+                    lista.get(i).getASSIST().equals("SI") == false) {
                 names.add(lista.get(i).getNombre());
                 Idx.add(i);
             }
@@ -93,6 +105,8 @@ public class Assist extends AppCompatActivity implements View.OnClickListener{
         array3= new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, nosi);
 
         etP1j=(EditText) findViewById(R.id.etP1j); //Edit Text para otro tipo de adicción
+
+        ll = (LinearLayout) findViewById(R.id.ll);
 
         //region Lista 1
         btnP1=(Button) findViewById(R.id.btnP1);
@@ -366,7 +380,6 @@ public class Assist extends AppCompatActivity implements View.OnClickListener{
         sP8.setAdapter(array2);
         //endregion
 
-        //region Control de preguntas 2-8 A-J
         sName.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -394,6 +407,9 @@ public class Assist extends AppCompatActivity implements View.OnClickListener{
                 h=false;
                 i=false;
                 j=false;
+
+                etP1j.setText("");
+                etP1j.setVisibility(View.GONE);
 
                 llP1.setVisibility(View.GONE);
                 llP2.setVisibility(View.GONE);
@@ -496,8 +512,6 @@ public class Assist extends AppCompatActivity implements View.OnClickListener{
                 //endregion
 
                 sP8.setText("");
-
-                etP1j.setText("");
                 //endregion
             }
 
@@ -506,6 +520,7 @@ public class Assist extends AppCompatActivity implements View.OnClickListener{
 
             }
         });
+        //region Control de preguntas 2-8 A-J
         sP1a.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -783,7 +798,239 @@ public class Assist extends AppCompatActivity implements View.OnClickListener{
         });
         //endregion
 
+        btnGuardarASSIST = (Button) findViewById(R.id.btnGuardarASSIST);
+        btnGuardarASSIST.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Integer Pa = 0, Pb = 0, Pc = 0, Pd = 0, Pe = 0, Pf = 0, Pg = 0, Ph = 0, Pi = 0, Pj = 0;
 
+                //region Calcula la puntuación total
+                //region Lista 2
+                for(int i = 0;i < sP2a.getAdapter().getCount();i++) {
+                    if (sP2a.getAdapter().getItem(i).toString().equals(sP2a.getText().toString())) {
+                        Pa += P[2][i];
+                    }
+                    if (sP2b.getAdapter().getItem(i).toString().equals(sP2b.getText().toString())) {
+                        Pb += P[2][i];
+                    }
+                    if (sP2c.getAdapter().getItem(i).toString().equals(sP2c.getText().toString())) {
+                        Pc += P[2][i];
+                    }
+                    if (sP2d.getAdapter().getItem(i).toString().equals(sP2d.getText().toString())) {
+                        Pd += P[2][i];
+                    }
+                    if (sP2e.getAdapter().getItem(i).toString().equals(sP2e.getText().toString())) {
+                        Pe += P[2][i];
+                    }
+                    if (sP2f.getAdapter().getItem(i).toString().equals(sP2f.getText().toString())) {
+                        Pf += P[2][i];
+                    }
+                    if (sP2g.getAdapter().getItem(i).toString().equals(sP2g.getText().toString())) {
+                        Pg += P[2][i];
+                    }
+                    if (sP2h.getAdapter().getItem(i).toString().equals(sP2h.getText().toString())) {
+                        Ph += P[2][i];
+                    }
+                    if (sP2i.getAdapter().getItem(i).toString().equals(sP2i.getText().toString())) {
+                        Pi += P[2][i];
+                    }
+                    if (sP2j.getAdapter().getItem(i).toString().equals(sP2j.getText().toString())) {
+                        Pj += P[2][i];
+                    }
+                }
+                //endregion
+
+                //region Lista 3
+                for(int i = 0;i < sP3a.getAdapter().getCount();i++) {
+                    if (sP3a.getAdapter().getItem(i).toString().equals(sP3a.getText().toString())) {
+                        Pa += P[3][i];
+                    }
+                    if (sP3b.getAdapter().getItem(i).toString().equals(sP3b.getText().toString())) {
+                        Pb += P[3][i];
+                    }
+                    if (sP3c.getAdapter().getItem(i).toString().equals(sP3c.getText().toString())) {
+                        Pc += P[3][i];
+                    }
+                    if (sP3d.getAdapter().getItem(i).toString().equals(sP3d.getText().toString())) {
+                        Pd += P[3][i];
+                    }
+                    if (sP3e.getAdapter().getItem(i).toString().equals(sP3e.getText().toString())) {
+                        Pe += P[3][i];
+                    }
+                    if (sP3f.getAdapter().getItem(i).toString().equals(sP3f.getText().toString())) {
+                        Pf += P[3][i];
+                    }
+                    if (sP3g.getAdapter().getItem(i).toString().equals(sP3g.getText().toString())) {
+                        Pg += P[3][i];
+                    }
+                    if (sP3h.getAdapter().getItem(i).toString().equals(sP3h.getText().toString())) {
+                        Ph += P[3][i];
+                    }
+                    if (sP3i.getAdapter().getItem(i).toString().equals(sP3i.getText().toString())) {
+                        Pi += P[3][i];
+                    }
+                    if (sP3j.getAdapter().getItem(i).toString().equals(sP3j.getText().toString())) {
+                        Pj += P[3][i];
+                    }
+                }
+                //endregion
+
+                //region Lista 4
+                for(int i = 0;i < sP4a.getAdapter().getCount();i++) {
+                    if (sP4a.getAdapter().getItem(i).toString().equals(sP4a.getText().toString())) {
+                        Pa += P[4][i];
+                    }
+                    if (sP4b.getAdapter().getItem(i).toString().equals(sP4b.getText().toString())) {
+                        Pb += P[4][i];
+                    }
+                    if (sP4c.getAdapter().getItem(i).toString().equals(sP4c.getText().toString())) {
+                        Pc += P[4][i];
+                    }
+                    if (sP4d.getAdapter().getItem(i).toString().equals(sP4d.getText().toString())) {
+                        Pd += P[4][i];
+                    }
+                    if (sP4e.getAdapter().getItem(i).toString().equals(sP4e.getText().toString())) {
+                        Pe += P[4][i];
+                    }
+                    if (sP4f.getAdapter().getItem(i).toString().equals(sP4f.getText().toString())) {
+                        Pf += P[4][i];
+                    }
+                    if (sP4g.getAdapter().getItem(i).toString().equals(sP4g.getText().toString())) {
+                        Pg += P[4][i];
+                    }
+                    if (sP4h.getAdapter().getItem(i).toString().equals(sP4h.getText().toString())) {
+                        Ph += P[4][i];
+                    }
+                    if (sP4i.getAdapter().getItem(i).toString().equals(sP4i.getText().toString())) {
+                        Pi += P[4][i];
+                    }
+                    if (sP4j.getAdapter().getItem(i).toString().equals(sP4j.getText().toString())) {
+                        Pj += P[4][i];
+                    }
+                }
+                //endregion
+
+                //region Lista 5
+                for(int i = 0;i < sP5a.getAdapter().getCount();i++) {
+                    if (sP5a.getAdapter().getItem(i).toString().equals(sP5a.getText().toString())) {
+                        Pa += P[5][i];
+                    }
+                    if (sP5b.getAdapter().getItem(i).toString().equals(sP5b.getText().toString())) {
+                        Pb += P[5][i];
+                    }
+                    if (sP5c.getAdapter().getItem(i).toString().equals(sP5c.getText().toString())) {
+                        Pc += P[5][i];
+                    }
+                    if (sP5d.getAdapter().getItem(i).toString().equals(sP5d.getText().toString())) {
+                        Pd += P[5][i];
+                    }
+                    if (sP5e.getAdapter().getItem(i).toString().equals(sP5e.getText().toString())) {
+                        Pe += P[5][i];
+                    }
+                    if (sP5f.getAdapter().getItem(i).toString().equals(sP5f.getText().toString())) {
+                        Pf += P[5][i];
+                    }
+                    if (sP5g.getAdapter().getItem(i).toString().equals(sP5g.getText().toString())) {
+                        Pg += P[5][i];
+                    }
+                    if (sP5h.getAdapter().getItem(i).toString().equals(sP5h.getText().toString())) {
+                        Ph += P[5][i];
+                    }
+                    if (sP5i.getAdapter().getItem(i).toString().equals(sP5i.getText().toString())) {
+                        Pi += P[5][i];
+                    }
+                    if (sP5j.getAdapter().getItem(i).toString().equals(sP5j.getText().toString())) {
+                        Pj += P[5][i];
+                    }
+                }
+                //endregion
+
+                //region Lista 6
+                for(int i = 0;i < sP6a.getAdapter().getCount();i++) {
+                    if (sP6a.getAdapter().getItem(i).toString().equals(sP6a.getText().toString())) {
+                        Pa += P[6][i];
+                    }
+                    if (sP6b.getAdapter().getItem(i).toString().equals(sP6b.getText().toString())) {
+                        Pb += P[6][i];
+                    }
+                    if (sP6c.getAdapter().getItem(i).toString().equals(sP6c.getText().toString())) {
+                        Pc += P[6][i];
+                    }
+                    if (sP6d.getAdapter().getItem(i).toString().equals(sP6d.getText().toString())) {
+                        Pd += P[6][i];
+                    }
+                    if (sP6e.getAdapter().getItem(i).toString().equals(sP6e.getText().toString())) {
+                        Pe += P[6][i];
+                    }
+                    if (sP6f.getAdapter().getItem(i).toString().equals(sP6f.getText().toString())) {
+                        Pf += P[6][i];
+                    }
+                    if (sP6g.getAdapter().getItem(i).toString().equals(sP6g.getText().toString())) {
+                        Pg += P[6][i];
+                    }
+                    if (sP6h.getAdapter().getItem(i).toString().equals(sP6h.getText().toString())) {
+                        Ph += P[6][i];
+                    }
+                    if (sP6i.getAdapter().getItem(i).toString().equals(sP6i.getText().toString())) {
+                        Pi += P[6][i];
+                    }
+                    if (sP6j.getAdapter().getItem(i).toString().equals(sP6j.getText().toString())) {
+                        Pj += P[6][i];
+                    }
+                }
+                //endregion
+
+                //region Lista 7
+                for(int i = 0;i < sP7a.getAdapter().getCount();i++) {
+                    if (sP7a.getAdapter().getItem(i).toString().equals(sP7a.getText().toString())) {
+                        Pa += P[7][i];
+                    }
+                    if (sP7b.getAdapter().getItem(i).toString().equals(sP7b.getText().toString())) {
+                        Pb += P[7][i];
+                    }
+                    if (sP7c.getAdapter().getItem(i).toString().equals(sP7c.getText().toString())) {
+                        Pc += P[7][i];
+                    }
+                    if (sP7d.getAdapter().getItem(i).toString().equals(sP7d.getText().toString())) {
+                        Pd += P[7][i];
+                    }
+                    if (sP7e.getAdapter().getItem(i).toString().equals(sP7e.getText().toString())) {
+                        Pe += P[7][i];
+                    }
+                    if (sP7f.getAdapter().getItem(i).toString().equals(sP7f.getText().toString())) {
+                        Pf += P[7][i];
+                    }
+                    if (sP7g.getAdapter().getItem(i).toString().equals(sP7g.getText().toString())) {
+                        Pg += P[7][i];
+                    }
+                    if (sP7h.getAdapter().getItem(i).toString().equals(sP7h.getText().toString())) {
+                        Ph += P[7][i];
+                    }
+                    if (sP7i.getAdapter().getItem(i).toString().equals(sP7i.getText().toString())) {
+                        Pi += P[7][i];
+                    }
+                    if (sP7j.getAdapter().getItem(i).toString().equals(sP7j.getText().toString())) {
+                        Pj += P[7][i];
+                    }
+                }
+                //endregion
+                //endregion
+
+                ArrayList<datosGenerales> lista;
+                lista = db.getDatosGenerales();
+                int pos = sName.getSelectedItemPosition();
+                String folio = lista.get(Idx.get(pos)).getFolio();
+
+                String r8 = sP8.getText().toString().toUpperCase();
+                db.insertarASSIST(Pa.toString(), Pb.toString(), Pc.toString(), Pd.toString(), Pe.toString(), Pf.toString(),
+                        Pg.toString(), Ph.toString(), Pi.toString(), Pj.toString(), otro.toUpperCase(), r8, folio);
+
+                db.updateTable("imputado_datos_generales", "ASSIST", "SI", folio);
+
+                Intent intent = new Intent(v.getContext(), MainMenu.class);
+                startActivity(intent);
+            }
+        });
     }
     //endregion
 

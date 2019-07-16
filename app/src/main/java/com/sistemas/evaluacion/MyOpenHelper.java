@@ -30,7 +30,8 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     //region Tabla imputado_datos_generales
     private static final String CREATE_TABLE_IMPUTADO_DATOS_GENERALES = "CREATE TABLE imputado_datos_generales(_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "Nombre TEXT, Alias TEXT, FNacimiento TEXT, Edad TEXTO, LNacimiento TEXT, Sexo TEXT, Folio TEXT, FEntrevista TEXT, DuraciónE INTEGER, Entrevistador TEXT, " +
-            "ObservacionesF TEXT, Tipo TEXT, TieneDomicilioS TEXT, OtrosHabitantes TEXT, Entrevistada TEXT, AntecedentePenal TEXT, Delito TEXT, OtroDelito TEXT)";
+            "ObservacionesF TEXT, Tipo TEXT, ASSIST TEXT, TieneDomicilioS TEXT, OtrosHabitantes TEXT, Entrevistada TEXT, AntecedentePenal TEXT, Delito TEXT, " +
+            "OtroDelito TEXT)";
     //endregion
 
     //region Tabla imputado_datos_domicilio
@@ -86,6 +87,11 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     private static final String CREATE_TABLE_IMPUTADO_DATOS_VICTIMA="CREATE TABLE imputado_datos_victima(_id INTEGER PRIMARY KEY AUTOINCREMENT, e101 TEXT, e102 TEXT, e103 TEXT, e104 TEXT, e105 TEXT, Folio TEXT)";
     //endregion
 
+    //region Tabla assist
+    private static final String CREATE_TABLE_ASSIST="CREATE TABLE assist(_id INTEGER PRIMARY KEY AUTOINCREMENT, Pa, Pb, Pc, Pd, Pe, Pf, Pg, Ph, Pi, Pj, JOtro, e8," +
+            "Folio TEXT)";
+    //endregion
+
     //region Tabla entrevistador
 
     private static final String CREATE_TABLE_ENTREVISTADOR="CREATE TABLE entrevistador(_id INTEGER PRIMARY KEY AUTOINCREMENT, codigo TEXT, nombre TEXT)";
@@ -116,6 +122,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_VERIFICACION_ENTREVISTADO);
         db.execSQL(CREATE_TABLE_IMPUTADO_DATOS_VICTIMA);
         db.execSQL(CREATE_TABLE_ENTREVISTADOR);
+        db.execSQL(CREATE_TABLE_ASSIST);
         db.execSQL(INSERT_INTO_ENTREVISTADIR);
     }
     @Override
@@ -162,7 +169,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     //region Insertar Datos Generales
     public void insertarDatosGenerales(String nombre, String alias, String fNacimiento, String edad, String lNacimiento,
                                        String sexo, String folio, String fEntrevista, int duracionE, String entrevistador,
-                                       String observacionesF, String tipo, String tieneDomicilioS, String otrosHabitantes,
+                                       String observacionesF, String tipo, String assist, String tieneDomicilioS, String otrosHabitantes,
                                        String entrevistada, String antecedentePenal, String delito, String otroDelito){
         ContentValues dato=new ContentValues();
         dato.put("Nombre", nombre);
@@ -177,6 +184,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         dato.put("Entrevistador", entrevistador);
         dato.put("ObservacionesF", observacionesF);
         dato.put("Tipo", tipo);
+        dato.put("ASSIST", assist);
         dato.put("TieneDomicilioS", tieneDomicilioS);
         dato.put("OtrosHabitantes", otrosHabitantes);
         dato.put("Entrevistada", entrevistada);
@@ -424,6 +432,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         dato.put("Campo", campo);
         dato.put("Observacion", observacion);
         dato.put("Original", original);
+        dato.put("Folio", folio);
         db.insert("verificacion_observaciones", null, dato);
     }
     //endregion
@@ -435,6 +444,28 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         dato.put("VRelacion", relacion);
         dato.put("Folio", folio);
         db.insert("verificacion_entrevistado", null, dato);
+    }
+    //endregion
+
+    //TODO: agregar tabla assist a sincronizarBD
+    //region Inserta los datos del ASSIST
+    public void insertarASSIST(String pa, String pb, String pc, String pd, String pe, String pf, String pg, String ph, String pi, String pj, String otro,
+                               String e8, String folio){
+        ContentValues dato=new ContentValues();
+        dato.put("Pa", pa);
+        dato.put("Pb", pb);
+        dato.put("Pc", pc);
+        dato.put("Pd", pd);
+        dato.put("Pe", pe);
+        dato.put("Pf", pf);
+        dato.put("Pg", pg);
+        dato.put("Ph", ph);
+        dato.put("Pi", pi);
+        dato.put("Pj", pj);
+        dato.put("JOtro", otro);
+        dato.put("e8", e8);
+        dato.put("Folio", folio);
+        db.insert("assist", null, dato);
     }
     //endregion
 
@@ -519,7 +550,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     public ArrayList<datosGenerales> getDatosGenerales(){
         ArrayList<datosGenerales> lista=new ArrayList<datosGenerales>();
         Cursor c=db.rawQuery("select _id, Nombre, Alias, FNacimiento, Edad, LNacimiento, Sexo, Folio, FEntrevista, DuraciónE, Entrevistador, " +
-                "ObservacionesF, Tipo, TieneDomicilioS, OtrosHabitantes, Entrevistada, AntecedentePenal, Delito, " +
+                "ObservacionesF, Tipo, ASSIST, TieneDomicilioS, OtrosHabitantes, Entrevistada, AntecedentePenal, Delito, " +
                 "OtroDelito " + "  from imputado_datos_generales",  null);
         if (c != null && c.getCount()>0) {
             c.moveToFirst();
@@ -537,6 +568,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
                 String r96=c.getString(c.getColumnIndex("Entrevistador"));
                 String r99=c.getString(c.getColumnIndex("ObservacionesF"));
                 String r100=c.getString(c.getColumnIndex("Tipo"));
+                String assist=c.getString(c.getColumnIndex("ASSIST"));
                 String r21_1=c.getString(c.getColumnIndex("TieneDomicilioS"));
                 String r32=c.getString(c.getColumnIndex("OtrosHabitantes"));
                 String r1_1=c.getString(c.getColumnIndex("Entrevistada"));
@@ -547,7 +579,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
 
 
                 int id=c.getInt(c.getColumnIndex("_id"));
-                datosGenerales dato =new datosGenerales(id,r1,r2, r3, r4, r5, r6, folio, r98, min, r96, r99, r100, r21_1, r32, r1_1, r1_2, r31_1, r31_2);
+                datosGenerales dato =new datosGenerales(id,r1,r2, r3, r4, r5, r6, folio, r98, min, r96, r99, r100, assist, r21_1, r32, r1_1, r1_2, r31_1, r31_2);
                 //endregion
 
                 //Añadimos el comentario a la lista

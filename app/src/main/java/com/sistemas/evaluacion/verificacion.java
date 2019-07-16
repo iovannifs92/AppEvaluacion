@@ -5447,7 +5447,7 @@ public class verificacion extends AppCompatActivity {
                         int pos = sVerificationName.getSelectedItemPosition();
                         String folio = lista.get(pos).getFolio();
 
-                        //region Gets the observations
+                        //region Get the observations
                         r1 = etP1.getText().toString().toUpperCase();
                         r1_1 = etP1_1.getText().toString().toUpperCase();
                         r1_2 = etP1_2.getText().toString().toUpperCase();

@@ -21,9 +21,10 @@
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/ll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <!--region PREGUNTA 1-->
             <Button
@@ -64,7 +65,6 @@
                     android:id="@+id/sp1a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -78,7 +78,6 @@
                     android:id="@+id/sp1b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -92,7 +91,6 @@
                     android:id="@+id/sp1c"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -106,7 +104,6 @@
                     android:id="@+id/sp1d"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -120,7 +117,6 @@
                     android:id="@+id/sp1e"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -134,7 +130,6 @@
                     android:id="@+id/sp1f"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -148,7 +143,6 @@
                     android:id="@+id/sp1g"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -162,7 +156,6 @@
                     android:id="@+id/sp1h"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -176,7 +169,6 @@
                     android:id="@+id/sp1i"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -190,7 +182,6 @@
                     android:id="@+id/sp1j"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <EditText
@@ -246,7 +237,6 @@
                     android:id="@+id/sp2a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a"
                     android:visibility="gone" />
 
@@ -262,7 +252,6 @@
                     android:id="@+id/sp2b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a"
                     android:visibility="gone" />
 
@@ -277,7 +266,6 @@
                     android:id="@+id/sP2c"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -291,7 +279,6 @@
                     android:id="@+id/sP2d"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -305,7 +292,6 @@
                     android:id="@+id/sP2e"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -319,7 +305,6 @@
                     android:id="@+id/sP2f"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -333,7 +318,6 @@
                     android:id="@+id/sP2g"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -347,7 +331,6 @@
                     android:id="@+id/sP2h"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -361,7 +344,6 @@
                     android:id="@+id/sP2i"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -375,8 +357,7 @@
                     android:id="@+id/sP2j"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColorHint="#05ab9a"
-                    android:focusable="false" />
+                    android:textColorHint="#05ab9a" />
 
 
             </LinearLayout>
@@ -391,9 +372,9 @@
                 android:background="@color/colorPrimaryDark"
                 android:text="PREGUNTA 3"
                 android:textAlignment="center"
-                android:visibility="gone"
                 android:textColor="@color/myWhite"
-                android:textSize="30dp" />
+                android:textSize="30dp"
+                android:visibility="gone" />
 
             <LinearLayout
                 android:id="@+id/llP3"
@@ -423,7 +404,6 @@
                     android:id="@+id/sp3a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a"
                     android:visibility="gone" />
 
@@ -439,7 +419,6 @@
                     android:id="@+id/sp3b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a"
                     android:visibility="gone" />
 
@@ -454,7 +433,6 @@
                     android:id="@+id/sP3c"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -468,7 +446,6 @@
                     android:id="@+id/sP3d"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -482,7 +459,6 @@
                     android:id="@+id/sP3e"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -496,7 +472,6 @@
                     android:id="@+id/sP3f"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -510,7 +485,6 @@
                     android:id="@+id/sP3g"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -524,7 +498,6 @@
                     android:id="@+id/sP3h"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -538,7 +511,6 @@
                     android:id="@+id/sP3i"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -552,7 +524,6 @@
                     android:id="@+id/sP3j"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
             </LinearLayout>
@@ -567,9 +538,9 @@
                 android:background="@color/colorPrimaryDark"
                 android:text="PREGUNTA 4"
                 android:textAlignment="center"
-                android:visibility="gone"
                 android:textColor="@color/myWhite"
-                android:textSize="30dp" />
+                android:textSize="30dp"
+                android:visibility="gone" />
 
             <LinearLayout
                 android:id="@+id/llP4"
@@ -599,7 +570,6 @@
                     android:id="@+id/sP4a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a"
                     android:visibility="gone" />
 
@@ -615,7 +585,6 @@
                     android:id="@+id/sP4b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a"
                     android:visibility="gone" />
 
@@ -630,7 +599,6 @@
                     android:id="@+id/sP4c"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -644,7 +612,6 @@
                     android:id="@+id/sP4d"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -658,7 +625,6 @@
                     android:id="@+id/sP4e"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -672,7 +638,6 @@
                     android:id="@+id/sP4f"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -686,7 +651,6 @@
                     android:id="@+id/sP4g"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -700,7 +664,6 @@
                     android:id="@+id/sP4h"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -714,7 +677,6 @@
                     android:id="@+id/sP4i"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -728,7 +690,6 @@
                     android:id="@+id/sP4j"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
             </LinearLayout>
@@ -743,9 +704,9 @@
                 android:background="@color/colorPrimaryDark"
                 android:text="PREGUNTA 5"
                 android:textAlignment="center"
-                android:visibility="gone"
                 android:textColor="@color/myWhite"
-                android:textSize="30dp" />
+                android:textSize="30dp"
+                android:visibility="gone" />
 
             <LinearLayout
                 android:id="@+id/llP5"
@@ -775,7 +736,6 @@
                     android:id="@+id/sP5a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a"
                     android:visibility="gone" />
 
@@ -791,7 +751,6 @@
                     android:id="@+id/sP5b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a"
                     android:visibility="gone" />
 
@@ -806,7 +765,6 @@
                     android:id="@+id/sP5c"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -820,7 +778,6 @@
                     android:id="@+id/sP5d"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -834,7 +791,6 @@
                     android:id="@+id/sP5e"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -848,7 +804,6 @@
                     android:id="@+id/sP5f"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -862,7 +817,6 @@
                     android:id="@+id/sP5g"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -876,7 +830,6 @@
                     android:id="@+id/sP5h"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -890,7 +843,6 @@
                     android:id="@+id/sP5i"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -904,7 +856,6 @@
                     android:id="@+id/sP5j"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
             </LinearLayout>
@@ -950,7 +901,6 @@
                     android:id="@+id/sP6a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a"
                     android:visibility="gone" />
 
@@ -966,7 +916,6 @@
                     android:id="@+id/sP6b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a"
                     android:visibility="gone" />
 
@@ -981,7 +930,6 @@
                     android:id="@+id/sP6c"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -995,7 +943,6 @@
                     android:id="@+id/sP6d"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -1009,7 +956,6 @@
                     android:id="@+id/sP6e"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -1023,7 +969,6 @@
                     android:id="@+id/sP6f"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -1037,7 +982,6 @@
                     android:id="@+id/sP6g"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -1051,7 +995,6 @@
                     android:id="@+id/sP6h"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -1065,7 +1008,6 @@
                     android:id="@+id/sP6i"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -1079,7 +1021,6 @@
                     android:id="@+id/sP6j"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
             </LinearLayout>
@@ -1125,7 +1066,6 @@
                     android:id="@+id/sP7a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a"
                     android:visibility="gone" />
 
@@ -1141,7 +1081,6 @@
                     android:id="@+id/sP7b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a"
                     android:visibility="gone" />
 
@@ -1156,7 +1095,6 @@
                     android:id="@+id/sP7c"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -1170,7 +1108,6 @@
                     android:id="@+id/sP7d"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -1184,7 +1121,6 @@
                     android:id="@+id/sP7e"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -1198,7 +1134,6 @@
                     android:id="@+id/sP7f"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -1212,7 +1147,6 @@
                     android:id="@+id/sP7g"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -1226,7 +1160,6 @@
                     android:id="@+id/sP7h"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -1240,7 +1173,6 @@
                     android:id="@+id/sP7i"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
                 <TextView
@@ -1254,7 +1186,6 @@
                     android:id="@+id/sP7j"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
 
             </LinearLayout>
@@ -1292,11 +1223,20 @@
                     android:id="@+id/sP8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
                     android:textColorHint="#05ab9a" />
             </LinearLayout>
             <!--endregion-->
 
+            <Button
+                android:id="@+id/btnGuardarASSIST"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:text="Guardar Respuestas"
+                android:textColor="#FFFFFF"
+                android:textSize="30dp"
+                android:theme="@style/PrimaryColoredButton" />
 
         </LinearLayout>
 
