@@ -1,6 +1,6 @@
 package com.sistemas.evaluacion.entidades;
 
-public class DatosEntrevistador {
+public class datosEntrevistador {
     //region Variables Globales
     int id;
     String codigo, nombre;
@@ -8,7 +8,7 @@ public class DatosEntrevistador {
 
     //region Constructor
 
-    public DatosEntrevistador(int id, String codigo, String nombre) {
+    public datosEntrevistador(int id, String codigo, String nombre) {
         this.id = id;
         this.codigo = codigo;
         this.nombre = nombre;

@@ -7,7 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 
-import com.sistemas.evaluacion.entidades.DatosEntrevistador;
+import com.sistemas.evaluacion.entidades.datosASSIST;
+import com.sistemas.evaluacion.entidades.datosEntrevistador;
 import com.sistemas.evaluacion.entidades.datosAbandonoEstado;
 import com.sistemas.evaluacion.entidades.datosEscolarLaboral;
 import com.sistemas.evaluacion.entidades.datosGenerales;
@@ -88,8 +89,8 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     //endregion
 
     //region Tabla assist
-    private static final String CREATE_TABLE_ASSIST="CREATE TABLE assist(_id INTEGER PRIMARY KEY AUTOINCREMENT, Pa, Pb, Pc, Pd, Pe, Pf, Pg, Ph, Pi, Pj, JOtro, e8," +
-            "Folio TEXT)";
+    private static final String CREATE_TABLE_ASSIST="CREATE TABLE assist(_id INTEGER PRIMARY KEY AUTOINCREMENT, Pa TEXT, Pb TEXT, Pc TEXT, Pd TEXT," +
+            "Pe TEXT, Pf TEXT, Pg TEXT, Ph TEXT, Pi TEXT, Pj TEXT, JOtro TEXT, e8 TEXT, Folio TEXT)";
     //endregion
 
     //region Tabla entrevistador
@@ -957,9 +958,44 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     }
     //endregion
 
+    //region Obtener los datos del ASSIST
+    public ArrayList<datosASSIST> getASSIST(){
+        ArrayList<datosASSIST> lista = new ArrayList<datosASSIST>();
+        Cursor c=db.rawQuery("select _id, Pa, Pb, Pc, Pd, Pe, Pf, Pg, Ph, Pi, Pj, JOtro, e8, Folio from assist",  null);
+        if (c != null && c.getCount()>0) {
+            c.moveToFirst();
+            do {
+                String pa = c.getString(c.getColumnIndex("Pa"));
+                String pb = c.getString(c.getColumnIndex("Pb"));
+                String pc = c.getString(c.getColumnIndex("Pc"));
+                String pd = c.getString(c.getColumnIndex("Pd"));
+                String pe = c.getString(c.getColumnIndex("Pe"));
+                String pf = c.getString(c.getColumnIndex("Pf"));
+                String pg = c.getString(c.getColumnIndex("Pg"));
+                String ph = c.getString(c.getColumnIndex("Ph"));
+                String pi = c.getString(c.getColumnIndex("Pi"));
+                String pj = c.getString(c.getColumnIndex("Pj"));
+                String jOtro = c.getString(c.getColumnIndex("JOtro"));
+                String e8 = c.getString(c.getColumnIndex("e8"));
+                String Folio = c.getString(c.getColumnIndex("Folio"));
+
+                int id = c.getInt(c.getColumnIndex("_id"));
+                datosASSIST dato = new datosASSIST(id, pa, pb, pc, pd, pe, pf, pg, ph, pi, pj, jOtro, e8, Folio);
+
+                //Añadimos la direccion a la lista
+                lista.add(dato);
+            } while (c.moveToNext());
+        }
+
+        //Cerramos el cursor
+        c.close();
+        return lista;
+    }
+    //endregion
+
     //region Obtener datos de entrevistador
-    public ArrayList<DatosEntrevistador> getEntrevistador(){
-        ArrayList<DatosEntrevistador> lista = new ArrayList<DatosEntrevistador>();
+    public ArrayList<datosEntrevistador> getEntrevistador(){
+        ArrayList<datosEntrevistador> lista = new ArrayList<datosEntrevistador>();
         Cursor c=db.rawQuery("select _id, codigo, nombre from entrevistador",  null);
         if (c != null && c.getCount()>0) {
             c.moveToFirst();
@@ -968,7 +1004,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
                 String nombre = c.getString(c.getColumnIndex("nombre"));
 
                 int id = c.getInt(c.getColumnIndex("_id"));
-                DatosEntrevistador dato = new DatosEntrevistador(id, codigo, nombre);
+                datosEntrevistador dato = new datosEntrevistador(id, codigo, nombre);
 
                 //Añadimos la direccion a la lista
                 lista.add(dato);

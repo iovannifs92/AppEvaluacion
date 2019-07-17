@@ -3,7 +3,6 @@ package com.sistemas.evaluacion;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -18,7 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.sistemas.evaluacion.entidades.datosGenerales;
-import com.sistemas.evaluacion.entidades.DatosEntrevistador;
+import com.sistemas.evaluacion.entidades.datosEntrevistador;
 
 import java.util.ArrayList;
 
@@ -28,7 +27,7 @@ public class MainMenu extends AppCompatActivity
     //region Variables Globales
     private MyOpenHelper db;
     private ArrayList<datosGenerales> lista;
-    private ArrayList<DatosEntrevistador> listaEntrevistador;
+    private ArrayList<datosEntrevistador> listaEntrevistador;
     public static String entrevistador;
     private TextView tvLista;
     public String tamaño="";
@@ -156,6 +155,10 @@ public class MainMenu extends AppCompatActivity
             case R.id.nav_manage:
                 Intent intent5 = new Intent(this, Settings.class);
                 startActivity(intent5);
+                break;
+            case R.id.nav_reporte_assist:
+                Intent intent6 = new Intent(this, ReporteAssist.class);
+                startActivity(intent6);
                 break;
         }
 

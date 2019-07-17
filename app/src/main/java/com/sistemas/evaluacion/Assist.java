@@ -25,7 +25,7 @@ public class Assist extends AppCompatActivity implements View.OnClickListener{
     String[] lista2={"No, nunca","Si, en los ultimos 3 meses","Si, pero no en los últimos 3 meses"};
     String[] nosi={"NO", "SI"};
     EditText etP1j;
-    String otro;
+    String otro = "";
     MyOpenHelper db;
     int[] arrayControl={0,0,0,0,0,0,0,0,0,0};
     int[][] P = {{0, 0, 0, 0, 0},
@@ -87,7 +87,7 @@ public class Assist extends AppCompatActivity implements View.OnClickListener{
             if((lista.get(i).getDelito().equals("ROBO SIMPLE") ||
                     lista.get(i).getDelito().equals("VIOLENCIA FAMILIAR") ||
                     lista.get(i).getDelito().equals("LESIONES MENORES A 15 DIAS")) &&
-                    lista.get(i).getAntecedentePenal().equals("NO") == false &&
+                    lista.get(i).getAntecedentePenal().equals("SI") == false &&
                     lista.get(i).getASSIST().equals("SI") == false) {
                 names.add(lista.get(i).getNombre());
                 Idx.add(i);
