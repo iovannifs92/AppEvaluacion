@@ -37,9 +37,20 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity" />
 
+        <provider
+            android:name=".GenericFileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDprg7hqrFZ1pdrHvmZ8uH4ITG8seMPbig" />
+            android:value="AIzaSyDprg7hqrFZ1pdrHvmZ8uH4ITG8seMPbig"
+            />
     </application>
 
 </manifest>

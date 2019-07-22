@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -42,11 +43,14 @@ public class Assist extends AppCompatActivity implements View.OnClickListener{
             tvP4a, tvP4b, tvP4c, tvP4d, tvP4e, tvP4f, tvP4g, tvP4h, tvP4i, tvP4j,
             tvP5a, tvP5b, tvP5c, tvP5d, tvP5e, tvP5f, tvP5g, tvP5h, tvP5i, tvP5j,
             tvP6a, tvP6b, tvP6c, tvP6d, tvP6e, tvP6f, tvP6g, tvP6h, tvP6i, tvP6j,
-            tvP7a, tvP7b, tvP7c, tvP7d, tvP7e, tvP7f, tvP7g, tvP7h, tvP7i, tvP7j;
+            tvP7a, tvP7b, tvP7c, tvP7d, tvP7e, tvP7f, tvP7g, tvP7h, tvP7i, tvP7j,
+            tvControl;
 
     Button btnP1, btnP2, btnP3, btnP4, btnP5, btnP6, btnP7, btnP8, btnGuardarASSIST;
 
     LinearLayout ll, llP1, llP2, llP3, llP4, llP5, llP6, llP7, llP8;
+
+    ScrollView svControl;
 
     boolean p1=false, p2=false, p3=false, p4=false, p5=false, p6=false, p7=false, p8=false,
             a=false, b=false, c=false, d=false, e=false, f=false, g=false, h=false, i=false, j=false;
@@ -93,6 +97,17 @@ public class Assist extends AppCompatActivity implements View.OnClickListener{
                 Idx.add(i);
             }
         }
+
+
+        //region Verificar si hay registros
+        if(names.size()!=0){
+            tvControl=(TextView) findViewById(R.id.tvControl);
+            svControl=(ScrollView) findViewById(R.id.svControl);
+
+            svControl.setVisibility(View.VISIBLE);
+            tvControl.setVisibility(View.GONE);
+        }
+        //endregion
 
         sName = (Spinner) findViewById(R.id.sName);
         sName.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, names));
