@@ -117,6 +117,8 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
     private String [] antecedentes={"No", "Si", "No sabe"};
     private String [] dVictima={"NA", "Persona", "Tienda departamental", "No sabe", "Otro"};
     private String [] seguro={"No", "IMSS", "ISSSTE", "Seguro Popular", "Privado", "Otro"};
+    private String [] delito={"Otro", "Robo", "Robo Simple", "Violación", "Violencia Familiar", "Daños y Lesiones",
+            "Lesiones menores a 15 dias", "Contra la Salud", "Comercio o Suministro", "Portación de Armas de Fuego"};
     //endregion
     //endregion
 
@@ -219,8 +221,6 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
         //region SP31_1 Tipo de delito
         sP31_1 = (Spinner) findViewById(R.id.sP31_1);
         //robo simple, violencia familiar, lesiones menores a 15 dias
-        String [] delito={"Otro", "Robo", "Robo Simple", "Violación", "Violencia Familiar", "Daños y Lesiones",
-                "Lesiones menores a 15 dias", "Contra la Salud", "Comercio o Suministro", "Portación de Armas de Fuego"};
         sP31_1.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,delito));
 
         tvP31_2=(TextView) findViewById(R.id.tvP31_2);
