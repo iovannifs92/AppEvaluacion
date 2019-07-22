@@ -490,30 +490,30 @@
 						android:layout_height="wrap_content"
 						android:layout_marginBottom="20dp"/>
 
-                    <TextView
-                        android:id="@+id/tvP7_1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/e7_1" />
+					<TextView
+						android:id="@+id/tvP7_1"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/e7_1" />
 
-                    <CheckedTextView
-                        android:id="@+id/ctvP7_1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:layout_marginBottom="20dp"/>
+					<CheckedTextView
+						android:id="@+id/ctvP7_1"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:ems="10"
+						android:layout_marginBottom="20dp"/>
 
-                    <TextView
-                        android:id="@+id/tvO7_1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Observaciones"/>
+					<TextView
+						android:id="@+id/tvO7_1"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Observaciones"/>
 
-                    <EditText
-                        android:id="@+id/etP7_1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"/>
+					<EditText
+						android:id="@+id/etP7_1"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"/>
 
 					<TextView
 						android:id="@+id/tvP8"

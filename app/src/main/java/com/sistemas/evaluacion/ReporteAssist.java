@@ -1,23 +1,35 @@
 package com.sistemas.evaluacion;
 
-import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.sistemas.evaluacion.entidades.datosASSIST;
 import com.sistemas.evaluacion.entidades.datosGenerales;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 
-public class ReporteAssist extends AppCompatActivity {
+public class ReporteAssist extends AppCompatActivity implements View.OnClickListener {
 
     //region Variables Globales
     TextView tvPa, tvPb, tvPc, tvPd, tvPe, tvPf, tvPg, tvPh, tvPi, tvPj, tvRa, tvRb, tvRc, tvRd, tvRe, tvRf, tvRg, tvRh, tvRi, tvRj, tvOtro;
+    String nombre, folio;
+    Button btnGenerarReporte;
+    private TemplatePDF templatePDF;
+    private String[] header={"Sustancia", "Puntuación", "Nivel de riesgo"};
+    private ArrayList<String[]> imputado;
+
+    String pa, pb, pc, pd, pe, pf, pg, ph, pi, pj, jOtro, p8,
+            ra, rb, rc, rd, re, rf, rg, rh, ri, rj;
+    int pia, pib, pic, pid, pie, pif, pig, pih, pii, pij;
     //endregion
 
     @Override
@@ -46,7 +58,7 @@ public class ReporteAssist extends AppCompatActivity {
             sName.setSelection(names.size() - 1);
         }
 
-        final ArrayList<datosASSIST> P = db.getASSIST();
+        final ArrayList <datosASSIST> P = db.getASSIST();
 
         //region identify the TextView´s
         tvPa = (TextView) findViewById(R.id.tvPa);
@@ -77,21 +89,23 @@ public class ReporteAssist extends AppCompatActivity {
         sName.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String pa, pb, pc, pd, pe, pf, pg, ph, pi, pj, jOtro;
-                int pia, pib, pic, pid, pie, pif, pig, pih, pii, pij;
 
                 //region Get the question´s score
-                pa = P.get(position).getPa().toString();
-                pb = P.get(position).getPb().toString();
-                pc = P.get(position).getPc().toString();
-                pd = P.get(position).getPd().toString();
-                pe = P.get(position).getPe().toString();
-                pf = P.get(position).getPf().toString();
-                pg = P.get(position).getPg().toString();
-                ph = P.get(position).getPh().toString();
-                pi = P.get(position).getPi().toString();
-                pj = P.get(position).getPj().toString();
+                pa = P.get(position).getPa();
+                pb = P.get(position).getPb();
+                pc = P.get(position).getPc();
+                pd = P.get(position).getPd();
+                pe = P.get(position).getPe();
+                pf = P.get(position).getPf();
+                pg = P.get(position).getPg();
+                ph = P.get(position).getPh();
+                pi = P.get(position).getPi();
+                pj = P.get(position).getPj();
+                folio=P.get(position).getFolio();
+                p8=P.get(position).getE8();
                 //endregion
+
+
 
                 jOtro = P.get(position).getJOtro();
                 tvOtro.setText("Otros, especifique: " + jOtro);
@@ -136,6 +150,7 @@ public class ReporteAssist extends AppCompatActivity {
                     tvRa.setText("Moderado");
                     tvRa.setBackgroundResource(R.color.red);
                 }
+                ra=tvRa.getText().toString();
                 //endregion
 
                 //region Color b
@@ -152,6 +167,7 @@ public class ReporteAssist extends AppCompatActivity {
                     tvRb.setText("Moderado");
                     tvRb.setBackgroundResource(R.color.red);
                 }
+                rb=tvRb.getText().toString();
                 //endregion
 
                 //region Color c
@@ -167,6 +183,7 @@ public class ReporteAssist extends AppCompatActivity {
                     tvRc.setText("Moderado");
                     tvRc.setBackgroundResource(R.color.red);
                 }
+                rc=tvRc.getText().toString();
                 //endregion
 
                 //region Color d
@@ -182,6 +199,7 @@ public class ReporteAssist extends AppCompatActivity {
                     tvRd.setText("Moderado");
                     tvRd.setBackgroundResource(R.color.red);
                 }
+                rd=tvRd.getText().toString();
                 //endregion
 
                 //region Color e
@@ -197,6 +215,7 @@ public class ReporteAssist extends AppCompatActivity {
                     tvRe.setText("Moderado");
                     tvRe.setBackgroundResource(R.color.red);
                 }
+                re=tvRe.getText().toString();
                 //endregion
 
                 //region Color f
@@ -212,6 +231,7 @@ public class ReporteAssist extends AppCompatActivity {
                     tvRf.setText("Moderado");
                     tvRf.setBackgroundResource(R.color.red);
                 }
+                rf=tvRf.getText().toString();
                 //endregion
 
                 //region Color g
@@ -227,6 +247,7 @@ public class ReporteAssist extends AppCompatActivity {
                     tvRg.setText("Moderado");
                     tvRg.setBackgroundResource(R.color.red);
                 }
+                rg=tvRg.getText().toString();
                 //endregion
 
                 //region Color h
@@ -242,6 +263,7 @@ public class ReporteAssist extends AppCompatActivity {
                     tvRh.setText("Moderado");
                     tvRh.setBackgroundResource(R.color.red);
                 }
+                rh=tvRh.getText().toString();
                 //endregion
 
                 //region Color i
@@ -257,6 +279,7 @@ public class ReporteAssist extends AppCompatActivity {
                     tvRi.setText("Moderado");
                     tvRi.setBackgroundResource(R.color.red);
                 }
+                ri=tvRi.getText().toString();
                 //endregion
 
                 //region Color j
@@ -272,8 +295,11 @@ public class ReporteAssist extends AppCompatActivity {
                     tvRj.setText("Moderado");
                     tvRj.setBackgroundResource(R.color.red);
                 }
+                rj=tvRj.getText().toString();
                 //endregion
                 //endregion
+
+
             }
 
             @Override
@@ -281,5 +307,45 @@ public class ReporteAssist extends AppCompatActivity {
 
             }
         });
+
+        btnGenerarReporte=(Button) findViewById(R.id.btnGenerarReporte);
+        btnGenerarReporte.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.btnGenerarReporte:
+                SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy", Locale.getDefault());
+                Date date = new Date();
+                String fecha = dateFormat.format(date);
+
+                templatePDF=new TemplatePDF(getApplicationContext());
+                templatePDF.openDocument();
+                templatePDF.addImgName("membrete.png");
+                templatePDF.addMetaData("Reporte ASSIST", "FOLIO", "SCORPION");
+                templatePDF.addTitles("Reporte ASSIST",folio, fecha);
+                templatePDF.createTable(header, getImputado());
+                templatePDF.addParagraph("Ha consumido droga por vía inyectada: "+p8);
+                templatePDF.closeDocument();
+                templatePDF.appViewPDF(this);
+                break;
+        }
+    }
+
+    private ArrayList<String[]> getImputado(){
+        ArrayList<String[]> rows=new ArrayList<>();
+        rows.add(new String[]{"Productos de Tabaco",pa,ra});
+        rows.add(new String[]{"Bebidas Alcoholicas",pb,rb});
+        rows.add(new String[]{"Cannabis",pc,rc});
+        rows.add(new String[]{"Cocaína",pd,rd});
+        rows.add(new String[]{"Estimulantes de tipo anfetaminas",pe,re});
+        rows.add(new String[]{"Inhalantes",pf,rf});
+        rows.add(new String[]{"Sedantes o pastillas para dormir",pg,rg});
+        rows.add(new String[]{"Alucinógenos",ph,rh});
+        rows.add(new String[]{"Opiáceos",pi,ri});
+        String otro="Otros, especifique: " + jOtro;
+        rows.add(new String[]{otro,pj,rj});
+        return rows;
     }
 }
