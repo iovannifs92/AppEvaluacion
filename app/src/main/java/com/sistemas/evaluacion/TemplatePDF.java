@@ -5,6 +5,9 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
+import android.os.Environment;
+import android.support.v4.content.FileProvider;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -51,7 +54,7 @@ public class TemplatePDF {
     }
 
     private void createFile(){
-        File folder=new File("/storage/sdcard0/PDF");
+        File folder=new File(Environment.getExternalStorageDirectory().toString(),"PDF");
 
         if(!folder.exists())
             folder.mkdir();
@@ -148,7 +151,8 @@ public class TemplatePDF {
 
     public void addImgName (String imageName) {
         try{
-            Image image = Image.getInstance("/storage/sdcard0/Images" + File.separator + imageName);
+            String r=(Environment.getExternalStorageDirectory().toString()+ File.separator +"PDF" + File.separator + imageName);
+            Image image = Image.getInstance(r);//"/storage/emulated/Images" + File.separator + imageName);
             image.scaleAbsolute(PageSize.LETTER);
             image.setAbsolutePosition(0,0);
             image.setAlignment(Element.ALIGN_CENTER);
@@ -156,6 +160,7 @@ public class TemplatePDF {
         }catch (Exception e){
             Log.e("addImgName ", e.toString());
         }
+
     }
 
     /*public void viewPDF(){
@@ -167,15 +172,33 @@ public class TemplatePDF {
 
     public void appViewPDF(Activity activity){
         if(pdfFile.exists()){
-            Uri uri=Uri.fromFile(pdfFile);
-            Intent intent=new Intent(Intent.ACTION_VIEW);
+            Uri pdfPath;
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                pdfPath = FileProvider.getUriForFile(activity.getApplicationContext(), "com.sistemas.evaluacion", pdfFile);
+            } else {
+                pdfPath = Uri.fromFile(pdfFile);
+            }
+            Intent pdfIntent = new Intent(Intent.ACTION_VIEW);
+            pdfIntent.setDataAndType(pdfPath, "application/pdf");
+            pdfIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            pdfIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            pdfIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+            try{
+                activity.startActivity(pdfIntent);
+            }catch(ActivityNotFoundException e){
+                activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.adobe.reader")));
+                Toast.makeText(activity.getApplicationContext(), "No Application available to view PDF", Toast.LENGTH_SHORT).show();
+            }
+
+            /*Intent intent=new Intent(Intent.ACTION_VIEW);
             intent.setDataAndType(uri, "application/pdf");
             try{
                 activity.startActivity(intent);
             }catch (ActivityNotFoundException e){
                 activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.adobe.reader")));
                 Toast.makeText(activity.getApplicationContext(), "No cuentas con una aplicación para ver PDF", Toast.LENGTH_LONG).show();
-            }
+            }*/
         }
         else{
             Toast.makeText(activity.getApplicationContext(), "El archivo no se encontro", Toast.LENGTH_LONG).show();
