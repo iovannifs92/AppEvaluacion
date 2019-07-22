@@ -172,31 +172,33 @@ public class TemplatePDF {
 
     public void appViewPDF(Activity activity){
         if(pdfFile.exists()){
-            Uri uri;
+            Uri pdfPath;
 
-            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
-                uri = FileProvider.getUriForFile(context, "fileprovider", new File(pdfFile.getAbsolutePath()));
-                //uri= FileProvider.getUriForFile(context, context.getApplicationContext().getPackageName()+".com.sistemas.evaluacion"+pdfFile.getAbsolutePath());
-                context.grantUriPermission(context.getPackageName(), uri, Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                final Intent intent = new Intent(Intent.ACTION_VIEW)
-                        .setDataAndType(uri, "application/pdf")
-                        .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                context.startActivity(intent);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                pdfPath = FileProvider.getUriForFile(activity.getApplicationContext(), "com.sistemas.evaluacion", pdfFile);
+            } else {
+                pdfPath = Uri.fromFile(pdfFile);
             }
-            else{
-                uri=Uri.fromFile(pdfFile);
+            Intent pdfIntent = new Intent(Intent.ACTION_VIEW);
+            pdfIntent.setDataAndType(pdfPath, "application/pdf");
+            pdfIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            pdfIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            pdfIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+            try{
+                activity.startActivity(pdfIntent);
+            }catch(ActivityNotFoundException e){
+                activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.adobe.reader")));
+                Toast.makeText(activity.getApplicationContext(), "No Application available to view PDF", Toast.LENGTH_SHORT).show();
             }
 
-
-
-            Intent intent=new Intent(Intent.ACTION_VIEW);
+            /*Intent intent=new Intent(Intent.ACTION_VIEW);
             intent.setDataAndType(uri, "application/pdf");
             try{
                 activity.startActivity(intent);
             }catch (ActivityNotFoundException e){
                 activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.adobe.reader")));
                 Toast.makeText(activity.getApplicationContext(), "No cuentas con una aplicación para ver PDF", Toast.LENGTH_LONG).show();
-            }
+            }*/
         }
         else{
             Toast.makeText(activity.getApplicationContext(), "El archivo no se encontro", Toast.LENGTH_LONG).show();
