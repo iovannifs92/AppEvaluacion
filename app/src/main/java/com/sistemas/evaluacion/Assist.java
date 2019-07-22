@@ -25,7 +25,7 @@ public class Assist extends AppCompatActivity implements View.OnClickListener{
     String[] lista2={"No, nunca","Si, en los ultimos 3 meses","Si, pero no en los últimos 3 meses"};
     String[] nosi={"NO", "SI"};
     EditText etP1j;
-    String otro = "";
+    String otro;
     MyOpenHelper db;
     int[] arrayControl={0,0,0,0,0,0,0,0,0,0};
     int[][] P = {{0, 0, 0, 0, 0},
@@ -87,7 +87,7 @@ public class Assist extends AppCompatActivity implements View.OnClickListener{
             if((lista.get(i).getDelito().equals("ROBO SIMPLE") ||
                     lista.get(i).getDelito().equals("VIOLENCIA FAMILIAR") ||
                     lista.get(i).getDelito().equals("LESIONES MENORES A 15 DIAS")) &&
-                    lista.get(i).getAntecedentePenal().equals("SI") == false &&
+                    lista.get(i).getAntecedentePenal().equals("NO") == true &&
                     lista.get(i).getASSIST().equals("SI") == false) {
                 names.add(lista.get(i).getNombre());
                 Idx.add(i);
@@ -1022,6 +1022,12 @@ public class Assist extends AppCompatActivity implements View.OnClickListener{
                 String folio = lista.get(Idx.get(pos)).getFolio();
 
                 String r8 = sP8.getText().toString().toUpperCase();
+                if(r8.equals("")){
+                    r8="NO, NUNCA";
+                }
+                if(otro==null){
+                    otro="";
+                }
                 db.insertarASSIST(Pa.toString(), Pb.toString(), Pc.toString(), Pd.toString(), Pe.toString(), Pf.toString(),
                         Pg.toString(), Ph.toString(), Pi.toString(), Pj.toString(), otro.toUpperCase(), r8, folio);
 
