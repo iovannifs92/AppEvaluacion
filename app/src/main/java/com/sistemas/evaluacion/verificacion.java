@@ -6585,6 +6585,8 @@ public class verificacion extends AppCompatActivity {
                         }
                         //endregion
 
+                        db.updateTable("imputado_datos_generales", "TieneVerificacion", "SI", folio);
+
                         //Verificación
                         if(oper.equals(opers[0])) {
                             Toast.makeText(getApplicationContext(), "Entrevista Verificada", Toast.LENGTH_SHORT).show();

@@ -130,11 +130,11 @@ public class ReporteAssist extends AppCompatActivity {
                 }
                 else if(pia >= 27){
                     tvRa.setText("Alto");
-                    tvRa.setBackgroundResource(R.color.yellow);
+                    tvRa.setBackgroundResource(R.color.red);
                 }
                 else{
                     tvRa.setText("Moderado");
-                    tvRa.setBackgroundResource(R.color.red);
+                    tvRa.setBackgroundResource(R.color.yellow);
                 }
                 //endregion
 
@@ -146,11 +146,11 @@ public class ReporteAssist extends AppCompatActivity {
                 }
                 else if(pib >= 27){
                     tvRb.setText("Alto");
-                    tvRb.setBackgroundResource(R.color.yellow);
+                    tvRb.setBackgroundResource(R.color.red);
                 }
                 else{
                     tvRb.setText("Moderado");
-                    tvRb.setBackgroundResource(R.color.red);
+                    tvRb.setBackgroundResource(R.color.yellow);
                 }
                 //endregion
 
@@ -161,11 +161,11 @@ public class ReporteAssist extends AppCompatActivity {
                 }
                 else if(pic >= 27){
                     tvRc.setText("Alto");
-                    tvRc.setBackgroundResource(R.color.yellow);
+                    tvRc.setBackgroundResource(R.color.red);
                 }
                 else{
                     tvRc.setText("Moderado");
-                    tvRc.setBackgroundResource(R.color.red);
+                    tvRc.setBackgroundResource(R.color.yellow);
                 }
                 //endregion
 
@@ -176,11 +176,11 @@ public class ReporteAssist extends AppCompatActivity {
                 }
                 else if(pid >= 27){
                     tvRd.setText("Alto");
-                    tvRd.setBackgroundResource(R.color.yellow);
+                    tvRd.setBackgroundResource(R.color.red);
                 }
                 else{
                     tvRd.setText("Moderado");
-                    tvRd.setBackgroundResource(R.color.red);
+                    tvRd.setBackgroundResource(R.color.yellow);
                 }
                 //endregion
 
@@ -191,11 +191,11 @@ public class ReporteAssist extends AppCompatActivity {
                 }
                 else if(pie >= 27){
                     tvRe.setText("Alto");
-                    tvRe.setBackgroundResource(R.color.yellow);
+                    tvRe.setBackgroundResource(R.color.red);
                 }
                 else{
                     tvRe.setText("Moderado");
-                    tvRe.setBackgroundResource(R.color.red);
+                    tvRe.setBackgroundResource(R.color.yellow);
                 }
                 //endregion
 
@@ -206,11 +206,11 @@ public class ReporteAssist extends AppCompatActivity {
                 }
                 else if(pif >= 27){
                     tvRf.setText("Alto");
-                    tvRf.setBackgroundResource(R.color.yellow);
+                    tvRf.setBackgroundResource(R.color.red);
                 }
                 else{
                     tvRf.setText("Moderado");
-                    tvRf.setBackgroundResource(R.color.red);
+                    tvRf.setBackgroundResource(R.color.yellow);
                 }
                 //endregion
 
@@ -221,11 +221,11 @@ public class ReporteAssist extends AppCompatActivity {
                 }
                 else if(pig >= 27){
                     tvRg.setText("Alto");
-                    tvRg.setBackgroundResource(R.color.yellow);
+                    tvRg.setBackgroundResource(R.color.red);
                 }
                 else{
                     tvRg.setText("Moderado");
-                    tvRg.setBackgroundResource(R.color.red);
+                    tvRg.setBackgroundResource(R.color.yellow);
                 }
                 //endregion
 
@@ -236,11 +236,11 @@ public class ReporteAssist extends AppCompatActivity {
                 }
                 else if(pih >= 27){
                     tvRh.setText("Alto");
-                    tvRh.setBackgroundResource(R.color.yellow);
+                    tvRh.setBackgroundResource(R.color.red);
                 }
                 else{
                     tvRh.setText("Moderado");
-                    tvRh.setBackgroundResource(R.color.red);
+                    tvRh.setBackgroundResource(R.color.yellow);
                 }
                 //endregion
 
@@ -251,11 +251,11 @@ public class ReporteAssist extends AppCompatActivity {
                 }
                 else if(pii >= 27){
                     tvRi.setText("Alto");
-                    tvRi.setBackgroundResource(R.color.yellow);
+                    tvRi.setBackgroundResource(R.color.red);
                 }
                 else{
                     tvRi.setText("Moderado");
-                    tvRi.setBackgroundResource(R.color.red);
+                    tvRi.setBackgroundResource(R.color.yellow);
                 }
                 //endregion
 
@@ -266,11 +266,11 @@ public class ReporteAssist extends AppCompatActivity {
                 }
                 else if(pij >= 27){
                     tvRj.setText("Alto");
-                    tvRj.setBackgroundResource(R.color.yellow);
+                    tvRj.setBackgroundResource(R.color.red);
                 }
                 else{
                     tvRj.setText("Moderado");
-                    tvRj.setBackgroundResource(R.color.red);
+                    tvRj.setBackgroundResource(R.color.yellow);
                 }
                 //endregion
                 //endregion

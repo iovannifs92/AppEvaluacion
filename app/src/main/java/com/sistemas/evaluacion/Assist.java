@@ -96,7 +96,7 @@ public class Assist extends AppCompatActivity implements View.OnClickListener{
 
         sName = (Spinner) findViewById(R.id.sName);
         sName.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, names));
-        if(lista.isEmpty() == false) {
+        if(names.isEmpty() == false) {
             sName.setSelection(names.size() - 1);
         }
 

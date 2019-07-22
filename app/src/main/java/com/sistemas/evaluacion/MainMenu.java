@@ -160,6 +160,10 @@ public class MainMenu extends AppCompatActivity
                 Intent intent6 = new Intent(this, ReporteAssist.class);
                 startActivity(intent6);
                 break;
+            case R.id.nav_instrumento:
+                Intent intent7 = new Intent(this, Instrumento.class);
+                startActivity(intent7);
+                break;
         }
 
         /*if (id == R.id.nav_verificacion) {

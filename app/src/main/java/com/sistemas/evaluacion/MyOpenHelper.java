@@ -11,6 +11,7 @@ import com.sistemas.evaluacion.entidades.datosASSIST;
 import com.sistemas.evaluacion.entidades.datosEntrevistador;
 import com.sistemas.evaluacion.entidades.datosAbandonoEstado;
 import com.sistemas.evaluacion.entidades.datosEscolarLaboral;
+import com.sistemas.evaluacion.entidades.datosEvaluacion;
 import com.sistemas.evaluacion.entidades.datosGenerales;
 import com.sistemas.evaluacion.entidades.datosDomicilio;
 import com.sistemas.evaluacion.entidades.datosHabitantes;
@@ -31,8 +32,8 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     //region Tabla imputado_datos_generales
     private static final String CREATE_TABLE_IMPUTADO_DATOS_GENERALES = "CREATE TABLE imputado_datos_generales(_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "Nombre TEXT, Alias TEXT, FNacimiento TEXT, Edad TEXTO, LNacimiento TEXT, Sexo TEXT, Folio TEXT, FEntrevista TEXT, DuraciónE INTEGER, Entrevistador TEXT, " +
-            "ObservacionesF TEXT, Tipo TEXT, ASSIST TEXT, TieneDomicilioS TEXT, OtrosHabitantes TEXT, Entrevistada TEXT, AntecedentePenal TEXT, Delito TEXT, " +
-            "OtroDelito TEXT)";
+            "ObservacionesF TEXT, Tipo TEXT, ASSIST TEXT, TieneVerificacion TEXT, TieneEvaluacion TEXT, TieneDomicilioS TEXT, OtrosHabitantes TEXT, " +
+            "Entrevistada TEXT, AntecedentePenal TEXT, Delito TEXT, OtroDelito TEXT)";
     //endregion
 
     //region Tabla imputado_datos_domicilio
@@ -89,8 +90,14 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     //endregion
 
     //region Tabla assist
-    private static final String CREATE_TABLE_ASSIST="CREATE TABLE assist(_id INTEGER PRIMARY KEY AUTOINCREMENT, Pa TEXT, Pb TEXT, Pc TEXT, Pd TEXT," +
+    private static final String CREATE_TABLE_ASSIST="CREATE TABLE assist(_id INTEGER PRIMARY KEY AUTOINCREMENT, Pa INT, Pb TEXT, Pc TEXT, Pd TEXT," +
             "Pe TEXT, Pf TEXT, Pg TEXT, Ph TEXT, Pi TEXT, Pj TEXT, JOtro TEXT, e8 TEXT, Folio TEXT)";
+    //endregion
+
+    //TODO: agregar tabla a sincronizadb
+    //region Tabla eva_riesgos
+    private static final String CREATE_TABLE_EVA_RIESGOS="CREATE TABLE eva_riesgos(_id INTEGER PRIMARY KEY AUTOINCREMENT, Arraigo INTEGER, ResidenciaEdo INTEGER," +
+            " AbandonoEdo INTEGER, VoluntadSometimiento INTEGER, Antecedentes INTEGER, MedidasNoPrivativas, Escala INTEGER, Folio TEXT)";
     //endregion
 
     //region Tabla entrevistador
@@ -124,6 +131,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_IMPUTADO_DATOS_VICTIMA);
         db.execSQL(CREATE_TABLE_ENTREVISTADOR);
         db.execSQL(CREATE_TABLE_ASSIST);
+        db.execSQL(CREATE_TABLE_EVA_RIESGOS);
         db.execSQL(INSERT_INTO_ENTREVISTADIR);
     }
     @Override
@@ -170,7 +178,8 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     //region Insertar Datos Generales
     public void insertarDatosGenerales(String nombre, String alias, String fNacimiento, String edad, String lNacimiento,
                                        String sexo, String folio, String fEntrevista, int duracionE, String entrevistador,
-                                       String observacionesF, String tipo, String assist, String tieneDomicilioS, String otrosHabitantes,
+                                       String observacionesF, String tipo, String assist, String tieneVerificacion,
+                                       String tieneEvaluacion, String tieneDomicilioS, String otrosHabitantes,
                                        String entrevistada, String antecedentePenal, String delito, String otroDelito){
         ContentValues dato=new ContentValues();
         dato.put("Nombre", nombre);
@@ -186,11 +195,13 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         dato.put("ObservacionesF", observacionesF);
         dato.put("Tipo", tipo);
         dato.put("ASSIST", assist);
+        dato.put("TieneVerificacion", tieneVerificacion);
+        dato.put("TieneEvaluacion", tieneEvaluacion);
         dato.put("TieneDomicilioS", tieneDomicilioS);
         dato.put("OtrosHabitantes", otrosHabitantes);
         dato.put("Entrevistada", entrevistada);
         dato.put("AntecedentePenal", antecedentePenal);
-        //TODO: agregar Delito, OtroDelito a sincronizarBD
+        //TODO: agregar Delito, OtroDelito, ASSIST, TieneVerificacion, TieneEvaluacion, a sincronizarBD
         dato.put("Delito", delito);
         dato.put("OtroDelito", otroDelito);
         db.insert("imputado_datos_generales", null, dato);
@@ -470,6 +481,22 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     }
     //endregion
 
+    //region Inserta los datos del instrumento de evaluación de riesgo
+    public void insertarEvaluacionRiesgos(int arraigo, int residenciaEdo, int abandonoEdo, int voluntadSometimiento, int antecedentes,
+                                          int medidasNoPrivativas, int escala, String folio){
+        ContentValues dato=new ContentValues();
+        dato.put("Arraigo", arraigo);
+        dato.put("ResidenciaEdo", residenciaEdo);
+        dato.put("AbandonoEdo", abandonoEdo);
+        dato.put("VoluntadSometimiento", voluntadSometimiento);
+        dato.put("Antecedentes", antecedentes);
+        dato.put("MedidasNoPrivativas", medidasNoPrivativas);
+        dato.put("Escala", escala);
+        dato.put("Folio", folio);
+        db.insert("eva_riesgos", null, dato);
+    }
+    //endregion
+
     //region Actualiza una tabla a partir de una observacion
     public void updateTable(String table, String field, String observation, String folio){
         ContentValues cv = new ContentValues();
@@ -551,8 +578,8 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     public ArrayList<datosGenerales> getDatosGenerales(){
         ArrayList<datosGenerales> lista=new ArrayList<datosGenerales>();
         Cursor c=db.rawQuery("select _id, Nombre, Alias, FNacimiento, Edad, LNacimiento, Sexo, Folio, FEntrevista, DuraciónE, Entrevistador, " +
-                "ObservacionesF, Tipo, ASSIST, TieneDomicilioS, OtrosHabitantes, Entrevistada, AntecedentePenal, Delito, " +
-                "OtroDelito " + "  from imputado_datos_generales",  null);
+                "ObservacionesF, Tipo, ASSIST, TieneVerificacion, TieneEvaluacion, TieneDomicilioS, OtrosHabitantes, Entrevistada, AntecedentePenal, " +
+                "Delito, OtroDelito " + "  from imputado_datos_generales",  null);
         if (c != null && c.getCount()>0) {
             c.moveToFirst();
             do {
@@ -570,6 +597,8 @@ public class MyOpenHelper extends SQLiteOpenHelper {
                 String r99=c.getString(c.getColumnIndex("ObservacionesF"));
                 String r100=c.getString(c.getColumnIndex("Tipo"));
                 String assist=c.getString(c.getColumnIndex("ASSIST"));
+                String tieneVerificacion=c.getString(c.getColumnIndex("TieneVerificacion"));
+                String tieneEvaluacion=c.getString(c.getColumnIndex("TieneEvaluacion"));
                 String r21_1=c.getString(c.getColumnIndex("TieneDomicilioS"));
                 String r32=c.getString(c.getColumnIndex("OtrosHabitantes"));
                 String r1_1=c.getString(c.getColumnIndex("Entrevistada"));
@@ -580,7 +609,8 @@ public class MyOpenHelper extends SQLiteOpenHelper {
 
 
                 int id=c.getInt(c.getColumnIndex("_id"));
-                datosGenerales dato =new datosGenerales(id,r1,r2, r3, r4, r5, r6, folio, r98, min, r96, r99, r100, assist, r21_1, r32, r1_1, r1_2, r31_1, r31_2);
+                datosGenerales dato =new datosGenerales(id,r1,r2, r3, r4, r5, r6, folio, r98, min, r96, r99, r100, assist, tieneVerificacion,
+                        tieneEvaluacion, r21_1, r32, r1_1, r1_2, r31_1, r31_2);
                 //endregion
 
                 //Añadimos el comentario a la lista
@@ -981,6 +1011,38 @@ public class MyOpenHelper extends SQLiteOpenHelper {
 
                 int id = c.getInt(c.getColumnIndex("_id"));
                 datosASSIST dato = new datosASSIST(id, pa, pb, pc, pd, pe, pf, pg, ph, pi, pj, jOtro, e8, Folio);
+
+                //Añadimos la direccion a la lista
+                lista.add(dato);
+            } while (c.moveToNext());
+        }
+
+        //Cerramos el cursor
+        c.close();
+        return lista;
+    }
+    //endregion
+
+    //region Obtener los datos del instrumento de evaluación de riesgo
+    public ArrayList<datosEvaluacion> getEvaluacionRiesgos(){
+        ArrayList<datosEvaluacion> lista = new ArrayList<datosEvaluacion>();
+        Cursor c=db.rawQuery("select _id, Arraigo, ResidenciaEdo, AbandonoEdo, VoluntadSometimiento, Antecedentes, " +
+                "MedidasNoPrivativas, Escala, Folio from eva_riesgos",  null);
+        if (c != null && c.getCount()>0) {
+            c.moveToFirst();
+            do {
+                int arraigo = c.getInt(c.getColumnIndex("Arraigo"));
+                int residenciaEdo = c.getInt(c.getColumnIndex("ResidenciaEdo"));
+                int abandonoEdo = c.getInt(c.getColumnIndex("AbandonoEdo"));
+                int voluntadSometimiento = c.getInt(c.getColumnIndex("VoluntadSometimiento"));
+                int antecedentes = c.getInt(c.getColumnIndex("Antecedentes"));
+                int medidasNoPrivativas = c.getInt(c.getColumnIndex("MedidasNoPrivativas"));
+                int escala = c.getInt(c.getColumnIndex("Escala"));
+                String Folio = c.getString(c.getColumnIndex("Folio"));
+
+                int id = c.getInt(c.getColumnIndex("_id"));
+                datosEvaluacion dato = new datosEvaluacion(id, arraigo, residenciaEdo, abandonoEdo, voluntadSometimiento, antecedentes,
+                        medidasNoPrivativas, escala, Folio);
 
                 //Añadimos la direccion a la lista
                 lista.add(dato);

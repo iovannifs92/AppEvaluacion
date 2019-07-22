@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ReporteAssist"></activity>
+        <activity android:name=".Instrumento"></activity>
+        <activity android:name=".ReporteAssist" />
         <activity android:name=".Assist" />
         <activity android:name=".MapsActivity" />
         <activity android:name=".Settings" />

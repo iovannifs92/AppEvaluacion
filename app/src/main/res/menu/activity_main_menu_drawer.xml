@@ -22,6 +22,11 @@
             android:id="@+id/nav_reporte_assist"
             android:icon="@drawable/ic_view_column_black_24dp"
             android:title="Reporte ASSIST v3.1" />
+
+        <item
+            android:id="@+id/nav_instrumento"
+            android:icon="@drawable/ic_view_stream_rotated_black_24dp"
+            android:title="Evaluación de Riesgo" />
         <!--
         <item
             android:id="@+id/nav_slideshow"
