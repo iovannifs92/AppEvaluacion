@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -20,12 +21,14 @@ import java.util.Locale;
 public class ReporteAssist extends AppCompatActivity implements View.OnClickListener {
 
     //region Variables Globales
-    TextView tvPa, tvPb, tvPc, tvPd, tvPe, tvPf, tvPg, tvPh, tvPi, tvPj, tvRa, tvRb, tvRc, tvRd, tvRe, tvRf, tvRg, tvRh, tvRi, tvRj, tvOtro;
+    TextView tvPa, tvPb, tvPc, tvPd, tvPe, tvPf, tvPg, tvPh, tvPi, tvPj, tvRa, tvRb, tvRc, tvRd, tvRe, tvRf, tvRg, tvRh, tvRi, tvRj, tvOtro, tvControl;
     String nombre, folio;
     Button btnGenerarReporte;
     private TemplatePDF templatePDF;
     private String[] header={"Sustancia", "Puntuación", "Nivel de riesgo"};
     private ArrayList<String[]> imputado;
+
+    LinearLayout llControl;
 
     String pa, pb, pc, pd, pe, pf, pg, ph, pi, pj, jOtro, p8,
             ra, rb, rc, rd, re, rf, rg, rh, ri, rj;
@@ -50,6 +53,16 @@ public class ReporteAssist extends AppCompatActivity implements View.OnClickList
                 names.add(lista.get(i).getNombre());
             }
         }
+
+        //region Verificar si hay registros
+        if(names.size()!=0){
+            tvControl=(TextView) findViewById(R.id.tvControl);
+            llControl=(LinearLayout) findViewById(R.id.llControl);
+
+            llControl.setVisibility(View.VISIBLE);
+            tvControl.setVisibility(View.GONE);
+        }
+        //endregion
 
         Spinner sName;
         sName = (Spinner) findViewById(R.id.sName);

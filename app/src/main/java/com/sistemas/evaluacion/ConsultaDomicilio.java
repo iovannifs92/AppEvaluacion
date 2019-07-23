@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -21,9 +22,8 @@ public class ConsultaDomicilio extends AppCompatActivity {
     private Button btnLauncher;
     private MyOpenHelper db;
     private Spinner sConsultaDomicilio;
-    private TextView tvCalleNumero;
-    private TextView tvColonia;
-    private TextView tvEstado;
+    private TextView tvCalleNumero, tvEstado, tvColonia, tvControl;
+    LinearLayout llControl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +46,19 @@ public class ConsultaDomicilio extends AppCompatActivity {
         for(int i = 0; i < lista.size(); i++){
             names[i] = lista.get(i).getNombre();
         }
+
+        //region Verificar si hay registros
+        if(lista.size()!=0){
+            tvControl=(TextView) findViewById(R.id.tvControl);
+            llControl=(LinearLayout) findViewById(R.id.llControl);
+
+            llControl.setVisibility(View.VISIBLE);
+            tvControl.setVisibility(View.GONE);
+        }
+        //endregion
+
+
+
         sConsultaDomicilio.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, names));
         //endregion
 

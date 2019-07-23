@@ -6,6 +6,15 @@
     android:orientation="vertical"
     tools:context=".Assist">
 
+    <TextView
+        android:id="@+id/tvControl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="30dp"
+        android:text="NO HAY REGISTROS PARA MOSTRAR"
+        android:textAlignment="center"/>
+
     <ScrollView
         android:id="@+id/svControl"
         android:layout_width="match_parent"
@@ -1246,11 +1255,6 @@
 
     </ScrollView>
 
-    <TextView
-        android:id="@+id/tvControl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="No hay registros que mostrar"
-        android:visibility="visible"/>
+
 
 </LinearLayout>
