@@ -48,9 +48,11 @@ public class ReporteAssist extends AppCompatActivity implements View.OnClickList
         lista = db.getDatosGenerales();
 
         ArrayList<String> names = new ArrayList<String>();
+        final ArrayList<String> Folios = new ArrayList<String>();
         for(int i = 0; i < lista.size(); i++){
             if(lista.get(i).getASSIST().equals("SI")) {
                 names.add(lista.get(i).getNombre());
+                Folios.add(lista.get(i).getFolio());
             }
         }
 
@@ -67,7 +69,7 @@ public class ReporteAssist extends AppCompatActivity implements View.OnClickList
         Spinner sName;
         sName = (Spinner) findViewById(R.id.sName);
         sName.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, names));
-        if(lista.isEmpty() == false) {
+        if(names.isEmpty() == false) {
             sName.setSelection(names.size() - 1);
         }
 
@@ -101,8 +103,11 @@ public class ReporteAssist extends AppCompatActivity implements View.OnClickList
 
         sName.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                int position = 0;
+                while (position < P.size() && P.get(position).getFolio().equals(Folios.get(pos)) == false) {
+                    position++;
+                }
                 //region Get the question´s score
                 pa = P.get(position).getPa();
                 pb = P.get(position).getPb();
