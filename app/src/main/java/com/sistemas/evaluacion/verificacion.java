@@ -1229,7 +1229,7 @@ public class verificacion extends AppCompatActivity {
                 etP31_1.setVisibility(View.GONE);
                 etP31_1.setText("");
 
-                ctvP31_2.setText(lista.get(pos).getDelito());
+                ctvP31_2.setText(lista.get(pos).getOtroDelito());
                 ctvP31_2.setChecked(true);
                 ctvP31_2.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
                 tvO31_2.setVisibility(View.GONE);

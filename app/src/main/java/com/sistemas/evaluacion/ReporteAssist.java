@@ -343,7 +343,6 @@ public class ReporteAssist extends AppCompatActivity implements View.OnClickList
         rows.add(new String[]{"Inhalantes",pf,rf});
         rows.add(new String[]{"Sedantes o pastillas para dormir",pg,rg});
         rows.add(new String[]{"Alucinógenos",ph,rh});
-        rows.add(new String[]{"Opiáceos",pi,ri});
         String otro="Otros, especifique: " + jOtro;
         rows.add(new String[]{otro,pj,rj});
         return rows;

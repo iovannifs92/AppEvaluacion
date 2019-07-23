@@ -229,6 +229,16 @@
     <string name="p8">Alguna vez ha consumido alguna droga por vía inyectada? (solo las que consumió sin receta médica)</string>
     <!--endregion-->
 
+    <!--region Evaluación de riesgos-->
+    <string name="A1">Imposibilidad de arraigo</string>
+    <string name="A2">Residencia habitual dentro del estado</string>
+    <string name="A3">Facilidades para abandonar el lugar</string>
+    <string name="A4">Voluntad de sometimiento a la persecución penal</string>
+    <string name="A5">Antecedentes Penales o de ingreso</string>
+    <string name="A6">Observancia de medidas cautelares, de seguridad o condiciones previamente</string>
+    <string name="total">TOTAL</string>
+    <!--endregion-->
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <!--endregion-->

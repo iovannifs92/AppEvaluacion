@@ -1780,7 +1780,6 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
 
                 etP30=(EditText) findViewById(R.id.etP30);
                 etP31=(EditText) findViewById(R.id.etP31);
-                etP31_2=(EditText) findViewById(R.id.etP31_2);
 
                 r7=etP7.getText().toString().toUpperCase();
                 r7_1=etP7_1.getText().toString().toUpperCase();

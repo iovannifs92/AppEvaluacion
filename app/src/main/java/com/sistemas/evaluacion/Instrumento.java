@@ -3,6 +3,7 @@ package com.sistemas.evaluacion;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -23,21 +24,30 @@ import com.sistemas.evaluacion.entidades.datosObservaciones;
 
 import org.w3c.dom.Text;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 
-public class Instrumento extends AppCompatActivity {
+import com.itextpdf.text.BaseColor;
+
+public class Instrumento extends AppCompatActivity implements View.OnClickListener {
 
     //region Variables Globales
     private String [] sometimiento = {"Si, colaboración durante la detención", "No, resistencia a la detención"};
     private String [] antecedentes = {"Absuelto, sin sentencia o termino de prescripción", "Vinculado a proceso, con proceso vigente", "Sentenciado"};
     private String [] medidas = {"No se impusieron medidas", "Si", "No"};
+    private String[] header={"ASPECTOS", "VALORACIÓN"};
     private Integer [] V4 = {-3, 3};
     private Integer [] V5 = {-2, 1, 2};
     private Integer [] V6 = {0, -1, 2};
     private Integer v, v1, v2, v3, v4, v5, v6, total;
+    private TemplatePDF templatePDF;
+    private ArrayList<datosGenerales> lista;
+    private ArrayList<Integer> Idx;//Indice de la lista completa de imputados
     private TextView tvNoRecords, tvA1, tvA2, tvA3, tvA4, tvA5, tvA6, tvTotal, tvScale;
     private Spinner sName, sA4, sA5, sA6;
-    private Button btnGuardarEvaluacion;
+    private Button btnGuardarEvaluacion, btnGenerarReporte;
     private LinearLayout llVisibility, llSpinners;
     //endregion
 
@@ -50,7 +60,6 @@ public class Instrumento extends AppCompatActivity {
         db = new MyOpenHelper(this);
         db.getReadableDatabase();
 
-        final ArrayList<datosGenerales> lista;
         lista = db.getDatosGenerales();
 
         final ArrayList<datosDomicilio> addresses;
@@ -134,7 +143,7 @@ public class Instrumento extends AppCompatActivity {
 
         //region Inicializa un spinner con las verificaciones
         ArrayList<String> names = new ArrayList<String>();
-        final ArrayList<Integer> Idx = new ArrayList<Integer>();//Indice de la lista completa de imputados
+        Idx = new ArrayList<Integer>();
         for(int i = 0; i < lista.size(); i++){
             if(lista.get(i).getTieneVerificacion().equals("SI")) {
                 names.add(lista.get(i).getNombre());
@@ -170,7 +179,7 @@ public class Instrumento extends AppCompatActivity {
                     String folio = lista.get(position).getFolio();
 
                     int pos = 0;
-                    while (pos < observaciones.size() && observaciones.get(pos).getFolio().equals(folio) == false) {
+                    while (pos < evaluacion.size() && evaluacion.get(pos).getFolio().equals(folio) == false) {
                         pos++;
                     }
 
@@ -333,7 +342,6 @@ public class Instrumento extends AppCompatActivity {
                     sA5.setSelection(0);
                     sA6.setSelection(0);
 
-                    Integer total = v;
                     int pos;
                     pos = sA4.getSelectedItemPosition();
                     v4 = V4[pos];
@@ -368,6 +376,9 @@ public class Instrumento extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btnGenerarReporte = (Button) findViewById(R.id.btnGenerarReporte);
+        btnGenerarReporte.setOnClickListener(this);
     }
 
     //region Refresh the screen to display the correct total
@@ -388,4 +399,55 @@ public class Instrumento extends AppCompatActivity {
         }
     }
     //endregion
+
+    //region Create and display the report in PDF format
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.btnGenerarReporte:
+                SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy", Locale.getDefault());
+                Date date = new Date();
+                String fecha = dateFormat.format(date);
+
+                int pos = sName.getSelectedItemPosition();
+                String folio = lista.get(Idx.get(pos)).getFolio();;
+
+                templatePDF=new TemplatePDF(getApplicationContext());
+                templatePDF.openDocument();
+                templatePDF.addImgName("membrete.png");
+                templatePDF.addMetaData("Instrumento de Evaluación", "FOLIO", "SCORPION");
+                templatePDF.addTitles("INSTRUMENTO DE EVALUACIÓN PARA DELITOS CONTRA LA SALUD PÚBLICA, FEDERALES Y CUYA VÍCTIMA ES LA SOCIEDAD",folio, fecha);
+                templatePDF.createTable(header, getImputado());
+
+                //Color the risk
+                String r = tvScale.getText().toString();
+                if(total <= -3) {
+                    templatePDF.addParagraph(r, BaseColor.GREEN);
+                }
+                else if(total >= 3){
+                    templatePDF.addParagraph(r, BaseColor.RED);
+                }
+                else {
+                    templatePDF.addParagraph(r, BaseColor.YELLOW);
+                }
+
+                templatePDF.closeDocument();
+                templatePDF.appViewPDF(this);
+                break;
+        }
+    }
+    //endregion
+
+    private ArrayList<String[]> getImputado(){
+        ArrayList<String[]> rows=new ArrayList<>();
+        rows.add(new String[]{getString(R.string.A1), v1.toString()});
+        rows.add(new String[]{getString(R.string.A2), v2.toString()});
+        rows.add(new String[]{getString(R.string.A3), v3.toString()});
+        rows.add(new String[]{getString(R.string.A4), v4.toString()});
+        rows.add(new String[]{getString(R.string.A5), v5.toString()});
+        rows.add(new String[]{getString(R.string.A6), v6.toString()});
+        total = v + v4 + v5 + v6;
+        rows.add(new String[]{getString(R.string.total), total.toString()});
+        return rows;
+    }
 }

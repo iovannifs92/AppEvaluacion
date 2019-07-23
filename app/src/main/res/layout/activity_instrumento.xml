@@ -24,8 +24,19 @@
 
             <Spinner
                 android:id="@+id/sName"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnGenerarReporte"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:text="Generar Reporte PDF"
+                android:textColor="#FFFFFF"
+                android:textSize="30dp"
+                android:theme="@style/PrimaryColoredButton" />
 
             <LinearLayout
                 android:id="@+id/llSpinners"
@@ -130,7 +141,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Imposibilidad de arraigo" />
+                        android:text="@string/A1" />
 
                     <View
                         android:layout_width="1px"
@@ -166,7 +177,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Residencia habitual dentro del estado" />
+                        android:text="@string/A2" />
 
                     <View
                         android:layout_width="1px"
@@ -202,7 +213,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Facilidades para abandonar el lugar" />
+                        android:text="@string/A3" />
 
                     <View
                         android:layout_width="1px"
@@ -238,7 +249,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Voluntad de sometimiento a la persecución penal" />
+                        android:text="@string/A4" />
 
                     <View
                         android:layout_width="1px"
@@ -274,7 +285,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Antecedentes Penales o de ingreso" />
+                        android:text="@string/A5" />
 
                     <View
                         android:layout_width="1px"
@@ -310,7 +321,7 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Observancia de medidas cautelares, de seguridad o condiciones previamente" />
+                        android:text="@string/A6" />
 
                     <View
                         android:layout_width="1px"
@@ -347,7 +358,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="TOTAL"
+                        android:text="@string/total"
                         android:textStyle="bold" />
 
                     <View

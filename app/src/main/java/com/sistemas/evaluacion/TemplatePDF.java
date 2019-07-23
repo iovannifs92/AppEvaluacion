@@ -102,6 +102,19 @@ public class TemplatePDF {
         }
     }
 
+
+    public void addParagraph(String text, BaseColor col){
+        try{
+            Font fColor = new Font(Font.FontFamily.TIMES_ROMAN, 15, Font.BOLD, col);
+            paragraph=new Paragraph(text, fColor);
+            paragraph.setSpacingAfter(5);
+            paragraph.setSpacingBefore(5);
+            document.add(paragraph);
+        }catch (Exception e){
+            Log.e("openDocument", e.toString());
+        }
+    }
+
     public void createTable(String [] header, ArrayList<String[]> imputado){
         try{
             paragraph=new Paragraph();
