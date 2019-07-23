@@ -201,7 +201,7 @@ public class TemplatePDF {
                 activity.startActivity(pdfIntent);
             }catch(ActivityNotFoundException e){
                 activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.adobe.reader")));
-                Toast.makeText(activity.getApplicationContext(), "No Application available to view PDF", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity.getApplicationContext(), "No tienes aplicación para visualizar el PDF", Toast.LENGTH_SHORT).show();
             }
 
             /*Intent intent=new Intent(Intent.ACTION_VIEW);
