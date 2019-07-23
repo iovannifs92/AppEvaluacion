@@ -96,7 +96,8 @@ public class ConsultaDomicilio extends AppCompatActivity {
                 }
                 else {
                     gmmIntentUri = Uri.parse("http://maps.google.com/maps?daddr=" + Uri.encode(addresses.get(pos).getE7() + " " +
-                            addresses.get(pos).getE8() + " " + addresses.get(pos).getE9() + " " + addresses.get(pos).getE10()));
+                            addresses.get(pos).getE7_1() + " " + addresses.get(pos).getE8() + " " + addresses.get(pos).getE9() + " " +
+                            addresses.get(pos).getE10()));
                 }
                 Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                 mapIntent.setPackage("com.google.android.apps.maps");

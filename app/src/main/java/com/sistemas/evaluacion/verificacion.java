@@ -1229,7 +1229,7 @@ public class verificacion extends AppCompatActivity {
                 etP31_1.setVisibility(View.GONE);
                 etP31_1.setText("");
 
-                ctvP31_2.setText(lista.get(pos).getDelito());
+                ctvP31_2.setText(lista.get(pos).getOtroDelito());
                 ctvP31_2.setChecked(true);
                 ctvP31_2.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
                 tvO31_2.setVisibility(View.GONE);
@@ -6584,6 +6584,8 @@ public class verificacion extends AppCompatActivity {
                             db.updateTable("imputado_datos_abandono_salud", "e95", r95, folio);
                         }
                         //endregion
+
+                        db.updateTable("imputado_datos_generales", "TieneVerificacion", "SI", folio);
 
                         //Verificación
                         if(oper.equals(opers[0])) {

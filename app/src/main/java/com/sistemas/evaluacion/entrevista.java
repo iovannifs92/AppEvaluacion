@@ -117,6 +117,8 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
     private String [] antecedentes={"No", "Si", "No sabe"};
     private String [] dVictima={"NA", "Persona", "Tienda departamental", "No sabe", "Otro"};
     private String [] seguro={"No", "IMSS", "ISSSTE", "Seguro Popular", "Privado", "Otro"};
+    private String [] delito={"Otro", "Robo", "Robo Simple", "Violación", "Violencia Familiar", "Daños y Lesiones",
+            "Lesiones menores a 15 dias", "Contra la Salud", "Comercio o Suministro", "Portación de Armas de Fuego"};
     //endregion
     //endregion
 
@@ -219,8 +221,6 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
         //region SP31_1 Tipo de delito
         sP31_1 = (Spinner) findViewById(R.id.sP31_1);
         //robo simple, violencia familiar, lesiones menores a 15 dias
-        String [] delito={"Otro", "Robo", "Robo Simple", "Violación", "Violencia Familiar", "Daños y Lesiones",
-                "Lesiones menores a 15 dias", "Contra la Salud", "Comercio o Suministro", "Portación de Armas de Fuego"};
         sP31_1.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,delito));
 
         tvP31_2=(TextView) findViewById(R.id.tvP31_2);
@@ -1780,7 +1780,6 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
 
                 etP30=(EditText) findViewById(R.id.etP30);
                 etP31=(EditText) findViewById(R.id.etP31);
-                etP31_2=(EditText) findViewById(R.id.etP31_2);
 
                 r7=etP7.getText().toString().toUpperCase();
                 r7_1=etP7_1.getText().toString().toUpperCase();
@@ -2009,7 +2008,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
 
                 //region Insertar a Base de Datos
                 if(ValidaFormulario()) {
-                    db.insertarDatosGenerales(r1, r2, r3, r4, r5, r6, FOLIO, r98, min, r96, r99, r100, "", r21_1, r32,r1_1,r1_2, r31_1, r31_2);
+                    db.insertarDatosGenerales(r1, r2, r3, r4, r5, r6, FOLIO, r98, min, r96, r99, r100, "", "", "", r21_1, r32,r1_1,r1_2, r31_1, r31_2);
                     db.insertarDatosGeneralesDomicilio(r7, r7_1, r8, r9, r10, r11, r12, r13, r14, r15, r16, r32_1, r17,
                             r18, r19, r20, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31, confirmedMainLatitude, confirmedMainLongitude, FOLIO);
                     db.insertarDatosFamiliares(r32, r33, r34, r35, r36, r37, r33_1, r34_1, r35_1, r36_1, r37_1, r33_2, r34_2, r35_2, r36_2, r37_2,

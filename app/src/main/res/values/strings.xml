@@ -117,14 +117,14 @@
     <string name="e63">Ciudad</string>
     <string name="e64">Fecha de ingreso</string>
     <string name="e65">Fecha de salida</string>
-    <string name="e66">¿Tiene Familiares o personas con relación de amistad en el extranjero?</string>
+    <string name="e66">¿Tiene familiares o personas con relación de amistad en el extranjero?</string>
     <string name="e67">Nombre</string> <!--Dos personas-->
     <string name="e68">Relación con el entrevistado</string>
     <string name="e69">País</string>
     <string name="e70">Estado</string>
     <string name="e71">Ciudad</string>
     <string name="e72">Frecuencia de contacto</string>
-    <string name="e73">¿Tiene Familiares o personas con relación de amistad en otros estados de la República?</string>
+    <string name="e73">¿Tiene familiares o personas con relación de amistad en otros estados de la República?</string>
     <string name="e74">Nombre</string> <!--Dos personas-->
     <string name="e75">Relación con el entrevistado</string>
     <string name="e76">Estado</string>
@@ -176,7 +176,7 @@
     <!--e107 longitud del domicilio-->
     <!--region Verificación-->
     <string name="e108">Tipo de operación</string>
-    <string name="e109">Entrevistado</string>
+    <string name="e109">Nombre de quien atiende la verificación</string>
     <string name="e110">Relación con el imputado</string>
     <!--endregion-->
 
@@ -227,6 +227,16 @@
     <string name="p6">¿Un amigo, un familiar o alguien más alguna vez ha mostrado preocupación por sus hábitos de consumo de...?</string>
     <string name="p7">¿Ha intentado alguna vez reducir o eliminar el consumo de ...?</string>
     <string name="p8">Alguna vez ha consumido alguna droga por vía inyectada? (solo las que consumió sin receta médica)</string>
+    <!--endregion-->
+
+    <!--region Evaluación de riesgos-->
+    <string name="A1">Imposibilidad de arraigo</string>
+    <string name="A2">Residencia habitual dentro del estado</string>
+    <string name="A3">Facilidades para abandonar el lugar</string>
+    <string name="A4">Voluntad de sometimiento a la persecución penal</string>
+    <string name="A5">Antecedentes Penales o de ingreso</string>
+    <string name="A6">Observancia de medidas cautelares, de seguridad o condiciones previamente</string>
+    <string name="total">TOTAL</string>
     <!--endregion-->
 
     <!-- TODO: Remove or change this placeholder text -->
