@@ -190,6 +190,23 @@ public class Instrumento extends AppCompatActivity implements View.OnClickListen
                     v5 = evaluacion.get(pos).getAntecedentes();
                     v6 = evaluacion.get(pos).getMedidasNoPrivativas();
 
+                    //Initialize default selections
+                    pos = 0;
+                    while (pos < sometimiento.length && V4[pos].equals(v4) == false) {
+                        pos++;
+                    }
+                    sA4.setSelection(pos);
+                    pos = 0;
+                    while (pos < antecedentes.length && V5[pos].equals(v5) == false) {
+                        pos++;
+                    }
+                    sA5.setSelection(pos);
+                    pos = 0;
+                    while (pos < medidas.length && V6[pos].equals(v6) == false) {
+                        pos++;
+                    }
+                    sA6.setSelection(pos);
+
                     v = v1 + v2 + v3;
                     updateDisplay();
 
