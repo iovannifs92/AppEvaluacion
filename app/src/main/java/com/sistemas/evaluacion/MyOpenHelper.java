@@ -97,7 +97,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     //TODO: agregar tabla a sincronizadb
     //region Tabla eva_riesgos
     private static final String CREATE_TABLE_EVA_RIESGOS="CREATE TABLE eva_riesgos(_id INTEGER PRIMARY KEY AUTOINCREMENT, Arraigo INTEGER, ResidenciaEdo INTEGER," +
-            " AbandonoEdo INTEGER, VoluntadSometimiento INTEGER, Antecedentes INTEGER, MedidasNoPrivativas, Escala INTEGER, Folio TEXT)";
+            " AbandonoEdo INTEGER, VoluntadSometimiento INTEGER, Antecedentes INTEGER, MedidasNoPrivativas INTEGER, Escala INTEGER, Folio TEXT)";
     //endregion
 
     //region Tabla entrevistador
