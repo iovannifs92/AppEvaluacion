@@ -55,19 +55,19 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     //endregion
 
     //region Tabla imputado_datos_historial_escolar_laboral
-    private static final String CREATE_TABLE_IMPUTADOS_HISTORIAL_ESCOLAR_LABORAL="CREATE TABLE imputado_datos_historial_escolar_laboral (_id INTEGER PRIMARY KEY AUTOINCREMENT," +
+    private static final String CREATE_TABLE_IMPUTADO_HISTORIAL_ESCOLAR_LABORAL="CREATE TABLE imputado_datos_historial_escolar_laboral (_id INTEGER PRIMARY KEY AUTOINCREMENT," +
             "e48 TEXT, e49 TEXT, e50 TEXT, e51 TEXT, e52 TEXT, e53 TEXT, e54 TEXT, e55 TEXT, e56 TEXT, e57 TEXT, e58 TEXT, e51_1 TEXT, e59 TEXT, Folio TEXT)";
     //endregion
 
-    //region Tabla imputados_datos_abandono_estado
-    private static final String CREATE_TABLE_IMPUTADOS_ABANDONO_ESTADO="CREATE TABLE imputados_datos_abandono_estado (_id INTEGER PRIMARY KEY AUTOINCREMENT," +
+    //region Tabla imputado_datos_abandono_estado
+    private static final String CREATE_TABLE_IMPUTADO_ABANDONO_ESTADO="CREATE TABLE imputado_datos_abandono_estado (_id INTEGER PRIMARY KEY AUTOINCREMENT," +
             "e60 TEXT, e61 TEXT, e62 TEXT, e63 TEXT, e64 TEXT, e65 TEXT, e66 TEXT, e67 TEXT, e68 TEXT, e69 TEXT, e70 TEXT, e71 TEXT, e72 TEXT," +
             "e67_1 TEXT, e68_1 TEXT, e69_1 TEXT, e70_1 TEXT, e71_1 TEXT, e72_1 TEXT, e73 TEXT, e74 TEXT, e75 TEXT, e76 TEXT, e77 TEXT, e78 TEXT," +
             "e74_1 TEXT, e75_1 TEXT, e76_1 TEXT, e77_1 TEXT, e78_1 TEXT, e79 TEXT, e80 TEXT, e81 TEXT, Folio TEXT)";
     //endregion
 
     //region Tabla imputado_datos_salud
-    private static final String CREATE_TABLE_IMPUTADOS_SALUD="CREATE TABLE imputado_datos_salud (_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+    private static final String CREATE_TABLE_IMPUTADO_SALUD="CREATE TABLE imputado_datos_salud (_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "e82 TEXT, e90_alcohol TEXT, e91_alcohol TEXT, e92_alcohol TEXT, e83 TEXT, e90_tabaco TEXT, e91_tabaco TEXT, e92_tabaco TEXT," +
             "e84 TEXT, e90_marihuana TEXT, e91_marihuana TEXT, e92_marihuana TEXT, e85 TEXT, e90_pastillas TEXT, e91_pastillas TEXT, e92_pastillas TEXT," +
             "e86 TEXT, e90_solventes TEXT, e91_solventes TEXT, e92_solventes TEXT, e87 TEXT, e90_cristal TEXT, e91_cristal TEXT, e92_cristal TEXT," +
@@ -123,9 +123,9 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_IMPUTADO_DATOS_DOMICILIO);
         db.execSQL(CREATE_TABLE_IMPUTADO_DATOS_HABITANTES);
         db.execSQL(CREATE_TABLE_IMPUTADO_DATOS_REFERENCIAS);
-        db.execSQL(CREATE_TABLE_IMPUTADOS_HISTORIAL_ESCOLAR_LABORAL);
-        db.execSQL(CREATE_TABLE_IMPUTADOS_ABANDONO_ESTADO);
-        db.execSQL(CREATE_TABLE_IMPUTADOS_SALUD);
+        db.execSQL(CREATE_TABLE_IMPUTADO_HISTORIAL_ESCOLAR_LABORAL);
+        db.execSQL(CREATE_TABLE_IMPUTADO_ABANDONO_ESTADO);
+        db.execSQL(CREATE_TABLE_IMPUTADO_SALUD);
         db.execSQL(CREATE_TABLE_VERIFICACION_OBSERVACIONES);
         db.execSQL(CREATE_TABLE_VERIFICACION_ENTREVISTADO);
         db.execSQL(CREATE_TABLE_IMPUTADO_DATOS_VICTIMA);
@@ -371,7 +371,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         dato.put("e80", e80);
         dato.put("e81", e81);
         dato.put("Folio", folio);
-        db.insert("imputados_datos_abandono_estado", null, dato);
+        db.insert("imputado_datos_abandono_estado", null, dato);
     }
     //endregion
 
@@ -811,7 +811,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         Cursor c=db.rawQuery("select _id, e60, e61, e62, e63, e64, e65, e66, e67, e68, e69, e70, " +
                 "e71, e72, e67_1, e68_1, e69_1, e70_1, e71_1, e72_1, e73, e74, e75, e76, e77, e78, " +
                 "e74_1, e75_1, e76_1, e77_1, e78_1, e79, e80, e81, Folio" +
-                "  from imputados_datos_abandono_estado",  null);
+                "  from imputado_datos_abandono_estado",  null);
         if (c != null && c.getCount()>0) {
             c.moveToFirst();
             do {

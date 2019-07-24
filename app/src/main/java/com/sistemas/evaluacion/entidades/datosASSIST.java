@@ -1,5 +1,20 @@
 package com.sistemas.evaluacion.entidades;
 
+//region Diccionario
+//da.pa as Sumatoria_Tabaco,
+//da.pb as Sumatoria_Alchohol,
+//da.pc as Sumatoria_Cannabis,
+//da.pd as Sumatoria_Cocaína,
+//da.pe as Sumatoria_Anfetaminas,
+//da.pf as Sumatoria_Inhalantes,
+//da.pg as Sumatoria_Pastillas,
+//da.ph as Sumatoria_Alucinogenos,
+//da.pi as Sumatoria_Opiaceos,
+//da.pj as Sumatoria_Otros,
+//da.jOtro as Otra_Sustancia,
+//da.e8 as Consumido_Droga_Inyectada,
+//endregion
+
 public class datosASSIST {
     int id;
     String pa, pb, pc, pd, pe, pf, pg, ph, pi, pj, jOtro, e8, Folio;
