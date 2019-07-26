@@ -25,6 +25,8 @@ import java.util.Date;
 import java.util.Locale;
 import com.sistemas.evaluacion.entidades.datosGenerales;
 
+import static java.lang.Thread.sleep;
+
 public class entrevista extends AppCompatActivity implements View.OnClickListener {
 
     public static SharedPreferences preference;
@@ -1728,6 +1730,9 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
             @Override
             public void onClick(View v) {
 
+                //Disable the button to avoid registering several clicks
+                btnGuardar.setEnabled(false);
+
                 //region Obtener Valores de formulario
 
                 //region 1. DATOS GENERALES
@@ -2025,6 +2030,9 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
 
                     Intent intent = new Intent(v.getContext(), MainMenu.class);
                     startActivity(intent);
+                }
+                else{
+                    btnGuardar.setEnabled(true);
                 }
                 //endregion
 
