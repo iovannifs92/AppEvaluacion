@@ -1,6 +1,10 @@
 package com.sistemas.evaluacion;
 
 import android.content.Intent;
+import android.net.Uri;
+import android.os.Environment;
+import android.provider.MediaStore;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,12 +27,21 @@ import com.sistemas.evaluacion.entidades.datosReferencias;
 import com.sistemas.evaluacion.entidades.datosSalud;
 import com.sistemas.evaluacion.entidades.datosVictima;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class verificacion extends AppCompatActivity {
 
     //region Variables Globales
+    static final int REQUEST_IMAGE_CAPTURE = 1;
+    static final int REQUEST_TAKE_PHOTO = 1;
+
+
     private MyOpenHelper db;
+    ArrayList<datosGenerales> lista;
 
     //region Spinner
     private Spinner sVerificationName, sP108;
@@ -120,7 +133,8 @@ public class verificacion extends AppCompatActivity {
     //endregion
 
     //region Button
-    private Button btnDatosGenerales, btnDatosFamiliares, btnHistorialEscolar, btnHistorialLaboral, btnFAEstado, btnSalud, btnGuardarObservaciones;
+    private Button btnDatosGenerales, btnDatosFamiliares, btnHistorialEscolar, btnHistorialLaboral, btnFAEstado, btnSalud,
+            btnPhoto, btnGuardarObservaciones;
     //endregion
 
     //region String
@@ -139,6 +153,8 @@ public class verificacion extends AppCompatActivity {
             r92_otroConsumo, r94, r95, r109, r110;
 
     String[] opers = {"Verificar", "Editar"};
+
+    String currentPhotoPath;
     //endregion
     //endregion
 
@@ -150,7 +166,6 @@ public class verificacion extends AppCompatActivity {
         db=new MyOpenHelper(this);
         db.getReadableDatabase();
 
-        ArrayList<datosGenerales> lista;
         lista = db.getDatosGenerales();
 
         //region Inicializa un spinner con los nombres de los entrevistados
@@ -6601,6 +6616,14 @@ public class verificacion extends AppCompatActivity {
                     }
                 });
                 //endregion
+
+                btnPhoto = (Button) findViewById(R.id.btnPhoto);
+                btnPhoto.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dispatchTakePictureIntent();
+                    }
+                });
             }
 
             @Override
@@ -6742,5 +6765,54 @@ public class verificacion extends AppCompatActivity {
             }
         });
         //endregion
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            //Show toast and exit to main menu after image has been saved
+            Toast.makeText(getApplicationContext(), "Foto Guardada", Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(getApplicationContext(), MainMenu.class);
+            startActivity(intent);
+        }
+    }
+
+    private File createImageFile() throws IOException {
+        // Create an image file name in /storage/sdcard0/Android/data/com.sistemas.evaluacion/files/Pictures/
+        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        int pos = sVerificationName.getSelectedItemPosition();
+        String folio = lista.get(pos).getFolio();
+        File image = new File(storageDir, "VERIFICACION-" + folio + ".png");
+
+        // Save a file: path for use with ACTION_VIEW intents
+        currentPhotoPath = image.getAbsolutePath();
+        return image;
+    }
+
+    private void dispatchTakePictureIntent() {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        // Ensure that there's a camera activity to handle the intent
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+            // Create the File where the photo should go
+            File photoFile = null;
+            try {
+                photoFile = createImageFile();
+            } catch (IOException ex) {
+                // Error occurred while creating the File
+                ex.printStackTrace();
+            }
+            // Continue only if the File was successfully created
+            if (photoFile != null) {
+                Uri photoURI = FileProvider.getUriForFile(this,
+                        "com.sistemas.evaluacion",
+                        photoFile);
+                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+                startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
+            }
+            else{
+                Toast.makeText(getApplicationContext(), "La foto no se pudo crear", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 }
