@@ -1,6 +1,7 @@
 package com.sistemas.evaluacion;
 
 import android.content.Intent;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,12 +25,18 @@ import com.sistemas.evaluacion.entidades.datosObservaciones;
 
 import org.w3c.dom.Text;
 
+import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
 import com.itextpdf.text.BaseColor;
+
+import net.glxn.qrgen.android.QRCode;
 
 public class Instrumento extends AppCompatActivity implements View.OnClickListener {
 
@@ -38,6 +45,7 @@ public class Instrumento extends AppCompatActivity implements View.OnClickListen
     private String [] antecedentes = {"Absuelto, sin sentencia o termino de prescripción", "Vinculado a proceso, con proceso vigente", "Sentenciado"};
     private String [] medidas = {"No se impusieron medidas", "Si", "No"};
     private String[] header={"ASPECTOS", "VALORACIÓN"};
+    private String folio;
     private Integer [] V4 = {-3, 3};
     private Integer [] V5 = {-2, 1, 2};
     private Integer [] V6 = {0, -1, 2};
@@ -61,6 +69,7 @@ public class Instrumento extends AppCompatActivity implements View.OnClickListen
         db.getReadableDatabase();
 
         lista = db.getDatosGenerales();
+
 
         final ArrayList<datosDomicilio> addresses;
         addresses = db.getDomicilios();
@@ -384,7 +393,7 @@ public class Instrumento extends AppCompatActivity implements View.OnClickListen
             @Override
             public void onClick(View v) {
                 int pos = sName.getSelectedItemPosition();
-                String folio = lista.get(Idx.get(pos)).getFolio();
+                folio = lista.get(Idx.get(pos)).getFolio();
                 db.insertarEvaluacionRiesgos(v1, v2, v3, v4, v5, v6, total, folio);
 
                 db.updateTable("imputado_datos_generales", "TieneEvaluacion", "SI", folio);
@@ -422,16 +431,30 @@ public class Instrumento extends AppCompatActivity implements View.OnClickListen
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btnGenerarReporte:
+                int pos = sName.getSelectedItemPosition();
+                String folio = lista.get(Idx.get(pos)).getFolio();
+                //region Generar Código QR
+                String texto = folio;
+                if (texto.isEmpty()) return;
+                ByteArrayOutputStream byteArrayOutputStream = QRCode.from(texto).withSize(200, 200).stream();
+                FileOutputStream fos;
+                try {
+                    fos = new FileOutputStream(Environment.getExternalStorageDirectory() + "/PDF/codigo.png");
+                    byteArrayOutputStream.writeTo(fos);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                //endregion
+
                 SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy", Locale.getDefault());
                 Date date = new Date();
                 String fecha = dateFormat.format(date);
 
-                int pos = sName.getSelectedItemPosition();
-                String folio = lista.get(Idx.get(pos)).getFolio();;
-
                 templatePDF=new TemplatePDF(getApplicationContext());
                 templatePDF.openDocument();
-                templatePDF.addImgName("membrete.png");
+                templatePDF.addImgName();
                 templatePDF.addMetaData("Instrumento de Evaluación", "FOLIO", "SCORPION");
                 templatePDF.addTitles("INSTRUMENTO DE EVALUACIÓN PARA DELITOS CONTRA LA SALUD PÚBLICA, FEDERALES Y CUYA VÍCTIMA ES LA SOCIEDAD",folio, fecha);
                 templatePDF.createTable(header, getImputado());
@@ -448,6 +471,7 @@ public class Instrumento extends AppCompatActivity implements View.OnClickListen
                     templatePDF.addParagraph(r, BaseColor.YELLOW);
                 }
 
+                templatePDF.addImgQR();
                 templatePDF.closeDocument();
                 templatePDF.appViewPDF(this);
                 break;

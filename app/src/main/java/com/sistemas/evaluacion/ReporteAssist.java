@@ -1,5 +1,6 @@
 package com.sistemas.evaluacion;
 
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,10 +10,17 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sistemas.evaluacion.entidades.datosASSIST;
 import com.sistemas.evaluacion.entidades.datosGenerales;
 
+import net.glxn.qrgen.android.QRCode;
+
+import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -122,8 +130,6 @@ public class ReporteAssist extends AppCompatActivity implements View.OnClickList
                 folio=P.get(position).getFolio();
                 p8=P.get(position).getE8();
                 //endregion
-
-
 
                 jOtro = P.get(position).getJOtro();
                 tvOtro.setText("Otros, especifique: " + jOtro);
@@ -334,17 +340,33 @@ public class ReporteAssist extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btnGenerarReporte:
+                //region Generar Código QR
+                String texto = folio;
+                if (texto.isEmpty()) return;
+                ByteArrayOutputStream byteArrayOutputStream = QRCode.from(texto).withSize(200, 200).stream();
+                FileOutputStream fos;
+                try {
+                    fos = new FileOutputStream(Environment.getExternalStorageDirectory() + "/PDF/codigo.png");
+                    byteArrayOutputStream.writeTo(fos);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                //endregion
+
                 SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy", Locale.getDefault());
                 Date date = new Date();
                 String fecha = dateFormat.format(date);
 
                 templatePDF=new TemplatePDF(getApplicationContext());
                 templatePDF.openDocument();
-                templatePDF.addImgName("membrete.png");
+                templatePDF.addImgName();
                 templatePDF.addMetaData("Reporte ASSIST", "FOLIO", "SCORPION");
                 templatePDF.addTitles("Reporte ASSIST",folio, fecha);
                 templatePDF.createTable(header, getImputado());
                 templatePDF.addParagraph("Ha consumido droga por vía inyectada: "+p8);
+                templatePDF.addImgQR();
                 templatePDF.closeDocument();
                 templatePDF.appViewPDF(this);
                 break;

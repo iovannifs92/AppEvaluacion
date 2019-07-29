@@ -162,13 +162,27 @@ public class TemplatePDF {
 
     }
 
-    public void addImgName (String imageName) {
+    public void addImgName () {
         try{
-            String r=(Environment.getExternalStorageDirectory().toString()+ File.separator +"PDF" + File.separator + imageName);
+            String r=(Environment.getExternalStorageDirectory().toString()+ File.separator +"PDF" + File.separator + "membrete.png");
             Image image = Image.getInstance(r);//"/storage/emulated/Images" + File.separator + imageName);
             image.scaleAbsolute(PageSize.LETTER);
             image.setAbsolutePosition(0,0);
             image.setAlignment(Element.ALIGN_CENTER);
+            document.add(image);
+        }catch (Exception e){
+            Log.e("addImgName ", e.toString());
+        }
+
+    }
+
+    public void addImgQR () {
+        try{
+            String r=(Environment.getExternalStorageDirectory().toString()+ File.separator +"PDF" + File.separator + "codigo.png");
+            Image image = Image.getInstance(r);//"/storage/emulated/Images" + File.separator + imageName);
+            image.scaleAbsolute(100, 100);
+            //image.setAbsolutePosition(0,0);
+            image.setAlignment(Element.ALIGN_BOTTOM);
             document.add(image);
         }catch (Exception e){
             Log.e("addImgName ", e.toString());
