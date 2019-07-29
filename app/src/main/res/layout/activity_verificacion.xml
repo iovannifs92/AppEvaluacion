@@ -4651,7 +4651,7 @@
 					android:id="@+id/btnPhoto"
 					android:layout_width="match_parent"
 					android:layout_height="100dp"
-					android:text="Subir Verificacion"
+					android:text="Añadir Fotografía"
 					android:layout_marginTop="20dp"
 					android:theme="@style/PrimaryColoredButton"
 					android:textColor="#FFFFFF"

@@ -6770,11 +6770,8 @@ public class verificacion extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-            //Show toast and exit to main menu after image has been saved
+            //Show toast after image has been saved
             Toast.makeText(getApplicationContext(), "Foto Guardada", Toast.LENGTH_SHORT).show();
-
-            Intent intent = new Intent(getApplicationContext(), MainMenu.class);
-            startActivity(intent);
         }
     }
 
@@ -6783,7 +6780,13 @@ public class verificacion extends AppCompatActivity {
         File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
         int pos = sVerificationName.getSelectedItemPosition();
         String folio = lista.get(pos).getFolio();
-        File image = new File(storageDir, "VERIFICACION-" + folio + ".png");
+        File image;
+        Integer counter = 0;
+        do {
+            counter++;
+            image = new File(storageDir, "VERIFICACION-" + folio + "-" + counter.toString() + ".png");
+        }
+        while(image.exists());
 
         // Save a file: path for use with ACTION_VIEW intents
         currentPhotoPath = image.getAbsolutePath();
