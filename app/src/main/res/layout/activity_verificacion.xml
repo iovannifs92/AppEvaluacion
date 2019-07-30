@@ -4732,13 +4732,14 @@
 					android:id="@+id/btnPhoto"
 					android:layout_width="match_parent"
 					android:layout_height="100dp"
-					android:text="Añadir Fotografía"
-					android:layout_marginTop="20dp"
-					android:theme="@style/PrimaryColoredButton"
-					android:textColor="#FFFFFF"
-                    android:textSize="30dp"
 					android:layout_gravity="center"
-					android:drawableRight="@drawable/ic_photo_camera_white_30dp" />
+					android:layout_marginTop="20dp"
+					android:drawableRight="@drawable/ic_photo_camera_white_30dp"
+					android:drawablePadding="3dp"
+					android:text="Añadir Fotografía"
+					android:textColor="#FFFFFF"
+					android:textSize="30dp"
+					android:theme="@style/PrimaryColoredButton" />
 
 				<Button
 					android:id="@+id/btnGuardarObservaciones"
