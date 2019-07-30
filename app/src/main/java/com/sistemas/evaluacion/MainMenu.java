@@ -164,6 +164,10 @@ public class MainMenu extends AppCompatActivity
                 Intent intent7 = new Intent(this, Instrumento.class);
                 startActivity(intent7);
                 break;
+            case R.id.nav_qr:
+                Intent intent8 = new Intent(this, QRVerify.class);
+                startActivity(intent8);
+                break;
         }
 
         /*if (id == R.id.nav_verificacion) {

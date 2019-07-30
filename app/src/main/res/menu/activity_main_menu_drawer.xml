@@ -27,12 +27,12 @@
             android:id="@+id/nav_instrumento"
             android:icon="@drawable/ic_view_stream_rotated_black_24dp"
             android:title="Evaluación de Riesgo" />
-        <!--
+
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        -->
+            android:id="@+id/nav_qr"
+            android:icon="@drawable/ic_camera_black_24dp"
+            android:title="Verifica QR" />
+
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
