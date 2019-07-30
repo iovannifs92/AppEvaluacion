@@ -58,8 +58,8 @@ public class verificacion extends AppCompatActivity {
             tvP31_2, tvP32, tvP33, tvP34, tvP35, tvP36, tvP37, tvP33_1, tvP34_1, tvP35_1, tvP36_1, tvP37_1, tvP33_2, tvP34_2,
             tvP35_2, tvP36_2, tvP37_2, tvP33_3, tvP34_3, tvP35_3, tvP36_3, tvP37_3, tvP38, tvP39,
             tvP40, tvP41, tvP42, tvP43, tvP39_1, tvP40_1, tvP41_1, tvP42_1, tvP43_1, tvP44, tvP45,
-            tvP46, tvP47, tvP48, tvP49, tvP50, tvP51, tvP52, tvP53, tvP54, tvP55, tvP57, tvP56,
-            tvP58, tvP51_1, tvP59, tvP60, tvP61, tvP62, tvP63, tvP64, tvP65, tvP66, tvP67, tvP68, tvP69,
+            tvP46, tvP47, tvP48, tvP49, tvP50, tvP51, tvP52, tvP53, tvP54, tvP55, tvP57, tvP56, tvP56_1,
+            tvP58, tvP51_1, tvP59, tvP60, tvP61, tvP62, tvP63, tvP64, tvP64_1, tvP65, tvP65_1, tvP66, tvP67, tvP68, tvP69,
             tvP70, tvP71, tvP72, tvP67_1, tvP68_1, tvP69_1, tvP70_1, tvP71_1, tvP72_1, tvP73, tvP74,
             tvP75, tvP76, tvP77, tvP78, tvP74_1, tvP75_1, tvP76_1, tvP77_1, tvP78_1, tvP79, tvP80,
             tvP81, tvP82, tvP90_alcohol, tvP91_alcohol, tvP92_alcohol, tvP83, tvP90_tabaco,
@@ -76,8 +76,8 @@ public class verificacion extends AppCompatActivity {
             tvO31_2, tvO32, tvO33, tvO34, tvO35, tvO36, tvO37, tvO33_1, tvO34_1, tvO35_1, tvO36_1, tvO37_1, tvO33_2, tvO34_2,
             tvO35_2, tvO36_2, tvO37_2, tvO33_3, tvO34_3, tvO35_3, tvO36_3, tvO37_3, tvO38, tvO39,
             tvO40, tvO41, tvO42, tvO43, tvO39_1, tvO40_1, tvO41_1, tvO42_1, tvO43_1, tvO44, tvO45,
-            tvO46, tvO47, tvO48, tvO49, tvO50, tvO51, tvO52, tvO53, tvO54, tvO55, tvO57, tvO56,
-            tvO58, tvO51_1, tvO59, tvO60, tvO61, tvO62, tvO63, tvO64, tvO65, tvO66, tvO67, tvO68, tvO69,
+            tvO46, tvO47, tvO48, tvO49, tvO50, tvO51, tvO52, tvO53, tvO54, tvO55, tvO57, tvO56, tvO56_1,
+            tvO58, tvO51_1, tvO59, tvO60, tvO61, tvO62, tvO63, tvO64, tvO64_1, tvO65, tvO65_1, tvO66, tvO67, tvO68, tvO69,
             tvO70, tvO71, tvO72, tvO67_1, tvO68_1, tvO69_1, tvO70_1, tvO71_1, tvO72_1, tvO73, tvO74,
             tvO75, tvO76, tvO77, tvO78, tvO74_1, tvO75_1, tvO76_1, tvO77_1, tvO78_1, tvO79, tvO80,
             tvO81, tvO82, tvO90_alcohol, tvO91_alcohol, tvO92_alcohol, tvO83, tvO90_tabaco,
@@ -95,8 +95,8 @@ public class verificacion extends AppCompatActivity {
             etP31_2, etP32, etP33, etP34, etP35, etP36, etP37, etP33_1, etP34_1, etP35_1, etP36_1, etP37_1, etP33_2, etP34_2,
             etP35_2, etP36_2, etP37_2, etP33_3, etP34_3, etP35_3, etP36_3, etP37_3, etP38, etP39,
             etP40, etP41, etP42, etP43, etP39_1, etP40_1, etP41_1, etP42_1, etP43_1, etP44, etP45,
-            etP46, etP47, etP48, etP49, etP50, etP51, etP52, etP53, etP54, etP55, etP57, etP56,
-            etP58, etP51_1, etP59, etP60, etP61, etP62, etP63, etP64, etP65, etP66, etP67, etP68, etP69,
+            etP46, etP47, etP48, etP49, etP50, etP51, etP52, etP53, etP54, etP55, etP57, etP56, etP56_1,
+            etP58, etP51_1, etP59, etP60, etP61, etP62, etP63, etP64, etP64_1, etP65, etP65_1, etP66, etP67, etP68, etP69,
             etP70, etP71, etP72, etP67_1, etP68_1, etP69_1, etP70_1, etP71_1, etP72_1, etP73, etP74,
             etP75, etP76, etP77, etP78, etP74_1, etP75_1, etP76_1, etP77_1, etP78_1, etP79, etP80,
             etP81, etP82, etP90_alcohol, etP91_alcohol, etP92_alcohol, etP83, etP90_tabaco,
@@ -116,8 +116,8 @@ public class verificacion extends AppCompatActivity {
             ctvP36_2, ctvP37_2, ctvP33_3, ctvP34_3, ctvP35_3, ctvP36_3, ctvP37_3, ctvP38, ctvP39,
             ctvP40, ctvP41, ctvP42, ctvP43, ctvP39_1, ctvP40_1, ctvP41_1, ctvP42_1, ctvP43_1,
             ctvP44, ctvP45, ctvP46, ctvP47, ctvP48, ctvP49, ctvP50, ctvP51, ctvP52, ctvP53, ctvP54,
-            ctvP55, ctvP57, ctvP56, ctvP58, ctvP51_1, ctvP59, ctvP60, ctvP61, ctvP62, ctvP63, ctvP64, ctvP65,
-            ctvP66, ctvP67, ctvP68, ctvP69, ctvP70, ctvP71, ctvP72, ctvP67_1, ctvP68_1, ctvP69_1,
+            ctvP55, ctvP57, ctvP56, ctvP56_1, ctvP58, ctvP51_1, ctvP59, ctvP60, ctvP61, ctvP62, ctvP63, ctvP64, ctvP64_1,
+            ctvP65, ctvP65_1, ctvP66, ctvP67, ctvP68, ctvP69, ctvP70, ctvP71, ctvP72, ctvP67_1, ctvP68_1, ctvP69_1,
             ctvP70_1, ctvP71_1, ctvP72_1, ctvP73, ctvP74, ctvP75, ctvP76, ctvP77, ctvP78, ctvP74_1,
             ctvP75_1, ctvP76_1, ctvP77_1, ctvP78_1, ctvP79, ctvP80, ctvP81, ctvP82, ctvP90_alcohol,
             ctvP91_alcohol, ctvP92_alcohol, ctvP83, ctvP90_tabaco, ctvP91_tabaco, ctvP92_tabaco,
@@ -142,8 +142,8 @@ public class verificacion extends AppCompatActivity {
             r19, r20, r21_1, r21, r22, r23, r24, r25, r26, r27, r28, r101, r102, r103, r104, r105, r29, r30, r31, r31_1,
             r31_2, r32, r33, r34, r35, r36, r37, r33_1, r34_1, r35_1, r36_1, r37_1, r33_2, r34_2, r35_2, r36_2, r37_2,
             r33_3, r34_3, r35_3, r36_3, r37_3, r38, r39, r40, r41, r42, r43, r39_1, r40_1, r41_1,
-            r42_1, r43_1, r44, r45, r46, r47, r48, r49, r50, r51, r52, r53, r54, r55, r57, r56, r58,
-            r51_1, r59, r60, r61, r62, r63, r64, r65, r66, r67, r68, r69, r70, r71, r72, r67_1, r68_1,
+            r42_1, r43_1, r44, r45, r46, r47, r48, r49, r50, r51, r52, r53, r54, r55, r57, r56, r56_1, r58,
+            r51_1, r59, r60, r61, r62, r63, r64, r64_1, r65, r65_1, r66, r67, r68, r69, r70, r71, r72, r67_1, r68_1,
             r69_1, r70_1, r71_1, r72_1, r73, r74, r75, r76, r77, r78, r74_1, r75_1, r76_1, r77_1,
             r78_1, r79, r80, r81, r82, r90_alcohol, r91_alcohol, r92_alcohol, r83, r90_tabaco,
             r91_tabaco, r92_tabaco, r84, r90_marihuana, r91_marihuana, r92_marihuana, r85,
@@ -595,6 +595,10 @@ public class verificacion extends AppCompatActivity {
                 ctvP56 = (CheckedTextView) findViewById(R.id.ctvP56);
                 tvO56 = (TextView)findViewById(R.id.tvO56);
                 etP56 = (EditText)findViewById(R.id.etP56);
+                tvP56_1 = (TextView) findViewById(R.id.tvP56_1);
+                ctvP56_1 = (CheckedTextView) findViewById(R.id.ctvP56_1);
+                tvO56_1 = (TextView)findViewById(R.id.tvO56_1);
+                etP56_1 = (EditText)findViewById(R.id.etP56_1);
                 tvP58 = (TextView) findViewById(R.id.tvP58);
                 ctvP58 = (CheckedTextView) findViewById(R.id.ctvP58);
                 tvO58 = (TextView)findViewById(R.id.tvO58);
@@ -630,10 +634,18 @@ public class verificacion extends AppCompatActivity {
                 ctvP64 = (CheckedTextView) findViewById(R.id.ctvP64);
                 tvO64 = (TextView)findViewById(R.id.tvO64);
                 etP64 = (EditText)findViewById(R.id.etP64);
+                tvP64_1 = (TextView) findViewById(R.id.tvP64_1);
+                ctvP64_1 = (CheckedTextView) findViewById(R.id.ctvP64_1);
+                tvO64_1 = (TextView)findViewById(R.id.tvO64_1);
+                etP64_1 = (EditText)findViewById(R.id.etP64_1);
                 tvP65 = (TextView) findViewById(R.id.tvP65);
                 ctvP65 = (CheckedTextView) findViewById(R.id.ctvP65);
                 tvO65 = (TextView)findViewById(R.id.tvO65);
                 etP65 = (EditText)findViewById(R.id.etP65);
+                tvP65_1 = (TextView) findViewById(R.id.tvP65_1);
+                ctvP65_1 = (CheckedTextView) findViewById(R.id.ctvP65_1);
+                tvO65_1 = (TextView)findViewById(R.id.tvO65_1);
+                etP65_1 = (EditText)findViewById(R.id.etP65_1);
                 tvP66 = (TextView) findViewById(R.id.tvP66);
                 ctvP66 = (CheckedTextView) findViewById(R.id.ctvP66);
                 tvO66 = (TextView)findViewById(R.id.tvO66);
@@ -1730,6 +1742,13 @@ public class verificacion extends AppCompatActivity {
                 etP56.setVisibility(View.GONE);
                 etP56.setText("");
 
+                ctvP56_1.setText(historialEscolarLaboral.get(pos).getE56_1());
+                ctvP56_1.setChecked(true);
+                ctvP56_1.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                tvO56_1.setVisibility(View.GONE);
+                etP56_1.setVisibility(View.GONE);
+                etP56_1.setText("");
+
                 ctvP58.setText(historialEscolarLaboral.get(pos).getE58());
                 ctvP58.setChecked(true);
                 ctvP58.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
@@ -1764,6 +1783,8 @@ public class verificacion extends AppCompatActivity {
                     ctvP57.setVisibility(View.VISIBLE);
                     tvP56.setVisibility(View.VISIBLE);
                     ctvP56.setVisibility(View.VISIBLE);
+                    tvP56_1.setVisibility(View.VISIBLE);
+                    ctvP56_1.setVisibility(View.VISIBLE);
                     tvP58.setVisibility(View.VISIBLE);
                     ctvP58.setVisibility(View.VISIBLE);
                     tvP59.setVisibility(View.GONE);
@@ -1782,6 +1803,8 @@ public class verificacion extends AppCompatActivity {
                     ctvP57.setVisibility(View.GONE);
                     tvP56.setVisibility(View.GONE);
                     ctvP56.setVisibility(View.GONE);
+                    tvP56_1.setVisibility(View.GONE);
+                    ctvP56_1.setVisibility(View.GONE);
                     tvP58.setVisibility(View.GONE);
                     ctvP58.setVisibility(View.GONE);
                     tvP59.setVisibility(View.VISIBLE);
@@ -1825,12 +1848,26 @@ public class verificacion extends AppCompatActivity {
                 etP64.setVisibility(View.GONE);
                 etP64.setText("");
 
+                ctvP64_1.setText(listaAbandonoEstado.get(pos).getE64_1());
+                ctvP64_1.setChecked(true);
+                ctvP64_1.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                tvO64_1.setVisibility(View.GONE);
+                etP64_1.setVisibility(View.GONE);
+                etP64_1.setText("");
+
                 ctvP65.setText(listaAbandonoEstado.get(pos).getE65());
                 ctvP65.setChecked(true);
                 ctvP65.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
                 tvO65.setVisibility(View.GONE);
                 etP65.setVisibility(View.GONE);
                 etP65.setText("");
+
+                ctvP65_1.setText(listaAbandonoEstado.get(pos).getE65_1());
+                ctvP65_1.setChecked(true);
+                ctvP65_1.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                tvO65_1.setVisibility(View.GONE);
+                etP65_1.setVisibility(View.GONE);
+                etP65_1.setText("");
 
                 if(listaAbandonoEstado.get(pos).getE60().equals("SI")) {
                     tvP61.setVisibility(View.VISIBLE);
@@ -1841,8 +1878,12 @@ public class verificacion extends AppCompatActivity {
                     ctvP63.setVisibility(View.VISIBLE);
                     tvP64.setVisibility(View.VISIBLE);
                     ctvP64.setVisibility(View.VISIBLE);
+                    tvP64_1.setVisibility(View.VISIBLE);
+                    ctvP64_1.setVisibility(View.VISIBLE);
                     tvP65.setVisibility(View.VISIBLE);
                     ctvP65.setVisibility(View.VISIBLE);
+                    tvP65_1.setVisibility(View.VISIBLE);
+                    ctvP65_1.setVisibility(View.VISIBLE);
                 }
                 else{
                     tvP61.setVisibility(View.GONE);
@@ -1853,8 +1894,12 @@ public class verificacion extends AppCompatActivity {
                     ctvP63.setVisibility(View.GONE);
                     tvP64.setVisibility(View.GONE);
                     ctvP64.setVisibility(View.GONE);
+                    tvP64_1.setVisibility(View.GONE);
+                    ctvP64_1.setVisibility(View.GONE);
                     tvP65.setVisibility(View.GONE);
                     ctvP65.setVisibility(View.GONE);
+                    tvP65_1.setVisibility(View.GONE);
+                    ctvP65_1.setVisibility(View.GONE);
                 }
                 //endregion
 
@@ -4173,6 +4218,24 @@ public class verificacion extends AppCompatActivity {
                     }
                 });
 
+                ctvP56_1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (ctvP56_1.isChecked()) {
+                            ctvP56_1.setChecked(false);
+                            ctvP56_1.setCheckMarkDrawable(R.drawable.ic_check_box_outline_blank_black_24dp);
+                            tvO56_1.setVisibility(View.VISIBLE);
+                            etP56_1.setVisibility(View.VISIBLE);
+                        }
+                        else {
+                            ctvP56_1.setChecked(true);
+                            ctvP56_1.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                            tvO56_1.setVisibility(View.GONE);
+                            etP56_1.setVisibility(View.GONE);
+                        }
+                    }
+                });
+
                 ctvP58.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -4317,6 +4380,24 @@ public class verificacion extends AppCompatActivity {
                     }
                 });
 
+                ctvP64_1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (ctvP64_1.isChecked()) {
+                            ctvP64_1.setChecked(false);
+                            ctvP64_1.setCheckMarkDrawable(R.drawable.ic_check_box_outline_blank_black_24dp);
+                            tvO64_1.setVisibility(View.VISIBLE);
+                            etP64_1.setVisibility(View.VISIBLE);
+                        }
+                        else {
+                            ctvP64_1.setChecked(true);
+                            ctvP64_1.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                            tvO64_1.setVisibility(View.GONE);
+                            etP64_1.setVisibility(View.GONE);
+                        }
+                    }
+                });
+
                 ctvP65.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -4331,6 +4412,24 @@ public class verificacion extends AppCompatActivity {
                             ctvP65.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
                             tvO65.setVisibility(View.GONE);
                             etP65.setVisibility(View.GONE);
+                        }
+                    }
+                });
+
+                ctvP65_1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (ctvP65_1.isChecked()) {
+                            ctvP65_1.setChecked(false);
+                            ctvP65_1.setCheckMarkDrawable(R.drawable.ic_check_box_outline_blank_black_24dp);
+                            tvO65_1.setVisibility(View.VISIBLE);
+                            etP65_1.setVisibility(View.VISIBLE);
+                        }
+                        else {
+                            ctvP65_1.setChecked(true);
+                            ctvP65_1.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                            tvO65_1.setVisibility(View.GONE);
+                            etP65_1.setVisibility(View.GONE);
                         }
                     }
                 });
@@ -5552,6 +5651,7 @@ public class verificacion extends AppCompatActivity {
                         r55 = etP55.getText().toString().toUpperCase();
                         r57 = etP57.getText().toString().toUpperCase();
                         r56 = etP56.getText().toString().toUpperCase();
+                        r56_1 = etP56_1.getText().toString().toUpperCase();
                         r58 = etP58.getText().toString().toUpperCase();
                         r51_1 = etP51_1.getText().toString().toUpperCase();
                         r59 = etP59.getText().toString().toUpperCase();
@@ -5560,7 +5660,9 @@ public class verificacion extends AppCompatActivity {
                         r62 = etP62.getText().toString().toUpperCase();
                         r63 = etP63.getText().toString().toUpperCase();
                         r64 = etP64.getText().toString().toUpperCase();
+                        r64_1 = etP64_1.getText().toString().toUpperCase();
                         r65 = etP65.getText().toString().toUpperCase();
+                        r65_1 = etP65_1.getText().toString().toUpperCase();
                         r66 = etP66.getText().toString().toUpperCase();
                         r67 = etP67.getText().toString().toUpperCase();
                         r68 = etP68.getText().toString().toUpperCase();
@@ -5898,6 +6000,9 @@ public class verificacion extends AppCompatActivity {
                             if(ctvP56.isChecked() == false && r56.isEmpty() == false) {
                                 db.insertarObservaciones("e56", r56, historialEscolarLaboral.get(pos).getE56(), folio);
                             }
+                            if(ctvP56_1.isChecked() == false && r56_1.isEmpty() == false) {
+                                db.insertarObservaciones("e56_1", r56_1, historialEscolarLaboral.get(pos).getE56_1(), folio);
+                            }
                             if(ctvP58.isChecked() == false && r58.isEmpty() == false) {
                                 db.insertarObservaciones("e58", r58, historialEscolarLaboral.get(pos).getE58(), folio);
                             }
@@ -5922,8 +6027,14 @@ public class verificacion extends AppCompatActivity {
                             if(ctvP64.isChecked() == false && r64.isEmpty() == false) {
                                 db.insertarObservaciones("e64", r64, listaAbandonoEstado.get(pos).getE64(), folio);
                             }
+                            if(ctvP64_1.isChecked() == false && r64_1.isEmpty() == false) {
+                                db.insertarObservaciones("e64_1", r64_1, listaAbandonoEstado.get(pos).getE64_1(), folio);
+                            }
                             if(ctvP65.isChecked() == false && r65.isEmpty() == false) {
                                 db.insertarObservaciones("e65", r65, listaAbandonoEstado.get(pos).getE65(), folio);
+                            }
+                            if(ctvP65_1.isChecked() == false && r65_1.isEmpty() == false) {
+                                db.insertarObservaciones("e65_1", r65_1, listaAbandonoEstado.get(pos).getE65_1(), folio);
                             }
                             if(ctvP66.isChecked() == false && r66.isEmpty() == false) {
                                 db.insertarObservaciones("e66", r66, listaAbandonoEstado.get(pos).getE66(), folio);
@@ -6385,6 +6496,9 @@ public class verificacion extends AppCompatActivity {
                         if(ctvP56.isChecked() == false && r56.isEmpty() == false) {
                             db.updateTable("imputado_datos_historial_escolar_laboral", "e56", r56, folio);
                         }
+                        if(ctvP56_1.isChecked() == false && r56_1.isEmpty() == false) {
+                            db.updateTable("imputado_datos_historial_escolar_laboral", "e56_1", r56_1, folio);
+                        }
                         if(ctvP58.isChecked() == false && r58.isEmpty() == false) {
                             db.updateTable("imputado_datos_historial_escolar_laboral", "e58", r58, folio);
                         }
@@ -6409,8 +6523,14 @@ public class verificacion extends AppCompatActivity {
                         if(ctvP64.isChecked() == false && r64.isEmpty() == false) {
                             db.updateTable("imputado_datos_abandono_estado", "e64", r64, folio);
                         }
+                        if(ctvP64_1.isChecked() == false && r64_1.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e64_1", r64_1, folio);
+                        }
                         if(ctvP65.isChecked() == false && r65.isEmpty() == false) {
                             db.updateTable("imputado_datos_abandono_estado", "e65", r65, folio);
+                        }
+                        if(ctvP65_1.isChecked() == false && r65_1.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e65_1", r65_1, folio);
                         }
                         if(ctvP66.isChecked() == false && r66.isEmpty() == false) {
                             db.updateTable("imputado_datos_abandono_estado", "e66", r66, folio);
@@ -6769,9 +6889,14 @@ public class verificacion extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-            //Show toast after image has been saved
-            Toast.makeText(getApplicationContext(), "Foto Guardada", Toast.LENGTH_SHORT).show();
+        if (requestCode == REQUEST_IMAGE_CAPTURE) {
+            if (resultCode == RESULT_OK) {
+                //Show toast after image has been saved
+                Toast.makeText(getApplicationContext(), "Foto Guardada", Toast.LENGTH_SHORT).show();
+            }
+            else{
+                Toast.makeText(getApplicationContext(), "La foto no se guardo", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 

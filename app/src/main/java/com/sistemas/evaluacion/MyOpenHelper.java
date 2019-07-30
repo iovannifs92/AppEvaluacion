@@ -56,12 +56,12 @@ public class MyOpenHelper extends SQLiteOpenHelper {
 
     //region Tabla imputado_datos_historial_escolar_laboral
     private static final String CREATE_TABLE_IMPUTADO_HISTORIAL_ESCOLAR_LABORAL="CREATE TABLE imputado_datos_historial_escolar_laboral (_id INTEGER PRIMARY KEY AUTOINCREMENT," +
-            "e48 TEXT, e49 TEXT, e50 TEXT, e51 TEXT, e52 TEXT, e53 TEXT, e54 TEXT, e55 TEXT, e56 TEXT, e57 TEXT, e58 TEXT, e51_1 TEXT, e59 TEXT, Folio TEXT)";
+            "e48 TEXT, e49 TEXT, e50 TEXT, e51 TEXT, e52 TEXT, e53 TEXT, e54 TEXT, e55 TEXT, e56 TEXT, e56_1 TEXT, e57 TEXT, e58 TEXT, e51_1 TEXT, e59 TEXT, Folio TEXT)";
     //endregion
 
     //region Tabla imputado_datos_abandono_estado
     private static final String CREATE_TABLE_IMPUTADO_ABANDONO_ESTADO="CREATE TABLE imputado_datos_abandono_estado (_id INTEGER PRIMARY KEY AUTOINCREMENT," +
-            "e60 TEXT, e61 TEXT, e62 TEXT, e63 TEXT, e64 TEXT, e65 TEXT, e66 TEXT, e67 TEXT, e68 TEXT, e69 TEXT, e70 TEXT, e71 TEXT, e72 TEXT," +
+            "e60 TEXT, e61 TEXT, e62 TEXT, e63 TEXT, e64 TEXT, e64_1 TEXT, e65 TEXT, e65_1 TEXT, e66 TEXT, e67 TEXT, e68 TEXT, e69 TEXT, e70 TEXT, e71 TEXT, e72 TEXT," +
             "e67_1 TEXT, e68_1 TEXT, e69_1 TEXT, e70_1 TEXT, e71_1 TEXT, e72_1 TEXT, e73 TEXT, e74 TEXT, e75 TEXT, e76 TEXT, e77 TEXT, e78 TEXT," +
             "e74_1 TEXT, e75_1 TEXT, e76_1 TEXT, e77_1 TEXT, e78_1 TEXT, e79 TEXT, e80 TEXT, e81 TEXT, Folio TEXT)";
     //endregion
@@ -309,8 +309,9 @@ public class MyOpenHelper extends SQLiteOpenHelper {
 
     //region Insertar Datos Historial Escolar Laboral
     public void insertarDatosEscolarLaboral(String e48, String e49, String e50, String e51, String e52, String e53, String e54,
-                                            String e55, String e56, String e57, String e58, String e51_1, String e59, String folio) {
+                                            String e55, String e56, String e56_1, String e57, String e58, String e51_1, String e59, String folio) {
         ContentValues dato = new ContentValues();
+        //TODO: agregar e51_1, e56_1 a sincronizarBD
         dato.put("e48", e48);
         dato.put("e49", e49);
         dato.put("e50", e50);
@@ -320,9 +321,10 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         dato.put("e54", e54);
         dato.put("e55", e55);
         dato.put("e56", e56);
+        dato.put("e56_1", e56_1);
         dato.put("e57", e57);
         dato.put("e58", e58);
-        dato.put("e51_1", e51_1);//TODO: agregar e51_1 a sincronizarBD
+        dato.put("e51_1", e51_1);
         dato.put("e59", e59);
         dato.put("Folio", folio);
         db.insert("imputado_datos_historial_escolar_laboral", null, dato);
@@ -330,19 +332,22 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     //endregion
 
     //region Insertar Datos Abandodo Estado
-    public void insertarDatosAbandonoEstado(String e60, String e61, String e62, String e63, String e64, String e65, String e66,
+    public void insertarDatosAbandonoEstado(String e60, String e61, String e62, String e63, String e64, String e64_1, String e65, String e65_1, String e66,
                                             String e67, String e68, String e69, String e70, String e71, String e72,
                                             String e67_1, String e68_1, String e69_1, String e70_1, String e71_1, String e72_1,
                                             String e73, String e74, String e75, String e76, String e77, String e78,
                                             String e74_1, String e75_1, String e76_1, String e77_1, String e78_1,
                                             String e79, String e80, String e81, String folio) {
         ContentValues dato = new ContentValues();
+        //TODO: agregar e64_1, e65_1 a sincronizarBD
         dato.put("e60", e60);
         dato.put("e61", e61);
         dato.put("e62", e62);
         dato.put("e63", e63);
         dato.put("e64", e64);
+        dato.put("e64_1", e64_1);
         dato.put("e65", e65);
+        dato.put("e65_1", e65_1);
         dato.put("e66", e66);
         dato.put("e67", e67);
         dato.put("e68", e68);
@@ -770,7 +775,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     //region Obtener los datos escolares y laborales en la base de datos
     public ArrayList<datosEscolarLaboral> getHistorialEscolarLaboral(){
         ArrayList<datosEscolarLaboral> lista = new ArrayList<datosEscolarLaboral>();
-        Cursor c=db.rawQuery("select _id, e48, e49, e50, e51, e52, e53, e54, e55, e57, e56, e58, " +
+        Cursor c=db.rawQuery("select _id, e48, e49, e50, e51, e52, e53, e54, e55, e57, e56, e56_1, e58, " +
                 "e51_1, e59, Folio" + "  from imputado_datos_historial_escolar_laboral",  null);
         if (c != null && c.getCount()>0) {
             c.moveToFirst();
@@ -785,6 +790,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
                 String e55 = c.getString(c.getColumnIndex("e55"));
                 String e57 = c.getString(c.getColumnIndex("e57"));
                 String e56 = c.getString(c.getColumnIndex("e56"));
+                String e56_1 = c.getString(c.getColumnIndex("e56_1"));
                 String e58 = c.getString(c.getColumnIndex("e58"));
                 String e51_1 = c.getString(c.getColumnIndex("e51_1"));
                 String e59 = c.getString(c.getColumnIndex("e59"));
@@ -792,7 +798,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
 
                 int id = c.getInt(c.getColumnIndex("_id"));
                 datosEscolarLaboral dato = new datosEscolarLaboral(id, e48, e49, e50, e51, e52, e53,
-                        e54, e55, e57, e56, e58, e51_1, e59, Folio);
+                        e54, e55, e57, e56, e56_1, e58, e51_1, e59, Folio);
 
                 //Añadimos la direccion a la lista
                 lista.add(dato);
@@ -808,7 +814,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     //region Obtener los datos del abandono de estado en la base de datos
     public ArrayList<datosAbandonoEstado> getDatosAbandonoEstado(){
         ArrayList<datosAbandonoEstado> lista = new ArrayList<datosAbandonoEstado>();
-        Cursor c=db.rawQuery("select _id, e60, e61, e62, e63, e64, e65, e66, e67, e68, e69, e70, " +
+        Cursor c=db.rawQuery("select _id, e60, e61, e62, e63, e64, e64_1, e65, e65_1, e66, e67, e68, e69, e70, " +
                 "e71, e72, e67_1, e68_1, e69_1, e70_1, e71_1, e72_1, e73, e74, e75, e76, e77, e78, " +
                 "e74_1, e75_1, e76_1, e77_1, e78_1, e79, e80, e81, Folio" +
                 "  from imputado_datos_abandono_estado",  null);
@@ -820,7 +826,9 @@ public class MyOpenHelper extends SQLiteOpenHelper {
                 String e62 = c.getString(c.getColumnIndex("e62"));
                 String e63 = c.getString(c.getColumnIndex("e63"));
                 String e64 = c.getString(c.getColumnIndex("e64"));
+                String e64_1 = c.getString(c.getColumnIndex("e64_1"));
                 String e65 = c.getString(c.getColumnIndex("e65"));
+                String e65_1 = c.getString(c.getColumnIndex("e65_1"));
                 String e66 = c.getString(c.getColumnIndex("e66"));
                 String e67 = c.getString(c.getColumnIndex("e67"));
                 String e68 = c.getString(c.getColumnIndex("e68"));
@@ -851,7 +859,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
                 String Folio = c.getString(c.getColumnIndex("Folio"));
 
                 int id = c.getInt(c.getColumnIndex("_id"));
-                datosAbandonoEstado dato = new datosAbandonoEstado(id, e60, e61, e62, e63, e64, e65,
+                datosAbandonoEstado dato = new datosAbandonoEstado(id, e60, e61, e62, e63, e64, e64_1, e65, e65_1,
                         e66, e67, e68, e69, e70, e71, e72, e67_1, e68_1, e69_1, e70_1, e71_1, e72_1,
                         e73, e74, e75, e76, e77, e78, e74_1, e75_1, e76_1, e77_1, e78_1, e79, e80,
                         e81, Folio);

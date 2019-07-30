@@ -2579,6 +2579,33 @@
 						android:layout_marginBottom="20dp"/>
 
 					<TextView
+						android:id="@+id/tvP56_1"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/e56_1" />
+
+					<CheckedTextView
+						android:id="@+id/ctvP56_1"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:ems="10"
+						android:focusable="false"
+						android:clickable="true"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvO56_1"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Observaciones"/>
+
+					<EditText
+						android:id="@+id/etP56_1"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
 						android:id="@+id/tvP58"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
@@ -2805,6 +2832,33 @@
 						android:layout_marginBottom="20dp"/>
 
 					<TextView
+						android:id="@+id/tvP64_1"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/e64_1" />
+
+					<CheckedTextView
+						android:id="@+id/ctvP64_1"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:ems="10"
+						android:focusable="false"
+						android:clickable="true"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvO64_1"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Observaciones"/>
+
+					<EditText
+						android:id="@+id/etP64_1"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
 						android:id="@+id/tvP65"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
@@ -2827,6 +2881,33 @@
 
 					<EditText
 						android:id="@+id/etP65"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvP65_1"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/e65_1" />
+
+					<CheckedTextView
+						android:id="@+id/ctvP65_1"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:ems="10"
+						android:focusable="false"
+						android:clickable="true"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvO65_1"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Observaciones"/>
+
+					<EditText
+						android:id="@+id/etP65_1"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:layout_marginBottom="20dp"/>

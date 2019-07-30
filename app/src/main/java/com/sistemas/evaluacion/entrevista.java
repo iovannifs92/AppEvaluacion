@@ -48,7 +48,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
             personaEstado1, personaEstado2, tvP31_2, tv33, tv33_1, tv33_2, tv33_3, tv34, tv34_1,
             tv34_2, tv34_3, tv35, tv35_1, tv35_2, tv35_3, tv36, tv36_1, tv36_2, tv36_3,
             tv37, tv37_1, tv37_2, tv37_3, tvP45, tvP46, tvP47, tvP49, tvP52, tvP53, tvP54,
-            tvP55, tvP56, tvP57, tvP58, tvP59, tvP61, tvP62, tvP63, tvP64, tvP65, tvP67,
+            tvP55, tvP56, tvP56_1, tvP57, tvP58, tvP59, tvP61, tvP62, tvP63, tvP64, tvP64_1, tvP65, tvP65_1, tvP67,
             tvP68, tvP69, tvP70, tvP71, tvP72, tvP67_1, tvP68_1, tvP69_1, tvP70_1, tvP71_1,
             tvP72_1, tvP74, tvP75, tvP76, tvP77, tvP78, tvP74_1, tvP75_1, tvP76_1, tvP77_1,
             tvP78_1, tvP90_alcohol, tvP91_alcohol, tvP92_alcohol, tvP90_tabaco, tvP91_tabaco,
@@ -77,7 +77,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
 
     //region Spinner
     private Spinner sP1_1, sP1_2, sP6, sP8, sP11, sP13, sP21_1, sP22, sP25, sP27, sP29, sP31_1, sP32, sP32_1, sP44, sP46, sP48, sP50, sP51,
-            sP54, sP57, sP51_1, sP60, sP66, sP72, sP72_1, sP73, sP78, sP78_1, sP79, sP80, sP82,
+            sP54, sP56_1, sP57, sP51_1, sP60, sP64_1, sP65_1, sP66, sP72, sP72_1, sP73, sP78, sP78_1, sP79, sP80, sP82,
             sP90_alcohol, sP83, sP90_tabaco, sP84, sP90_marihuana, sP85, sP90_pastillas,
             sP86,sP90_solventes, sP87, sP90_cristal, sP88, sP90_cocaina, sP89, sP90_otroConsumo,
             sP94, sP100, sP101;
@@ -96,7 +96,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
             r21_1, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31, r31_1, r31_2, r33, r34, r35, r36, r37, r33_1, r34_1,
             r35_1, r36_1, r37_1, r33_2, r34_2, r35_2, r36_2, r37_2, r33_3, r34_3, r35_3, r36_3, r37_3, r38,
             r39, r40, r41, r42, r43, r39_1, r40_1, r41_1, r42_1, r43_1, r44, r45, r46, r47, r48, r49, r50,
-            r51, r52, r53, r54, r55, r56, r57, r58, r51_1, r59, r60, r61, r62, r63, r64, r65, r66,
+            r51, r52, r53, r54, r55, r56, r56_1, r57, r58, r51_1, r59, r60, r61, r62, r63, r64, r64_1, r65, r65_1, r66,
             r67, r68, r69, r70, r71, r72, r67_1, r68_1, r69_1, r70_1, r71_1, r72_1, r73,
             r74, r75, r76, r77, r78, r74_1, r75_1, r76_1, r77_1, r78_1, r79, r80, r81, r82, r83, r84, r85, r86, r87, r88, r89,
             r90_alcohol, r91_alcohol, r92_alcohol, r90_tabaco, r91_tabaco, r92_tabaco, r90_marihuana, r91_marihuana, r92_marihuana,
@@ -114,6 +114,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
     private String [] ocupacion={"NA","Informal", "Formal"};
     private String [] colfracc={"NA","Colonia", "Fraccionamiento","Domicilio Conocido", "Ejido"};
     private String [] diasLaboral={"NA","Lunes a Viernes","Lunes a Domingo","Lunes a Sábado","Fines de Semana","Sin días Establecidos","Otro"};
+    private String [] tiempo={"Menos de un mes", "Entre 1 y 3 meses", "Entre 3 y 6 meses", "Entre 6 meses y un año", "Más de un año"};
     private String [] frecuenciaContacto={"NA", "Diariamente", "Semanalmente","Quincenalmente","Mensualmente","Anualmente"};
     private String r32="0";
     private String [] antecedentes={"No", "Si", "No sabe"};
@@ -762,6 +763,9 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
         sP54=(Spinner) findViewById(R.id.sP54);
         sP54.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,ocupacion));
 
+        sP56_1=(Spinner) findViewById(R.id.sP56_1);
+        sP56_1.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,tiempo));
+
         sP57=(Spinner) findViewById(R.id.sP57);
         sP57.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,diasLaboral));
 
@@ -773,6 +777,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
         tvP54=(TextView) findViewById(R.id.tvP54);
         tvP55=(TextView) findViewById(R.id.tvP55);
         tvP56=(TextView) findViewById(R.id.tvP56);
+        tvP56_1=(TextView) findViewById(R.id.tvP56_1);
         tvP57=(TextView) findViewById(R.id.tvP57);
         tvP58=(TextView) findViewById(R.id.tvP58);
         tvP59=(TextView) findViewById(R.id.tvP59);
@@ -800,6 +805,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                     tvP54.setVisibility(View.VISIBLE);
                     tvP55.setVisibility(View.VISIBLE);
                     tvP56.setVisibility(View.VISIBLE);
+                    tvP56_1.setVisibility(View.VISIBLE);
                     tvP57.setVisibility(View.VISIBLE);
                     tvP58.setVisibility(View.VISIBLE);
                     tvP59.setVisibility(View.GONE);
@@ -808,6 +814,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                     sP54.setVisibility(View.VISIBLE);
                     etP55.setVisibility(View.VISIBLE);
                     etP56.setVisibility(View.VISIBLE);
+                    sP56_1.setVisibility(View.VISIBLE);
                     sP57.setVisibility(View.VISIBLE);
                     etP58.setVisibility(View.VISIBLE);
                     etP59.setVisibility(View.GONE);
@@ -818,6 +825,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                     tvP54.setVisibility(View.GONE);
                     tvP55.setVisibility(View.GONE);
                     tvP56.setVisibility(View.GONE);
+                    tvP56_1.setVisibility(View.GONE);
                     tvP57.setVisibility(View.GONE);
                     tvP58.setVisibility(View.GONE);
                     tvP59.setVisibility(View.VISIBLE);
@@ -826,6 +834,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                     sP54.setVisibility(View.GONE);
                     etP55.setVisibility(View.GONE);
                     etP56.setVisibility(View.GONE);
+                    sP56_1.setVisibility(View.GONE);
                     sP57.setVisibility(View.GONE);
                     etP58.setVisibility(View.GONE);
                     etP59.setVisibility(View.VISIBLE);
@@ -844,11 +853,19 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
         sP60 = (Spinner) findViewById(R.id.sP60);
         sP60.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,nosi));
 
+        sP64_1=(Spinner) findViewById(R.id.sP64_1);
+        sP64_1.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,tiempo));
+
+        sP65_1=(Spinner) findViewById(R.id.sP65_1);
+        sP65_1.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,tiempo));
+
         tvP61 =(TextView) findViewById(R.id.tvP61);
         tvP62 =(TextView) findViewById(R.id.tvP62);
         tvP63 =(TextView) findViewById(R.id.tvP63);
         tvP64 =(TextView) findViewById(R.id.tvP64);
+        tvP64_1 =(TextView) findViewById(R.id.tvP64_1);
         tvP65 =(TextView) findViewById(R.id.tvP65);
+        tvP65_1 =(TextView) findViewById(R.id.tvP65_1);
 
         etP61 = (EditText) findViewById(R.id.etP61);
 
@@ -874,12 +891,16 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                     tvP62.setVisibility(View.VISIBLE);
                     tvP63.setVisibility(View.VISIBLE);
                     tvP64.setVisibility(View.VISIBLE);
+                    tvP64_1.setVisibility(View.VISIBLE);
                     tvP65.setVisibility(View.VISIBLE);
+                    tvP65_1.setVisibility(View.VISIBLE);
                     etP61.setVisibility(View.VISIBLE);
                     etP62.setVisibility(View.VISIBLE);
                     etP63.setVisibility(View.VISIBLE);
                     etP64.setVisibility(View.VISIBLE);
+                    sP64_1.setVisibility(View.VISIBLE);
                     etP65.setVisibility(View.VISIBLE);
+                    sP65_1.setVisibility(View.VISIBLE);
                 }
                 else {
                     tvP61.setVisibility(View.GONE);
@@ -891,8 +912,9 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                     etP62.setVisibility(View.GONE);
                     etP63.setVisibility(View.GONE);
                     etP64.setVisibility(View.GONE);
+                    sP64_1.setVisibility(View.GONE);
                     etP65.setVisibility(View.GONE);
-
+                    sP65_1.setVisibility(View.GONE);
                 }
             }
 
@@ -1906,6 +1928,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                 r54=sP54.getSelectedItem().toString().toUpperCase();
                 r55=etP55.getText().toString().toUpperCase();
                 r56=etP56.getText().toString().toUpperCase();
+                r56_1=sP56_1.getSelectedItem().toString().toUpperCase();
                 r57=sP57.getSelectedItem().toString().toUpperCase();
                 r58=etP58.getText().toString().toUpperCase();
                 r51_1=sP51_1.getSelectedItem().toString().toUpperCase();
@@ -1920,7 +1943,9 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                 r62=etP62.getText().toString().toUpperCase();
                 r63=etP63.getText().toString().toUpperCase();
                 r64=etP64.getText().toString().toUpperCase();
+                r64_1=sP64_1.getSelectedItem().toString().toUpperCase();
                 r65=etP65.getText().toString().toUpperCase();
+                r65_1=sP65_1.getSelectedItem().toString().toUpperCase();
                 r66=sP66.getSelectedItem().toString().toUpperCase();
                 r67=etP67.getText().toString().toUpperCase();
                 r68=etP68.getText().toString().toUpperCase();
@@ -2019,9 +2044,9 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                     db.insertarDatosFamiliares(r32, r33, r34, r35, r36, r37, r33_1, r34_1, r35_1, r36_1, r37_1, r33_2, r34_2, r35_2, r36_2, r37_2,
                             r33_3, r34_3, r35_3, r36_3, r37_3, r38, FOLIO);
                     db.insertarDatosReferencias(r39, r40, r41, r42, r43, r39_1, r40_1, r41_1, r42_1, r43_1, r44, r45, r46, r47, FOLIO);
-                    db.insertarDatosEscolarLaboral(r48, r49, r50, r51, r52, r53, r54, r55, r56, r57, r58, r51_1, r59, FOLIO);
-                    db.insertarDatosAbandonoEstado(r60, r61, r62, r63, r64, r65, r66, r67, r68, r69, r70, r71, r72, r67_1, r68_1, r69_1, r70_1, r71_1, r72_1, r73, r74,
-                            r75, r76, r77, r78, r74_1, r75_1, r76_1, r77_1, r78_1, r79, r80, r81, FOLIO);
+                    db.insertarDatosEscolarLaboral(r48, r49, r50, r51, r52, r53, r54, r55, r56, r56_1, r57, r58, r51_1, r59, FOLIO);
+                    db.insertarDatosAbandonoEstado(r60, r61, r62, r63, r64, r64_1, r65, r65_1, r66, r67, r68, r69, r70, r71, r72, r67_1, r68_1,
+                            r69_1, r70_1, r71_1, r72_1, r73, r74, r75, r76, r77, r78, r74_1, r75_1, r76_1, r77_1, r78_1, r79, r80, r81, FOLIO);
                     db.insertarDatosSalud(r82, r90_alcohol, r91_alcohol, r92_alcohol, r83, r90_tabaco, r91_tabaco, r92_tabaco, r84, r90_marihuana, r91_marihuana, r92_marihuana,
                             r85, r90_pastillas, r91_pastillas, r92_pastillas, r86, r90_solventes, r91_solventes, r92_solventes, r87, r90_cristal, r91_cristal, r92_cristal,
                             r88, r90_cocaina, r91_cocaina, r92_cocaina, r89, r93_otroConsumo, r90_otroConsumo, r91_otroConsumo, r92_otroConsumo, r94, r95, FOLIO);

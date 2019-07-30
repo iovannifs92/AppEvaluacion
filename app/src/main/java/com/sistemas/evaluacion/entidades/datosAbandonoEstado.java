@@ -5,8 +5,10 @@ package com.sistemas.evaluacion.entidades;
 //dae.e61 as País,
 //dae.e62 as Estado,
 //dae.e63 as Ciudad,
-//dae.e64 as Fecha_ingreso,
+//dae.e64 as Fecha_Ingreso,
+//dae.e64_1 as Tiempo_Regreso,
 //dae.e65 as Fecha_Salida,
+//dae.e65_1 as Tiempo_Fuera,
 //dae.e66 as Tiene_Familiares_Extranjeros,
 //dae.e67 as eNombre1,
 //dae.e68 as extRelación1,
@@ -38,13 +40,13 @@ package com.sistemas.evaluacion.entidades;
 
 public class datosAbandonoEstado {
     int id;
-    String e60, e61, e62, e63, e64, e65, e66, e67, e68, e69, e70, e71, e72, e67_1, e68_1, e69_1,
+    String e60, e61, e62, e63, e64, e64_1, e65, e65_1, e66, e67, e68, e69, e70, e71, e72, e67_1, e68_1, e69_1,
             e70_1, e71_1, e72_1, e73, e74, e75, e76, e77, e78, e74_1, e75_1, e76_1, e77_1, e78_1,
             e79, e80, e81, Folio;
 
     //region Constructor
-    public datosAbandonoEstado(int id, String e60, String e61, String e62, String e63, String e64,
-                               String e65, String e66, String e67, String e68, String e69,
+    public datosAbandonoEstado(int id, String e60, String e61, String e62, String e63, String e64,String e64_1,
+                               String e65, String e65_1, String e66, String e67, String e68, String e69,
                                String e70, String e71, String e72, String e67_1, String e68_1,
                                String e69_1, String e70_1, String e71_1, String e72_1, String e73,
                                String e74, String e75, String e76, String e77, String e78,
@@ -56,7 +58,9 @@ public class datosAbandonoEstado {
         this.e62 = e62;
         this.e63 = e63;
         this.e64 = e64;
+        this.e64_1 = e64_1;
         this.e65 = e65;
+        this.e65_1 = e65_1;
         this.e66 = e66;
         this.e67 = e67;
         this.e68 = e68;
@@ -138,12 +142,28 @@ public class datosAbandonoEstado {
         this.e64 = e64;
     }
 
+    public String getE64_1() {
+        return e64_1;
+    }
+
+    public void setE64_1(String e64_1) {
+        this.e64_1 = e64_1;
+    }
+
     public String getE65() {
         return e65;
     }
 
     public void setE65(String e65) {
         this.e65 = e65;
+    }
+
+    public String getE65_1() {
+        return e65_1;
+    }
+
+    public void setE65_1(String e65_1) {
+        this.e65_1 = e65_1;
     }
 
     public String getE66() {

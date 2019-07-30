@@ -104,6 +104,7 @@
     <string name="e54">¿Qué tipo de trabajo es?</string>
     <string name="e55">Horario</string>
     <string name="e56">Fecha de inicio</string>
+    <string name="e56_1">Tiempo trabajado</string>
     <string name="e57">Días laborales</string>
     <string name="e58">Salario Semanal</string>
     <string name="e51_1">¿Cuenta con Seguro Social?</string>
@@ -116,7 +117,9 @@
     <string name="e62">Estado</string>
     <string name="e63">Ciudad</string>
     <string name="e64">Fecha de ingreso</string>
+    <string name="e64_1">¿Hace cuánto?</string>
     <string name="e65">Fecha de salida</string>
+    <string name="e65_1">¿Cuánto tiempo estuvo?</string>
     <string name="e66">¿Tiene familiares o personas con relación de amistad en el extranjero?</string>
     <string name="e67">Nombre</string> <!--Dos personas-->
     <string name="e68">Relación con el entrevistado</string>

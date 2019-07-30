@@ -12,6 +12,7 @@ package com.sistemas.evaluacion.entidades;
 //del.e54 as Tipo_Trabajo,
 //del.e55 as Horario,
 //del.e56 as Fecha_Inicio,
+//del.e56_1 as Tiempo_Laborando,
 //del.e57 as Dias_Laborales,
 //del.e58 as Salario_Semanal,
 //del.e51_1 as Seguro,
@@ -20,11 +21,11 @@ package com.sistemas.evaluacion.entidades;
 
 public class datosEscolarLaboral {
     int id;
-    String e48, e49, e50, e51, e52, e53, e54, e55, e57, e56, e58, e51_1, e59, Folio;
+    String e48, e49, e50, e51, e52, e53, e54, e55, e57, e56, e56_1, e58, e51_1, e59, Folio;
 
     //region Constructor
     public datosEscolarLaboral(int id, String e48, String e49, String e50, String e51, String e52,
-                               String e53, String e54, String e55, String e57, String e56,
+                               String e53, String e54, String e55, String e57, String e56, String e56_1,
                                String e58, String e51_1, String e59, String folio){
         this.id = id;
         this.e48 = e48;
@@ -37,6 +38,7 @@ public class datosEscolarLaboral {
         this.e55 = e55;
         this.e57 = e57;
         this.e56 = e56;
+        this.e56_1 = e56_1;
         this.e58 = e58;
         this.e51_1 = e51_1;
         this.e59 = e59;
@@ -132,6 +134,14 @@ public class datosEscolarLaboral {
 
     public void setE56(String e56) {
         this.e56 = e56;
+    }
+
+    public String getE56_1() {
+        return e56_1;
+    }
+
+    public void setE56_1(String e56_1) {
+        this.e56_1 = e56_1;
     }
 
     public String getE58() {

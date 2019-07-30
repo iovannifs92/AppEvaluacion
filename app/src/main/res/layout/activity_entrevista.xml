@@ -1617,6 +1617,19 @@
                     android:layout_marginBottom="20dp"/>
 
                 <TextView
+                    android:id="@+id/tvP56_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:text="@string/e56_1" />
+
+                <Spinner
+                    android:id="@+id/sP56_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
                     android:id="@+id/tvP58"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -1761,6 +1774,19 @@
                     android:layout_marginBottom="20dp"/>
 
                 <TextView
+                    android:id="@+id/tvP64_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:text="@string/e64_1" />
+
+                <Spinner
+                    android:id="@+id/sP64_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
                     android:id="@+id/tvP65"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -1776,6 +1802,19 @@
                     android:focusable="false"
                     android:clickable="true"
                     android:visibility="invisible"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvP65_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:text="@string/e65_1" />
+
+                <Spinner
+                    android:id="@+id/sP65_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"/>
                 <!--endregion -->
 
