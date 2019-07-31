@@ -668,8 +668,29 @@
                 </LinearLayout>
                 <!--endregion-->
 
+                <TextView
+                    android:id="@+id/tvP21_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e21_2" />
 
+                <Spinner
+                    android:id="@+id/sP21_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp" />
 
+                <TextView
+                    android:id="@+id/tvP21_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e21_3" />
+
+                <Spinner
+                    android:id="@+id/sP21_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp" />
 
                 <TextView
                     android:id="@+id/tvDatosVictima"
@@ -1174,6 +1195,108 @@
                     android:ems="10"
                     android:inputType="textMultiLine"
                     android:visibility="invisible"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvP32_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e32_2" />
+
+                <Spinner
+                    android:id="@+id/sP32_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvP32_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e32_3" />
+
+                <EditText
+                    android:id="@+id/etP32_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvP32_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e32_4" />
+
+                <Spinner
+                    android:id="@+id/sP32_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvP32_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e32_5" />
+
+                <EditText
+                    android:id="@+id/etP32_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvP32_6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e32_6" />
+
+                <CheckedTextView
+                    android:id="@+id/ctvP32_6_Hijos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:focusable="true"
+                    android:checked="false"
+                    android:checkMark="@drawable/ic_check_box_outline_blank_black_24dp"
+                    android:text="Hijos" />
+
+                <CheckedTextView
+                    android:id="@+id/ctvP32_6_Padres"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:focusable="true"
+                    android:checked="false"
+                    android:checkMark="@drawable/ic_check_box_outline_blank_black_24dp"
+                    android:text="Padres" />
+
+                <CheckedTextView
+                    android:id="@+id/ctvP32_6_Abuelos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:focusable="true"
+                    android:checked="false"
+                    android:checkMark="@drawable/ic_check_box_outline_blank_black_24dp"
+                    android:text="Abuelos" />
+
+                <TextView
+                    android:id="@+id/tvP32_7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e32_7" />
+
+                <EditText
+                    android:id="@+id/etP32_7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text"
                     android:layout_marginBottom="20dp"/>
 
                 <TextView
@@ -1813,6 +1936,70 @@
 
                 <Spinner
                     android:id="@+id/sP65_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvP65_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e65_2" />
+
+                <Spinner
+                    android:id="@+id/sP65_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvP65_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e65_3" />
+
+                <EditText
+                    android:id="@+id/etP65_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvP65_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e65_4" />
+
+                <EditText
+                    android:id="@+id/etP65_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvP65_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e65_5" />
+
+                <Spinner
+                    android:id="@+id/sP65_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvP65_6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e65_6" />
+
+                <Spinner
+                    android:id="@+id/sP65_6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"/>

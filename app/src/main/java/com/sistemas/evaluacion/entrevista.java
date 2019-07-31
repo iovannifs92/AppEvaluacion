@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckedTextView;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -45,11 +46,11 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
 
     //region TextView
     private TextView tvP38,persona1,persona2,persona3,persona4, personaE1, personaE2,
-            personaEstado1, personaEstado2, tvP31_2, tv33, tv33_1, tv33_2, tv33_3, tv34, tv34_1,
+            personaEstado1, personaEstado2, tvP21_3, tvP31_2, tv33, tv33_1, tv33_2, tv33_3, tv34, tv34_1,
             tv34_2, tv34_3, tv35, tv35_1, tv35_2, tv35_3, tv36, tv36_1, tv36_2, tv36_3,
-            tv37, tv37_1, tv37_2, tv37_3, tvP45, tvP46, tvP47, tvP49, tvP52, tvP53, tvP54,
-            tvP55, tvP56, tvP56_1, tvP57, tvP58, tvP59, tvP61, tvP62, tvP63, tvP64, tvP64_1, tvP65, tvP65_1, tvP67,
-            tvP68, tvP69, tvP70, tvP71, tvP72, tvP67_1, tvP68_1, tvP69_1, tvP70_1, tvP71_1,
+            tv37, tv37_1, tv37_2, tv37_3, tvP32_3, tvP32_4, tvP32_5, tvP32_6, tvP32_7, tvP45, tvP46, tvP47, tvP49, tvP52, tvP53, tvP54,
+            tvP55, tvP56, tvP56_1, tvP57, tvP58, tvP59, tvP61, tvP62, tvP63, tvP64, tvP64_1, tvP65, tvP65_1, tvP65_3, tvP65_4, tvP65_5,
+            tvP65_6, tvP67, tvP68, tvP69, tvP70, tvP71, tvP72, tvP67_1, tvP68_1, tvP69_1, tvP70_1, tvP71_1,
             tvP72_1, tvP74, tvP75, tvP76, tvP77, tvP78, tvP74_1, tvP75_1, tvP76_1, tvP77_1,
             tvP78_1, tvP90_alcohol, tvP91_alcohol, tvP92_alcohol, tvP90_tabaco, tvP91_tabaco,
             tvP92_tabaco, tvP90_marihuana, tvP91_marihuana, tvP92_marihuana, tvP90_pastillas,
@@ -61,8 +62,8 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
     //region EditText
     private EditText etP3, et33, et33_1, et33_2, et33_3, et34, et34_1, et34_2, et34_3,
             et35, et35_1, et35_2, et35_3, et36, et36_1, et36_2, et36_3, et37, et37_1,
-            et37_2, et37_3, etP38, etP45, etP47, etP49, etP52, etP53, etP55,
-            etP56, etP58, etP59, etP61, etP62, etP63, etP64, etP65, etP67, etP68, etP69, etP69_1, etP70,
+            et37_2, et37_3, etP38, etP32_3, etP32_5, etP32_7, etP45, etP47, etP49, etP52, etP53, etP55,
+            etP56, etP58, etP59, etP61, etP62, etP63, etP64, etP65, etP65_3, etP65_4, etP67, etP68, etP69, etP69_1, etP70,
             etP71, etP67_1, etP68_1, etP70_1, etP71_1, etP74, etP75, etP77,
             etP74_1, etP75_1, etP76, etP76_1, etP77_1, etP91_alcohol, etP92_alcohol, etP91_tabaco,
             etP92_tabaco, etP91_marihuana, etP92_marihuana, etP91_pastillas, etP92_pastillas,
@@ -71,14 +72,14 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
             etP102, etP103, etP104, etP105;
 
     private EditText etP97, etP1, etP2, etP4, etP5, etP7, etP7_1, etP8, etP9, etP10, etP12, etP14, etP15,
-            etP16, etP17, etP18, etP19, etP20, etP21_1, etP21, etP22, etP23, etP24, etP26, etP28, etP30,
+            etP16, etP17, etP18, etP19, etP20, etP21, etP22, etP23, etP24, etP26, etP28, etP30,
             etP31, etP31_2, etP39, etP40, etP41, etP42, etP43, etP39_1, etP40_1, etP41_1, etP42_1, etP43_1, etP81, etP96, etP99;
     //endregion
 
     //region Spinner
-    private Spinner sP1_1, sP1_2, sP6, sP8, sP11, sP13, sP21_1, sP22, sP25, sP27, sP29, sP31_1, sP32, sP32_1, sP44, sP46, sP48, sP50, sP51,
-            sP54, sP56_1, sP57, sP51_1, sP60, sP64_1, sP65_1, sP66, sP72, sP72_1, sP73, sP78, sP78_1, sP79, sP80, sP82,
-            sP90_alcohol, sP83, sP90_tabaco, sP84, sP90_marihuana, sP85, sP90_pastillas,
+    private Spinner sP1_1, sP1_2, sP6, sP8, sP11, sP13, sP21_1, sP22, sP25, sP27, sP21_2, sP21_3, sP29, sP31_1, sP32, sP32_1, sP32_2, sP32_4,
+            sP44, sP46, sP48, sP50, sP51, sP54, sP56_1, sP57, sP51_1, sP60, sP64_1, sP65_1, sP65_2, sP65_5, sP65_6, sP66, sP72, sP72_1, sP73,
+            sP78, sP78_1, sP79, sP80, sP82, sP90_alcohol, sP83, sP90_tabaco, sP84, sP90_marihuana, sP85, sP90_pastillas,
             sP86,sP90_solventes, sP87, sP90_cristal, sP88, sP90_cocaina, sP89, sP90_otroConsumo,
             sP94, sP100, sP101;
     //endregion
@@ -91,13 +92,17 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
     private Button btnGuardar, btnDatosGenerales, btnDatosFamiliares, btnHistorialEscolar, btnHistorialLaboral, btnFAEstado, btnSalud, btnFind;
     //endregion
 
+    //region CheckedTextView
+    CheckedTextView ctvP32_6_Hijos, ctvP32_6_Padres, ctvP32_6_Abuelos;
+    //endregion
+
     //region String
     private String r1, r1_1, r1_2, r2,r3,r4,r5,r6, r7, r7_1, r8, r9, r10, r11, r12, r13, r14, r15, r16, r32_1, r17, r18, r19, r20,
-            r21_1, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31, r31_1, r31_2, r33, r34, r35, r36, r37, r33_1, r34_1,
-            r35_1, r36_1, r37_1, r33_2, r34_2, r35_2, r36_2, r37_2, r33_3, r34_3, r35_3, r36_3, r37_3, r38,
-            r39, r40, r41, r42, r43, r39_1, r40_1, r41_1, r42_1, r43_1, r44, r45, r46, r47, r48, r49, r50,
-            r51, r52, r53, r54, r55, r56, r56_1, r57, r58, r51_1, r59, r60, r61, r62, r63, r64, r64_1, r65, r65_1, r66,
-            r67, r68, r69, r70, r71, r72, r67_1, r68_1, r69_1, r70_1, r71_1, r72_1, r73,
+            r21_1, r21, r22, r23, r24, r25, r26, r27, r28, r21_2, r21_3, r29, r30, r31, r31_1, r31_2, r33, r34, r35, r36, r37, r33_1, r34_1,
+            r35_1, r36_1, r37_1, r33_2, r34_2, r35_2, r36_2, r37_2, r33_3, r34_3, r35_3, r36_3, r37_3, r38, r32_2, r32_3, r32_4, r32_5,
+            r32_6, r32_7, r39, r40, r41, r42, r43, r39_1, r40_1, r41_1, r42_1, r43_1, r44, r45, r46, r47, r48, r49, r50,
+            r51, r52, r53, r54, r55, r56, r56_1, r57, r58, r51_1, r59, r60, r61, r62, r63, r64, r64_1, r65, r65_1, r65_2, r65_3, r65_4,
+            r65_5, r65_6, r66, r67, r68, r69, r70, r71, r72, r67_1, r68_1, r69_1, r70_1, r71_1, r72_1, r73,
             r74, r75, r76, r77, r78, r74_1, r75_1, r76_1, r77_1, r78_1, r79, r80, r81, r82, r83, r84, r85, r86, r87, r88, r89,
             r90_alcohol, r91_alcohol, r92_alcohol, r90_tabaco, r91_tabaco, r92_tabaco, r90_marihuana, r91_marihuana, r92_marihuana,
             r90_pastillas, r91_pastillas, r92_pastillas, r90_solventes, r91_solventes, r92_solventes,
@@ -114,7 +119,6 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
     private String [] ocupacion={"NA","Informal", "Formal"};
     private String [] colfracc={"NA","Colonia", "Fraccionamiento","Domicilio Conocido", "Ejido"};
     private String [] diasLaboral={"NA","Lunes a Viernes","Lunes a Domingo","Lunes a Sábado","Fines de Semana","Sin días Establecidos","Otro"};
-    private String [] tiempo={"Menos de un mes", "Entre 1 y 3 meses", "Entre 3 y 6 meses", "Entre 6 meses y un año", "Más de un año"};
     private String [] frecuenciaContacto={"NA", "Diariamente", "Semanalmente","Quincenalmente","Mensualmente","Anualmente"};
     private String r32="0";
     private String [] antecedentes={"No", "Si", "No sabe"};
@@ -122,6 +126,13 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
     private String [] seguro={"No", "IMSS", "ISSSTE", "Seguro Popular", "Privado", "Otro"};
     private String [] delito={"Otro", "Robo", "Robo Simple", "Violación", "Violencia Familiar", "Daños y Lesiones",
             "Lesiones menores a 15 dias", "Contra la Salud", "Comercio o Suministro", "Portación de Armas de Fuego"};
+    private String [] tiempo={"Menos de un mes", "Entre 1 y 3 meses", "Entre 3 y 6 meses", "Entre 6 meses y un año", "Más de un año"};
+    private String [] dentroEstado={"En el estado", "Fuera del estado"};
+    private String [] sexo={"Masculino", "Femenino"};
+    private String [] estadoCivil={"Soltero(a)", "Casado(a)","Unión Libre", "Divorciado (a)", "Viudo (a)"};
+    private String [] nPersonas={"0","1","2","3","4"};
+    private String [] gradoEstudios={"Sin estudios", "Primaria","Secundaria", "Preparatoria", "Licenciatura", "Maestría", "Doctorado"};
+    private String [] ubicacionPropiedad={"En la capital", "En otros municipios dentro del estado", "Fuera del estado", "En otro país"};
     //endregion
     //endregion
 
@@ -154,7 +165,6 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
 
         //region SP6 Sexo
         sP6 = (Spinner) findViewById(R.id.sP6);
-        String [] sexo={"Masculino", "Femenino"};
         sP6.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,sexo));
         //endregion Sexo Se
 
@@ -189,8 +199,6 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                 else {
                     llDomicilioSec.setVisibility(View.GONE);
                 }
-
-
             }
 
             @Override
@@ -215,9 +223,40 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
         sP27.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,tiempoRadicando));
         //endregion
 
+        //region sP21_2 Tiene propiedad
+        sP21_2 = (Spinner) findViewById(R.id.sP21_2);
+        sP21_2.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosi));
+
+        //region sP21_3 Ubicación de la propiedad
+        sP21_3 = (Spinner) findViewById(R.id.sP21_3);
+        sP21_3.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, ubicacionPropiedad));
+        //endregion
+
+        tvP21_3 = (TextView) findViewById(R.id.tvP21_3);
+
+        sP21_2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem=parent.getSelectedItem().toString();
+                if(selectedItem=="Si"){
+                    tvP21_3.setVisibility(View.VISIBLE);
+                    sP21_3.setVisibility(View.VISIBLE);
+                }
+                else {
+                    tvP21_3.setVisibility(View.GONE);
+                    sP21_3.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        //endregion
+
         //region SP29 Estado Civil
         sP29 = (Spinner) findViewById(R.id.sP29);
-        String [] estadoCivil={"Soltero(a)", "Casado(a)","Unión Libre", "Divorciado (a)", "Viudo (a)"};
         sP29.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,estadoCivil));
         //endregion
 
@@ -252,7 +291,6 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
 
         //region SP32 # Personas con las que vive actualmente
         sP32 = (Spinner) findViewById(R.id.sP32);
-        String [] nPersonas={"0","1","2","3","4"};
         sP32.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,nPersonas));
 
         sP32_1 = (Spinner) findViewById(R.id.sP32_1);
@@ -675,6 +713,112 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
 
         //endregion
 
+        //region sP32_2 Tiene propiedad
+        sP32_2 = (Spinner) findViewById(R.id.sP32_2);
+        sP32_2.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosi));
+
+        etP32_3 = (EditText) findViewById(R.id.etP32_3);
+
+        //region sP32_4 Tiene dependientes económicos dentro del estado
+        sP32_4 = (Spinner) findViewById(R.id.sP32_4);
+        sP32_4.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, dentroEstado));
+        //endregion
+
+        etP32_5 = (EditText) findViewById(R.id.etP32_5);
+
+        ctvP32_6_Hijos = (CheckedTextView) findViewById(R.id.ctvP32_6_Hijos);
+        ctvP32_6_Hijos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(ctvP32_6_Hijos.isChecked()){
+                    ctvP32_6_Hijos.setChecked(false);
+                    ctvP32_6_Hijos.setCheckMarkDrawable(R.drawable.ic_check_box_outline_blank_black_24dp);
+                }
+                else{
+                    ctvP32_6_Hijos.setChecked(true);
+                    ctvP32_6_Hijos.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                }
+            }
+        });
+        ctvP32_6_Padres = (CheckedTextView) findViewById(R.id.ctvP32_6_Padres);
+        ctvP32_6_Padres.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(ctvP32_6_Padres.isChecked()){
+                    ctvP32_6_Padres.setChecked(false);
+                    ctvP32_6_Padres.setCheckMarkDrawable(R.drawable.ic_check_box_outline_blank_black_24dp);
+                }
+                else{
+                    ctvP32_6_Padres.setChecked(true);
+                    ctvP32_6_Padres.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                }
+            }
+        });
+        ctvP32_6_Abuelos = (CheckedTextView) findViewById(R.id.ctvP32_6_Abuelos);
+        ctvP32_6_Abuelos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(ctvP32_6_Abuelos.isChecked()){
+                    ctvP32_6_Abuelos.setChecked(false);
+                    ctvP32_6_Abuelos.setCheckMarkDrawable(R.drawable.ic_check_box_outline_blank_black_24dp);
+                }
+                else{
+                    ctvP32_6_Abuelos.setChecked(true);
+                    ctvP32_6_Abuelos.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                }
+            }
+        });
+
+        etP32_7 = (EditText) findViewById(R.id.etP32_7);
+
+        tvP32_3 = (TextView) findViewById(R.id.tvP32_3);
+        tvP32_4 = (TextView) findViewById(R.id.tvP32_4);
+        tvP32_5 = (TextView) findViewById(R.id.tvP32_5);
+        tvP32_6 = (TextView) findViewById(R.id.tvP32_6);
+        tvP32_7 = (TextView) findViewById(R.id.tvP32_7);
+
+        sP32_2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem=parent.getSelectedItem().toString();
+                if(selectedItem=="Si"){
+                    tvP32_3.setVisibility(View.VISIBLE);
+                    tvP32_4.setVisibility(View.VISIBLE);
+                    tvP32_5.setVisibility(View.VISIBLE);
+                    tvP32_6.setVisibility(View.VISIBLE);
+                    tvP32_7.setVisibility(View.VISIBLE);
+                    etP32_3.setVisibility(View.VISIBLE);
+                    sP32_4.setVisibility(View.VISIBLE);
+                    etP32_5.setVisibility(View.VISIBLE);
+                    ctvP32_6_Hijos.setVisibility(View.VISIBLE);
+                    ctvP32_6_Padres.setVisibility(View.VISIBLE);
+                    ctvP32_6_Abuelos.setVisibility(View.VISIBLE);
+                    etP32_7.setVisibility(View.VISIBLE);
+                }
+                else{
+
+                    tvP32_3.setVisibility(View.GONE);
+                    tvP32_4.setVisibility(View.GONE);
+                    tvP32_5.setVisibility(View.GONE);
+                    tvP32_6.setVisibility(View.GONE);
+                    tvP32_7.setVisibility(View.GONE);
+                    etP32_3.setVisibility(View.GONE);
+                    sP32_4.setVisibility(View.GONE);
+                    etP32_5.setVisibility(View.GONE);
+                    ctvP32_6_Hijos.setVisibility(View.GONE);
+                    ctvP32_6_Padres.setVisibility(View.GONE);
+                    ctvP32_6_Abuelos.setVisibility(View.GONE);
+                    etP32_7.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        //endregion
+
         //region SP44 Cambio de domicilio y SP46
         sP44 = (Spinner) findViewById(R.id.sP44);
         sP44.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,nosi));
@@ -688,7 +832,6 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
         tvP45=(TextView) findViewById(R.id.tvP45);
         tvP46=(TextView) findViewById(R.id.tvP46);
         tvP47=(TextView) findViewById(R.id.tvP47);
-
 
         sP44.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -727,7 +870,6 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
         tvP49=(TextView) findViewById(R.id.tvP49);
         etP49=(EditText) findViewById(R.id.etP49);
 
-
         sP48.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -752,7 +894,6 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
 
         //region sP50 Último grado de estudios
         sP50 = (Spinner) findViewById(R.id.sP50);
-        String [] gradoEstudios={"Sin estudios", "Primaria","Secundaria", "Preparatoria", "Licenciatura", "Maestría", "Doctorado"};
         sP50.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,gradoEstudios));
         //endregion
 
@@ -853,11 +994,70 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
         sP60 = (Spinner) findViewById(R.id.sP60);
         sP60.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,nosi));
 
+        //region sP64_1 Tiempo que viajo fuerad e la República Mexicana
         sP64_1=(Spinner) findViewById(R.id.sP64_1);
         sP64_1.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,tiempo));
+        //endregion
 
+        //region sP65_1 Tiempo que estuvo fuera de la República Mexicana
         sP65_1=(Spinner) findViewById(R.id.sP65_1);
         sP65_1.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,tiempo));
+        //endregion
+
+        //region sP65_2 Viajado fuera del estado o capital
+        sP65_2 = (Spinner) findViewById(R.id.sP65_2);
+        sP65_2.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosi));
+
+        etP65_3 = (EditText) findViewById(R.id.etP65_3);
+        etP65_4 = (EditText) findViewById(R.id.etP65_4);
+
+        //region sP65_5 Tiempo que viajo fuera del estado o capital
+        sP65_5 = (Spinner) findViewById(R.id.sP65_5);
+        sP65_5.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, tiempo));
+        //endregion
+
+        //region sP65_6 Tiempo que estuvo fuera del estado o capital
+        sP65_6 = (Spinner) findViewById(R.id.sP65_6);
+        sP65_6.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, tiempo));
+        //endregion
+
+        tvP65_3 = (TextView) findViewById(R.id.tvP65_3);
+        tvP65_4 = (TextView) findViewById(R.id.tvP65_4);
+        tvP65_5 = (TextView) findViewById(R.id.tvP65_5);
+        tvP65_6 = (TextView) findViewById(R.id.tvP65_6);
+
+        sP65_2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem=parent.getSelectedItem().toString();
+                if(selectedItem=="Si"){
+                    tvP65_3.setVisibility(View.VISIBLE);
+                    tvP65_4.setVisibility(View.VISIBLE);
+                    tvP65_5.setVisibility(View.VISIBLE);
+                    tvP65_6.setVisibility(View.VISIBLE);
+                    etP65_3.setVisibility(View.VISIBLE);
+                    etP65_4.setVisibility(View.VISIBLE);
+                    sP65_5.setVisibility(View.VISIBLE);
+                    sP65_6.setVisibility(View.VISIBLE);
+                }
+                else{
+                    tvP65_3.setVisibility(View.GONE);
+                    tvP65_4.setVisibility(View.GONE);
+                    tvP65_5.setVisibility(View.GONE);
+                    tvP65_6.setVisibility(View.GONE);
+                    etP65_3.setVisibility(View.GONE);
+                    etP65_4.setVisibility(View.GONE);
+                    sP65_5.setVisibility(View.GONE);
+                    sP65_6.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        //endregion
 
         tvP61 =(TextView) findViewById(R.id.tvP61);
         tvP62 =(TextView) findViewById(R.id.tvP62);
@@ -907,7 +1107,9 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                     tvP62.setVisibility(View.GONE);
                     tvP63.setVisibility(View.GONE);
                     tvP64.setVisibility(View.GONE);
+                    tvP64_1.setVisibility(View.GONE);
                     tvP65.setVisibility(View.GONE);
+                    tvP65_1.setVisibility(View.GONE);
                     etP61.setVisibility(View.GONE);
                     etP62.setVisibility(View.GONE);
                     etP63.setVisibility(View.GONE);
@@ -1842,6 +2044,8 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                 r26=etP26.getText().toString().toUpperCase();
                 r27=sP27.getSelectedItem().toString().toUpperCase();
                 r28=etP28.getText().toString().toUpperCase();
+                r21_2=sP21_2.getSelectedItem().toString().toUpperCase();
+                r21_3=sP21_3.getSelectedItem().toString().toUpperCase();
                 r29=sP29.getSelectedItem().toString().toUpperCase();
                 r30=etP30.getText().toString().toUpperCase();
                 r31=etP31.getText().toString().toUpperCase();
@@ -1882,6 +2086,37 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                 r37_3=et37_3.getText().toString().toUpperCase();
                 r38=etP38.getText().toString().toUpperCase();
 
+                //endregion
+
+                //region Dependientes Económicos
+                r32_2=sP32_2.getSelectedItem().toString().toUpperCase();
+                r32_3=etP32_3.getText().toString().toUpperCase();
+                r32_4=sP32_4.getSelectedItem().toString().toUpperCase();
+                r32_5=etP32_5.getText().toString().toUpperCase();
+                //region Save as a comma separated list of the relationships of the dependents
+                r32_6 = "";
+                ctvP32_6_Hijos = (CheckedTextView) findViewById(R.id.ctvP32_6_Hijos);
+                if(ctvP32_6_Hijos.isChecked()) {
+                    if(r32_6.isEmpty() == false){
+                        r32_6 += ", ";
+                    }
+                    r32_6 += "HIJOS";
+                }
+                ctvP32_6_Padres = (CheckedTextView) findViewById(R.id.ctvP32_6_Padres);
+                if(ctvP32_6_Padres.isChecked()) {
+                    if(r32_6.isEmpty() == false){
+                        r32_6 += ", ";
+                    }
+                    r32_6 += "PADRES";
+                }
+                ctvP32_6_Abuelos = (CheckedTextView) findViewById(R.id.ctvP32_6_Abuelos);
+                if(ctvP32_6_Abuelos.isChecked()) {
+                    if(r32_6.isEmpty() == false){
+                        r32_6 += ", ";
+                    }
+                    r32_6 += "ABUELOS";
+                }
+                r32_7=etP32_7.getText().toString().toUpperCase();
                 //endregion
 
                 //region Referencias
@@ -1946,6 +2181,11 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                 r64_1=sP64_1.getSelectedItem().toString().toUpperCase();
                 r65=etP65.getText().toString().toUpperCase();
                 r65_1=sP65_1.getSelectedItem().toString().toUpperCase();
+                r65_2=sP65_2.getSelectedItem().toString().toUpperCase();
+                r65_3=etP65_3.getText().toString().toUpperCase();
+                r65_4=etP65_4.getText().toString().toUpperCase();
+                r65_5=sP65_5.getSelectedItem().toString().toUpperCase();
+                r65_6=sP65_6.getSelectedItem().toString().toUpperCase();
                 r66=sP66.getSelectedItem().toString().toUpperCase();
                 r67=etP67.getText().toString().toUpperCase();
                 r68=etP68.getText().toString().toUpperCase();
@@ -2040,13 +2280,15 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
                 if(ValidaFormulario()) {
                     db.insertarDatosGenerales(r1, r2, r3, r4, r5, r6, FOLIO, r98, min, r96, r99, r100, "", "", "", r21_1, r32,r1_1,r1_2, r31_1, r31_2);
                     db.insertarDatosGeneralesDomicilio(r7, r7_1, r8, r9, r10, r11, r12, r13, r14, r15, r16, r32_1, r17,
-                            r18, r19, r20, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31, confirmedMainLatitude, confirmedMainLongitude, FOLIO);
+                            r18, r19, r20, r21, r22, r23, r24, r25, r26, r27, r28, r21_2, r21_3, r29, r30, r31, confirmedMainLatitude,
+                            confirmedMainLongitude, FOLIO);
                     db.insertarDatosFamiliares(r32, r33, r34, r35, r36, r37, r33_1, r34_1, r35_1, r36_1, r37_1, r33_2, r34_2, r35_2, r36_2, r37_2,
-                            r33_3, r34_3, r35_3, r36_3, r37_3, r38, FOLIO);
+                            r33_3, r34_3, r35_3, r36_3, r37_3, r38, r32_2, r32_3, r32_4, r32_5, r32_6, r32_7, FOLIO);
                     db.insertarDatosReferencias(r39, r40, r41, r42, r43, r39_1, r40_1, r41_1, r42_1, r43_1, r44, r45, r46, r47, FOLIO);
                     db.insertarDatosEscolarLaboral(r48, r49, r50, r51, r52, r53, r54, r55, r56, r56_1, r57, r58, r51_1, r59, FOLIO);
-                    db.insertarDatosAbandonoEstado(r60, r61, r62, r63, r64, r64_1, r65, r65_1, r66, r67, r68, r69, r70, r71, r72, r67_1, r68_1,
-                            r69_1, r70_1, r71_1, r72_1, r73, r74, r75, r76, r77, r78, r74_1, r75_1, r76_1, r77_1, r78_1, r79, r80, r81, FOLIO);
+                    db.insertarDatosAbandonoEstado(r60, r61, r62, r63, r64, r64_1, r65, r65_1, r65_2, r65_3, r65_4, r65_5, r65_6, r66, r67, r68,
+                            r69, r70, r71, r72, r67_1, r68_1, r69_1, r70_1, r71_1, r72_1, r73, r74, r75, r76, r77, r78, r74_1, r75_1, r76_1,
+                            r77_1, r78_1, r79, r80, r81, FOLIO);
                     db.insertarDatosSalud(r82, r90_alcohol, r91_alcohol, r92_alcohol, r83, r90_tabaco, r91_tabaco, r92_tabaco, r84, r90_marihuana, r91_marihuana, r92_marihuana,
                             r85, r90_pastillas, r91_pastillas, r92_pastillas, r86, r90_solventes, r91_solventes, r92_solventes, r87, r90_cristal, r91_cristal, r92_cristal,
                             r88, r90_cocaina, r91_cocaina, r92_cocaina, r89, r93_otroConsumo, r90_otroConsumo, r91_otroConsumo, r92_otroConsumo, r94, r95, FOLIO);

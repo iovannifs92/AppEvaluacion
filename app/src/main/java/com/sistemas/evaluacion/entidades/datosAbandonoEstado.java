@@ -9,6 +9,11 @@ package com.sistemas.evaluacion.entidades;
 //dae.e64_1 as Tiempo_Regreso,
 //dae.e65 as Fecha_Salida,
 //dae.e65_1 as Tiempo_Fuera,
+//dae.e65_2 as Ha_Viajado_Fuera_Estado_Capital,
+//dae.e65_3 as Estado_Viajado_Fuera_Edo,
+//dae.e65_4 as Cuidad_Viajado_Fuera_Edo,
+//dae.e65_5 as Tiempo_Regreso_Viajado_Fuera_Edo,
+//dae.e65_6 as Tiempo_Fuera_Viajado_Fuera_Edo,
 //dae.e66 as Tiene_Familiares_Extranjeros,
 //dae.e67 as eNombre1,
 //dae.e68 as extRelación1,
@@ -40,13 +45,13 @@ package com.sistemas.evaluacion.entidades;
 
 public class datosAbandonoEstado {
     int id;
-    String e60, e61, e62, e63, e64, e64_1, e65, e65_1, e66, e67, e68, e69, e70, e71, e72, e67_1, e68_1, e69_1,
-            e70_1, e71_1, e72_1, e73, e74, e75, e76, e77, e78, e74_1, e75_1, e76_1, e77_1, e78_1,
-            e79, e80, e81, Folio;
+    String e60, e61, e62, e63, e64, e64_1, e65, e65_1, e65_2, e65_3, e65_4, e65_5, e65_6, e66, e67, e68, e69, e70, e71, e72, e67_1, e68_1, e69_1,
+            e70_1, e71_1, e72_1, e73, e74, e75, e76, e77, e78, e74_1, e75_1, e76_1, e77_1, e78_1, e79, e80, e81, Folio;
 
     //region Constructor
     public datosAbandonoEstado(int id, String e60, String e61, String e62, String e63, String e64,String e64_1,
-                               String e65, String e65_1, String e66, String e67, String e68, String e69,
+                               String e65, String e65_1, String e65_2, String e65_3, String e65_4,
+                               String e65_5, String e65_6, String e66, String e67, String e68, String e69,
                                String e70, String e71, String e72, String e67_1, String e68_1,
                                String e69_1, String e70_1, String e71_1, String e72_1, String e73,
                                String e74, String e75, String e76, String e77, String e78,
@@ -61,6 +66,11 @@ public class datosAbandonoEstado {
         this.e64_1 = e64_1;
         this.e65 = e65;
         this.e65_1 = e65_1;
+        this.e65_2 = e65_2;
+        this.e65_3 = e65_3;
+        this.e65_4 = e65_4;
+        this.e65_5 = e65_5;
+        this.e65_6 = e65_6;
         this.e66 = e66;
         this.e67 = e67;
         this.e68 = e68;
@@ -164,6 +174,46 @@ public class datosAbandonoEstado {
 
     public void setE65_1(String e65_1) {
         this.e65_1 = e65_1;
+    }
+
+    public String getE65_2() {
+        return e65_2;
+    }
+
+    public void setE65_2(String e65_2) {
+        this.e65_2 = e65_2;
+    }
+
+    public String getE65_3() {
+        return e65_3;
+    }
+
+    public void setE65_3(String e65_3) {
+        this.e65_3 = e65_3;
+    }
+
+    public String getE65_4() {
+        return e65_4;
+    }
+
+    public void setE65_4(String e65_4) {
+        this.e65_4 = e65_4;
+    }
+
+    public String getE65_5() {
+        return e65_5;
+    }
+
+    public void setE65_5(String e65_5) {
+        this.e65_5 = e65_5;
+    }
+
+    public String getE65_6() {
+        return e65_6;
+    }
+
+    public void setE65_6(String e65_6) {
+        this.e65_6 = e65_6;
     }
 
     public String getE66() {

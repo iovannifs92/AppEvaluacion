@@ -55,13 +55,13 @@ public class verificacion extends AppCompatActivity {
     //region TextView
     private TextView tvP1, tvP1_1, tvP1_2, tvP2, tvP3, tvP4, tvP5, tvP6, tvP7,  tvP7_1, tvP8, tvP9, tvP10, tvP11, tvP12,
             tvP13, tvP14, tvP15, tvP16, tvP32_1, tvP17, tvP18, tvP19, tvP20, tvP21_1, tvP21, tvP22,
-            tvP23, tvP24, tvP25, tvP26, tvP27, tvP28, tvP101, tvP102, tvP103, tvP104, tvP105, tvP29, tvP30, tvP31, tvP31_1,
+            tvP23, tvP24, tvP25, tvP26, tvP27, tvP28, tvP21_2, tvP21_3, tvP101, tvP102, tvP103, tvP104, tvP105, tvP29, tvP30, tvP31, tvP31_1,
             tvP31_2, tvP32, tvP33, tvP34, tvP35, tvP36, tvP37, tvP33_1, tvP34_1, tvP35_1, tvP36_1, tvP37_1, tvP33_2, tvP34_2,
-            tvP35_2, tvP36_2, tvP37_2, tvP33_3, tvP34_3, tvP35_3, tvP36_3, tvP37_3, tvP38, tvP39,
-            tvP40, tvP41, tvP42, tvP43, tvP39_1, tvP40_1, tvP41_1, tvP42_1, tvP43_1, tvP44, tvP45,
+            tvP35_2, tvP36_2, tvP37_2, tvP33_3, tvP34_3, tvP35_3, tvP36_3, tvP37_3, tvP38, tvP32_2, tvP32_3, tvP32_4, tvP32_5, tvP32_6, tvP32_7,
+            tvP39, tvP40, tvP41, tvP42, tvP43, tvP39_1, tvP40_1, tvP41_1, tvP42_1, tvP43_1, tvP44, tvP45,
             tvP46, tvP47, tvP48, tvP49, tvP50, tvP51, tvP52, tvP53, tvP54, tvP55, tvP57, tvP56, tvP56_1,
-            tvP58, tvP51_1, tvP59, tvP60, tvP61, tvP62, tvP63, tvP64, tvP64_1, tvP65, tvP65_1, tvP66, tvP67, tvP68, tvP69,
-            tvP70, tvP71, tvP72, tvP67_1, tvP68_1, tvP69_1, tvP70_1, tvP71_1, tvP72_1, tvP73, tvP74,
+            tvP58, tvP51_1, tvP59, tvP60, tvP61, tvP62, tvP63, tvP64, tvP64_1, tvP65, tvP65_1, tvP65_2, tvP65_3, tvP65_4, tvP65_5, tvP65_6,
+            tvP66, tvP67, tvP68, tvP69, tvP70, tvP71, tvP72, tvP67_1, tvP68_1, tvP69_1, tvP70_1, tvP71_1, tvP72_1, tvP73, tvP74,
             tvP75, tvP76, tvP77, tvP78, tvP74_1, tvP75_1, tvP76_1, tvP77_1, tvP78_1, tvP79, tvP80,
             tvP81, tvP82, tvP90_alcohol, tvP91_alcohol, tvP92_alcohol, tvP83, tvP90_tabaco,
             tvP91_tabaco, tvP92_tabaco, tvP84, tvP90_marihuana, tvP91_marihuana, tvP92_marihuana,
@@ -73,13 +73,13 @@ public class verificacion extends AppCompatActivity {
             personaEstado1, personaEstado2;
     private TextView tvO1, tvO1_1, tvO1_2, tvO2, tvO3, tvO4, tvO5, tvO6, tvO7, tvO7_1, tvO8, tvO9, tvO10, tvO11, tvO12,
             tvO13, tvO14, tvO15, tvO16, tvO32_1, tvO17, tvO18, tvO19, tvO20, tvO21_1, tvO21, tvO22,
-            tvO23, tvO24, tvO25, tvO26, tvO27, tvO28, tvO101, tvO102, tvO103, tvO104, tvO105, tvO29, tvO30, tvO31, tvO31_1,
+            tvO23, tvO24, tvO25, tvO26, tvO27, tvO28, tvO21_2, tvO21_3, tvO101, tvO102, tvO103, tvO104, tvO105, tvO29, tvO30, tvO31, tvO31_1,
             tvO31_2, tvO32, tvO33, tvO34, tvO35, tvO36, tvO37, tvO33_1, tvO34_1, tvO35_1, tvO36_1, tvO37_1, tvO33_2, tvO34_2,
-            tvO35_2, tvO36_2, tvO37_2, tvO33_3, tvO34_3, tvO35_3, tvO36_3, tvO37_3, tvO38, tvO39,
-            tvO40, tvO41, tvO42, tvO43, tvO39_1, tvO40_1, tvO41_1, tvO42_1, tvO43_1, tvO44, tvO45,
+            tvO35_2, tvO36_2, tvO37_2, tvO33_3, tvO34_3, tvO35_3, tvO36_3, tvO37_3, tvO38, tvO32_2, tvO32_3, tvO32_4, tvO32_5, tvO32_6, tvO32_7,
+            tvO39, tvO40, tvO41, tvO42, tvO43, tvO39_1, tvO40_1, tvO41_1, tvO42_1, tvO43_1, tvO44, tvO45,
             tvO46, tvO47, tvO48, tvO49, tvO50, tvO51, tvO52, tvO53, tvO54, tvO55, tvO57, tvO56, tvO56_1,
-            tvO58, tvO51_1, tvO59, tvO60, tvO61, tvO62, tvO63, tvO64, tvO64_1, tvO65, tvO65_1, tvO66, tvO67, tvO68, tvO69,
-            tvO70, tvO71, tvO72, tvO67_1, tvO68_1, tvO69_1, tvO70_1, tvO71_1, tvO72_1, tvO73, tvO74,
+            tvO58, tvO51_1, tvO59, tvO60, tvO61, tvO62, tvO63, tvO64, tvO64_1, tvO65, tvO65_1,  tvO65_2,  tvO65_3,  tvO65_4,  tvO65_5,  tvO65_6,
+            tvO66, tvO67, tvO68, tvO69, tvO70, tvO71, tvO72, tvO67_1, tvO68_1, tvO69_1, tvO70_1, tvO71_1, tvO72_1, tvO73, tvO74,
             tvO75, tvO76, tvO77, tvO78, tvO74_1, tvO75_1, tvO76_1, tvO77_1, tvO78_1, tvO79, tvO80,
             tvO81, tvO82, tvO90_alcohol, tvO91_alcohol, tvO92_alcohol, tvO83, tvO90_tabaco,
             tvO91_tabaco, tvO92_tabaco, tvO84, tvO90_marihuana, tvO91_marihuana, tvO92_marihuana,
@@ -92,13 +92,13 @@ public class verificacion extends AppCompatActivity {
     //region EditText
     private EditText etP1, etP1_1, etP1_2, etP2, etP3, etP4, etP5, etP6, etP7, etP7_1, etP8, etP9, etP10, etP11, etP12,
             etP13, etP14, etP15, etP16, etP32_1, etP17, etP18, etP19, etP20, etP21_1, etP21, etP22,
-            etP23, etP24, etP25, etP26, etP27, etP28, etP101, etP102, etP103, etP104, etP105, etP29, etP30, etP31, etP31_1,
+            etP23, etP24, etP25, etP26, etP27, etP28, etP21_2, etP21_3, etP101, etP102, etP103, etP104, etP105, etP29, etP30, etP31, etP31_1,
             etP31_2, etP32, etP33, etP34, etP35, etP36, etP37, etP33_1, etP34_1, etP35_1, etP36_1, etP37_1, etP33_2, etP34_2,
-            etP35_2, etP36_2, etP37_2, etP33_3, etP34_3, etP35_3, etP36_3, etP37_3, etP38, etP39,
-            etP40, etP41, etP42, etP43, etP39_1, etP40_1, etP41_1, etP42_1, etP43_1, etP44, etP45,
+            etP35_2, etP36_2, etP37_2, etP33_3, etP34_3, etP35_3, etP36_3, etP37_3, etP38, etP32_2, etP32_3, etP32_4, etP32_5, etP32_6, etP32_7,
+            etP39, etP40, etP41, etP42, etP43, etP39_1, etP40_1, etP41_1, etP42_1, etP43_1, etP44, etP45,
             etP46, etP47, etP48, etP49, etP50, etP51, etP52, etP53, etP54, etP55, etP57, etP56, etP56_1,
-            etP58, etP51_1, etP59, etP60, etP61, etP62, etP63, etP64, etP64_1, etP65, etP65_1, etP66, etP67, etP68, etP69,
-            etP70, etP71, etP72, etP67_1, etP68_1, etP69_1, etP70_1, etP71_1, etP72_1, etP73, etP74,
+            etP58, etP51_1, etP59, etP60, etP61, etP62, etP63, etP64, etP64_1, etP65, etP65_1, etP65_2, etP65_3, etP65_4, etP65_5, etP65_6,
+            etP66, etP67, etP68, etP69, etP70, etP71, etP72, etP67_1, etP68_1, etP69_1, etP70_1, etP71_1, etP72_1, etP73, etP74,
             etP75, etP76, etP77, etP78, etP74_1, etP75_1, etP76_1, etP77_1, etP78_1, etP79, etP80,
             etP81, etP82, etP90_alcohol, etP91_alcohol, etP92_alcohol, etP83, etP90_tabaco,
             etP91_tabaco, etP92_tabaco, etP84, etP90_marihuana, etP91_marihuana, etP92_marihuana,
@@ -112,14 +112,14 @@ public class verificacion extends AppCompatActivity {
     private CheckedTextView ctvP1, ctvP1_1, ctvP1_2, ctvP2, ctvP3, ctvP4, ctvP5, ctvP6, ctvP7, ctvP7_1, ctvP8, ctvP9,
             ctvP10, ctvP11, ctvP12, ctvP13, ctvP14, ctvP15, ctvP16, ctvP32_1, ctvP17, ctvP18,
             ctvP19, ctvP20, ctvP21_1, ctvP21, ctvP22, ctvP23, ctvP24, ctvP25, ctvP26,
-            ctvP27, ctvP28, ctvP101, ctvP102, ctvP103, ctvP104, ctvP105, ctvP29, ctvP30, ctvP31, ctvP31_1, ctvP31_2, ctvP32,
+            ctvP27, ctvP28, ctvP21_2, ctvP21_3, ctvP101, ctvP102, ctvP103, ctvP104, ctvP105, ctvP29, ctvP30, ctvP31, ctvP31_1, ctvP31_2, ctvP32,
             ctvP33, ctvP34, ctvP35, ctvP36, ctvP37, ctvP33_1, ctvP34_1, ctvP35_1, ctvP36_1, ctvP37_1, ctvP33_2, ctvP34_2, ctvP35_2,
-            ctvP36_2, ctvP37_2, ctvP33_3, ctvP34_3, ctvP35_3, ctvP36_3, ctvP37_3, ctvP38, ctvP39,
-            ctvP40, ctvP41, ctvP42, ctvP43, ctvP39_1, ctvP40_1, ctvP41_1, ctvP42_1, ctvP43_1,
+            ctvP36_2, ctvP37_2, ctvP33_3, ctvP34_3, ctvP35_3, ctvP36_3, ctvP37_3, ctvP38, ctvP32_2, ctvP32_3, ctvP32_4, ctvP32_5,
+            ctvP32_6, ctvP32_7, ctvP39, ctvP40, ctvP41, ctvP42, ctvP43, ctvP39_1, ctvP40_1, ctvP41_1, ctvP42_1, ctvP43_1,
             ctvP44, ctvP45, ctvP46, ctvP47, ctvP48, ctvP49, ctvP50, ctvP51, ctvP52, ctvP53, ctvP54,
             ctvP55, ctvP57, ctvP56, ctvP56_1, ctvP58, ctvP51_1, ctvP59, ctvP60, ctvP61, ctvP62, ctvP63, ctvP64, ctvP64_1,
-            ctvP65, ctvP65_1, ctvP66, ctvP67, ctvP68, ctvP69, ctvP70, ctvP71, ctvP72, ctvP67_1, ctvP68_1, ctvP69_1,
-            ctvP70_1, ctvP71_1, ctvP72_1, ctvP73, ctvP74, ctvP75, ctvP76, ctvP77, ctvP78, ctvP74_1,
+            ctvP65, ctvP65_1, ctvP65_2, ctvP65_3, ctvP65_4, ctvP65_5, ctvP65_6, ctvP66, ctvP67, ctvP68, ctvP69, ctvP70, ctvP71,
+            ctvP72, ctvP67_1, ctvP68_1, ctvP69_1, ctvP70_1, ctvP71_1, ctvP72_1, ctvP73, ctvP74, ctvP75, ctvP76, ctvP77, ctvP78, ctvP74_1,
             ctvP75_1, ctvP76_1, ctvP77_1, ctvP78_1, ctvP79, ctvP80, ctvP81, ctvP82, ctvP90_alcohol,
             ctvP91_alcohol, ctvP92_alcohol, ctvP83, ctvP90_tabaco, ctvP91_tabaco, ctvP92_tabaco,
             ctvP84, ctvP90_marihuana, ctvP91_marihuana, ctvP92_marihuana, ctvP85, ctvP90_pastillas,
@@ -140,12 +140,12 @@ public class verificacion extends AppCompatActivity {
 
     //region String
     String r1, r1_1, r1_2, r2, r3, r4, r5, r6, r7, r7_1, r8, r9, r10, r11, r12, r13, r14, r15, r16, r32_1, r17, r18,
-            r19, r20, r21_1, r21, r22, r23, r24, r25, r26, r27, r28, r101, r102, r103, r104, r105, r29, r30, r31, r31_1,
+            r19, r20, r21_1, r21, r22, r23, r24, r25, r26, r27, r28, r21_2, r21_3, r101, r102, r103, r104, r105, r29, r30, r31, r31_1,
             r31_2, r32, r33, r34, r35, r36, r37, r33_1, r34_1, r35_1, r36_1, r37_1, r33_2, r34_2, r35_2, r36_2, r37_2,
-            r33_3, r34_3, r35_3, r36_3, r37_3, r38, r39, r40, r41, r42, r43, r39_1, r40_1, r41_1,
+            r33_3, r34_3, r35_3, r36_3, r37_3, r38, r32_2, r32_3, r32_4, r32_5, r32_6, r32_7, r39, r40, r41, r42, r43, r39_1, r40_1, r41_1,
             r42_1, r43_1, r44, r45, r46, r47, r48, r49, r50, r51, r52, r53, r54, r55, r57, r56, r56_1, r58,
-            r51_1, r59, r60, r61, r62, r63, r64, r64_1, r65, r65_1, r66, r67, r68, r69, r70, r71, r72, r67_1, r68_1,
-            r69_1, r70_1, r71_1, r72_1, r73, r74, r75, r76, r77, r78, r74_1, r75_1, r76_1, r77_1,
+            r51_1, r59, r60, r61, r62, r63, r64, r64_1, r65, r65_1, r65_2, r65_3, r65_4, r65_5, r65_6, r66, r67, r68, r69, r70, r71, r72,
+            r67_1, r68_1, r69_1, r70_1, r71_1, r72_1, r73, r74, r75, r76, r77, r78, r74_1, r75_1, r76_1, r77_1,
             r78_1, r79, r80, r81, r82, r90_alcohol, r91_alcohol, r92_alcohol, r83, r90_tabaco,
             r91_tabaco, r92_tabaco, r84, r90_marihuana, r91_marihuana, r92_marihuana, r85,
             r90_pastillas, r91_pastillas, r92_pastillas, r86, r90_solventes, r91_solventes,
@@ -357,6 +357,14 @@ public class verificacion extends AppCompatActivity {
                 ctvP28 = (CheckedTextView) findViewById(R.id.ctvP28);
                 tvO28 = (TextView)findViewById(R.id.tvO28);
                 etP28 = (EditText)findViewById(R.id.etP28);
+                tvP21_2 = (TextView) findViewById(R.id.tvP21_2);
+                ctvP21_2 = (CheckedTextView) findViewById(R.id.ctvP21_2);
+                tvO21_2 = (TextView)findViewById(R.id.tvO21_2);
+                etP21_2 = (EditText)findViewById(R.id.etP21_2);
+                tvP21_3 = (TextView) findViewById(R.id.tvP21_3);
+                ctvP21_3 = (CheckedTextView) findViewById(R.id.ctvP21_3);
+                tvO21_3 = (TextView)findViewById(R.id.tvO21_3);
+                etP21_3 = (EditText)findViewById(R.id.etP21_3);
                 tvP101 = (TextView) findViewById(R.id.tvP101);
                 ctvP101 = (CheckedTextView) findViewById(R.id.ctvP101);
                 tvO101 = (TextView)findViewById(R.id.tvO101);
@@ -494,6 +502,30 @@ public class verificacion extends AppCompatActivity {
                 ctvP38 = (CheckedTextView) findViewById(R.id.ctvP38);
                 tvO38 = (TextView)findViewById(R.id.tvO38);
                 etP38 = (EditText)findViewById(R.id.etP38);
+                tvP32_2 = (TextView) findViewById(R.id.tvP32_2);
+                ctvP32_2 = (CheckedTextView) findViewById(R.id.ctvP32_2);
+                tvO32_2 = (TextView)findViewById(R.id.tvO32_2);
+                etP32_2 = (EditText)findViewById(R.id.etP32_2);
+                tvP32_3 = (TextView) findViewById(R.id.tvP32_3);
+                ctvP32_3 = (CheckedTextView) findViewById(R.id.ctvP32_3);
+                tvO32_3 = (TextView)findViewById(R.id.tvO32_3);
+                etP32_3 = (EditText)findViewById(R.id.etP32_3);
+                tvP32_4 = (TextView) findViewById(R.id.tvP32_4);
+                ctvP32_4 = (CheckedTextView) findViewById(R.id.ctvP32_4);
+                tvO32_4 = (TextView)findViewById(R.id.tvO32_4);
+                etP32_4 = (EditText)findViewById(R.id.etP32_4);
+                tvP32_5 = (TextView) findViewById(R.id.tvP32_5);
+                ctvP32_5 = (CheckedTextView) findViewById(R.id.ctvP32_5);
+                tvO32_5 = (TextView)findViewById(R.id.tvO32_5);
+                etP32_5 = (EditText)findViewById(R.id.etP32_5);
+                tvP32_6 = (TextView) findViewById(R.id.tvP32_6);
+                ctvP32_6 = (CheckedTextView) findViewById(R.id.ctvP32_6);
+                tvO32_6 = (TextView)findViewById(R.id.tvO32_6);
+                etP32_6 = (EditText)findViewById(R.id.etP32_6);
+                tvP32_7= (TextView) findViewById(R.id.tvP32_7);
+                ctvP32_7 = (CheckedTextView) findViewById(R.id.ctvP32_7);
+                tvO32_7 = (TextView)findViewById(R.id.tvO32_7);
+                etP32_7 = (EditText)findViewById(R.id.etP32_7);
                 //endregion
 
                 //region Referencias
@@ -647,6 +679,26 @@ public class verificacion extends AppCompatActivity {
                 ctvP65_1 = (CheckedTextView) findViewById(R.id.ctvP65_1);
                 tvO65_1 = (TextView)findViewById(R.id.tvO65_1);
                 etP65_1 = (EditText)findViewById(R.id.etP65_1);
+                tvP65_2 = (TextView) findViewById(R.id.tvP65_2);
+                ctvP65_2 = (CheckedTextView) findViewById(R.id.ctvP65_2);
+                tvO65_2 = (TextView)findViewById(R.id.tvO65_2);
+                etP65_2 = (EditText)findViewById(R.id.etP65_2);
+                tvP65_3 = (TextView) findViewById(R.id.tvP65_3);
+                ctvP65_3 = (CheckedTextView) findViewById(R.id.ctvP65_3);
+                tvO65_3 = (TextView)findViewById(R.id.tvO65_3);
+                etP65_3 = (EditText)findViewById(R.id.etP65_3);
+                tvP65_4 = (TextView) findViewById(R.id.tvP65_4);
+                ctvP65_4 = (CheckedTextView) findViewById(R.id.ctvP65_4);
+                tvO65_4 = (TextView)findViewById(R.id.tvO65_4);
+                etP65_4 = (EditText)findViewById(R.id.etP65_4);
+                tvP65_5 = (TextView) findViewById(R.id.tvP65_5);
+                ctvP65_5 = (CheckedTextView) findViewById(R.id.ctvP65_5);
+                tvO65_5 = (TextView)findViewById(R.id.tvO65_5);
+                etP65_5 = (EditText)findViewById(R.id.etP65_5);
+                tvP65_6 = (TextView) findViewById(R.id.tvP65_6);
+                ctvP65_6 = (CheckedTextView) findViewById(R.id.ctvP65_6);
+                tvO65_6 = (TextView)findViewById(R.id.tvO65_6);
+                etP65_6 = (EditText)findViewById(R.id.etP65_6);
                 tvP66 = (TextView) findViewById(R.id.tvP66);
                 ctvP66 = (CheckedTextView) findViewById(R.id.ctvP66);
                 tvO66 = (TextView)findViewById(R.id.tvO66);
@@ -1185,6 +1237,31 @@ public class verificacion extends AppCompatActivity {
                 }
                 //endregion
 
+                //region Esconder/mostrar Propiedad
+                ctvP21_2.setText(addresses.get(pos).getE21_2());
+                ctvP21_2.setChecked(true);
+                ctvP21_2.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                tvO21_2.setVisibility(View.GONE);
+                etP21_2.setVisibility(View.GONE);
+                etP21_2.setText("");
+
+                ctvP21_3.setText(addresses.get(pos).getE21_3());
+                ctvP21_3.setChecked(true);
+                ctvP21_3.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                tvO21_3.setVisibility(View.GONE);
+                etP21_3.setVisibility(View.GONE);
+                etP21_3.setText("");
+
+                if(addresses.get(pos).getE21_2().equals("SI")) {
+                    tvP21_3.setVisibility(View.VISIBLE);
+                    ctvP21_3.setVisibility(View.VISIBLE);
+                }
+                else{
+                    tvP21_3.setVisibility(View.GONE);
+                    ctvP21_3.setVisibility(View.GONE);
+                }
+                //endregion
+
                 //region Victima
                 ctvP101.setText(victima.get(pos).getE101());
                 ctvP101.setChecked(true);
@@ -1540,6 +1617,75 @@ public class verificacion extends AppCompatActivity {
                     ctvP37_3.setVisibility(View.GONE);
                     tvP38.setVisibility(View.GONE);
                     ctvP38.setVisibility(View.GONE);
+                }
+                //endregion
+
+                //region Esconder/mostrar Dependientes económicos
+                ctvP32_2.setText(habitantes.get(pos).getE32_2());
+                ctvP32_2.setChecked(true);
+                ctvP32_2.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                tvO32_2.setVisibility(View.GONE);
+                etP32_2.setVisibility(View.GONE);
+                etP32_2.setText("");
+
+                ctvP32_3.setText(habitantes.get(pos).getE32_3());
+                ctvP32_3.setChecked(true);
+                ctvP32_3.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                tvO32_3.setVisibility(View.GONE);
+                etP32_3.setVisibility(View.GONE);
+                etP32_3.setText("");
+
+                ctvP32_4.setText(habitantes.get(pos).getE32_4());
+                ctvP32_4.setChecked(true);
+                ctvP32_4.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                tvO32_4.setVisibility(View.GONE);
+                etP32_4.setVisibility(View.GONE);
+                etP32_4.setText("");
+
+                ctvP32_5.setText(habitantes.get(pos).getE32_5());
+                ctvP32_5.setChecked(true);
+                ctvP32_5.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                tvO32_5.setVisibility(View.GONE);
+                etP32_5.setVisibility(View.GONE);
+                etP32_5.setText("");
+
+                ctvP32_6.setText(habitantes.get(pos).getE32_6());
+                ctvP32_6.setChecked(true);
+                ctvP32_6.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                tvO32_6.setVisibility(View.GONE);
+                etP32_6.setVisibility(View.GONE);
+                etP32_6.setText("");
+
+                ctvP32_7.setText(habitantes.get(pos).getE32_7());
+                ctvP32_7.setChecked(true);
+                ctvP32_7.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                tvO32_7.setVisibility(View.GONE);
+                etP32_7.setVisibility(View.GONE);
+                etP32_7.setText("");
+
+                if(habitantes.get(pos).getE32_2().equals("SI")){
+                    tvP32_3.setVisibility(View.VISIBLE);
+                    ctvP32_3.setVisibility(View.VISIBLE);
+                    tvP32_4.setVisibility(View.VISIBLE);
+                    ctvP32_4.setVisibility(View.VISIBLE);
+                    tvP32_5.setVisibility(View.VISIBLE);
+                    ctvP32_5.setVisibility(View.VISIBLE);
+                    tvP32_6.setVisibility(View.VISIBLE);
+                    ctvP32_6.setVisibility(View.VISIBLE);
+                    tvP32_7.setVisibility(View.VISIBLE);
+                    ctvP32_7.setVisibility(View.VISIBLE);
+                }
+                else{
+                    tvP32_3.setVisibility(View.GONE);
+                    ctvP32_3.setVisibility(View.GONE);
+                    tvP32_4.setVisibility(View.GONE);
+                    ctvP32_4.setVisibility(View.GONE);
+                    tvP32_5.setVisibility(View.GONE);
+                    ctvP32_5.setVisibility(View.GONE);
+                    tvP32_6.setVisibility(View.GONE);
+                    ctvP32_6.setVisibility(View.GONE);
+                    tvP32_7.setVisibility(View.GONE);
+                    ctvP32_7.setVisibility(View.GONE);
                 }
                 //endregion
                 //endregion
@@ -1901,6 +2047,64 @@ public class verificacion extends AppCompatActivity {
                     ctvP65.setVisibility(View.GONE);
                     tvP65_1.setVisibility(View.GONE);
                     ctvP65_1.setVisibility(View.GONE);
+                }
+                //endregion
+
+                //region Esconder/mostrar ha viajado fuera del estado o a otro municipios
+                ctvP65_2.setText(listaAbandonoEstado.get(pos).getE65_2());
+                ctvP65_2.setChecked(true);
+                ctvP65_2.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                tvO65_2.setVisibility(View.GONE);
+                etP65_2.setVisibility(View.GONE);
+                etP65_2.setText("");
+
+                ctvP65_3.setText(listaAbandonoEstado.get(pos).getE65_3());
+                ctvP65_3.setChecked(true);
+                ctvP65_3.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                tvO65_3.setVisibility(View.GONE);
+                etP65_3.setVisibility(View.GONE);
+                etP65_3.setText("");
+
+                ctvP65_4.setText(listaAbandonoEstado.get(pos).getE65_4());
+                ctvP65_4.setChecked(true);
+                ctvP65_4.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                tvO65_4.setVisibility(View.GONE);
+                etP65_4.setVisibility(View.GONE);
+                etP65_4.setText("");
+
+                ctvP65_5.setText(listaAbandonoEstado.get(pos).getE65_5());
+                ctvP65_5.setChecked(true);
+                ctvP65_5.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                tvO65_5.setVisibility(View.GONE);
+                etP65_5.setVisibility(View.GONE);
+                etP65_5.setText("");
+
+                ctvP65_6.setText(listaAbandonoEstado.get(pos).getE65_6());
+                ctvP65_6.setChecked(true);
+                ctvP65_6.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                tvO65_6.setVisibility(View.GONE);
+                etP65_6.setVisibility(View.GONE);
+                etP65_6.setText("");
+
+                if(listaAbandonoEstado.get(pos).getE65_2().equals("SI")){
+                    tvP65_3.setVisibility(View.VISIBLE);
+                    ctvP65_3.setVisibility(View.VISIBLE);
+                    tvP65_4.setVisibility(View.VISIBLE);
+                    ctvP65_4.setVisibility(View.VISIBLE);
+                    tvP65_5.setVisibility(View.VISIBLE);
+                    ctvP65_5.setVisibility(View.VISIBLE);
+                    tvP65_6.setVisibility(View.VISIBLE);
+                    ctvP65_6.setVisibility(View.VISIBLE);
+                }
+                else{
+                    tvP65_3.setVisibility(View.GONE);
+                    ctvP65_3.setVisibility(View.GONE);
+                    tvP65_4.setVisibility(View.GONE);
+                    ctvP65_4.setVisibility(View.GONE);
+                    tvP65_5.setVisibility(View.GONE);
+                    ctvP65_5.setVisibility(View.GONE);
+                    tvP65_6.setVisibility(View.GONE);
+                    ctvP65_6.setVisibility(View.GONE);
                 }
                 //endregion
 
@@ -3211,6 +3415,60 @@ public class verificacion extends AppCompatActivity {
                     }
                 });
 
+                ctvP28.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (ctvP28.isChecked()) {
+                            ctvP28.setChecked(false);
+                            ctvP28.setCheckMarkDrawable(R.drawable.ic_check_box_outline_blank_black_24dp);
+                            tvO28.setVisibility(View.VISIBLE);
+                            etP28.setVisibility(View.VISIBLE);
+                        }
+                        else {
+                            ctvP28.setChecked(true);
+                            ctvP28.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                            tvO28.setVisibility(View.GONE);
+                            etP28.setVisibility(View.GONE);
+                        }
+                    }
+                });
+
+                ctvP21_2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (ctvP21_2.isChecked()) {
+                            ctvP21_2.setChecked(false);
+                            ctvP21_2.setCheckMarkDrawable(R.drawable.ic_check_box_outline_blank_black_24dp);
+                            tvO21_2.setVisibility(View.VISIBLE);
+                            etP21_2.setVisibility(View.VISIBLE);
+                        }
+                        else {
+                            ctvP21_2.setChecked(true);
+                            ctvP21_2.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                            tvO21_2.setVisibility(View.GONE);
+                            etP21_2.setVisibility(View.GONE);
+                        }
+                    }
+                });
+
+                ctvP21_3.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (ctvP21_3.isChecked()) {
+                            ctvP21_3.setChecked(false);
+                            ctvP21_3.setCheckMarkDrawable(R.drawable.ic_check_box_outline_blank_black_24dp);
+                            tvO21_3.setVisibility(View.VISIBLE);
+                            etP21_3.setVisibility(View.VISIBLE);
+                        }
+                        else {
+                            ctvP21_3.setChecked(true);
+                            ctvP21_3.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                            tvO21_3.setVisibility(View.GONE);
+                            etP21_3.setVisibility(View.GONE);
+                        }
+                    }
+                });
+
                 ctvP101.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -3783,6 +4041,114 @@ public class verificacion extends AppCompatActivity {
                             ctvP38.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
                             tvO38.setVisibility(View.GONE);
                             etP38.setVisibility(View.GONE);
+                        }
+                    }
+                });
+
+                ctvP32_2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (ctvP32_2.isChecked()) {
+                            ctvP32_2.setChecked(false);
+                            ctvP32_2.setCheckMarkDrawable(R.drawable.ic_check_box_outline_blank_black_24dp);
+                            tvO32_2.setVisibility(View.VISIBLE);
+                            etP32_2.setVisibility(View.VISIBLE);
+                        }
+                        else {
+                            ctvP32_2.setChecked(true);
+                            ctvP32_2.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                            tvO32_2.setVisibility(View.GONE);
+                            etP32_2.setVisibility(View.GONE);
+                        }
+                    }
+                });
+
+                ctvP32_3.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (ctvP32_3.isChecked()) {
+                            ctvP32_3.setChecked(false);
+                            ctvP32_3.setCheckMarkDrawable(R.drawable.ic_check_box_outline_blank_black_24dp);
+                            tvO32_3.setVisibility(View.VISIBLE);
+                            etP32_3.setVisibility(View.VISIBLE);
+                        }
+                        else {
+                            ctvP32_3.setChecked(true);
+                            ctvP32_3.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                            tvO32_3.setVisibility(View.GONE);
+                            etP32_3.setVisibility(View.GONE);
+                        }
+                    }
+                });
+
+                ctvP32_4.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (ctvP32_4.isChecked()) {
+                            ctvP32_4.setChecked(false);
+                            ctvP32_4.setCheckMarkDrawable(R.drawable.ic_check_box_outline_blank_black_24dp);
+                            tvO32_4.setVisibility(View.VISIBLE);
+                            etP32_4.setVisibility(View.VISIBLE);
+                        }
+                        else {
+                            ctvP32_4.setChecked(true);
+                            ctvP32_4.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                            tvO32_4.setVisibility(View.GONE);
+                            etP32_4.setVisibility(View.GONE);
+                        }
+                    }
+                });
+
+                ctvP32_5.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (ctvP32_5.isChecked()) {
+                            ctvP32_5.setChecked(false);
+                            ctvP32_5.setCheckMarkDrawable(R.drawable.ic_check_box_outline_blank_black_24dp);
+                            tvO32_5.setVisibility(View.VISIBLE);
+                            etP32_5.setVisibility(View.VISIBLE);
+                        }
+                        else {
+                            ctvP32_5.setChecked(true);
+                            ctvP32_5.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                            tvO32_5.setVisibility(View.GONE);
+                            etP32_5.setVisibility(View.GONE);
+                        }
+                    }
+                });
+
+                ctvP32_6.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (ctvP32_6.isChecked()) {
+                            ctvP32_6.setChecked(false);
+                            ctvP32_6.setCheckMarkDrawable(R.drawable.ic_check_box_outline_blank_black_24dp);
+                            tvO32_6.setVisibility(View.VISIBLE);
+                            etP32_6.setVisibility(View.VISIBLE);
+                        }
+                        else {
+                            ctvP32_6.setChecked(true);
+                            ctvP32_6.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                            tvO32_6.setVisibility(View.GONE);
+                            etP32_6.setVisibility(View.GONE);
+                        }
+                    }
+                });
+
+                ctvP32_7.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (ctvP32_7.isChecked()) {
+                            ctvP32_7.setChecked(false);
+                            ctvP32_7.setCheckMarkDrawable(R.drawable.ic_check_box_outline_blank_black_24dp);
+                            tvO32_7.setVisibility(View.VISIBLE);
+                            etP32_7.setVisibility(View.VISIBLE);
+                        }
+                        else {
+                            ctvP32_7.setChecked(true);
+                            ctvP32_7.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                            tvO32_7.setVisibility(View.GONE);
+                            etP32_7.setVisibility(View.GONE);
                         }
                     }
                 });
@@ -4431,6 +4797,96 @@ public class verificacion extends AppCompatActivity {
                             ctvP65_1.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
                             tvO65_1.setVisibility(View.GONE);
                             etP65_1.setVisibility(View.GONE);
+                        }
+                    }
+                });
+
+                ctvP65_2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (ctvP65_2.isChecked()) {
+                            ctvP65_2.setChecked(false);
+                            ctvP65_2.setCheckMarkDrawable(R.drawable.ic_check_box_outline_blank_black_24dp);
+                            tvO65_2.setVisibility(View.VISIBLE);
+                            etP65_2.setVisibility(View.VISIBLE);
+                        }
+                        else {
+                            ctvP65_2.setChecked(true);
+                            ctvP65_2.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                            tvO65_2.setVisibility(View.GONE);
+                            etP65_2.setVisibility(View.GONE);
+                        }
+                    }
+                });
+
+                ctvP65_3.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (ctvP65_3.isChecked()) {
+                            ctvP65_3.setChecked(false);
+                            ctvP65_3.setCheckMarkDrawable(R.drawable.ic_check_box_outline_blank_black_24dp);
+                            tvO65_3.setVisibility(View.VISIBLE);
+                            etP65_3.setVisibility(View.VISIBLE);
+                        }
+                        else {
+                            ctvP65_3.setChecked(true);
+                            ctvP65_3.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                            tvO65_3.setVisibility(View.GONE);
+                            etP65_3.setVisibility(View.GONE);
+                        }
+                    }
+                });
+
+                ctvP65_4.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (ctvP65_4.isChecked()) {
+                            ctvP65_4.setChecked(false);
+                            ctvP65_4.setCheckMarkDrawable(R.drawable.ic_check_box_outline_blank_black_24dp);
+                            tvO65_4.setVisibility(View.VISIBLE);
+                            etP65_4.setVisibility(View.VISIBLE);
+                        }
+                        else {
+                            ctvP65_4.setChecked(true);
+                            ctvP65_4.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                            tvO65_4.setVisibility(View.GONE);
+                            etP65_4.setVisibility(View.GONE);
+                        }
+                    }
+                });
+
+                ctvP65_5.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (ctvP65_5.isChecked()) {
+                            ctvP65_5.setChecked(false);
+                            ctvP65_5.setCheckMarkDrawable(R.drawable.ic_check_box_outline_blank_black_24dp);
+                            tvO65_5.setVisibility(View.VISIBLE);
+                            etP65_5.setVisibility(View.VISIBLE);
+                        }
+                        else {
+                            ctvP65_5.setChecked(true);
+                            ctvP65_5.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                            tvO65_5.setVisibility(View.GONE);
+                            etP65_5.setVisibility(View.GONE);
+                        }
+                    }
+                });
+
+                ctvP65_6.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (ctvP65_6.isChecked()) {
+                            ctvP65_6.setChecked(false);
+                            ctvP65_6.setCheckMarkDrawable(R.drawable.ic_check_box_outline_blank_black_24dp);
+                            tvO65_6.setVisibility(View.VISIBLE);
+                            etP65_6.setVisibility(View.VISIBLE);
+                        }
+                        else {
+                            ctvP65_6.setChecked(true);
+                            ctvP65_6.setCheckMarkDrawable(R.drawable.ic_check_box_black_24dp);
+                            tvO65_6.setVisibility(View.GONE);
+                            etP65_6.setVisibility(View.GONE);
                         }
                     }
                 });
@@ -5596,6 +6052,8 @@ public class verificacion extends AppCompatActivity {
                         r26 = etP26.getText().toString().toUpperCase();
                         r27 = etP27.getText().toString().toUpperCase();
                         r28 = etP28.getText().toString().toUpperCase();
+                        r21_2 = etP21_2.getText().toString().toUpperCase();
+                        r21_3 = etP21_3.getText().toString().toUpperCase();
                         r101 = etP101.getText().toString().toUpperCase();
                         r102 = etP102.getText().toString().toUpperCase();
                         r103 = etP103.getText().toString().toUpperCase();
@@ -5628,6 +6086,12 @@ public class verificacion extends AppCompatActivity {
                         r36_3 = etP36_3.getText().toString().toUpperCase();
                         r37_3 = etP37_3.getText().toString().toUpperCase();
                         r38 = etP38.getText().toString().toUpperCase();
+                        r32_2 = etP32_2.getText().toString().toUpperCase();
+                        r32_3 = etP32_3.getText().toString().toUpperCase();
+                        r32_4 = etP32_4.getText().toString().toUpperCase();
+                        r32_5 = etP32_5.getText().toString().toUpperCase();
+                        r32_6 = etP32_6.getText().toString().toUpperCase();
+                        r32_7 = etP32_7.getText().toString().toUpperCase();
                         r39 = etP39.getText().toString().toUpperCase();
                         r40 = etP40.getText().toString().toUpperCase();
                         r41 = etP41.getText().toString().toUpperCase();
@@ -5664,6 +6128,11 @@ public class verificacion extends AppCompatActivity {
                         r64_1 = etP64_1.getText().toString().toUpperCase();
                         r65 = etP65.getText().toString().toUpperCase();
                         r65_1 = etP65_1.getText().toString().toUpperCase();
+                        r65_2 = etP65_2.getText().toString().toUpperCase();
+                        r65_3 = etP65_3.getText().toString().toUpperCase();
+                        r65_4 = etP65_4.getText().toString().toUpperCase();
+                        r65_5 = etP65_5.getText().toString().toUpperCase();
+                        r65_6 = etP65_6.getText().toString().toUpperCase();
                         r66 = etP66.getText().toString().toUpperCase();
                         r67 = etP67.getText().toString().toUpperCase();
                         r68 = etP68.getText().toString().toUpperCase();
@@ -5833,6 +6302,12 @@ public class verificacion extends AppCompatActivity {
                             if(ctvP28.isChecked() == false && r28.isEmpty() == false) {
                                 db.insertarObservaciones("e28", r28, addresses.get(pos).getE28(), folio);
                             }
+                            if(ctvP21_2.isChecked() == false && r21_2.isEmpty() == false) {
+                                db.insertarObservaciones("e21_2", r21_2, addresses.get(pos).getE21_2(), folio);
+                            }
+                            if(ctvP21_3.isChecked() == false && r21_3.isEmpty() == false) {
+                                db.insertarObservaciones("e21_3", r21_3, addresses.get(pos).getE21_3(), folio);
+                            }
                             if(ctvP101.isChecked() == false && r101.isEmpty() == false) {
                                 db.insertarObservaciones("e101", r101, victima.get(pos).getE101(), folio);
                             }
@@ -5928,6 +6403,24 @@ public class verificacion extends AppCompatActivity {
                             }
                             if(ctvP38.isChecked() == false && r38.isEmpty() == false) {
                                 db.insertarObservaciones("e38", r38, habitantes.get(pos).getE38(), folio);
+                            }
+                            if(ctvP32_2.isChecked() == false && r32_2.isEmpty() == false) {
+                                db.insertarObservaciones("e32_2", r32_2, habitantes.get(pos).getE32_2(), folio);
+                            }
+                            if(ctvP32_3.isChecked() == false && r32_3.isEmpty() == false) {
+                                db.insertarObservaciones("e32_3", r32_3, habitantes.get(pos).getE32_3(), folio);
+                            }
+                            if(ctvP32_4.isChecked() == false && r32_4.isEmpty() == false) {
+                                db.insertarObservaciones("e32_4", r32_4, habitantes.get(pos).getE32_4(), folio);
+                            }
+                            if(ctvP32_5.isChecked() == false && r32_5.isEmpty() == false) {
+                                db.insertarObservaciones("e32_5", r32_5, habitantes.get(pos).getE32_5(), folio);
+                            }
+                            if(ctvP32_6.isChecked() == false && r32_6.isEmpty() == false) {
+                                db.insertarObservaciones("e32_6", r32_6, habitantes.get(pos).getE32_6(), folio);
+                            }
+                            if(ctvP32_7.isChecked() == false && r32_7.isEmpty() == false) {
+                                db.insertarObservaciones("e32_7", r32_7, habitantes.get(pos).getE32_7(), folio);
                             }
                             if(ctvP39.isChecked() == false && r39.isEmpty() == false) {
                                 db.insertarObservaciones("e39", r39, referencias.get(pos).getE39(), folio);
@@ -6036,6 +6529,21 @@ public class verificacion extends AppCompatActivity {
                             }
                             if(ctvP65_1.isChecked() == false && r65_1.isEmpty() == false) {
                                 db.insertarObservaciones("e65_1", r65_1, listaAbandonoEstado.get(pos).getE65_1(), folio);
+                            }
+                            if(ctvP65_2.isChecked() == false && r65_2.isEmpty() == false) {
+                                db.insertarObservaciones("e65_2", r65_2, listaAbandonoEstado.get(pos).getE65_2(), folio);
+                            }
+                            if(ctvP65_3.isChecked() == false && r65_3.isEmpty() == false) {
+                                db.insertarObservaciones("e65_3", r65_3, listaAbandonoEstado.get(pos).getE65_3(), folio);
+                            }
+                            if(ctvP65_4.isChecked() == false && r65_4.isEmpty() == false) {
+                                db.insertarObservaciones("e65_4", r65_4, listaAbandonoEstado.get(pos).getE65_4(), folio);
+                            }
+                            if(ctvP65_5.isChecked() == false && r65_5.isEmpty() == false) {
+                                db.insertarObservaciones("e65_5", r65_5, listaAbandonoEstado.get(pos).getE65_5(), folio);
+                            }
+                            if(ctvP65_6.isChecked() == false && r65_6.isEmpty() == false) {
+                                db.insertarObservaciones("e65_6", r65_6, listaAbandonoEstado.get(pos).getE65_6(), folio);
                             }
                             if(ctvP66.isChecked() == false && r66.isEmpty() == false) {
                                 db.insertarObservaciones("e66", r66, listaAbandonoEstado.get(pos).getE66(), folio);
@@ -6329,6 +6837,12 @@ public class verificacion extends AppCompatActivity {
                         if(ctvP28.isChecked() == false && r28.isEmpty() == false) {
                             db.updateTable("imputado_datos_domicilio", "e28", r28, folio);
                         }
+                        if(ctvP21_2.isChecked() == false && r21_2.isEmpty() == false) {
+                            db.updateTable("imputado_datos_domicilio", "e21_2", r21_2, folio);
+                        }
+                        if(ctvP21_3.isChecked() == false && r21_3.isEmpty() == false) {
+                            db.updateTable("imputado_datos_domicilio", "e21_3", r21_3, folio);
+                        }
                         if(ctvP101.isChecked() == false && r101.isEmpty() == false) {
                             db.updateTable("imputado_datos_victima", "e101", r101, folio);
                         }
@@ -6424,6 +6938,24 @@ public class verificacion extends AppCompatActivity {
                         }
                         if(ctvP38.isChecked() == false && r38.isEmpty() == false) {
                             db.updateTable("imputado_datos_habitantes", "e38", r38, folio);
+                        }
+                        if(ctvP32_2.isChecked() == false && r32_2.isEmpty() == false) {
+                            db.updateTable("imputado_datos_habitantes", "e32_2", r32_2, folio);
+                        }
+                        if(ctvP32_3.isChecked() == false && r32_3.isEmpty() == false) {
+                            db.updateTable("imputado_datos_habitantes", "e32_3", r32_3, folio);
+                        }
+                        if(ctvP32_4.isChecked() == false && r32_4.isEmpty() == false) {
+                            db.updateTable("imputado_datos_habitantes", "e32_4", r32_4, folio);
+                        }
+                        if(ctvP32_5.isChecked() == false && r32_5.isEmpty() == false) {
+                            db.updateTable("imputado_datos_habitantes", "e32_5", r32_5, folio);
+                        }
+                        if(ctvP32_6.isChecked() == false && r32_6.isEmpty() == false) {
+                            db.updateTable("imputado_datos_habitantes", "e32_6", r32_6, folio);
+                        }
+                        if(ctvP32_7.isChecked() == false && r32_7.isEmpty() == false) {
+                            db.updateTable("imputado_datos_habitantes", "e32_7", r32_7, folio);
                         }
                         if(ctvP39.isChecked() == false && r39.isEmpty() == false) {
                             db.updateTable("imputado_datos_referencias", "e39", r39, folio);
@@ -6532,6 +7064,21 @@ public class verificacion extends AppCompatActivity {
                         }
                         if(ctvP65_1.isChecked() == false && r65_1.isEmpty() == false) {
                             db.updateTable("imputado_datos_abandono_estado", "e65_1", r65_1, folio);
+                        }
+                        if(ctvP65_2.isChecked() == false && r65_2.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e65_2", r65_2, folio);
+                        }
+                        if(ctvP65_3.isChecked() == false && r65_3.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e65_3", r65_3, folio);
+                        }
+                        if(ctvP65_4.isChecked() == false && r65_4.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e65_4", r65_4, folio);
+                        }
+                        if(ctvP65_5.isChecked() == false && r65_5.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e65_5", r65_5, folio);
+                        }
+                        if(ctvP65_6.isChecked() == false && r65_6.isEmpty() == false) {
+                            db.updateTable("imputado_datos_abandono_estado", "e65_6", r65_6, folio);
                         }
                         if(ctvP66.isChecked() == false && r66.isEmpty() == false) {
                             db.updateTable("imputado_datos_abandono_estado", "e66", r66, folio);

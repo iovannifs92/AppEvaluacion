@@ -1119,10 +1119,61 @@
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content"
 							android:layout_marginBottom="20dp"/>
-
 					</LinearLayout>
 
 					<!--endregion-->
+
+					<TextView
+						android:id="@+id/tvP21_2"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/e21_2" />
+
+					<CheckedTextView
+						android:id="@+id/ctvP21_2"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"
+						android:ems="10"
+						android:inputType="text" />
+
+					<TextView
+						android:id="@+id/tvO21_2"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Observaciones"/>
+
+					<EditText
+						android:id="@+id/etP21_2"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvP21_3"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/e21_3" />
+
+					<CheckedTextView
+						android:id="@+id/ctvP21_3"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"
+						android:ems="10"
+						android:inputType="text" />
+
+					<TextView
+						android:id="@+id/tvO21_3"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Observaciones"/>
+
+					<EditText
+						android:id="@+id/etP21_3"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"/>
 
 					<TextView
 						android:id="@+id/tvDatosVictima"
@@ -1880,6 +1931,156 @@
 
 					<EditText
 						android:id="@+id/etP38"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvP32_2"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/e32_2" />
+
+					<CheckedTextView
+						android:id="@+id/ctvP32_2"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:ems="10"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvO32_2"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Observaciones"/>
+
+					<EditText
+						android:id="@+id/etP32_2"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvP32_3"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/e32_3" />
+
+					<CheckedTextView
+						android:id="@+id/ctvP32_3"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:ems="10"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvO32_3"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Observaciones"/>
+
+					<EditText
+						android:id="@+id/etP32_3"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvP32_4"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/e32_4" />
+
+					<CheckedTextView
+						android:id="@+id/ctvP32_4"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:ems="10"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvO32_4"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Observaciones"/>
+
+					<EditText
+						android:id="@+id/etP32_4"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvP32_5"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/e32_5" />
+
+					<CheckedTextView
+						android:id="@+id/ctvP32_5"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:ems="10"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvO32_5"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Observaciones"/>
+
+					<EditText
+						android:id="@+id/etP32_5"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvP32_6"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/e32_6" />
+
+					<CheckedTextView
+						android:id="@+id/ctvP32_6"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:ems="10"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvO32_6"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Observaciones"/>
+
+					<EditText
+						android:id="@+id/etP32_6"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvP32_7"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/e32_7" />
+
+					<CheckedTextView
+						android:id="@+id/ctvP32_7"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:ems="10"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvO32_7"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Observaciones"/>
+
+					<EditText
+						android:id="@+id/etP32_7"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:layout_marginBottom="20dp"/>
@@ -2908,6 +3109,141 @@
 
 					<EditText
 						android:id="@+id/etP65_1"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvP65_2"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/e65_2" />
+
+					<CheckedTextView
+						android:id="@+id/ctvP65_2"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:ems="10"
+						android:focusable="false"
+						android:clickable="true"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvO65_2"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Observaciones"/>
+
+					<EditText
+						android:id="@+id/etP65_2"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvP65_3"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/e65_3" />
+
+					<CheckedTextView
+						android:id="@+id/ctvP65_3"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:ems="10"
+						android:focusable="false"
+						android:clickable="true"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvO65_3"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Observaciones"/>
+
+					<EditText
+						android:id="@+id/etP65_3"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvP65_4"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/e65_4" />
+
+					<CheckedTextView
+						android:id="@+id/ctvP65_4"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:ems="10"
+						android:focusable="false"
+						android:clickable="true"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvO65_4"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Observaciones"/>
+
+					<EditText
+						android:id="@+id/etP65_4"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvP65_5"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/e65_5" />
+
+					<CheckedTextView
+						android:id="@+id/ctvP65_5"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:ems="10"
+						android:focusable="false"
+						android:clickable="true"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvO65_5"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Observaciones"/>
+
+					<EditText
+						android:id="@+id/etP65_5"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvP65_6"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/e65_6" />
+
+					<CheckedTextView
+						android:id="@+id/ctvP65_6"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:ems="10"
+						android:focusable="false"
+						android:clickable="true"
+						android:layout_marginBottom="20dp"/>
+
+					<TextView
+						android:id="@+id/tvO65_6"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Observaciones"/>
+
+					<EditText
+						android:id="@+id/etP65_6"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:layout_marginBottom="20dp"/>

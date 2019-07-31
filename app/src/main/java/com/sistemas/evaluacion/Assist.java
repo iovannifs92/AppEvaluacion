@@ -23,7 +23,7 @@ public class Assist extends AppCompatActivity implements View.OnClickListener{
     //region Variables Globales
 
     String[] lista1 = {"Nunca", "Una o dos veces", "Mensualmente", "Semanalmente","Diariamente o casi diariamente"};
-    String[] lista2={"No, nunca","Si, en los ultimos 3 meses","Si, pero no en los últimos 3 meses"};
+    String[] lista2={"No, nunca","Sí, en los ultimos 3 meses","Sí, pero no en los últimos 3 meses"};
     String[] nosi={"NO", "SI"};
     EditText etP1j;
     String otro;

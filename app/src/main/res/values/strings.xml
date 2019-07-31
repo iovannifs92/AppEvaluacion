@@ -63,6 +63,8 @@
     <string name="e26">Descripción de como llegar al domicilio y características</string>
     <string name="e27">¿Cuánto tiempo lleva radicando en el domicilio?</string>
     <string name="e28">¿Horario en el que se localiza en el domicilio?</string>
+    <string name="e21_2">¿Cuenta con alguna propiedad (casas, terrenos, departamentos, etc.)?</string>
+    <string name="e21_3">¿Dónde se encuentra la propiedad?</string>
     <string name="e29">Estado civil</string>
     <string name="e30">Tiempo</string>
     <string name="e31">Hijos</string>
@@ -78,6 +80,13 @@
     <string name="e36">Ocupación</string>
     <string name="e37">¿Desde cuándo habita?</string>
     <string name="e38">Observaciones (si no habita con familiares preguntar el motivo y donde habitan los mismos)</string>
+
+    <string name="e32_2">¿Tiene dependientes económicos y/o personas bajo su cuidado?</string>
+    <string name="e32_3">¿Cuántos dependientes económicos tiene?</string>
+    <string name="e32_4">¿Dentro del estado o fuera del estado?</string>
+    <string name="e32_5">¿En dónde?</string>
+    <string name="e32_6">¿Qué relación tiene?</string>
+    <string name="e32_7">"En caso de que sea otro, especifique"</string>
 
     <string name="e39">Nombre</string>
     <string name="e40">Relación</string>
@@ -120,6 +129,11 @@
     <string name="e64_1">¿Hace cuánto?</string>
     <string name="e65">Fecha de salida</string>
     <string name="e65_1">¿Cuánto tiempo estuvo?</string>
+    <string name="e65_2">¿Ha viajado fuera del estado o a otro municipio fuera de la capital?</string>
+    <string name="e65_3">Estado</string>
+    <string name="e65_4">Ciudad</string>
+    <string name="e65_5">¿Hace cuánto?</string>
+    <string name="e65_6">¿Cuánto tiempo estuvo?</string>
     <string name="e66">¿Tiene familiares o personas con relación de amistad en el extranjero?</string>
     <string name="e67">Nombre</string> <!--Dos personas-->
     <string name="e68">Relación con el entrevistado</string>

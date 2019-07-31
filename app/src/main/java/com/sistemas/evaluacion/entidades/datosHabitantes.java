@@ -23,19 +23,26 @@ package com.sistemas.evaluacion.entidades;
 //dh.36_3 as Ocupación4,
 //dh.37_3 as Tiempo_Habita4,
 //dh.38 as Observaciones,
+//dh.32_2 as Tiene_Dependientes_Económicos,
+//dh.32_3 as Cantidad_Dependientes_Económicos,
+//dh.32_4 as Dependientes_Económicos_Dentro_Estado,
+//dh.32_5 as Ubicación_Dependientes_Económicos,
+//dh.32_6 as Relaciones_Dependientes_Económicos,
+//dh.32_7 as Otra_Relación_Dependientes_Económicos,
 //endregion
 
 public class datosHabitantes {
     int id;
     String e32, e33, e34, e35, e36, e37, e33_1, e34_1, e35_1, e36_1, e37_1, e33_2, e34_2, e35_2,
-            e36_2, e37_2, e33_3, e34_3, e35_3, e36_3, e37_3, e38, Folio;
+            e36_2, e37_2, e33_3, e34_3, e35_3, e36_3, e37_3, e38, e32_2, e32_3, e32_4, e32_5, e32_6, e32_7, Folio;
 
     //region Constructor
     public datosHabitantes(int id, String e32, String e33, String e34, String e35, String e36,
                            String e37, String e33_1, String e34_1, String e35_1, String e36_1,
                            String e37_1, String e33_2, String e34_2, String e35_2, String e36_2,
                            String e37_2, String e33_3, String e34_3, String e35_3, String e36_3,
-                           String e37_3, String e38, String folio){
+                           String e37_3, String e38, String e32_2, String e32_3, String e32_4,
+                           String e32_5, String e32_6, String e32_7, String folio){
         this.id = id;
         this.e32 = e32;
         this.e33 = e33;
@@ -59,6 +66,12 @@ public class datosHabitantes {
         this.e36_3 = e36_3;
         this.e37_3 = e37_3;
         this.e38 = e38;
+        this.e32_2 = e32_2;
+        this.e32_3 = e32_3;
+        this.e32_4 = e32_4;
+        this.e32_5 = e32_5;
+        this.e32_6 = e32_6;
+        this.e32_7 = e32_7;
         Folio = folio;
     }
     //endregion
@@ -247,6 +260,54 @@ public class datosHabitantes {
 
     public void setE38(String e38) {
         this.e38 = e38;
+    }
+
+    public String getE32_2() {
+        return e32_2;
+    }
+
+    public void setE32_2(String e32_2) {
+        this.e32_2 = e32_2;
+    }
+
+    public String getE32_3() {
+        return e32_3;
+    }
+
+    public void setE32_3(String e32_3) {
+        this.e32_3 = e32_3;
+    }
+
+    public String getE32_4() {
+        return e32_4;
+    }
+
+    public void setE32_4(String e32_4) {
+        this.e32_4 = e32_4;
+    }
+
+    public String getE32_5() {
+        return e32_5;
+    }
+
+    public void setE32_5(String e32_5) {
+        this.e32_5 = e32_5;
+    }
+
+    public String getE32_6() {
+        return e32_6;
+    }
+
+    public void setE32_6(String e32_6) {
+        this.e32_6 = e32_6;
+    }
+
+    public String getE32_7() {
+        return e32_7;
+    }
+
+    public void setE32_7(String e32_7) {
+        this.e32_7 = e32_7;
     }
 
     public String getFolio() {
