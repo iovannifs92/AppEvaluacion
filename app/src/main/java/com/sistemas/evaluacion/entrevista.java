@@ -2278,7 +2278,7 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
 
                 //region Insertar a Base de Datos
                 if(ValidaFormulario()) {
-                    db.insertarDatosGenerales(r1, r2, r3, r4, r5, r6, FOLIO, r98, min, r96, r99, r100, "", "", "", r21_1, r32,r1_1,r1_2, r31_1, r31_2);
+                    db.insertarDatosGenerales(r1, r2, r3, r4, r5, r6, FOLIO, r98, min, r96, r99, r100, "", "", "", r21_1, r32,r1_1,r1_2, r31_1, r31_2,"NO");
                     db.insertarDatosGeneralesDomicilio(r7, r7_1, r8, r9, r10, r11, r12, r13, r14, r15, r16, r32_1, r17,
                             r18, r19, r20, r21, r22, r23, r24, r25, r26, r27, r28, r21_2, r21_3, r29, r30, r31, confirmedMainLatitude,
                             confirmedMainLongitude, FOLIO);

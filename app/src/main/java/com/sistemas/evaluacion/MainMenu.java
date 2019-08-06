@@ -168,6 +168,10 @@ public class MainMenu extends AppCompatActivity
                 Intent intent8 = new Intent(this, QRVerify.class);
                 startActivity(intent8);
                 break;
+            case R.id.nav_investigacion:
+                Intent intent9 = new Intent(this, CarpetaInvestigacion.class);
+                startActivity(intent9);
+                break;
         }
 
         /*if (id == R.id.nav_verificacion) {

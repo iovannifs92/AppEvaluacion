@@ -5,7 +5,7 @@ public class datosGenerales {
     //region Variables Globales
     int id;
     String nombre, alias, fNacimiento, edad, lNacimiento, sexo, folio, fEntrevista, duracionE, entrevistador, observacionesF, tipo, assist,
-            tieneVerificacion, tieneEvaluacion, tieneDomicilioS, otrosHabitantes, entrevistado, antecedentePenal, delito, otroDelito;
+            tieneVerificacion, tieneEvaluacion, tieneDomicilioS, otrosHabitantes, entrevistado, antecedentePenal, delito, otroDelito, carpetaInvestigacion;
     //endregion
 
     //region Constructor
@@ -14,7 +14,7 @@ public class datosGenerales {
                           String fEntrevista, String duracionE, String entrevistador,
                           String observacionesF, String tipo, String assist, String tieneVerificacion, String tieneEvaluacion, String tieneDomicilioS,
                           String otrosHabitantes, String entrevistado, String antecedentePenal,
-                          String delito, String otroDelito) {
+                          String delito, String otroDelito, String carpetaInvestigacion) {
         this.id = id;
         this.nombre = nombre;
         this.alias = alias;
@@ -37,6 +37,7 @@ public class datosGenerales {
         this.antecedentePenal = antecedentePenal;
         this.delito = delito;
         this.otroDelito = otroDelito;
+        this.carpetaInvestigacion=carpetaInvestigacion;
     }
     //endregion
 
@@ -215,6 +216,14 @@ public class datosGenerales {
 
     public void setOtroDelito(String otroDelito) {
         this.otroDelito = otroDelito;
+    }
+
+    public String getCarpetaInvestigacion() {
+        return carpetaInvestigacion;
+    }
+
+    public void setCarpetaInvestigacion(String carpetaInvestigacion) {
+        this.carpetaInvestigacion = carpetaInvestigacion;
     }
 
     //endregion

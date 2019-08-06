@@ -260,7 +260,25 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <!--endregion-->
 
-    <!--region-->
+    <!--region Carpeta de investigación-->
+    <string name="e111">¿Cumplió con obligaciones procesales impuestas, en algún proceso anterior?</string>
+    <string name="e112">¿Fue declarado sustraído de la acción penal, ni se le giro alguna orden de aprehensión en un proceso diverso?</string>
+    <string name="e113">¿Proporciono información falsa sobre sus datos generales (identidad, medios de ubicación o localización?</string>
+    <string name="e114">¿Hay delitos federales asociados al motivo de la detención actual?</string>
+    <string name="e115">¿Puesta a disposición indica que se resistio a la detención?</string>
+    <string name="e116">¿La persona cuenta con antecedentes penales vigentes?</string>
+
+    <string name="e117">¿Existen testigos regitrados en la carpeta de investigación?</string> <!--SI/NO-->
+    <string name="e118">¿Tiene alguna relación con los testigos registrados en la carpeta de investigación?</string>
+    <string name="e119">¿Tiene alguna relación con otros detenidos por los mismos hechos?</string>
+    <string name="e120">¿Hay registros de amenazas a agentes aprehensores o a otros servidores públicos?</string><!--SI/NO-->
+    <string name="e121">¿Frecuenta, vive, trabaja o tiene relación con el lugar de los hechos?</string><!--SI/NO-->
+
+    <string name="e122">¿Existe víctima u ofendido registrado en la carpeta?</string><!--SI/NO-->
+    <string name="e123">¿Qué tipo de relación tiene con la víctima u ofendido?</string>
+    <string name="e124">¿La persona evaluada tiene vive, trabaja, o frecuenta lugares cercanos de donde reside la víctima u ofendido?</string>
+    <string name="e125">¿Durante la detención la persona evaluada agredió o amenazó a la víctima u ofendido?</string><!--SI/NO-->
+    <string name="e126">¿Durante el cumplimiento de MCL o SCP, la persona evaluada molesto o agredió a víctimas u ofendidos?</string><!--SI/NO-->
     <!--endregion-->
 
 
