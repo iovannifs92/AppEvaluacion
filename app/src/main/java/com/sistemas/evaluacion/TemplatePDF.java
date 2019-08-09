@@ -12,6 +12,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.Chunk;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.Element;
 import com.itextpdf.text.Font;
@@ -19,13 +20,19 @@ import com.itextpdf.text.Image;
 import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.Phrase;
+import com.itextpdf.text.Rectangle;
+import com.itextpdf.text.pdf.ColumnText;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.util.ArrayList;
+
+import static android.provider.Telephony.Mms.Part.TEXT;
 
 public class TemplatePDF {
     private Context context;
@@ -33,6 +40,8 @@ public class TemplatePDF {
     private Document document;
     private PdfWriter pdfWriter;
     private Paragraph paragraph;
+    private ColumnText ct;
+    private Rectangle rectangle;
     private Font fTitle=new Font(Font.FontFamily.TIMES_ROMAN, 20, Font.BOLD);
     private Font fSubTitle=new Font(Font.FontFamily.TIMES_ROMAN, 18, Font.BOLD);
     private Font fText=new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD);
@@ -48,6 +57,13 @@ public class TemplatePDF {
             document=new Document(PageSize.LETTER);
             pdfWriter=PdfWriter.getInstance(document, new FileOutputStream(pdfFile));
             document.open();
+
+            ct = new ColumnText(pdfWriter.getDirectContent());
+            Rectangle pageSize = document.getPageSize();
+            rectangle = new Rectangle(pageSize.getLeft(),
+                    pageSize.getBottom(),
+                    pageSize.getLeft() + pageSize.getWidth(),
+                    pageSize.getBottom() + pageSize.getHeight());
         }catch (Exception e){
             Log.e("openDocument", e.toString());
         }
@@ -156,6 +172,85 @@ public class TemplatePDF {
 
             paragraph.add(pdfPTable);
             document.add(paragraph);
+        }catch (Exception e){
+            Log.e("openDocument", e.toString());
+        }
+
+    }
+
+    public void createTable(ArrayList<PdfPCell> imputado, int cols, float[] widths){
+        try{
+            document.open();
+
+            Paragraph p;
+            Font normal = new Font(Font.FontFamily.TIMES_ROMAN, 12);
+            Font bold = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD);
+            boolean title = true;
+
+            paragraph=new Paragraph();
+            paragraph.setFont(fText);
+            PdfPTable pdfPTable=new PdfPTable(cols);
+            pdfPTable.setHorizontalAlignment(Element.ALIGN_LEFT);
+            pdfPTable.setWidths(widths);
+            pdfPTable.setWidthPercentage(100);
+            pdfPTable.setSpacingBefore(10);
+            pdfPTable.setSplitLate(true);
+
+            for (int index=0; index<imputado.size();index++){
+                PdfPCell pdfPCell;
+                pdfPCell = imputado.get(index);
+                pdfPCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                pdfPCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
+
+                pdfPTable.addCell(pdfPCell);
+            }
+
+            paragraph.add(pdfPTable);
+            ct.addElement(paragraph);
+
+            Rectangle pageSize = document.getPageSize();
+            Rectangle[] columns = {
+                    new Rectangle(pageSize.getLeft() + 36,
+                            pageSize.getBottom() + 36,
+                            pageSize.getLeft() + pageSize.getWidth() - 72,
+                            pageSize.getBottom() + pageSize.getHeight() - 72),
+                    new Rectangle(pageSize.getLeft() + 36,
+                            pageSize.getBottom() + 36,
+                            pageSize.getLeft() + pageSize.getWidth() - 72,
+                            pageSize.getBottom() + pageSize.getHeight() - 72)//TODO 36, 36, 290, 606), new Rectangle(305, 36, 559, 606)
+            };
+            int c = 0;
+            int status = ColumnText.START_COLUMN;
+
+            if(ct.getYLine() > 0) {
+                rectangle = new Rectangle(pageSize.getLeft(),
+                        pageSize.getBottom(),
+                        pageSize.getLeft() + pageSize.getWidth()/2,
+                        ct.getYLine() - 10);
+            }
+
+            while (ColumnText.hasMoreText(status)) {
+                ct.setSimpleColumn(rectangle);
+                status = ct.go();
+                if (++c == 2) {
+                    document.newPage();
+
+                    rectangle = new Rectangle(pageSize.getLeft(),
+                            pageSize.getBottom(),
+                            pageSize.getLeft() + pageSize.getWidth()/2,
+                            pageSize.getBottom() + pageSize.getHeight());
+                    ct.setYLine(pageSize.getHeight());
+
+                    c = 0;
+                }
+                else{
+                    rectangle = new Rectangle(pageSize.getWidth()/2,
+                            rectangle.getBottom(),
+                            pageSize.getLeft() + pageSize.getWidth(),
+                            rectangle.getTop());
+                }
+            }
+            //document.newPage();
         }catch (Exception e){
             Log.e("openDocument", e.toString());
         }

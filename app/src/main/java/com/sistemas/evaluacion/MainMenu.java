@@ -135,54 +135,45 @@ public class MainMenu extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        Intent intent;
         switch(id){
+            case R.id.nav_reporte_entrevista:
+                intent = new Intent(this, ReporteEntrevista.class);
+                startActivity(intent);
+                break;
             case R.id.nav_car:
-                Intent intent = new Intent(this, ConsultaDomicilio.class);
+                intent = new Intent(this, ConsultaDomicilio.class);
                 startActivity(intent);
                 break;
             case R.id.nav_verificacion:
-                Intent intent2 = new Intent(this, verificacion.class);
-                startActivity(intent2);
+                intent = new Intent(this, verificacion.class);
+                startActivity(intent);
                 break;
             case R.id.nav_assist:
-                Intent intent3 = new Intent(this, Assist.class);
-                startActivity(intent3);
+                intent = new Intent(this, Assist.class);
+                startActivity(intent);
                 break;
             case R.id.bd_nube:
-                Intent intent4 = new Intent(this, SincronizarBD.class);
-                startActivity(intent4);
+                intent = new Intent(this, SincronizarBD.class);
+                startActivity(intent);
                 break;
             case R.id.nav_manage:
-                Intent intent5 = new Intent(this, Settings.class);
-                startActivity(intent5);
+                intent = new Intent(this, Settings.class);
+                startActivity(intent);
                 break;
             case R.id.nav_reporte_assist:
-                Intent intent6 = new Intent(this, ReporteAssist.class);
-                startActivity(intent6);
+                intent = new Intent(this, ReporteAssist.class);
+                startActivity(intent);
                 break;
             case R.id.nav_instrumento:
-                Intent intent7 = new Intent(this, Instrumento.class);
-                startActivity(intent7);
+                intent = new Intent(this, Instrumento.class);
+                startActivity(intent);
                 break;
             case R.id.nav_qr:
-                Intent intent8 = new Intent(this, QRVerify.class);
-                startActivity(intent8);
+                intent = new Intent(this, QRVerify.class);
+                startActivity(intent);
                 break;
         }
-
-        /*if (id == R.id.nav_verificacion) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.bd_nube) {
-
-        } else if (id == R.id.nav_send) {
-
-        }*/
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

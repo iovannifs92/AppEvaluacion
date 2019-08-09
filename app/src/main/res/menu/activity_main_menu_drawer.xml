@@ -5,13 +5,19 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_reporte_entrevista"
+            android:icon="@drawable/ic_print_black_24dp"
+            android:title="Reporte Entrevista" />
+
+        <item
             android:id="@+id/nav_car"
             android:icon="@drawable/ic_directions_black_24dp"
             android:title="Ir a Dirección de Imputado" />
+
         <item
             android:id="@+id/nav_verificacion"
             android:icon="@drawable/ic_playlist_add_check_black_24dp"
-            android:title="Realizar Verificación" />
+            android:title="Verificación" />
 
         <item
             android:id="@+id/nav_assist"

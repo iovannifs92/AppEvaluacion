@@ -29,18 +29,17 @@ import java.util.Locale;
 public class ReporteAssist extends AppCompatActivity implements View.OnClickListener {
 
     //region Variables Globales
-    TextView tvPa, tvPb, tvPc, tvPd, tvPe, tvPf, tvPg, tvPh, tvPi, tvPj, tvRa, tvRb, tvRc, tvRd, tvRe, tvRf, tvRg, tvRh, tvRi, tvRj, tvOtro, tvControl;
-    String nombre, folio;
-    Button btnGenerarReporte;
+    private TextView tvPa, tvPb, tvPc, tvPd, tvPe, tvPf, tvPg, tvPh, tvPi, tvPj, tvRa, tvRb, tvRc, tvRd, tvRe, tvRf, tvRg, tvRh, tvRi, tvRj, tvOtro, tvControl;
+    private Button btnGenerarReporte;
+    private LinearLayout llControl;
     private TemplatePDF templatePDF;
+
     private String[] header={"Sustancia", "Puntuación", "Nivel de riesgo"};
     private ArrayList<String[]> imputado;
 
-    LinearLayout llControl;
-
-    String pa, pb, pc, pd, pe, pf, pg, ph, pi, pj, jOtro, p8,
+    private String nombre, folio, pa, pb, pc, pd, pe, pf, pg, ph, pi, pj, jOtro, p8,
             ra, rb, rc, rd, re, rf, rg, rh, ri, rj;
-    int pia, pib, pic, pid, pie, pif, pig, pih, pii, pij;
+    private int pia, pib, pic, pid, pie, pif, pig, pih, pii, pij;
     //endregion
 
     @Override
@@ -64,6 +63,13 @@ public class ReporteAssist extends AppCompatActivity implements View.OnClickList
             }
         }
 
+        Spinner sName;
+        sName = (Spinner) findViewById(R.id.sName);
+        sName.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, names));
+        if(names.isEmpty() == false) {
+            sName.setSelection(names.size() - 1);
+        }
+
         //region Verificar si hay registros
         if(names.size()!=0){
             tvControl=(TextView) findViewById(R.id.tvControl);
@@ -73,13 +79,6 @@ public class ReporteAssist extends AppCompatActivity implements View.OnClickList
             tvControl.setVisibility(View.GONE);
         }
         //endregion
-
-        Spinner sName;
-        sName = (Spinner) findViewById(R.id.sName);
-        sName.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, names));
-        if(names.isEmpty() == false) {
-            sName.setSelection(names.size() - 1);
-        }
 
         final ArrayList <datosASSIST> P = db.getASSIST();
 

@@ -21,4 +21,11 @@
     <color name="green">#00FF00</color>
     <color name="black">#000000</color>
 
+    <color name="colorGenerales">#0078A7</color>
+    <color name="colorHabitantes">#415667</color>
+    <color name="colorEscolar">#80AEAB</color>
+    <color name="colorOcupacional">#233460</color>
+    <color name="colorAbandono">#373435</color>
+    <color name="colorSalud">#A9D08E</color>
+
 </resources>

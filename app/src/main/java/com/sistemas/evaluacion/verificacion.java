@@ -70,7 +70,7 @@ public class verificacion extends AppCompatActivity {
             tvP88, tvP90_cocaina, tvP91_cocaina, tvP92_cocaina, tvP89, tvP93_otroConsumo,
             tvP90_otroConsumo, tvP91_otroConsumo, tvP92_otroConsumo, tvP94, tvP95, tvP96, tvP97,
             tvP99, tvP109, tvP110, persona1, persona2, persona3, persona4, personaE1, personaE2,
-            personaEstado1, personaEstado2;
+            personaEstado1, personaEstado2, tvControl;
     private TextView tvO1, tvO1_1, tvO1_2, tvO2, tvO3, tvO4, tvO5, tvO6, tvO7, tvO7_1, tvO8, tvO9, tvO10, tvO11, tvO12,
             tvO13, tvO14, tvO15, tvO16, tvO32_1, tvO17, tvO18, tvO19, tvO20, tvO21_1, tvO21, tvO22,
             tvO23, tvO24, tvO25, tvO26, tvO27, tvO28, tvO21_2, tvO21_3, tvO101, tvO102, tvO103, tvO104, tvO105, tvO29, tvO30, tvO31, tvO31_1,
@@ -130,7 +130,7 @@ public class verificacion extends AppCompatActivity {
     //endregion
 
     //region LinearLayout
-    private LinearLayout llDatosGenerales, llDatosFamiliares, llDatosEscolares, llDatosLaborales, llFAEstado, llSalud, llDatosVictima;
+    private LinearLayout llDatosGenerales, llDatosFamiliares, llDatosEscolares, llDatosLaborales, llFAEstado, llSalud, llDatosVictima, llControl;
     //endregion
 
     //region Button
@@ -176,8 +176,17 @@ public class verificacion extends AppCompatActivity {
             names[i] = lista.get(i).getNombre();
         }
         sVerificationName.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, names));
-        if(lista.isEmpty() == false) {
+        //endregion
+
+        //region Verificar si hay registros
+        if(lista.isEmpty() == false){
             sVerificationName.setSelection(lista.size() - 1);
+
+            tvControl=(TextView) findViewById(R.id.tvControl);
+            llControl=(LinearLayout) findViewById(R.id.llControl);
+
+            llControl.setVisibility(View.VISIBLE);
+            tvControl.setVisibility(View.GONE);
         }
         //endregion
 
