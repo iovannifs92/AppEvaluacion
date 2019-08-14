@@ -33,6 +33,8 @@ import java.io.FileReader;
 import java.util.ArrayList;
 
 import static android.provider.Telephony.Mms.Part.TEXT;
+import static java.lang.Float.max;
+import static java.lang.Float.min;
 
 public class TemplatePDF {
     private Context context;
@@ -41,11 +43,17 @@ public class TemplatePDF {
     private PdfWriter pdfWriter;
     private Paragraph paragraph;
     private ColumnText ct;
-    private Rectangle rectangle;
+    private Rectangle pageSize, rectangle;
     private Font fTitle=new Font(Font.FontFamily.TIMES_ROMAN, 20, Font.BOLD);
     private Font fSubTitle=new Font(Font.FontFamily.TIMES_ROMAN, 18, Font.BOLD);
     private Font fText=new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD);
+    private Font fFormatText=new Font(Font.FontFamily.TIMES_ROMAN, 5, Font.BOLD);
     private Font fHighText=new Font(Font.FontFamily.TIMES_ROMAN, 15, Font.BOLD, BaseColor.RED);
+
+    private static final float tol = 60;
+    private static final float pageMargin = 38;
+    private static final float margin = 5;
+    private static final float separation = 0;
 
     public TemplatePDF(Context context) {
         this.context = context;
@@ -59,11 +67,7 @@ public class TemplatePDF {
             document.open();
 
             ct = new ColumnText(pdfWriter.getDirectContent());
-            Rectangle pageSize = document.getPageSize();
-            rectangle = new Rectangle(pageSize.getLeft(),
-                    pageSize.getBottom(),
-                    pageSize.getLeft() + pageSize.getWidth(),
-                    pageSize.getBottom() + pageSize.getHeight());
+            pageSize = document.getPageSize();
         }catch (Exception e){
             Log.e("openDocument", e.toString());
         }
@@ -102,6 +106,34 @@ public class TemplatePDF {
         }
     }
 
+    //region Add titles when using ColumnText to draw the table
+    public void addColumnTextTitles(String title, String subTitle, String date){
+        try{
+            Paragraph paragraph = new Paragraph();
+            paragraph.setAlignment(Element.ALIGN_CENTER);
+            Chunk chunk;
+            chunk = new Chunk(title, fTitle);
+            paragraph.add(chunk);
+            chunk.setGenericTag(title);
+            chunk = new Chunk(subTitle, fSubTitle);
+            paragraph.add(chunk);
+            chunk.setGenericTag(subTitle);
+            chunk = new Chunk(date, fHighText);
+            paragraph.add(chunk);
+            ct.addElement(paragraph);
+            Rectangle rect = new Rectangle(pageSize.getLeft() + pageMargin,
+                            pageSize.getBottom() + pageMargin,
+                            pageSize.getRight() - pageMargin,
+                            pageSize.getTop() - pageSize.getHeight()*11/100 - margin);
+            ct.setSimpleColumn(rect);
+            ct.go();
+            ct.setYLine(ct.getYLine() - margin);
+        }catch (Exception e){
+            Log.e("write column text titles", e.toString());
+        }
+    }
+    //endregion
+
     private void addChild(Paragraph childParagraph){
         childParagraph.setAlignment(Element.ALIGN_CENTER);
         paragraph.add(childParagraph);
@@ -113,6 +145,42 @@ public class TemplatePDF {
             paragraph.setSpacingAfter(5);
             paragraph.setSpacingBefore(5);
             document.add(paragraph);
+        }catch (Exception e){
+            Log.e("openDocument", e.toString());
+        }
+    }
+
+    public void addColumnTextParagraph(String text){
+        try{
+            Paragraph paragraph = new Paragraph();
+            paragraph.setSpacingAfter(5);
+            paragraph.setSpacingBefore(5);
+            Chunk chunk;
+            chunk = new Chunk(text, fText);
+            paragraph.add(chunk);
+            chunk.setGenericTag(text);
+            ct.addElement(paragraph);
+            if(ct.getYLine() > 0) {
+                rectangle = new Rectangle(pageSize.getLeft() + pageMargin,
+                        pageSize.getBottom() + pageMargin,
+                        pageSize.getRight() - pageMargin,
+                        Math.min(ct.getYLine(), pageSize.getTop() - pageMargin));
+            }
+            else {
+                rectangle = new Rectangle(pageSize.getLeft() + pageMargin,
+                        pageSize.getBottom() + pageMargin,
+                        pageSize.getRight() - pageMargin,
+                        pageSize.getTop() - pageMargin);
+            }
+            if(rectangle.getHeight() <= 0){
+                document.newPage();
+                rectangle = new Rectangle(pageSize.getLeft() + pageMargin,
+                        pageSize.getBottom() + pageMargin,
+                        pageSize.getRight() - pageMargin,
+                        pageSize.getTop() - pageMargin);
+            }
+            ct.setSimpleColumn(rectangle);
+            ct.go();
         }catch (Exception e){
             Log.e("openDocument", e.toString());
         }
@@ -180,21 +248,14 @@ public class TemplatePDF {
 
     public void createTable(ArrayList<PdfPCell> imputado, int cols, float[] widths){
         try{
-            document.open();
-
-            Paragraph p;
-            Font normal = new Font(Font.FontFamily.TIMES_ROMAN, 12);
-            Font bold = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD);
-            boolean title = true;
-
             paragraph=new Paragraph();
-            paragraph.setFont(fText);
+            paragraph.setFont(fFormatText);
             PdfPTable pdfPTable=new PdfPTable(cols);
             pdfPTable.setHorizontalAlignment(Element.ALIGN_LEFT);
             pdfPTable.setWidths(widths);
             pdfPTable.setWidthPercentage(100);
             pdfPTable.setSpacingBefore(10);
-            pdfPTable.setSplitLate(true);
+            pdfPTable.keepRowsTogether(1);
 
             for (int index=0; index<imputado.size();index++){
                 PdfPCell pdfPCell;
@@ -202,55 +263,96 @@ public class TemplatePDF {
                 pdfPCell.setHorizontalAlignment(Element.ALIGN_CENTER);
                 pdfPCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
 
-                pdfPTable.addCell(pdfPCell);
+                //region Set the table font
+                PdfPCell newPdfPCell = new PdfPCell(new Phrase(pdfPCell.getPhrase().getContent(), fFormatText));
+                newPdfPCell.setBackgroundColor(pdfPCell.getBackgroundColor());
+                newPdfPCell.setRowspan(pdfPCell.getRowspan());
+                newPdfPCell.setColspan(pdfPCell.getColspan());
+                newPdfPCell.setRotation(pdfPCell.getRotation());
+                pdfPTable.addCell(newPdfPCell);
+                //endregion
             }
 
             paragraph.add(pdfPTable);
             ct.addElement(paragraph);
 
-            Rectangle pageSize = document.getPageSize();
-            Rectangle[] columns = {
-                    new Rectangle(pageSize.getLeft() + 36,
-                            pageSize.getBottom() + 36,
-                            pageSize.getLeft() + pageSize.getWidth() - 72,
-                            pageSize.getBottom() + pageSize.getHeight() - 72),
-                    new Rectangle(pageSize.getLeft() + 36,
-                            pageSize.getBottom() + 36,
-                            pageSize.getLeft() + pageSize.getWidth() - 72,
-                            pageSize.getBottom() + pageSize.getHeight() - 72)//TODO 36, 36, 290, 606), new Rectangle(305, 36, 559, 606)
-            };
             int c = 0;
             int status = ColumnText.START_COLUMN;
 
-            if(ct.getYLine() > 0) {
-                rectangle = new Rectangle(pageSize.getLeft(),
-                        pageSize.getBottom(),
-                        pageSize.getLeft() + pageSize.getWidth()/2,
-                        ct.getYLine() - 10);
-            }
+            //region Simulate to get the tables heights
+            float oldYLine = ct.getYLine();
+            rectangle = new Rectangle(pageSize.getLeft() + pageMargin,
+                    pageSize.getBottom() + pageMargin,
+                    pageSize.getLeft() + pageSize.getWidth()/2,
+                    1000000);
 
             while (ColumnText.hasMoreText(status)) {
                 ct.setSimpleColumn(rectangle);
-                status = ct.go();
-                if (++c == 2) {
-                    document.newPage();
-
-                    rectangle = new Rectangle(pageSize.getLeft(),
-                            pageSize.getBottom(),
-                            pageSize.getLeft() + pageSize.getWidth()/2,
-                            pageSize.getBottom() + pageSize.getHeight());
-                    ct.setYLine(pageSize.getHeight());
-
-                    c = 0;
-                }
-                else{
-                    rectangle = new Rectangle(pageSize.getWidth()/2,
-                            rectangle.getBottom(),
-                            pageSize.getLeft() + pageSize.getWidth(),
-                            rectangle.getTop());
-                }
+                status = ct.go(true);
             }
-            //document.newPage();
+            //endregion
+            float h = pdfPTable.getTotalHeight();
+
+            ct.setYLine(oldYLine);
+            ct.addElement(paragraph);
+            if(ct.getYLine() > 0) {
+                rectangle = new Rectangle(pageSize.getLeft() + pageMargin,
+                        Math.max(ct.getYLine() - h/2 - tol, pageMargin),
+                        pageSize.getLeft() + pageSize.getWidth()/2,
+                        Math.min(ct.getYLine(), pageSize.getTop() - pageMargin));
+            }
+            else{
+                rectangle = new Rectangle(pageSize.getLeft() + pageMargin,
+                        Math.max(pageSize.getTop() - pageMargin - h/2 - tol, pageMargin),
+                        pageSize.getLeft() + pageSize.getWidth()/2,
+                        pageSize.getTop() - pageMargin);
+            }
+            c = 0;
+            status = ColumnText.START_COLUMN;
+            while (ColumnText.hasMoreText(status)) {
+                //Rectangle left, right, lower and upper coordinates
+                float lx = 0;
+                float rx = 0;
+                float ly = 0;
+                float uy = 0;
+
+                float prevYLine = ct.getYLine();
+
+                if(c == 2) {
+                    document.newPage();
+                    ct.setYLine(0);
+                    oldYLine = pageSize.getTop() - pageMargin;
+                }
+
+                ct.setSimpleColumn(rectangle);
+                status = ct.go();
+                c++;
+                if (c%2 == 0) {
+                    lx = pageSize.getLeft() + pageMargin;
+                    rx = pageSize.getLeft() + pageSize.getWidth()/2;
+                    //c = 0;
+                }
+                else if(c%2 == 1){
+                    lx = pageSize.getLeft() + pageSize.getWidth()/2 + separation;
+                    rx = pageSize.getRight() - pageMargin;
+                }
+
+                if(c%2 == 1) {
+                    ly = rectangle.getBottom();
+                    uy = rectangle.getTop();
+                }
+                else if (c%2 == 0){
+                    //h -= 2*oldYLine - ct.getYLine() - prevYLine;
+                    ct.setYLine(Math.min(ct.getYLine(), prevYLine) - margin);
+
+                    ly = Math.max(pageSize.getTop() - h/2 - tol, pageMargin);
+                    uy = pageSize.getTop() - pageMargin;
+                }
+                rectangle = new Rectangle(lx, ly, rx, uy);
+            }
+            if(c == 1){
+                ct.setYLine(ct.getYLine() - margin);
+            }
         }catch (Exception e){
             Log.e("openDocument", e.toString());
         }
@@ -279,6 +381,42 @@ public class TemplatePDF {
             //image.setAbsolutePosition(0,0);
             image.setAlignment(Element.ALIGN_BOTTOM);
             document.add(image);
+        }catch (Exception e){
+            Log.e("addImgName ", e.toString());
+        }
+
+    }
+
+    public void addColumnTextImgQR () {
+        try{
+            String r=(Environment.getExternalStorageDirectory().toString()+ File.separator +"PDF" + File.separator + "codigo.png");
+            Image image = Image.getInstance(r);//"/storage/emulated/Images" + File.separator + imageName);
+            image.scaleAbsolute(100, 100);
+            //image.setAbsolutePosition(0,0);
+            image.setAlignment(Element.ALIGN_BOTTOM);
+            image.setAlignment(Element.ALIGN_RIGHT);
+            ct.addElement(image);
+            if(ct.getYLine() > 0) {
+                rectangle = new Rectangle(pageSize.getLeft() + pageMargin,
+                        pageSize.getBottom() + pageMargin,
+                        pageSize.getRight() - pageMargin,
+                        Math.min(ct.getYLine(), pageSize.getTop() - pageMargin));
+            }
+            else {
+                rectangle = new Rectangle(pageSize.getLeft() + pageMargin,
+                        pageSize.getBottom() + pageMargin,
+                        pageSize.getRight() - pageMargin,
+                        pageSize.getTop() - pageMargin);
+            }
+            if(rectangle.getHeight() <= 100){
+                document.newPage();
+                rectangle = new Rectangle(pageSize.getLeft() + pageMargin,
+                        pageSize.getBottom() + pageMargin,
+                        pageSize.getRight() - pageMargin,
+                        pageSize.getTop() - pageMargin);
+            }
+            ct.setSimpleColumn(rectangle);
+            ct.go();
         }catch (Exception e){
             Log.e("addImgName ", e.toString());
         }

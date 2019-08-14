@@ -155,11 +155,7 @@ public class ReporteEntrevista extends AppCompatActivity implements View.OnClick
                 templatePDF.openDocument();
                 templatePDF.addImgName();
                 templatePDF.addMetaData("Formato de Entrevista", "FOLIO", "SCORPION");
-                templatePDF.addTitles("COORDINACIÓN OPERATIVA", "Formato de Entrevista", fecha);
-
-                ArrayList<String[]> rows=new ArrayList<>();
-                rows.add(new String[]{"Productos de Tabaco","a"});
-                rows.add(new String[]{"Bebidas Alcoholicas","b"});
+                templatePDF.addColumnTextTitles("COORDINACIÓN OPERATIVA\n", "Formato de Entrevista\n", fecha + "\n");
 
                 templatePDF.createTable(getHeader(), 2, new float[]{1, 1});
                 templatePDF.createTable(getDatosGenerales(), 4, new float[]{1, 1, 6, 6});
@@ -168,8 +164,8 @@ public class ReporteEntrevista extends AppCompatActivity implements View.OnClick
                 templatePDF.createTable(getHistorialLaboral(), 4, new float[]{1, 1, 6, 6});
                 templatePDF.createTable(getDatosAbandonoEstado(), 4, new float[]{1, 1, 6, 6});
                 templatePDF.createTable(getDatosSalud(), 4, new float[]{1, 1, 6, 6});
-                //templatePDF.addParagraph("OBSERVACIONES FINALES: " + lista.get(pos).getObservacionesF());
-                templatePDF.addImgQR();
+                templatePDF.addColumnTextParagraph("OBSERVACIONES FINALES: " + lista.get(pos).getObservacionesF());
+                templatePDF.addColumnTextImgQR();
                 templatePDF.closeDocument();
                 templatePDF.appViewPDF(this);
                 break;
