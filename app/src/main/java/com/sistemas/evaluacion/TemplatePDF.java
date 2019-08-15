@@ -49,14 +49,17 @@ public class TemplatePDF {
     private Font fTitle=new Font(Font.FontFamily.TIMES_ROMAN, 20, Font.BOLD);
     private Font fSubTitle=new Font(Font.FontFamily.TIMES_ROMAN, 18, Font.BOLD);
     private Font fText=new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD);
-    private Font fFormatText=new Font(Font.FontFamily.TIMES_ROMAN, fontSize, Font.BOLD);
+    private Font fFormatText=new Font(Font.FontFamily.TIMES_ROMAN, fontSize);
+    private Font fFormatTextBold=new Font(Font.FontFamily.TIMES_ROMAN, fontSize, Font.BOLD);
+    private Font fFormatTextBoldWhite=new Font(Font.FontFamily.TIMES_ROMAN, fontSize, Font.BOLD, BaseColor.WHITE);
     private Font fHighText=new Font(Font.FontFamily.TIMES_ROMAN, 15, Font.BOLD, BaseColor.RED);
-
+    private BaseColor lightGray = new BaseColor(230, 230, 230);
     private static final float eps = (float)1e-3;
     private static final float tol = factor*fontSize - eps;//Defined as cell height
     private static final float pageMargin = 38;
     private static final float margin = factor*fontSize;
     private static final float separation = 0;
+
 
     public TemplatePDF(Context context) {
         this.context = context;
@@ -267,12 +270,27 @@ public class TemplatePDF {
                 pdfPCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
 
                 //region Set the table font
-                PdfPCell newPdfPCell = new PdfPCell(new Phrase(pdfPCell.getPhrase().getContent(), fFormatText));
+                PdfPCell newPdfPCell = new PdfPCell();
+                if(pdfPCell.getRotation() == 90){
+                    newPdfPCell = new PdfPCell(new Phrase(pdfPCell.getPhrase().getContent(), fFormatTextBoldWhite));
+                    newPdfPCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                    newPdfPCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                }
+                else {
+                    Phrase phrase;
+                    if(pdfPCell.getBackgroundColor() != null && pdfPCell.getBackgroundColor().equals(lightGray)){
+                        newPdfPCell = new PdfPCell(new Phrase(pdfPCell.getPhrase().getContent(), fFormatTextBold));
+                        newPdfPCell.setHorizontalAlignment(Element.ALIGN_RIGHT);
+                    }
+                    else {
+                        newPdfPCell = new PdfPCell(new Phrase(pdfPCell.getPhrase().getContent(), fFormatText));
+                        newPdfPCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                    }
+                }
                 newPdfPCell.setBackgroundColor(pdfPCell.getBackgroundColor());
                 newPdfPCell.setRowspan(pdfPCell.getRowspan());
                 newPdfPCell.setColspan(pdfPCell.getColspan());
                 newPdfPCell.setRotation(pdfPCell.getRotation());
-                newPdfPCell.setHorizontalAlignment(Element.ALIGN_RIGHT);
                 pdfPTable.addCell(newPdfPCell);
                 //endregion
             }

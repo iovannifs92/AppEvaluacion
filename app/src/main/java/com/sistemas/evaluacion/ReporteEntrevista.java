@@ -187,7 +187,7 @@ public class ReporteEntrevista extends AppCompatActivity implements View.OnClick
         cells.add(pdfPCell);
 
         pdfPCell=new PdfPCell(new Phrase("DATOS PERSONALES"));
-        pdfPCell.setRowspan(10);
+        pdfPCell.setRowspan(13);
         pdfPCell.setRotation(90);
         pdfPCell.setBackgroundColor(lighter(colorGenerales));
         cells.add(pdfPCell);
@@ -230,6 +230,21 @@ public class ReporteEntrevista extends AppCompatActivity implements View.OnClick
         pdfPCell.setBackgroundColor(lightGray);
         cells.add(pdfPCell);
         pdfPCell=new PdfPCell(new Phrase(lista.get(pos).getTieneDomicilioS()));
+        cells.add(pdfPCell);
+        pdfPCell = new PdfPCell(new Phrase(getString(R.string.e29)));
+        pdfPCell.setBackgroundColor(lightGray);
+        cells.add(pdfPCell);
+        pdfPCell = new PdfPCell(new Phrase(addresses.get(pos).getE29()));
+        cells.add(pdfPCell);
+        pdfPCell = new PdfPCell(new Phrase(getString(R.string.e30)));
+        pdfPCell.setBackgroundColor(lightGray);
+        cells.add(pdfPCell);
+        pdfPCell = new PdfPCell(new Phrase(addresses.get(pos).getE30()));
+        cells.add(pdfPCell);
+        pdfPCell = new PdfPCell(new Phrase(getString(R.string.e31)));
+        pdfPCell.setBackgroundColor(lightGray);
+        cells.add(pdfPCell);
+        pdfPCell = new PdfPCell(new Phrase(addresses.get(pos).getE31()));
         cells.add(pdfPCell);
         pdfPCell=new PdfPCell(new Phrase(getString(R.string.e31_1)));
         pdfPCell.setBackgroundColor(lightGray);
@@ -335,7 +350,7 @@ public class ReporteEntrevista extends AppCompatActivity implements View.OnClick
         pdfPCell = new PdfPCell(new Phrase(addresses.get(pos).getE20()));
         cells.add(pdfPCell);
         pdfPCell=new PdfPCell(new Phrase("DOMICILIO SECUNDARIO"));
-        pdfPCell.setRowspan(13);
+        pdfPCell.setRowspan(10);
         pdfPCell.setRotation(90);
         pdfPCell.setBackgroundColor(lighter(colorGenerales));
         cells.add(pdfPCell);
@@ -388,21 +403,6 @@ public class ReporteEntrevista extends AppCompatActivity implements View.OnClick
         pdfPCell.setBackgroundColor(lightGray);
         cells.add(pdfPCell);
         pdfPCell = new PdfPCell(new Phrase(addresses.get(pos).getE21_3()));
-        cells.add(pdfPCell);
-        pdfPCell = new PdfPCell(new Phrase(getString(R.string.e29)));
-        pdfPCell.setBackgroundColor(lightGray);
-        cells.add(pdfPCell);
-        pdfPCell = new PdfPCell(new Phrase(addresses.get(pos).getE29()));
-        cells.add(pdfPCell);
-        pdfPCell = new PdfPCell(new Phrase(getString(R.string.e30)));
-        pdfPCell.setBackgroundColor(lightGray);
-        cells.add(pdfPCell);
-        pdfPCell = new PdfPCell(new Phrase(addresses.get(pos).getE30()));
-        cells.add(pdfPCell);
-        pdfPCell = new PdfPCell(new Phrase(getString(R.string.e31)));
-        pdfPCell.setBackgroundColor(lightGray);
-        cells.add(pdfPCell);
-        pdfPCell = new PdfPCell(new Phrase(addresses.get(pos).getE31()));
         cells.add(pdfPCell);
         //endregion
 

@@ -173,6 +173,10 @@ public class MainMenu extends AppCompatActivity
                 intent = new Intent(this, QRVerify.class);
                 startActivity(intent);
                 break;
+            case R.id.nav_investigacion:
+                Intent intent9 = new Intent(this, CarpetaInvestigacion.class);
+                startActivity(intent9);
+                break;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

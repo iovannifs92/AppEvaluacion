@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CarpetaInvestigacion">
+
+    <TextView
+        android:id="@+id/tvControl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="30dp"
+        android:text="NO HAY REGISTROS PARA MOSTRAR"
+        android:textAlignment="center"/>
+
+    <LinearLayout
+        android:id="@+id/llControl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true"
+        android:visibility="gone">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Elija a la persona para colocar los datos correspondientes"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:layout_marginBottom="20dp"/>
+
+        <Spinner
+            android:id="@+id/sConsultaEntrevistados"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Coloque el número de la carpeta de investigación del delito"/>
+
+        <EditText
+            android:id="@+id/etCarpetaInvestigacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text"
+            android:layout_marginBottom="20dp" />
+
+        <!--region Voluntad de sometimiento-->
+        <Button
+            android:id="@+id/btnVoluntadSometimiento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="VOLUNTAD DE SOMETIMIENTO AL PROCESO PENAL ACTUAL"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/myWhite"
+            android:textSize="30dp"
+            android:textAlignment="center"/>
+
+        <LinearLayout
+            android:id="@+id/llVoluntadSometimiento"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/e111"/>
+
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:id="@+id/sP111"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#05ab9a" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/e112"/>
+
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:id="@+id/sP112"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#05ab9a" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/e113"/>
+
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:id="@+id/sP113"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#05ab9a" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/e114"/>
+
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:id="@+id/sP114"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#05ab9a" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/e115"/>
+
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:id="@+id/sP115"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#05ab9a" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/e116"/>
+
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:id="@+id/sP116"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#05ab9a" />
+
+        </LinearLayout>
+        <!--endregion-->
+
+        <!--region Testigos-->
+        <Button
+            android:id="@+id/btnTestigos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="TESTIGOS, COIMPUTADOS Y AGENTES APRENSORES"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/myWhite"
+            android:textSize="30dp"
+            android:textAlignment="center"/>
+
+        <LinearLayout
+            android:id="@+id/llTestigos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/e117"/>
+
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:id="@+id/sP117"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#05ab9a" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/e118"/>
+
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:id="@+id/sP118"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#05ab9a" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/e119"/>
+
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:id="@+id/sP119"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#05ab9a" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/e120"/>
+
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:id="@+id/sP120"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#05ab9a" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/e121"/>
+
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:id="@+id/sP121"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#05ab9a" />
+        </LinearLayout>
+        <!--endregion-->
+
+        <!--region Victimas-->
+        <Button
+            android:id="@+id/btnVictima"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="VÍCTIMA U OFENDIDO"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/myWhite"
+            android:textSize="30dp"
+            android:textAlignment="center"/>
+
+        <LinearLayout
+            android:id="@+id/llVictima"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/e122"/>
+
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:id="@+id/sP122"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#05ab9a" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/e123"/>
+
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:id="@+id/sP123"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#05ab9a" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/e124"/>
+
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:id="@+id/sP124"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#05ab9a" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/e125"/>
+
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:id="@+id/sP125"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#05ab9a" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/e126"/>
+
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:id="@+id/sP126"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#05ab9a" />
+        </LinearLayout>
+        <!--endregion-->
+
+        <Button
+            android:id="@+id/btnGuardar"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="Guardar Respuestas"
+            android:layout_marginTop="20dp"
+            android:theme="@style/PrimaryColoredButton"
+            android:textColor="#FFFFFF"
+            android:textSize="30dp"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+</LinearLayout>
