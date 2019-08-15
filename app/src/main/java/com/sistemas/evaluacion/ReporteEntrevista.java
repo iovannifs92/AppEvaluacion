@@ -154,8 +154,8 @@ public class ReporteEntrevista extends AppCompatActivity implements View.OnClick
                 templatePDF=new TemplatePDF(getApplicationContext());
                 templatePDF.openDocument();
                 templatePDF.addImgName();
-                templatePDF.addMetaData("Formato de Entrevista", "FOLIO", "SCORPION");
-                templatePDF.addColumnTextTitles("COORDINACIÓN OPERATIVA\n", "Formato de Entrevista\n", fecha + "\n");
+                templatePDF.addMetaData("FORMATO DE ENTREVISTA", "FOLIO", "SCORPION");
+                templatePDF.addColumnTextTitles("FORMATO DE ENTREVISTA\n", "", fecha + "\n");
 
                 templatePDF.createTable(getHeader(), 2, new float[]{1, 1});
                 templatePDF.createTable(getDatosGenerales(), 4, new float[]{1, 1, 6, 6});
@@ -1381,7 +1381,7 @@ public class ReporteEntrevista extends AppCompatActivity implements View.OnClick
         pdfPCell=new PdfPCell(new Phrase("DURACIÓN ENTREVISTA"));
         pdfPCell.setBackgroundColor(lightGray);
         cells.add(pdfPCell);
-        pdfPCell=new PdfPCell(new Phrase(lista.get(pos).getDuracionE()));
+        pdfPCell=new PdfPCell(new Phrase(lista.get(pos).getDuracionE() + " MINUTOS"));
         cells.add(pdfPCell);
         pdfPCell=new PdfPCell(new Phrase("FOLIO"));
         pdfPCell.setBackgroundColor(lightGray);

@@ -44,15 +44,18 @@ public class TemplatePDF {
     private Paragraph paragraph;
     private ColumnText ct;
     private Rectangle pageSize, rectangle;
+    private static final float factor = (float)1.8;
+    private static final float fontSize = 6;
     private Font fTitle=new Font(Font.FontFamily.TIMES_ROMAN, 20, Font.BOLD);
     private Font fSubTitle=new Font(Font.FontFamily.TIMES_ROMAN, 18, Font.BOLD);
     private Font fText=new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD);
-    private Font fFormatText=new Font(Font.FontFamily.TIMES_ROMAN, 5, Font.BOLD);
+    private Font fFormatText=new Font(Font.FontFamily.TIMES_ROMAN, fontSize, Font.BOLD);
     private Font fHighText=new Font(Font.FontFamily.TIMES_ROMAN, 15, Font.BOLD, BaseColor.RED);
 
-    private static final float tol = 60;
+    private static final float eps = (float)1e-3;
+    private static final float tol = factor*fontSize - eps;//Defined as cell height
     private static final float pageMargin = 38;
-    private static final float margin = 5;
+    private static final float margin = factor*fontSize;
     private static final float separation = 0;
 
     public TemplatePDF(Context context) {
@@ -255,7 +258,7 @@ public class TemplatePDF {
             pdfPTable.setWidths(widths);
             pdfPTable.setWidthPercentage(100);
             pdfPTable.setSpacingBefore(10);
-            pdfPTable.keepRowsTogether(1);
+            pdfPTable.setSplitLate(false);
 
             for (int index=0; index<imputado.size();index++){
                 PdfPCell pdfPCell;
@@ -269,31 +272,187 @@ public class TemplatePDF {
                 newPdfPCell.setRowspan(pdfPCell.getRowspan());
                 newPdfPCell.setColspan(pdfPCell.getColspan());
                 newPdfPCell.setRotation(pdfPCell.getRotation());
+                newPdfPCell.setHorizontalAlignment(Element.ALIGN_RIGHT);
                 pdfPTable.addCell(newPdfPCell);
                 //endregion
             }
 
             paragraph.add(pdfPTable);
-            ct.addElement(paragraph);
-
-            int c = 0;
-            int status = ColumnText.START_COLUMN;
 
             //region Simulate to get the tables heights
+            ct.addElement(paragraph);
             float oldYLine = ct.getYLine();
-            rectangle = new Rectangle(pageSize.getLeft() + pageMargin,
-                    pageSize.getBottom() + pageMargin,
-                    pageSize.getLeft() + pageSize.getWidth()/2,
-                    1000000);
+            if(ct.getYLine() > 0) {
+                rectangle = new Rectangle(pageSize.getLeft() + pageMargin,
+                        pageSize.getBottom() + pageMargin,
+                        pageSize.getLeft() + pageSize.getWidth()/2,
+                        Math.min(ct.getYLine(), pageSize.getTop() - pageMargin));
+            }
+            else{
+                rectangle = new Rectangle(pageSize.getLeft() + pageMargin,
+                        pageSize.getBottom() + pageMargin,
+                        pageSize.getLeft() + pageSize.getWidth()/2,
+                        pageSize.getTop() - pageMargin);
+            }
 
+            boolean fits = true;
+            int c = 0;
+            int status = ColumnText.START_COLUMN;
             while (ColumnText.hasMoreText(status)) {
+                if(c == 2){
+                    fits = false;
+                    rectangle = new Rectangle(pageSize.getLeft() + pageMargin,
+                            pageSize.getBottom() + pageMargin,
+                            pageSize.getLeft() + pageSize.getWidth()/2,
+                            1000000);
+                }
                 ct.setSimpleColumn(rectangle);
                 status = ct.go(true);
+                c++;
             }
             //endregion
             float h = pdfPTable.getTotalHeight();
 
-            ct.setYLine(oldYLine);
+            if(fits) {
+                ct.setYLine(oldYLine);
+            }
+            else{
+                document.newPage();//Keep table together
+                ct.setYLine(0);
+            }
+
+            //region Simulate where to split the columns
+            while(true) {
+                if(fits) {
+                    ct.setYLine(oldYLine);
+                }
+                else{
+                    ct.setYLine(0);
+                }
+                ct.addElement(paragraph);
+                if (ct.getYLine() > 0) {
+                    rectangle = new Rectangle(pageSize.getLeft() + pageMargin,
+                            Math.max(ct.getYLine() - h / 2 - tol, pageMargin),
+                            pageSize.getLeft() + pageSize.getWidth() / 2,
+                            Math.min(ct.getYLine(), pageSize.getTop() - pageMargin));
+                } else {
+                    rectangle = new Rectangle(pageSize.getLeft() + pageMargin,
+                            Math.max(pageSize.getTop() - pageMargin - h / 2 - tol, pageMargin),
+                            pageSize.getLeft() + pageSize.getWidth() / 2,
+                            pageSize.getTop() - pageMargin);
+                }
+                c = 0;
+                status = ColumnText.START_COLUMN;
+                while (ColumnText.hasMoreText(status)) {
+                    //Rectangle left, right, lower and upper coordinates
+                    float lx = 0;
+                    float rx = 0;
+                    float ly = 0;
+                    float uy = 0;
+
+                    float prevYLine = ct.getYLine();
+
+                    if (c == 3) {
+                        break;
+                    }
+
+                    ct.setSimpleColumn(rectangle);
+                    status = ct.go(true);
+                    c++;
+                    if (c % 2 == 0) {
+                        lx = pageSize.getLeft() + pageMargin;
+                        rx = pageSize.getLeft() + pageSize.getWidth() / 2;
+                    } else if (c % 2 == 1) {
+                        lx = pageSize.getLeft() + pageSize.getWidth() / 2 + separation;
+                        rx = pageSize.getRight() - pageMargin;
+                    }
+
+                    if (c % 2 == 1) {
+                        ly = rectangle.getBottom();
+                        uy = rectangle.getTop();
+                    } else if (c % 2 == 0) {
+                        ct.setYLine(Math.min(ct.getYLine(), prevYLine) - margin);
+
+                        ly = Math.max(pageSize.getTop() - h / 2 - tol, pageMargin);
+                        uy = pageSize.getTop() - pageMargin;
+                    }
+                    rectangle = new Rectangle(lx, ly, rx, uy);
+                }
+                if(c == 3) {
+                    break;
+                }
+                h -= 9;
+            }
+            while(true) {
+                if(fits) {
+                    ct.setYLine(oldYLine);
+                }
+                else{
+                    ct.setYLine(0);
+                }
+                ct.addElement(paragraph);
+                if (ct.getYLine() > 0) {
+                    rectangle = new Rectangle(pageSize.getLeft() + pageMargin,
+                            Math.max(ct.getYLine() - h / 2 - tol, pageMargin),
+                            pageSize.getLeft() + pageSize.getWidth() / 2,
+                            Math.min(ct.getYLine(), pageSize.getTop() - pageMargin));
+                } else {
+                    rectangle = new Rectangle(pageSize.getLeft() + pageMargin,
+                            Math.max(pageSize.getTop() - pageMargin - h / 2 - tol, pageMargin),
+                            pageSize.getLeft() + pageSize.getWidth() / 2,
+                            pageSize.getTop() - pageMargin);
+                }
+                c = 0;
+                status = ColumnText.START_COLUMN;
+                while (ColumnText.hasMoreText(status)) {
+                    //Rectangle left, right, lower and upper coordinates
+                    float lx = 0;
+                    float rx = 0;
+                    float ly = 0;
+                    float uy = 0;
+
+                    float prevYLine = ct.getYLine();
+
+                    if (c == 3) {
+                        break;
+                    }
+
+                    ct.setSimpleColumn(rectangle);
+                    status = ct.go(true);
+                    c++;
+                    if (c % 2 == 0) {
+                        lx = pageSize.getLeft() + pageMargin;
+                        rx = pageSize.getLeft() + pageSize.getWidth() / 2;
+                    } else if (c % 2 == 1) {
+                        lx = pageSize.getLeft() + pageSize.getWidth() / 2 + separation;
+                        rx = pageSize.getRight() - pageMargin;
+                    }
+
+                    if (c % 2 == 1) {
+                        ly = rectangle.getBottom();
+                        uy = rectangle.getTop();
+                    } else if (c % 2 == 0) {
+                        ct.setYLine(Math.min(ct.getYLine(), prevYLine) - margin);
+
+                        ly = Math.max(pageSize.getTop() - h / 2 - tol, pageMargin);
+                        uy = pageSize.getTop() - pageMargin;
+                    }
+                    rectangle = new Rectangle(lx, ly, rx, uy);
+                }
+                if(c <= 2) {
+                  break;
+                }
+                h += 9;
+            }
+            //endregion
+
+            if(fits) {
+                ct.setYLine(oldYLine);
+            }
+            else{
+                ct.setYLine(0);
+            }
+
             ct.addElement(paragraph);
             if(ct.getYLine() > 0) {
                 rectangle = new Rectangle(pageSize.getLeft() + pageMargin,
@@ -318,10 +477,14 @@ public class TemplatePDF {
 
                 float prevYLine = ct.getYLine();
 
-                if(c == 2) {
+                //Lines never used, a table is always fitted in a single page
+                /*if(c == 2) {
                     document.newPage();
                     ct.setYLine(0);
                     oldYLine = pageSize.getTop() - pageMargin;
+                }*/
+                if(c == 2){
+                    break;
                 }
 
                 ct.setSimpleColumn(rectangle);
@@ -330,7 +493,6 @@ public class TemplatePDF {
                 if (c%2 == 0) {
                     lx = pageSize.getLeft() + pageMargin;
                     rx = pageSize.getLeft() + pageSize.getWidth()/2;
-                    //c = 0;
                 }
                 else if(c%2 == 1){
                     lx = pageSize.getLeft() + pageSize.getWidth()/2 + separation;
@@ -342,7 +504,7 @@ public class TemplatePDF {
                     uy = rectangle.getTop();
                 }
                 else if (c%2 == 0){
-                    //h -= 2*oldYLine - ct.getYLine() - prevYLine;
+                    h -= 2*oldYLine - ct.getYLine() - prevYLine;//Line never used, a table is always fitted in a single page
                     ct.setYLine(Math.min(ct.getYLine(), prevYLine) - margin);
 
                     ly = Math.max(pageSize.getTop() - h/2 - tol, pageMargin);
