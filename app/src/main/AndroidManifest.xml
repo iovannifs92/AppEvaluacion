@@ -17,11 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
         <activity android:name=".ReporteEntrevista"></activity>
-=======
         <activity android:name=".CarpetaInvestigacion"></activity>
->>>>>>> 6d4f7efc6a89bfbcc11df8ecb8f4a8b6a2c983b4
         <activity android:name=".QRVerify" />
         <activity android:name=".Instrumento" />
         <activity android:name=".ReporteAssist" />
