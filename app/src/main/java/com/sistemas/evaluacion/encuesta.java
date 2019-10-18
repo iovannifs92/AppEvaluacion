@@ -29,7 +29,7 @@ public class encuesta extends AppCompatActivity {
     private ArrayList<Comentario> lista;
     private Comentario c;
 
-    EditText fecha, txt3Ubicacion, txt4CP, txt8Experiencia, txt19, txt20, txt21a, txt22a, txt24;
+    EditText fecha, txt3Ubicacion, txt4CP, txt8Experiencia, txt19, txt20, txt21a, txt22a, txt24, txtuniun ;
     TextView tvEstudio, tv21a, tv22a;
     ImageButton btnFecha;
     Spinner municipios, sEstudio,s9, s10, s11, s12, s13, s14, s15, s16, s17, s21, s22, s23, s25;
