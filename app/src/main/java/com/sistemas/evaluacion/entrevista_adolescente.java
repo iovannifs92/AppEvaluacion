@@ -19,14 +19,14 @@ public class entrevista_adolescente extends AppCompatActivity {
     //endregion
 
     //region EditText
-    private EditText txtNc, txtFecha, txtNe;
+    private EditText txtNc, txtFecha, txtNe, txtFolioA;
     //endregion EditText
     //region Buttons
     private Button btnGuardarA;
 
     //endregion Buttons
     //Region String
-    private String r1A, r2A, r3A;
+    private String r1A, r2A, r3A, r4A;
     //endregion String
 
     @Override
@@ -46,11 +46,13 @@ public class entrevista_adolescente extends AppCompatActivity {
                     txtNc=(EditText) findViewById(R.id.txtNc);
                     txtFecha=(EditText) findViewById(R.id.txtFecha);
                     txtNe=(EditText) findViewById(R.id.txtNe);
+                    txtFolioA=(EditText) findViewById(R.id.txtFolioA);
                     //endregion variabels
 
                     r1A=txtNc.getText().toString().toUpperCase();
                     r2A=txtFecha.getText().toString().toUpperCase();
                     r3A=txtNe.getText().toString().toUpperCase();
+                    r4A=txtFolioA.getText().toString().toUpperCase();
                     //endregion
 
                   // Base de datos  db.insertarDatosGeneralesA(r1A, r2A, r3A);
