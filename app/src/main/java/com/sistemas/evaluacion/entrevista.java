@@ -41,7 +41,8 @@ public class entrevista extends AppCompatActivity implements View.OnClickListene
     private static final int PICK_ADDRESS_REQUEST = 1;
 
     //region Boolean
-    private boolean vivePadres=false, datosGenerales=false, datosFamiliares=false, datosEscolares=false, datosLaborales=false, datosFAestado=false, datosSalud=false;
+    private boolean vivePadres=false, datosGenerales=false, datosFamiliares=false,
+            datosEscolares=false, datosLaborales=false, datosFAestado=false, datosSalud=false;
     //endregion
 
     //region TextView

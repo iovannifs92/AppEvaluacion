@@ -23,37 +23,36 @@
     <include layout="@layout/content_main_menu" />
 
 
-
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <com.github.clans.fab.FloatingActionMenu
-            android:id="@+id/fabPrincipal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:menu_fab_label=""
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true">
 
-            <com.github.clans.fab.FloatingActionButton
-                android:id="@+id/subMenu1"
-                android:onClick="clicSubMenu1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:fab_label="Entrevista Adulto"
-                android:src="@drawable/ic_icono1"/>
-
-
-            <com.github.clans.fab.FloatingActionButton
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:fab_label="Entrevista Adolescente"
-                android:src="@drawable/ic_icono1"/>
-
-
-        </com.github.clans.fab.FloatingActionMenu>
     </RelativeLayout>
 
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/fabPrincipal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:menu_fab_label="">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/subMenu1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="clicSubMenu1"
+            android:src="@drawable/ic_icono1"
+            app:fab_label="Entrevista Adulto" />
+
+
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_icono1"
+            app:fab_label="Entrevista Adolescente" />
+
+
+    </com.github.clans.fab.FloatingActionMenu>
 
 
 </android.support.design.widget.CoordinatorLayout>

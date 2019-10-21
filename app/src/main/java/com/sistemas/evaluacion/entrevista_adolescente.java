@@ -4,7 +4,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckedTextView;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 public class entrevista_adolescente extends AppCompatActivity {
@@ -21,10 +24,21 @@ public class entrevista_adolescente extends AppCompatActivity {
     //region EditText
     private EditText txtNc, txtFecha, txtNe, txtFolioA;
     //endregion EditText
+
+    //reguin Sppiner
+    private Spinner a;
+    //endregion
+    //region LinearLayout
+    private LinearLayout ab;
+    //endregionLinearLayout
     //region Buttons
     private Button btnGuardarA;
 
     //endregion Buttons
+    //regionCheckedTextView
+    CheckedTextView s;
+    //endregion
+
     //Region String
     private String r1A, r2A, r3A, r4A;
     //endregion String
