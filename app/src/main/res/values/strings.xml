@@ -282,11 +282,11 @@
     <!--endregion-->
 
 
-    <!--region Adolecentes-->
+    <!--region Adolescentes-->
 
-    <string name="e127">Esntrevista Adolecente</string>
+    <string name="e127">Entrevista Adolecente:</string>
     <string name="e128">Numero de control:</string>
     <string name="e129">Fecha de Entrevista:</string>
-    <string name="e130">Evaluador</string>
-    <string name="e131">Folio</string>
+    <string name="e130">Evaluador:</string>
+    <string name="e131">Folio:</string>
 </resources>
