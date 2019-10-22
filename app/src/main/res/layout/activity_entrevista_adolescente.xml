@@ -39,13 +39,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_toRightOf="@+id/tvNc"
-                android:layout_toEndOf="@+id/tvNc"
                 android:inputType="text"
                 android:text="" />
 
             <TextView
-                android:id="@+id/tvP1"
+                android:id="@+id/tvP2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/e132"
@@ -57,7 +55,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_toRightOf="@+id/tvFecha"
                 android:inputType="date"
                 android:clickable="true"
                 android:focusable="true"
@@ -80,8 +77,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_toRightOf="@+id/tvNe"
-                android:layout_toEndOf="@+id/tvNe"
                 android:inputType="text"
                 android:text="" />
 
@@ -96,7 +91,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_toRightOf="@+id/tvFolioA"
                 android:inputType="text"
                 android:text=""
                 android:layout_marginBottom="20dp"/>
@@ -148,8 +142,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/tvNe"
-            android:layout_toEndOf="@+id/tvNe"
             android:inputType="text"
             android:text="" />
         <EditText
@@ -157,8 +149,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/tvNe"
-            android:layout_toEndOf="@+id/tvNe"
             android:inputType="text"
             android:text="" />
         <EditText
@@ -166,8 +156,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/tvNe"
-            android:layout_toEndOf="@+id/tvNe"
             android:inputType="text"
             android:text="" />
         <EditText
@@ -175,8 +163,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/tvNe"
-            android:layout_toEndOf="@+id/tvNe"
             android:inputType="text"
             android:text="" />
 
@@ -192,8 +178,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/tvNe"
-            android:layout_toEndOf="@+id/tvNe"
             android:inputType="text"
             android:text="" />
 
@@ -202,8 +186,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/tvNe"
-            android:layout_toEndOf="@+id/tvNe"
             android:inputType="text"
             android:text="" />
 
@@ -212,8 +194,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/tvNe"
-            android:layout_toEndOf="@+id/tvNe"
             android:inputType="text"
             android:text="" />
 
@@ -222,8 +202,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/tvNe"
-            android:layout_toEndOf="@+id/tvNe"
             android:inputType="text"
             android:text="" />
 
@@ -239,8 +217,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/tvNe"
-            android:layout_toEndOf="@+id/tvNe"
             android:inputType="text"
             android:text="" />
 
@@ -249,8 +225,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/tvNe"
-            android:layout_toEndOf="@+id/tvNe"
             android:inputType="text"
             android:text="" />
 
@@ -259,8 +233,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/tvNe"
-            android:layout_toEndOf="@+id/tvNe"
             android:inputType="text"
             android:text="" />
 
@@ -269,10 +241,29 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/tvNe"
-            android:layout_toEndOf="@+id/tvNe"
             android:inputType="text"
             android:text="" />
+
+        <Button
+            android:id="@+id/btnDatosgenerales"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="2. DATOS GENERALES DEL IMPUTADO"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/myWhite"
+            android:textSize="30dp"
+            android:textAlignment="center"/>
+
+
+        <LinearLayout
+            android:id="@+id/llDatosgenerales"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_marginBottom="20dp"
+            />
 
         <TextView
             android:id="@+id/tvNa"
@@ -286,9 +277,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/tvNe"
-            android:layout_toEndOf="@+id/tvNe"
             android:inputType="text"
+            android:layout_marginBottom="20dp"
             android:text="" />
 
         <TextView
@@ -296,6 +286,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/e137"
+            android:layout_marginBottom="20dp"
             />
 
         <Spinner
@@ -316,10 +307,235 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/tvNe"
-            android:layout_toEndOf="@+id/tvNe"
             android:inputType="text"
             android:text="" />
+
+        <TextView
+            android:id="@+id/tvFNa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/e139"
+            android:layout_marginBottom="20dp"
+            />
+
+        <EditText
+            android:id="@+id/txtFNa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginBottom="20dp"
+            />
+
+        <TextView
+            android:id="@+id/tvCURPa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/e140"
+            />
+
+        <EditText
+            android:id="@+id/txtCURPa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:inputType="text"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/tvLNa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/e141"
+            />
+
+        <EditText
+            android:id="@+id/txtLNa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:inputType="text"
+            android:text="" />
+        <TextView
+            android:id="@+id/tvEDOa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/e142"
+            />
+
+        <EditText
+            android:id="@+id/txtEDOa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:inputType="text"
+            android:text="" />
+        <TextView
+            android:id="@+id/tvMA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/e143"
+            />
+
+        <EditText
+            android:id="@+id/txtMa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:inputType="text"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/tvLa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/e144"
+            />
+
+        <EditText
+            android:id="@+id/txtLa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:inputType="text"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/tvNAa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/e145"
+            />
+
+        <EditText
+            android:id="@+id/txtNAa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:inputType="text"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/tvIdio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/e146"
+            android:layout_marginBottom="20dp"
+            />
+
+        <Spinner
+            android:id="@+id/sPTra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/tvTra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/e147"
+            android:layout_marginBottom="20dp"
+            />
+
+        <Spinner
+            android:id="@+id/sPIdio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"/>
+
+        <Button
+            android:id="@+id/btnFichaA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="3. FICHA FAMILIAR DEL IMPUTADO"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/myWhite"
+            android:textSize="30dp"
+            android:textAlignment="center"/>
+
+
+        <LinearLayout
+            android:id="@+id/llFichaA"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_marginBottom="20dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/e148"
+            android:inputType="text"
+            android:textSize="25sp"
+            android:textColor="@android:color/background_dark"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/tvCa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/e149" />
+
+        <EditText
+            android:id="@+id/txtCa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:inputType="text"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/tvNOa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/e150" />
+
+        <EditText
+            android:id="@+id/txtNOa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:inputType="text"
+            android:text="" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <Button
             android:id="@+id/btnGuardarA"
             android:layout_width="match_parent"
@@ -330,6 +546,8 @@
             android:textColor="#FFFFFF"
             android:textSize="30dp"
             android:theme="@style/PrimaryColoredButton" />
+
+
     </LinearLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>

@@ -314,4 +314,17 @@
     <string name="e147">¿Requiere traductor?</string><!--SI/NO-->
     <!--endregion-->
 
+
+    <!-- region Datos Generales-->
+    <string name="e148">Domicilio Actual</string>
+    <string name="e149">Calle</string>
+    <string name="e150">No.</string>
+    <string name="e151">Colonia</string>
+    <string name="e152">CP</string>
+    <string name="e153">Municipio</string>
+    <string name="e154">Estado</string>
+
+
+    <!--endregion-->
+
 </resources>

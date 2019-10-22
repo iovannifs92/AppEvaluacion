@@ -46,18 +46,18 @@ public class entrevista_adolescente extends AppCompatActivity {
 
 
     //reguin Sppiner
-    private Spinner sPSex,sP1a;
+    private Spinner sPSex,sP1a,sPIdio,sPTra;
 
 
     //region Sppiners
 
     //endregion
     //region LinearLayout
-    private LinearLayout llPersonasPresentes;
+    private LinearLayout llPersonasPresentes,llDatosgenerales,llFichaA;
     //endregionLinearLayout
     //region Buttons
 
-    private Button btnGuardarA,btnPersonasPresentes;
+    private Button btnGuardarA,btnPersonasPresentes,btnDatosgenerales,btnFichaA;
 
 
     //endregion Buttons
