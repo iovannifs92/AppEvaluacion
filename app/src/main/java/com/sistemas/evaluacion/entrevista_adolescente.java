@@ -11,9 +11,14 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.sistemas.evaluacion.entidades.datosGenerales;
+
+import java.util.ArrayList;
+
 public class entrevista_adolescente extends AppCompatActivity {
     //region variables globales
     private MyOpenHelper db;
+<<<<<<< HEAD
 
     //endregion
 
@@ -22,6 +27,16 @@ public class entrevista_adolescente extends AppCompatActivity {
     //endregion
     //regio boolean
     private boolean pR=false;
+=======
+    private ArrayList<datosGenerales> lista;
+    //endregion
+
+    //region TextView
+    private TextView tvNc;
+    //endregion
+    //region Boolean
+    private  Boolean pR=false;
+>>>>>>> 666d8192ad3ace81b486ed3ef0345377bfc459cc
     //endregion
 
     //region EditText
@@ -42,15 +57,25 @@ public class entrevista_adolescente extends AppCompatActivity {
     private EditText txtCual;
     //endregion EditText
 
+<<<<<<< HEAD
     //reguin Sppiner
     private Spinner sPSex;
+=======
+
+    //region Sppiners
+    private Spinner a;
+>>>>>>> 666d8192ad3ace81b486ed3ef0345377bfc459cc
     //endregion
     //region LinearLayout
     private LinearLayout llPersonasPresentes;
     //endregionLinearLayout
     //region Buttons
+<<<<<<< HEAD
     private Button btnGuardarA,btnPersonasPresentes;
 
+=======
+    private Button btnGuardarA, btnPersonasPresentes;
+>>>>>>> 666d8192ad3ace81b486ed3ef0345377bfc459cc
     //endregion Buttons
     //regionCheckedTextView
     CheckedTextView s;
@@ -99,6 +124,22 @@ public class entrevista_adolescente extends AppCompatActivity {
 
                 }
             });
+        btnPersonasPresentes=(Button) findViewById(R.id.btnPersonasPresentes);
+        llPersonasPresentes=(LinearLayout) findViewById(R.id.llPersonasPresentes);
+
+        btnPersonasPresentes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!pR){
+                    llPersonasPresentes.setVisibility(View.VISIBLE);
+                    pR=true;
+                }
+                else{
+                    llPersonasPresentes.setVisibility(View.GONE);
+                    pR=false;
+                }
+            }
+        });
 
         //region 1. PERSONAS PRESENTES EN LA ENTREVISTA DEL IMPUTADO
         btnPersonasPresentes=(Button) findViewById(R.id.btnPersonasPresentes);

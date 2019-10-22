@@ -45,8 +45,13 @@
                 android:text="" />
 
             <TextView
+<<<<<<< HEAD
                 android:id="@+id/tvFevha"
                 android:layout_width="match_parent"
+=======
+                android:id="@+id/tvFecha"
+                android:layout_width="90dp"
+>>>>>>> 666d8192ad3ace81b486ed3ef0345377bfc459cc
                 android:layout_height="wrap_content"
                 android:text="@string/e129" />
 
@@ -55,6 +60,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
+<<<<<<< HEAD
                 android:layout_toRightOf="@+id/tvFevha"
                 android:layout_toEndOf="@+id/tvFevha"
                 android:inputType="date"
@@ -62,6 +68,25 @@
                 android:focusable="true"
                 android:layout_marginBottom="20dp"
                 />
+=======
+                android:layout_toRightOf="@+id/tvFecha"
+                android:layout_toEndOf="@+id/tvFecha"
+                android:inputType="text"
+                android:text="" />
+
+
+        </RelativeLayout>
+
+
+
+
+        <RelativeLayout
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            >
+>>>>>>> 666d8192ad3ace81b486ed3ef0345377bfc459cc
 
             <TextView
                 android:id="@+id/tvNe"
