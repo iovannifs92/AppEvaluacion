@@ -18,29 +18,25 @@
         android:focusableInTouchMode="true">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/e127"
+            android:inputType="text"
             android:textSize="25sp"
             android:textColor="@android:color/background_dark"
             android:textStyle="bold"
+            android:layout_marginBottom="20dp"
             />
-        <RelativeLayout
-            android:layout_marginBottom="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="left"
-            >
 
             <TextView
                 android:id="@+id/tvNc"
-                android:layout_width="90dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/e128" />
 
             <EditText
                 android:id="@+id/txtNc"
-                android:layout_width="120dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_toRightOf="@+id/tvNc"
@@ -48,55 +44,34 @@
                 android:inputType="text"
                 android:text="" />
 
-
-        </RelativeLayout>
-
-
-        <RelativeLayout
-            android:layout_marginBottom="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="left"
-            >
-
             <TextView
                 android:id="@+id/tvFevha"
-                android:layout_width="90dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/e129" />
 
             <EditText
                 android:id="@+id/txtFecha"
-                android:layout_width="120dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_toRightOf="@+id/tvFevha"
                 android:layout_toEndOf="@+id/tvFevha"
-                android:inputType="text"
-                android:text="" />
-
-
-        </RelativeLayout>
-
-
-
-
-        <RelativeLayout
-            android:layout_marginBottom="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="left"
-            >
+                android:inputType="date"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginBottom="20dp"
+                />
 
             <TextView
                 android:id="@+id/tvNe"
-                android:layout_width="90dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/e130" />
 
             <EditText
                 android:id="@+id/txtNe"
-                android:layout_width="120dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_toRightOf="@+id/tvNe"
@@ -104,46 +79,283 @@
                 android:inputType="text"
                 android:text="" />
 
-
-        </RelativeLayout>
-
-
-        <RelativeLayout
-            android:layout_marginBottom="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="left"
-            >
-
             <TextView
                 android:id="@+id/tvFolioA"
-                android:layout_width="90dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/e131" />
 
             <EditText
                 android:id="@+id/txtFolioA"
-                android:layout_width="120dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_toRightOf="@+id/tvFolioA"
                 android:layout_toEndOf="@+id/tvFolioA"
                 android:inputType="text"
-                android:text="" />
+                android:text=""
+                android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/tvP1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/e132"
+            android:layout_marginBottom="20dp"
+            />
+        <Spinner
+            android:id="@+id/sP1a"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"/>
+
+        <Button
+            android:id="@+id/btnPersonasPresentes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="1. PERSONAS PRESENTES EN LA ENTREVISTA DEL IMPUTADO"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/myWhite"
+            android:textSize="30dp"
+            android:textAlignment="center"/>
+
+        <LinearLayout
+            android:id="@+id/llPersonasPresentes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_marginBottom="20dp"
+            />
+
+        <TextView
+        android:id="@+id/tvNo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/e133"
+
+        />
+
+        <EditText
+            android:id="@+id/txtNpa1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/tvNe"
+            android:layout_toEndOf="@+id/tvNe"
+            android:inputType="text"
+            android:text="" />
+        <EditText
+            android:id="@+id/txtNpa2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/tvNe"
+            android:layout_toEndOf="@+id/tvNe"
+            android:inputType="text"
+            android:text="" />
+        <EditText
+            android:id="@+id/txtNpa3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/tvNe"
+            android:layout_toEndOf="@+id/tvNe"
+            android:inputType="text"
+            android:text="" />
+        <EditText
+            android:id="@+id/txtNpa4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/tvNe"
+            android:layout_toEndOf="@+id/tvNe"
+            android:inputType="text"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/tvRa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/e134"
+            />
+
+        <EditText
+            android:id="@+id/txtRa1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/tvNe"
+            android:layout_toEndOf="@+id/tvNe"
+            android:inputType="text"
+            android:text="" />
+
+        <EditText
+            android:id="@+id/txtRa2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/tvNe"
+            android:layout_toEndOf="@+id/tvNe"
+            android:inputType="text"
+            android:text="" />
+
+        <EditText
+            android:id="@+id/txtRa3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/tvNe"
+            android:layout_toEndOf="@+id/tvNe"
+            android:inputType="text"
+            android:text="" />
+
+        <EditText
+            android:id="@+id/txtRa4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/tvNe"
+            android:layout_toEndOf="@+id/tvNe"
+            android:inputType="text"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/tvPOa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/e135"
+            />
+
+        <EditText
+            android:id="@+id/txtPOa1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/tvNe"
+            android:layout_toEndOf="@+id/tvNe"
+            android:inputType="text"
+            android:text="" />
+
+        <EditText
+            android:id="@+id/txtPOa2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/tvNe"
+            android:layout_toEndOf="@+id/tvNe"
+            android:inputType="text"
+            android:text="" />
+
+        <EditText
+            android:id="@+id/txtPOa3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/tvNe"
+            android:layout_toEndOf="@+id/tvNe"
+            android:inputType="text"
+            android:text="" />
+
+        <EditText
+            android:id="@+id/txtPOa4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/tvNe"
+            android:layout_toEndOf="@+id/tvNe"
+            android:inputType="text"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/tvNa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/e136"
+            />
+
+        <EditText
+            android:id="@+id/txtNa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/tvNe"
+            android:layout_toEndOf="@+id/tvNe"
+            android:inputType="text"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/tvSex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/e137"
+            />
+
+        <Spinner
+            android:id="@+id/sPSex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/tvEa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/e138"
+            />
+
+        <EditText
+            android:id="@+id/txtEa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/tvNe"
+            android:layout_toEndOf="@+id/tvNe"
+            android:inputType="text"
+            android:text="" />
 
 
-        </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <Button
             android:id="@+id/btnGuardarA"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:text="Guardar Respuestas"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:theme="@style/PrimaryColoredButton"
+            android:text="Guardar Respuestas"
             android:textColor="#FFFFFF"
             android:textSize="30dp"
-            android:layout_gravity="center"/>
+            android:theme="@style/PrimaryColoredButton" />
+
 
 
     </LinearLayout>

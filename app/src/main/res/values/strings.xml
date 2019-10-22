@@ -282,11 +282,34 @@
     <!--endregion-->
 
 
-    <!--region Adolecentes-->
+    <!--region Adolescentes-->
 
-    <string name="e127">Esntrevista Adolecente</string>
-    <string name="e128">Numero de control:</string>
-    <string name="e129">Fecha de Entevista:</string>
-    <string name="e130">Evaluaor</string>
+    <string name="e127">Entrevista Adolescente</string>
+    <string name="e128">Número de causa</string>
+    <string name="e129">Fecha:</string>
+    <string name="e130">Evaluador</string>
     <string name="e131">Folio</string>
+    <!--endregion-->
+
+    <!--region Personas Presentes en la entrevista del imputado-->
+    <string name="e132">¿El adolescente ha proporcionado su consentimiento para esta entrevista?</string><!--SI/NO-->
+    <string name="e133">Nombres</string>
+    <string name="e134">Relación con el adolescente</string>
+    <string name="e135">Participante/oyente</string>
+    <!--endregion-->
+
+    <!-- region Datos Generales-->
+    <string name="e136">Nombre</string>
+    <string name="e137">Sexo</string>
+    <string name="e138">Edad</string>
+    <string name="e139">Fecha de Nacimiento</string>
+    <string name="e140">CURP</string>
+    <string name="e141">Lugar de Nacimiento</string>
+    <string name="e142">Estado</string>
+    <string name="e143">Municipio</string>
+    <string name="e144">Localidad</string>
+    <string name="e145">Nacionalidad</string>
+    <string name="e146">¿Habla Español?</string><!--SI/NO-->
+    <string name="e147">¿Requiere traductor?</string><!--SI/NO-->
+    <!--endregion-->
 </resources>
