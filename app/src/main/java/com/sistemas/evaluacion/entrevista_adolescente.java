@@ -18,26 +18,13 @@ import java.util.ArrayList;
 public class entrevista_adolescente extends AppCompatActivity {
     //region variables globales
     private MyOpenHelper db;
-<<<<<<< HEAD
+
 
     //endregion
 
-    //region TextView
-    private TextView tvNom,tvRa,tvPOa,tvNa,tvEa,tvFNa,tvSex;
-    //endregion
     //regio boolean
     private boolean pR=false;
-=======
-    private ArrayList<datosGenerales> lista;
-    //endregion
 
-    //region TextView
-    private TextView tvNc;
-    //endregion
-    //region Boolean
-    private  Boolean pR=false;
->>>>>>> 666d8192ad3ace81b486ed3ef0345377bfc459cc
-    //endregion
 
     //region EditText
     private EditText txtNc, txtFecha, txtNe, txtFolioA ,txtNpa1, txtNpa2, txtNpa3, txtNpa4, txtRa1, txtRa2, txtRa3, txtRa4, txtPOa1, txtPOa2, txtPOa3, txtPOa4, txtNa, txtEa, txtFNa, txtCURPa, txtLNa, txtEDOa, txtMa, txtLa, txtNAa ;
@@ -57,31 +44,26 @@ public class entrevista_adolescente extends AppCompatActivity {
     private EditText txtCual;
     //endregion EditText
 
-<<<<<<< HEAD
+
     //reguin Sppiner
-    private Spinner sPSex;
-=======
+    private Spinner sPSex,sP1a;
+
 
     //region Sppiners
-    private Spinner a;
->>>>>>> 666d8192ad3ace81b486ed3ef0345377bfc459cc
+
     //endregion
     //region LinearLayout
     private LinearLayout llPersonasPresentes;
     //endregionLinearLayout
     //region Buttons
-<<<<<<< HEAD
+
     private Button btnGuardarA,btnPersonasPresentes;
 
-=======
-    private Button btnGuardarA, btnPersonasPresentes;
->>>>>>> 666d8192ad3ace81b486ed3ef0345377bfc459cc
+
     //endregion Buttons
     //regionCheckedTextView
     CheckedTextView s;
     //endregion
-    //Region Spinner
-    private Spinner sP1a;
     //Region String
     private String r1A, r2A, r3A, r4A;
     private String [] nosi={"No", "Si"};
@@ -94,7 +76,7 @@ public class entrevista_adolescente extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entrevista_adolescente);
-        db=new MyOpenHelper(this);
+       db=new MyOpenHelper(this);
 
             //Regio sP1a Spinner
               sP1a=(Spinner) findViewById(R.id.sP1a);

@@ -284,7 +284,7 @@
 
     <!--region Adolescentes-->
 
-<<<<<<< HEAD
+
     <string name="e127">Entrevista Adolescente</string>
     <string name="e128">Número de causa</string>
     <string name="e129">Fecha:</string>
@@ -313,11 +313,5 @@
     <string name="e146">¿Habla Español?</string><!--SI/NO-->
     <string name="e147">¿Requiere traductor?</string><!--SI/NO-->
     <!--endregion-->
-=======
-    <string name="e127">Entrevista Adolecente:</string>
-    <string name="e128">Numero de control:</string>
-    <string name="e129">Fecha de Entrevista:</string>
-    <string name="e130">Evaluador:</string>
-    <string name="e131">Folio:</string>
->>>>>>> 666d8192ad3ace81b486ed3ef0345377bfc459cc
+
 </resources>

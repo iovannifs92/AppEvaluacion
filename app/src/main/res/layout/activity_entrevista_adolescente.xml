@@ -26,7 +26,7 @@
             android:textColor="@android:color/background_dark"
             android:textStyle="bold"
             android:layout_marginBottom="20dp"
-            />
+            tools:ignore="MissingConstraints" />
 
             <TextView
                 android:id="@+id/tvNc"
@@ -45,49 +45,30 @@
                 android:text="" />
 
             <TextView
-<<<<<<< HEAD
-                android:id="@+id/tvFevha"
+                android:id="@+id/tvP1"
                 android:layout_width="match_parent"
-=======
-                android:id="@+id/tvFecha"
-                android:layout_width="90dp"
->>>>>>> 666d8192ad3ace81b486ed3ef0345377bfc459cc
                 android:layout_height="wrap_content"
-                android:text="@string/e129" />
+                android:text="@string/e132"
+                android:layout_marginBottom="20dp"
+                />
 
             <EditText
                 android:id="@+id/txtFecha"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-<<<<<<< HEAD
-                android:layout_toRightOf="@+id/tvFevha"
-                android:layout_toEndOf="@+id/tvFevha"
+                android:layout_toRightOf="@+id/tvFecha"
                 android:inputType="date"
                 android:clickable="true"
                 android:focusable="true"
                 android:layout_marginBottom="20dp"
                 />
-=======
-                android:layout_toRightOf="@+id/tvFecha"
-                android:layout_toEndOf="@+id/tvFecha"
-                android:inputType="text"
-                android:text="" />
-
-
-        </RelativeLayout>
-
-
-
-
         <RelativeLayout
             android:layout_marginBottom="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="left"
-            >
->>>>>>> 666d8192ad3ace81b486ed3ef0345377bfc459cc
-
+            />
             <TextView
                 android:id="@+id/tvNe"
                 android:layout_width="match_parent"
@@ -116,7 +97,6 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_toRightOf="@+id/tvFolioA"
-                android:layout_toEndOf="@+id/tvFolioA"
                 android:inputType="text"
                 android:text=""
                 android:layout_marginBottom="20dp"/>
@@ -144,6 +124,7 @@
             android:textColor="@color/myWhite"
             android:textSize="30dp"
             android:textAlignment="center"/>
+
 
         <LinearLayout
             android:id="@+id/llPersonasPresentes"
@@ -339,37 +320,6 @@
             android:layout_toEndOf="@+id/tvNe"
             android:inputType="text"
             android:text="" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <Button
             android:id="@+id/btnGuardarA"
             android:layout_width="match_parent"
@@ -380,9 +330,6 @@
             android:textColor="#FFFFFF"
             android:textSize="30dp"
             android:theme="@style/PrimaryColoredButton" />
-
-
-
     </LinearLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>
