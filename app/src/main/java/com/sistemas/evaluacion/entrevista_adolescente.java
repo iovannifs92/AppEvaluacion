@@ -27,11 +27,14 @@ public class entrevista_adolescente extends AppCompatActivity {
     private boolean pR=false;
 
     //region TextView
-    private TextView tvNDFa1,tvNDFa2,tvNDFa3,tvNDFa4,tvRDFa1,tvRDFa2,tvRDFa3,tvRDFa4,tvEDFa1,tvEDFa2,tvEDFa3,tvEDFa4,tvTDFa1,tvTDFa2,tvTDFa3,tvTDFa4,tvVDF1,tvVDF2,tvVDF3,tvVDF4,tvCQDFa,tvRDFa,tvLDFa;
+    //DOMICILIOS ANTERIORES
+    private TextView tvDA1, tvDA2;
+    //REUBICAR ADOLECENTE
+    private TextView tvCQDFa, tvRDFa, tvLDFa;
     //DEPENDIENTES ECONOMICOS
-    private TextView tvNDEa1, tvNDEa2, tvNDEa3,tvNDEa4,tvRDEa1,tvRDEa2,tvRDEa3,tvRDEa4,tvEDEa1,tvEDEa2,tvEDEa3,tvEDEa4,tvTDEa1,tvTDEa2,tvTDEa3,tvTDEa4;
+    private TextView tvNDEa1,tvRDEa1,tvEDEa1,tvTDEa1;
     //DEPENDIENTES TRABAJO ACTUAL
-    private TextView tvTA,tvNTa,tvDTa,tvTTa,tvATa,tvJTa,tvNT1,tvNT2,tvNT3,tvNT4,tvLT1,tvLT2,tvLT3,tvLT4,tvAT1,tvAT2,tvAT3,tvAT4,tvTT1,tvTT2,tvTT3,tvTT4;
+    private TextView tvTA,tvNTa,tvDTa,tvTTa,tvATa,tvTC,tvJTa,tvNT1,tvNT2,tvNT3,tvNT4,tvLT1,tvLT2,tvLT3,tvLT4,tvAT1,tvAT2,tvAT3,tvAT4,tvTT1,tvTT2,tvTT3,tvTT4;
     //endregion
 
     //region EditText
@@ -40,7 +43,7 @@ public class entrevista_adolescente extends AppCompatActivity {
     //Ficha familiar Domicilio
     private EditText txtCa, txtNOa, txtCOLa, txtCPa, txtMUa, txtEDO2a, txtPa, txtTa, txtDALa1, txtDALa2, txtDALa3, txtDALa4, txtDATa1, txtDATa2, txtDATa3, txtDATa4;
     //Datos familiares
-    private EditText txtNDFa1,txtNDFa2,txtNDFa3,txtNDFa4,txtRDFa1, txtRDFa2, txtRDFa3, txtRDFa4, txtEDFa1, txtEDFa2, txtEDFa3, txtEDFa4, txtTDFa1, txtTDFa2, txtTDFa3, txtTDFa4, txtVDF1, txtVDF2, txtVDF3, txtVDF4, txtCQDFa,txtRDFa,txtLDFa;
+    private EditText txtNDFa1,txtNDFa2,txtRDFa1, txtRDFa2,txtEDFa1, txtEDFa2,txtTDFa1, txtTDFa2,txtCQDFa,txtRDFa,txtLDFa;
     //Dependientes economicos
     private EditText txtNDEa1,txtNDEa2,txtNDEa3,txtNDEa4, txtRDEa1,txtRDEa2,txtRDEa3,txtRDEa4,txtEDEa1,txtEDEa2,txtEDEa3,txtEDEa4,txtTDEa1,txtTDEa2,txtTDEa3,txtTDEa4;
     //Viculos comunitarios
@@ -72,7 +75,7 @@ public class entrevista_adolescente extends AppCompatActivity {
     private String r1A, r2A, r3A, r4A;
     private String [] nosi={"No", "Si"};
     private String [] sexo={"Masculino", "Femenino"};
-    private String [] malo={"Masculino", "Femenino","Enfermedades cardiovasculares","Cáncer","Enfermedad Pulmonar Obstructiva Crónica","Diabetes","Parkinson","Alzheimer","Esclerosis múltiple","Hipertensión","Lumbalgia","Colesterol","Depresión","Ansiedad","Tiroides",
+    private String [] malo={"VIH/SIDA","Enfermedades cardiovasculares","Cáncer","Enfermedad Pulmonar Obstructiva Crónica","Diabetes","Parkinson","Alzheimer","Esclerosis múltiple","Hipertensión","Lumbalgia","Colesterol","Depresión","Ansiedad","Tiroides",
             "Osteoporosis"};
 
     //endregion String
@@ -127,11 +130,8 @@ public class entrevista_adolescente extends AppCompatActivity {
         txtDALa2=(EditText) findViewById(R.id.txtDALa2);
         txtDATa3=(EditText) findViewById(R.id.txtDATa3);
         txtDATa4=(EditText) findViewById(R.id.txtDATa4);
-        txtNa=(EditText) findViewById(R.id.txtNa);
-        txtNa=(EditText) findViewById(R.id.txtNa);
-        txtNa=(EditText) findViewById(R.id.txtNa);
-        txtNa=(EditText) findViewById(R.id.txtNa);
-        txtNa=(EditText) findViewById(R.id.txtNa);
+
+
         //endregion FICHA FAMILIAR
         //region DATOS FAMILIARES
         txtNDFa1=(EditText) findViewById(R.id.txtNDFa1);
@@ -230,7 +230,7 @@ public class entrevista_adolescente extends AppCompatActivity {
         txtT3=(EditText) findViewById(R.id.txtT3);
         txtT4=(EditText) findViewById(R.id.txtT4);
         //endregion
-        //region INFORMACION DE CASO ACTUAL
+        /*//region INFORMACION DE CASO ACTUAL
         txtFp=(EditText) findViewById(R.id.txtFp);
         txtF=(EditText) findViewById(R.id.txtF);
         txtDi=(EditText) findViewById(R.id.txtDi);
@@ -260,23 +260,19 @@ public class entrevista_adolescente extends AppCompatActivity {
         txtE6=(EditText) findViewById(R.id.txtE6);
         txtEx1=(EditText) findViewById(R.id.txtEx1);
         txtEx2=(EditText) findViewById(R.id.txtEx2);
-        //endregion
+        //endregion*/
         //endregion variabels
         //region DIFINICION DE TEXTVIEW
-        //region DATOS FAMILIARES RESPONSABLES
-        tvNDFa1=(TextView) findViewById(R.id.tvNDFa1);
-        tvRDFa1=(TextView) findViewById(R.id.tvRDFa1);
-
-        tvEDFa1=(TextView) findViewById(R.id.tvEDFa1);
-
-        tvTDFa1=(TextView) findViewById(R.id.tvTDFa1);
-
-        tvVDF1=(TextView) findViewById(R.id.tvVDF1);
-
+        //region DOMICILIOS ANTERIORES
+        tvDA1=(TextView) findViewById(R.id.tvDA1);
+        tvDA2=(TextView) findViewById(R.id.tvDA2);
+        //endregion
+        //region REUBICAR ADOLECENTE
         tvCQDFa=(TextView) findViewById(R.id.tvCQDFa);
         tvRDFa=(TextView) findViewById(R.id.tvRDFa);
         tvLDFa=(TextView) findViewById(R.id.tvLDFa);
         //endregion
+
         //region DEPENDIENTES ECONOMICOS
         tvNDEa1=(TextView) findViewById(R.id.tvNDEa1);
 
@@ -287,22 +283,24 @@ public class entrevista_adolescente extends AppCompatActivity {
         tvTDEa1=(TextView) findViewById(R.id.tvTDEa1);
 
         //endregion
-        //region TRABAJO ACTUAL tvNTa
+        //region TRABAJO ACTUAL
         tvTA=(TextView) findViewById(R.id.tvTA);
         tvNTa=(TextView) findViewById(R.id.tvNTa);
         tvDTa=(TextView) findViewById(R.id.tvDTa);
         tvTTa=(TextView) findViewById(R.id.tvTTa);
         tvATa=(TextView) findViewById(R.id.tvATa);
+        tvTC=(TextView) findViewById(R.id.tvTC);
         tvJTa=(TextView) findViewById(R.id.tvJTa);
         tvNT1=(TextView) findViewById(R.id.tvNT1);
-
         tvLT1=(TextView) findViewById(R.id.tvLT1);
-
         tvAT1=(TextView) findViewById(R.id.tvAT1);
-
         tvTT1=(TextView) findViewById(R.id.tvTT1);
-
         //endregion
+        //endregion
+
+
+
+
 
         //region sP1a Spinner
         sP1a = (Spinner) findViewById(R.id.sP1a);
@@ -328,6 +326,10 @@ public class entrevista_adolescente extends AppCompatActivity {
         sPVDF = (Spinner) findViewById(R.id.sPVDF);
         sPVDF.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosi));
         //endregion
+        // region sPAR  ADOLECENTE REubicado
+        sPAR = (Spinner) findViewById(R.id.sPAR);
+        sPAR.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosi));
+        //endregion
         // region sPAR  ADOLECENTE RESPONSABLE
         sPAR = (Spinner) findViewById(R.id.sPAR);
         sPAR.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosi));
@@ -344,7 +346,7 @@ public class entrevista_adolescente extends AppCompatActivity {
         sPTC = (Spinner) findViewById(R.id.sPTC);
         sPTC.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosi));
         //endregion
-        // region sPEE  ESTA ENBARAZADA
+        /*// region sPEE  ESTA ENBARAZADA
         sPEE = (Spinner) findViewById(R.id.sPEE);
         sPEE.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosi));
         //endregion
@@ -374,7 +376,7 @@ public class entrevista_adolescente extends AppCompatActivity {
         sPEV = (Spinner) findViewById(R.id.sPEV);
         sPEV.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosi));
         //endregion
-
+*/
 
 
 
@@ -388,97 +390,22 @@ public class entrevista_adolescente extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selectedItem=parent.getSelectedItem().toString();
                 if (selectedItem=="Si"){
-                    txtNDFa1.setVisibility(View.VISIBLE);
-                    txtNDFa2.setVisibility(View.VISIBLE);
-                    txtNDFa3.setVisibility(View.VISIBLE);
-                    txtNDFa4.setVisibility(View.VISIBLE);
-                    txtRDFa1.setVisibility(View.VISIBLE);
-                    txtRDFa2.setVisibility(View.VISIBLE);
-                    txtRDFa3.setVisibility(View.VISIBLE);
-                    txtRDFa4.setVisibility(View.VISIBLE);
-                    txtEDFa1.setVisibility(View.VISIBLE);
-                    txtEDFa2.setVisibility(View.VISIBLE);
-                    txtEDFa3.setVisibility(View.VISIBLE);
-                    txtEDFa4.setVisibility(View.VISIBLE);
-                    txtTDFa1.setVisibility(View.VISIBLE);
-                    txtTDFa2.setVisibility(View.VISIBLE);
-                    txtTDFa3.setVisibility(View.VISIBLE);
-                    txtTDFa4.setVisibility(View.VISIBLE);
-                    txtVDF1.setVisibility(View.VISIBLE);
-                    txtVDF2.setVisibility(View.VISIBLE);
-                    txtVDF3.setVisibility(View.VISIBLE);
-                    txtVDF4.setVisibility(View.VISIBLE);
-                    txtCQDFa.setVisibility(View.VISIBLE);
-                    txtRDFa.setVisibility(View.VISIBLE);
-                    txtLDFa.setVisibility(View.VISIBLE);
-                    tvNDFa1.setVisibility(View.VISIBLE);
-                    tvNDFa2.setVisibility(View.VISIBLE);
-                    tvNDFa3.setVisibility(View.VISIBLE);
-                    tvNDFa4.setVisibility(View.VISIBLE);
-                    tvRDFa1.setVisibility(View.VISIBLE);
-                    tvRDFa2.setVisibility(View.VISIBLE);
-                    tvRDFa3.setVisibility(View.VISIBLE);
-                    tvRDFa4.setVisibility(View.VISIBLE);
-                    tvEDFa1.setVisibility(View.VISIBLE);
-                    tvEDFa2.setVisibility(View.VISIBLE);
-                    tvEDFa3.setVisibility(View.VISIBLE);
-                    tvEDFa4.setVisibility(View.VISIBLE);
-                    tvTDFa1.setVisibility(View.VISIBLE);
-                    tvTDFa2.setVisibility(View.VISIBLE);
-                    tvTDFa3.setVisibility(View.VISIBLE);
-                    tvTDFa4.setVisibility(View.VISIBLE);
-                    tvVDF1.setVisibility(View.VISIBLE);
-                    tvVDF2.setVisibility(View.VISIBLE);
-                    tvVDF3.setVisibility(View.VISIBLE);
-                    tvVDF4.setVisibility(View.VISIBLE);
+                    txtDALa1.setVisibility(View.VISIBLE);
+                    txtDALa2.setVisibility(View.VISIBLE);
+                    txtDATa3.setVisibility(View.VISIBLE);
+                    txtDATa4.setVisibility(View.VISIBLE);
+                    tvDA1.setVisibility(View.VISIBLE);
+                    tvDA2.setVisibility(View.VISIBLE);
+
 
                 }
                 else{
-                    txtNDFa1.setVisibility(View.GONE);
-                    txtNDFa2.setVisibility(View.GONE);
-                    txtNDFa3.setVisibility(View.GONE);
-                    txtNDFa4.setVisibility(View.GONE);
-                    txtRDFa1.setVisibility(View.GONE);
-                    txtRDFa2.setVisibility(View.GONE);
-                    txtRDFa3.setVisibility(View.GONE);
-                    txtRDFa4.setVisibility(View.GONE);
-                    txtEDFa1.setVisibility(View.GONE);
-                    txtEDFa2.setVisibility(View.GONE);
-                    txtEDFa3.setVisibility(View.GONE);
-                    txtEDFa4.setVisibility(View.GONE);
-                    txtTDFa1.setVisibility(View.GONE);
-                    txtTDFa2.setVisibility(View.GONE);
-                    txtTDFa3.setVisibility(View.GONE);
-                    txtTDFa4.setVisibility(View.GONE);
-                    txtVDF1.setVisibility(View.GONE);
-                    txtVDF2.setVisibility(View.GONE);
-                    txtVDF3.setVisibility(View.GONE);
-                    txtVDF4.setVisibility(View.GONE);
-                    txtCQDFa.setVisibility(View.GONE);
-                    txtRDFa.setVisibility(View.GONE);
-                    txtLDFa.setVisibility(View.GONE);
-                    tvNDFa1.setVisibility(View.GONE);
-                    tvNDFa2.setVisibility(View.GONE);
-                    tvNDFa3.setVisibility(View.GONE);
-                    tvNDFa4.setVisibility(View.GONE);
-                    tvRDFa1.setVisibility(View.GONE);
-                    tvRDFa2.setVisibility(View.GONE);
-                    tvRDFa3.setVisibility(View.GONE);
-                    tvRDFa4.setVisibility(View.GONE);
-                    tvEDFa1.setVisibility(View.GONE);
-                    tvEDFa2.setVisibility(View.GONE);
-                    tvEDFa3.setVisibility(View.GONE);
-                    tvEDFa4.setVisibility(View.GONE);
-                    tvTDFa1.setVisibility(View.GONE);
-                    tvTDFa2.setVisibility(View.GONE);
-                    tvTDFa3.setVisibility(View.GONE);
-                    tvTDFa4.setVisibility(View.GONE);
-                    tvVDF1.setVisibility(View.GONE);
-                    tvVDF2.setVisibility(View.GONE);
-                    tvVDF3.setVisibility(View.GONE);
-                    tvVDF4.setVisibility(View.GONE);
-
-
+                    txtDALa1.setVisibility(View.GONE);
+                    txtDALa2.setVisibility(View.GONE);
+                    txtDATa3.setVisibility(View.GONE);
+                    txtDATa4.setVisibility(View.GONE);
+                    tvDA1.setVisibility(View.GONE);
+                    tvDA2.setVisibility(View.GONE);
                 }
             }
 
@@ -550,21 +477,13 @@ public class entrevista_adolescente extends AppCompatActivity {
                     txtTDEa3.setVisibility(View.VISIBLE);
                     txtTDEa4.setVisibility(View.VISIBLE);
                     tvNDEa1.setVisibility(View.VISIBLE);
-                    tvNDEa2.setVisibility(View.VISIBLE);
-                    tvNDEa3.setVisibility(View.VISIBLE);
-                    tvNDEa4.setVisibility(View.VISIBLE);
+
                     tvRDEa1.setVisibility(View.VISIBLE);
-                    tvRDEa2.setVisibility(View.VISIBLE);
-                    tvRDEa3.setVisibility(View.VISIBLE);
-                    tvRDEa4.setVisibility(View.VISIBLE);
+
                     tvEDEa1.setVisibility(View.VISIBLE);
-                    tvEDEa2.setVisibility(View.VISIBLE);
-                    tvEDEa3.setVisibility(View.VISIBLE);
-                    tvEDEa4.setVisibility(View.VISIBLE);
+
                     tvTDEa1.setVisibility(View.VISIBLE);
-                    tvTDEa2.setVisibility(View.VISIBLE);
-                    tvTDEa3.setVisibility(View.VISIBLE);
-                    tvTDEa4.setVisibility(View.VISIBLE);
+
                 }
                 else{
                     txtNDEa1.setVisibility(View.GONE);
@@ -584,21 +503,13 @@ public class entrevista_adolescente extends AppCompatActivity {
                     txtTDEa3.setVisibility(View.GONE);
                     txtTDEa4.setVisibility(View.GONE);
                     tvNDEa1.setVisibility(View.GONE);
-                    tvNDEa2.setVisibility(View.GONE);
-                    tvNDEa3.setVisibility(View.GONE);
-                    tvNDEa4.setVisibility(View.GONE);
+
                     tvRDEa1.setVisibility(View.GONE);
-                    tvRDEa2.setVisibility(View.GONE);
-                    tvRDEa3.setVisibility(View.GONE);
-                    tvRDEa4.setVisibility(View.GONE);
+
                     tvEDEa1.setVisibility(View.GONE);
-                    tvEDEa2.setVisibility(View.GONE);
-                    tvEDEa3.setVisibility(View.GONE);
-                    tvEDEa4.setVisibility(View.GONE);
+
                     tvTDEa1.setVisibility(View.GONE);
-                    tvTDEa2.setVisibility(View.GONE);
-                    tvTDEa3.setVisibility(View.GONE);
-                    tvTDEa4.setVisibility(View.GONE);
+
                 }
             }
 
@@ -650,6 +561,7 @@ public class entrevista_adolescente extends AppCompatActivity {
                     tvDTa.setVisibility(View.VISIBLE);
                     tvTTa.setVisibility(View.VISIBLE);
                     tvATa.setVisibility(View.VISIBLE);
+                    tvTC.setVisibility(View.VISIBLE);
                     tvJTa.setVisibility(View.VISIBLE);
                     tvNT1.setVisibility(View.VISIBLE);
                     tvNT2.setVisibility(View.VISIBLE);
@@ -769,14 +681,14 @@ public class entrevista_adolescente extends AppCompatActivity {
         llVH=(LinearLayout) findViewById(R.id.llVH);
         btnCE=(Button) findViewById(R.id.btnCE);
         llCE=(LinearLayout) findViewById(R.id.llCE);
-        btnIC=(Button) findViewById(R.id.btnIC);
+       btnIC=(Button) findViewById(R.id.btnIC);
         llIC=(LinearLayout) findViewById(R.id.llIC);
-        btnPP=(Button) findViewById(R.id.btnPP);
+        /*btnPP=(Button) findViewById(R.id.btnPP);
         llPP=(LinearLayout) findViewById(R.id.llPP);
         btnVO=(Button) findViewById(R.id.btnVO);
         llVO=(LinearLayout) findViewById(R.id.llVO);
         btnPL=(Button) findViewById(R.id.btnPL);
-        llPL=(LinearLayout) findViewById(R.id.llPL);
+        llPL=(LinearLayout) findViewById(R.id.llPL);*/
 
         //region Visibles
 
@@ -848,7 +760,7 @@ public class entrevista_adolescente extends AppCompatActivity {
             }
         });
 
-        btnPP.setOnClickListener(new View.OnClickListener() {
+       /* btnPP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(!pR){
@@ -888,7 +800,7 @@ public class entrevista_adolescente extends AppCompatActivity {
                     pR=false;
                 }
             }
-        });
+        });*/
         //endregion
 
 
