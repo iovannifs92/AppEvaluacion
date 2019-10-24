@@ -24,18 +24,16 @@ public class entrevista_adolescente extends AppCompatActivity {
 
     //regio boolean
     private boolean pR=false;
-
-
     //region EditText
     private EditText txtNc, txtFecha, txtNe, txtFolioA ,txtNpa1, txtNpa2, txtNpa3, txtNpa4, txtRa1, txtRa2, txtRa3, txtRa4, txtPOa1, txtPOa2, txtPOa3, txtPOa4, txtNa, txtEa, txtFNa, txtCURPa, txtLNa, txtEDOa, txtMa, txtLa, txtNAa ;
     //Ficha familiar Domicilio
     private EditText txtCa, txtNOa, txtCOLa, txtCPa, txtMUa, txtEDO2a, txtPa, txtTa, txtDALa1, txtDALa2, txtDALa3, txtDALa4, txtDATa1, txtDATa2, txtDATa3, txtDATa4;
     //Datos familiares
-    private EditText txtNDFa1,txtNDFa2,txtNDFa3,txtNDFa4,txtRDFa1, txtRDFa2, txtRDFa3, txtRDFa4, txtEDFa1, txtEDFa2, txtEDFa3, txtEDFa4, txtTDFa1, txtTDFa2, txtTDFa3, txtTDFa4, txtVDF1, txtVDF2, txtVDF3, txtVDF4, txtCQDFa,txtRDFa,txtLDFa;
+    private EditText txtNDFa1,txtNDFa2,txtRDFa1, txtRDFa2, txtEDFa1, txtEDFa2, txtTDFa1, txtTDFa2,txtCQDFa,txtRDFa,txtLDFa;
     //Dependientes economicos
-    private EditText txtNDEa1,txtNDEa2,txtNDEa3,txtNDEa4, txtRDEa1,txtRDEa2,txtRDEa3,txtRDEa4,txtTDEa1,txtTDEa2,txtTDEa3,txtTDEa4,txtADE1,txtADE2,txtADE3,txtADE4;
+    private EditText txtNDEa1,txtNDEa2,txtNDEa3,txtNDEa4, txtRDEa1,txtRDEa2,txtRDEa3,txtRDEa4,txtEDEa1,txtEDEa2,txtEDEa3,txtEDEa4,txtTDEa1,txtTDEa2,txtTDEa3,txtTDEa4;
     //Viculos comunitarios
-    private EditText txtEAa,txtNEa,txtDEa,txtTea,txtNIEa,txtUGa,txtNEa1,txtNEa2,txtNEa3,txtNEa4,txtLE1,txtLE2,txtLE3,txtLE4,txtGC1,txtGC2,txtGC3,txtGC4;
+    private EditText txtNEa,txtDEa,txtTea,txtNIEa,txtUGa,txtNEa1,txtNEa2,txtNEa3,txtNEa4,txtLE1,txtLE2,txtLE3,txtLE4,txtGC1,txtGC2,txtGC3,txtGC4;
     //Historial laboral
     private EditText txtTAa,txtNTa,txtDTa,txtTTa,txtATa,txtJTa,txtNT1,txtNT2,txtNT3,txtNT4,txtLT1,txtLT2,txtLT3,txtLT4,txtAT1,txtAT2,txtAT3,txtAT4,txtTT1,txtTT2,txtTT3,txtTT4;
     //actividades Extraescolares
@@ -46,18 +44,17 @@ public class entrevista_adolescente extends AppCompatActivity {
 
 
     //reguin Sppiner
-    private Spinner sPSex,sP1a,sPIdio,sPTra;
+    private Spinner sPSex,sP1a,sPIdio,sPTra,sPDfa,sPVDF;
 
 
     //region Sppiners
-
     //endregion
     //region LinearLayout
-    private LinearLayout llPersonasPresentes,llDatosgenerales,llFichaA;
+    private LinearLayout llDatosgenerales;
     //endregionLinearLayout
     //region Buttons
 
-    private Button btnGuardarA,btnPersonasPresentes,btnDatosgenerales,btnFichaA;
+    private Button btnGuardarA,btnDatosgenerales;
 
 
     //endregion Buttons
@@ -106,41 +103,39 @@ public class entrevista_adolescente extends AppCompatActivity {
 
                 }
             });
-        btnPersonasPresentes=(Button) findViewById(R.id.btnPersonasPresentes);
-        llPersonasPresentes=(LinearLayout) findViewById(R.id.llPersonasPresentes);
+        btnDatosgenerales=(Button) findViewById(R.id.btnDatosgenerales);
+        llDatosgenerales=(LinearLayout) findViewById(R.id.llPersonasPresentes);
 
-        btnPersonasPresentes.setOnClickListener(new View.OnClickListener() {
+        btnDatosgenerales.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(!pR){
-                    llPersonasPresentes.setVisibility(View.VISIBLE);
+                    llDatosgenerales.setVisibility(View.VISIBLE);
                     pR=true;
                 }
                 else{
-                    llPersonasPresentes.setVisibility(View.GONE);
+                    llDatosgenerales.setVisibility(View.GONE);
                     pR=false;
                 }
             }
         });
 
-        //region 1. PERSONAS PRESENTES EN LA ENTREVISTA DEL IMPUTADO
-        btnPersonasPresentes=(Button) findViewById(R.id.btnPersonasPresentes);
-        llPersonasPresentes=(LinearLayout) findViewById(R.id.llPersonasPresentes);
-        btnPersonasPresentes.setOnClickListener(new View.OnClickListener() {
+        //region 1. Datos generales del imputado
+        btnDatosgenerales=(Button) findViewById(R.id.btnDatosgenerales);
+        llDatosgenerales=(LinearLayout) findViewById(R.id.llPersonasPresentes);
+        btnDatosgenerales.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(!pR){
-                    llPersonasPresentes.setVisibility(View.VISIBLE);
+                    llDatosgenerales.setVisibility(View.VISIBLE);
                     pR=true;
                 }
                 else{
-                    llPersonasPresentes.setVisibility(View.GONE);
+                    llDatosgenerales.setVisibility(View.GONE);
                     pR=false;
                 }
             }
 
-
-            //endregion
         });
 
 

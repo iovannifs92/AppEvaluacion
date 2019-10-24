@@ -323,7 +323,67 @@
     <string name="e152">CP</string>
     <string name="e153">Municipio</string>
     <string name="e154">Estado</string>
+    <string name="e155">País</string>
+    <string name="e156">Temporalidad</string>
+    <string name="e157">¿Tiene domicilio fijo?</string><!--SI/NO-->
+    <string name="e158">¿Domicilios Anterirores?</string><!--SI/NO-->
+    <string name="e159">Localidad</string>
+    <string name="e160">Temporalidad</string>
+    <!--endregion-->
 
+    <!-- region Datos familiares primarios y de las personas con quien vive-->
+    <string name="e161">Nombre</string>
+    <string name="e162">Relación</string>
+    <string name="e163">Edad</string>
+    <string name="e164">Teléfono</string>
+    <string name="e165">¿Vive con el?</string><!--SI/NO-->
+    <string name="e166">Si fuera necesario ¿el adolescente puede reubicar su domicilio con otro familiar responsable?</string><!--SI/NO-->
+    <string name="e167">¿Con quién?</string>
+    <string name="e168">Relación</string>
+    <string name="e169">Localidad</string>
+    <string name="e170">Dependientes Económicos</string><!--SI/NO-->
+    <string name="e171">Nombre</string>
+    <string name="e172">Relación</string>
+    <string name="e173">Edad</string>
+    <string name="e174">Teléfono</string>
+    <string name="e175">¿El adolescente se hace responsable de ellos?</string>
+    <!--endregion-->
+
+    <!-- Historial escolar y laboral-->
+    <string name="e176">Historia Escolar</string>
+    <string name="e177">¿Asiste a la escuela actualmente?</string><!--SI/NO-->
+    <string name="e178">¿Concluyó la secundaria?</string><!--SI/NO-->
+    <string name="e179">Escuela Actual</string>
+    <string name="e180">Nombre</string>
+    <string name="e181">Dirección</string>
+    <string name="e182">Teléfono</string>
+    <string name="e183">Niveles Inscritos</string>
+    <string name="e184">Último grado cursado</string>
+    <string name="e185">Escuela Anteriores</string>
+    <string name="e186">Nombre</string>
+    <string name="e187">Localidad</string>
+    <string name="e188">Grados Cursados</string>
+    <string name="e189">Historia Laboral</string>
+    <string name="e190">¿Trabaja actualmente? (excluye trabajo ilegal)</string><!--SI/NO-->
+    <string name="e191">¿Es un trabajo recurrente? (no temporal)</string><!--SI/NO-->
+    <string name="e192">Trabajo actual</string>
+    <string name="e193">Nombre</string>
+    <string name="e194">Dirección</string>
+    <string name="e195">Teléfono</string>
+    <string name="e196">Antigüedad</string>
+    <string name="e197">Tiempo completo</string><!--SI/NO-->
+    <string name="e198">Jefe inmediato</string>
+    <string name="e199">Trabajos Anteriores</string>
+    <string name="e200">Nombre</string>
+    <string name="e201">Localidad</string>
+    <string name="e202">Antigüedad</string>
+    <string name="e203">Teléfono</string>
+    <string name="e204">Actividades Extraescolares Actuales</string>
+    <string name="e205">¿Realiza alguna actividad a favor de la comunidad o del él? (servicio a la comunidad, deporte, club, grupo religioso,voluntario, u otras formales)</string><!--SI/NO-->
+    <string name="e206">Nombre</string>
+    <string name="e207">Localidad</string>
+    <string name="e208">Contacto</string>
+    <string name="e209">Teléfono</string>
 
     <!--endregion-->
 
