@@ -109,7 +109,7 @@
             android:layout_marginBottom="20dp"/>
 
         <Button
-            android:id="@+id/btnDatosgenerales"
+            android:id="@+id/btnDg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
@@ -121,7 +121,7 @@
 
 
         <LinearLayout
-            android:id="@+id/llPersonasPresentes"
+            android:id="@+id/llDg"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -626,14 +626,14 @@
                 />
 
             <EditText
-                android:id="@+id/txtDALa3"
+                android:id="@+id/txtDATa3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:inputType="text"
                 android:text="" />
             <EditText
-                android:id="@+id/txtDALa4"
+                android:id="@+id/txtDATa4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
