@@ -304,7 +304,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
-                    android:inputType="text"
+                    android:inputType="number"
                     android:text="" />
 
                 <TextView
@@ -490,7 +490,6 @@
                     android:id="@+id/tvNOa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="number"
                     android:text="@string/e150" />
 
                 <EditText
@@ -498,7 +497,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
-                    android:inputType="text"
+                    android:inputType="number"
                     android:text="" />
 
                 <TextView
@@ -526,7 +525,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
-                    android:inputType="text"
+                    android:inputType="number"
                     android:text="" />
 
 
@@ -840,13 +839,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
-                    android:inputType="text"
+                    android:inputType="number"
                     android:text="" />
                 <TextView
                     android:id="@+id/tvTDFa1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="phone"
                     android:text="@string/e164" />
 
                 <EditText
@@ -854,7 +852,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
-                    android:inputType="text"
+                    android:inputType="phone"
                     android:text="" />
                 <TextView
                     android:id="@+id/tvVDF1"
@@ -917,13 +915,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
-                    android:inputType="text"
+                    android:inputType="number"
                     android:text="" />
                 <TextView
                     android:id="@+id/tvTDFa2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="phone"
                     android:text="@string/e164" />
 
                 <EditText
@@ -931,7 +928,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
-                    android:inputType="text"
+                    android:inputType="phone"
                     android:text="" />
                 <TextView
                     android:id="@+id/tvVDF2"
@@ -1072,7 +1069,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:visibility="invisible"
-                    android:inputType="number"
                     android:text="@string/e173"/>
                 <EditText
                     android:id="@+id/txtEDEa1"
@@ -1080,14 +1076,13 @@
                     android:layout_height="wrap_content"
                     android:visibility="invisible"
                     android:layout_alignParentTop="true"
-                    android:inputType="text"
+                    android:inputType="number"
                     android:text="" />
                 <TextView
                     android:id="@+id/tvTDEa1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:visibility="invisible"
-                    android:inputType="phone"
                     android:text="@string/e174"/>
                 <EditText
                     android:id="@+id/txtTDEa1"
@@ -1095,7 +1090,7 @@
                     android:layout_height="wrap_content"
                     android:visibility="invisible"
                     android:layout_alignParentTop="true"
-                    android:inputType="text"
+                    android:inputType="phone"
                     android:text="" />
                 <TextView
                     android:id="@+id/tvAR"
@@ -1157,7 +1152,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:visibility="invisible"
-                    android:inputType="number"
                     android:text="@string/e173"/>
                 <EditText
                     android:id="@+id/txtEDEa2"
@@ -1165,14 +1159,13 @@
                     android:layout_height="wrap_content"
                     android:visibility="invisible"
                     android:layout_alignParentTop="true"
-                    android:inputType="text"
+                    android:inputType="number"
                     android:text="" />
                 <TextView
                     android:id="@+id/tvTDEa2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:visibility="invisible"
-                    android:inputType="phone"
                     android:text="@string/e174"/>
                 <EditText
                     android:id="@+id/txtTDEa2"
@@ -1180,7 +1173,7 @@
                     android:layout_height="wrap_content"
                     android:visibility="invisible"
                     android:layout_alignParentTop="true"
-                    android:inputType="text"
+                    android:inputType="phone"
                     android:text="" />
                 <TextView
                     android:id="@+id/tvAR2"
@@ -1241,7 +1234,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:visibility="invisible"
-                    android:inputType="number"
                     android:text="@string/e173"/>
                 <EditText
                     android:id="@+id/txtEDEa3"
@@ -1249,14 +1241,13 @@
                     android:layout_height="wrap_content"
                     android:visibility="invisible"
                     android:layout_alignParentTop="true"
-                    android:inputType="text"
+                    android:inputType="number"
                     android:text="" />
                 <TextView
                     android:id="@+id/tvTDEa3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:visibility="invisible"
-                    android:inputType="phone"
                     android:text="@string/e174"/>
                 <EditText
                     android:id="@+id/txtTDEa3"
@@ -1264,7 +1255,7 @@
                     android:layout_height="wrap_content"
                     android:visibility="invisible"
                     android:layout_alignParentTop="true"
-                    android:inputType="text"
+                    android:inputType="phone"
                     android:text="" />
                 <TextView
                     android:id="@+id/tvAR3"
@@ -1372,7 +1363,6 @@
                     android:id="@+id/tvTea"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="phone"
                     android:text="@string/e182"/>
 
                 <EditText
@@ -1380,7 +1370,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
-                    android:inputType="text"
+                    android:inputType="phone"
                     android:text="" />
 
                 <TextView
@@ -1412,7 +1402,7 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:text="ESCUELAS ANTERIORES"
+                    android:text="ESCUELA ANTERIOR 1"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
                     android:background="@color/colorSecundario2"
@@ -1459,7 +1449,15 @@
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
-
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/colorSecundario2"
+                    android:textAlignment="center"
+                    android:text="ESCUELA ANTERIOR 2"
+                    android:textColor="@color/myWhite"
+                    android:textSize="20dp" />
 
 
                 <TextView
@@ -1579,14 +1577,13 @@
                     android:id="@+id/tvTTa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="phone"
                     android:text="@string/e195"/>
                 <EditText
                     android:id="@+id/txtTTa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
-                    android:inputType="text"
+                    android:inputType="phone"
                     android:text="" />
 
                 <TextView
@@ -1685,14 +1682,13 @@
                     android:id="@+id/tvTT1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="phone"
                     android:text="@string/e203"/>
                 <EditText
                     android:id="@+id/txtTT1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
-                    android:inputType="text"
+                    android:inputType="phone"
                     android:text="" />
 
 
@@ -1764,7 +1760,6 @@
                     android:id="@+id/tvCT"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="phone"
                     android:text="@string/e209"/>
 
                 <EditText
@@ -1772,7 +1767,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
-                    android:inputType="text"
+                    android:inputType="phone"
                     android:text="" />
             </LinearLayout>
 
@@ -1797,12 +1792,14 @@
                 >
 
                 <TextView
-                    android:id="@+id/tvINS"
                     android:layout_width="match_parent"
+                    android:text="@string/e210"
                     android:layout_height="wrap_content"
-                    android:textColor="@android:color/background_dark"
                     android:layout_marginBottom="20dp"
-                    android:text="@string/e210"/>
+                    android:background="@color/colorSecundario2"
+                    android:textAlignment="center"
+                    android:textColor="@color/myWhite"
+                    android:textSize="20dp" />
 
                 <TextView
                     android:id="@+id/tvEE"
@@ -2348,15 +2345,6 @@
                     android:clickable="true"
                     android:layout_marginBottom="10dp"/>
                 />
-
-                <TextView
-                    android:id="@+id/SustanciaFre"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
-                    android:background="@color/colorSecundario2"
-                    android:textColor="@color/myWhite"
-                    android:textSize="20dp" />
 
                 <TextView
                     android:id="@+id/tvSUSF"
