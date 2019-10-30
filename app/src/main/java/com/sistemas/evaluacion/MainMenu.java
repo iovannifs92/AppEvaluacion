@@ -93,7 +93,12 @@ public class MainMenu extends AppCompatActivity
         startActivity(intent);
 
     }
+    public void clicSubMenu2(View View){ //BotonFloatingMenu
 
+        Intent intent= new Intent(this, entrevista_adolescente.class);
+        startActivity(intent);
+
+    }
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

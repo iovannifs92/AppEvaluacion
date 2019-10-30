@@ -18,15 +18,15 @@
             android:focusableInTouchMode="true">
 
             <TextView
+                android:id="@+id/EntrevistaA"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/e127"
-                android:inputType="text"
-                android:textSize="25sp"
-                android:textColor="@android:color/background_dark"
-                android:textStyle="bold"
                 android:layout_marginBottom="20dp"
-                tools:ignore="MissingConstraints" />
+                android:background="@color/colorSecundario2"
+                android:textAlignment="center"
+                android:text="@string/e127"
+                android:textColor="@color/myWhite"
+                android:textSize="28dp" />
 
             <TextView
                 android:id="@+id/tvNc"
@@ -54,12 +54,12 @@
                 android:id="@+id/txtFecha"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
+                android:ems="10"
                 android:inputType="date"
+                android:focusable="false"
                 android:clickable="true"
-                android:focusable="true"
-                android:layout_marginBottom="20dp"
-                />
+                android:layout_marginBottom="10dp"/>
+            />
             <RelativeLayout
                 android:layout_marginBottom="10dp"
                 android:layout_width="match_parent"
@@ -96,6 +96,16 @@
                 android:layout_marginBottom="20dp"/>
 
             <TextView
+                android:id="@+id/Parte1A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="@color/colorSecundario2"
+                android:textAlignment="center"
+                android:textColor="@color/myWhite"
+                android:textSize="20dp" />
+
+            <TextView
                 android:id="@+id/tvP1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -130,11 +140,21 @@
                 >
 
                 <TextView
+                    android:id="@+id/Persona1A"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="PERSONA 1"
+                    android:background="@color/colorSecundario2"
+                    android:textColor="@color/myWhite"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+
+                <TextView
                     android:id="@+id/tvNo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/e133"
-
                     />
 
                 <EditText
@@ -144,28 +164,6 @@
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
-                <EditText
-                    android:id="@+id/txtNpa2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-                <EditText
-                    android:id="@+id/txtNpa3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-                <EditText
-                    android:id="@+id/txtNpa4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-
                 <TextView
                     android:id="@+id/tvRa"
                     android:layout_width="match_parent"
@@ -180,31 +178,6 @@
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
-
-                <EditText
-                    android:id="@+id/txtRa2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-
-                <EditText
-                    android:id="@+id/txtRa3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-
-                <EditText
-                    android:id="@+id/txtRa4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-
                 <TextView
                     android:id="@+id/tvPOa"
                     android:layout_width="match_parent"
@@ -218,7 +191,56 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:inputType="text"
+                    android:layout_marginBottom="20dp"
                     android:text="" />
+
+                <TextView
+                    android:id="@+id/Persona2A"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="PERSONA 2"
+                    android:background="@color/colorSecundario2"
+                    android:textAlignment="center"
+                    android:textColor="@color/myWhite"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/tvNo1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e133"/>
+
+                <EditText
+                    android:id="@+id/txtNpa2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:inputType="text"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/tvRa2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e134"
+                    />
+
+                <EditText
+                    android:id="@+id/txtRa2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:inputType="text"
+                    android:text="" />
+
+
+                <TextView
+                    android:id="@+id/tvPOa2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e135"
+                    />
 
                 <EditText
                     android:id="@+id/txtPOa2"
@@ -226,23 +248,19 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:inputType="text"
+                    android:layout_marginBottom="20dp"
                     android:text="" />
 
-                <EditText
-                    android:id="@+id/txtPOa3"
+                <TextView
+                    android:id="@+id/DatosGA"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-
-                <EditText
-                    android:id="@+id/txtPOa4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/colorSecundario2"
+                    android:textAlignment="center"
+                    android:text="@string/e5001"
+                    android:textColor="@color/myWhite"
+                    android:textSize="20dp" />
 
                 <TextView
                     android:id="@+id/tvNa"
@@ -301,11 +319,11 @@
                     android:id="@+id/txtFNa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:ems="10"
                     android:inputType="date"
+                    android:focusable="false"
                     android:clickable="true"
-                    android:focusable="true"
-                    android:layout_marginBottom="20dp"
-                    />
+                    android:layout_marginBottom="20dp"/>
 
                 <TextView
                     android:id="@+id/tvCURPa"
@@ -423,6 +441,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"/>
             </LinearLayout>
+
             <Button
                 android:id="@+id/btnFfa"
                 android:layout_width="match_parent"
@@ -433,7 +452,6 @@
                 android:textColor="@color/myWhite"
                 android:textSize="30dp"
                 android:textAlignment="center"/>
-
 
             <LinearLayout
                 android:id="@+id/llFfa"
@@ -472,6 +490,7 @@
                     android:id="@+id/tvNOa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="number"
                     android:text="@string/e150" />
 
                 <EditText
@@ -611,6 +630,33 @@
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
+
+                <TextView
+                    android:id="@+id/tvDATa1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:text="@string/e160"
+                    android:layout_marginBottom="20dp"
+                    />
+
+                <EditText
+                    android:id="@+id/txtDATa1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:layout_alignParentTop="true"
+                    android:inputType="text"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/tvDA2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:text="@string/e159"
+                    android:layout_marginBottom="20dp"
+                    />
+
                 <EditText
                     android:id="@+id/txtDALa2"
                     android:layout_width="match_parent"
@@ -621,11 +667,29 @@
                     android:text="" />
 
                 <TextView
-                    android:id="@+id/tvDA2"
+                    android:id="@+id/tvDALa3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:visibility="invisible"
                     android:text="@string/e160"
+                    android:layout_marginBottom="20dp"
+                    />
+
+                <EditText
+                    android:id="@+id/txtDALa3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:layout_alignParentTop="true"
+                    android:inputType="text"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/tvDATa3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:text="@string/e159"
                     android:layout_marginBottom="20dp"
                     />
 
@@ -637,14 +701,7 @@
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
-                <EditText
-                    android:id="@+id/txtDATa4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:visibility="invisible"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
+
             </LinearLayout>
 
             <Button
@@ -666,6 +723,16 @@
                 android:visibility="gone"
                 android:layout_marginBottom="20dp"
                 >
+                <TextView
+                    android:id="@+id/Referencia1A"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/colorSecundario2"
+                    android:textAlignment="center"
+                    android:text="REFERENCIA 1"
+                    android:textColor="@color/myWhite"
+                    android:textSize="20dp" />
 
                 <TextView
                     android:id="@+id/tvNDFa1"
@@ -675,14 +742,6 @@
 
                 <EditText
                     android:id="@+id/txtNDFa1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-
-                <EditText
-                    android:id="@+id/txtNDFa2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
@@ -702,13 +761,6 @@
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
-                <EditText
-                    android:id="@+id/txtRDFa2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
 
                 <TextView
                     android:id="@+id/tvEDFa1"
@@ -723,18 +775,11 @@
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
-                <EditText
-                    android:id="@+id/txtEDFa2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-
                 <TextView
                     android:id="@+id/tvTDFa1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="phone"
                     android:text="@string/e164" />
 
                 <EditText
@@ -744,8 +789,36 @@
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
+                <TextView
+                    android:id="@+id/tvVDF1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e165" />
+                <Spinner
+                    android:id="@+id/sPVDF1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/Referencia2A"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/colorSecundario2"
+                    android:textAlignment="center"
+                    android:text="REFERENCIA 2"
+                    android:textColor="@color/myWhite"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/tvNDFa2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e161" />
+
                 <EditText
-                    android:id="@+id/txtTDFa2"
+                    android:id="@+id/txtNDFa2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
@@ -753,15 +826,65 @@
                     android:text="" />
 
                 <TextView
-                    android:id="@+id/tvVDF1"
+                    android:id="@+id/tvRDFa2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e162" />
+
+                <EditText
+                    android:id="@+id/txtRDFa2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:inputType="text"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/tvEDFa2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e163" />
+
+                <EditText
+                    android:id="@+id/txtEDFa2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:inputType="text"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/tvTDFa2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:text="@string/e164" />
+
+                <EditText
+                    android:id="@+id/txtTDFa2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:inputType="text"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/tvVDF2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/e165" />
                 <Spinner
-                    android:id="@+id/sPVDF"
+                    android:id="@+id/sPVDF2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/colorSecundario2"
+                    android:textAlignment="center"
+                    android:textColor="@color/myWhite"
+                    android:textSize="20dp" />
 
                 <TextView
                     android:id="@+id/tvRD"
@@ -773,7 +896,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"/>
-////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////
 
 
 
@@ -849,30 +972,6 @@
                     android:visibility="invisible"
                     android:inputType="text"
                     android:text="" />
-                <EditText
-                    android:id="@+id/txtNDEa2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:visibility="invisible"
-                    android:inputType="text"
-                    android:text="" />
-                <EditText
-                    android:id="@+id/txtNDEa3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:visibility="invisible"
-                    android:inputType="text"
-                    android:text="" />
-                <EditText
-                    android:id="@+id/txtNDEa4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:visibility="invisible"
-                    android:inputType="text"
-                    android:text="" />
 
                 <TextView
                     android:id="@+id/tvRDEa1"
@@ -888,36 +987,13 @@
                     android:visibility="invisible"
                     android:inputType="text"
                     android:text="" />
-                <EditText
-                    android:id="@+id/txtRDEa2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:visibility="invisible"
-                    android:inputType="text"
-                    android:text="" />
-                <EditText
-                    android:id="@+id/txtRDEa3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:visibility="invisible"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-                <EditText
-                    android:id="@+id/txtRDEa4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:visibility="invisible"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
 
                 <TextView
                     android:id="@+id/tvEDEa1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:visibility="invisible"
+                    android:inputType="number"
                     android:text="@string/e173"/>
                 <EditText
                     android:id="@+id/txtEDEa1"
@@ -927,36 +1003,12 @@
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
-                <EditText
-                    android:id="@+id/txtEDEa2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:visibility="invisible"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-                <EditText
-                    android:id="@+id/txtEDEa3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:visibility="invisible"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-                <EditText
-                    android:id="@+id/txtEDEa4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:visibility="invisible"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-
                 <TextView
                     android:id="@+id/tvTDEa1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:visibility="invisible"
+                    android:inputType="phone"
                     android:text="@string/e174"/>
                 <EditText
                     android:id="@+id/txtTDEa1"
@@ -966,6 +1018,72 @@
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
+                <TextView
+                    android:id="@+id/tvAR"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:text="@string/e175" />
+                <Spinner
+                    android:id="@+id/sPAR1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:layout_marginBottom="20dp"/>
+
+
+                <TextView
+                    android:id="@+id/tvNDEa2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:text="@string/e171" />
+                <EditText
+                    android:id="@+id/txtNDEa2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:visibility="invisible"
+                    android:inputType="text"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/tvRDEa2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:text="@string/e172"/>
+                <EditText
+                    android:id="@+id/txtRDEa2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:visibility="invisible"
+                    android:inputType="text"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/tvEDEa2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:inputType="number"
+                    android:text="@string/e173"/>
+                <EditText
+                    android:id="@+id/txtEDEa2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:layout_alignParentTop="true"
+                    android:inputType="text"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/tvTDEa2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:inputType="phone"
+                    android:text="@string/e174"/>
                 <EditText
                     android:id="@+id/txtTDEa2"
                     android:layout_width="match_parent"
@@ -974,6 +1092,73 @@
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
+                <TextView
+                    android:id="@+id/tvAR2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:text="@string/e175" />
+                <Spinner
+                    android:id="@+id/sPAR2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:layout_marginBottom="20dp"/>
+
+
+
+                <TextView
+                    android:id="@+id/tvNDEa3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:text="@string/e171" />
+                <EditText
+                    android:id="@+id/txtNDEa3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:visibility="invisible"
+                    android:inputType="text"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/tvRDEa3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:text="@string/e172"/>
+                <EditText
+                    android:id="@+id/txtRDEa3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:visibility="invisible"
+                    android:inputType="text"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/tvEDEa3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:inputType="number"
+                    android:text="@string/e173"/>
+                <EditText
+                    android:id="@+id/txtEDEa3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:layout_alignParentTop="true"
+                    android:inputType="text"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/tvTDEa3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:inputType="phone"
+                    android:text="@string/e174"/>
                 <EditText
                     android:id="@+id/txtTDEa3"
                     android:layout_width="match_parent"
@@ -982,24 +1167,17 @@
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
-                <EditText
-                    android:id="@+id/txtTDEa4"
+                <TextView
+                    android:id="@+id/tvAR3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:visibility="invisible"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-
-                <TextView
-                    android:id="@+id/tvAR"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     android:text="@string/e175" />
                 <Spinner
-                    android:id="@+id/sPAR"
+                    android:id="@+id/sPAR3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_marginBottom="20dp"/>
             </LinearLayout>
 
@@ -1064,8 +1242,7 @@
                     android:textSize="25sp"
                     android:textColor="@android:color/background_dark"
                     android:textStyle="bold"
-                    android:layout_marginBottom="20dp"
-                    tools:ignore="MissingConstraints" />
+                    android:layout_marginBottom="20dp"/>
 
                 <TextView
                     android:id="@+id/tvNEa"
@@ -1097,7 +1274,9 @@
                     android:id="@+id/tvTea"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="phone"
                     android:text="@string/e182"/>
+
                 <EditText
                     android:id="@+id/txtTea"
                     android:layout_width="match_parent"
@@ -1143,6 +1322,7 @@
                     android:layout_marginBottom="20dp"
                     tools:ignore="MissingConstraints" />
 
+
                 <TextView
                     android:id="@+id/tvNEa1"
                     android:layout_width="match_parent"
@@ -1150,27 +1330,6 @@
                     android:text="@string/e186"/>
                 <EditText
                     android:id="@+id/txtNEa1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-                <EditText
-                    android:id="@+id/txtNEa2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-                <EditText
-                    android:id="@+id/txtNEa3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-                <EditText
-                    android:id="@+id/txtNEa4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
@@ -1189,27 +1348,6 @@
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
-                <EditText
-                    android:id="@+id/txtLE2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-                <EditText
-                    android:id="@+id/txtLE3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-                <EditText
-                    android:id="@+id/txtLE4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
 
                 <TextView
                     android:id="@+id/tvGC1"
@@ -1223,22 +1361,42 @@
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
+
+
+
+                <TextView
+                    android:id="@+id/tvNEa2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e186"/>
+                <EditText
+                    android:id="@+id/txtNEa2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:inputType="text"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/tvLE2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e187"/>
+                <EditText
+                    android:id="@+id/txtLE2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:inputType="text"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/tvGC2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e188"/>
                 <EditText
                     android:id="@+id/txtGC2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-                <EditText
-                    android:id="@+id/txtGC3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-                <EditText
-                    android:id="@+id/txtGC4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
@@ -1261,8 +1419,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/e190"/>
+                <TextView
+                    android:id="@+id/tvTA1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e190"/>
+
                 <Spinner
-                    android:id="@+id/sPTA"
+                    android:id="@+id/sPTAA"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"/>
@@ -1293,7 +1457,6 @@
                     android:id="@+id/txtTAa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="invisible"
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
@@ -1302,13 +1465,11 @@
                     android:id="@+id/tvNTa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="invisible"
                     android:text="@string/e193"/>
                 <EditText
                     android:id="@+id/txtNTa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="invisible"
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
@@ -1317,13 +1478,11 @@
                     android:id="@+id/tvDTa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="invisible"
                     android:text="@string/e194"/>
                 <EditText
                     android:id="@+id/txtDTa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="invisible"
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
@@ -1332,13 +1491,12 @@
                     android:id="@+id/tvTTa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="invisible"
+                    android:inputType="phone"
                     android:text="@string/e195"/>
                 <EditText
                     android:id="@+id/txtTTa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="invisible"
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
@@ -1347,13 +1505,11 @@
                     android:id="@+id/tvATa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="invisible"
                     android:text="@string/e196"/>
                 <EditText
                     android:id="@+id/txtATa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="invisible"
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
@@ -1362,13 +1518,11 @@
                     android:id="@+id/tvTC"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="invisible"
                     android:text="@string/e197"/>
                 <Spinner
                     android:id="@+id/sPTC"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="invisible"
                     android:layout_marginBottom="20dp"/>
 
                 <TextView
@@ -1394,6 +1548,11 @@
                     android:textStyle="bold"
                     android:layout_marginBottom="20dp"
                     tools:ignore="MissingConstraints" />
+                <Spinner
+                    android:id="@+id/sPTA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
 
                 <TextView
                     android:id="@+id/tvNT1"
@@ -1402,27 +1561,6 @@
                     android:text="@string/e200"/>
                 <EditText
                     android:id="@+id/txtNT1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-                <EditText
-                    android:id="@+id/txtNT2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-                <EditText
-                    android:id="@+id/txtNT3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-                <EditText
-                    android:id="@+id/txtNT4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
@@ -1441,27 +1579,6 @@
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
-                <EditText
-                    android:id="@+id/txtLT2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-                <EditText
-                    android:id="@+id/txtLT3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-                <EditText
-                    android:id="@+id/txtLT4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
 
                 <TextView
                     android:id="@+id/tvAT1"
@@ -1475,56 +1592,15 @@
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
-                <EditText
-                    android:id="@+id/txtAT2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-                <EditText
-                    android:id="@+id/txtAT3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-                <EditText
-                    android:id="@+id/txtAT4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
 
                 <TextView
                     android:id="@+id/tvTT1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="phone"
                     android:text="@string/e203"/>
                 <EditText
                     android:id="@+id/txtTT1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-                <EditText
-                    android:id="@+id/txtTT2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-                <EditText
-                    android:id="@+id/txtTT3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-                <EditText
-                    android:id="@+id/txtTT4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
@@ -1568,28 +1644,6 @@
                     android:inputType="text"
                     android:text="" />
 
-                <EditText
-                    android:id="@+id/txtA2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-                <EditText
-                    android:id="@+id/txtA3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-                <EditText
-                    android:id="@+id/txtA4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-
                 <TextView
                     android:id="@+id/tvL1"
                     android:layout_width="match_parent"
@@ -1598,28 +1652,6 @@
 
                 <EditText
                     android:id="@+id/txtL1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-
-                <EditText
-                    android:id="@+id/txtL2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-                <EditText
-                    android:id="@+id/txtL3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-                <EditText
-                    android:id="@+id/txtL4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
@@ -1640,32 +1672,11 @@
                     android:inputType="text"
                     android:text="" />
 
-                <EditText
-                    android:id="@+id/txtC2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-                <EditText
-                    android:id="@+id/txtC3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-                <EditText
-                    android:id="@+id/txtC4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-
                 <TextView
                     android:id="@+id/tvCT"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="phone"
                     android:text="@string/e209"/>
 
                 <EditText
@@ -1675,30 +1686,7 @@
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
-
-                <EditText
-                    android:id="@+id/txtT2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-                <EditText
-                    android:id="@+id/txtT3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-                <EditText
-                    android:id="@+id/txtT4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
             </LinearLayout>
-
             <Button
                 android:id="@+id/btnIC"
                 android:layout_width="match_parent"
@@ -1717,120 +1705,599 @@
                 android:orientation="vertical"
                 android:visibility="gone"
                 android:layout_marginBottom="20dp"
+                >
+
+                <TextView
+                    android:id="@+id/tvINS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/background_dark"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/e210"/>
+
+                <TextView
+                    android:id="@+id/tvEE"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e211"/>
+
+                <Spinner
+                    android:id="@+id/sPEE"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvEM"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e212"/>
+
+                <Spinner
+                    android:id="@+id/sPEM"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvTE"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e213"/>
+
+                <Spinner
+                    android:id="@+id/sPTE"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+                <TextView
+                    android:id="@+id/tvPC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e214"/>
+
+                <Spinner
+                    android:id="@+id/sPC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvCD"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e215"/>
+
+                <Spinner
+                    android:id="@+id/sPCD"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvSIDA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e216"/>
+
+                <Spinner
+                    android:id="@+id/sPSIDA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvEV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e217"/>
+
+                <Spinner
+                    android:id="@+id/sPEV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvCDS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/background_dark"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/e300"/>
+
+                <TextView
+                    android:id="@+id/alcoholA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="Alcohol"
+                    android:background="@color/colorSecundario2"
+                    android:textColor="@color/myWhite"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/tvA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e301" />
+
+                <Spinner
+                    android:id="@+id/sPALC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvFREA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e309" />
+
+                <Spinner
+                    android:id="@+id/sPCALC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvCaA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e3010" />
+
+                <EditText
+                    android:id="@+id/txtCaA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvFDCA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e3011" />
+
+                <EditText
+                    android:id="@+id/txtFDCA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="date"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:layout_marginBottom="20dp"/>
+
+
+
+
+                <TextView
+                    android:id="@+id/TabacoA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="Tabaco"
+                    android:background="@color/colorSecundario2"
+                    android:textColor="@color/myWhite"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/tvT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e302" />
+
+                <Spinner
+                    android:id="@+id/sPTBC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvFRET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e309" />
+
+                <Spinner
+                    android:id="@+id/sPCTBC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvCaT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e3010" />
+
+                <EditText
+                    android:id="@+id/txtCaT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvFDCT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e3011" />
+
+                <EditText
+                    android:id="@+id/txtFDCT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="date"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:layout_marginBottom="20dp"/>
+
+
+
+                <TextView
+                    android:id="@+id/MarihuanaA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="Marihuana"
+                    android:background="@color/colorSecundario2"
+                    android:textColor="@color/myWhite"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/tvMAR"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e303" />
+
+                <Spinner
+                    android:id="@+id/sPMAR"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvFREMAR"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e309" />
+
+                <Spinner
+                    android:id="@+id/sPCMAR"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvCaMAR"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e3010" />
+
+                <EditText
+                    android:id="@+id/txtCaMAR"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvFDCMAR"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e3011" />
+
+                <EditText
+                    android:id="@+id/txtFDCMAR"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="date"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:layout_marginBottom="20dp"/>
+
+
+
+
+
+                <TextView
+                    android:id="@+id/PastillasA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="Pastillas"
+                    android:background="@color/colorSecundario2"
+                    android:textColor="@color/myWhite"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/tvPAS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e304" />
+
+                <Spinner
+                    android:id="@+id/sPPAS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvFREPAS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e309" />
+
+                <Spinner
+                    android:id="@+id/sPCPAS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvCaPAS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e3010" />
+
+                <EditText
+                    android:id="@+id/txtCaPAS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvFDCPAS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e3011" />
+
+                <EditText
+                    android:id="@+id/txtFDCPAS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="date"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:layout_marginBottom="20dp"/>
+
+
+                <TextView
+                    android:id="@+id/SolventesA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="Solventes"
+                    android:background="@color/colorSecundario2"
+                    android:textColor="@color/myWhite"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/tvSOL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e305" />
+
+                <Spinner
+                    android:id="@+id/sPSOL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvFRESOL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e309" />
+
+                <Spinner
+                    android:id="@+id/sPCSOL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvCaSOL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e3010" />
+
+                <EditText
+                    android:id="@+id/txtCaSOL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvFDCSOL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e3011" />
+
+                <EditText
+                    android:id="@+id/txtFDCSOL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="date"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:layout_marginBottom="20dp"/>
+
+
+
+                <TextView
+                    android:id="@+id/MetanfetaminaA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="Metanfetamina"
+                    android:background="@color/colorSecundario2"
+                    android:textColor="@color/myWhite"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/tvMET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e306" />
+
+                <Spinner
+                    android:id="@+id/sPMET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvFREMET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e309" />
+
+                <Spinner
+                    android:id="@+id/sPCMET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvCaMET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e3010" />
+
+                <EditText
+                    android:id="@+id/txtCaMET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvFDCMET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e3011" />
+
+                <EditText
+                    android:id="@+id/txtFDCMET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="date"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:layout_marginBottom="20dp"/>
+
+
+
+
+
+
+
+
+
+
+
+                <TextView
+                    android:id="@+id/CocainaA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="Cocaina"
+                    android:background="@color/colorSecundario2"
+                    android:textColor="@color/myWhite"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/tvCOCA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e307" />
+
+                <Spinner
+                    android:id="@+id/sPCOCA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvFRECOCA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e309" />
+
+                <Spinner
+                    android:id="@+id/sPCCOCA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvCaCOCA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e3010" />
+
+                <EditText
+                    android:id="@+id/txtCaCOCA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvFDCCOCA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e3011" />
+
+                <EditText
+                    android:id="@+id/txtFDCCOCA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="date"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:layout_marginBottom="10dp"/>
                 />
 
-           <!-- <TextView
-                android:id="@+id/tvINS"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@android:color/background_dark"
-                android:layout_marginBottom="20dp"
-                android:text="@string/e210"/>
+                <TextView
+                    android:id="@+id/SustanciaFre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/colorSecundario2"
+                    android:textColor="@color/myWhite"
+                    android:textSize="20dp" />
 
-            <TextView
-                android:id="@+id/tvEE"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/e211"/>
+                <TextView
+                    android:id="@+id/tvSUSF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e3012" />
 
-            <Spinner
-                android:id="@+id/sPEE"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"/>
-
-            <TextView
-                android:id="@+id/tvEM"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/e212"/>
-
-            <Spinner
-                android:id="@+id/sPEM"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"/>
-
-            <TextView
-                android:id="@+id/tvTE"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/e213"/>
-
-            <Spinner
-                android:id="@+id/sPTE"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"/>
-            <TextView
-                android:id="@+id/tvPC"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/e214"/>
-
-            <Spinner
-                android:id="@+id/sPC"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"/>
-
-            <TextView
-                android:id="@+id/tvCD"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="invisible"
-                android:text="@string/e215"/>
-
-            <Spinner
-                android:id="@+id/sPCD"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="invisible"
-                android:layout_marginBottom="20dp"/>
-
-            <TextView
-                android:id="@+id/tvSIDA"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="invisible"
-                android:text="@string/e216"/>
-
-            <Spinner
-                android:id="@+id/sPSIDA"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="invisible"
-                android:layout_marginBottom="20dp"/>
-
-            <TextView
-                android:id="@+id/tvEV"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="invisible"
-                android:text="@string/e217"/>
-
-            <Spinner
-                android:id="@+id/sPEV"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="invisible"
-                android:layout_marginBottom="20dp"/>
--->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                <Spinner
+                    android:id="@+id/sPSUSF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+            </LinearLayout>
 
 
 
@@ -1851,8 +2318,6 @@
                 android:textColor="#FFFFFF"
                 android:textSize="30dp"
                 android:theme="@style/PrimaryColoredButton" />
-
-
         </LinearLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>

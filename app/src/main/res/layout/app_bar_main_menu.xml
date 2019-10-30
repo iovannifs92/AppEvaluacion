@@ -27,13 +27,16 @@
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
     </RelativeLayout>
 
     <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/fabPrincipal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:layout_anchor="@+id/relativeLayout"
+       app:menu_colorPressed="@color/colorSecundario"
+        app:layout_anchorGravity="center"
+        app:menu_colorNormal="@color/colorSecundario"
         app:menu_fab_label="">
 
         <com.github.clans.fab.FloatingActionButton
@@ -41,18 +44,19 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:onClick="clicSubMenu1"
+            app:fab_colorPressed="@color/colorSecundario"
+            app:fab_colorNormal="@color/colorSecundario"
             android:src="@drawable/ic_icono1"
             app:fab_label="Entrevista Adulto" />
 
-
         <com.github.clans.fab.FloatingActionButton
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_icono1"
-            app:fab_label="Entrevista Adolescente" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:onClick="clicSubMenu2"
+            app:fab_colorPressed="@color/colorSecundario"
+        android:src="@drawable/ic_icono1"
+            app:fab_colorNormal="@color/colorSecundario"
+        app:fab_label="Entrevista Adolescente" />
 
-
-    </com.github.clans.fab.FloatingActionMenu>
-
-
+</com.github.clans.fab.FloatingActionMenu>
 </android.support.design.widget.CoordinatorLayout>

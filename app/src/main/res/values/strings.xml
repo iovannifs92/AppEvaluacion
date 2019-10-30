@@ -283,8 +283,6 @@
 
 
     <!--region Adolescentes-->
-
-
     <string name="e127">Entrevista Adolescente</string>
     <string name="e128">Número de causa</string>
     <string name="e129">Fecha:</string>
@@ -294,12 +292,13 @@
 
     <!--region Personas Presentes en la entrevista del imputado-->
     <string name="e132">¿El adolescente ha proporcionado su consentimiento para esta entrevista?</string><!--SI/NO-->
-    <string name="e133">Nombres</string>
+    <string name="e133">Nombre</string>
     <string name="e134">Relación con el adolescente</string>
     <string name="e135">Participante/oyente</string>
     <!--endregion-->
 
     <!-- region Datos Generales-->
+    <string name="e5001">DATOS GENERALES</string>
     <string name="e136">Nombre</string>
     <string name="e137">Sexo</string>
     <string name="e138">Edad</string>
@@ -359,7 +358,7 @@
     <string name="e182">Teléfono</string>
     <string name="e183">Niveles Inscritos</string>
     <string name="e184">Último grado cursado</string>
-    <string name="e185">Escuela Anteriores</string>
+    <string name="e185">Escuelas Anteriores</string>
     <string name="e186">Nombre</string>
     <string name="e187">Localidad</string>
     <string name="e188">Grados Cursados</string>
@@ -384,7 +383,73 @@
     <string name="e207">Localidad</string>
     <string name="e208">Contacto</string>
     <string name="e209">Teléfono</string>
+    <!--endregion-->
+
+
+    <!-- CONSIDERACIONES EXCEPCIONALES SOBRE LA PERSONA ADOLESCENTE-->
+    <string name="e210">Para las preguntas siguientes, operador debe solicitar el informe de la REVISIÓN MÉDICA del ingreso al Centro de internamiento</string>
+    <string name="e211">¿Esta embarazada?</string><!--SI/NO-->
+    <string name="e212">¿Es madre de hijos(s) o cuidadora úinica o principal?</string><!--SI/NO-->
+    <string name="e213">¿Tiene conocimiento de alguna enfermedad crónica que pudiera tener (epilepsia, diabetes ,VIH/SIDA ,tuberculosis)?</string><!--SI/NO-->
+    <string name="e214">¿Cuál?:</string><!--SI/NO-->
+    <string name="e215">¿Cuenta con una discapacidad física que pudiera poner en riesgo a la persona adolescente (mudo, ciego, paralizado faltando una extremidad)?</string><!--SI/NO-->
+    <string name="e216">¿Toma medicamentos por una condición crónica (epilepsia, diabetes ,VIH/SIDA ,tuberculosis)?</string><!--SI/NO-->
+    <string name="e217">El entrevistador observa alguna enfermedad mental de tipo crónico, continuo o irreversible (autismo, bipolaridad, esquizofrenia)</string><!--SI/NO-->
+    <!--endregion-->
+
+    <!--CONSUMO DE SUSTANCIAS -->
+    <string name="e300">CONSUMO DE SUSTANCIAS (Llena la siguiente tabla sobre el uso de sustancias controladas)</string>
+    <string name="e301">¿Tomas alcohol?</string>
+    <string name="e302">¿Fumas o Consumes Tabaco?</string>
+    <string name="e303">¿Fumas o Consumes Marihuana?</string>
+    <string name="e304">¿Tomas pastillas?</string>
+    <string name="e305">¿Inhalas algún tipo de solvente?</string>
+    <string name="e306">¿Fumas o Consumes Metanfetamina?</string>
+    <string name="e307">¿Fumas o Consumes Cocaína?</string>
+    <string name="e308">¿Fumas o Consumes alguna otra sustancia psicotrópicas y/o estupefacientes?</string>
+    <string name="e309">Frecuencia</string>
+    <string name="e3010">Cantidad</string>
+    <string name="e3011">Fecha de último consumo</string>
+
+    <string name="e3012">¿El adolescente consume una o más de las sustancias frecuentemente?</string>
 
     <!--endregion-->
+
+    <!--INFORMACION DEL CASO ACTUAL -->
+    <string name="e2019">¿Tiene acceso al expediente?</string><!--SI/NO-->
+    <string name="e2020">Fecha Puesto a Disposición</string>
+    <string name="e2021">¿Tiene acceso a otras fuentes de información?</string><!--SI/NO-->
+    <string name="e2022">¿Cuáles son las fuentes?</string>
+    <string name="e2023">Delitos imputados por la investigación</string>
+    <string name="e2024">Los delitos que son mencionados en el articulo 145 son: homicidio calificado, violación tumultuaria, secuestro agravado, trata de personas, delincuencia organizada.</string>
+    <string name="e2025">¿Uno de los delitos está mencionado en el articulo de 145 (Último parrafo)?</string><!--SI/NO-->
+    <string name="e2026">Los delitos que son mencionados en el articulo 164 son: terrorismo, extorsion agravada, posesión de armas, homicidio doloso, violación sexual, lesiones dolosas, robo con violencia física, trata de personas, secuestro, delitos contra la salud.</string>
+    <string name="e2027">¿Unos de los delitos está mencionado en el articulo 164?</string><!--SI/NO-->
+    <string name="e2028">¿Medidas de internamiento son excluidas por otra causa? (art.145 edad o por ser tentativa)</string><!--SI/NO-->
+    <string name="e2029">¿Los hechos alegados del adolescente trata de delicuencia organizada?</string><!--SI/NO-->
+    <!--endregion-->
+
+    <!--LA VICTIMA U OFENDIDO-->
+    <string name="e2030">¿Existe víctima u ofendido?</string><!--SI/NO-->
+    <string name="e2031">¿Vive en el mismo domicilio de la víctima u ofendido(s)?</string><!--SI/NO-->
+    <string name="e2032">¿El adolescente no vive con la víctima, pero existe cercanía (trabajo, escuela, actividad extra escola, colonia)?</string><!--SI/NO-->
+    <string name="e2033">En caso de que vivan en el mismo domicilio o exista cercanía:</string>
+    <string name="e2034">¿El adolescente puede reubicarse a favor de la seguridad de la víctima?</string><!--SI/NO-->
+    <string name="e2035">¿Elimina la cercanía para que este más segura la victima?</string><!--SI/NO-->
+    <string name="e2036">¿El delito violentó la integridad física de la víctima (homicidio, abuso sexual, violacíon, trata de personas, secuestro, lesiones dolosas, robo calificado)?</string><!--SI/NO-->
+    <string name="e2037">¿El adolescente ha expresado intenciones de violentar nuevamente a la víctima u ofendido?</string><!--SI/NO-->
+    <!--endregion-->
+
+    <!--PROCESO LEGAL Y OBSTRUCCION DE LA INVESTIGACION-->
+    <string name="e2038">¿Se presenta un posible riesgo continuo a las evidencias o riesgos (que no sea la víctima)?</string><!--SI/NO-->
+    <string name="e2039">Explique</string>
+    <string name="e2040">¿Se presenta una maneza hacia un testigo, declarante, o agente del M.P (que no sea la víctima)?</string><!--SI/NO-->
+    <string name="e2041">Explique</string>
+    <!--endregion-->
+
+
+
+
+
 
 </resources>
