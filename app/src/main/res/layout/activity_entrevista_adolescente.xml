@@ -461,16 +461,16 @@
                 android:visibility="gone"
                 android:layout_marginBottom="20dp"
                 >
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/e148"
-                    android:inputType="text"
-                    android:textSize="25sp"
-                    android:textColor="@android:color/background_dark"
-                    android:textStyle="bold"
                     android:layout_marginBottom="20dp"
-                    tools:ignore="MissingConstraints" />
+                    android:background="@color/colorSecundario2"
+                    android:textAlignment="center"
+                    android:text="DOMICILIO ACTUAL"
+                    android:textColor="@color/myWhite"
+                    android:textSize="20dp" />
 
                 <TextView
                     android:id="@+id/tvCa"
@@ -587,6 +587,14 @@
                     android:text="" />
 
                 <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/colorSecundario2"
+                    android:textColor="@color/myWhite"
+                    android:textSize="20dp" />
+
+                <TextView
                     android:id="@+id/tvsPDfa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -613,6 +621,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvD1A"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+
+                    android:text="DOMICILIO 1"
+                    android:background="@color/colorSecundario2"
+                    android:textAlignment="center"
+                    android:visibility="invisible"
+                    android:textColor="@color/myWhite"
+                    android:textSize="20dp" />
+
                 <TextView
                     android:id="@+id/tvDA1"
                     android:layout_width="match_parent"
@@ -648,6 +670,20 @@
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
+
+                <TextView
+                    android:id="@+id/tvD2A"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:textAlignment="center"
+                    android:text="DOMICILIO 2"
+                    android:visibility="invisible"
+                    android:background="@color/colorSecundario2"
+                    android:textColor="@color/myWhite"
+                    android:textSize="20dp" />
+
+
                 <TextView
                     android:id="@+id/tvDA2"
                     android:layout_width="match_parent"
@@ -665,6 +701,37 @@
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
+
+                <TextView
+                    android:id="@+id/tvDATa2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:text="@string/e160"
+                    android:layout_marginBottom="20dp"
+                    />
+
+                <EditText
+                    android:id="@+id/txtDATa2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:layout_alignParentTop="true"
+                    android:inputType="text"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/tvD3A"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:textAlignment="center"
+                    android:visibility="invisible"
+                    android:text="DOMICILIO 3"
+                    android:background="@color/colorSecundario2"
+                    android:textColor="@color/myWhite"
+                    android:textSize="20dp" />
+
 
                 <TextView
                     android:id="@+id/tvDALa3"
@@ -959,6 +1026,18 @@
                     android:layout_marginBottom="20dp"/>
 
                 <TextView
+                    android:id="@+id/tvDPA1"
+                    android:layout_width="match_parent"
+                    android:text="PERSONA 1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/colorSecundario2"
+                    android:textAlignment="center"
+                    android:textColor="@color/myWhite"
+                    android:textSize="20dp" />
+
+
+                <TextView
                     android:id="@+id/tvNDEa1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -1030,6 +1109,17 @@
                     android:layout_height="wrap_content"
                     android:visibility="invisible"
                     android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvDPA2"
+                    android:layout_width="match_parent"
+                    android:text="PERSONA 2"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/colorSecundario2"
+                    android:textAlignment="center"
+                    android:textColor="@color/myWhite"
+                    android:textSize="20dp" />
 
 
                 <TextView
@@ -1105,7 +1195,16 @@
                     android:visibility="invisible"
                     android:layout_marginBottom="20dp"/>
 
-
+                <TextView
+                    android:id="@+id/tvDPA3"
+                    android:layout_width="match_parent"
+                    android:text="PERSONA 3"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/colorSecundario2"
+                    android:textAlignment="center"
+                    android:textColor="@color/myWhite"
+                    android:textSize="20dp" />
 
                 <TextView
                     android:id="@+id/tvNDEa3"
@@ -1203,14 +1302,13 @@
 
                 <TextView
                     android:layout_width="match_parent"
+                    android:text="HISTORIAL ESCOLAR"
                     android:layout_height="wrap_content"
-                    android:text="@string/e176"
-                    android:inputType="text"
-                    android:textSize="25sp"
-                    android:textColor="@android:color/background_dark"
-                    android:textStyle="bold"
                     android:layout_marginBottom="20dp"
-                    tools:ignore="MissingConstraints" />
+                    android:background="@color/colorSecundario2"
+                    android:textAlignment="center"
+                    android:textColor="@color/myWhite"
+                    android:textSize="20dp" />
 
                 <TextView
                     android:id="@+id/tvAE"
@@ -1236,13 +1334,13 @@
 
                 <TextView
                     android:layout_width="match_parent"
+                    android:text="ESCUELA ACTUAL"
                     android:layout_height="wrap_content"
-                    android:text="@string/e179"
-                    android:inputType="text"
-                    android:textSize="25sp"
-                    android:textColor="@android:color/background_dark"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="20dp"/>
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/colorSecundario2"
+                    android:textAlignment="center"
+                    android:textColor="@color/myWhite"
+                    android:textSize="20dp" />
 
                 <TextView
                     android:id="@+id/tvNEa"
@@ -1311,16 +1409,16 @@
                     android:inputType="text"
                     android:text="" />
 
+
                 <TextView
                     android:layout_width="match_parent"
+                    android:text="ESCUELAS ANTERIORES"
                     android:layout_height="wrap_content"
-                    android:text="@string/e185"
-                    android:inputType="text"
-                    android:textSize="25sp"
-                    android:textColor="@android:color/background_dark"
-                    android:textStyle="bold"
                     android:layout_marginBottom="20dp"
-                    tools:ignore="MissingConstraints" />
+                    android:background="@color/colorSecundario2"
+                    android:textAlignment="center"
+                    android:textColor="@color/myWhite"
+                    android:textSize="20dp" />
 
 
                 <TextView
@@ -1405,14 +1503,13 @@
 
                 <TextView
                     android:layout_width="match_parent"
+                    android:text="HISTORIA LABORAL"
                     android:layout_height="wrap_content"
-                    android:text="@string/e189"
-                    android:inputType="text"
-                    android:textSize="25sp"
-                    android:textColor="@android:color/background_dark"
-                    android:textStyle="bold"
                     android:layout_marginBottom="20dp"
-                    tools:ignore="MissingConstraints" />
+                    android:background="@color/colorSecundario2"
+                    android:textAlignment="center"
+                    android:textColor="@color/myWhite"
+                    android:textSize="20dp" />
 
                 <TextView
                     android:id="@+id/tvTA"
@@ -1444,22 +1541,13 @@
 
                 <TextView
                     android:layout_width="match_parent"
+                    android:text="TRABAJO ACTUAL"
                     android:layout_height="wrap_content"
-                    android:text="@string/e192"
-                    android:inputType="text"
-                    android:textSize="25sp"
-                    android:textColor="@android:color/background_dark"
-                    android:textStyle="bold"
                     android:layout_marginBottom="20dp"
-                    tools:ignore="MissingConstraints" />
-
-                <EditText
-                    android:id="@+id/txtTAa"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
+                    android:background="@color/colorSecundario2"
+                    android:textAlignment="center"
+                    android:textColor="@color/myWhite"
+                    android:textSize="20dp" />
 
                 <TextView
                     android:id="@+id/tvNTa"
@@ -1540,14 +1628,14 @@
 
                 <TextView
                     android:layout_width="match_parent"
+                    android:text="TRABAJOS ANTERIORES"
                     android:layout_height="wrap_content"
-                    android:text="@string/e199"
-                    android:inputType="text"
-                    android:textSize="25sp"
-                    android:textColor="@android:color/background_dark"
-                    android:textStyle="bold"
                     android:layout_marginBottom="20dp"
-                    tools:ignore="MissingConstraints" />
+                    android:background="@color/colorSecundario2"
+                    android:textAlignment="center"
+                    android:textColor="@color/myWhite"
+                    android:textSize="20dp" />
+
                 <Spinner
                     android:id="@+id/sPTA"
                     android:layout_width="match_parent"
@@ -1607,16 +1695,16 @@
                     android:inputType="text"
                     android:text="" />
 
+
                 <TextView
                     android:layout_width="match_parent"
+                    android:text="ACTIVIDAD EXTRAESCOLARES ACTUALES"
                     android:layout_height="wrap_content"
-                    android:text="@string/e204"
-                    android:inputType="text"
-                    android:textSize="25sp"
-                    android:textColor="@android:color/background_dark"
-                    android:textStyle="bold"
                     android:layout_marginBottom="20dp"
-                    tools:ignore="MissingConstraints" />
+                    android:background="@color/colorSecundario2"
+                    android:textAlignment="center"
+                    android:textColor="@color/myWhite"
+                    android:textSize="20dp" />
 
                 <TextView
                     android:id="@+id/tvAEA"
@@ -1687,6 +1775,7 @@
                     android:inputType="text"
                     android:text="" />
             </LinearLayout>
+
             <Button
                 android:id="@+id/btnIC"
                 android:layout_width="match_parent"
@@ -1798,13 +1887,18 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"/>
 
+
                 <TextView
-                    android:id="@+id/tvCDS"
                     android:layout_width="match_parent"
+                    android:text="@string/e300"
                     android:layout_height="wrap_content"
-                    android:textColor="@android:color/background_dark"
                     android:layout_marginBottom="20dp"
-                    android:text="@string/e300"/>
+                    android:background="@color/colorSecundario2"
+                    android:textAlignment="center"
+                    android:textColor="@color/myWhite"
+                    android:textSize="20dp" />
+
+
 
                 <TextView
                     android:id="@+id/alcoholA"
@@ -1870,9 +1964,6 @@
                     android:clickable="true"
                     android:layout_marginBottom="20dp"/>
 
-
-
-
                 <TextView
                     android:id="@+id/TabacoA"
                     android:layout_width="match_parent"
@@ -1936,8 +2027,6 @@
                     android:focusable="false"
                     android:clickable="true"
                     android:layout_marginBottom="20dp"/>
-
-
 
                 <TextView
                     android:id="@+id/MarihuanaA"
@@ -2003,10 +2092,6 @@
                     android:clickable="true"
                     android:layout_marginBottom="20dp"/>
 
-
-
-
-
                 <TextView
                     android:id="@+id/PastillasA"
                     android:layout_width="match_parent"
@@ -2070,7 +2155,6 @@
                     android:focusable="false"
                     android:clickable="true"
                     android:layout_marginBottom="20dp"/>
-
 
                 <TextView
                     android:id="@+id/SolventesA"
@@ -2136,8 +2220,6 @@
                     android:clickable="true"
                     android:layout_marginBottom="20dp"/>
 
-
-
                 <TextView
                     android:id="@+id/MetanfetaminaA"
                     android:layout_width="match_parent"
@@ -2201,16 +2283,6 @@
                     android:focusable="false"
                     android:clickable="true"
                     android:layout_marginBottom="20dp"/>
-
-
-
-
-
-
-
-
-
-
 
                 <TextView
                     android:id="@+id/CocainaA"

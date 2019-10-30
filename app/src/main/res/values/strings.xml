@@ -349,23 +349,18 @@
     <!--endregion-->
 
     <!-- Historial escolar y laboral-->
-    <string name="e176">Historia Escolar</string>
     <string name="e177">¿Asiste a la escuela actualmente?</string><!--SI/NO-->
     <string name="e178">¿Concluyó la secundaria?</string><!--SI/NO-->
-    <string name="e179">Escuela Actual</string>
     <string name="e180">Nombre</string>
     <string name="e181">Dirección</string>
     <string name="e182">Teléfono</string>
     <string name="e183">Niveles Inscritos</string>
     <string name="e184">Último grado cursado</string>
-    <string name="e185">Escuelas Anteriores</string>
     <string name="e186">Nombre</string>
     <string name="e187">Localidad</string>
     <string name="e188">Grados Cursados</string>
-    <string name="e189">Historia Laboral</string>
     <string name="e190">¿Trabaja actualmente? (excluye trabajo ilegal)</string><!--SI/NO-->
     <string name="e191">¿Es un trabajo recurrente? (no temporal)</string><!--SI/NO-->
-    <string name="e192">Trabajo actual</string>
     <string name="e193">Nombre</string>
     <string name="e194">Dirección</string>
     <string name="e195">Teléfono</string>
