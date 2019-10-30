@@ -394,6 +394,7 @@ public class entrevista_adolescente extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 showDatePickerDialog(txtFDCMAR);
+                ////////
             }
 
         });
