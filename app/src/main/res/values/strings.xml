@@ -441,6 +441,12 @@
     <string name="e2040">¿Se presenta una maneza hacia un testigo, declarante, o agente del M.P (que no sea la víctima)?</string><!--SI/NO-->
     <string name="e2041">Explique</string>
     <!--endregion-->
-
-
+    <!--PROCESO PENALES PREVIOS-->
+    <string name="e2042">¿Tiene otros procesos penales?</string><!--SI/NO-->
+    <string name="e2043">¿Se imponía medidas cautelares en libertad?</string><!--SI/NO-->
+    <string name="e2044">Numero de causa</string>
+    <string name="e2045">Delito</string>
+    <string name="e2046">Tipo de Medida</string>
+    <string name="e2047">Estatus (Vigente, Suspendido, Revocado, Cumplido)</string>
+    <!--endregion-->
 </resources>

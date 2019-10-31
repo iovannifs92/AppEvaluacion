@@ -10,6 +10,7 @@
         android:layout_height="match_parent"
         android:fillViewport="true">
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -506,13 +507,11 @@
                     android:layout_height="wrap_content"
                     android:text="@string/e151" />
 
-                <EditText
-                    android:id="@+id/txtCOLa"
+                <Spinner
+                    android:id="@+id/sPCOLa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
+                    android:layout_marginBottom="20dp"/>
 
                 <TextView
                     android:id="@+id/tvCPa"
@@ -577,13 +576,11 @@
                     android:layout_height="wrap_content"
                     android:text="@string/e156" />
 
-                <EditText
-                    android:id="@+id/txtTa"
+                <Spinner
+                    android:id="@+id/sPTa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
+                    android:layout_marginBottom="20dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -1391,13 +1388,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/e184"/>
-                <EditText
-                    android:id="@+id/txtUGa"
+                <Spinner
+                    android:id="@+id/sPUGa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
+                    android:layout_marginBottom="20dp"/>
 
 
                 <TextView
@@ -2378,6 +2373,8 @@
                 android:textColor="#FFFFFF"
                 android:textSize="30dp"
                 android:theme="@style/PrimaryColoredButton" />
+
         </LinearLayout>
     </ScrollView>
+
 </android.support.constraint.ConstraintLayout>

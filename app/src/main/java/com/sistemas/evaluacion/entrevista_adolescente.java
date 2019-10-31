@@ -52,13 +52,13 @@ public class  entrevista_adolescente extends AppCompatActivity {
     //datos generales
     private EditText txtNc, txtFecha, txtNe, txtFolioA ,txtNpa1, txtNpa2, txtNpa3, txtNpa4, txtRa1, txtRa2, txtRa3, txtRa4, txtPOa1, txtPOa2, txtPOa3, txtPOa4, txtNa, txtEa, txtFNa, txtCURPa, txtLNa, txtEDOa, txtMa, txtLa, txtNAa ;
     //Ficha familiar Domicilio
-    private EditText txtCa, txtNOa, txtCOLa, txtCPa, txtMUa, txtEDO2a, txtPa, txtTa, txtDALa1, txtDALa2,txtDALa3,txtDATa3,txtDATa4,txtDATa1,txtDATa2;
+    private EditText txtCa, txtNOa ,txtCPa, txtMUa, txtEDO2a, txtPa, txtDALa1, txtDALa2,txtDALa3,txtDATa3,txtDATa4,txtDATa1,txtDATa2;
     //Datos familiares
     private EditText txtNDFa1,txtNDFa2,txtRDFa1, txtRDFa2,txtEDFa1, txtEDFa2,txtTDFa1, txtTDFa2,txtCQDFa,txtRDFa,txtLDFa;
     //Dependientes economicos
     private EditText txtNDEa1,txtNDEa2,txtNDEa3,txtRDEa1,txtRDEa2,txtRDEa3,txtEDEa1,txtEDEa2,txtEDEa3,txtTDEa1,txtTDEa2,txtTDEa3;
     //Viculos comunitarios
-    private EditText txtNEa,txtDEa,txtTea,txtNIEa,txtUGa,txtNEa1,txtNEa2,txtLE1,txtLE2,txtGC1,txtGC2;
+    private EditText txtNEa,txtDEa,txtTea,txtNIEa,txtNEa1,txtNEa2,txtLE1,txtLE2,txtGC1,txtGC2;
     //Historial laboral
     private EditText txtNTa,txtDTa,txtTTa,txtATa,txtJTa,txtNT1,txtLT1,txtAT1,txtTT1;
     //actividades Extraescolares
@@ -137,12 +137,11 @@ public class  entrevista_adolescente extends AppCompatActivity {
         //region FICHA FAMILIAR
         txtCa=(EditText) findViewById(R.id.txtCa);
         txtNOa=(EditText) findViewById(R.id.txtNOa);
-        txtCOLa=(EditText) findViewById(R.id.txtCOLa);
         txtCPa=(EditText) findViewById(R.id.txtCPa);
         txtMUa=(EditText) findViewById(R.id.txtMUa);
         txtEDO2a=(EditText) findViewById(R.id.txtEDO2a);
         txtPa=(EditText) findViewById(R.id.txtPa);
-        txtTa=(EditText) findViewById(R.id.txtTa);
+
         txtDALa1=(EditText) findViewById(R.id.txtDALa1);
         txtDALa2=(EditText) findViewById(R.id.txtDALa2);
         txtDALa3=(EditText) findViewById(R.id.txtDALa3);
@@ -191,7 +190,6 @@ public class  entrevista_adolescente extends AppCompatActivity {
         txtDEa=(EditText) findViewById(R.id.txtDEa);
         txtTea=(EditText) findViewById(R.id.txtTea);
         txtNIEa=(EditText) findViewById(R.id.txtNIEa);
-        txtUGa=(EditText) findViewById(R.id.txtUGa);
         txtNEa1=(EditText) findViewById(R.id.txtNEa1);
         txtNEa2=(EditText) findViewById(R.id.txtNEa2);
 
@@ -1132,12 +1130,10 @@ public class  entrevista_adolescente extends AppCompatActivity {
                 //region FICHA FAMILIAR
                 r26A=txtCa.getText().toString().toUpperCase();
                 r27A=txtNOa.getText().toString().toUpperCase();
-                r28A=txtCOLa.getText().toString().toUpperCase();
                 r29A=txtCPa.getText().toString().toUpperCase();
                 r30A=txtMUa.getText().toString().toUpperCase();
                 r31A=txtEDO2a.getText().toString().toUpperCase();
                 r32A=txtPa.getText().toString().toUpperCase();
-                r33A=txtTa.getText().toString().toUpperCase();
                 r34A=txtDALa1.getText().toString().toUpperCase();
                 r35A=txtDALa2.getText().toString().toUpperCase();
                 r36A=txtDATa3.getText().toString().toUpperCase();
@@ -1176,7 +1172,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
                 r62A=txtDEa.getText().toString().toUpperCase();
                 r63A=txtTea.getText().toString().toUpperCase();
                 r64A=txtNIEa.getText().toString().toUpperCase();
-                r65A=txtUGa.getText().toString().toUpperCase();
+
                 r66A=txtNEa1.getText().toString().toUpperCase();
                 r67A=txtNEa2.getText().toString().toUpperCase();
                 r68A=txtLE1.getText().toString().toUpperCase();
@@ -1504,5 +1500,22 @@ public class  entrevista_adolescente extends AppCompatActivity {
         });
         newFragment.show(getSupportFragmentManager(), "datePicker");
     }
+
+    //endregion
+    private long backPressedTime = 0;
+    @Override
+    public void onBackPressed() {        // to prevent irritating accidental logouts
+        long t = System.currentTimeMillis();
+        if (t - backPressedTime > 2000) {    // 2 secs
+            backPressedTime = t;
+            Toast.makeText(this, "Presiona nuevamente para salir al menu principal",
+                    Toast.LENGTH_SHORT).show();
+        } else {    // this guy is serious
+            // clean up
+            super.onBackPressed();       // bye
+        }
+    }
+    //endregion
+
 
 }
