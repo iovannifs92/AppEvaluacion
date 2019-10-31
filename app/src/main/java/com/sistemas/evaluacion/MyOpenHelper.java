@@ -20,6 +20,15 @@ import com.sistemas.evaluacion.entidades.datosReferencias;
 import com.sistemas.evaluacion.entidades.datosSalud;
 import com.sistemas.evaluacion.entidades.datosVictima;
 import com.sistemas.evaluacion.entidades.datosCarpetaInvestigacion;
+import com.sistemas.evaluacion.entidades.datosEntrevistadorA;
+import com.sistemas.evaluacion.entidades.datosResponsablesA;
+import com.sistemas.evaluacion.entidades.datosGeneralesA;
+import com.sistemas.evaluacion.entidades.datosFichaFamiliarA;
+import com.sistemas.evaluacion.entidades.datosFamiliaresA;
+import com.sistemas.evaluacion.entidades.datosDependientesEconomicosA;
+import com.sistemas.evaluacion.entidades.datosActividadesExtraescolaresA;
+import com.sistemas.evaluacion.entidades.datosRevisionMedicaA;
+import com.sistemas.evaluacion.entidades.datosConsumoSustanciasA;
 
 public class MyOpenHelper extends SQLiteOpenHelper {
 
@@ -114,6 +123,69 @@ public class MyOpenHelper extends SQLiteOpenHelper {
             "e115 TEXT, e116 TEXT, e117 TEXT, e118 TEXT, e119 TEXT, e120 TEXT, e121 TEXT, e122 TEXT, e123 TEXT, e124 TEXT, e125 TEXT, e126 TEXT, Folio TEXT)";
     //endregion
 
+    //region Tabla_Entrevistador_Adolescentes
+    private static final String CREATE_TABLE_ENTREVISTADOR_A="CREATE TABLE entrevistador_adolescentes(_id INTEGER PRIMARY KEY AUTOINCREMENT," +
+            "Acausa TEXT, Afecha TEXT, Aevaluador TEXT, Afolio TEXT)";
+    //endregion
+
+    //region Tabla_Responsables_Adolescentes
+    private static final String CREATE_TABLE_RESPONSABLES_A="CREATE TABLE responsables_a(_id INTEGER PRIMARY KEY AUTOINCREMENT, Aconsentimiento TEXT, " +
+            "Anombre1 TEXT, Arelacion1 TEXT, Aoyente1 TEXT,Anombre2 TEXT, Arelacion2 TEXT,Aoyente2 TEXT, Afolio TEXT)";
+    //endregion
+
+    //region Tabla_Datos_Generales_Adolescentes
+    private static final String CREATE_TABLE_DATOS_GENERALES_A="CREATE TABLE datos_generales_a(_id INTEGER PRIMARY KEY AUTOINCREMENT, Anombre TEXT, Asexo TEXT, Aedad TEXT, " +
+            "Afechanac TEXT, Acurp TEXT, Alugarnac TEXT, Aestado TEXT, Amunicipio TEXT, Alocalidad TEXT, Anacionalidad TEXT, Aespanol TEXT, Atraductor TEXT, Afolio TEXT)";
+    //endregion
+
+    //region Tabla_Datos_Ficha_Familiar_Adolescentes
+    private static final String CREATE_TABLE_FICHA_FAMILIAR_A="CREATE TABLE ficha_familiar_a(_id INTEGER PRIMARY KEY AUTOINCREMENT, Acalle TEXT, Anumero TEXT," +
+            " Acolonia TEXT, Acp TEXT, Amunicipio TEXT, Aestado TEXT, Apais Text, Atemporalidad TEXT, Adomiciliof TEXT," +
+            " Alocalidad1 TEXT, Atemporalidadant1 TEXT, Afolio TEXT, Alocalidad2 TEXT, Atemporalidadant2 TEXT,Alocalidad3 TEXT, Atemporalidadant3 TEXT)";
+    //endregion_Adolescentes
+
+    //region Tabla_Datos_Familiares_Adolescentes
+    private static final String CREATE_TABLE_DATOS_FAMILIARES_A="CREATE TABLE datos_familiares_a(_id INTEGER PRIMARY KEY AUTOINCREMENT, Anombre1 TEXT, Arelacion1 TEXT," +
+            "Aedad1 TEXT, Atelefono1 TEXT, Avivecon1 TEXT, Anombre2 TEXT, Arelacion2 TEXT,Aedad2 TEXT, Atelefono2 TEXT, Avivecon2 TEXT, Aubicarfam TEXT," +
+            " Anombrefam TEXT, Arelacionfam TEXT, Alocalidadfam TEXT, Afolio TEXT)";
+    //endregion_Adolescentes
+
+    //region Tabla_Datos_Dependientes_Economicos_Adolescentes
+    private static final String CREATE_TABLE_DEPENDIENTES_ECONOMICOS_A="CREATE TABLE dependientes_economicos_a(_id INTEGER PRIMARY KEY AUTOINCREMENT, Adependientes TEXT," +
+            "Anombre1 TEXT, Arelacion1 TEXT, Aedad1 TEXT, Atelefono1 TEXT, Aresponsable1 TEXT,Anombre2 TEXT, Arelacion2 TEXT, Aedad2 TEXT, Atelefono2 TEXT, Aresponsable2 TEXT," +
+            " Anombre3 TEXT, Arelacion3 TEXT, Aedad3 TEXT, Atelefono3 TEXT, Aresponsable3 TEXT,Afolio TEXT)";
+    //endregion
+
+    //region Tabla_Datos_Historial_Escolar_Adolescentes
+    private static final String CREATE_TABLE_HISTORIAL_ESCOLAR_A="CREATE TABLE historial_escolar_a(_id INTEGER PRIMARY KEY AUTOINCREMENT, Aasiste TEXT, Aconcluyo TEXT," +
+            "Anombreact TEXT, Adireccionact TEXT, Atelefonoact TEXT, Anivel TEXT, Agrado TEXT, Anombreant1 TEXT, Alocalidad1 TEXT, Agradoant1 TEXT," +
+            "Anombreant2 TEXT, Alocalidad2 TEXT, Agradoant2 TEXT, Afolio TEXT)";
+    //endregion_Adolescentes
+
+    //region Tabla_Datos_Historial_Laboral_Adolescentes
+    private static final String CREATE_TABLE_HISTORIAL_LABORAL_A="CREATE TABLE historial_laboral_a(_id INTEGER PRIMARY KEY AUTOINCREMENT,Atrabajoant TEXT, Atrabaja TEXT, Arecurrente TEXT," +
+            "Anombre TEXT, Adireccion TEXT, Atelefono TEXT, Aantiguedad TEXT, Atiempo TEXT, Ajefe TEXT, Anombreant TEXT, Alocalidad TEXT, Aantiguedadant TEXT," +
+            " Atelefonoant TEXT, Afolio TEXT)";
+    //endregion_Adolescentes
+
+    //region Tabla_Datos_Actividades_Extraescolares_Adolescentes
+    private static final String CREATE_TABLE_ACTIVIDADES_EXTRAESCOLARES_A="CREATE TABLE actividades_extraescolares_a(_id INTEGER PRIMARY KEY AUTOINCREMENT, Arealiza TEXT," +
+            "Aactividad TEXT, Alocalidad TEXT, Acontacto TEXT, Atelefono TEXT, Afolio TEXT)";
+    //endregion_Adolescentes
+
+    //region Tabla_Datos_Revision_Medica_Adolescentes
+    private static final String CREATE_TABLE_REVISION_MEDICA_A="CREATE TABLE revision_medica_a(_id INTEGER PRIMARY KEY AUTOINCREMENT, Aembarazada TEXT," +
+            "Amadre TEXT, Aenfermedad TEXT, Acual TEXT, Adiscapacidad TEXT, Amedicamento TEXT, Aentrevistador TEXT, Afolio TEXT)";
+    //endregion_Adolescentes
+
+    //region Tabla_Datos_Conduamo_Sustancias_Adolescentes
+    private static final String CREATE_TABLE_CONSUMO_SUSTENCIAS_A="CREATE TABLE consumo_sustancias_a(_id INTEGER PRIMARY KEY AUTOINCREMENT, Aconsume_alcohol TEXT," +
+            "Acantidad1 TEXT, Afrecuencia1 TEXT, Aultimo_consumo1,Aconsume_tabaco TEXT,Acantidad2 TEXT, Afrecuencia2 TEXT, Aultimo_consumo2, " +
+            "Aconsume_marihuana TEXT,Acantidad3 TEXT, Afrecuencia3 TEXT, Aultimo_consumo3,Aconsume_pastillas TEXT,Acantidad4 TEXT, Afrecuencia4 TEXT, Aultimo_consumo4," +
+            "Aconsume_solventes TEXT,Acantidad5 TEXT, Afrecuencia5 TEXT, Aultimo_consumo5,Aconsume_metanfetaminas TEXT,Acantidad6 TEXT, Afrecuencia6 TEXT, Aultimo_consumo6," +
+            "Aconsume_cocaina TEXT,Acantidad7 TEXT, Afrecuencia7 TEXT, Aultimo_consumo7 TEXT,Aconsumemas TEXT, Afolio TEXT)";
+    //endregion
+
     //endregion
 
     //region Definicion de la base de datos
@@ -144,6 +216,22 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_EVA_RIESGOS);
         db.execSQL(INSERT_INTO_ENTREVISTADIR);
         db.execSQL(CREATE_TABLE_IMPUTADO_CARPETA_INVESTIGACION);
+
+        db.execSQL(CREATE_TABLE_ENTREVISTADOR_A);
+        db.execSQL(CREATE_TABLE_RESPONSABLES_A);
+        db.execSQL(CREATE_TABLE_DATOS_GENERALES_A);
+        db.execSQL(CREATE_TABLE_FICHA_FAMILIAR_A);
+        db.execSQL(CREATE_TABLE_DATOS_FAMILIARES_A);
+        db.execSQL(CREATE_TABLE_DEPENDIENTES_ECONOMICOS_A);
+        db.execSQL(CREATE_TABLE_HISTORIAL_ESCOLAR_A);
+        db.execSQL(CREATE_TABLE_HISTORIAL_LABORAL_A);
+        db.execSQL(CREATE_TABLE_ACTIVIDADES_EXTRAESCOLARES_A);
+        db.execSQL(CREATE_TABLE_REVISION_MEDICA_A);
+        db.execSQL(CREATE_TABLE_CONSUMO_SUSTENCIAS_A);
+//        db.execSQL(CREATE_TABLE_INFORMACION_CASO_A);
+//        db.execSQL(CREATE_TABLE_PROCESOS_PENALES_A);
+//        db.execSQL(CREATE_TABLE_VICTIMA_OFENDIDO_A);
+//        db.execSQL(CREATE_TABLE_PROCESO_LEGAL_A);
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -558,6 +646,251 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     }
 
 
+    //endregion
+
+    //region Insertar Datos Entrevistador Adolescentes
+    public void insertarDatosEntrevistadorA(String acausa, String afecha, String aevaluador, String afolio){
+        ContentValues dato=new ContentValues();
+        dato.put("Acausa", acausa);
+        dato.put("Afecha", afecha);
+        dato.put("Aevaluador", aevaluador);
+        dato.put("Afolio", afolio);
+        db.insert("entrevistador_adolescentes", null, dato);
+    }
+    //endregion
+
+    //region Insertar Datos Responsables Adolescentes
+    public void insertarDatosResponsablesA(String aconsentimiento, String anombre1, String arelacion1, String aoyente1, String anombre2, String arelacion2,
+                                           String aoyente2, String afolio){
+        ContentValues dato=new ContentValues();
+        dato.put("Aconsentimiento", aconsentimiento);
+        dato.put("Anombre1", anombre1);
+        dato.put("Arelacion1", arelacion1);
+        dato.put("Aoyente1", aoyente1);
+        dato.put("Anombre2", anombre2);
+        dato.put("Arelacion2", arelacion2);
+        dato.put("Aoyente2", aoyente2);
+        dato.put("Afolio", afolio);
+        db.insert("responsables_a", null, dato);
+    }
+
+    //endregion
+
+    //region Insertar Datos Generales Adolescentes
+    public void insertarDatosGeneralesA(String anombre, String asexo, String aedad, String afechanac, String acurp, String alugarnac,
+                                        String aestado, String amunicipio, String alocalidad, String anacionalidad, String aespanol,
+                                        String atraductor, String afolio){
+        ContentValues dato=new ContentValues();
+        dato.put("Anombre", anombre);
+        dato.put("Asexo", asexo);
+        dato.put("Aedad", aedad);
+        dato.put("Afechanac", afechanac);
+        dato.put("Acurp", acurp);
+        dato.put("Alugarnac", alugarnac);
+        dato.put("Aestado", aestado);
+        dato.put("Amunicipio", amunicipio);
+        dato.put("Alocalidad", alocalidad);
+        dato.put("Anacionalidad", anacionalidad);
+        dato.put("Aespanol", aespanol);
+        dato.put("Atraductor", atraductor);
+        dato.put("Afolio", afolio);
+        db.insert("datos_generales_a", null, dato);
+    }
+    //endregion
+
+    //region Insertar Datos Ficha Familiar Adolescentes
+    public void insertarDatosFichaFamiliarA(String acalle, String anumero, String acolonia, String acp, String amunicipio, String aestado, String apais,
+                                            String atemporalidad, String adomiciliof, String alocalidad1, String atemporalidadant1,String alocalidad2,
+                                            String atemporalidadant2,String alocalidad3, String atemporalidadant3, String afolio){
+        ContentValues dato=new ContentValues();
+        dato.put("Acalle", acalle);
+        dato.put("Anumero", anumero);
+        dato.put("Acolonia", acolonia);
+        dato.put("Acp", acp);
+        dato.put("Amunicipio", amunicipio);
+        dato.put("Aestado", aestado);
+        dato.put("Apais", apais);
+        dato.put("Atemporalidad", atemporalidad);
+        dato.put("Adomiciliof", adomiciliof);
+        dato.put("Alocalidad1", alocalidad1);
+        dato.put("Atemporalidadant1", atemporalidadant1);
+        dato.put("Alocalidad2", alocalidad1);
+        dato.put("Atemporalidadant2", atemporalidadant1);
+        dato.put("Alocalidad3", alocalidad1);
+        dato.put("Atemporalidadant3", atemporalidadant1);
+        dato.put("Afolio", afolio);
+        db.insert("ficha_familiar_a", null, dato);
+    }
+    //endregion
+
+    //region Insertar Datos Familiares Adolescentes
+    public void insertarDatosFamiliaresA(String anombre1, String arelacion1, String aedad1, String atelefono1, String avivecon1,String anombre2, String arelacion2,
+                                         String aedad2, String atelefono2, String avivecon2, String aubicarfam, String anombrefam,
+                                         String arelacionfam, String alocalidadfam, String afolio){
+        ContentValues dato=new ContentValues();
+        dato.put("Anombre1", anombre1);
+        dato.put("Arelacion1", arelacion1);
+        dato.put("Aedad1", aedad1);
+        dato.put("Atelefono1", atelefono1);
+        dato.put("Avivecon1", avivecon1);
+        dato.put("Anombre2", anombre2);
+        dato.put("Arelacion2", arelacion2);
+        dato.put("Aedad2", aedad2);
+        dato.put("Atelefono2", atelefono2);
+        dato.put("Avivecon2", avivecon2);
+        dato.put("Aubicarfam", aubicarfam);
+        dato.put("Anombrefam", anombrefam);
+        dato.put("Arelacionfam", arelacionfam);
+        dato.put("Alocalidadfam", alocalidadfam);
+        dato.put("Afolio", afolio);
+        db.insert("datos_familiares_a", null, dato);
+    }
+    //endregion
+
+    //region Insertar Datos Dependientes Economicos Adolescentes
+    public void insertarDatosDependientesEconomicosA(String adependientes, String anombre1, String arelacion1, String aedad1, String atelefono1, String aresponsable1,
+                                                     String anombre2, String arelacion2, String aedad2, String atelefono2, String aresponsable2,
+                                                     String anombre3, String arelacion3, String aedad3, String atelefono3, String aresponsable3, String afolio){
+        ContentValues dato=new ContentValues();
+        dato.put("Adependientes", adependientes);
+        dato.put("Anombre1", anombre1);
+        dato.put("Arelacion1", arelacion1);
+        dato.put("Aedad1", aedad1);
+        dato.put("Atelefono1", atelefono1);
+        dato.put("Aresponsable1", aresponsable1);
+        dato.put("Anombre2", anombre2);
+        dato.put("Arelacion2", arelacion2);
+        dato.put("Aedad2", aedad2);
+        dato.put("Atelefono2", atelefono2);
+        dato.put("Aresponsable2", aresponsable2);
+        dato.put("Anombre3", anombre3);
+        dato.put("Arelacion3", arelacion3);
+        dato.put("Aedad3", aedad3);
+        dato.put("Atelefono3", atelefono3);
+        dato.put("Aresponsable3", aresponsable3);
+        dato.put("Afolio", afolio);
+        db.insert("dependientes_economicos_a", null, dato);
+    }
+    //endregion
+
+    //region Insertar Datos Actividades Extraescolare Adolescentes
+    public void insertarDatosActividadesExtraescolaresA(String arealiza, String aactividad, String alocalidad, String acontacto,
+                                                        String atelefono, String afolio){
+        ContentValues dato=new ContentValues();
+        dato.put("Arealiza", arealiza);
+        dato.put("Aactividad", aactividad);
+        dato.put("Alocalidad", alocalidad);
+        dato.put("Acontacto", acontacto);
+        dato.put("Atelefono", atelefono);
+        dato.put("Afolio", afolio);
+        db.insert("actividades_extraescolares_a", null, dato);
+    }
+    //endregion
+
+    //region Insertar Datos Revision Medica Adolescentes
+    public void insertarDatosRevisionMedicaA(String aembarazada, String amadre,String aenfermedad, String acual, String adiscapacidad,
+                                             String amedicamento, String aentrevistador,String afolio){
+        ContentValues dato=new ContentValues();
+        dato.put("Aembarazada", aembarazada);
+        dato.put("Amadre", amadre);
+        dato.put("Aenfermedad", aenfermedad);
+        dato.put("Acual", acual);
+        dato.put("Adiscapacidad", adiscapacidad);
+        dato.put("Amedicamento", amedicamento);
+        dato.put("Aentrevistador", aentrevistador);
+        dato.put("Afolio", afolio);
+        db.insert("revision_medica_a", null, dato);
+    }
+    //endregion
+
+    //region Insertar Datos Historial Escolar Adolescentes
+    public void insertarDatosHistorialEscolarA(String aasiste, String aconcluyo, String anombreact, String adireccionact, String atelefonoact, String anivel,
+                                               String agrado, String anombreant1, String alocalidad1, String agradoant1, String anombreant2, String alocalidad2,
+                                               String agradoant2,String afolio){
+        ContentValues dato=new ContentValues();
+        dato.put("Aasiste", aasiste);
+        dato.put("Aconcluyo", aconcluyo);
+        dato.put("Anombreact", anombreact);
+        dato.put("Adireccionact", adireccionact);
+        dato.put("Atelefonoact", atelefonoact);
+        dato.put("Anivel", anivel);
+        dato.put("Agrado", agrado);
+        dato.put("Anombreant1", anombreant1);
+        dato.put("Alocalidad1", alocalidad1);
+        dato.put("Agradoant1", agradoant1);
+        dato.put("Anombreant2", anombreant2);
+        dato.put("Alocalidad2", alocalidad2);
+        dato.put("Agradoant2", agradoant2);
+        dato.put("Afolio", afolio);
+        db.insert("historial_escolar_a", null, dato);
+    }
+    //endregion
+
+    //region Insertar Datos Historial Laboral Adolescentes
+    public void insertarDatosHistorialLaboralA(String atrabajoant,String atrabaja, String arecurrente, String anombre, String adireccion, String atelefono, String aantiguedad,
+                                               String atiempo, String ajefe, String anombreant, String alocalidad, String aantiguedadant, String atelefonoant,
+                                                String afolio){
+        ContentValues dato=new ContentValues();
+        dato.put("Atrabajoant", atrabajoant);
+        dato.put("Atrabaja", atrabaja);
+        dato.put("Arecurrente", arecurrente);
+        dato.put("Anombre", anombre);
+        dato.put("Adireccion", adireccion);
+        dato.put("Atelefono", atelefono);
+        dato.put("Aantiguedad", aantiguedad);
+        dato.put("Atiempo", atiempo);
+        dato.put("Ajefe", ajefe);
+        dato.put("Anombreant", anombreant);
+        dato.put("Alocalidad", alocalidad);
+        dato.put("Aantiguedadant", aantiguedadant);
+        dato.put("Atelefonoant", atelefonoant);
+        dato.put("Afolio", afolio);
+        db.insert("historial_laboral_a", null, dato);
+    }
+    //endregion
+
+    //region Insertar Datos Consumo Sustancias Adolescentes
+    public void insertarDatosConsumoSustanciaA(String aconsume_alcohol, String acantidad1, String afrecuencia1, String aultimo_consumo1,
+                                              String aconsume_tabaco, String acantidad2, String afrecuencia2, String aultimo_consumo2,
+                                              String aconsume_marihuana, String acantidad3, String afrecuencia3, String aultimo_consumo3,
+                                              String aconsume_pastillas, String acantidad4, String afrecuencia4, String aultimo_consumo4,
+                                              String aconsume_solventes, String acantidad5, String afrecuencia5, String aultimo_consumo5,
+                                              String aconsume_metanfetaminas, String acantidad6, String afrecuencia6, String aultimo_consumo6,
+                                              String aconsume_cocaina, String acantidad7, String afrecuencia7, String aultimo_consumo7,
+                                              String aconsumemas, String afolio){
+        ContentValues dato=new ContentValues();
+        dato.put("Aconsume_alcohol", aconsume_alcohol);
+        dato.put("Acantidad1", acantidad1);
+        dato.put("Afrecuencia1", afrecuencia1);
+        dato.put("Aultimo_consumo1", aultimo_consumo1);
+        dato.put("Aconsume_tabaco", aconsume_tabaco);
+        dato.put("Acantidad2", acantidad2);
+        dato.put("Afrecuencia2", afrecuencia2);
+        dato.put("Aultimo_consumo2", aultimo_consumo2);
+        dato.put("Aconsume_marihuana", aconsume_marihuana);
+        dato.put("Acantidad3", acantidad3);
+        dato.put("Afrecuencia3", afrecuencia3);
+        dato.put("Aultimo_consumo3", aultimo_consumo3);
+        dato.put("Aconsume_pastillas", aconsume_pastillas);
+        dato.put("Acantidad4", acantidad4);
+        dato.put("Afrecuencia4", afrecuencia4);
+        dato.put("Aultimo_consumo4", aultimo_consumo4);
+        dato.put("Aconsume_solventes", aconsume_solventes);
+        dato.put("Acantidad5", acantidad5);
+        dato.put("Afrecuencia5", afrecuencia5);
+        dato.put("Aultimo_consumo5", aultimo_consumo5);
+        dato.put("Aconsume_metanfetaminas", aconsume_metanfetaminas);
+        dato.put("Acantidad6", acantidad6);
+        dato.put("Afrecuencia6", afrecuencia6);
+        dato.put("Aultimo_consumo6", aultimo_consumo6);
+        dato.put("Aconsume_cocaina", aconsume_cocaina);
+        dato.put("Acantidad7", acantidad7);
+        dato.put("Afrecuencia7", afrecuencia7);
+        dato.put("Aultimo_consumo7", aultimo_consumo7);
+        dato.put("Aconsumemas", aconsumemas);
+        dato.put("Afolio", afolio);
+        db.insert("consumo_sustancias_a", null, dato);
+    }
     //endregion
 
     //endregion
