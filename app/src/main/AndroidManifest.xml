@@ -17,7 +17,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".infoCasoAdolescente"></activity>
+
         <activity android:name=".ReporteEntrevista" />
         <activity android:name=".CarpetaInvestigacion" />
         <activity android:name=".QRVerify" />
