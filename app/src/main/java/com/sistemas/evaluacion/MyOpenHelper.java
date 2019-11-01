@@ -141,7 +141,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     //region Tabla_Datos_Ficha_Familiar_Adolescentes
     private static final String CREATE_TABLE_FICHA_FAMILIAR_A="CREATE TABLE ficha_familiar_a(_id INTEGER PRIMARY KEY AUTOINCREMENT, Acalle TEXT, Anumero TEXT," +
             " Acolonia TEXT, Acp TEXT, Amunicipio TEXT, Aestado TEXT, Apais Text, Atemporalidad TEXT, Adomiciliof TEXT," +
-            " Alocalidad1 TEXT, Atemporalidadant1 TEXT, Afolio TEXT, Alocalidad2 TEXT, Atemporalidadant2 TEXT,Alocalidad3 TEXT, Atemporalidadant3 TEXT)";
+            " Alocalidad1 TEXT, Atemporalidadant1 TEXT, Alocalidad2 TEXT, Atemporalidadant2 TEXT,Alocalidad3 TEXT, Atemporalidadant3 TEXT, Afolio TEXT)";
     //endregion_Adolescentes
 
     //region Tabla_Datos_Familiares_Adolescentes
@@ -163,8 +163,8 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     //endregion_Adolescentes
 
     //region Tabla_Datos_Historial_Laboral_Adolescentes
-    private static final String CREATE_TABLE_HISTORIAL_LABORAL_A="CREATE TABLE historial_laboral_a(_id INTEGER PRIMARY KEY AUTOINCREMENT,Atrabajoant TEXT, Atrabaja TEXT, Arecurrente TEXT," +
-            "Anombre TEXT, Adireccion TEXT, Atelefono TEXT, Aantiguedad TEXT, Atiempo TEXT, Ajefe TEXT, Anombreant TEXT, Alocalidad TEXT, Aantiguedadant TEXT," +
+    private static final String CREATE_TABLE_HISTORIAL_LABORAL_A="CREATE TABLE historial_laboral_a(_id INTEGER PRIMARY KEY AUTOINCREMENT, Atrabaja TEXT, Arecurrente TEXT," +
+            "Anombre TEXT, Adireccion TEXT, Atelefono TEXT, Aantiguedad TEXT, Atiempo TEXT, Ajefe TEXT,Atrabajoant TEXT, Anombreant TEXT, Alocalidad TEXT, Aantiguedadant TEXT," +
             " Atelefonoant TEXT, Afolio TEXT)";
     //endregion_Adolescentes
 
@@ -714,10 +714,10 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         dato.put("Adomiciliof", adomiciliof);
         dato.put("Alocalidad1", alocalidad1);
         dato.put("Atemporalidadant1", atemporalidadant1);
-        dato.put("Alocalidad2", alocalidad1);
-        dato.put("Atemporalidadant2", atemporalidadant1);
-        dato.put("Alocalidad3", alocalidad1);
-        dato.put("Atemporalidadant3", atemporalidadant1);
+        dato.put("Alocalidad2", alocalidad2);
+        dato.put("Atemporalidadant2", atemporalidadant2);
+        dato.put("Alocalidad3", alocalidad3);
+        dato.put("Atemporalidadant3", atemporalidadant3);
         dato.put("Afolio", afolio);
         db.insert("ficha_familiar_a", null, dato);
     }
