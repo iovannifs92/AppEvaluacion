@@ -222,18 +222,21 @@
                     android:id="@+id/tvSL"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:text="@string/e2043"/>
 
                 <Spinner
                     android:id="@+id/sPSL"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_marginBottom="20dp"/>
 
                 <TextView
                     android:id="@+id/tvPPP1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_marginBottom="20dp"
                     android:text="PROCESO PENAL PREVIO 1"
                     android:textAlignment="center"
@@ -245,12 +248,14 @@
                     android:id="@+id/tvNC1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:text="@string/e2044"/>
 
                 <EditText
                     android:id="@+id/txtNC1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
@@ -259,12 +264,14 @@
                     android:id="@+id/tvD1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:text="@string/e2045"/>
 
                 <EditText
                     android:id="@+id/txtD1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
@@ -273,12 +280,14 @@
                     android:id="@+id/tvTM1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:text="@string/e2046"/>
 
                 <EditText
                     android:id="@+id/txtTM1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
@@ -287,12 +296,14 @@
                     android:id="@+id/tvE1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:text="@string/e2047"/>
 
                 <EditText
                     android:id="@+id/txtE1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
@@ -301,6 +312,7 @@
                     android:id="@+id/tvPPP2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_marginBottom="20dp"
                     android:text="PROCESO PENAL PREVIO 2"
                     android:textAlignment="center"
@@ -312,12 +324,14 @@
                     android:id="@+id/tvNC2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:text="@string/e2044"/>
 
                 <EditText
                     android:id="@+id/txtNC2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
@@ -326,12 +340,14 @@
                     android:id="@+id/tvD2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:text="@string/e2045"/>
 
                 <EditText
                     android:id="@+id/txtD2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
@@ -340,12 +356,14 @@
                     android:id="@+id/tvTM2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:text="@string/e2046"/>
 
                 <EditText
                     android:id="@+id/txtTM2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
@@ -354,12 +372,14 @@
                     android:id="@+id/tvE2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:text="@string/e2047"/>
 
                 <EditText
                     android:id="@+id/txtE2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
@@ -368,6 +388,7 @@
                     android:id="@+id/tvPPP3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_marginBottom="20dp"
                     android:text="PROCESO PENAL PREVIO 3"
                     android:textAlignment="center"
@@ -379,12 +400,14 @@
                     android:id="@+id/tvNC3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:text="@string/e2044"/>
 
                 <EditText
                     android:id="@+id/txtNC3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
@@ -393,12 +416,14 @@
                     android:id="@+id/tvD3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:text="@string/e2045"/>
 
                 <EditText
                     android:id="@+id/txtD3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
@@ -407,12 +432,14 @@
                     android:id="@+id/tvTM3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:text="@string/e2046"/>
 
                 <EditText
                     android:id="@+id/txtTM3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
@@ -421,12 +448,14 @@
                     android:id="@+id/tvE3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:text="@string/e2047"/>
 
                 <EditText
                     android:id="@+id/txtE3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
@@ -435,6 +464,7 @@
                     android:id="@+id/tvPPP4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_marginBottom="20dp"
                     android:text="PROCESO PENAL PREVIO 4"
                     android:textAlignment="center"
@@ -446,12 +476,14 @@
                     android:id="@+id/tvNC4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:text="@string/e2044"/>
 
                 <EditText
                     android:id="@+id/txtNC4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
@@ -460,12 +492,14 @@
                     android:id="@+id/tvD4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:text="@string/e2045"/>
 
                 <EditText
                     android:id="@+id/txtD4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
@@ -474,12 +508,14 @@
                     android:id="@+id/tvTM4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:text="@string/e2046"/>
 
                 <EditText
                     android:id="@+id/txtTM4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
@@ -488,12 +524,14 @@
                     android:id="@+id/tvE4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:text="@string/e2047"/>
 
                 <EditText
                     android:id="@+id/txtE4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
@@ -502,6 +540,7 @@
                     android:id="@+id/tvPPP5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_marginBottom="20dp"
                     android:text="PROCESO PENAL PREVIO 5"
                     android:textAlignment="center"
@@ -513,12 +552,14 @@
                     android:id="@+id/tvNC5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:text="@string/e2044"/>
 
                 <EditText
                     android:id="@+id/txtNC5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
@@ -527,12 +568,14 @@
                     android:id="@+id/tvD5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:text="@string/e2045"/>
 
                 <EditText
                     android:id="@+id/txtD5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
@@ -541,6 +584,7 @@
                     android:id="@+id/tvTM5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:text="@string/e2046"/>
 
                 <EditText
@@ -555,12 +599,14 @@
                     android:id="@+id/tvE5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:text="@string/e2047"/>
 
                 <EditText
                     android:id="@+id/txtE5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />

@@ -1,6 +1,7 @@
 package com.sistemas.evaluacion;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -96,7 +97,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
 
     private String [] nosi={"No", "Si"};
     private String [] sexo={"Masculino", "Femenino"};
-    private String [] malo={"VIH/SIDA","Enfermedades cardiovasculares","Cáncer","Enfermedad Pulmonar Obstructiva Crónica","Diabetes","Parkinson","Alzheimer","Esclerosis múltiple","Hipertensión","Lumbalgia","Colesterol","Depresión","Ansiedad","Tiroides",
+    private String [] malo={"NA","VIH/SIDA","Enfermedades cardiovasculares","Cáncer","Enfermedad Pulmonar Obstructiva Crónica","Diabetes","Parkinson","Alzheimer","Esclerosis múltiple","Hipertensión","Lumbalgia","Colesterol","Depresión","Ansiedad","Tiroides",
             "Osteoporosis"};
     ////////Consumo//////////////7
     private String [] frecuenciaConsumo={"No consume", "Diariamente", "Cada Tercer día", "Semanalmente", "Quincenalmente", "Mensualmente", "Anualmente"};
@@ -1328,7 +1329,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
 
                 //Date fin=new Date();
 
-
+                if(ValidarFormularioA()) {
 
                 db.insertarDatosConsumoSustanciaA(
                         rS34,r87A,rS27,r89A,
@@ -1353,6 +1354,14 @@ public class  entrevista_adolescente extends AppCompatActivity {
 
                 Toast.makeText(getApplicationContext(), "Datos Guardados", Toast.LENGTH_SHORT).show();
 
+
+            Intent intent = new Intent(v.getContext(), MainMenu.class);
+            startActivity(intent);
+            }
+              else{
+             btnGuardarA.setEnabled(true);
+           }
+
             }
         });
 
@@ -1368,7 +1377,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
         llIC=(LinearLayout) findViewById(R.id.llIC);
 
 
-        //region Visibles
+      /*  //region Visibles
 
         btnDg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -1437,138 +1446,8 @@ public class  entrevista_adolescente extends AppCompatActivity {
                 }
             }
         });
-/*       public boolean ValidarFormularioA(){
-            String verifica="";
-            boolean validacion=true;
-            if(r3A.equals("")){
-                validacion=false;
-                verifica="\nNuemro de Causa"+verifica;
-                insertardatosEntrevistadorA.setVisibility(View.VISIBLE);
-                txtNe.requestFocus();
-                //etP1.setBackground(Color.parseColor();
-            }
-            if(r17A.equals("")){
-                validacion=false;
-                verifica="\nNombre"+verifica;
-                insertardatosEntrevistadorA.setVisibility(View.VISIBLE);
-                txtNa.requestFocus();
-                //etP1.setBackground(Color.parseColor();
-            }
-            if(r18A.equals("")){
-                validacion=false;
-                verifica="\nEdad"+verifica;
-                insertardatosEntrevistadorA.setVisibility(View.VISIBLE);
-                txtEa.requestFocus();
-                //etP1.setBackground(Color.parseColor();
-            }
-            if(r19A.equals("")){
-                validacion=false;
-                verifica="\nFecha de nacimiento"+verifica;
-                insertardatosEntrevistadorA.setVisibility(View.VISIBLE);
-                txtFNa.requestFocus();
-                //etP1.setBackground(Color.parseColor();
-            }
+        //endregion Visibles*/
 
-            if(r21A.equals("")){
-                validacion=false;
-                verifica="\nLugar de Nacimiento"+verifica;
-                insertardatosEntrevistadorA.setVisibility(View.VISIBLE);
-                txtLNa.requestFocus();
-                //etP1.setBackground(Color.parseColor();
-            }
-            if(r22A.equals("")){
-                validacion=false;
-                verifica="\nEstados"+verifica;
-                insertardatosEntrevistadorA.setVisibility(View.VISIBLE);
-                txtLNa.requestFocus();
-                //etP1.setBackground(Color.parseColor();
-            }
-
-            if(r23A.equals("")){
-                validacion=false;
-                verifica="\nMunicipio"+verifica;
-                insertardatosEntrevistadorA.setVisibility(View.VISIBLE);
-                txtMa.requestFocus();
-                //etP1.setBackground(Color.parseColor();
-            }
-
-            if(r24A.equals("")){
-                validacion=false;
-                verifica="\nEstados"+verifica;
-                insertardatosEntrevistadorA.setVisibility(View.VISIBLE);
-                txtLa.requestFocus();
-                //etP1.setBackground(Color.parseColor();
-            }
-            if(r25A.equals("")){
-                validacion=false;
-                verifica="\nNacionalidad"+verifica;
-                insertardatosEntrevistadorA.setVisibility(View.VISIBLE);
-                txtNAa.requestFocus();
-                //etP1.setBackground(Color.parseColor();
-            }
-            if(r26A.equals("")){
-                validacion=false;
-                verifica="\nCalle"+verifica;
-                insertardatosEntrevistadorA.setVisibility(View.VISIBLE);
-                txtCa.requestFocus();
-                //etP1.setBackground(Color.parseColor();
-            }
-            if(r27A.equals("")){
-                validacion=false;
-                verifica="\nNumero"+verifica;
-                insertardatosEntrevistadorA.setVisibility(View.VISIBLE);
-                txtNOa.requestFocus();
-                //etP1.setBackground(Color.parseColor();
-            }
-            if(r28A.equals("")){
-                validacion=false;
-                verifica="\nColonia"+verifica;
-                insertardatosEntrevistadorA.setVisibility(View.VISIBLE);
-                txtCOLa.requestFocus();
-                //etP1.setBackground(Color.parseColor();
-            }
-            if(r29A.equals("")){
-                validacion=false;
-                verifica="\nCodigo Postal"+verifica;
-                insertardatosEntrevistadorA.setVisibility(View.VISIBLE);
-                txtCPa.requestFocus();
-                //etP1.setBackground(Color.parseColor();
-            }
-
-            if(r30A.equals("")){
-                validacion=false;
-                verifica="\nMunicipio"+verifica;
-                insertardatosEntrevistadorA.setVisibility(View.VISIBLE);
-                txtMUa.requestFocus();
-                //etP1.setBackground(Color.parseColor();
-            }
-
-            if(r31A.equals("")){
-                validacion=false;
-                verifica="\nEstado"+verifica;
-                insertardatosEntrevistadorA.setVisibility(View.VISIBLE);
-                txtEDO2a.requestFocus();
-                //etP1.setBackground(Color.parseColor();
-            }
-
-            if(r32A.equals("")){
-                validacion=false;
-                verifica="\nPais"+verifica;
-                insertardatosEntrevistadorA.setVisibility(View.VISIBLE);
-                txtPa.requestFocus();
-                //etP1.setBackground(Color.parseColor();
-            }
-
-            if(r33A.equals("")){
-                validacion=false;
-                verifica="\nTemporalidad"+verifica;
-                insertardatosEntrevistadorA.setVisibility(View.VISIBLE);
-                txtTa.requestFocus();
-                //etP1.setBackground(Color.parseColor();
-            }
-
-        }*/
-        //endregion
 
 
 
@@ -1585,6 +1464,178 @@ public class  entrevista_adolescente extends AppCompatActivity {
         });
         newFragment.show(getSupportFragmentManager(), "datePicker");
     }
+
+    //region VALIDACION
+    public boolean ValidarFormularioA(){
+        String verifica="";
+        boolean validacion=true;
+        if(r3A.equals("")){
+            validacion=false;
+            verifica="\nNuemro de Causa"+verifica;
+            txtNe.requestFocus();
+            //etP1.setBackground(Color.parseColor();
+        }
+        if(r17A.equals("")){
+            validacion=false;
+            verifica="\nNombre"+verifica;
+            llDg.setVisibility(View.VISIBLE);
+            txtNa.requestFocus();
+            //etP1.setBackground(Color.parseColor();
+        }
+        if(r18A.equals("")){
+            validacion=false;
+            verifica="\nEdad"+verifica;
+            llDg.setVisibility(View.VISIBLE);
+            txtEa.requestFocus();
+            //etP1.setBackground(Color.parseColor();
+        }
+        if(r19A.equals("")){
+            validacion=false;
+            verifica="\nFecha de nacimiento"+verifica;
+            llDg.setVisibility(View.VISIBLE);
+            txtFNa.requestFocus();
+            //etP1.setBackground(Color.parseColor();
+        }
+
+        if(r21A.equals("")){
+            validacion=false;
+            verifica="\nLugar de Nacimiento"+verifica;
+            llDg.setVisibility(View.VISIBLE);
+            txtLNa.requestFocus();
+            //etP1.setBackground(Color.parseColor();
+        }
+        if(r22A.equals("")){
+            validacion=false;
+            verifica="\nEstado"+verifica;
+            llDg.setVisibility(View.VISIBLE);
+            txtEDOa.requestFocus();
+            //etP1.setBackground(Color.parseColor();
+        }
+
+        if(r23A.equals("")){
+            validacion=false;
+            verifica="\nMunicipio"+verifica;
+            llDg.setVisibility(View.VISIBLE);
+            txtMa.requestFocus();
+            //etP1.setBackground(Color.parseColor();
+        }
+
+        if(r24A.equals("")){
+            validacion=false;
+            verifica="\nLocalidad"+verifica;
+            llDg.setVisibility(View.VISIBLE);
+            txtLa.requestFocus();
+            //etP1.setBackground(Color.parseColor();
+        }
+        if(r25A.equals("")){
+            validacion=false;
+            verifica="\nNacionalidad"+verifica;
+            llDg.setVisibility(View.VISIBLE);
+            txtNAa.requestFocus();
+            //etP1.setBackground(Color.parseColor();
+        }
+        if(r26A.equals("")){
+            validacion=false;
+            verifica="\nCalle"+verifica;
+            llFfa.setVisibility(View.VISIBLE);
+            txtCa.requestFocus();
+            //etP1.setBackground(Color.parseColor();
+        }
+        if(r27A.equals("")){
+            validacion=false;
+            verifica="\nNumero"+verifica;
+            llFfa.setVisibility(View.VISIBLE);
+            txtNOa.requestFocus();
+            //etP1.setBackground(Color.parseColor();
+        }
+        if(r28A.equals("")){
+            validacion=false;
+            verifica="\nColonia"+verifica;
+            llFfa.setVisibility(View.VISIBLE);
+            sPCOLa.requestFocus();
+            //etP1.setBackground(Color.parseColor();
+        }
+        if(r29A.equals("")){
+            validacion=false;
+            verifica="\nCodigo Postal"+verifica;
+            llFfa.setVisibility(View.VISIBLE);
+            txtCPa.requestFocus();
+            //etP1.setBackground(Color.parseColor();
+        }
+
+        if(r30A.equals("")){
+            validacion=false;
+            verifica="\nMunicipio"+verifica;
+            llFfa.setVisibility(View.VISIBLE);
+            txtMUa.requestFocus();
+            //etP1.setBackground(Color.parseColor();
+        }
+
+        if(r31A.equals("")){
+            validacion=false;
+            verifica="\nEstado"+verifica;
+            llFfa.setVisibility(View.VISIBLE);
+            txtEDO2a.requestFocus();
+            //etP1.setBackground(Color.parseColor();
+        }
+
+        if(r32A.equals("")){
+            validacion=false;
+            verifica="\nPais"+verifica;
+            llFfa.setVisibility(View.VISIBLE);
+            txtPa.requestFocus();
+            //etP1.setBackground(Color.parseColor();
+        }
+
+        if(r33A.equals("")){
+            validacion=false;
+            verifica="\nTemporalidad"+verifica;
+            llFfa.setVisibility(View.VISIBLE);
+            txtTa.requestFocus();
+            //etP1.setBackground(Color.parseColor();
+        }
+        if(rS5.equals("")){
+            validacion=false;
+            verifica="\nTiene domicilio fijo"+verifica;
+            llFfa.setVisibility(View.VISIBLE);
+            sPDfa.requestFocus();
+            //etP1.setBackground(Color.parseColor();
+        }
+        if(rS13.equals("")){
+            validacion=false;
+            verifica="\nAsiste a la escuala actualmente"+verifica;
+            llVH.setVisibility(View.VISIBLE);
+            sPAE.requestFocus();
+            //etP1.setBackground(Color.parseColor();
+        }
+        if(rS14.equals("")){
+            validacion=false;
+            verifica="\nConcluyo la secundaria"+verifica;
+            llCE.setVisibility(View.VISIBLE);
+            sPCS.requestFocus();
+            //etP1.setBackground(Color.parseColor();rS16
+        }
+        if(rS16.equals("")){
+            validacion=false;
+            verifica="\nTrabaja actualmente"+verifica;
+            llCE.setVisibility(View.VISIBLE);
+            sPTAA.requestFocus();
+            //etP1.setBackground(Color.parseColor();
+        }
+        if(rS19.equals("")){
+            validacion=false;
+            verifica="\nActividades Extraescolares"+verifica;
+            llCE.setVisibility(View.VISIBLE);
+            sPAEA.requestFocus();
+            //etP1.setBackground(Color.parseColor();
+        }
+        if(!validacion){
+            Toast.makeText(getApplicationContext(), "Verifica los siguientes datos:"+verifica,Toast.LENGTH_LONG).show();
+        }
+
+        return validacion;
+    }
+    //endregion
 
     //endregion
     private long backPressedTime = 0;

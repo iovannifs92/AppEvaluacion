@@ -207,7 +207,6 @@ public class infoCasoAdolescente extends AppCompatActivity {
                     txtE3.setVisibility(View.VISIBLE);
                     txtE4.setVisibility(View.VISIBLE);
                     txtE5.setVisibility(View.VISIBLE);
-
                     tvNC1.setVisibility(View.VISIBLE);
                     tvNC2.setVisibility(View.VISIBLE);
                     tvNC3.setVisibility(View.VISIBLE);
@@ -234,8 +233,6 @@ public class infoCasoAdolescente extends AppCompatActivity {
                     tvPPP4.setVisibility(View.VISIBLE);
                     tvPPP5.setVisibility(View.VISIBLE);
                     tvSL.setVisibility(View.VISIBLE);
-
-
                     sPSL.setVisibility(View.VISIBLE);
                 }
                 else{
@@ -259,7 +256,6 @@ public class infoCasoAdolescente extends AppCompatActivity {
                     txtE3.setVisibility(View.GONE);
                     txtE4.setVisibility(View.GONE);
                     txtE5.setVisibility(View.GONE);
-
                     tvNC1.setVisibility(View.GONE);
                     tvNC2.setVisibility(View.GONE);
                     tvNC3.setVisibility(View.GONE);
