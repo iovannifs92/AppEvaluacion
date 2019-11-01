@@ -25,8 +25,6 @@ import java.util.Date;
 public class  entrevista_adolescente extends AppCompatActivity {
     //region variables globales
     private MyOpenHelper db;
-
-
     //endregion
 
     //regio boolean
@@ -42,7 +40,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
     //DEPENDIENTES TRABAJO ACTUAL
     private TextView tvTA,tvNTa,tvDTa,tvTTa,tvATa,tvTC,tvJTa,tvNT1,tvLT1,tvAT1,tvTT1;
     ///////ESCUELAS ANTERIORES
-    private TextView tvNEa1,tvLE1,tvGC1;
+    private TextView tvTVEA,tvNEa,tvDEa,tvTea,tvNIEa,tvNEa1,tvLE1,tvGC1;
     //////////ACTIVIDADRES EXTRAESCOLARES
     private TextView tvA1,tvL1,tvC1,tvCT;
     /////////////CONSUMOS
@@ -73,7 +71,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
 
 
     //reguin Sppiner
-    private Spinner sPSex,sP1a,sPIdio,sPTra,sPDfa,sPVDF1,sPVDF2,sPVDF3,sPDA,sPRD,sPDE,sPAR1,sPAR2,sPAR3, sPAE,sPCS,sPTA,sPTR,sPTAA,sPTC,sPAEA,sPEE,sPEM,sPTE,sPC,sPCD,sPSIDA,sPEV,sPTI,sPUA,sPLO,sPMC,sPHO,sPTP,sPSL,sPEVO,sPVD,sPVV,sPEVS,sPCV,sPDV,sPEVF,SE,SA;
+    private Spinner sPSex,sPCOLa,sPTa,sPUGa,sP1a,sPIdio,sPTra,sPDfa,sPVDF1,sPVDF2,sPVDF3,sPDA,sPRD,sPDE,sPAR1,sPAR2,sPAR3, sPAE,sPCS,sPTA,sPTR,sPTAA,sPTC,sPAEA,sPEE,sPEM,sPTE,sPC,sPCD,sPSIDA,sPEV,sPTI,sPUA,sPLO,sPMC,sPHO,sPTP,sPSL,sPEVO,sPVD,sPVV,sPEVS,sPCV,sPDV,sPEVF,SE,SA;
     //region Sppiners
     private Spinner sPALC,sPTBC,sPSOL,sPMAR,sPCOCA,sPPAS,sPMET,sPCALC,sPCTBC,sPCSOL,sPCMAR,sPCCOCA,sPCPAS,sPCMET,sPSUSF;
     //endregion
@@ -102,6 +100,13 @@ public class  entrevista_adolescente extends AppCompatActivity {
             "Osteoporosis"};
     ////////Consumo//////////////7
     private String [] frecuenciaConsumo={"No consume", "Diariamente", "Cada Tercer día", "Semanalmente", "Quincenalmente", "Mensualmente", "Anualmente"};
+
+    private String [] colfracc={"NA","Colonia", "Fraccionamiento","Domicilio Conocido", "Ejido"};
+
+    private String [] tiempoRadicando={"NA","Menos de un mes", "Un mes", "Entre 1 y 3 meses", "Entre 3 y 6 meses", "Entre 6 meses y un año", "Entre 1 y 3 años", "Entre 3 y 6 años", "Más de 6 años"};
+
+    private String [] gradoEstudios={"Sin estudios", "Primaria","Secundaria", "Preparatoria", "Licenciatura", "Maestría", "Doctorado"};
+
 
 
     //endregion String
@@ -140,12 +145,11 @@ public class  entrevista_adolescente extends AppCompatActivity {
         //region FICHA FAMILIAR
         txtCa=(EditText) findViewById(R.id.txtCa);
         txtNOa=(EditText) findViewById(R.id.txtNOa);
-        txtCOLa=(EditText) findViewById(R.id.txtCOLa);
         txtCPa=(EditText) findViewById(R.id.txtCPa);
         txtMUa=(EditText) findViewById(R.id.txtMUa);
         txtEDO2a=(EditText) findViewById(R.id.txtEDO2a);
         txtPa=(EditText) findViewById(R.id.txtPa);
-        txtTa=(EditText) findViewById(R.id.txtTa);
+        //txtTa=(EditText) findViewById(R.id.txtTa);
         txtDALa1=(EditText) findViewById(R.id.txtDALa1);
         txtDALa2=(EditText) findViewById(R.id.txtDALa2);
         txtDALa3=(EditText) findViewById(R.id.txtDALa3);
@@ -194,7 +198,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
         txtDEa=(EditText) findViewById(R.id.txtDEa);
         txtTea=(EditText) findViewById(R.id.txtTea);
         txtNIEa=(EditText) findViewById(R.id.txtNIEa);
-        txtUGa=(EditText) findViewById(R.id.txtUGa);
+        //txtUGa=(EditText) findViewById(R.id.txtUGa);
         txtNEa1=(EditText) findViewById(R.id.txtNEa1);
         txtNEa2=(EditText) findViewById(R.id.txtNEa2);
 
@@ -320,7 +324,12 @@ public class  entrevista_adolescente extends AppCompatActivity {
         tvAR2=(TextView) findViewById(R.id.tvAR2);
         tvAR3=(TextView) findViewById(R.id.tvAR3);
         //endregion
-        //region ESCUELAS ANTERIORES
+        //region ESCUELAS y escuelas ANTERIORES
+        tvTVEA=(TextView) findViewById(R.id.tvTVEA);
+        tvNEa=(TextView) findViewById(R.id.tvNEa);
+        tvDEa=(TextView) findViewById(R.id.tvDEa);
+        tvTea=(TextView) findViewById(R.id.tvTea);
+        tvNIEa=(TextView) findViewById(R.id.tvNIEa);
         tvNEa1=(TextView) findViewById(R.id.tvNEa1);
         tvLE1=(TextView) findViewById(R.id.tvLE1);
         tvGC1=(TextView) findViewById(R.id.tvGC1);
@@ -440,6 +449,19 @@ public class  entrevista_adolescente extends AppCompatActivity {
         sPSex = (Spinner) findViewById(R.id.sPSex);
         sPSex.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, sexo));
         //endregion
+        // region sPCOLa
+        sPCOLa = (Spinner) findViewById(R.id.sPCOLa);
+        sPCOLa.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, colfracc));
+        //endregion
+        // region sPTa
+        sPTa = (Spinner) findViewById(R.id.sPTa);
+        sPTa.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, tiempoRadicando));
+        //endregion
+        // region sPUGa
+        sPUGa = (Spinner) findViewById(R.id.sPUGa);
+        sPUGa.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, gradoEstudios));
+        //endregion
+
         // region sPIdio
         sPIdio = (Spinner) findViewById(R.id.sPIdio);
         sPIdio.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosi));
@@ -480,11 +502,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
         sPAR3 = (Spinner) findViewById(R.id.sPAR3);
         sPAR3.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosi));
         //endregion
-        //region sPAE ESCUELA ACTUAL
-        sPAE = (Spinner) findViewById(R.id.sPAE);
-        sPAE.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosi));
 
-        //endregion
         // region sPCS  CONCLUYO LA SECUNDARIA
         sPCS = (Spinner) findViewById(R.id.sPCS);
         sPCS.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosi));
@@ -783,6 +801,43 @@ public class  entrevista_adolescente extends AppCompatActivity {
         });
         //endregion
 
+        // region sPAE  TACTIVIDADES EXTRAESCOLARES ACTUALES
+        sPAE = (Spinner) findViewById(R.id.sPAE);
+        sPAE.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosi));
+        sPAE.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem=parent.getSelectedItem().toString();
+                if (selectedItem=="Si"){
+                    txtNEa.setVisibility(View.VISIBLE);
+                    tvTVEA.setVisibility(View.VISIBLE);
+                    tvNEa.setVisibility(View.VISIBLE);
+                    tvDEa.setVisibility(View.VISIBLE);
+                    txtDEa.setVisibility(View.VISIBLE);
+                    tvTea.setVisibility(View.VISIBLE);
+                    txtTea.setVisibility(View.VISIBLE);
+                    tvNIEa.setVisibility(View.VISIBLE);
+                    txtNIEa.setVisibility(View.VISIBLE);
+                }
+                else{
+                    txtNEa.setVisibility(View.GONE);
+                    tvTVEA.setVisibility(View.GONE);
+                    tvNEa.setVisibility(View.GONE);
+                    tvDEa.setVisibility(View.GONE);
+                    txtDEa.setVisibility(View.GONE);
+                    tvTea.setVisibility(View.GONE);
+                    txtTea.setVisibility(View.GONE);
+                    tvNIEa.setVisibility(View.GONE);
+                    txtNIEa.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                return;
+            }
+        });
+
 
 
         // region sPAEA  TACTIVIDADES EXTRAESCOLARES ACTUALES
@@ -794,13 +849,9 @@ public class  entrevista_adolescente extends AppCompatActivity {
                 String selectedItem=parent.getSelectedItem().toString();
                 if (selectedItem=="Si"){
                     txtA1.setVisibility(View.VISIBLE);
-
                     txtL1.setVisibility(View.VISIBLE);
-
                     txtC1.setVisibility(View.VISIBLE);
-
                     txtT1.setVisibility(View.VISIBLE);
-
                     tvA1.setVisibility(View.VISIBLE);
                     tvL1.setVisibility(View.VISIBLE);
                     tvC1.setVisibility(View.VISIBLE);
@@ -810,13 +861,9 @@ public class  entrevista_adolescente extends AppCompatActivity {
                 }
                 else{
                     txtA1.setVisibility(View.GONE);
-
                     txtL1.setVisibility(View.GONE);
-
                     txtC1.setVisibility(View.GONE);
-
                     txtT1.setVisibility(View.GONE);
-
                     tvA1.setVisibility(View.GONE);
                     tvL1.setVisibility(View.GONE);
                     tvC1.setVisibility(View.GONE);
@@ -842,7 +889,6 @@ public class  entrevista_adolescente extends AppCompatActivity {
                 if (selectedItem=="Si"){
                     tvPC.setVisibility(View.VISIBLE);
                     sPC.setVisibility(View.VISIBLE);
-
                 }
                 else{
                     sPC.setVisibility(View.GONE);
@@ -1086,11 +1132,6 @@ public class  entrevista_adolescente extends AppCompatActivity {
         //endregion
         //endregion VisibleSpinner
 
-
-
-
-
-
         btnGuardarA=(Button) findViewById(R.id.btnGuardarA);
         btnGuardarA.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -1133,12 +1174,12 @@ public class  entrevista_adolescente extends AppCompatActivity {
                 //region FICHA FAMILIAR
                 r26A=txtCa.getText().toString().toUpperCase();
                 r27A=txtNOa.getText().toString().toUpperCase();
-                r28A=txtCOLa.getText().toString().toUpperCase();
+                r28A=sPCOLa.getSelectedItem().toString().toUpperCase();
                 r29A=txtCPa.getText().toString().toUpperCase();
                 r30A=txtMUa.getText().toString().toUpperCase();
                 r31A=txtEDO2a.getText().toString().toUpperCase();
                 r32A=txtPa.getText().toString().toUpperCase();
-                r33A=txtTa.getText().toString().toUpperCase();
+                r33A=sPTa.getSelectedItem().toString().toUpperCase();
                 r34A=txtDALa1.getText().toString().toUpperCase();//localidad
                 r7A=txtDATa1.getText().toString().toUpperCase(); //temporalidad
                 r35A=txtDALa2.getText().toString().toUpperCase();
@@ -1183,7 +1224,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
                 r62A=txtDEa.getText().toString().toUpperCase();
                 r63A=txtTea.getText().toString().toUpperCase();
                 r64A=txtNIEa.getText().toString().toUpperCase();
-                r65A=txtUGa.getText().toString().toUpperCase();
+                r65A=sPUGa.getSelectedItem().toString().toUpperCase();
                 r66A=txtNEa1.getText().toString().toUpperCase();
                 r67A=txtNEa2.getText().toString().toUpperCase();
                 r68A=txtLE1.getText().toString().toUpperCase();

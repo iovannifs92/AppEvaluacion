@@ -10,6 +10,7 @@
         android:layout_height="match_parent"
         android:fillViewport="true">
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -506,13 +507,11 @@
                     android:layout_height="wrap_content"
                     android:text="@string/e151" />
 
-                <EditText
-                    android:id="@+id/txtCOLa"
+                <Spinner
+                    android:id="@+id/sPCOLa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
+                    android:layout_marginBottom="20dp"/>
 
                 <TextView
                     android:id="@+id/tvCPa"
@@ -577,13 +576,11 @@
                     android:layout_height="wrap_content"
                     android:text="@string/e156" />
 
-                <EditText
-                    android:id="@+id/txtTa"
+                <Spinner
+                    android:id="@+id/sPTa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
+                    android:layout_marginBottom="20dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -1311,6 +1308,78 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"/>
+                <TextView
+                    android:id="@+id/tvTVEA"
+                    android:layout_width="match_parent"
+                    android:text="ESCUELA ACTUAL"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/colorSecundario2"
+                    android:textAlignment="center"
+                    android:textColor="@color/myWhite"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/tvNEa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:text="@string/e180"/>
+                <EditText
+                    android:id="@+id/txtNEa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:layout_alignParentTop="true"
+                    android:inputType="text"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/tvDEa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:text="@string/e181"/>
+                <EditText
+                    android:id="@+id/txtDEa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:layout_alignParentTop="true"
+                    android:inputType="text"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/tvTea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:text="@string/e182"/>
+
+                <EditText
+                    android:id="@+id/txtTea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:layout_alignParentTop="true"
+                    android:inputType="phone"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/tvNIEa"
+                    android:layout_width="match_parent"
+                    android:visibility="invisible"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e183"/>
+                <EditText
+                    android:id="@+id/txtNIEa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:layout_alignParentTop="true"
+                    android:inputType="text"
+                    android:text="" />
 
                 <TextView
                     android:id="@+id/tvCS"
@@ -1323,81 +1392,18 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"/>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:text="ESCUELA ACTUAL"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
-                    android:background="@color/colorSecundario2"
-                    android:textAlignment="center"
-                    android:textColor="@color/myWhite"
-                    android:textSize="20dp" />
 
-                <TextView
-                    android:id="@+id/tvNEa"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/e180"/>
-                <EditText
-                    android:id="@+id/txtNEa"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-
-                <TextView
-                    android:id="@+id/tvDEa"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/e181"/>
-                <EditText
-                    android:id="@+id/txtDEa"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
-
-                <TextView
-                    android:id="@+id/tvTea"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/e182"/>
-
-                <EditText
-                    android:id="@+id/txtTea"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="phone"
-                    android:text="" />
-
-                <TextView
-                    android:id="@+id/tvNIEa"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/e183"/>
-                <EditText
-                    android:id="@+id/txtNIEa"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
 
                 <TextView
                     android:id="@+id/tvUGa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/e184"/>
-                <EditText
-                    android:id="@+id/txtUGa"
+                <Spinner
+                    android:id="@+id/sPUGa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:inputType="text"
-                    android:text="" />
+                    android:layout_marginBottom="20dp"/>
 
 
                 <TextView
@@ -2358,16 +2364,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"/>
             </LinearLayout>
-
-
-
-
-
-
-
-
-
-
             <Button
                 android:id="@+id/btnGuardarA"
                 android:layout_width="match_parent"
@@ -2378,6 +2374,8 @@
                 android:textColor="#FFFFFF"
                 android:textSize="30dp"
                 android:theme="@style/PrimaryColoredButton" />
+
         </LinearLayout>
     </ScrollView>
+
 </android.support.constraint.ConstraintLayout>
