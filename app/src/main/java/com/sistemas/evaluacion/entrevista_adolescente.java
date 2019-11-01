@@ -1188,6 +1188,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
                 //r37A=txtDATa4.getText().toString().toUpperCase();
 
                 //endregion FICHA FAMILIAR
+
                 //region DATOS FAMILIARES
                 r38A=txtNDFa1.getText().toString().toUpperCase();
                 r40A=txtRDFa1.getText().toString().toUpperCase();
@@ -1203,6 +1204,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
                 r47A=txtRDFa.getText().toString().toUpperCase();
                 r48A=txtLDFa.getText().toString().toUpperCase();
                 //endregion DATOS FAMILIARES
+
                 //region DEEPENDIENTES ECONOMICOS
                 r49A=txtNDEa1.getText().toString().toUpperCase();
                 r52A=txtRDEa1.getText().toString().toUpperCase();
@@ -1216,8 +1218,8 @@ public class  entrevista_adolescente extends AppCompatActivity {
                 r54A=txtRDEa3.getText().toString().toUpperCase();
                 r57A=txtEDEa3.getText().toString().toUpperCase();
                 r60A=txtTDEa3.getText().toString().toUpperCase();
-
                 //endregion DEPENDIENTES ECONOMICOS
+
                 //region VINCULOS COMINITARIOS
                 r61A=txtNEa.getText().toString().toUpperCase();
                 r62A=txtDEa.getText().toString().toUpperCase();
@@ -1231,6 +1233,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
                 r70A=txtGC1.getText().toString().toUpperCase();
                 r71A=txtGC2.getText().toString().toUpperCase();
                 //endregion VINCULOS COMUNITARIOS
+
                 //region HISTORIAL LABORAL
                 r73A=txtNTa.getText().toString().toUpperCase();
                 r73A=txtNTa.getText().toString().toUpperCase();
@@ -1244,12 +1247,14 @@ public class  entrevista_adolescente extends AppCompatActivity {
                 r81A=txtAT1.getText().toString().toUpperCase();
                 r82A=txtTT1.getText().toString().toUpperCase();
                 //endregion HISTORIAL LABORAL
-                //region ACTIVIDADRES ESTRAESCOLARES
+               //region ACTIVIDADRES ESTRAESCOLARES
                 r83A=txtA1.getText().toString().toUpperCase();
                 r84A=txtL1.getText().toString().toUpperCase();
                 r85A=txtC1.getText().toString().toUpperCase();
                 r86A=txtT1.getText().toString().toUpperCase();
                 //endregion
+
+
                 //region CONSUMOS
                 r87A=txtCaA.getText().toString().toUpperCase();
                 r89A=txtFDCA.getText().toString().toUpperCase();
@@ -1276,7 +1281,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
                 rS5=sPDfa.getSelectedItem().toString().toUpperCase();
                 rS6=sPVDF1.getSelectedItem().toString().toUpperCase();
                 rS7=sPVDF2.getSelectedItem().toString().toUpperCase();
-                rS8=sPVDF3.getSelectedItem().toString().toUpperCase();
+                //rS8=sPVDF3.getSelectedItem().toString().toUpperCase();
                 rS9=sPRD.getSelectedItem().toString().toUpperCase();
                 rS34=sPDE.getSelectedItem().toString().toUpperCase();
                 rS10=sPAR1.getSelectedItem().toString().toUpperCase();
@@ -1301,6 +1306,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
                 rS25=sPSIDA.getSelectedItem().toString().toUpperCase();
                 rS26=sPEV.getSelectedItem().toString().toUpperCase();
                 //endregion
+
             //endregion
                 rS27=sPCALC.getSelectedItem().toString().toUpperCase(); // frecuencia
                 rS28=sPCTBC.getSelectedItem().toString().toUpperCase();//tabaco
@@ -1320,7 +1326,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
                 rS41=sPSUSF.getSelectedItem().toString().toUpperCase();
 
 
-                Date fin=new Date();
+                //Date fin=new Date();
 
 
 
@@ -1336,16 +1342,15 @@ public class  entrevista_adolescente extends AppCompatActivity {
 
                 db.insertarDatosEntrevistadorA(r1A,r2A,r3A,r4A);
                 db.insertarDatosResponsablesA(rS1,r5A,r9A,r13A,r6A,r10A,r14A,r4A);
-                db.insertarDatosGeneralesA(r17A,rS2,r18A,r19A,r20A,r21A,r22A,r23A,r24A,r25A,rS3,rS4,r4A);
+                db.insertarDatosGeneralesA(r17A,rS2,r18A,r19A,r20A,r21A,r22A,r23A,r24A,r25A,rS4,rS3,r4A);
                 db.insertarDatosFichaFamiliarA(r26A,r27A,r28A,r29A,r30A,r31A,r32A,r33A,rS5,r34A,r7A,r35A,r8A,r36A,r11A,r4A);
                 db.insertarDatosFamiliaresA(r38A,r40A,r42A,r44A,rS6,r39A,r41A,r43A,r45A,rS7,rS9,r46A,r47A,r48A,r4A);
                 db.insertarDatosDependientesEconomicosA(rS34,r49A,r52A,r55A,r58A,rS10,r50A,r53A,r56A,r59A,rS11,r51A,r54A,r57A,r60A,rS12,r4A);
                 db.insertarDatosHistorialEscolarA(rS13,rS14,r61A,r62A,r63A,r64A,r65A,r66A,r67A,r68A,r69A,r70A,r71A,r4A);
                 db.insertarDatosHistorialLaboralA(rS15,rS16,rS17,r73A,r75A,r76A,r77A,rS18,r78A,r79A,r80A,r81A,r82A,r4A);
                 db.insertarDatosActividadesExtraescolaresA(rS19,r83A,r84A,r85A,r86A,r4A);
-                db.insertarDatosRevisionMedicaA(rS20,rS21,rS22,rS23,rS24,rS25,rS26,r4A);
+               db.insertarDatosRevisionMedicaA(rS20,rS21,rS22,rS23,rS24,rS25,rS26,r4A);
 
-               // db.insertarDatosConsumoSustanciaA(r87A,r88A,r89A,r90A,r92A,r93A,r94A,r95A,r96A,r97A,r98A,r99A,r100A);
                 Toast.makeText(getApplicationContext(), "Datos Guardados", Toast.LENGTH_SHORT).show();
 
             }

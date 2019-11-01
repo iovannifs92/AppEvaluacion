@@ -7,8 +7,8 @@ public class datosFichaFamiliarA {
 
     public datosFichaFamiliarA(int id, String acalle, String anumero, String acolonia, String acp, String amunicipio,
                               String aestado, String apais, String atemporalidad, String adomiciliof, String alocalidad1,
-                              String atemporalidadant1, String alocalidad2,String atemporalidadant2, String afolio,
-                               String alocalidad23,String atemporalidadant3) {
+                              String atemporalidadant1, String alocalidad2,String atemporalidadant2,
+                               String alocalidad3,String atemporalidadant3, String afolio) {
         this.id = id;
         this.acalle = acalle;
         this.anumero = anumero;
