@@ -7,6 +7,17 @@
     android:orientation="vertical"
     tools:context=".CarpetaInvestigacion">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
     <TextView
         android:id="@+id/tvControl"
         android:layout_width="match_parent"
@@ -306,5 +317,7 @@
             android:layout_gravity="center"/>
 
     </LinearLayout>
+            </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
