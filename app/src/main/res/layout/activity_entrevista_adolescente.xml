@@ -734,7 +734,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:visibility="invisible"
-                    android:text="@string/e160"
+                    android:text="@string/e159"
                     android:layout_marginBottom="20dp"
                     />
 
@@ -752,7 +752,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:visibility="invisible"
-                    android:text="@string/e159"
+                    android:text="@string/e160"
                     android:layout_marginBottom="20dp"
                     />
 
