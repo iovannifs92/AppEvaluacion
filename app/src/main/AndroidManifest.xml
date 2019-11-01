@@ -30,7 +30,7 @@
         <activity android:name=".SincronizarBD" />
         <activity android:name=".entrevista_adolescente" />
         <activity
-            android:name=".infoCasoAdolescente"
+            android:name=".MainMenu"
             android:label="@string/title_activity_main_menu"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
