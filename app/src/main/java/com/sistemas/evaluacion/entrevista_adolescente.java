@@ -149,7 +149,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
         txtMUa=(EditText) findViewById(R.id.txtMUa);
         txtEDO2a=(EditText) findViewById(R.id.txtEDO2a);
         txtPa=(EditText) findViewById(R.id.txtPa);
-        //txtTa=(EditText) findViewById(R.id.txtTa);
+
         txtDALa1=(EditText) findViewById(R.id.txtDALa1);
         txtDALa2=(EditText) findViewById(R.id.txtDALa2);
         txtDALa3=(EditText) findViewById(R.id.txtDALa3);
@@ -198,7 +198,6 @@ public class  entrevista_adolescente extends AppCompatActivity {
         txtDEa=(EditText) findViewById(R.id.txtDEa);
         txtTea=(EditText) findViewById(R.id.txtTea);
         txtNIEa=(EditText) findViewById(R.id.txtNIEa);
-        //txtUGa=(EditText) findViewById(R.id.txtUGa);
         txtNEa1=(EditText) findViewById(R.id.txtNEa1);
         txtNEa2=(EditText) findViewById(R.id.txtNEa2);
 
@@ -1277,7 +1276,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
                 rS5=sPDfa.getSelectedItem().toString().toUpperCase();
                 rS6=sPVDF1.getSelectedItem().toString().toUpperCase();
                 rS7=sPVDF2.getSelectedItem().toString().toUpperCase();
-              //  rS8=sPVDF3.getSelectedItem().toString().toUpperCase();
+                rS8=sPVDF3.getSelectedItem().toString().toUpperCase();
                 rS9=sPRD.getSelectedItem().toString().toUpperCase();
                 rS34=sPDE.getSelectedItem().toString().toUpperCase();
                 rS10=sPAR1.getSelectedItem().toString().toUpperCase();
@@ -1321,8 +1320,9 @@ public class  entrevista_adolescente extends AppCompatActivity {
                 rS41=sPSUSF.getSelectedItem().toString().toUpperCase();
 
 
+                Date fin=new Date();
 
-              //  Date fin=new Date();
+
 
                 db.insertarDatosConsumoSustanciaA(
                         rS34,r87A,rS27,r89A,
@@ -1580,5 +1580,22 @@ public class  entrevista_adolescente extends AppCompatActivity {
         });
         newFragment.show(getSupportFragmentManager(), "datePicker");
     }
+
+    //endregion
+    private long backPressedTime = 0;
+    @Override
+    public void onBackPressed() {        // to prevent irritating accidental logouts
+        long t = System.currentTimeMillis();
+        if (t - backPressedTime > 2000) {    // 2 secs
+            backPressedTime = t;
+            Toast.makeText(this, "Presiona nuevamente para salir al menu principal",
+                    Toast.LENGTH_SHORT).show();
+        } else {    // this guy is serious
+            // clean up
+            super.onBackPressed();       // bye
+        }
+    }
+    //endregion
+
 
 }
