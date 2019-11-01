@@ -25,7 +25,7 @@ public class infoCasoAdolescente extends AppCompatActivity {
     private EditText txtFp,txtF,txtDi,txtNC1,txtNC2,txtNC3,txtNC4,txtNC5,txtD1,txtD2,txtD3,txtD4,txtD5,txtTM1,txtTM2,txtTM3,txtTM4,txtTM5,txtE1,txtE2,txtE3,txtE4,txtE5,txtEx1,txtEx2;
     //endregion EditText
     //region SPINNERS
-    private Spinner sPTE,sPTI,sPUA,sPUD,sPMC,sPHO,sPTP,sPSL,sPVO,sPVD,sPVV,sPRR,sPEVS,sPDV,sPEVF,sPSE,sPSA;
+    private Spinner sPTE,sPTI,sPDI,sPUA,sPUD,sPMC,sPHO,sPTP,sPSL,sPVO,sPVD,sPVV,sPRR,sPEVS,sPDV,sPEVF,sPSE,sPSA;
     //endregion
     //region BOTTONES
     private Button btnGuardarIA,btnICA,btnPP,btnVO,btnPL;
@@ -37,6 +37,9 @@ public class infoCasoAdolescente extends AppCompatActivity {
     //endregion
     //region String
     private String [] nosi={"No", "Si"};
+    private String [] delito={"Otro", "Robo", "Robo Simple", "Violación", "Violencia Familiar", "Daños y Lesiones",
+            "Lesiones menores a 15 dias", "Contra la Salud", "Comercio o Suministro", "Portación de Armas de Fuego"};
+
     //endregion
     //region LinearLayout
     private LinearLayout llICA, llPP,llVO,llPL;
@@ -122,6 +125,11 @@ public class infoCasoAdolescente extends AppCompatActivity {
         // region sPUA  UNO DE LO DELITOS
         sPTI = (Spinner) findViewById(R.id.sPTI);
         sPTI.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosi));
+        //endregion
+
+        // region sPDI  UNO DE LO DELITOS
+        sPDI = (Spinner) findViewById(R.id.sPDI);
+        sPDI.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, delito));
         //endregion
 
         // region sPUA  UNO DE LO DELITOS
