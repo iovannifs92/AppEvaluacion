@@ -17,9 +17,12 @@ public class MainActivity extends AppCompatActivity {
     //region Variables Globales
     private MyOpenHelper db;
     private ArrayList<datosGenerales> lista;
+    private ArrayList<datosGenerales> listaA;
     //private ArrayList<Comentario> lista;
     private TextView tvLista;
+    private TextView tvListaA;
     public String tamaño="";
+    public String tamañoA="";
     ListToCSV convierte=new ListToCSV();
     //endregion
 

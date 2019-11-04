@@ -12,28 +12,33 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.sistemas.evaluacion.entidades.datosGenerales;
+
+import java.util.ArrayList;
+
 public class infoCasoAdolescente extends AppCompatActivity {
 
     //regio boolean
     private boolean pR=false;
 
     //INFORMACION DE CASO ACTUAL
-    private TextView tvFp,tvF,tvEVS,tvEx1,tvEx2,tvNC1,tvNC2,tvNC3,tvNC4,tvNC5,tvD1,tvD2,tvD3,tvD4,tvD5,tvTM1,tvTM2,tvTM3,tvTM4,tvTM5,tvE1,tvE2,tvE3,tvE4,tvE5,tvSL,tvPPP1,tvPPP2,tvPPP3,tvPPP4,tvPPP5;
+    private TextView tvFp,tvF,tvEVS,tvVD,tvVV,tvCV,tvRR,tvEx1,tvEx2,tvNC1,tvNC2,tvNC3,tvNC4,tvNC5,tvD1,tvD2,tvD3,tvD4,tvD5,tvTM1,tvTM2,tvTM3,tvTM4,tvTM5,tvE1,tvE2,tvE3,tvE4,tvE5,tvSL,tvPPP1,tvPPP2,tvPPP3,tvPPP4,tvPPP5;
     //endregion
 
     //Infotmacion el caso actual
-    private EditText txtFp,txtF,txtDi,txtNC1,txtNC2,txtNC3,txtNC4,txtNC5,txtD1,txtD2,txtD3,txtD4,txtD5,txtTM1,txtTM2,txtTM3,txtTM4,txtTM5,txtE1,txtE2,txtE3,txtE4,txtE5,txtEx1,txtEx2;
+    private EditText txtCCD,txtFp,txtF,txtDi,txtNC1,txtNC2,txtNC3,txtNC4,txtNC5,txtD1,txtD2,txtD3,txtD4,txtD5,txtTM1,txtTM2,txtTM3,txtTM4,txtTM5,txtE1,txtE2,txtE3,txtE4,txtE5,txtEx1,txtEx2;
     //endregion EditText
     //region SPINNERS
-    private Spinner sPTE,sPTI,sPDI,sPUA,sPUD,sPMC,sPHO,sPTP,sPSL,sPVO,sPVD,sPVV,sPRR,sPEVS,sPDV,sPEVF,sPSE,sPSA;
+    private Spinner sPICA,sPTE,sPTI,sPDI,sPUA,sPUD,sPMC,sPHO,sPTP,sPSL,sPVO,sPVD,sPVV,sPRR,sPEVS,sPDV,sPEVF,sPSE,sPSA;
     //endregion
     //region BOTTONES
     private Button btnGuardarIA,btnICA,btnPP,btnVO,btnPL;
     //endregion
+    String folio, carpeta;
     //region Strings
     private String r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11,r12,r13,r14,r15,r16,r17,r18,r19,r20,r21,r22,r23;
     /////SPINNERS
-    private String rS1,rS2,rS3,rS4,rS5,rS6,rS7,rS8,rS9,rS10,rS11,rS12,rS13,rS14,rS15,rS16;
+    private String rS1,rS2,rS3,rS4,rS5,rS6,rS7,rS8,rS9,rS10,rS11,rS12,rS13,rS14,rS15,rS16,rS17;
     //endregion
     //region String
     private String [] nosi={"No", "Si"};
@@ -42,8 +47,12 @@ public class infoCasoAdolescente extends AppCompatActivity {
 
     //endregion
     //region LinearLayout
-    private LinearLayout llICA, llPP,llVO,llPL;
+    private LinearLayout llControlA ,llICA, llPP,llVO,llPL;
     //endregion
+    TextView tvControlA;
+    MyOpenHelper db;
+    ArrayList<datosGenerales> lista1;
+    final ArrayList<Integer> Idx = new ArrayList<Integer>();
 
 
 
@@ -52,6 +61,44 @@ public class infoCasoAdolescente extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_caso_adolescente);
+
+      /*  //region TREAER DATOS DE ENTREVISTRADOS
+        txtCCD=(EditText) findViewById(R.id.txtCCD);
+        btnGuardarIA=(Button) findViewById(R.id.btnGuardarIA);
+        sPICA = (Spinner) findViewById(R.id.sPICA);
+        //endregion
+
+
+        //region Inicio BD
+        db=new MyOpenHelper(this);
+        db.getReadableDatabase();
+
+        lista1 = db.getDatosGeneralesA();
+
+        ArrayList<String> names = new ArrayList<String>();
+
+        for(int i = 0; i < lista1.size(); i++){
+            if((lista1.get(i).insertarDatosGeneralesA().toString()).equals("NO")) {
+                names.add(lista1.get(i).getNombre());
+                Idx.add(i);
+            }
+        }
+
+        if(lista1.size()!=0){
+            tvControlA=(TextView) findViewById(R.id.tvControlA);
+            llControlA=(LinearLayout) findViewById(R.id.llControlA);
+
+            llControlA.setVisibility(View.VISIBLE);
+            tvControlA.setVisibility(View.GONE);
+        }
+
+        sPICA.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, names));
+
+        //endregion*/
+
+
+
+
 
 
         //region INFORMACION DE CASO ACTUAL
@@ -112,6 +159,10 @@ public class infoCasoAdolescente extends AppCompatActivity {
         tvPPP5=(TextView) findViewById(R.id.tvPPP5);
         tvSL=(TextView) findViewById(R.id.tvSL);
         tvEVS=(TextView) findViewById(R.id.tvEVS);
+        tvVD=(TextView) findViewById(R.id.tvVD);
+        tvVV=(TextView) findViewById(R.id.tvVV);
+        tvCV=(TextView) findViewById(R.id.tvCV);
+        tvRR=(TextView) findViewById(R.id.tvRR);
         txtEx1=(EditText) findViewById(R.id.txtEx1);
         txtEx2=(EditText) findViewById(R.id.txtEx2);
         tvEx1=(TextView) findViewById(R.id.tvEx1);
@@ -152,14 +203,8 @@ public class infoCasoAdolescente extends AppCompatActivity {
         sPSL = (Spinner) findViewById(R.id.sPSL);
         sPSL.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosi));
         //endregion
-        // region sPEVO EXIXTE VICTIMA
-        sPVO = (Spinner) findViewById(R.id.sPVO);
-        sPVO.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosi));
-        //endregion
-        // region sPVD VIVE EN EL MISMO DOMICILIO
-        sPVD = (Spinner) findViewById(R.id.sPVD);
-        sPVD.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosi));
-        //endregion
+
+
         // region sPVV VIVE CON LA VICTIMA
         sPVV = (Spinner) findViewById(R.id.sPVV);
         sPVV.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosi));
@@ -293,6 +338,63 @@ public class infoCasoAdolescente extends AppCompatActivity {
         });
         //endregion
 
+        // region sPEVO EXIXTE VICTIMA
+        sPVO = (Spinner) findViewById(R.id.sPVO);
+        sPVO.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosi));
+        sPVO.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem=parent.getSelectedItem().toString();
+                if (selectedItem=="Si"){
+                    tvVD.setVisibility(View.VISIBLE);
+                    sPVD.setVisibility(View.VISIBLE);
+                    tvVV.setVisibility(View.VISIBLE);
+                    sPVV.setVisibility(View.VISIBLE);
+
+                }
+                else{
+                    tvVD.setVisibility(View.GONE);
+                    sPVD.setVisibility(View.GONE);
+                    tvVV.setVisibility(View.GONE);
+                    sPVV.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                return;
+            }
+        });
+        //endregion
+
+        // region sPVD VIVE EN EL MISMO DOMICILIO
+        sPVD = (Spinner) findViewById(R.id.sPVD);
+        sPVD.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosi));
+        sPVD.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem=parent.getSelectedItem().toString();
+                if (selectedItem=="Si"){
+                    tvCV.setVisibility(View.VISIBLE);
+                    tvRR.setVisibility(View.VISIBLE);
+                    sPRR.setVisibility(View.VISIBLE);
+
+                }
+                else{
+                    tvCV.setVisibility(View.GONE);
+                    tvRR.setVisibility(View.GONE);
+                    sPRR.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                return;
+            }
+        });
+        //endregion
+
+
         // region sCV REUBICA DOMICILIO
         sPRR = (Spinner) findViewById(R.id.sPRR);
         sPRR.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosi));
@@ -378,22 +480,26 @@ public class infoCasoAdolescente extends AppCompatActivity {
 
                 r1=txtFp.getText().toString().toUpperCase();
                 r2=txtF.getText().toString().toUpperCase();
-                r3=txtDi.getText().toString().toUpperCase();
+                r3=sPDI.getSelectedItem().toString().toUpperCase();
+
                 r4=txtNC1.getText().toString().toUpperCase();
                 r5=txtNC2.getText().toString().toUpperCase();
                 r6=txtNC3.getText().toString().toUpperCase();
                 r7=txtNC4.getText().toString().toUpperCase();
                 r8=txtNC5.getText().toString().toUpperCase();
+
                 r9=txtD1.getText().toString().toUpperCase();
                 r10=txtD2.getText().toString().toUpperCase();
                 r11=txtD3.getText().toString().toUpperCase();
                 r12=txtD4.getText().toString().toUpperCase();
                 r13=txtD5.getText().toString().toUpperCase();
+
                 r14=txtTM1.getText().toString().toUpperCase();
                 r15=txtTM2.getText().toString().toUpperCase();
                 r16=txtTM3.getText().toString().toUpperCase();
                 r17=txtTM4.getText().toString().toUpperCase();
                 r18=txtTM5.getText().toString().toUpperCase();
+
                 r19=txtE1.getText().toString().toUpperCase();
                 r20=txtE2.getText().toString().toUpperCase();
                 r21=txtE3.getText().toString().toUpperCase();
@@ -403,20 +509,33 @@ public class infoCasoAdolescente extends AppCompatActivity {
                 //////////////////SPINNER
                 rS1=sPTE.getSelectedItem().toString().toUpperCase();
                 rS2=sPTI.getSelectedItem().toString().toUpperCase();
-                rS3=sPUA.getSelectedItem().toString().toUpperCase();
-                rS4=sPUD.getSelectedItem().toString().toUpperCase();
-                rS5=sPMC.getSelectedItem().toString().toUpperCase();
-                rS6=sPHO.getSelectedItem().toString().toUpperCase();
-                rS7=sPTP.getSelectedItem().toString().toUpperCase();
-                rS8=sPSL.getSelectedItem().toString().toUpperCase();
-                rS9=sPVO.getSelectedItem().toString().toUpperCase();
-                rS10=sPVD.getSelectedItem().toString().toUpperCase();
-                rS11=sPVV.getSelectedItem().toString().toUpperCase();
-                rS12=sPEVS.getSelectedItem().toString().toUpperCase();
-                rS13=sPDV.getSelectedItem().toString().toUpperCase();
-                rS14=sPEVF.getSelectedItem().toString().toUpperCase();
-                rS15=sPSE.getSelectedItem().toString().toUpperCase();
-                rS16=sPSA.getSelectedItem().toString().toUpperCase();
+                rS3=sPDI.getSelectedItem().toString().toUpperCase();
+                rS4=sPUA.getSelectedItem().toString().toUpperCase();
+                rS5=sPUD.getSelectedItem().toString().toUpperCase();
+                rS6=sPMC.getSelectedItem().toString().toUpperCase();
+                rS7=sPHO.getSelectedItem().toString().toUpperCase();
+
+                rS8=sPTP.getSelectedItem().toString().toUpperCase();
+                rS9=sPSL.getSelectedItem().toString().toUpperCase();
+                rS10=sPVO.getSelectedItem().toString().toUpperCase();
+                rS11=sPVD.getSelectedItem().toString().toUpperCase();
+                rS12=sPVV.getSelectedItem().toString().toUpperCase();
+                rS13=sPEVS.getSelectedItem().toString().toUpperCase();
+                rS14=sPDV.getSelectedItem().toString().toUpperCase();
+                rS15=sPEVF.getSelectedItem().toString().toUpperCase();
+                rS16=sPSE.getSelectedItem().toString().toUpperCase();
+                rS17=sPSA.getSelectedItem().toString().toUpperCase();
+
+                int pos = sPICA.getSelectedItemPosition();
+                folio = lista1.get(Idx.get(pos)).getFolio();
+                carpeta=txtCCD.getText().toString();
+
+                db.insertarDatosInformacionCasoA(rS1,r1,rS2,r2,rS3,rS4,rS5,rS6,rS7,folio);
+                db.insertarDatosProcesosPenalesA(rS8,rS9,r4,r9,r14,r19,r5,r10,r15,r20,r6,r11,r16,r21,r7,r12,r17,r22,r8,r13,r18,r23,folio);
+
+
+
+
             }
         });
         btnICA=(Button) findViewById(R.id.btnICA);

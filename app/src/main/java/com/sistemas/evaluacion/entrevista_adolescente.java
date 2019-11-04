@@ -20,8 +20,10 @@ import com.sistemas.evaluacion.entidades.datosResponsablesA;
 import com.sistemas.evaluacion.entidades.datosGeneralesA;
 import com.sistemas.evaluacion.entidades.datosRevisionMedicaA;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Locale;
 
 public class  entrevista_adolescente extends AppCompatActivity {
     //region variables globales
@@ -39,7 +41,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
     //DEPENDIENTES ECONOMICOS
     private TextView tvDPA1,tvDPA2,tvDPA3,tvNDEa1,tvRDEa1,tvEDEa1,tvTDEa1,tvNDEa2,tvRDEa2,tvEDEa2,tvTDEa2,tvNDEa3,tvRDEa3,tvEDEa3,tvTDEa3,tvAR,tvAR2,tvAR3;
     //DEPENDIENTES TRABAJO ACTUAL
-    private TextView tvTA,tvNTa,tvDTa,tvTTa,tvATa,tvTC,tvJTa,tvNT1,tvLT1,tvAT1,tvTT1;
+    private TextView tvTA,tvNTa,tvTAA,tvTR,tvDTa,tvTTa,tvATa,tvTC,tvJTa,tvNT1,tvLT1,tvAT1,tvTT1;
     ///////ESCUELAS ANTERIORES
     private TextView tvTVEA,tvNEa,tvDEa,tvTea,tvNIEa,tvNEa1,tvLE1,tvGC1;
     //////////ACTIVIDADRES EXTRAESCOLARES
@@ -97,14 +99,14 @@ public class  entrevista_adolescente extends AppCompatActivity {
 
     private String [] nosi={"No", "Si"};
     private String [] sexo={"Masculino", "Femenino"};
-    private String [] malo={"NA","VIH/SIDA","Enfermedades cardiovasculares","Cáncer","Enfermedad Pulmonar Obstructiva Crónica","Diabetes","Parkinson","Alzheimer","Esclerosis múltiple","Hipertensión","Lumbalgia","Colesterol","Depresión","Ansiedad","Tiroides",
+    private String [] malo={"N/A","VIH/SIDA","Enfermedades cardiovasculares","Cáncer","Enfermedad Pulmonar Obstructiva Crónica","Diabetes","Parkinson","Alzheimer","Esclerosis múltiple","Hipertensión","Lumbalgia","Colesterol","Depresión","Ansiedad","Tiroides",
             "Osteoporosis"};
     ////////Consumo//////////////7
     private String [] frecuenciaConsumo={"No consume", "Diariamente", "Cada Tercer día", "Semanalmente", "Quincenalmente", "Mensualmente", "Anualmente"};
 
-    private String [] colfracc={"NA","Colonia", "Fraccionamiento","Domicilio Conocido", "Ejido"};
+    private String [] colfracc={"N/A","Colonia", "Fraccionamiento","Domicilio Conocido", "Ejido"};
 
-    private String [] tiempoRadicando={"NA","Menos de un mes", "Un mes", "Entre 1 y 3 meses", "Entre 3 y 6 meses", "Entre 6 meses y un año", "Entre 1 y 3 años", "Entre 3 y 6 años", "Más de 6 años"};
+    private String [] tiempoRadicando={"N/A","Menos de un mes", "Un mes", "Entre 1 y 3 meses", "Entre 3 y 6 meses", "Entre 6 meses y un año", "Entre 1 y 3 años", "Entre 3 y 6 años", "Más de 6 años"};
 
     private String [] gradoEstudios={"Sin estudios", "Primaria","Secundaria", "Preparatoria", "Licenciatura", "Maestría", "Doctorado"};
 
@@ -126,7 +128,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
         txtNc=(EditText) findViewById(R.id.txtNc);
         txtFecha=(EditText) findViewById(R.id.txtFecha);
         txtNe=(EditText) findViewById(R.id.txtNe);
-        txtFolioA=(EditText) findViewById(R.id.txtFolioA);
+
         txtNpa1=(EditText) findViewById(R.id.txtNpa1);
         txtNpa2=(EditText) findViewById(R.id.txtNpa2);
         txtRa1=(EditText) findViewById(R.id.txtRa1);
@@ -337,6 +339,8 @@ public class  entrevista_adolescente extends AppCompatActivity {
         //region TRABAJO ACTUAL
         tvTA=(TextView) findViewById(R.id.tvTA);
         tvNTa=(TextView) findViewById(R.id.tvNTa);
+        tvTAA=(TextView) findViewById(R.id.tvTAA);
+        tvTR=(TextView) findViewById(R.id.tvTR);
         tvDTa=(TextView) findViewById(R.id.tvDTa);
         tvTTa=(TextView) findViewById(R.id.tvTTa);
         tvATa=(TextView) findViewById(R.id.tvATa);
@@ -506,10 +510,6 @@ public class  entrevista_adolescente extends AppCompatActivity {
         // region sPCS  CONCLUYO LA SECUNDARIA
         sPCS = (Spinner) findViewById(R.id.sPCS);
         sPCS.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosi));
-        //endregion
-        // region sPTAA  TRABAJO RE|CURRENTE
-        sPTAA = (Spinner) findViewById(R.id.sPTAA);
-        sPTAA.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosi));
         //endregion
         // region sPTR  TRABAJO RE|CURRENTE
         sPTR = (Spinner) findViewById(R.id.sPTR);
@@ -753,7 +753,57 @@ public class  entrevista_adolescente extends AppCompatActivity {
             }
         });
         //endregion
+        // region sPTAA  TRABAJA ACTUALMENTE
+        sPTAA = (Spinner) findViewById(R.id.sPTAA);
+        sPTAA.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosi));
+        sPTAA.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem=parent.getSelectedItem().toString();
+                if (selectedItem=="Si"){
+                    txtJTa.setVisibility(View.VISIBLE);
+                    tvJTa.setVisibility(View.VISIBLE);
+                    sPTC.setVisibility(View.VISIBLE);
+                    tvTC.setVisibility(View.VISIBLE);
+                    txtATa.setVisibility(View.VISIBLE);
+                    tvATa.setVisibility(View.VISIBLE);
+                    txtTTa.setVisibility(View.VISIBLE);
+                    tvTTa.setVisibility(View.VISIBLE);
+                    txtDTa.setVisibility(View.VISIBLE);
+                    tvDTa.setVisibility(View.VISIBLE);
+                    txtNTa.setVisibility(View.VISIBLE);
+                    tvNTa.setVisibility(View.VISIBLE);
+                    tvTAA.setVisibility(View.VISIBLE);
+                    sPTR.setVisibility(View.VISIBLE);
+                    tvTR.setVisibility(View.VISIBLE);
+                }
+                else{
+                    txtJTa.setVisibility(View.GONE);
+                    tvJTa.setVisibility(View.GONE);
+                    sPTC.setVisibility(View.GONE);
+                    tvTC.setVisibility(View.GONE);
+                    txtATa.setVisibility(View.GONE);
+                    tvATa.setVisibility(View.GONE);
+                    txtTTa.setVisibility(View.GONE);
+                    tvTTa.setVisibility(View.GONE);
+                    txtDTa.setVisibility(View.GONE);
+                    tvDTa.setVisibility(View.GONE);
+                    txtNTa.setVisibility(View.GONE);
+                    tvNTa.setVisibility(View.GONE);
+                    tvTAA.setVisibility(View.GONE);
+                    sPTR.setVisibility(View.GONE);
+                    tvTR.setVisibility(View.GONE);
 
+
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                return;
+            }
+        });
+        //endregion
 
 
         // region sPTA  TRABAJOA ANTERIORES FALTA sPPINER EN XML
@@ -1132,6 +1182,17 @@ public class  entrevista_adolescente extends AppCompatActivity {
         //endregion
         //endregion VisibleSpinner
 
+       /* //region etP97 FOLIO
+        lista1=db.getDatosGeneralesA();
+        String tamaño=""+((lista1.size())+1);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd", Locale.getDefault());
+        Date date = new Date();
+        String fecha = dateFormat.format(date);
+        txtFolioA=(EditText) findViewById(R.id.etP97);
+        txtFolioA.setText(MainMenu.entrevistador+"-"+fecha+"-"+tamaño);
+        //endregion*/
+
+
         btnGuardarA=(Button) findViewById(R.id.btnGuardarA);
         btnGuardarA.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -1282,7 +1343,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
                 rS5=sPDfa.getSelectedItem().toString().toUpperCase();
                 rS6=sPVDF1.getSelectedItem().toString().toUpperCase();
                 rS7=sPVDF2.getSelectedItem().toString().toUpperCase();
-                //rS8=sPVDF3.getSelectedItem().toString().toUpperCase();
+                rS8=sPDA.getSelectedItem().toString().toUpperCase();
                 rS9=sPRD.getSelectedItem().toString().toUpperCase();
                 rS34=sPDE.getSelectedItem().toString().toUpperCase();
                 rS10=sPAR1.getSelectedItem().toString().toUpperCase();
@@ -1344,7 +1405,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
                 db.insertarDatosEntrevistadorA(r1A,r2A,r3A,r4A);
                 db.insertarDatosResponsablesA(rS1,r5A,r9A,r13A,r6A,r10A,r14A,r4A);
                 db.insertarDatosGeneralesA(r17A,rS2,r18A,r19A,r20A,r21A,r22A,r23A,r24A,r25A,rS4,rS3,r4A);
-                db.insertarDatosFichaFamiliarA(r26A,r27A,r28A,r29A,r30A,r31A,r32A,r33A,rS5,r34A,r7A,r35A,r8A,r36A,r11A,r4A);
+                db.insertarDatosFichaFamiliarA(r26A,r27A,r28A,r29A,r30A,r31A,r32A,r33A,rS5,rS8,r34A,r7A,r35A,r8A,r36A,r11A,r4A);
                 db.insertarDatosFamiliaresA(r38A,r40A,r42A,r44A,rS6,r39A,r41A,r43A,r45A,rS7,rS9,r46A,r47A,r48A,r4A);
                 db.insertarDatosDependientesEconomicosA(rS34,r49A,r52A,r55A,r58A,rS10,r50A,r53A,r56A,r59A,rS11,r51A,r54A,r57A,r60A,rS12,r4A);
                 db.insertarDatosHistorialEscolarA(rS13,rS14,r61A,r62A,r63A,r64A,r65A,r66A,r67A,r68A,r69A,r70A,r71A,r4A);
@@ -1377,7 +1438,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
         llIC=(LinearLayout) findViewById(R.id.llIC);
 
 
-      /*  //region Visibles
+        //region Visibles
 
         btnDg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -1446,7 +1507,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
                 }
             }
         });
-        //endregion Visibles*/
+        //endregion Visibles
 
 
 
@@ -1471,7 +1532,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
         boolean validacion=true;
         if(r3A.equals("")){
             validacion=false;
-            verifica="\nNuemro de Causa"+verifica;
+            verifica="\nEvaluador"+verifica;
             txtNe.requestFocus();
             //etP1.setBackground(Color.parseColor();
         }
@@ -1506,7 +1567,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
         }
         if(r22A.equals("")){
             validacion=false;
-            verifica="\nEstado"+verifica;
+            verifica="\nEstado de Inputado"+verifica;
             llDg.setVisibility(View.VISIBLE);
             txtEDOa.requestFocus();
             //etP1.setBackground(Color.parseColor();
@@ -1548,7 +1609,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
             txtNOa.requestFocus();
             //etP1.setBackground(Color.parseColor();
         }
-        if(r28A.equals("")){
+        if(r28A.equals("N/A")){
             validacion=false;
             verifica="\nColonia"+verifica;
             llFfa.setVisibility(View.VISIBLE);
@@ -1573,7 +1634,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
 
         if(r31A.equals("")){
             validacion=false;
-            verifica="\nEstado"+verifica;
+            verifica="\nEstado Ficha Familiar"+verifica;
             llFfa.setVisibility(View.VISIBLE);
             txtEDO2a.requestFocus();
             //etP1.setBackground(Color.parseColor();
@@ -1587,7 +1648,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
             //etP1.setBackground(Color.parseColor();
         }
 
-        if(r33A.equals("")){
+        if(r33A.equals("N/A")){
             validacion=false;
             verifica="\nTemporalidad"+verifica;
             llFfa.setVisibility(View.VISIBLE);
@@ -1611,28 +1672,35 @@ public class  entrevista_adolescente extends AppCompatActivity {
         if(rS14.equals("")){
             validacion=false;
             verifica="\nConcluyo la secundaria"+verifica;
-            llCE.setVisibility(View.VISIBLE);
+            llVH.setVisibility(View.VISIBLE);
             sPCS.requestFocus();
             //etP1.setBackground(Color.parseColor();rS16
         }
         if(rS16.equals("")){
             validacion=false;
             verifica="\nTrabaja actualmente"+verifica;
-            llCE.setVisibility(View.VISIBLE);
+            llVH.setVisibility(View.VISIBLE);
             sPTAA.requestFocus();
             //etP1.setBackground(Color.parseColor();
         }
         if(rS19.equals("")){
             validacion=false;
             verifica="\nActividades Extraescolares"+verifica;
-            llCE.setVisibility(View.VISIBLE);
+            llVH.setVisibility(View.VISIBLE);
             sPAEA.requestFocus();
             //etP1.setBackground(Color.parseColor();
         }
+        if(rS23.equals("N/A")){
+            validacion=false;
+            verifica="\nCual enfermedad"+verifica;
+            llIC.setVisibility(View.VISIBLE);
+            sPC.requestFocus();
+            //etP1.setBackground(Color.parseColor();
+        }
+
         if(!validacion){
             Toast.makeText(getApplicationContext(), "Verifica los siguientes datos:"+verifica,Toast.LENGTH_LONG).show();
         }
-
         return validacion;
     }
     //endregion

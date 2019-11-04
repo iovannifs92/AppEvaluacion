@@ -3,10 +3,10 @@ package com.sistemas.evaluacion.entidades;
 public class datosFichaFamiliarA {
     int id;
     String acalle, anumero, acolonia, acp,  amunicipio, aestado, apais,
-    atemporalidad, adomiciliof, alocalidad1,atemporalidadant1, alocalidad2, atemporalidadant2, alocalidad3, atemporalidadant3,afolio;
+    atemporalidad, adomiciliof ,adomicilioant, alocalidad1,atemporalidadant1, alocalidad2, atemporalidadant2, alocalidad3, atemporalidadant3,afolio;
 
     public datosFichaFamiliarA(int id, String acalle, String anumero, String acolonia, String acp, String amunicipio,
-                              String aestado, String apais, String atemporalidad, String adomiciliof, String alocalidad1,
+                              String aestado, String apais, String atemporalidad, String adomiciliof, String adomicilioant, String alocalidad1,
                               String atemporalidadant1, String alocalidad2,String atemporalidadant2,
                                String alocalidad3,String atemporalidadant3, String afolio) {
         this.id = id;
@@ -19,6 +19,7 @@ public class datosFichaFamiliarA {
         this.apais = apais;
         this.atemporalidad = atemporalidad;
         this.adomiciliof = adomiciliof;
+        this.adomicilioant= adomicilioant;
         this.alocalidad1 = alocalidad1;
         this.atemporalidadant1 = atemporalidadant1;
         this.alocalidad2 = alocalidad2;
@@ -67,6 +68,14 @@ public class datosFichaFamiliarA {
     public String getAdomiciliof() { return adomiciliof; }
 
     public void setAdomiciliof(String adomiciliof) { this.adomiciliof = adomiciliof; }
+
+    public String getAdomicilioant() {
+        return adomicilioant;
+    }
+
+    public void setAdomicilioant(String adomicilioant) {
+        this.adomicilioant = adomicilioant;
+    }
 
     public String getAlocalidad1() { return alocalidad1; }
 

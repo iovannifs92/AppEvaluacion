@@ -1536,17 +1536,21 @@
                     android:id="@+id/tvTR"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:text="@string/e191"/>
                 <Spinner
                     android:id="@+id/sPTR"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_marginBottom="20dp"/>
 
                 <TextView
+                    android:id="@+id/tvTAA"
                     android:layout_width="match_parent"
                     android:text="TRABAJO ACTUAL"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_marginBottom="20dp"
                     android:background="@color/colorSecundario2"
                     android:textAlignment="center"
@@ -1557,11 +1561,13 @@
                     android:id="@+id/tvNTa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:text="@string/e193"/>
                 <EditText
                     android:id="@+id/txtNTa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
@@ -1570,11 +1576,13 @@
                     android:id="@+id/tvDTa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:text="@string/e194"/>
                 <EditText
                     android:id="@+id/txtDTa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />
@@ -1583,11 +1591,13 @@
                     android:id="@+id/tvTTa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:text="@string/e195"/>
                 <EditText
                     android:id="@+id/txtTTa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_alignParentTop="true"
                     android:inputType="phone"
                     android:text="" />
@@ -1596,6 +1606,7 @@
                     android:id="@+id/tvATa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:text="@string/e196"/>
                 <EditText
                     android:id="@+id/txtATa"
@@ -1609,22 +1620,26 @@
                     android:id="@+id/tvTC"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:text="@string/e197"/>
                 <Spinner
                     android:id="@+id/sPTC"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_marginBottom="20dp"/>
 
                 <TextView
                     android:id="@+id/tvJTa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:text="@string/e198"/>
                 <EditText
                     android:id="@+id/txtJTa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_alignParentTop="true"
                     android:inputType="text"
                     android:text="" />

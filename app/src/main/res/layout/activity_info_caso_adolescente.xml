@@ -106,10 +106,19 @@
                     android:textSize="20dp"
 
                     />
+                <TextView
+                    android:id="@+id/tvdelito"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:textStyle="bold"
+                    android:text="Delito"/>
+
                 <Spinner
                     android:id="@+id/sPDI"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+
                     android:layout_marginBottom="20dp"/>
 
                 <TextView
@@ -653,6 +662,7 @@
                     android:id="@+id/tvVD"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:text="@string/e2031"/>
 
 
@@ -660,12 +670,14 @@
                     android:id="@+id/sPVD"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_marginBottom="20dp"/>
 
                 <TextView
                     android:id="@+id/tvVV"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:text="@string/e2032"/>
 
 
@@ -673,6 +685,7 @@
                     android:id="@+id/sPVV"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_marginBottom="20dp"/>
 
 
@@ -680,6 +693,7 @@
                     android:id="@+id/tvCV"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_marginBottom="20dp"
                     android:text="@string/e2033"
                     android:textAlignment="center"
@@ -691,6 +705,7 @@
                     android:id="@+id/tvRR"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:text="@string/e2034"/>
 
 
@@ -698,6 +713,7 @@
                     android:id="@+id/sPRR"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_marginBottom="20dp"/>
 
                 <TextView
