@@ -88,10 +88,10 @@ public class  entrevista_adolescente extends AppCompatActivity {
     CheckedTextView s;
     //endregion
     //region String
-    private String r1A,r2A,r3A,r4A,r5A,r6A,r7A,r8A,r9A,r10A,r11A,r12A,r13A,r14A,r15A,r16A,r17A,r18A,r19A,r20A,r21A,r22A,r23A,r24A,
-            r25A,r26A,r27A,r28A,r29A,r30A,r31A,r32A,r33A,r34A,r35A,r36A,r37A,r38A,r39A,r40A,r41A,r42A,r43A,r44A,r45A,r46A,r47A,r48A,
-            r49A,r50A,r51A,r52A,r53A,r54A,r55A,r56A,r57A,r58A,r59A,r60A,r61A,r62A,r63A,r64A,r65A,r66A,r67A,r68A,r69A,r70A,r71A,r72A,
-            r73A,r74A,r75A,r76A,r77A,r78A,r79A,r80A,r81A,r82A,r83A,r84A,r85A,r86A,r87A,r88A,r89A,r90A,r91A,r92A,r93A,r94A,r95A,r96A,r97A,r98A,
+    private String r1A,r2A,r3A,r4A,r5A,r6A,r7A,r8A,r9A,r10A,r11A,r13A,r14A,r17A,r18A,r19A,r20A,r21A,r22A,r23A,r24A,
+            r25A,r26A,r27A,r28A,r29A,r30A,r31A,r32A,r33A,r34A,r35A,r36A,r38A,r39A,r40A,r41A,r42A,r43A,r44A,r45A,r46A,r47A,r48A,
+            r49A,r50A,r51A,r52A,r53A,r54A,r55A,r56A,r57A,r58A,r59A,r60A,r61A,r62A,r63A,r64A,r65A,r66A,r67A,r68A,r69A,r70A,r71A,
+            r73A,r75A,r76A,r77A,r78A,r79A,r80A,r81A,r82A,r83A,r84A,r85A,r86A,r87A,r88A,r89A,r90A,r91A,r92A,r93A,r94A,r95A,r96A,r97A,r98A,
             r99A,r100A;
     //SPINNERS
     private String rS1,rS2,rS3,rS4,rS5,rS6,rS7,rS8,rS9,rS10,rS11,rS12,rS13,rS14,rS15,rS16,rS17,rS18,rS19,rS20,rS21,rS22,rS23,rS24,rS25,rS26,rS27,
@@ -128,6 +128,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
         txtNc=(EditText) findViewById(R.id.txtNc);
         txtFecha=(EditText) findViewById(R.id.txtFecha);
         txtNe=(EditText) findViewById(R.id.txtNe);
+        txtFolioA=(EditText) findViewById(R.id.txtFolioA);
 
         txtNpa1=(EditText) findViewById(R.id.txtNpa1);
         txtNpa2=(EditText) findViewById(R.id.txtNpa2);
@@ -1652,7 +1653,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
             validacion=false;
             verifica="\nTemporalidad"+verifica;
             llFfa.setVisibility(View.VISIBLE);
-            txtTa.requestFocus();
+            sPTa.requestFocus();
             //etP1.setBackground(Color.parseColor();
         }
         if(rS5.equals("")){
@@ -1688,13 +1689,6 @@ public class  entrevista_adolescente extends AppCompatActivity {
             verifica="\nActividades Extraescolares"+verifica;
             llVH.setVisibility(View.VISIBLE);
             sPAEA.requestFocus();
-            //etP1.setBackground(Color.parseColor();
-        }
-        if(rS23.equals("N/A")){
-            validacion=false;
-            verifica="\nCual enfermedad"+verifica;
-            llIC.setVisibility(View.VISIBLE);
-            sPC.requestFocus();
             //etP1.setBackground(Color.parseColor();
         }
 
