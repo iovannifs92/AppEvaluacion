@@ -16,6 +16,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.sistemas.evaluacion.entidades.datosEntrevistadorA;
+import com.sistemas.evaluacion.entidades.datosGenerales;
 import com.sistemas.evaluacion.entidades.datosResponsablesA;
 import com.sistemas.evaluacion.entidades.datosGeneralesA;
 import com.sistemas.evaluacion.entidades.datosRevisionMedicaA;
@@ -27,6 +28,7 @@ import java.util.Locale;
 
 public class  entrevista_adolescente extends AppCompatActivity {
     //region variables globales
+    private ArrayList<datosGeneralesA> lista1;
     private MyOpenHelper db;
     //endregion
 
@@ -35,7 +37,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
 
     //region TextView
     //DOMICILIOS ANTERIORES
-    private TextView tvD1A,tvD2A,tvD3A,tvDA1, tvDA2,tvDATa1,tvDALa3,tvDATa3,tvDATa2;
+    private TextView txtFolioA ,tvD1A,tvD2A,tvD3A,tvDA1, tvDA2,tvDATa1,tvDALa3,tvDATa3,tvDATa2;
     //REUBICAR ADOLECENTE
     private TextView tvCQDFa, tvRDFa, tvLDFa;
     //DEPENDIENTES ECONOMICOS
@@ -53,7 +55,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
 
     //region EditText
     //datos generales
-    private EditText txtNc, txtFecha, txtNe, txtFolioA ,txtNpa1, txtNpa2, txtNpa3, txtNpa4, txtRa1, txtRa2, txtRa3, txtRa4, txtPOa1, txtPOa2, txtPOa3, txtPOa4, txtNa, txtEa, txtFNa, txtCURPa, txtLNa, txtEDOa, txtMa, txtLa, txtNAa ;
+    private EditText txtNc, txtFecha, txtNe,txtNpa1, txtNpa2, txtNpa3, txtNpa4, txtRa1, txtRa2, txtRa3, txtRa4, txtPOa1, txtPOa2, txtPOa3, txtPOa4, txtNa, txtEa, txtFNa, txtCURPa, txtLNa, txtEDOa, txtMa, txtLa, txtNAa ;
     //Ficha familiar Domicilio
     private EditText txtCa, txtNOa, txtCOLa, txtCPa, txtMUa, txtEDO2a, txtPa, txtTa, txtDALa1, txtDALa2,txtDALa3,txtDATa3,txtDATa4,txtDATa1,txtDATa2;
     //Datos familiares
@@ -88,8 +90,8 @@ public class  entrevista_adolescente extends AppCompatActivity {
     CheckedTextView s;
     //endregion
     //region String
-    private String r1A,r2A,r3A,r4A,r5A,r6A,r7A,r8A,r9A,r10A,r11A,r13A,r14A,r17A,r18A,r19A,r20A,r21A,r22A,r23A,r24A,
-            r25A,r26A,r27A,r28A,r29A,r30A,r31A,r32A,r33A,r34A,r35A,r36A,r38A,r39A,r40A,r41A,r42A,r43A,r44A,r45A,r46A,r47A,r48A,
+    private String r1A,r2A,r3A,FOLIOA,r5A,r6A,r7A,r8A,r9A,r10A,r11A,r13A,r14A,r17A,r18A,r19A,r20A,r21A,r22A,r23A,r24A,
+            r25A,r26A,r27A,r28A,r28_1A,r29A,r30A,r31A,r32A,r33A,r34A,r35A,r36A,r38A,r39A,r40A,r41A,r42A,r43A,r44A,r45A,r46A,r47A,r48A,
             r49A,r50A,r51A,r52A,r53A,r54A,r55A,r56A,r57A,r58A,r59A,r60A,r61A,r62A,r63A,r64A,r65A,r66A,r67A,r68A,r69A,r70A,r71A,
             r73A,r75A,r76A,r77A,r78A,r79A,r80A,r81A,r82A,r83A,r84A,r85A,r86A,r87A,r88A,r89A,r90A,r91A,r92A,r93A,r94A,r95A,r96A,r97A,r98A,
             r99A,r100A;
@@ -128,7 +130,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
         txtNc=(EditText) findViewById(R.id.txtNc);
         txtFecha=(EditText) findViewById(R.id.txtFecha);
         txtNe=(EditText) findViewById(R.id.txtNe);
-        txtFolioA=(EditText) findViewById(R.id.txtFolioA);
+        txtFolioA=(TextView) findViewById(R.id.txtFolioA);
 
         txtNpa1=(EditText) findViewById(R.id.txtNpa1);
         txtNpa2=(EditText) findViewById(R.id.txtNpa2);
@@ -1183,15 +1185,15 @@ public class  entrevista_adolescente extends AppCompatActivity {
         //endregion
         //endregion VisibleSpinner
 
-       /* //region etP97 FOLIO
-        lista1=db.getDatosGeneralesA();
+        //region etP97 FOLIO
+        lista1=db.getdatosGeneralesA();
         String tamaño=""+((lista1.size())+1);
         SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd", Locale.getDefault());
         Date date = new Date();
         String fecha = dateFormat.format(date);
-        txtFolioA=(EditText) findViewById(R.id.etP97);
+        txtFolioA=(TextView) findViewById(R.id.txtFolioA);
         txtFolioA.setText(MainMenu.entrevistador+"-"+fecha+"-"+tamaño);
-        //endregion*/
+        //endregion
 
 
         btnGuardarA=(Button) findViewById(R.id.btnGuardarA);
@@ -1203,7 +1205,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
                 r1A=txtNc.getText().toString().toUpperCase();
                 r2A=txtFecha.getText().toString().toUpperCase();
                 r3A=txtNe.getText().toString().toUpperCase();
-                r4A=txtFolioA.getText().toString().toUpperCase();
+                FOLIOA=txtFolioA.getText().toString().toUpperCase();
                 //endregion
 
                 //region datos Responsables
@@ -1237,6 +1239,7 @@ public class  entrevista_adolescente extends AppCompatActivity {
                 r26A=txtCa.getText().toString().toUpperCase();
                 r27A=txtNOa.getText().toString().toUpperCase();
                 r28A=sPCOLa.getSelectedItem().toString().toUpperCase();
+                r28_1A=txtCOLa.getText().toString().toUpperCase();
                 r29A=txtCPa.getText().toString().toUpperCase();
                 r30A=txtMUa.getText().toString().toUpperCase();
                 r31A=txtEDO2a.getText().toString().toUpperCase();
@@ -1391,7 +1394,8 @@ public class  entrevista_adolescente extends AppCompatActivity {
 
                 //Date fin=new Date();
 
-                if(ValidarFormularioA()) {
+            if(ValidarFormularioA()) {
+
 
                 db.insertarDatosConsumoSustanciaA(
                         rS34,r87A,rS27,r89A,
@@ -1401,18 +1405,18 @@ public class  entrevista_adolescente extends AppCompatActivity {
                         rS35,r96A,rS29,r95A,
                         rS39,r98A,rS33,r97A,
                         rS40,r99A,rS31,r100A,
-                        rS41,r4A);
+                        rS41,FOLIOA);
 
-                db.insertarDatosEntrevistadorA(r1A,r2A,r3A,r4A);
-                db.insertarDatosResponsablesA(rS1,r5A,r9A,r13A,r6A,r10A,r14A,r4A);
-                db.insertarDatosGeneralesA(r17A,rS2,r18A,r19A,r20A,r21A,r22A,r23A,r24A,r25A,rS4,rS3,r4A);
-                db.insertarDatosFichaFamiliarA(r26A,r27A,r28A,r29A,r30A,r31A,r32A,r33A,rS5,rS8,r34A,r7A,r35A,r8A,r36A,r11A,r4A);
-                db.insertarDatosFamiliaresA(r38A,r40A,r42A,r44A,rS6,r39A,r41A,r43A,r45A,rS7,rS9,r46A,r47A,r48A,r4A);
-                db.insertarDatosDependientesEconomicosA(rS34,r49A,r52A,r55A,r58A,rS10,r50A,r53A,r56A,r59A,rS11,r51A,r54A,r57A,r60A,rS12,r4A);
-                db.insertarDatosHistorialEscolarA(rS13,rS14,r61A,r62A,r63A,r64A,r65A,r66A,r67A,r68A,r69A,r70A,r71A,r4A);
-                db.insertarDatosHistorialLaboralA(rS15,rS16,rS17,r73A,r75A,r76A,r77A,rS18,r78A,r79A,r80A,r81A,r82A,r4A);
-                db.insertarDatosActividadesExtraescolaresA(rS19,r83A,r84A,r85A,r86A,r4A);
-               db.insertarDatosRevisionMedicaA(rS20,rS21,rS22,rS23,rS24,rS25,rS26,r4A);
+                db.insertarDatosEntrevistadorA(r1A,r2A,r3A,FOLIOA);
+                db.insertarDatosResponsablesA(rS1,r5A,r9A,r13A,r6A,r10A,r14A,FOLIOA);
+                db.insertarDatosGeneralesA(r17A,rS2,r18A,r19A,r20A,r21A,r22A,r23A,r24A,r25A,rS4,rS3,FOLIOA,"NO","NO");
+                db.insertarDatosFichaFamiliarA(r26A,r27A,r28A,r29A,r30A,r31A,r32A,r33A,rS5,rS8,r34A,r7A,r35A,r8A,r36A,r11A,FOLIOA);
+                db.insertarDatosFamiliaresA(r38A,r40A,r42A,r44A,rS6,r39A,r41A,r43A,r45A,rS7,rS9,r46A,r47A,r48A,FOLIOA);
+                db.insertarDatosDependientesEconomicosA(rS34,r49A,r52A,r55A,r58A,rS10,r50A,r53A,r56A,r59A,rS11,r51A,r54A,r57A,r60A,rS12,FOLIOA);
+                db.insertarDatosHistorialEscolarA(rS13,rS14,r61A,r62A,r63A,r64A,r65A,r66A,r67A,r68A,r69A,r70A,r71A,FOLIOA);
+                db.insertarDatosHistorialLaboralA(rS15,rS16,rS17,r73A,r75A,r76A,r77A,rS18,r78A,r79A,r80A,r81A,r82A,FOLIOA);
+                db.insertarDatosActividadesExtraescolaresA(rS19,r83A,r84A,r85A,r86A,FOLIOA);
+               db.insertarDatosRevisionMedicaA(rS20,rS21,rS22,rS23,rS24,rS25,rS26,FOLIOA);
 
                 Toast.makeText(getApplicationContext(), "Datos Guardados", Toast.LENGTH_SHORT).show();
 

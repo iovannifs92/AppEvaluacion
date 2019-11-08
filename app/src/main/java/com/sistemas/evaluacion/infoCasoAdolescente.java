@@ -1,5 +1,6 @@
 package com.sistemas.evaluacion;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,7 +13,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.sistemas.evaluacion.entidades.datosGenerales;
+import com.sistemas.evaluacion.entidades.datosGeneralesA;
 
 import java.util.ArrayList;
 
@@ -36,25 +37,27 @@ public class infoCasoAdolescente extends AppCompatActivity {
     //endregion
     String folio, carpeta;
     //region Strings
-    private String r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11,r12,r13,r14,r15,r16,r17,r18,r19,r20,r21,r22,r23;
+    private String r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11,r12,r13,r14,r15,r16,r17,r18,r19,r20,r21,r22,r23,r24,r25;
     /////SPINNERS
-    private String rS1,rS2,rS3,rS4,rS5,rS6,rS7,rS8,rS9,rS10,rS11,rS12,rS13,rS14,rS15,rS16,rS17;
+    private String rS1,rS2,rS3,rS4,rS5,rS6,rS7,rS8,rS9,rS10,rS11,rS12,rS13,rS14,rS15,rS16,rS17,rS18;
     //endregion
     //region String
     private String [] nosi={"No", "Si"};
     private String [] delito={"Otro", "Robo", "Robo Simple", "Violación", "Violencia Familiar", "Daños y Lesiones",
             "Lesiones menores a 15 dias", "Contra la Salud", "Comercio o Suministro", "Portación de Armas de Fuego"};
 
+    private String[] estatus={"Vigente", "Suspendido", "Revocado", "Cumplido"};
+
     //endregion
     //region LinearLayout
     private LinearLayout llControlA ,llICA, llPP,llVO,llPL;
     //endregion
+
+
     TextView tvControlA;
-    MyOpenHelper db;
-    ArrayList<datosGenerales> lista1;
+    private MyOpenHelper db;
+    ArrayList<datosGeneralesA> lista1;
     final ArrayList<Integer> Idx = new ArrayList<Integer>();
-
-
 
 
     @Override
@@ -62,40 +65,46 @@ public class infoCasoAdolescente extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_caso_adolescente);
 
-      /*  //region TREAER DATOS DE ENTREVISTRADOS
+
+        //region TREAER DATOS DE ENTREVISTRADOS
         txtCCD=(EditText) findViewById(R.id.txtCCD);
         btnGuardarIA=(Button) findViewById(R.id.btnGuardarIA);
         sPICA = (Spinner) findViewById(R.id.sPICA);
         //endregion
 
+        tvControlA=(TextView) findViewById(R.id.tvControlA);
+        llControlA=(LinearLayout) findViewById(R.id.llControlA);
 
         //region Inicio BD
         db=new MyOpenHelper(this);
         db.getReadableDatabase();
 
-        lista1 = db.getDatosGeneralesA();
+        lista1 = db.getdatosGeneralesA();
 
         ArrayList<String> names = new ArrayList<String>();
 
         for(int i = 0; i < lista1.size(); i++){
-            if((lista1.get(i).insertarDatosGeneralesA().toString()).equals("NO")) {
-                names.add(lista1.get(i).getNombre());
+            if(lista1.get(i).getAcarpetainvestigacion().equals("SI") == false) {
+                names.add(lista1.get(i).getAnombre());
                 Idx.add(i);
             }
         }
 
-        if(lista1.size()!=0){
-            tvControlA=(TextView) findViewById(R.id.tvControlA);
-            llControlA=(LinearLayout) findViewById(R.id.llControlA);
+        if(names.size()!=0){
+            sPICA.setSelection(names.size() - 1);
 
             llControlA.setVisibility(View.VISIBLE);
             tvControlA.setVisibility(View.GONE);
+
+        }else{
+            llControlA.setVisibility(View.GONE);
+            tvControlA.setVisibility(View.VISIBLE);
+
         }
 
+
         sPICA.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, names));
-
-        //endregion*/
-
+        //endregion*
 
 
 
@@ -506,6 +515,8 @@ public class infoCasoAdolescente extends AppCompatActivity {
                 r22=txtE4.getText().toString().toUpperCase();
                 r23=txtE5.getText().toString().toUpperCase();
 
+                r24=txtEx1.getText().toString().toUpperCase();
+                r25=txtEx1.getText().toString().toUpperCase();
                 //////////////////SPINNER
                 rS1=sPTE.getSelectedItem().toString().toUpperCase();
                 rS2=sPTI.getSelectedItem().toString().toUpperCase();
@@ -525,13 +536,20 @@ public class infoCasoAdolescente extends AppCompatActivity {
                 rS15=sPEVF.getSelectedItem().toString().toUpperCase();
                 rS16=sPSE.getSelectedItem().toString().toUpperCase();
                 rS17=sPSA.getSelectedItem().toString().toUpperCase();
+                rS18=sPRR.getSelectedItem().toString().toUpperCase();
 
                 int pos = sPICA.getSelectedItemPosition();
-                folio = lista1.get(Idx.get(pos)).getFolio();
+                folio = lista1.get(Idx.get(pos)).getAfolio();
                 carpeta=txtCCD.getText().toString();
 
-                db.insertarDatosInformacionCasoA(rS1,r1,rS2,r2,rS3,rS4,rS5,rS6,rS7,folio);
+                db.insertarDatosInformacionCasoA(carpeta,rS1,r1,rS2,r2,rS3,rS4,rS5,rS6,rS7,folio);
                 db.insertarDatosProcesosPenalesA(rS8,rS9,r4,r9,r14,r19,r5,r10,r15,r20,r6,r11,r16,r21,r7,r12,r17,r22,r8,r13,r18,r23,folio);
+                db.insertarDatosVictimaOfendidoA(rS10,rS11,rS12,rS13,rS18,rS14,rS15,folio);
+                db.insertarDatosProcesoLegalA(rS16,r22,rS17,r23,folio);
+                db.updateTable("datos_generales_a", "Acarpetainvestigacion", "SI", folio);
+                Toast.makeText(getApplicationContext(), "Datos Guardados correctamete", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(view.getContext(), MainMenu.class);
+                startActivity(intent);
 
 
 

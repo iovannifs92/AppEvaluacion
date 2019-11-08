@@ -4,7 +4,7 @@ public class datosEntrevistadorA {
     int id;
     String acausa, afecha, aevaluador, afolio;
 
-    public datosEntrevistadorA(int id, String afolio, String acausa, String afecha, String aevaluador) {
+    public datosEntrevistadorA(int id, String acausa, String afecha, String aevaluador, String afolio) {
         this.id=id;
         this.acausa=acausa;
         this.afecha=afecha;

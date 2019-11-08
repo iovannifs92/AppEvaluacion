@@ -2,173 +2,295 @@ package com.sistemas.evaluacion.entidades;
 
 public class datosConsumoSustanciasA {
     int id;
-    String aconsume_alcohol, acantidad1,afrecuencia1,aultimo_consumo1,aconsume_tabaco, acantidad2,afrecuencia2,aultimo_consumo2,
-    aconsume_marihuana, acantidad3,afrecuencia3,aultimo_consumo3,aconsume_pastillas, acantidad4,afrecuencia4,aultimo_consumo4,
-    aconsume_solventes, acantidad5,afrecuencia5,aultimo_consumo5,aconsume_metanfetaminas, acantidad6,afrecuencia6,aultimo_consumo6,
-    aconsume_cocaina, acantidad7,afrecuencia7,aultimo_consumo7,aconsumemas,afolio;
+    String aconsume_alcohol, acantidad_alcohol,afrecuencia_alcohol,aultimo_consumo_alcohol,aconsume_tabaco, acantidad_tabaco,afrecuencia_tabaco,aultimo_consumo_tabaco,
+    aconsume_marihuana, acantidad_marihuana,afrecuencia_marihuana,aultimo_consumo_marihuana,aconsume_pastillas, acantidad_pastillas,afrecuencia_pastillas,aultimo_consumo_pastillas,
+    aconsume_solventes, acantidad_solventes,afrecuencia_solventes,aultimo_consumo_solventes,aconsume_metanfetaminas, acantidad_metanfetaminas,afrecuencia_metanfetaminas,aultimo_consumo_metanfetaminas,
+    aconsume_cocaina, acantidad_cocaina,afrecuencia_cocaina,aultimo_consumo_cocaina,aconsumemas,afolio;
 
-    public datosConsumoSustanciasA(int id, String aconsume_alcohol, String acantidad1, String afrecuencia1, String aultimo_consumo1,
-                                   String aconsume_tabaco, String acantidad2, String afrecuencia2, String aultimo_consumo2,
-                                   String aconsume_marihuana, String acantidad3, String afrecuencia3, String aultimo_consumo3,
-                                   String aconsume_pastillas, String acantidad4, String afrecuencia4, String aultimo_consumo4,
-                                   String aconsume_solventes, String acantidad5, String afrecuencia5, String aultimo_consumo5,
-                                   String aconsume_metanfetaminas, String acantidad6, String afrecuencia6, String aultimo_consumo6,
-                                   String aconsume_cocaina, String acantidad7, String afrecuencia7, String aultimo_consumo7,
-                                    String aconsumemas, String afolio) {
+    public datosConsumoSustanciasA(int id, String aconsume_alcohol, String acantidad_alcohol, String afrecuencia_alcohol, String aultimo_consumo_alcohol, String aconsume_tabaco,
+                                   String acantidad_tabaco, String afrecuencia_tabaco, String aultimo_consumo_tabaco, String aconsume_marihuana, String acantidad_marihuana,
+                                   String afrecuencia_marihuana, String aultimo_consumo_marihuana, String aconsume_pastillas, String acantidad_pastillas, String afrecuencia_pastillas,
+                                   String aultimo_consumo_pastillas, String aconsume_solventes, String acantidad_solventes, String afrecuencia_solventes, String aultimo_consumo_solventes,
+                                   String aconsume_metanfetaminas, String acantidad_metanfetaminas, String afrecuencia_metanfetaminas, String aultimo_consumo_metanfetaminas, String aconsume_cocaina,
+                                   String acantidad_cocaina, String afrecuencia_cocaina, String aultimo_consumo_cocaina, String aconsumemas, String afolio) {
         this.id = id;
         this.aconsume_alcohol = aconsume_alcohol;
-        this.acantidad1 = acantidad1;
-        this.afrecuencia1 = afrecuencia1;
-        this.aultimo_consumo1 = aultimo_consumo1;
+        this.acantidad_alcohol = acantidad_alcohol;
+        this.afrecuencia_alcohol = afrecuencia_alcohol;
+        this.aultimo_consumo_alcohol = aultimo_consumo_alcohol;
         this.aconsume_tabaco = aconsume_tabaco;
-        this.acantidad2 = acantidad2;
-        this.afrecuencia2 = afrecuencia2;
-        this.aultimo_consumo2 = aultimo_consumo2;
+        this.acantidad_tabaco = acantidad_tabaco;
+        this.afrecuencia_tabaco = afrecuencia_tabaco;
+        this.aultimo_consumo_tabaco = aultimo_consumo_tabaco;
         this.aconsume_marihuana = aconsume_marihuana;
-        this.acantidad3 = acantidad3;
-        this.afrecuencia3 = afrecuencia3;
-        this.aultimo_consumo3 = aultimo_consumo3;
+        this.acantidad_marihuana = acantidad_marihuana;
+        this.afrecuencia_marihuana = afrecuencia_marihuana;
+        this.aultimo_consumo_marihuana = aultimo_consumo_marihuana;
         this.aconsume_pastillas = aconsume_pastillas;
-        this.acantidad4 = acantidad4;
-        this.afrecuencia4 = afrecuencia4;
-        this.aultimo_consumo4 = aultimo_consumo4;
+        this.acantidad_pastillas = acantidad_pastillas;
+        this.afrecuencia_pastillas = afrecuencia_pastillas;
+        this.aultimo_consumo_pastillas = aultimo_consumo_pastillas;
         this.aconsume_solventes = aconsume_solventes;
-        this.acantidad5 = acantidad5;
-        this.afrecuencia5 = afrecuencia5;
-        this.aultimo_consumo5 = aultimo_consumo5;
+        this.acantidad_solventes = acantidad_solventes;
+        this.afrecuencia_solventes = afrecuencia_solventes;
+        this.aultimo_consumo_solventes = aultimo_consumo_solventes;
         this.aconsume_metanfetaminas = aconsume_metanfetaminas;
-        this.acantidad6 = acantidad6;
-        this.afrecuencia6 = afrecuencia6;
-        this.aultimo_consumo6 = aultimo_consumo6;
+        this.acantidad_metanfetaminas = acantidad_metanfetaminas;
+        this.afrecuencia_metanfetaminas = afrecuencia_metanfetaminas;
+        this.aultimo_consumo_metanfetaminas = aultimo_consumo_metanfetaminas;
         this.aconsume_cocaina = aconsume_cocaina;
-        this.acantidad7 = acantidad7;
-        this.afrecuencia7 = afrecuencia7;
-        this.aultimo_consumo7 = aultimo_consumo7;
+        this.acantidad_cocaina = acantidad_cocaina;
+        this.afrecuencia_cocaina = afrecuencia_cocaina;
+        this.aultimo_consumo_cocaina = aultimo_consumo_cocaina;
         this.aconsumemas = aconsumemas;
         this.afolio = afolio;
     }
 
-    public int getId() { return id; }
+    public int getId() {
+        return id;
+    }
 
-    public void setId(int id) { this.id = id; }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-    public String getAconsume_alcohol() { return aconsume_alcohol; }
+    public String getAconsume_alcohol() {
+        return aconsume_alcohol;
+    }
 
-    public void setAconsume_alcohol(String aconsume_alcohol) { this.aconsume_alcohol = aconsume_alcohol; }
+    public void setAconsume_alcohol(String aconsume_alcohol) {
+        this.aconsume_alcohol = aconsume_alcohol;
+    }
 
-    public String getAcantidad1() { return acantidad1; }
+    public String getAcantidad_alcohol() {
+        return acantidad_alcohol;
+    }
 
-    public void setAcantidad1(String acantidad1) { this.acantidad1 = acantidad1; }
+    public void setAcantidad_alcohol(String acantidad_alcohol) {
+        this.acantidad_alcohol = acantidad_alcohol;
+    }
 
-    public String getAfrecuencia1() { return afrecuencia1; }
+    public String getAfrecuencia_alcohol() {
+        return afrecuencia_alcohol;
+    }
 
-    public void setAfrecuencia1(String afrecuencia1) { this.afrecuencia1 = afrecuencia1; }
+    public void setAfrecuencia_alcohol(String afrecuencia_alcohol) {
+        this.afrecuencia_alcohol = afrecuencia_alcohol;
+    }
 
-    public String getAultimo_consumo1() { return aultimo_consumo1; }
+    public String getAultimo_consumo_alcohol() {
+        return aultimo_consumo_alcohol;
+    }
 
-    public void setAultimo_consumo1(String aultimo_consumo1) { this.aultimo_consumo1 = aultimo_consumo1; }
+    public void setAultimo_consumo_alcohol(String aultimo_consumo_alcohol) {
+        this.aultimo_consumo_alcohol = aultimo_consumo_alcohol;
+    }
 
-    public String getAconsume_tabaco() { return aconsume_tabaco; }
+    public String getAconsume_tabaco() {
+        return aconsume_tabaco;
+    }
 
-    public void setAconsume_tabaco(String aconsume_tabaco) { this.aconsume_tabaco = aconsume_tabaco; }
+    public void setAconsume_tabaco(String aconsume_tabaco) {
+        this.aconsume_tabaco = aconsume_tabaco;
+    }
 
-    public String getAcantidad2() { return acantidad2; }
+    public String getAcantidad_tabaco() {
+        return acantidad_tabaco;
+    }
 
-    public void setAcantidad2(String acantidad2) { this.acantidad2 = acantidad2; }
+    public void setAcantidad_tabaco(String acantidad_tabaco) {
+        this.acantidad_tabaco = acantidad_tabaco;
+    }
 
-    public String getAfrecuencia2() { return afrecuencia2; }
+    public String getAfrecuencia_tabaco() {
+        return afrecuencia_tabaco;
+    }
 
-    public void setAfrecuencia2(String afrecuencia2) { this.afrecuencia2 = afrecuencia2; }
+    public void setAfrecuencia_tabaco(String afrecuencia_tabaco) {
+        this.afrecuencia_tabaco = afrecuencia_tabaco;
+    }
 
-    public String getAultimo_consumo2() { return aultimo_consumo2; }
+    public String getAultimo_consumo_tabaco() {
+        return aultimo_consumo_tabaco;
+    }
 
-    public void setAultimo_consumo2(String aultimo_consumo2) { this.aultimo_consumo2 = aultimo_consumo2; }
+    public void setAultimo_consumo_tabaco(String aultimo_consumo_tabaco) {
+        this.aultimo_consumo_tabaco = aultimo_consumo_tabaco;
+    }
 
-    public String getAconsume_marihuana() { return aconsume_marihuana; }
+    public String getAconsume_marihuana() {
+        return aconsume_marihuana;
+    }
 
-    public void setAconsume_marihuana(String aconsume_marihuana) { this.aconsume_marihuana = aconsume_marihuana; }
+    public void setAconsume_marihuana(String aconsume_marihuana) {
+        this.aconsume_marihuana = aconsume_marihuana;
+    }
 
-    public String getAcantidad3() { return acantidad3; }
+    public String getAcantidad_marihuana() {
+        return acantidad_marihuana;
+    }
 
-    public void setAcantidad3(String acantidad3) { this.acantidad3 = acantidad3; }
+    public void setAcantidad_marihuana(String acantidad_marihuana) {
+        this.acantidad_marihuana = acantidad_marihuana;
+    }
 
-    public String getAfrecuencia3() { return afrecuencia3; }
+    public String getAfrecuencia_marihuana() {
+        return afrecuencia_marihuana;
+    }
 
-    public void setAfrecuencia3(String afrecuencia3) { this.afrecuencia3 = afrecuencia3; }
+    public void setAfrecuencia_marihuana(String afrecuencia_marihuana) {
+        this.afrecuencia_marihuana = afrecuencia_marihuana;
+    }
 
-    public String getAultimo_consumo3() { return aultimo_consumo3; }
+    public String getAultimo_consumo_marihuana() {
+        return aultimo_consumo_marihuana;
+    }
 
-    public void setAultimo_consumo3(String aultimo_consumo3) { this.aultimo_consumo3 = aultimo_consumo3; }
+    public void setAultimo_consumo_marihuana(String aultimo_consumo_marihuana) {
+        this.aultimo_consumo_marihuana = aultimo_consumo_marihuana;
+    }
 
-    public String getAconsume_pastillas() { return aconsume_pastillas; }
+    public String getAconsume_pastillas() {
+        return aconsume_pastillas;
+    }
 
-    public void setAconsume_pastillas(String aconsume_pastillas) { this.aconsume_pastillas = aconsume_pastillas; }
+    public void setAconsume_pastillas(String aconsume_pastillas) {
+        this.aconsume_pastillas = aconsume_pastillas;
+    }
 
-    public String getAcantidad4() { return acantidad4; }
+    public String getAcantidad_pastillas() {
+        return acantidad_pastillas;
+    }
 
-    public void setAcantidad4(String acantidad4) { this.acantidad4 = acantidad4; }
+    public void setAcantidad_pastillas(String acantidad_pastillas) {
+        this.acantidad_pastillas = acantidad_pastillas;
+    }
 
-    public String getAfrecuencia4() { return afrecuencia4; }
+    public String getAfrecuencia_pastillas() {
+        return afrecuencia_pastillas;
+    }
 
-    public void setAfrecuencia4(String afrecuencia4) { this.afrecuencia4 = afrecuencia4; }
+    public void setAfrecuencia_pastillas(String afrecuencia_pastillas) {
+        this.afrecuencia_pastillas = afrecuencia_pastillas;
+    }
 
-    public String getAultimo_consumo4() { return aultimo_consumo4; }
+    public String getAultimo_consumo_pastillas() {
+        return aultimo_consumo_pastillas;
+    }
 
-    public void setAultimo_consumo4(String aultimo_consumo4) { this.aultimo_consumo4 = aultimo_consumo4; }
+    public void setAultimo_consumo_pastillas(String aultimo_consumo_pastillas) {
+        this.aultimo_consumo_pastillas = aultimo_consumo_pastillas;
+    }
 
-    public String getAconsume_solventes() { return aconsume_solventes; }
+    public String getAconsume_solventes() {
+        return aconsume_solventes;
+    }
 
-    public void setAconsume_solventes(String aconsume_solventes) { this.aconsume_solventes = aconsume_solventes; }
+    public void setAconsume_solventes(String aconsume_solventes) {
+        this.aconsume_solventes = aconsume_solventes;
+    }
 
-    public String getAcantidad5() { return acantidad5; }
+    public String getAcantidad_solventes() {
+        return acantidad_solventes;
+    }
 
-    public void setAcantidad5(String acantidad5) { this.acantidad5 = acantidad5; }
+    public void setAcantidad_solventes(String acantidad_solventes) {
+        this.acantidad_solventes = acantidad_solventes;
+    }
 
-    public String getAfrecuencia5() { return afrecuencia5; }
+    public String getAfrecuencia_solventes() {
+        return afrecuencia_solventes;
+    }
 
-    public void setAfrecuencia5(String afrecuencia5) { this.afrecuencia5 = afrecuencia5; }
+    public void setAfrecuencia_solventes(String afrecuencia_solventes) {
+        this.afrecuencia_solventes = afrecuencia_solventes;
+    }
 
-    public String getAultimo_consumo5() { return aultimo_consumo5; }
+    public String getAultimo_consumo_solventes() {
+        return aultimo_consumo_solventes;
+    }
 
-    public void setAultimo_consumo5(String aultimo_consumo5) { this.aultimo_consumo5 = aultimo_consumo5; }
+    public void setAultimo_consumo_solventes(String aultimo_consumo_solventes) {
+        this.aultimo_consumo_solventes = aultimo_consumo_solventes;
+    }
 
-    public String getAconsume_metanfetaminas() { return aconsume_metanfetaminas; }
+    public String getAconsume_metanfetaminas() {
+        return aconsume_metanfetaminas;
+    }
 
-    public void setAconsume_metanfetaminas(String aconsume_metanfetaminas) { this.aconsume_metanfetaminas = aconsume_metanfetaminas; }
+    public void setAconsume_metanfetaminas(String aconsume_metanfetaminas) {
+        this.aconsume_metanfetaminas = aconsume_metanfetaminas;
+    }
 
-    public String getAcantidad6() { return acantidad6; }
+    public String getAcantidad_metanfetaminas() {
+        return acantidad_metanfetaminas;
+    }
 
-    public void setAcantidad6(String acantidad6) { this.acantidad6 = acantidad6; }
+    public void setAcantidad_metanfetaminas(String acantidad_metanfetaminas) {
+        this.acantidad_metanfetaminas = acantidad_metanfetaminas;
+    }
 
-    public String getAfrecuencia6() { return afrecuencia6; }
+    public String getAfrecuencia_metanfetaminas() {
+        return afrecuencia_metanfetaminas;
+    }
 
-    public void setAfrecuencia6(String afrecuencia6) { this.afrecuencia6 = afrecuencia6; }
+    public void setAfrecuencia_metanfetaminas(String afrecuencia_metanfetaminas) {
+        this.afrecuencia_metanfetaminas = afrecuencia_metanfetaminas;
+    }
 
-    public String getAultimo_consumo6() { return aultimo_consumo6; }
+    public String getAultimo_consumo_metanfetaminas() {
+        return aultimo_consumo_metanfetaminas;
+    }
 
-    public void setAultimo_consumo6(String aultimo_consumo6) { this.aultimo_consumo6 = aultimo_consumo6; }
+    public void setAultimo_consumo_metanfetaminas(String aultimo_consumo_metanfetaminas) {
+        this.aultimo_consumo_metanfetaminas = aultimo_consumo_metanfetaminas;
+    }
 
-    public String getAconsume_cocaina() { return aconsume_cocaina; }
+    public String getAconsume_cocaina() {
+        return aconsume_cocaina;
+    }
 
-    public void setAconsume_cocaina(String aconsume_cocaina) { this.aconsume_cocaina = aconsume_cocaina; }
+    public void setAconsume_cocaina(String aconsume_cocaina) {
+        this.aconsume_cocaina = aconsume_cocaina;
+    }
 
-    public String getAcantidad7() { return acantidad7; }
+    public String getAcantidad_cocaina() {
+        return acantidad_cocaina;
+    }
 
-    public void setAcantidad7(String acantidad7) { this.acantidad7 = acantidad7; }
+    public void setAcantidad_cocaina(String acantidad_cocaina) {
+        this.acantidad_cocaina = acantidad_cocaina;
+    }
 
-    public String getAfrecuencia7() { return afrecuencia7; }
+    public String getAfrecuencia_cocaina() {
+        return afrecuencia_cocaina;
+    }
 
-    public void setAfrecuencia7(String afrecuencia7) { this.afrecuencia7 = afrecuencia7; }
+    public void setAfrecuencia_cocaina(String afrecuencia_cocaina) {
+        this.afrecuencia_cocaina = afrecuencia_cocaina;
+    }
 
-    public String getAultimo_consumo7() { return aultimo_consumo7; }
+    public String getAultimo_consumo_cocaina() {
+        return aultimo_consumo_cocaina;
+    }
 
-    public void setAultimo_consumo7(String aultimo_consumo7) { this.aultimo_consumo7 = aultimo_consumo7; }
+    public void setAultimo_consumo_cocaina(String aultimo_consumo_cocaina) {
+        this.aultimo_consumo_cocaina = aultimo_consumo_cocaina;
+    }
 
-    public String getAconsumemas() { return aconsumemas; }
+    public String getAconsumemas() {
+        return aconsumemas;
+    }
 
-    public void setAconsumemas(String aconsumemas) { this.aconsumemas = aconsumemas; }
+    public void setAconsumemas(String aconsumemas) {
+        this.aconsumemas = aconsumemas;
+    }
 
-    public String getAfolio() { return afolio; }
+    public String getAfolio() {
+        return afolio;
+    }
 
-    public void setAfolio(String afolio) { this.afolio = afolio; }
+    public void setAfolio(String afolio) {
+        this.afolio = afolio;
+    }
 }

@@ -17,8 +17,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".instrumento_adolescente"></activity>
         <activity android:name=".ReporteEntrevista" />
+        <activity android:name=".ReporteAdolescentes" />
         <activity android:name=".CarpetaInvestigacion" />
         <activity android:name=".QRVerify" />
         <activity android:name=".Instrumento" />
@@ -29,6 +30,8 @@
         <activity android:name=".ConsultaDomicilio" />
         <activity android:name=".SincronizarBD" />
         <activity android:name=".entrevista_adolescente" />
+        <activity android:name=".verificacionAdolecentes" />
+        <activity android:name=".infoCasoAdolescente" />
 
         <activity
             android:name=".MainMenu"

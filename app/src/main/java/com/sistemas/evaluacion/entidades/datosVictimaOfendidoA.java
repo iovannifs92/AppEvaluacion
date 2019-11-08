@@ -2,15 +2,16 @@ package com.sistemas.evaluacion.entidades;
 
 public class datosVictimaOfendidoA {
     int id;
-    String aexistevictima,avivedomicilio,anovivevictima,casomismodom,aintegridad,aintenciones,afolio;
+    String aexistevictima,avivedomicilio,anovivevictima,acasomismodomicilio,acercania,aintegridad,aintenciones,afolio;
 
-    public datosVictimaOfendidoA(int id, String aexistevictima, String avivedomicilio, String anovivevictima, String casomismodom,
-                                 String aintegridad, String aintenciones, String afolio) {
+    public datosVictimaOfendidoA(int id, String aexistevictima, String avivedomicilio, String anovivevictima, String acasomismodomicilio,
+                                 String acercania,String aintegridad, String aintenciones, String afolio) {
         this.id = id;
         this.aexistevictima = aexistevictima;
         this.avivedomicilio = avivedomicilio;
         this.anovivevictima = anovivevictima;
-        this.casomismodom = casomismodom;
+        this.acasomismodomicilio = acasomismodomicilio;
+        this.acercania = acercania;
         this.aintegridad = aintegridad;
         this.aintenciones = aintenciones;
         this.afolio = afolio;
@@ -48,13 +49,15 @@ public class datosVictimaOfendidoA {
         this.anovivevictima = anovivevictima;
     }
 
-    public String getCasomismodom() {
-        return casomismodom;
+    public String getAcasomismodomicilio() {
+        return acasomismodomicilio;
     }
 
-    public void setCasomismodom(String casomismodom) {
-        this.casomismodom = casomismodom;
-    }
+    public void setAcasomismodomicilio(String acasomismodomicilio) { this.acasomismodomicilio = acasomismodomicilio; }
+
+    public String getAcercania() { return acercania; }
+
+    public void setAcercania(String acercania) { this.acercania = acercania; }
 
     public String getAintegridad() {
         return aintegridad;

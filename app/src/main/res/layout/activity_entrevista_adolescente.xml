@@ -87,7 +87,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/e131" />
 
-            <EditText
+            <TextView
                 android:id="@+id/txtFolioA"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -512,6 +512,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"/>
+
+                <EditText
+                    android:id="@+id/txtCOLa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:inputType="text"
+                    android:text="" />
 
                 <TextView
                     android:id="@+id/tvCPa"

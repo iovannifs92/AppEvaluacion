@@ -144,6 +144,10 @@ public class MainMenu extends AppCompatActivity
                 intent = new Intent(this, ReporteEntrevista.class);
                 startActivity(intent);
                 break;
+            case R.id.nav_reporte_adolescentes:
+                intent = new Intent(this, ReporteAdolescentes.class);
+                startActivity(intent);
+                break;
             case R.id.nav_car:
                 intent = new Intent(this, ConsultaDomicilio.class);
                 startActivity(intent);
@@ -179,6 +183,16 @@ public class MainMenu extends AppCompatActivity
             case R.id.nav_investigacion:
                 Intent intent9 = new Intent(this, CarpetaInvestigacion.class);
                 startActivity(intent9);
+                break;
+
+                case R.id.nav_verificacionA:
+                intent = new Intent(this, verificacionAdolecentes.class);
+                startActivity(intent);
+                break;
+
+            case R.id.nav_investigacionA:
+                intent = new Intent(this, infoCasoAdolescente.class);
+                startActivity(intent);
                 break;
         }
 

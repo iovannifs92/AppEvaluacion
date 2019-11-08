@@ -2,13 +2,14 @@ package com.sistemas.evaluacion.entidades;
 
 public class datosInformacionCasoA {
     int id;
-    String aexpedinte, afechadis, aotrafuente, acualfuente, adelito, adelito_145,adelitomensionado_145,adelito_164,adelitomesionado_164,
+    String acarpeta,aexpedinte, afechadis, aotrafuente, acualfuente, adelito, adelito_145,adelitomensionado_145,adelito_164,adelitomesionado_164,
             ainternamieto,ahechosalegados,afolio;
 
-    public datosInformacionCasoA(int id, String aexpedinte, String afechadis, String aotrafuente, String acualfuente, String adelito, String adelito_145,
+    public datosInformacionCasoA(int id, String acarpeta,String aexpedinte, String afechadis, String aotrafuente, String acualfuente, String adelito, String adelito_145,
                                  String adelitomensionado_145, String adelito_164, String adelitomesionado_164, String ainternamieto, String ahechosalegados,
                                  String afolio) {
         this.id = id;
+        this.acarpeta = acarpeta;
         this.aexpedinte = aexpedinte;
         this.afechadis = afechadis;
         this.aotrafuente = aotrafuente;
@@ -30,6 +31,10 @@ public class datosInformacionCasoA {
     public void setId(int id) {
         this.id = id;
     }
+
+    public String getAcarpeta() { return acarpeta; }
+
+    public void setAcarpeta(String acarpeta) { this.acarpeta = acarpeta; }
 
     public String getAexpedinte() {
         return aexpedinte;

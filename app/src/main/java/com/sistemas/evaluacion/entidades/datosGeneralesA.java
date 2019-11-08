@@ -2,11 +2,12 @@ package com.sistemas.evaluacion.entidades;
 
 public class datosGeneralesA {
     int id;
-    String anombre,asexo,aedad,afechanac,acurp,alugarnac,aestado,amunicipio,alocalidad,anacionalidad,aespanol,atraductor,afolio;
+    String anombre,asexo,aedad,afechanac,acurp,alugarnac,aestado,amunicipio,alocalidad,
+            anacionalidad,aespanol,atraductor,afolio,averificacion,acarpetainvestigacion;
 
     public datosGeneralesA(int id, String anombre, String asexo, String aedad, String afechanac, String acurp,
                            String alugarnac, String aestado, String amunicipio, String alocalidad, String anacionalidad,
-                           String aespanol, String atraductor, String afolio) {
+                           String aespanol, String atraductor, String afolio,String averificacion,String acarpetainvestigacion) {
         this.id = id;
         this.anombre = anombre;
         this.asexo = asexo;
@@ -21,6 +22,8 @@ public class datosGeneralesA {
         this.aespanol = aespanol;
         this.atraductor = atraductor;
         this.afolio = afolio;
+        this.averificacion = averificacion;
+        this.acarpetainvestigacion = acarpetainvestigacion;
     }
 //region set-get
     public int getId() { return id; }
@@ -78,6 +81,16 @@ public class datosGeneralesA {
     public String getAfolio() { return afolio; }
 
     public void setAfolio(String afolio) { this.afolio = afolio; }
+
+    public String getAverificacion() { return averificacion; }
+
+    public void setAverificacion(String averificacion) {
+        this.averificacion = averificacion;
+    }
+
+    public String getAcarpetainvestigacion() { return acarpetainvestigacion; }
+
+    public void setAcarpetainvestigacion(String acarpetainvestigacion) { this.acarpetainvestigacion = acarpetainvestigacion; }
 
     //endregion
 }

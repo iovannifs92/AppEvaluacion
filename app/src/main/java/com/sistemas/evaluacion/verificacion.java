@@ -7330,8 +7330,8 @@ public class verificacion extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                //Verificación
-                if(position == 0){
+                    //Verificación
+                    if(position == 0){
                     tvP109.setVisibility(View.VISIBLE);
                     etP109.setVisibility(View.VISIBLE);
                     tvP110.setVisibility(View.VISIBLE);

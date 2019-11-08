@@ -325,7 +325,7 @@
     <string name="e155">País</string>
     <string name="e156">Temporalidad</string>
     <string name="e157">¿Tiene domicilio fijo?</string><!--SI/NO-->
-    <string name="e158">¿Domicilios Anterirores?</string><!--SI/NO-->
+    <string name="e158">¿Domicilios Anteriores?</string><!--SI/NO-->
     <string name="e159">Localidad</string>
     <string name="e160">Temporalidad</string>
     <!--endregion-->
@@ -422,6 +422,8 @@
     <string name="e2027">¿Unos de los delitos está mencionado en el articulo 164?</string><!--SI/NO-->
     <string name="e2028">¿Medidas de internamiento son excluidas por otra causa? (art.145 edad o por ser tentativa)</string><!--SI/NO-->
     <string name="e2029">¿Los hechos alegados del adolescente trata de delicuencia organizada?</string><!--SI/NO-->
+    <string name="e5002">Elija la persona para colocar los datos correspondientes</string><!--SI/NO-->
+    <string name="e5003">Coloque el número de la carpeta de investigación del delito</string>
     <!--endregion-->
 
     <!--LA VICTIMA U OFENDIDO-->
@@ -448,5 +450,22 @@
     <string name="e2045">Delito</string>
     <string name="e2046">Tipo de Medida</string>
     <string name="e2047">Estatus (Vigente, Suspendido, Revocado, Cumplido)</string>
+    <!--endregion-->
+    <!--VERIFICACION_ADOLESCENTE-->
+    <string name="e2048">Tipo de operación</string>
+    <string name="e2049">Nombre de quien atiende la verificación</string>
+    <string name="e2050">Relación con el imputado</string>
+    <string name="e2051">CONSUMO DE SUSTANCIAS</string>
+    <!--endregion-->
+    <!--region Evaluación de riesgos-->
+    <string name="ER1">Imposibilidad de arraigo</string>
+    <string name="ER2">Residencia habitual dentro del estado</string>
+    <string name="ER3">Facilidades para abandonar el lugar</string>
+    <string name="ER4">Voluntad de sometimiento a la persecución penal</string>
+    <string name="ER5">Antecedentes Penales o de ingreso</string>
+    <string name="ER6">Observancia de medidas cautelares, de seguridad o condiciones previamente</string>
+    <string name="totalA">TOTAL</string>
+
+
     <!--endregion-->
 </resources>
