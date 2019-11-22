@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 import com.sistemas.evaluacion.entidades.datosGenerales;
 import com.sistemas.evaluacion.MyOpenHelper;
+import com.sistemas.evaluacion.entidades.datosGeneralesA;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,6 +22,12 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvLista;
     public String tamaño="";
     ListToCSV convierte=new ListToCSV();
+
+    private ArrayList<datosGeneralesA> listaA;
+    private TextView tvListaA;
+    public String tamañoA="";
+
+
     //endregion
 
     //region Metodos
@@ -39,6 +46,11 @@ public class MainActivity extends AppCompatActivity {
         tvLista = (TextView) findViewById(R.id.tvLista);
         tvLista.setText(tamaño);
         //final List<String> list=lista;
+        listaA=db.getdatosGeneralesA();
+        tamañoA=""+(listaA.size());
+        tvListaA = (TextView) findViewById(R.id.tvListaA);
+        tvListaA.setText(tamañoA);
+
 
 
         //Ir a segundo activity

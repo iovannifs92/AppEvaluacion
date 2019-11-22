@@ -2,16 +2,17 @@ package com.sistemas.evaluacion.entidades;
 
 public class datosProcesosPenalesA {
     int id;
-    String aproceso,amedidacautelar,acausa1,adelito1,atipomedida1,aestatus1,acausa2,adelito2,atipomedida2,aestatus2,
+    String aproceso,anprocesos,amedidacautelar,acausa1,adelito1,atipomedida1,aestatus1,acausa2,adelito2,atipomedida2,aestatus2,
             acausa3,adelito3,atipomedida3,aestatus3,acausa4,adelito4,atipomedida4,aestatus4,acausa5,adelito5,atipomedida5,aestatus5,afolio;
 
-    public datosProcesosPenalesA(int id, String aproceso, String amedidacautelar, String acausa1, String adelito1, String atipomedida1, String aestatus1,
+    public datosProcesosPenalesA(int id, String aproceso, String anprocesos, String amedidacautelar, String acausa1, String adelito1, String atipomedida1, String aestatus1,
                                  String acausa2, String adelito2, String atipomedida2, String aestatus2,
                                  String acausa3, String adelito3, String atipomedida3, String aestatus3,
                                  String acausa4, String adelito4, String atipomedida4, String aestatus4,
                                  String acausa5, String adelito5, String atipomedida5, String aestatus5, String afolio) {
         this.id = id;
         this.aproceso = aproceso;
+        this.anprocesos = anprocesos;
         this.amedidacautelar = amedidacautelar;
         this.acausa1 = acausa1;
         this.adelito1 = adelito1;
@@ -52,6 +53,15 @@ public class datosProcesosPenalesA {
     public void setAproceso(String aproceso) {
         this.aproceso = aproceso;
     }
+
+    public String getAnprocesos() {
+        return anprocesos;
+    }
+
+    public void setAnprocesos(String anprocesos) {
+        this.anprocesos = anprocesos;
+    }
+
 
     public String getAmedidacautelar() {
         return amedidacautelar;

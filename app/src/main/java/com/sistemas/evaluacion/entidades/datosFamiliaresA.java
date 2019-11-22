@@ -2,12 +2,13 @@ package com.sistemas.evaluacion.entidades;
 
 public class datosFamiliaresA {
     int id;
-    String anombre1,arelacion1,aedad1,atelefono1,avivecon1,anombre2,arelacion2,aedad2,atelefono2,avivecon2,aubicarfam,anombrefam,arelacionfam,alocalidadfam,afolio;
+    String apersonasreferencias,anombre1,arelacion1,aedad1,atelefono1,avivecon1,anombre2,arelacion2,aedad2,atelefono2,avivecon2,aubicarfam,anombrefam,arelacionfam,alocalidadfam,afolio;
 
-    public datosFamiliaresA(int id, String anombre1, String arelacion1, String aedad1, String atelefono1, String avivecon1,
+    public datosFamiliaresA(int id, String apersonasreferencias, String anombre1, String arelacion1, String aedad1, String atelefono1, String avivecon1,
                             String anombre2, String arelacion2, String aedad2, String atelefono2, String avivecon2,
                             String aubicarfam,String anombrefam, String arelacionfam, String alocalidadfam, String afolio) {
         this.id = id;
+        this.apersonasreferencias = apersonasreferencias;
         this.anombre1 = anombre1;
         this.arelacion1 = arelacion1;
         this.aedad1 = aedad1;
@@ -28,6 +29,10 @@ public class datosFamiliaresA {
     public int getId() { return id; }
 
     public void setId(int id) { this.id = id; }
+
+    public String getApersonasreferencias() { return apersonasreferencias; }
+
+    public void setApersonasreferencias(String apersonasreferencias) { this.apersonasreferencias = apersonasreferencias; }
 
     public String getAnombre1() { return anombre1; }
 

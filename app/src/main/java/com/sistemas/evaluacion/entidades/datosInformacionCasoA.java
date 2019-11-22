@@ -2,11 +2,11 @@ package com.sistemas.evaluacion.entidades;
 
 public class datosInformacionCasoA {
     int id;
-    String acarpeta,aexpedinte, afechadis, aotrafuente, acualfuente, adelito, adelito_145,adelitomensionado_145,adelito_164,adelitomesionado_164,
+    String acarpeta,aexpedinte, afechadis, aotrafuente, acualfuente, adelito, aotro,adelitomencionado_145,adelitomencionado_164,
             ainternamieto,ahechosalegados,afolio;
 
-    public datosInformacionCasoA(int id, String acarpeta,String aexpedinte, String afechadis, String aotrafuente, String acualfuente, String adelito, String adelito_145,
-                                 String adelitomensionado_145, String adelito_164, String adelitomesionado_164, String ainternamieto, String ahechosalegados,
+    public datosInformacionCasoA(int id, String acarpeta,String aexpedinte, String afechadis, String aotrafuente, String acualfuente, String adelito,String aotro,
+                                 String adelitomencionado_145, String adelitomencionado_164, String ainternamieto, String ahechosalegados,
                                  String afolio) {
         this.id = id;
         this.acarpeta = acarpeta;
@@ -15,10 +15,11 @@ public class datosInformacionCasoA {
         this.aotrafuente = aotrafuente;
         this.acualfuente = acualfuente;
         this.adelito = adelito;
-        this.adelito_145 = adelito_145;
-        this.adelitomensionado_145 = adelitomensionado_145;
-        this.adelito_164 = adelito_164;
-        this.adelitomesionado_164 = adelitomesionado_164;
+        this.aotro = aotro;
+
+        this.adelitomencionado_145 = adelitomencionado_145;
+
+        this.adelitomencionado_164 = adelitomencionado_164;
         this.ainternamieto = ainternamieto;
         this.ahechosalegados = ahechosalegados;
         this.afolio = afolio;
@@ -76,33 +77,21 @@ public class datosInformacionCasoA {
         this.adelito = adelito;
     }
 
-    public String getAdelito_145() {
-        return adelito_145;
+    public String getAotro() { return aotro; }
+
+    public void setAotro(String aotro) { this.aotro = aotro; }
+
+    public String getAdelitomencionado_145() {
+        return adelitomencionado_145;
     }
 
-    public void setAdelito_145(String adelito_145) {
-        this.adelito_145 = adelito_145;
+    public void setAdelitomencionado_145(String adelitomencionado_145) { this.adelitomencionado_145 = adelitomencionado_145; }
+
+    public String getAdelitomencionado_164() {
+        return adelitomencionado_164;
     }
 
-    public String getAdelitomensionado_145() {
-        return adelitomensionado_145;
-    }
-
-    public void setAdelitomensionado_145(String adelitomensionado_145) { this.adelitomensionado_145 = adelitomensionado_145; }
-
-    public String getAdelito_164() {
-        return adelito_164;
-    }
-
-    public void setAdelito_164(String adelito_164) {
-        this.adelito_164 = adelito_164;
-    }
-
-    public String getAdelitomesionado_164() {
-        return adelitomesionado_164;
-    }
-
-    public void setAdelitomesionado_164(String adelitomesionado_164) { this.adelitomesionado_164 = adelitomesionado_164; }
+    public void setAdelitomencionado_164(String adelitomencionado_164) { this.adelitomencionado_164 = adelitomencionado_164; }
 
     public String getAinternamieto() {
         return ainternamieto;

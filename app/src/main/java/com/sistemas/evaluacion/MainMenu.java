@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.sistemas.evaluacion.entidades.datosEntrevistador;
 import com.sistemas.evaluacion.entidades.datosGenerales;
 import com.github.clans.fab.FloatingActionMenu;
+import com.sistemas.evaluacion.entidades.datosGeneralesA;
 
 import java.util.ArrayList;
 
@@ -26,11 +27,16 @@ public class MainMenu extends AppCompatActivity
 
     //region Variables Globales
     private MyOpenHelper db;
+
     private ArrayList<datosGenerales> lista;
+    private ArrayList<datosGeneralesA> listaA;
+
     private ArrayList<datosEntrevistador> listaEntrevistador;
     public static String entrevistador;
     private TextView tvLista;
+    private TextView tvListaA;
     public String tamaño="";
+    public String tamañoA="";
     ListToCSV convierte=new ListToCSV();
     //endregion
     FloatingActionMenu actionMenu;
@@ -61,6 +67,12 @@ public class MainMenu extends AppCompatActivity
         tamaño=""+(lista.size());
         tvLista = (TextView) findViewById(R.id.tvLista);
         tvLista.setText(tamaño);
+
+       listaA=db.getdatosGeneralesA();
+       tamañoA=""+(listaA.size());
+       tvListaA = (TextView) findViewById(R.id.tvListaA);
+
+       tvListaA.setText(tamañoA);
 
         //region entrevistador
         listaEntrevistador=db.getEntrevistador();
@@ -140,20 +152,16 @@ public class MainMenu extends AppCompatActivity
 
         Intent intent;
         switch(id){
-            case R.id.nav_reporte_entrevista:
-                intent = new Intent(this, ReporteEntrevista.class);
-                startActivity(intent);
-                break;
-            case R.id.nav_reporte_adolescentes:
-                intent = new Intent(this, ReporteAdolescentes.class);
+            case R.id.nav_reportes:
+                intent = new Intent(this, Reportes.class);
                 startActivity(intent);
                 break;
             case R.id.nav_car:
                 intent = new Intent(this, ConsultaDomicilio.class);
                 startActivity(intent);
                 break;
-            case R.id.nav_verificacion:
-                intent = new Intent(this, verificacion.class);
+            case R.id.nav_verificaciones:
+                intent = new Intent(this, Verificaciones.class);
                 startActivity(intent);
                 break;
             case R.id.nav_assist:
@@ -176,22 +184,16 @@ public class MainMenu extends AppCompatActivity
                 intent = new Intent(this, Instrumento.class);
                 startActivity(intent);
                 break;
+            case R.id.nav_instrumentoA:
+                intent = new Intent(this, instrumento_adolescente.class);
+                startActivity(intent);
+                break;
             case R.id.nav_qr:
                 intent = new Intent(this, QRVerify.class);
                 startActivity(intent);
                 break;
-            case R.id.nav_investigacion:
-                Intent intent9 = new Intent(this, CarpetaInvestigacion.class);
-                startActivity(intent9);
-                break;
-
-                case R.id.nav_verificacionA:
-                intent = new Intent(this, verificacionAdolecentes.class);
-                startActivity(intent);
-                break;
-
-            case R.id.nav_investigacionA:
-                intent = new Intent(this, infoCasoAdolescente.class);
+            case R.id.nav_Carpetas:
+                intent = new Intent(this, Carpetas.class);
                 startActivity(intent);
                 break;
         }

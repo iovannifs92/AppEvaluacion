@@ -68,7 +68,7 @@
         android:fontFamily="sans-serif"
         android:gravity="center_horizontal"
         android:lineSpacingExtra="12sp"
-        android:text="Entrevistas realizadas:"
+        android:text="Entrevistas realizadas a Adolescentes:"
         android:textSize="24sp" />
 
     <TextView

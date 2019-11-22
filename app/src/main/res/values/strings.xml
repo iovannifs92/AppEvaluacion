@@ -246,6 +246,10 @@
     <string name="p8">Alguna vez ha consumido alguna droga por vía inyectada? (solo las que consumió sin receta médica)</string>
     <!--endregion-->
 
+    <!--Observacion finales-->
+
+
+    <!--endregion-->
     <!--region Evaluación de riesgos-->
     <string name="A1">Imposibilidad de arraigo</string>
     <string name="A2">Residencia habitual dentro del estado</string>
@@ -293,6 +297,8 @@
     <!--region Personas Presentes en la entrevista del imputado-->
     <string name="e132">¿El adolescente ha proporcionado su consentimiento para esta entrevista?</string><!--SI/NO-->
     <string name="e133">Nombre</string>
+    <string name="e_134">Apellido paterno</string>
+    <string name="e_135">Apellido materno</string>
     <string name="e134">Relación con el adolescente</string>
     <string name="e135">Participante/oyente</string>
     <!--endregion-->
@@ -318,12 +324,13 @@
     <string name="e148">Domicilio Actual</string>
     <string name="e149">Calle</string>
     <string name="e150">No.</string>
-    <string name="e151">Colonia</string>
+    <string name="e151">Domicilio</string>
+    <string name="e_151">Nombre de domicilio</string>
     <string name="e152">CP</string>
     <string name="e153">Municipio</string>
     <string name="e154">Estado</string>
     <string name="e155">País</string>
-    <string name="e156">Temporalidad</string>
+    <string name="e156">¿Cuánto tiempo tiene en ese domicilio?</string>
     <string name="e157">¿Tiene domicilio fijo?</string><!--SI/NO-->
     <string name="e158">¿Domicilios Anteriores?</string><!--SI/NO-->
     <string name="e159">Localidad</string>
@@ -340,7 +347,8 @@
     <string name="e167">¿Con quién?</string>
     <string name="e168">Relación</string>
     <string name="e169">Localidad</string>
-    <string name="e170">Dependientes Económicos</string><!--SI/NO-->
+    <string name="e170">¿Tiene Dependientes Económicos?</string><!--SI/NO-->
+    <string name="e170_1">¿Cuántos?</string><!--SI/NO-->
     <string name="e171">Nombre</string>
     <string name="e172">Relación</string>
     <string name="e173">Edad</string>
@@ -405,10 +413,14 @@
     <string name="e309">Frecuencia</string>
     <string name="e3010">Cantidad</string>
     <string name="e3011">Fecha de último consumo</string>
-
     <string name="e3012">¿El adolescente consume una o más de las sustancias frecuentemente?</string>
-
     <!--endregion-->
+
+    <!--observaciones finales -->
+    <string name="e2052">Observaciones finales</string>
+    <!--endregion-->
+
+
 
     <!--INFORMACION DEL CASO ACTUAL -->
     <string name="e2019">¿Tiene acceso al expediente?</string><!--SI/NO-->
@@ -440,11 +452,12 @@
     <!--PROCESO LEGAL Y OBSTRUCCION DE LA INVESTIGACION-->
     <string name="e2038">¿Se presenta un posible riesgo continuo a las evidencias o riesgos (que no sea la víctima)?</string><!--SI/NO-->
     <string name="e2039">Explique</string>
-    <string name="e2040">¿Se presenta una maneza hacia un testigo, declarante, o agente del M.P (que no sea la víctima)?</string><!--SI/NO-->
+    <string name="e2040">¿Se presenta una amenaza hacia un testigo, declarante, o agente del M.P (que no sea la víctima)?</string><!--SI/NO-->
     <string name="e2041">Explique</string>
     <!--endregion-->
     <!--PROCESO PENALES PREVIOS-->
     <string name="e2042">¿Tiene otros procesos penales?</string><!--SI/NO-->
+    <string name="e2042_1">¿Cuantos?</string><!--SI/NO-->
     <string name="e2043">¿Se imponía medidas cautelares en libertad?</string><!--SI/NO-->
     <string name="e2044">Numero de causa</string>
     <string name="e2045">Delito</string>

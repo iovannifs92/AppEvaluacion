@@ -2,10 +2,10 @@ package com.sistemas.evaluacion.entidades;
 
 public class datosFichaFamiliarA {
     int id;
-    String acalle, anumero, acolonia, acp,  amunicipio, aestado, apais,
+    String acalle, anumero, acolonia,anombrecol, acp,  amunicipio, aestado, apais,
     atemporalidad, adomiciliof ,adomicilioant, alocalidad1,atemporalidadant1, alocalidad2, atemporalidadant2, alocalidad3, atemporalidadant3,afolio;
 
-    public datosFichaFamiliarA(int id, String acalle, String anumero, String acolonia, String acp, String amunicipio,
+    public datosFichaFamiliarA(int id, String acalle, String anumero, String acolonia, String anombrecol, String acp, String amunicipio,
                               String aestado, String apais, String atemporalidad, String adomiciliof, String adomicilioant, String alocalidad1,
                               String atemporalidadant1, String alocalidad2,String atemporalidadant2,
                                String alocalidad3,String atemporalidadant3, String afolio) {
@@ -13,6 +13,7 @@ public class datosFichaFamiliarA {
         this.acalle = acalle;
         this.anumero = anumero;
         this.acolonia = acolonia;
+        this.anombrecol = anombrecol;
         this.acp = acp;
         this.amunicipio = amunicipio;
         this.aestado = aestado;
@@ -44,6 +45,10 @@ public class datosFichaFamiliarA {
     public String getAcolonia() { return acolonia; }
 
     public void setAcolonia(String acolonia) { this.acolonia = acolonia; }
+
+    public String getAnombrecol() { return anombrecol; }
+
+    public void setAnombrecol(String anombrecol) { this.anombrecol = anombrecol; }
 
     public String getAcp() { return acp; }
 

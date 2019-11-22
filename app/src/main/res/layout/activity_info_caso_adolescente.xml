@@ -104,6 +104,9 @@
                         android:id="@+id/tvFp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:inputType="date"
+                        android:focusable="false"
+                        android:clickable="true"
                         android:layout_alignParentTop="true"
                         android:text="@string/e2020"/>
 
@@ -112,7 +115,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
-                        android:inputType="text"/>
+                        android:inputType="date"
+                        android:focusable="false"
+                        android:clickable="true"
+                        android:layout_marginBottom="10dp"/>
 
                     <TextView
                         android:id="@+id/tvTI"
@@ -130,6 +136,7 @@
                         android:id="@+id/tvF"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:visibility="invisible"
                         android:text="@string/e2022"/>
 
                     <EditText
@@ -137,6 +144,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
+                        android:visibility="invisible"
                         android:inputType="text"/>
 
 
@@ -163,6 +171,21 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:id="@+id/tvEspe"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Especifique"/>
+
+                    <EditText
+                        android:id="@+id/txtEspe"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:inputType="text"
+                        android:layout_marginBottom="40dp"
+                        android:text="" />
 
                     <TextView
                         android:id="@+id/tvPRE"
@@ -251,393 +274,399 @@
                 <LinearLayout
                     android:id="@+id/llPP"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:visibility="gone"
+                    android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
-                    >
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
 
                     <TextView
                         android:id="@+id/tvTP"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/e2042"/>
+                        android:text="@string/e2042" />
 
                     <Spinner
                         android:id="@+id/sPTP"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"/>
+                        android:layout_marginBottom="20dp" />
+
+                    <TextView
+                        android:id="@+id/tvTPc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e2042_1" />
+
+                    <Spinner
+                        android:id="@+id/sPTPc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp" />
 
                     <TextView
                         android:id="@+id/tvSL"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:text="@string/e2043"/>
+                        android:text="@string/e2043"
+                        android:visibility="gone" />
 
                     <Spinner
                         android:id="@+id/sPSL"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:layout_marginBottom="20dp"/>
+                        android:layout_marginBottom="20dp"
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tvPPP1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
                         android:layout_marginBottom="20dp"
+                        android:background="@color/colorSecundario2"
                         android:text="PROCESO PENAL PREVIO 1"
                         android:textAlignment="center"
-                        android:background="@color/colorSecundario2"
                         android:textColor="@color/myWhite"
-                        android:textSize="20dp" />
+                        android:textSize="20dp"
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tvNC1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:text="@string/e2044"/>
+                        android:text="@string/e2044"
+                        android:visibility="gone" />
 
                     <EditText
                         android:id="@+id/txtNC1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
                         android:layout_alignParentTop="true"
                         android:inputType="text"
-                        android:text="" />
+                        android:text=""
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tvD1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:text="@string/e2045"/>
+                        android:text="@string/e2045"
+                        android:visibility="gone" />
 
                     <EditText
                         android:id="@+id/txtD1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
                         android:layout_alignParentTop="true"
                         android:inputType="text"
-                        android:text="" />
+                        android:text=""
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tvTM1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:text="@string/e2046"/>
+                        android:text="@string/e2046"
+                        android:visibility="gone" />
 
                     <EditText
                         android:id="@+id/txtTM1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
                         android:layout_alignParentTop="true"
                         android:inputType="text"
-                        android:text="" />
+                        android:text=""
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tvE1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:text="@string/e2047"/>
+                        android:text="@string/e2047"
+                        android:visibility="gone" />
 
-                    <EditText
-                        android:id="@+id/txtE1"
+                    <Spinner
+                        android:id="@+id/sPE1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:layout_alignParentTop="true"
-                        android:inputType="text"
-                        android:text="" />
+                        android:layout_marginBottom="20dp"
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tvPPP2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
                         android:layout_marginBottom="20dp"
+                        android:background="@color/colorSecundario2"
                         android:text="PROCESO PENAL PREVIO 2"
                         android:textAlignment="center"
-                        android:background="@color/colorSecundario2"
                         android:textColor="@color/myWhite"
-                        android:textSize="20dp" />
+                        android:textSize="20dp"
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tvNC2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:text="@string/e2044"/>
+                        android:text="@string/e2044"
+                        android:visibility="gone" />
 
                     <EditText
                         android:id="@+id/txtNC2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
                         android:layout_alignParentTop="true"
                         android:inputType="text"
-                        android:text="" />
+                        android:text=""
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tvD2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:text="@string/e2045"/>
+                        android:text="@string/e2045"
+                        android:visibility="gone" />
 
                     <EditText
                         android:id="@+id/txtD2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
                         android:layout_alignParentTop="true"
                         android:inputType="text"
-                        android:text="" />
+                        android:text=""
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tvTM2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:text="@string/e2046"/>
+                        android:text="@string/e2046"
+                        android:visibility="gone" />
 
                     <EditText
                         android:id="@+id/txtTM2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
                         android:layout_alignParentTop="true"
                         android:inputType="text"
-                        android:text="" />
+                        android:text=""
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tvE2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:text="@string/e2047"/>
+                        android:text="@string/e2047"
+                        android:visibility="gone" />
 
-                    <EditText
-                        android:id="@+id/txtE2"
+                    <Spinner
+                        android:id="@+id/sPE2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:layout_alignParentTop="true"
-                        android:inputType="text"
-                        android:text="" />
+                        android:layout_marginBottom="20dp"
+                        android:visibility="gone" />
+
 
                     <TextView
                         android:id="@+id/tvPPP3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
                         android:layout_marginBottom="20dp"
+                        android:background="@color/colorSecundario2"
                         android:text="PROCESO PENAL PREVIO 3"
                         android:textAlignment="center"
-                        android:background="@color/colorSecundario2"
                         android:textColor="@color/myWhite"
-                        android:textSize="20dp" />
+                        android:textSize="20dp"
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tvNC3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:text="@string/e2044"/>
+                        android:text="@string/e2044"
+                        android:visibility="gone" />
 
                     <EditText
                         android:id="@+id/txtNC3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
                         android:layout_alignParentTop="true"
                         android:inputType="text"
-                        android:text="" />
+                        android:text=""
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tvD3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:text="@string/e2045"/>
+                        android:text="@string/e2045"
+                        android:visibility="gone" />
 
                     <EditText
                         android:id="@+id/txtD3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
                         android:layout_alignParentTop="true"
                         android:inputType="text"
-                        android:text="" />
+                        android:text=""
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tvTM3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:text="@string/e2046"/>
+                        android:text="@string/e2046"
+                        android:visibility="gone" />
 
                     <EditText
                         android:id="@+id/txtTM3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
                         android:layout_alignParentTop="true"
                         android:inputType="text"
-                        android:text="" />
+                        android:text=""
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tvE3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:text="@string/e2047"/>
+                        android:text="@string/e2047"
+                        android:visibility="gone" />
 
-                    <EditText
-                        android:id="@+id/txtE3"
+                    <Spinner
+                        android:id="@+id/sPE3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:layout_alignParentTop="true"
-                        android:inputType="text"
-                        android:text="" />
+                        android:layout_marginBottom="20dp"
+                        android:visibility="gone" />
+
 
                     <TextView
                         android:id="@+id/tvPPP4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
                         android:layout_marginBottom="20dp"
+                        android:background="@color/colorSecundario2"
                         android:text="PROCESO PENAL PREVIO 4"
                         android:textAlignment="center"
-                        android:background="@color/colorSecundario2"
                         android:textColor="@color/myWhite"
-                        android:textSize="20dp" />
+                        android:textSize="20dp"
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tvNC4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:text="@string/e2044"/>
+                        android:text="@string/e2044"
+                        android:visibility="gone" />
 
                     <EditText
                         android:id="@+id/txtNC4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
                         android:layout_alignParentTop="true"
                         android:inputType="text"
-                        android:text="" />
+                        android:text=""
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tvD4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:text="@string/e2045"/>
+                        android:text="@string/e2045"
+                        android:visibility="gone" />
 
                     <EditText
                         android:id="@+id/txtD4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
                         android:layout_alignParentTop="true"
                         android:inputType="text"
-                        android:text="" />
+                        android:text=""
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tvTM4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:text="@string/e2046"/>
+                        android:text="@string/e2046"
+                        android:visibility="gone" />
 
                     <EditText
                         android:id="@+id/txtTM4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
                         android:layout_alignParentTop="true"
                         android:inputType="text"
-                        android:text="" />
+                        android:text=""
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tvE4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:text="@string/e2047"/>
+                        android:text="@string/e2047"
+                        android:visibility="gone" />
 
-                    <EditText
-                        android:id="@+id/txtE4"
+                    <Spinner
+                        android:id="@+id/sPE4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:layout_alignParentTop="true"
-                        android:inputType="text"
-                        android:text="" />
+                        android:layout_marginBottom="20dp"
+                        android:visibility="gone" />
+
 
                     <TextView
                         android:id="@+id/tvPPP5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
                         android:layout_marginBottom="20dp"
+                        android:background="@color/colorSecundario2"
                         android:text="PROCESO PENAL PREVIO 5"
                         android:textAlignment="center"
-                        android:background="@color/colorSecundario2"
                         android:textColor="@color/myWhite"
-                        android:textSize="20dp" />
+                        android:textSize="20dp"
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tvNC5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:text="@string/e2044"/>
+                        android:text="@string/e2044"
+                        android:visibility="gone" />
 
                     <EditText
                         android:id="@+id/txtNC5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
                         android:layout_alignParentTop="true"
                         android:inputType="text"
-                        android:text="" />
+                        android:text=""
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tvD5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:text="@string/e2045"/>
+                        android:text="@string/e2045"
+                        android:visibility="gone" />
 
                     <EditText
                         android:id="@+id/txtD5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
                         android:layout_alignParentTop="true"
                         android:inputType="text"
-                        android:text="" />
+                        android:text=""
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tvTM5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:text="@string/e2046"/>
+                        android:text="@string/e2046"
+                        android:visibility="gone" />
 
                     <EditText
                         android:id="@+id/txtTM5"
@@ -651,17 +680,15 @@
                         android:id="@+id/tvE5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:text="@string/e2047"/>
+                        android:text="@string/e2047"
+                        android:visibility="gone" />
 
-                    <EditText
-                        android:id="@+id/txtE5"
+                    <Spinner
+                        android:id="@+id/sPE5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:layout_alignParentTop="true"
-                        android:inputType="text"
-                        android:text="" />
+                        android:layout_marginBottom="20dp"
+                        android:visibility="gone" />
 
 
                 </LinearLayout>
@@ -682,121 +709,120 @@
                 <LinearLayout
                     android:id="@+id/llVO"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:visibility="gone"
+                    android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
-                    >
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
                     <TextView
                         android:id="@+id/tvVO"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/e2030"/>
+                        android:text="@string/e2030" />
 
 
                     <Spinner
                         android:id="@+id/sPVO"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"/>
+                        android:layout_marginBottom="20dp" />
 
                     <TextView
                         android:id="@+id/tvVD"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:text="@string/e2031"/>
+                        android:text="@string/e2031"
+                        android:visibility="gone" />
 
 
                     <Spinner
                         android:id="@+id/sPVD"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:layout_marginBottom="20dp"/>
+                        android:layout_marginBottom="20dp"
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tvVV"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:text="@string/e2032"/>
+                        android:text="@string/e2032"
+                        android:visibility="gone" />
 
 
                     <Spinner
                         android:id="@+id/sPVV"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:layout_marginBottom="20dp"/>
+                        android:layout_marginBottom="20dp"
+                        android:visibility="gone" />
 
 
                     <TextView
                         android:id="@+id/tvCV"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
                         android:layout_marginBottom="20dp"
+                        android:background="@color/colorSecundario2"
                         android:text="@string/e2033"
                         android:textAlignment="center"
-                        android:background="@color/colorSecundario2"
                         android:textColor="@color/myWhite"
-                        android:textSize="20dp" />
+                        android:textSize="20dp"
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tvRR"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:text="@string/e2034"/>
+                        android:text="@string/e2034"
+                        android:visibility="gone" />
 
 
                     <Spinner
                         android:id="@+id/sPRR"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:layout_marginBottom="20dp"/>
+                        android:layout_marginBottom="20dp"
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tvEVS"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/e2035"/>
+                        android:text="@string/e2035" />
 
 
                     <Spinner
                         android:id="@+id/sPEVS"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"/>
+                        android:layout_marginBottom="20dp" />
 
                     <TextView
                         android:id="@+id/tvDV"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/e2036"/>
+                        android:text="@string/e2036" />
 
 
                     <Spinner
                         android:id="@+id/sPDV"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"/>
+                        android:layout_marginBottom="20dp" />
 
                     <TextView
                         android:id="@+id/tvEVF"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/e2037"/>
+                        android:text="@string/e2037" />
 
 
                     <Spinner
                         android:id="@+id/sPEVF"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"/>
+                        android:layout_marginBottom="20dp" />
                 </LinearLayout>
 
                 <Button
@@ -814,30 +840,29 @@
                 <LinearLayout
                     android:id="@+id/llPL"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:visibility="gone"
+                    android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
-                    >
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
                     <TextView
                         android:id="@+id/tvSE"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/e2038"/>
+                        android:text="@string/e2038" />
 
 
                     <Spinner
                         android:id="@+id/sPSE"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"/>
+                        android:layout_marginBottom="20dp" />
 
                     <TextView
                         android:id="@+id/tvEx1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/e2039"/>
+                        android:text="@string/e2039" />
 
                     <EditText
                         android:id="@+id/txtEx1"
@@ -851,19 +876,19 @@
                         android:id="@+id/tvSA"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/e2040"/>
+                        android:text="@string/e2040" />
 
                     <Spinner
                         android:id="@+id/sPSA"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"/>
+                        android:layout_marginBottom="20dp" />
 
                     <TextView
                         android:id="@+id/tvEx2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/e2041"/>
+                        android:text="@string/e2041" />
 
                     <EditText
                         android:id="@+id/txtEx2"

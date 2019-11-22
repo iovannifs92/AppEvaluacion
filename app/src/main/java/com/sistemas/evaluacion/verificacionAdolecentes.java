@@ -1157,95 +1157,95 @@ public class verificacionAdolecentes extends AppCompatActivity {
                         }
                         //region Actualizar
                         if(ctvA1.isChecked() == false && r1.isEmpty() == false) {
-                            db.updateTable("datos_generales_a", "Aedad", r1, afolio);
+                            db.updateTableA("datos_generales_a", "Aedad", r1, afolio);
                         }
                         if(ctvA2.isChecked() == false && r2.isEmpty() == false) {
-                            db.updateTable("ficha_familiar_a", "Acalle", r2, afolio);
+                            db.updateTableA("ficha_familiar_a", "Acalle", r2, afolio);
                         }
                         if(ctvA3.isChecked() == false && r3.isEmpty() == false) {
-                            db.updateTable("ficha_familiar_a", "Anumero", r3,afolio);
+                            db.updateTableA("ficha_familiar_a", "Anumero", r3,afolio);
                         }
                         if(ctvA4.isChecked() == false && r4.isEmpty() == false) {
-                            db.updateTable("ficha_familiar_a","Acolonia", r4, afolio);
+                            db.updateTableA("ficha_familiar_a","Acolonia", r4, afolio);
                         }
                         if(ctvA5.isChecked() == false && r5.isEmpty() == false) {
-                            db.updateTable("ficha_familiar_a","Acp", r5, afolio);
+                            db.updateTableA("ficha_familiar_a","Acp", r5, afolio);
                         }
                         if(ctvA6.isChecked() == false && r6.isEmpty() == false) {
-                            db.updateTable("ficha_familiar_a","Amunicipio", r6, afolio);
+                            db.updateTableA("ficha_familiar_a","Amunicipio", r6, afolio);
                         }
                         if(ctvA7.isChecked() == false && r7.isEmpty() == false) {
-                            db.updateTable("ficha_familiar_a","Aestado", r7, afolio);
+                            db.updateTableA("ficha_familiar_a","Aestado", r7, afolio);
                         }
                         if(ctvA8.isChecked() == false && r8.isEmpty() == false) {
-                            db.updateTable("ficha_familiar_a","Apais", r8, afolio);
+                            db.updateTableA("ficha_familiar_a","Apais", r8, afolio);
                         }
                         if(ctvA9.isChecked() == false && r9.isEmpty() == false) {
-                            db.updateTable("ficha_familiar_a","Atemporalidad", r9, afolio);
+                            db.updateTableA("ficha_familiar_a","Atemporalidad", r9, afolio);
                         }
                         if(ctvA10.isChecked() == false && r10.isEmpty() == false) {
-                            db.updateTable("ficha_familiar_a","Adomiciliof", r10,  afolio);//////////77
+                            db.updateTableA("ficha_familiar_a","Adomiciliof", r10,  afolio);//////////77
                         }
                         if(ctvA11.isChecked() == false && r11.isEmpty() == false) {
-                            db.updateTable("datos_familiares_a","Aubicarfam", r11, afolio);
+                            db.updateTableA("datos_familiares_a","Aubicarfam", r11, afolio);
                         }
                         if(ctvA11.isChecked() == false && r12.isEmpty() == false) {
-                            db.updateTable("datos_familiares_a","Anombrefam", r12, afolio);
+                            db.updateTableA("datos_familiares_a","Anombrefam", r12, afolio);
                         }
                         if(ctvA11.isChecked() == false && r13.isEmpty() == false) {
-                            db.updateTable("datos_familiares_a","Arelacionfam", r13, afolio);
+                            db.updateTableA("datos_familiares_a","Arelacionfam", r13, afolio);
                         }
                         if(ctvA11.isChecked() == false && r14.isEmpty() == false) {
-                            db.updateTable("datos_familiares_a","Alocalidadfam", r14,  afolio);
+                            db.updateTableA("datos_familiares_a","Alocalidadfam", r14,  afolio);
                         }
                         if(ctvA11.isChecked() == false && r15.isEmpty() == false) {
-                            db.updateTable("historial_escolar_a","Aasiste", r15, afolio);
+                            db.updateTableA("historial_escolar_a","Aasiste", r15, afolio);
                         }
                         if(ctvA11.isChecked() == false && r16.isEmpty() == false) {
-                            db.updateTable("historial_escolar_a","Aconcluyo", r16, afolio);
+                            db.updateTableA("historial_escolar_a","Aconcluyo", r16, afolio);
                         }
                         if(ctvA11.isChecked() == false && r17.isEmpty() == false) {
-                            db.updateTable("historial_laboral_a","Atrabaja", r17, afolio);
+                            db.updateTableA("historial_laboral_a","Atrabaja", r17, afolio);
                         }
                         if(ctvA11.isChecked() == false && r18.isEmpty() == false) {
-                            db.updateTable("historial_laboral_a","Arecurrente", r18, afolio);
+                            db.updateTableA("historial_laboral_a","Arecurrente", r18, afolio);
                         }
                         if(ctvA11.isChecked() == false && r19.isEmpty() == false) {
-                            db.updateTable("actividades_extraescolares_a","Arealiza", r19, afolio);
+                            db.updateTableA("actividades_extraescolares_a","Arealiza", r19, afolio);
                         }
                         if(ctvA11.isChecked() == false && r20.isEmpty() == false) {
-                            db.updateTable("revision_medica_a","Amadre", r20, afolio);
+                            db.updateTableA("revision_medica_a","Amadre", r20, afolio);
                         }
                         if(ctvA11.isChecked() == false && r21.isEmpty() == false) {
-                            db.updateTable("revision_medica_a","Amedicamento", r21,afolio);
+                            db.updateTableA("revision_medica_a","Amedicamento", r21,afolio);
                         }
                         if(ctvA11.isChecked() == false && r22.isEmpty() == false) {
-                            db.updateTable("consumo_sustancias_a","Aconsume_alcohol", r22, afolio);
+                            db.updateTableA("consumo_sustancias_a","Aconsume_alcohol", r22, afolio);
                         }
                         if(ctvA11.isChecked() == false && r23.isEmpty() == false) {
-                            db.updateTable("consumo_sustancias_a","Aconsume_tabaco", r23, afolio);
+                            db.updateTableA("consumo_sustancias_a","Aconsume_tabaco", r23, afolio);
                         }
                         if(ctvA11.isChecked() == false && r24.isEmpty() == false) {
-                            db.updateTable("consumo_sustancias_a","Aconsume_marihuana", r24, afolio);
+                            db.updateTableA("consumo_sustancias_a","Aconsume_marihuana", r24, afolio);
                         }
                         if(ctvA11.isChecked() == false && r25.isEmpty() == false) {
-                            db.updateTable("consumo_sustancias_a","Aconsume_pastillas", r25, afolio);
+                            db.updateTableA("consumo_sustancias_a","Aconsume_pastillas", r25, afolio);
                         }
                         if(ctvA11.isChecked() == false && r26.isEmpty() == false) {
-                            db.updateTable("consumo_sustancias_a","Aconsume_solventes", r26, afolio);
+                            db.updateTableA("consumo_sustancias_a","Aconsume_solventes", r26, afolio);
                         }
                         if(ctvA11.isChecked() == false && r27.isEmpty() == false) {
-                            db.updateTable("consumo_sustancias_a","Aconsume_metanfetaminas", r27, afolio);
+                            db.updateTableA("consumo_sustancias_a","Aconsume_metanfetaminas", r27, afolio);
                         }
                         if(ctvA11.isChecked() == false && r28.isEmpty() == false) {
-                            db.updateTable("consumo_sustancias_a","Aconsume_cocaina", r28, afolio);
+                            db.updateTableA("consumo_sustancias_a","Aconsume_cocaina", r28, afolio);
                         }
                         if(ctvA11.isChecked() == false && r29.isEmpty() == false) {
-                            db.updateTable("consumo_sustancias_a","Aconsumemas", r29, afolio);
+                            db.updateTableA("consumo_sustancias_a","Aconsumemas", r29, afolio);
                         }
                         //endregion
 
-                        db.updateTable("datos_generales_a", "Averificacion", "SI", afolio);
+                        db.updateTableA("datos_generales_a", "Averificacion", "SI", afolio);
 
                         //Verificación
                         if(oper.equals(opers[0])) {

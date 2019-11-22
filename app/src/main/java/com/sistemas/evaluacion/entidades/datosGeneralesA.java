@@ -2,13 +2,15 @@ package com.sistemas.evaluacion.entidades;
 
 public class datosGeneralesA {
     int id;
-    String anombre,asexo,aedad,afechanac,acurp,alugarnac,aestado,amunicipio,alocalidad,
+    String apaterno,amaterno,anombre,asexo,aedad,afechanac,acurp,alugarnac,aestado,amunicipio,alocalidad,
             anacionalidad,aespanol,atraductor,afolio,averificacion,acarpetainvestigacion;
 
-    public datosGeneralesA(int id, String anombre, String asexo, String aedad, String afechanac, String acurp,
+    public datosGeneralesA(int id, String apaterno,String amaterno,String anombre, String asexo, String aedad, String afechanac, String acurp,
                            String alugarnac, String aestado, String amunicipio, String alocalidad, String anacionalidad,
                            String aespanol, String atraductor, String afolio,String averificacion,String acarpetainvestigacion) {
         this.id = id;
+        this.apaterno = apaterno;
+        this.amaterno = amaterno;
         this.anombre = anombre;
         this.asexo = asexo;
         this.aedad = aedad;
@@ -29,6 +31,14 @@ public class datosGeneralesA {
     public int getId() { return id; }
 
     public void setId(int id) { this.id = id; }
+
+    public String getApaterno() { return apaterno; }
+
+    public void setApaterno(String apaterno) { this.apaterno = apaterno; }
+
+    public String getAmaterno() { return amaterno; }
+
+    public void setAmaterno(String amaterno) { this.amaterno = amaterno; }
 
     public String getAnombre() { return anombre; }
 

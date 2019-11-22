@@ -17,6 +17,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Reportes" />
+        <activity android:name=".Carpetas" />
+        <activity android:name=".Verificaciones" />
         <activity android:name=".instrumento_adolescente"></activity>
         <activity android:name=".ReporteEntrevista" />
         <activity android:name=".ReporteAdolescentes" />

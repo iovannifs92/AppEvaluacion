@@ -40,6 +40,28 @@
         android:lineSpacingExtra="12sp"
         android:text="#"
         android:textSize="24sp" />
+    <TextView
+        android:id="@+id/textView15A"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="sans-serif"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="12sp"
+        android:text="Entrevistas realizadas a Adolescentes:"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tvListaA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="sans-serif"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="12sp"
+        android:text="#"
+        android:textSize="24sp" />
+
 
     <Button
         android:id="@+id/btnExport"

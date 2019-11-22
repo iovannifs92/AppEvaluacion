@@ -270,6 +270,16 @@ public class ReporteAdolescentes extends AppCompatActivity implements View.OnCli
         pdfPCell.setRotation(90);
         pdfPCell.setBackgroundColor(lighter(colorGenerales));
         cells.add(pdfPCell);
+        pdfPCell = new PdfPCell(new Phrase(getString(R.string.e_134)));
+        pdfPCell.setBackgroundColor(lightGray);
+        cells.add(pdfPCell);
+        pdfPCell = new PdfPCell(new Phrase(lista1.get(pos).getApaterno()));
+        cells.add(pdfPCell);
+        pdfPCell = new PdfPCell(new Phrase(getString(R.string.e_135)));
+        pdfPCell.setBackgroundColor(lightGray);
+        cells.add(pdfPCell);
+        pdfPCell = new PdfPCell(new Phrase(lista1.get(pos).getAmaterno()));
+        cells.add(pdfPCell);
         pdfPCell = new PdfPCell(new Phrase(getString(R.string.e136)));
         pdfPCell.setBackgroundColor(lightGray);
         cells.add(pdfPCell);
@@ -351,6 +361,11 @@ public class ReporteAdolescentes extends AppCompatActivity implements View.OnCli
         pdfPCell.setBackgroundColor(lightGray);
         cells.add(pdfPCell);
         pdfPCell = new PdfPCell(new Phrase(ficha.get(pos).getAcolonia()));
+        cells.add(pdfPCell);
+        pdfPCell = new PdfPCell(new Phrase(getString(R.string.e_151)));
+        pdfPCell.setBackgroundColor(lightGray);
+        cells.add(pdfPCell);
+        pdfPCell = new PdfPCell(new Phrase(ficha.get(pos).getAnombrecol()));
         cells.add(pdfPCell);
         pdfPCell = new PdfPCell(new Phrase(getString(R.string.e152)));
         pdfPCell.setBackgroundColor(lightGray);
@@ -654,18 +669,6 @@ public class ReporteAdolescentes extends AppCompatActivity implements View.OnCli
         cells.add(pdfPCell);
         pdfPCell = new PdfPCell(new Phrase(getString(R.string.e186)));
         pdfPCell.setBackgroundColor(lightGray);
-        cells.add(pdfPCell);
-        pdfPCell = new PdfPCell(new Phrase(escolar.get(pos).getAnombreant2()));
-        cells.add(pdfPCell);
-        pdfPCell = new PdfPCell(new Phrase(getString(R.string.e187)));
-        pdfPCell.setBackgroundColor(lightGray);
-        cells.add(pdfPCell);
-        pdfPCell = new PdfPCell(new Phrase(escolar.get(pos).getAlocalidad2()));
-        cells.add(pdfPCell);
-        pdfPCell = new PdfPCell(new Phrase(getString(R.string.e188)));
-        pdfPCell.setBackgroundColor(lightGray);
-        cells.add(pdfPCell);
-        pdfPCell = new PdfPCell(new Phrase(escolar.get(pos).getAgradoant2()));
         cells.add(pdfPCell);
 
         //endregion

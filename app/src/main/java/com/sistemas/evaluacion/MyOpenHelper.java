@@ -32,6 +32,11 @@ import com.sistemas.evaluacion.entidades.datosDependientesEconomicosA;
 import com.sistemas.evaluacion.entidades.datosActividadesExtraescolaresA;
 import com.sistemas.evaluacion.entidades.datosRevisionMedicaA;
 import com.sistemas.evaluacion.entidades.datosConsumoSustanciasA;
+import com.sistemas.evaluacion.entidades.datosInformacionCasoA;
+import com.sistemas.evaluacion.entidades.datosProcesosPenalesA;
+import com.sistemas.evaluacion.entidades.datosVictimaOfendidoA;
+import com.sistemas.evaluacion.entidades.datosProcesoLegalA;
+
 
 public class MyOpenHelper extends SQLiteOpenHelper {
 
@@ -137,18 +142,18 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     //endregion
 
     //region Tabla_Datos_Generales_Adolescentes
-    private static final String CREATE_TABLE_DATOS_GENERALES_A="CREATE TABLE datos_generales_a(_id INTEGER PRIMARY KEY AUTOINCREMENT, Anombre TEXT, Asexo TEXT, Aedad TEXT, " +
+    private static final String CREATE_TABLE_DATOS_GENERALES_A="CREATE TABLE datos_generales_a(_id INTEGER PRIMARY KEY AUTOINCREMENT, Apaterno TEXT,Amaterno TEXT,Anombre TEXT, Asexo TEXT, Aedad TEXT, " +
             "Afechanac TEXT, Acurp TEXT, Alugarnac TEXT, Aestado TEXT, Amunicipio TEXT, Alocalidad TEXT, Anacionalidad TEXT, Aespanol TEXT, Atraductor TEXT, Afolio TEXT,Averificacion TEXT,Acarpetainvestigacion TEXT)";
     //endregion
 
     //region Tabla_Datos_Ficha_Familiar_Adolescentes
     private static final String CREATE_TABLE_FICHA_FAMILIAR_A="CREATE TABLE ficha_familiar_a(_id INTEGER PRIMARY KEY AUTOINCREMENT, Acalle TEXT, Anumero TEXT," +
-            " Acolonia TEXT, Acp TEXT, Amunicipio TEXT, Aestado TEXT, Apais Text, Atemporalidad TEXT, Adomiciliof TEXT,  Adomicilioant TEXT," +
+            " Acolonia TEXT,Anombrecol TEXT, Acp TEXT, Amunicipio TEXT, Aestado TEXT, Apais Text, Atemporalidad TEXT, Adomiciliof TEXT,  Adomicilioant TEXT," +
             " Alocalidad1 TEXT, Atemporalidadant1 TEXT, Alocalidad2 TEXT, Atemporalidadant2 TEXT,Alocalidad3 TEXT, Atemporalidadant3 TEXT, Afolio TEXT)";
     //endregion_Adolescentes
 
     //region Tabla_Datos_Familiares_Adolescentes
-    private static final String CREATE_TABLE_DATOS_FAMILIARES_A="CREATE TABLE datos_familiares_a(_id INTEGER PRIMARY KEY AUTOINCREMENT, Anombre1 TEXT, Arelacion1 TEXT," +
+    private static final String CREATE_TABLE_DATOS_FAMILIARES_A="CREATE TABLE datos_familiares_a(_id INTEGER PRIMARY KEY AUTOINCREMENT,Apersonasreferencias , Anombre1 TEXT, Arelacion1 TEXT," +
             "Aedad1 TEXT, Atelefono1 TEXT, Avivecon1 TEXT, Anombre2 TEXT, Arelacion2 TEXT,Aedad2 TEXT, Atelefono2 TEXT, Avivecon2 TEXT, Aubicarfam TEXT," +
             " Anombrefam TEXT, Arelacionfam TEXT, Alocalidadfam TEXT, Afolio TEXT)";
     //endregion_Adolescentes
@@ -192,17 +197,17 @@ public class MyOpenHelper extends SQLiteOpenHelper {
 
     //region Tabla_Datos_Informacion_Caso
     private static final String CREATE_TABLE_INFORMACION_CASO_A="CREATE TABLE informacion_caso_a(_id INTEGER PRIMARY KEY AUTOINCREMENT,  Acarpeta TEXT,Aexpediente TEXT," +
-            "Afechadis TEXT,Aaccesofuente TEXT, Acualfuente TEXT, Adelito TEXT, Adelitomencionado_145 TEXT, Adelitomencionado_164 TEXT," +
+            "Afechadis TEXT,Aaccesofuente TEXT, Acualfuente TEXT, Adelito TEXT, Aotro TEXT, Adelitomencionado_145 TEXT, Adelitomencionado_164 TEXT," +
             "Ainternamiento TEXT, Ahechosalegados TEXT, Afolio TEXT)";
     //endregion
 
     //endregion
 
     //region Tabla_Datos_Procesos_Penales_Adolescentes
-    private static final String CREATE_TABLE_PROCESOS_PENALES_A="CREATE TABLE procesos_penales_a(_id INTEGER PRIMARY KEY AUTOINCREMENT, Aprocesos TEXT,Amedidacautelar TEXT," +
-            "Aacusa1 TEXT, Adelitomedida1 TEXT, Atipomedida1 TEXT, Aestatus1 TEXT,Aacusa2 TEXT, Adelitomedida2 TEXT, Atipomedida2 TEXT, Aestatus2 TEXT," +
-            "Aacusa3 TEXT, Adelitomedida3 TEXT, Atipomedida3 TEXT, Aestatus3 TEXT,Aacusa4 TEXT, Adelitomedida4 TEXT, Atipomedida4 TEXT, Aestatus4 TEXT," +
-            "Aacusa5 TEXT, Adelitomedida5 TEXT, Atipomedida5 TEXT, Aestatus5 TEXT,Afolio TEXT)";
+    private static final String CREATE_TABLE_PROCESOS_PENALES_A="CREATE TABLE procesos_penales_a(_id INTEGER PRIMARY KEY AUTOINCREMENT, Aproceso TEXT, Anprocesos TEXT,Amedidacautelar TEXT," +
+            "Acausa1 TEXT, Adelito1 TEXT, Adelitomedida1 TEXT, Atipomedida1 TEXT, Aestatus1 TEXT,Acausa2 TEXT, Adelito2 TEXT, Adelitomedida2 TEXT, Atipomedida2 TEXT, Aestatus2 TEXT," +
+            "Acausa3 TEXT, Adelito3 TEXT,Adelitomedida3 TEXT, Atipomedida3 TEXT, Aestatus3 TEXT,Acausa4 TEXT, Adelito4 TEXT, Adelitomedida4 TEXT, Atipomedida4 TEXT, Aestatus4 TEXT," +
+            "Acausa5 TEXT, Adelito5 TEXT,Adelitomedida5 TEXT, Atipomedida5 TEXT, Aestatus5 TEXT,Afolio TEXT)";
     //endregion
 
     //endregion
@@ -216,17 +221,61 @@ public class MyOpenHelper extends SQLiteOpenHelper {
 
     //region Tabla_Datos_Proceso_Legal_Adolescentes
     private static final String CREATE_TABLE_PROCESO_LEGAL_A="CREATE TABLE proceso_legal_a(_id INTEGER PRIMARY KEY AUTOINCREMENT, Ariesgocontinuo TEXT," +
-            "Aexpliquecontinuo TEXT, Aamanazatestigo TEXT, Aexpliqueamenaza TEXT, Afolio TEXT)";
+            "Aexpliquecontinuo TEXT, Aamenazatestigo TEXT, Aexpliqueamenaza TEXT, Afolio TEXT)";
     //endregion
 
     //region Tabla verificacion_observacionesA
     private static final String CREATE_TABLE_VERIFICACION_OBSERVACIONES_A="CREATE TABLE verificacion_observaciones_a (_id INTEGER PRIMARY KEY AUTOINCREMENT," +
-            "Acampo TEXT, Abservacion TEXT, Aoriginal TEXT, Afolio TEXT)";
+            "Acampo TEXT, Aobservacion TEXT, Aoriginal TEXT, Afolio TEXT)";
     //endregion
 
     //region Tabla verificacion_entrevistado
     private static final String CREATE_TABLE_VERIFICACION_ENTREVISTADO_A="CREATE TABLE verificacion_entrevistado_a(_id INTEGER PRIMARY KEY AUTOINCREMENT," +
             "Aentrevistado TEXT, Arelacion TEXT, Afolio TEXT)";
+    //endregion
+    //region Tabla_Evaluacion_Ficha_Familiar_Adolescentes
+    private static final String CREATE_TABLE_INVESTIGACION_FICHA_FAMILIAR_A = "CREATE TABLE investigacion_ficha_familiar_a(_id INTEGER PRIMARY KEY AUTOINCREMENT," +
+            " Apregunta111 INTEGER, Apregunta112 INTEGER, Apregunta113 INTEGER, Apregunta114 INTEGER," +
+            " Apregunta115 INTEGER, Apregunta116 INTEGER, Apregunta121 INTEGER, Apregunta122 INTEGER," +
+            " Apregunta123 INTEGER, Apregunta13 INTEGER,Atotal INTEGER, Afolio TEXT)";
+    //endregion
+//region Tabla_Evaluacion_Conexiones en la Comunidad_Adolescentes
+    private static final String CREATE_TABLE_INVESTIGACION_CONEXIONES_COMUNIDAD_A = "CREATE TABLE investigacion_conexiones_comunidad_a(_id INTEGER PRIMARY KEY AUTOINCREMENT," +
+            " Apregunta211 INTEGER, Apregunta212 INTEGER, Apregunta214 INTEGER, Apregunta221 INTEGER," +
+            " Apregunta223 INTEGER, Apregunta224 INTEGER, Apregunta23 INTEGER, Atotal INTEGER, Afolio TEXT)";
+    //endregion
+
+    //region Tabla_Evaluacion_Consideraciones Excepcionales del Adolescente
+    private static final String CREATE_TABLE_INVESTIGACION_CONSIDERACIONES_EXCEPCIONALES_A = "CREATE TABLE investigacion_consideraciones_excepcionales_a(_id INTEGER PRIMARY KEY AUTOINCREMENT," +
+            " Apregunta31 INTEGER, Apregunta32 INTEGER, Apregunta33 INTEGER, Atotal INTEGER, Afolio TEXT)";
+    //endregion
+
+    //region Tabla_Evaluacion_Informacion Del Caso Adolescente
+    private static final String CREATE_TABLE_INVESTIGACION_INFORMACION_CASO_A = "CREATE TABLE investigacion_informacion_caso_a(_id INTEGER PRIMARY KEY AUTOINCREMENT," +
+            " Apregunta411 INTEGER, Apregunta412 INTEGER, Apregunta413 INTEGER, Apregunta42 INTEGER," +
+            " Atotal INTEGER, Afolio TEXT)";
+    //endregion
+
+    //region Tabla_Evaluacion_Procesos_Penales_Previos_Adolescentes
+    private static final String CREATE_TABLE_INVESTIGACION_PROCESOS_PENALES_A = "CREATE TABLE investigacion_procesos_penales_a(_id INTEGER PRIMARY KEY AUTOINCREMENT," +
+            "Apregunta51 INTEGER, Apregunta52 INTEGER, Atotal INTEGER, Afolio TEXT)";
+    //endregion
+
+    //region Tabla_Evaluacion_Victima_Ofendido_Adolescente
+    private static final String CREATE_TABLE_INVESTIGACION_VICTIMA_OFENDIDO_A = "CREATE TABLE investigacion_victima_ofendido_a(_id INTEGER PRIMARY KEY AUTOINCREMENT," +
+            " Apregunta61 INTEGER, Apregunta621 INTEGER, Apregunta622 INTEGER, Apregunta623 INTEGER," +
+            " Apregunta63 INTEGER, Apregunta64 INTEGER, Apregunta65 INTEGER,Atotal INTEGER, Afolio TEXT)";
+    //endregion
+
+    //region Tabla_Evaluacion_Victima_Ofendido_Adolescente
+    private static final String CREATE_TABLE_INVESTIGACION_PROCESO_LEGAL_A = "CREATE TABLE investigacion_proceso_legal_a(_id INTEGER PRIMARY KEY AUTOINCREMENT," +
+            " Apregunta71 INTEGER, Apregunta72 INTEGER, Atotal INTEGER, Afolio TEXT)";
+    //endregion
+
+    //region Tabla_Evaluacion_Victima_Ofendido_Adolescente
+    private static final String CREATE_TABLE_INVESTIGACION_RESULTADO_A = "CREATE TABLE investigacion_resultado_a(_id INTEGER PRIMARY KEY AUTOINCREMENT," +
+            " ApuntajeR1 INTEGER, ApuntajeR2 INTEGER, ApuntajeR3 INTEGER," +
+            "Arecomendacion TEXT, Acasos_excepcionalesA TEXT, Acasos_excepcionalesB TEXT, Acasos_excepcionalesC TEXT, Afolio TEXT)";
     //endregion
 
     //endregion
@@ -277,6 +326,14 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_PROCESO_LEGAL_A);
         db.execSQL(CREATE_TABLE_VERIFICACION_OBSERVACIONES_A);
         db.execSQL(CREATE_TABLE_VERIFICACION_ENTREVISTADO_A);
+        db.execSQL(CREATE_TABLE_INVESTIGACION_FICHA_FAMILIAR_A);
+        db.execSQL(CREATE_TABLE_INVESTIGACION_CONEXIONES_COMUNIDAD_A);
+        db.execSQL(CREATE_TABLE_INVESTIGACION_CONSIDERACIONES_EXCEPCIONALES_A);
+        db.execSQL(CREATE_TABLE_INVESTIGACION_INFORMACION_CASO_A);
+        db.execSQL(CREATE_TABLE_INVESTIGACION_PROCESOS_PENALES_A);
+        db.execSQL(CREATE_TABLE_INVESTIGACION_VICTIMA_OFENDIDO_A);
+        db.execSQL(CREATE_TABLE_INVESTIGACION_PROCESO_LEGAL_A);
+        db.execSQL(CREATE_TABLE_INVESTIGACION_RESULTADO_A);
 
     }
     @Override
@@ -342,6 +399,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         dato.put("ASSIST", assist);
         dato.put("TieneEvaluacion", tieneEvaluacion);
         dato.put("TieneDomicilioS", tieneDomicilioS);
+        dato.put("TieneVerificacion", tieneVerificacion);
         dato.put("OtrosHabitantes", otrosHabitantes);
         dato.put("Entrevistada", entrevistada);
         dato.put("AntecedentePenal", antecedentePenal);
@@ -722,10 +780,12 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     //endregion
 
     //region Insertar Datos Generales Adolescentes
-    public void insertarDatosGeneralesA(String anombre, String asexo, String aedad, String afechanac, String acurp, String alugarnac,
+    public void insertarDatosGeneralesA(String apaterno,String amaterno,String anombre, String asexo, String aedad, String afechanac, String acurp, String alugarnac,
                                         String aestado, String amunicipio, String alocalidad, String anacionalidad, String aespanol,
                                         String atraductor, String afolio, String averificacion,String acarpetainvestigacion){
         ContentValues dato=new ContentValues();
+        dato.put("Apaterno", apaterno);
+        dato.put("Amaterno", amaterno);
         dato.put("Anombre", anombre);
         dato.put("Asexo", asexo);
         dato.put("Aedad", aedad);
@@ -746,13 +806,14 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     //endregion
 
     //region Insertar Datos Ficha Familiar Adolescentes
-    public void insertarDatosFichaFamiliarA(String acalle, String anumero, String acolonia, String acp, String amunicipio, String aestado, String apais,
+    public void insertarDatosFichaFamiliarA(String acalle, String anumero, String acolonia,String anombrecol, String acp, String amunicipio, String aestado, String apais,
                                             String atemporalidad, String adomiciliof, String adomicilioant, String alocalidad1, String atemporalidadant1,String alocalidad2,
                                             String atemporalidadant2,String alocalidad3, String atemporalidadant3, String afolio){
         ContentValues dato=new ContentValues();
         dato.put("Acalle", acalle);
         dato.put("Anumero", anumero);
         dato.put("Acolonia", acolonia);
+        dato.put("Anombrecol", anombrecol);
         dato.put("Acp", acp);
         dato.put("Amunicipio", amunicipio);
         dato.put("Aestado", aestado);
@@ -772,10 +833,11 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     //endregion
 
     //region Insertar Datos Familiares Adolescentes
-    public void insertarDatosFamiliaresA(String anombre1, String arelacion1, String aedad1, String atelefono1, String avivecon1,String anombre2, String arelacion2,
+    public void insertarDatosFamiliaresA(String apersonasreferencias,String anombre1, String arelacion1, String aedad1, String atelefono1, String avivecon1,String anombre2, String arelacion2,
                                          String aedad2, String atelefono2, String avivecon2, String aubicarfam, String anombrefam,
                                          String arelacionfam, String alocalidadfam, String afolio){
         ContentValues dato=new ContentValues();
+        dato.put("Apersonasreferencias", apersonasreferencias);
         dato.put("Anombre1", anombre1);
         dato.put("Arelacion1", arelacion1);
         dato.put("Aedad1", aedad1);
@@ -853,8 +915,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
 
     //region Insertar Datos Historial Escolar Adolescentes
     public void insertarDatosHistorialEscolarA(String aasiste, String aconcluyo, String anombreact, String adireccionact, String atelefonoact, String anivelact,
-                                               String agrado, String anombreant1, String alocalidad1, String agradoant1, String anombreant2, String alocalidad2,
-                                               String agradoant2,String afolio){
+                                               String agrado, String anombreant1, String alocalidad1, String agradoant1,String afolio){
         ContentValues dato=new ContentValues();
         dato.put("Aasiste", aasiste);
         dato.put("Aconcluyo", aconcluyo);
@@ -866,9 +927,6 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         dato.put("Anombreant1", anombreant1);
         dato.put("Alocalidad1", alocalidad1);
         dato.put("Agradoant1", agradoant1);
-        dato.put("Anombreant2", anombreant2);
-        dato.put("Alocalidad2", alocalidad2);
-        dato.put("Agradoant2", agradoant2);
         dato.put("Afolio", afolio);
         db.insert("historial_escolar_a", null, dato);
     }
@@ -943,8 +1001,8 @@ public class MyOpenHelper extends SQLiteOpenHelper {
 
     //region Insertar Datos Informacion Caso Actual Adolescentes
     public void insertarDatosInformacionCasoA(String acarpeta,String aexpediente, String afechadis, String aaccesofuente, String acualfuente,
-                                              String adelito, String adelitomencionado_145,
-                                              String adelitomensionado_164, String ainternamiento, String ahechoalegados,String afolio){
+                                              String adelito,String aotro, String adelitomencionado_145,
+                                              String adelitomencionado_164, String ainternamiento, String ahechosalegados,String afolio){
         ContentValues dato=new ContentValues();
         dato.put("Acarpeta", acarpeta);
         dato.put("Aexpediente", aexpediente);
@@ -952,10 +1010,11 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         dato.put("Aaccesofuente", aaccesofuente);
         dato.put("Acualfuente", acualfuente);
         dato.put("Adelito", adelito);
+        dato.put("Aotro", aotro);
         dato.put("Adelitomencionado_145", adelitomencionado_145);
-        dato.put("Adelitomensionado_164", adelitomensionado_164);
+        dato.put("Adelitomencionado_164", adelitomencionado_164);
         dato.put("Ainternamiento", ainternamiento);
-        dato.put("Ahechoalegados", ahechoalegados);
+        dato.put("Ahechosalegados", ahechosalegados);
         dato.put("Afolio", afolio);
         db.insert("informacion_caso_a", null, dato);
     }
@@ -963,35 +1022,36 @@ public class MyOpenHelper extends SQLiteOpenHelper {
 
 
     //region Insertar Datos Procesos Penales Adolescentes
-    public void insertarDatosProcesosPenalesA(String aproceso, String amedidacautelar,
-                                              String acausa1, String adelitomedida1, String atipomedida1, String aestatus1,
-                                              String acausa2, String adelitomedida2, String atipomedida2, String aestatus2,
-                                              String acausa3, String adelitomedida3, String atipomedida3, String aestatus3,
-                                              String acausa4, String adelitomedida4, String atipomedida4, String aestatus4,
-                                              String acausa5, String adelitomedida5, String atipomedida5, String aestatus5,String afolio){
+    public void insertarDatosProcesosPenalesA(String aproceso, String anprocesos, String amedidacautelar,
+                                              String acausa1, String adelito1, String atipomedida1, String aestatus1,
+                                              String acausa2, String adelito2, String atipomedida2, String aestatus2,
+                                              String acausa3, String adelito3, String atipomedida3, String aestatus3,
+                                              String acausa4, String adelito4, String atipomedida4, String aestatus4,
+                                              String acausa5, String adelito5, String atipomedida5, String aestatus5,String afolio){
         ContentValues dato=new ContentValues();
         dato.put("Aproceso", aproceso);
+        dato.put("Anprocesos", anprocesos);
         dato.put("Amedidacautelar", amedidacautelar);
-        dato.put("Acausa", acausa1);
-        dato.put("Adelitomedida", adelitomedida1);
-        dato.put("Atipomedida", atipomedida1);
-        dato.put("Aestatus", aestatus1);
-        dato.put("Acausa", acausa2);
-        dato.put("Adelitomedida", adelitomedida2);
-        dato.put("Atipomedida", atipomedida2);
-        dato.put("Aestatus", aestatus2);
-        dato.put("Acausa", acausa3);
-        dato.put("Adelitomedida", adelitomedida3);
-        dato.put("Atipomedida", atipomedida3);
-        dato.put("Aestatus", aestatus3);
-        dato.put("Acausa", acausa4);
-        dato.put("Adelitomedida", adelitomedida4);
-        dato.put("Atipomedida", atipomedida4);
-        dato.put("Aestatus", aestatus4);
-        dato.put("Acausa", acausa5);
-        dato.put("Adelitomedida", adelitomedida5);
-        dato.put("Atipomedida", atipomedida5);
-        dato.put("Aestatus", aestatus5);
+        dato.put("Acausa1", acausa1);
+        dato.put("adelito1", adelito1);
+        dato.put("Atipomedida1", atipomedida1);
+        dato.put("Aestatus1", aestatus1);
+        dato.put("Acausa2", acausa2);
+        dato.put("adelito2", adelito2);
+        dato.put("Atipomedida2", atipomedida2);
+        dato.put("Aestatus2", aestatus2);
+        dato.put("Acausa3", acausa3);
+        dato.put("adelito3", adelito3);
+        dato.put("Atipomedida3", atipomedida3);
+        dato.put("Aestatus3", aestatus3);
+        dato.put("Acausa4", acausa4);
+        dato.put("adelito4", adelito4);
+        dato.put("Atipomedida4", atipomedida4);
+        dato.put("Aestatus4", aestatus4);
+        dato.put("Acausa5", acausa5);
+        dato.put("adelito5", adelito5);
+        dato.put("Atipomedida5", atipomedida5);
+        dato.put("Aestatus5", aestatus5);
         dato.put("Afolio", afolio);
         db.insert(" procesos_penales_a", null, dato);
     }
@@ -1044,6 +1104,129 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         dato.put("Arelacion", arelacion);
         dato.put("Afolio", afolio);
         db.insert("verificacion_entrevistado_a", null, dato);
+    }
+    //endregion
+
+    //region Insertar Datos Investigacion Ficha Familiar Adolescentes
+    public void insertarDatosInvestigacionFichaFamiliarA(Integer apregunta111, Integer apregunta112,Integer apregunta113,
+                                                         Integer apregunta114, Integer apregunta115, Integer apregunta116,
+                                                         Integer apregunta121, Integer apregunta122, Integer apregunta123,
+                                                         Integer apregunta13,Integer atotal, String afolio) {
+        ContentValues dato = new ContentValues();
+        dato.put("Apregunta111", apregunta111);
+        dato.put("Apregunta112", apregunta112);
+        dato.put("Apregunta113", apregunta113);
+        dato.put("Apregunta114", apregunta114);
+        dato.put("Apregunta115", apregunta115);
+        dato.put("Apregunta116", apregunta116);
+        dato.put("Apregunta121", apregunta121);
+        dato.put("Apregunta122", apregunta122);
+        dato.put("Apregunta123", apregunta123);
+        dato.put("Apregunta13", apregunta13);
+        dato.put("Atotal", atotal);
+        dato.put("Afolio", afolio);
+        db.insert("investigacion_ficha_familiar_a", null, dato);
+    }
+    //endregion
+
+    //region Insertar Datos Investigacion Conexiones En La Comunidad Adolescentes
+    public void insertarDatosInvestigacionConexionesComunidadA(Integer apregunta211, Integer apregunta212, Integer apregunta214,
+                                                               Integer apregunta221, Integer apregunta223, Integer apregunta224,
+                                                               Integer apregunta23, Integer atotal, String afolio) {
+        ContentValues dato = new ContentValues();
+        dato.put("Apregunta211", apregunta211);
+        dato.put("Apregunta212", apregunta212);
+        dato.put("Apregunta214", apregunta214);
+        dato.put("Apregunta221", apregunta221);
+        dato.put("Apregunta223", apregunta223);
+        dato.put("Apregunta224", apregunta224);
+        dato.put("Apregunta23", apregunta23);
+        dato.put("Atotal", atotal);
+        dato.put("Afolio", afolio);
+        db.insert("investigacion_conexiones_comunidad_a", null, dato);
+    }
+    //endregion
+
+    //region Insertar Datos Investigacion Consideraciones Excepcionales Adolescentes
+    public void insertarDatosInvestigacionConsideracionesExcepcionalesA(Integer apregunta31,Integer apregunta32,Integer apregunta33,
+                                                                        Integer atotal,String afolio){
+        ContentValues dato=new ContentValues();
+        dato.put("Apregunta31", apregunta31);
+        dato.put("Apregunta32", apregunta32);
+        dato.put("Apregunta33", apregunta33);
+        dato.put("Atotal", atotal);
+        dato.put("Afolio", afolio);
+        db.insert(" investigacion_consideraciones_excepcionales_a", null, dato);
+    }
+    //endregion
+
+    //region Insertar Datos Investigacion Informacion Caso Adolescentes
+    public void insertarDatosInvestigacionInformacionCasoA(Integer apregunta411,Integer apregunta412,Integer apregunta413,
+                                                           Integer apregunta42,Integer atotal,String afolio){
+        ContentValues dato=new ContentValues();
+        dato.put("Apregunta411", apregunta411);
+        dato.put("Apregunta412", apregunta412);
+        dato.put("Apregunta413", apregunta413);
+        dato.put("Apregunta42", apregunta42);
+        dato.put("Atotal", atotal);
+        dato.put("Afolio", afolio);
+        db.insert("investigacion_informacion_caso_a", null, dato);
+    }
+    //endregion
+
+    //region Insertar Datos Investigacion Procesos Penales Previos Adolescentes
+    public void insertarDatosInvestigacionProcesosPenalesA(Integer apregunta51,Integer apregunta52,Integer atotal,String afolio){
+        ContentValues dato=new ContentValues();
+        dato.put("Apregunta51", apregunta51);
+        dato.put("Apregunta52", apregunta52);
+        dato.put("Atotal", atotal);
+        dato.put("Afolio", afolio);
+        db.insert("investigacion_procesos_penales_a", null, dato);
+    }
+    //endregion
+
+    //region Insertar Datos Encuesta Victima U Ofendido Adolescentes
+    public void insertarDatosInvestigacionVictimaOfendidoA(Integer apregunta61,Integer apregunta621,
+                                                           Integer apregunta622,Integer apregunta623,Integer apregunta63,
+                                                           Integer apregunta64,Integer apregunta65,Integer atotal,String afolio){
+        ContentValues dato=new ContentValues();
+        dato.put("Apregunta61", apregunta61);
+        dato.put("Apregunta621", apregunta621);
+        dato.put("Apregunta622", apregunta622);
+        dato.put("Apregunta623", apregunta623);
+        dato.put("Apregunta63", apregunta63);
+        dato.put("Apregunta64", apregunta64);
+        dato.put("Apregunta65", apregunta65);
+        dato.put("Atotal", atotal);
+        dato.put("Afolio", afolio);
+        db.insert("investigacion_victima_ofendido_a", null, dato);
+    }
+    //endregion
+
+    //region Insertar Datos Encuesta Proceso Legal Adolescentes
+    public void insertarDatosInvestigacionProcesoLegalA(Integer apregunta71,Integer apregunta72,Integer atotal,String afolio){
+        ContentValues dato=new ContentValues();
+        dato.put("Apregunta71", apregunta71);
+        dato.put("Apregunta72", apregunta72);
+        dato.put("Atotal", atotal);
+        dato.put("Afolio", afolio);
+        db.insert("investigacion_proceso_legal_a", null, dato);
+    }
+    //endregion
+
+    //region Insertar Datos Investigacion Resultados Adolescentes
+    public void insertarDatosInvestigacionResultadoA(Integer apuntajeR1,Integer apuntajeR2,Integer apuntajeR3,String arecomendacion,
+                                                     String acasos_excepcionalesA,String acasos_excepcionalesB,String acasos_excepcionalesC, String afolio){
+        ContentValues dato=new ContentValues();
+        dato.put("ApuntajeR1", apuntajeR1);
+        dato.put("ApuntajeR2", apuntajeR2);
+        dato.put("ApuntajeR3", apuntajeR3);
+        dato.put("Arecomendacion", arecomendacion);
+        dato.put("Acasos_excepcionalesA", acasos_excepcionalesA);
+        dato.put("Acasos_excepcionalesB", acasos_excepcionalesB);
+        dato.put("Acasos_excepcionalesC", acasos_excepcionalesC);
+        dato.put("Afolio", afolio);
+        db.insert("investigacion_resultado_a", null, dato);
     }
     //endregion
 
@@ -1725,11 +1908,13 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     //region Actualizacion, Borrar Cursor
     public ArrayList<datosGeneralesA> getdatosGeneralesA(){
         ArrayList<datosGeneralesA> lista1 = new ArrayList<datosGeneralesA>();
-        Cursor c=db.rawQuery("select _id, anombre, asexo, aedad, afechanac, acurp, alugarnac, " +
+        Cursor c=db.rawQuery("select _id, apaterno,amaterno,anombre, asexo, aedad, afechanac, acurp, alugarnac, " +
                 " aestado, amunicipio, alocalidad, anacionalidad, aespanol, atraductor, afolio, averificacion,acarpetainvestigacion" + "  from datos_generales_a",  null);
         if (c != null && c.getCount()>0) {
             c.moveToFirst();
             do {
+                String Apaterno = c.getString(c.getColumnIndex("Apaterno"));
+                String Amaterno = c.getString(c.getColumnIndex("Amaterno"));
                 String Anombre = c.getString(c.getColumnIndex("Anombre"));
                 String Asexo = c.getString(c.getColumnIndex("Asexo"));
                 String Aedad = c.getString(c.getColumnIndex("Aedad"));
@@ -1747,7 +1932,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
                 String Acarpetainvestigacion= c.getString(c.getColumnIndex("Acarpetainvestigacion"));
 
                 int id = c.getInt(c.getColumnIndex("_id"));
-                datosGeneralesA dato = new datosGeneralesA(id, Anombre, Asexo, Aedad, Afechanac, Acurp, Alugarnac, Aestado, Amunicipio, Alocalidad, Anacionalidad, Aespanol, Atraductor, Afolio,Averificacion,Acarpetainvestigacion);
+                datosGeneralesA dato = new datosGeneralesA(id, Apaterno,Amaterno,Anombre, Asexo, Aedad, Afechanac, Acurp, Alugarnac, Aestado, Amunicipio, Alocalidad, Anacionalidad, Aespanol, Atraductor, Afolio,Averificacion,Acarpetainvestigacion);
 
                 //Añadimos la direccion a la lista
                 lista1.add(dato);
@@ -1801,7 +1986,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     //region Actualizacion, Borrar Cursor
     public ArrayList<datosFichaFamiliarA> getdatosFichaFamiliarA(){
         ArrayList<datosFichaFamiliarA> lista1 = new ArrayList<datosFichaFamiliarA>();
-        Cursor c=db.rawQuery("select _id, acalle, anumero, acolonia, acp, amunicipio, aestado, apais, atemporalidad, adomiciliof,adomicilioant, " +
+        Cursor c=db.rawQuery("select _id, acalle, anumero, acolonia,anombrecol, acp, amunicipio, aestado, apais, atemporalidad, adomiciliof,adomicilioant, " +
                 " alocalidad1, atemporalidadant1, alocalidad2, atemporalidadant2, alocalidad3, atemporalidadant3, afolio" + "  from ficha_familiar_a",  null);
         if (c != null && c.getCount()>0) {
             c.moveToFirst();
@@ -1809,6 +1994,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
                 String Acalle = c.getString(c.getColumnIndex("Acalle"));
                 String Anumero = c.getString(c.getColumnIndex("Anumero"));
                 String Acolonia = c.getString(c.getColumnIndex("Acolonia"));
+                String Anombrecol = c.getString(c.getColumnIndex("Anombrecol"));
                 String Acp = c.getString(c.getColumnIndex("Acp"));
                 String Amunicipio = c.getString(c.getColumnIndex("Amunicipio"));
                 String Aestado = c.getString(c.getColumnIndex("Aestado"));
@@ -1825,7 +2011,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
                 String Afolio = c.getString(c.getColumnIndex("Afolio"));
 
                 int id = c.getInt(c.getColumnIndex("_id"));
-                datosFichaFamiliarA dato = new datosFichaFamiliarA(id, Acalle, Anumero, Acolonia, Acp, Amunicipio, Aestado, Apais, Atemporalidad, Adomiciliof,Adomicilioant, Alocalidad1, Atemporalidadant1, Alocalidad2, Atemporalidadant2, Alocalidad3, Atemporalidadant3, Afolio);
+                datosFichaFamiliarA dato = new datosFichaFamiliarA(id, Acalle, Anumero, Acolonia, Anombrecol, Acp, Amunicipio, Aestado, Apais, Atemporalidad, Adomiciliof,Adomicilioant, Alocalidad1, Atemporalidadant1, Alocalidad2, Atemporalidadant2, Alocalidad3, Atemporalidadant3, Afolio);
 
                 //Añadimos la direccion a la lista
                 lista1.add(dato);
@@ -1840,11 +2026,12 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     //region Actualizacion, Borrar Cursor
     public ArrayList<datosFamiliaresA> getdatosFamiliaresA(){
         ArrayList<datosFamiliaresA> lista1 = new ArrayList<datosFamiliaresA>();
-        Cursor c=db.rawQuery("select _id, anombre1, arelacion1, aedad1, atelefono1, avivecon1, anombre2, arelacion2, aedad2, atelefono2, avivecon2, " +
+        Cursor c=db.rawQuery("select _id,apersonasreferencias, anombre1, arelacion1, aedad1, atelefono1, avivecon1, anombre2, arelacion2, aedad2, atelefono2, avivecon2, " +
                 " aubicarfam, anombrefam, arelacionfam, alocalidadfam, afolio" + "  from datos_familiares_a",  null);
         if (c != null && c.getCount()>0) {
             c.moveToFirst();
             do {
+                String Apersonasreferencias = c.getString(c.getColumnIndex("Apersonasreferencias"));
                 String Anombre1 = c.getString(c.getColumnIndex("Anombre1"));
                 String Arelacion1 = c.getString(c.getColumnIndex("Arelacion1"));
                 String Aedad1 = c.getString(c.getColumnIndex("Aedad1"));
@@ -1862,7 +2049,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
                 String Afolio = c.getString(c.getColumnIndex("Afolio"));
 
                 int id = c.getInt(c.getColumnIndex("_id"));
-                datosFamiliaresA dato = new datosFamiliaresA(id, Anombre1, Arelacion1, Aedad1, Atelefono1, Avivecon1, Anombre2, Arelacion2, Aedad2, Atelefono2, Avivecon2, Aubicarfam, Anombrefam, Arelacionfam, Alocalidadfam, Afolio);
+                datosFamiliaresA dato = new datosFamiliaresA(id,Apersonasreferencias, Anombre1, Arelacion1, Aedad1, Atelefono1, Avivecon1, Anombre2, Arelacion2, Aedad2, Atelefono2, Avivecon2, Aubicarfam, Anombrefam, Arelacionfam, Alocalidadfam, Afolio);
 
                 //Añadimos la direccion a la lista
                 lista1.add(dato);
@@ -1878,7 +2065,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     public ArrayList<datosHistorialEscolarA> getdatosHistorialEscolarA(){
         ArrayList<datosHistorialEscolarA> lista1 = new ArrayList<datosHistorialEscolarA>();
         Cursor c=db.rawQuery("select _id, aasiste, aconcluyo, anombreact, adireccionact, atelefonoact, anivelact, agrado, anombreant1, alocalidad1, agradoant1, " +
-                " anombreant2, alocalidad2, agradoant2, afolio" + "  from historial_escolar_a",  null);
+                "afolio" + "  from historial_escolar_a",  null);
         if (c != null && c.getCount()>0) {
             c.moveToFirst();
             do {
@@ -1892,13 +2079,10 @@ public class MyOpenHelper extends SQLiteOpenHelper {
                 String Anombreant1 = c.getString(c.getColumnIndex("Anombreant1"));
                 String Alocalidad1 = c.getString(c.getColumnIndex("Alocalidad1"));
                 String Agradoant1 = c.getString(c.getColumnIndex("Agradoant1"));
-                String Anombreant2 = c.getString(c.getColumnIndex("Anombreant2"));
-                String Alocalidad2 = c.getString(c.getColumnIndex("Alocalidad2"));
-                String Agradoant2 = c.getString(c.getColumnIndex("Agradoant2"));
                 String Afolio = c.getString(c.getColumnIndex("Afolio"));
 
                 int id = c.getInt(c.getColumnIndex("_id"));
-                datosHistorialEscolarA dato = new datosHistorialEscolarA(id, Aasiste, Aconcluyo, Anombreact, Adireccionact, Atelefonoact, Anivelact, Agrado, Anombreant1, Alocalidad1, Agradoant1, Anombreant2, Alocalidad2, Agradoant2, Afolio);
+                datosHistorialEscolarA dato = new datosHistorialEscolarA(id, Aasiste, Aconcluyo, Anombreact, Adireccionact, Atelefonoact, Anivelact, Agrado, Anombreant1, Alocalidad1, Agradoant1, Afolio);
 
                 //Añadimos la direccion a la lista
                 lista1.add(dato);
@@ -2088,11 +2272,154 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     }
     //endregionf
     //endregion
+    //region Obtener los datos de observaciones en la base de datos
+    //endregion
+    public ArrayList<datosInformacionCasoA> getdatosInformacionCasoA(){
+        ArrayList<datosInformacionCasoA> lista1 = new ArrayList<datosInformacionCasoA>();
+        Cursor c=db.rawQuery("select _id, acarpeta, aexpediente, afechadis, aaccesofuente, acualfuente, adelito,aotro ,adelitomencionado_145, adelitomencionado_164, ainternamiento, ahechosalegados, afolio" + " from informacion_caso_a",  null);
+        if (c != null && c.getCount()>0) {
+            c.moveToFirst();
+            do {
+                String Acarpeta = c.getString(c.getColumnIndex("Acarpeta"));
+                String Aexpediente = c.getString(c.getColumnIndex("Aexpediente"));
+                String Afechadis = c.getString(c.getColumnIndex("Afechadis"));
+                String Aaccesofuente = c.getString(c.getColumnIndex("Aaccesofuente"));
+                String Acualfuente = c.getString(c.getColumnIndex("Acualfuente"));
+                String Adelito = c.getString(c.getColumnIndex("Adelito"));
+                String Aotro = c.getString(c.getColumnIndex("Aotro"));
+                String Adelitomencionado_145 = c.getString(c.getColumnIndex("Adelitomencionado_145"));
+                String Adelitomencionado_164 = c.getString(c.getColumnIndex("Adelitomencionado_164"));
+                String Ainternamiento = c.getString(c.getColumnIndex("Ainternamiento"));
+                String Ahechosalegados = c.getString(c.getColumnIndex("Ahechosalegados"));
+                String Afolio = c.getString(c.getColumnIndex("Afolio"));
 
+                int id = c.getInt(c.getColumnIndex("_id"));
+                datosInformacionCasoA dato = new datosInformacionCasoA(id, Acarpeta, Aexpediente, Afechadis, Aaccesofuente, Acualfuente, Adelito,Aotro, Adelitomencionado_145,Adelitomencionado_164, Ainternamiento, Ahechosalegados, Afolio);
+
+                //Añadimos la direccion a la lista
+                lista1.add(dato);
+            } while (c.moveToNext());
+        }
+
+        //Cerramos el cursor
+        c.close();
+        return lista1;
+    }
+    //region Actualizacion, Borrar Cursor
+    //endregion
+    public ArrayList<datosProcesosPenalesA> getdatosProcesosPenalesA(){
+        ArrayList<datosProcesosPenalesA> lista1 = new ArrayList<datosProcesosPenalesA>();
+        Cursor c=db.rawQuery("select _id, aproceso, anprocesos, amedidacautelar, acausa1, adelito1, atipomedida1, aestatus1, acausa2, adelito2, atipomedida2, aestatus2, acausa3, adelito3, atipomedida3, aestatus3, acausa4, adelito4, atipomedida4, aestatus4, acausa5, adelito5, atipomedida5, aestatus5, afolio" + " from procesos_penales_a",  null);
+        if (c != null && c.getCount()>0) {
+            c.moveToFirst();
+            do {
+                String Aproceso = c.getString(c.getColumnIndex("Aproceso"));
+                String Anprocesos = c.getString(c.getColumnIndex("Anprocesos"));
+                String Amedidacautelar = c.getString(c.getColumnIndex("Amedidacautelar"));
+                String Acausa1 = c.getString(c.getColumnIndex("Acausa1"));
+                String Adelito1 = c.getString(c.getColumnIndex("Adelito1"));
+                String Atipomedida1 = c.getString(c.getColumnIndex("Atipomedida1"));
+                String Aestatus1 = c.getString(c.getColumnIndex("Aestatus1"));
+                String Acausa2 = c.getString(c.getColumnIndex("Acausa2"));
+                String Adelito2 = c.getString(c.getColumnIndex("Adelito2"));
+                String Atipomedida2 = c.getString(c.getColumnIndex("Atipomedida2"));
+                String Aestatus2 = c.getString(c.getColumnIndex("Aestatus2"));
+                String Acausa3 = c.getString(c.getColumnIndex("Acausa3"));
+                String Adelito3 = c.getString(c.getColumnIndex("Adelito3"));
+                String Atipomedida3 = c.getString(c.getColumnIndex("Atipomedida3"));
+                String Aestatus3 = c.getString(c.getColumnIndex("Aestatus3"));
+                String Acausa4 = c.getString(c.getColumnIndex("Acausa4"));
+                String Adelito4 = c.getString(c.getColumnIndex("Adelito4"));
+                String Atipomedida4 = c.getString(c.getColumnIndex("Atipomedida4"));
+                String Aestatus4 = c.getString(c.getColumnIndex("Aestatus4"));
+                String Acausa5 = c.getString(c.getColumnIndex("Acausa5"));
+                String Adelito5 = c.getString(c.getColumnIndex("Adelito5"));
+                String Atipomedida5 = c.getString(c.getColumnIndex("Atipomedida5"));
+                String Aestatus5 = c.getString(c.getColumnIndex("Aestatus5"));
+                String Afolio = c.getString(c.getColumnIndex("Afolio"));
+
+                int id = c.getInt(c.getColumnIndex("_id"));
+                datosProcesosPenalesA dato = new datosProcesosPenalesA(id, Aproceso, Anprocesos, Amedidacautelar, Acausa1, Adelito1, Atipomedida1, Aestatus1, Acausa2, Adelito2, Atipomedida2, Aestatus2, Acausa3, Adelito3, Atipomedida3, Aestatus3, Acausa4, Adelito4, Atipomedida4, Aestatus4, Acausa5, Adelito5, Atipomedida5, Aestatus5, Afolio);
+
+                //Añadimos la direccion a la lista
+                lista1.add(dato);
+            } while (c.moveToNext());
+        }
+
+        //Cerramos el cursor
+        c.close();
+        return lista1;
+    }
+    //region Actualizacion, Borrar Cursor
+    //endregion
+    public ArrayList<datosVictimaOfendidoA> getdatosVictimaOfendidoA(){
+        ArrayList<datosVictimaOfendidoA> lista1 = new ArrayList<datosVictimaOfendidoA>();
+        Cursor c=db.rawQuery("select _id, aexistevictima, avivedomicilio, anovivevictima, acasomismodomicilio, acercania, aintegridad, aintenciones, afolio" + " from victima_ofendido_a",  null);
+        if (c != null && c.getCount()>0) {
+            c.moveToFirst();
+            do {
+                String Aexistevictima = c.getString(c.getColumnIndex("Aexistevictima"));
+                String Avivedomicilio = c.getString(c.getColumnIndex("Avivedomicilio"));
+                String Anovivevictima = c.getString(c.getColumnIndex("Anovivevictima"));
+                String Acasomismodomicilio = c.getString(c.getColumnIndex("Acasomismodomicilio"));
+                String Acercania = c.getString(c.getColumnIndex("Acercania"));
+                String Aintegridad = c.getString(c.getColumnIndex("Aintegridad"));
+                String Aintenciones = c.getString(c.getColumnIndex("Aintenciones"));
+                String Afolio = c.getString(c.getColumnIndex("Afolio"));
+
+                int id = c.getInt(c.getColumnIndex("_id"));
+                datosVictimaOfendidoA dato = new datosVictimaOfendidoA(id, Aexistevictima, Avivedomicilio, Anovivevictima, Acasomismodomicilio, Acercania, Aintegridad, Aintenciones, Afolio);
+
+                //Añadimos la direccion a la lista
+                lista1.add(dato);
+            } while (c.moveToNext());
+        }
+
+        //Cerramos el cursor
+        c.close();
+        return lista1;
+    }
+    //region Actualiza una tabla a partir de una observacion
+    //region Actualizacion, Borrar Cursor
+    //endregion
+    public ArrayList<datosProcesoLegalA> getdatosProcesoLegalA(){
+        ArrayList<datosProcesoLegalA> lista1 = new ArrayList<datosProcesoLegalA>();
+        Cursor c=db.rawQuery("select _id, ariesgocontinuo, aexpliquecontinuo, aamenazatestigo, aexpliqueamenaza, afolio" + " from proceso_legal_a",  null);
+        if (c != null && c.getCount()>0) {
+            c.moveToFirst();
+            do {
+                String Ariesgocontinuo = c.getString(c.getColumnIndex("Ariesgocontinuo"));
+                String Aexpliquecontinuo = c.getString(c.getColumnIndex("Aexpliquecontinuo"));
+                String Aamenazatestigo= c.getString(c.getColumnIndex("Aamenazatestigo"));
+                String Aexpliqueamenaza = c.getString(c.getColumnIndex("Aexpliqueamenaza"));
+                String Afolio = c.getString(c.getColumnIndex("Afolio"));
+
+                int id = c.getInt(c.getColumnIndex("_id"));
+                datosProcesoLegalA dato = new datosProcesoLegalA(id, Ariesgocontinuo, Aexpliquecontinuo, Aamenazatestigo, Aexpliqueamenaza, Afolio);
+
+                //Añadimos la direccion a la lista
+                lista1.add(dato);
+            } while (c.moveToNext());
+        }
+
+        //Cerramos el cursor
+        c.close();
+        return lista1;
+    }
+    //region Actualiza una tabla a partir de una observacion
+    //endregion
     //region Actualizacion, Borrar Cursor
 
     //region Actualiza una tabla a partir de una observacion
     public void updateTable(String table, String field, String observation, String folio){
+        ContentValues cv = new ContentValues();
+        cv.put(field, observation);
+        String[] args = new  String[]{folio};
+        db.update(table, cv, "Folio=?", args);
+    }
+    //endregion
+    //region Actualiza una tabla a partir de una observacionAdolescenste
+    public void updateTableA(String table, String field, String observation, String folio){
         ContentValues cv = new ContentValues();
         cv.put(field, observation);
         String[] args = new  String[]{folio};

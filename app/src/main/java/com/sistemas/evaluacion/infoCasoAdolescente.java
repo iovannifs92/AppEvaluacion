@@ -1,5 +1,6 @@
 package com.sistemas.evaluacion;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
@@ -15,39 +17,42 @@ import android.widget.Toast;
 
 import com.sistemas.evaluacion.entidades.datosGeneralesA;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 public class infoCasoAdolescente extends AppCompatActivity {
 
     //regio boolean
-    private boolean pR=false;
+    private boolean pR=false,ICA=false,PP=false,VO=false,PL=false ;
 
     //INFORMACION DE CASO ACTUAL
-    private TextView tvFp,tvF,tvEVS,tvVD,tvVV,tvCV,tvRR,tvEx1,tvEx2,tvNC1,tvNC2,tvNC3,tvNC4,tvNC5,tvD1,tvD2,tvD3,tvD4,tvD5,tvTM1,tvTM2,tvTM3,tvTM4,tvTM5,tvE1,tvE2,tvE3,tvE4,tvE5,tvSL,tvPPP1,tvPPP2,tvPPP3,tvPPP4,tvPPP5;
+    private TextView tvEspe,tvTPc,tvFp,tvF,tvEVS,tvVD,tvVV,tvCV,tvRR,tvEx1,tvEx2,tvNC1,tvNC2,tvNC3,tvNC4,tvNC5,tvD1,tvD2,tvD3,tvD4,tvD5,tvTM1,tvTM2,tvTM3,tvTM4,tvTM5,tvE1,tvE2,tvE3,tvE4,tvE5,tvSL,tvPPP1,tvPPP2,tvPPP3,tvPPP4,tvPPP5;
     //endregion
 
     //Infotmacion el caso actual
-    private EditText txtCCD,txtFp,txtF,txtDi,txtNC1,txtNC2,txtNC3,txtNC4,txtNC5,txtD1,txtD2,txtD3,txtD4,txtD5,txtTM1,txtTM2,txtTM3,txtTM4,txtTM5,txtE1,txtE2,txtE3,txtE4,txtE5,txtEx1,txtEx2;
+    private EditText txtEspe,txtCCD,txtFp,txtF,txtDi,txtNC1,txtNC2,txtNC3,txtNC4,txtNC5,txtD1,txtD2,txtD3,txtD4,txtD5,txtTM1,txtTM2,txtTM3,txtTM4,txtTM5,txtEx1,txtEx2;
     //endregion EditText
     //region SPINNERS
-    private Spinner sPICA,sPTE,sPTI,sPDI,sPUA,sPUD,sPMC,sPHO,sPTP,sPSL,sPVO,sPVD,sPVV,sPRR,sPEVS,sPDV,sPEVF,sPSE,sPSA;
+    private Spinner sPE1,sPE2,sPE3,sPE4,sPE5,sPICA,sPTE,sPTI,sPDI,sPUA,sPUD,sPMC,sPHO,sPTP,sPTPc,sPSL,sPVO,sPVD,sPVV,sPRR,sPEVS,sPDV,sPEVF,sPSE,sPSA;
     //endregion
     //region BOTTONES
     private Button btnGuardarIA,btnICA,btnPP,btnVO,btnPL;
     //endregion
     String folio, carpeta;
     //region Strings
-    private String r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11,r12,r13,r14,r15,r16,r17,r18,r19,r20,r21,r22,r23,r24,r25;
+    private String r1,r2,r3,r3_1,r4,r5,r6,r7,r8,r9,r10,r11,r12,r13,r14,r15,r16,r17,r18,r19,r20,r21,r22,r23,r24,r25;
     /////SPINNERS
-    private String rS1,rS2,rS3,rS4,rS5,rS6,rS7,rS8,rS9,rS10,rS11,rS12,rS13,rS14,rS15,rS16,rS17,rS18;
+    private String rS1,rS2,rS3,rS4,rS5,rS6,rS7,rS8,rS8_1,rS9,rS10,rS11,rS12,rS13,rS14,rS15,rS16,rS17,rS18;
     //endregion
     //region String
     private String [] nosi={"No", "Si"};
+    private String [] nosia={"N/A","No", "Si"};
     private String [] delito={"Otro", "Robo", "Robo Simple", "Violación", "Violencia Familiar", "Daños y Lesiones",
             "Lesiones menores a 15 dias", "Contra la Salud", "Comercio o Suministro", "Portación de Armas de Fuego"};
 
-    private String[] estatus={"Vigente", "Suspendido", "Revocado", "Cumplido"};
-
+    private String[] estatus={"N/A","Vigente", "Suspendido", "Revocado", "Cumplido"};
+    private String[] otroProceso={"N/A","1","2","3","4","5"};
     //endregion
     //region LinearLayout
     private LinearLayout llControlA ,llICA, llPP,llVO,llPL;
@@ -70,6 +75,12 @@ public class infoCasoAdolescente extends AppCompatActivity {
         txtCCD=(EditText) findViewById(R.id.txtCCD);
         btnGuardarIA=(Button) findViewById(R.id.btnGuardarIA);
         sPICA = (Spinner) findViewById(R.id.sPICA);
+
+        sPE1 =(Spinner) findViewById(R.id.sPE1);
+        sPE2 = (Spinner) findViewById(R.id.sPE2);
+        sPE3= (Spinner) findViewById(R.id.sPE3);
+        sPE4 = (Spinner) findViewById(R.id.sPE4);
+        sPE5 = (Spinner) findViewById(R.id.sPE5);
         //endregion
 
         tvControlA=(TextView) findViewById(R.id.tvControlA);
@@ -77,7 +88,7 @@ public class infoCasoAdolescente extends AppCompatActivity {
 
         //region Inicio BD
         db=new MyOpenHelper(this);
-        db.getReadableDatabase();
+        //db.getReadableDatabase();
 
         lista1 = db.getdatosGeneralesA();
 
@@ -104,13 +115,19 @@ public class infoCasoAdolescente extends AppCompatActivity {
 
 
         sPICA.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, names));
-        //endregion*
+        sPE1.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, estatus));
+        sPE2.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, estatus));
+        sPE3.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, estatus));
+        sPE4.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, estatus));
+        sPE5.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, estatus));
+        //endregion
 
 
 
 
 
         //region INFORMACION DE CASO ACTUAL
+        tvTPc=(TextView) findViewById(R.id.tvTPc);
         txtFp=(EditText) findViewById(R.id.txtFp);
         tvFp=(TextView) findViewById(R.id.tvFp);
         txtF=(EditText) findViewById(R.id.txtF);
@@ -133,14 +150,9 @@ public class infoCasoAdolescente extends AppCompatActivity {
         txtTM4=(EditText) findViewById(R.id.txtTM4);
         txtTM5=(EditText) findViewById(R.id.txtTM5);
 
-        txtE1=(EditText) findViewById(R.id.txtE1);
-        txtE2=(EditText) findViewById(R.id.txtE2);
-        txtE3=(EditText) findViewById(R.id.txtE3);
-        txtE4=(EditText) findViewById(R.id.txtE4);
-        txtE5=(EditText) findViewById(R.id.txtE5);
 
-
-
+        tvEspe=(TextView) findViewById(R.id.tvEspe);
+        txtEspe=(EditText) findViewById(R.id.txtEspe);
         tvNC1=(TextView) findViewById(R.id.tvNC1);
         tvNC2=(TextView) findViewById(R.id.tvNC2);
         tvNC3=(TextView) findViewById(R.id.tvNC3);
@@ -185,11 +197,25 @@ public class infoCasoAdolescente extends AppCompatActivity {
         // region sPUA  UNO DE LO DELITOS
         sPTI = (Spinner) findViewById(R.id.sPTI);
         sPTI.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosi));
-        //endregion
+        sPTI.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem=parent.getSelectedItem().toString();
+                if (selectedItem=="Si"){
+                   tvF.setVisibility(View.VISIBLE);
+                    txtF.setVisibility(View.VISIBLE);
+                }
+                else{
+                    tvF.setVisibility(View.GONE);
+                    txtF.setVisibility(View.GONE);
+                }
+            }
 
-        // region sPDI  UNO DE LO DELITOS
-        sPDI = (Spinner) findViewById(R.id.sPDI);
-        sPDI.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, delito));
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                return;
+            }
+        });
         //endregion
 
         // region sPUA  UNO DE LO DELITOS
@@ -216,24 +242,47 @@ public class infoCasoAdolescente extends AppCompatActivity {
 
         // region sPVV VIVE CON LA VICTIMA
         sPVV = (Spinner) findViewById(R.id.sPVV);
-        sPVV.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosi));
+        sPVV.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosia));
         //endregion
         // region sPEVS ELIMINA LA CERCANIA
         sPEVS = (Spinner) findViewById(R.id.sPEVS);
-        sPEVS.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosi));
+        sPEVS.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosia));
         //endregion
         // region sPDV DELITO VIOLENTO
         sPDV = (Spinner) findViewById(R.id.sPDV);
-        sPDV.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosi));
+        sPDV.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosia));
         //endregion
         // region sPEVF EL ADOLECENTE HA EXPRESADO
         sPEVF = (Spinner) findViewById(R.id.sPEVF);
-        sPEVF.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosi));
+        sPEVF.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosia));
         //endregion
 
 
+        // region sPDI  UNO DE LO DELITOS
+        sPDI = (Spinner) findViewById(R.id.sPDI);
+        sPDI.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, delito));
+        sPDI.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem=parent.getSelectedItem().toString();
+                if (selectedItem=="Otro"){
+                    tvEspe.setVisibility(View.VISIBLE);
+                    txtEspe.setVisibility(View.VISIBLE);
+                }
+                else{
+                    tvEspe.setVisibility(View.GONE);
+                    txtEspe.setVisibility(View.GONE);
+                }
+            }
 
-        // region sPTP TIENE OTRO PROCESO
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                return;
+            }
+        });
+        //endregion
+
+        // region Cuantos procesos
         sPTP = (Spinner) findViewById(R.id.sPTP);
         sPTP.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nosi));
         sPTP.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -241,55 +290,12 @@ public class infoCasoAdolescente extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selectedItem=parent.getSelectedItem().toString();
                 if (selectedItem=="Si"){
-                    txtNC1.setVisibility(View.VISIBLE);
-                    txtNC2.setVisibility(View.VISIBLE);
-                    txtNC3.setVisibility(View.VISIBLE);
-                    txtNC4.setVisibility(View.VISIBLE);
-                    txtNC5.setVisibility(View.VISIBLE);
-                    txtD1.setVisibility(View.VISIBLE);
-                    txtD2.setVisibility(View.VISIBLE);
-                    txtD3.setVisibility(View.VISIBLE);
-                    txtD4.setVisibility(View.VISIBLE);
-                    txtD5.setVisibility(View.VISIBLE);
-                    txtTM1.setVisibility(View.VISIBLE);
-                    txtTM2.setVisibility(View.VISIBLE);
-                    txtTM3.setVisibility(View.VISIBLE);
-                    txtTM4.setVisibility(View.VISIBLE);
-                    txtTM5.setVisibility(View.VISIBLE);
-                    txtE1.setVisibility(View.VISIBLE);
-                    txtE2.setVisibility(View.VISIBLE);
-                    txtE3.setVisibility(View.VISIBLE);
-                    txtE4.setVisibility(View.VISIBLE);
-                    txtE5.setVisibility(View.VISIBLE);
-                    tvNC1.setVisibility(View.VISIBLE);
-                    tvNC2.setVisibility(View.VISIBLE);
-                    tvNC3.setVisibility(View.VISIBLE);
-                    tvNC4.setVisibility(View.VISIBLE);
-                    tvNC5.setVisibility(View.VISIBLE);
-                    tvD1.setVisibility(View.VISIBLE);
-                    tvD2.setVisibility(View.VISIBLE);
-                    tvD3.setVisibility(View.VISIBLE);
-                    tvD4.setVisibility(View.VISIBLE);
-                    tvD5.setVisibility(View.VISIBLE);
-                    tvTM1.setVisibility(View.VISIBLE);
-                    tvTM2.setVisibility(View.VISIBLE);
-                    tvTM3.setVisibility(View.VISIBLE);
-                    tvTM4.setVisibility(View.VISIBLE);
-                    tvTM5.setVisibility(View.VISIBLE);
-                    tvE1.setVisibility(View.VISIBLE);
-                    tvE2.setVisibility(View.VISIBLE);
-                    tvE3.setVisibility(View.VISIBLE);
-                    tvE4.setVisibility(View.VISIBLE);
-                    tvE5.setVisibility(View.VISIBLE);
-                    tvPPP1.setVisibility(View.VISIBLE);
-                    tvPPP2.setVisibility(View.VISIBLE);
-                    tvPPP3.setVisibility(View.VISIBLE);
-                    tvPPP4.setVisibility(View.VISIBLE);
-                    tvPPP5.setVisibility(View.VISIBLE);
-                    tvSL.setVisibility(View.VISIBLE);
-                    sPSL.setVisibility(View.VISIBLE);
+                    sPTPc.setVisibility(View.VISIBLE);
+                    tvTPc.setVisibility(View.VISIBLE);
                 }
                 else{
+                    sPTPc.setVisibility(View.GONE);
+                    tvTPc.setVisibility(View.GONE);
                     txtNC1.setVisibility(View.GONE);
                     txtNC2.setVisibility(View.GONE);
                     txtNC3.setVisibility(View.GONE);
@@ -305,11 +311,11 @@ public class infoCasoAdolescente extends AppCompatActivity {
                     txtTM3.setVisibility(View.GONE);
                     txtTM4.setVisibility(View.GONE);
                     txtTM5.setVisibility(View.GONE);
-                    txtE1.setVisibility(View.GONE);
-                    txtE2.setVisibility(View.GONE);
-                    txtE3.setVisibility(View.GONE);
-                    txtE4.setVisibility(View.GONE);
-                    txtE5.setVisibility(View.GONE);
+                    sPE1.setVisibility(View.GONE);
+                    sPE2.setVisibility(View.GONE);
+                    sPE3.setVisibility(View.GONE);
+                    sPE4.setVisibility(View.GONE);
+                    sPE5.setVisibility(View.GONE);
                     tvNC1.setVisibility(View.GONE);
                     tvNC2.setVisibility(View.GONE);
                     tvNC3.setVisibility(View.GONE);
@@ -337,6 +343,317 @@ public class infoCasoAdolescente extends AppCompatActivity {
                     tvPPP5.setVisibility(View.GONE);
                     tvSL.setVisibility(View.GONE);
                     sPSL.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                return;
+            }
+        });
+        //endregion
+        // region sPTPc TIENE OTRO PROCESO
+        sPTPc = (Spinner) findViewById(R.id.sPTPc);
+        sPTPc.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, otroProceso));
+        sPTPc.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem=parent.getSelectedItem().toString();
+                switch (selectedItem) {
+                    case "NA":
+                        txtNC1.setVisibility(View.GONE);
+                        txtNC2.setVisibility(View.GONE);
+                        txtNC3.setVisibility(View.GONE);
+                        txtNC4.setVisibility(View.GONE);
+                        txtNC5.setVisibility(View.GONE);
+                        txtD1.setVisibility(View.GONE);
+                        txtD2.setVisibility(View.GONE);
+                        txtD3.setVisibility(View.GONE);
+                        txtD4.setVisibility(View.GONE);
+                        txtD5.setVisibility(View.GONE);
+                        txtTM1.setVisibility(View.GONE);
+                        txtTM2.setVisibility(View.GONE);
+                        txtTM3.setVisibility(View.GONE);
+                        txtTM4.setVisibility(View.GONE);
+                        txtTM5.setVisibility(View.GONE);
+                        sPE1.setVisibility(View.GONE);
+                        sPE2.setVisibility(View.GONE);
+                        sPE3.setVisibility(View.GONE);
+                        sPE4.setVisibility(View.GONE);
+                        sPE5.setVisibility(View.GONE);
+                        tvNC1.setVisibility(View.GONE);
+                        tvNC2.setVisibility(View.GONE);
+                        tvNC3.setVisibility(View.GONE);
+                        tvNC4.setVisibility(View.GONE);
+                        tvNC5.setVisibility(View.GONE);
+                        tvD1.setVisibility(View.GONE);
+                        tvD2.setVisibility(View.GONE);
+                        tvD3.setVisibility(View.GONE);
+                        tvD4.setVisibility(View.GONE);
+                        tvD5.setVisibility(View.GONE);
+                        tvTM1.setVisibility(View.GONE);
+                        tvTM2.setVisibility(View.GONE);
+                        tvTM3.setVisibility(View.GONE);
+                        tvTM4.setVisibility(View.GONE);
+                        tvTM5.setVisibility(View.GONE);
+                        tvE1.setVisibility(View.GONE);
+                        tvE2.setVisibility(View.GONE);
+                        tvE3.setVisibility(View.GONE);
+                        tvE4.setVisibility(View.GONE);
+                        tvE5.setVisibility(View.GONE);
+                        tvPPP1.setVisibility(View.GONE);
+                        tvPPP2.setVisibility(View.GONE);
+                        tvPPP3.setVisibility(View.GONE);
+                        tvPPP4.setVisibility(View.GONE);
+                        tvPPP5.setVisibility(View.GONE);
+                        tvSL.setVisibility(View.GONE);
+                        sPSL.setVisibility(View.GONE);
+                        break;
+                    case "1":
+                        txtNC1.setVisibility(View.VISIBLE);
+                        txtNC2.setVisibility(View.GONE);
+                        txtNC3.setVisibility(View.GONE);
+                        txtNC4.setVisibility(View.GONE);
+                        txtNC5.setVisibility(View.GONE);
+                        txtD1.setVisibility(View.VISIBLE);
+                        txtD2.setVisibility(View.GONE);
+                        txtD3.setVisibility(View.GONE);
+                        txtD4.setVisibility(View.GONE);
+                        txtD5.setVisibility(View.GONE);
+                        txtTM1.setVisibility(View.VISIBLE);
+                        txtTM2.setVisibility(View.GONE);
+                        txtTM3.setVisibility(View.GONE);
+                        txtTM4.setVisibility(View.GONE);
+                        txtTM5.setVisibility(View.GONE);
+                        sPE1.setVisibility(View.VISIBLE);
+                        sPE2.setVisibility(View.GONE);
+                        sPE3.setVisibility(View.GONE);
+                        sPE4.setVisibility(View.GONE);
+                        sPE5.setVisibility(View.GONE);
+                        tvNC1.setVisibility(View.VISIBLE);
+                        tvNC2.setVisibility(View.GONE);
+                        tvNC3.setVisibility(View.GONE);
+                        tvNC4.setVisibility(View.GONE);
+                        tvNC5.setVisibility(View.GONE);
+                        tvD1.setVisibility(View.VISIBLE);
+                        tvD2.setVisibility(View.GONE);
+                        tvD3.setVisibility(View.GONE);
+                        tvD4.setVisibility(View.GONE);
+                        tvD5.setVisibility(View.GONE);
+                        tvTM1.setVisibility(View.VISIBLE);
+                        tvTM2.setVisibility(View.GONE);
+                        tvTM3.setVisibility(View.GONE);
+                        tvTM4.setVisibility(View.GONE);
+                        tvTM5.setVisibility(View.GONE);
+                        tvE1.setVisibility(View.VISIBLE);
+                        tvE2.setVisibility(View.GONE);
+                        tvE3.setVisibility(View.GONE);
+                        tvE4.setVisibility(View.GONE);
+                        tvE5.setVisibility(View.GONE);
+                        tvPPP1.setVisibility(View.VISIBLE);
+                        tvPPP2.setVisibility(View.GONE);
+                        tvPPP3.setVisibility(View.GONE);
+                        tvPPP4.setVisibility(View.GONE);
+                        tvPPP5.setVisibility(View.GONE);
+                        tvSL.setVisibility(View.VISIBLE);
+                        sPSL.setVisibility(View.VISIBLE);
+                        break;
+                    case "2":
+                        txtNC1.setVisibility(View.VISIBLE);
+                        txtNC2.setVisibility(View.VISIBLE);
+                        txtNC3.setVisibility(View.GONE);
+                        txtNC4.setVisibility(View.GONE);
+                        txtNC5.setVisibility(View.GONE);
+                        txtD1.setVisibility(View.VISIBLE);
+                        txtD2.setVisibility(View.VISIBLE);
+                        txtD3.setVisibility(View.GONE);
+                        txtD4.setVisibility(View.GONE);
+                        txtD5.setVisibility(View.GONE);
+                        txtTM1.setVisibility(View.VISIBLE);
+                        txtTM2.setVisibility(View.VISIBLE);
+                        txtTM3.setVisibility(View.GONE);
+                        txtTM4.setVisibility(View.GONE);
+                        txtTM5.setVisibility(View.GONE);
+                        sPE1.setVisibility(View.VISIBLE);
+                        sPE2.setVisibility(View.VISIBLE);
+                        sPE3.setVisibility(View.GONE);
+                        sPE4.setVisibility(View.GONE);
+                        sPE5.setVisibility(View.GONE);
+                        tvNC1.setVisibility(View.VISIBLE);
+                        tvNC2.setVisibility(View.VISIBLE);
+                        tvNC3.setVisibility(View.GONE);
+                        tvNC4.setVisibility(View.GONE);
+                        tvNC5.setVisibility(View.GONE);
+                        tvD1.setVisibility(View.VISIBLE);
+                        tvD2.setVisibility(View.VISIBLE);
+                        tvD3.setVisibility(View.GONE);
+                        tvD4.setVisibility(View.GONE);
+                        tvD5.setVisibility(View.GONE);
+                        tvTM1.setVisibility(View.VISIBLE);
+                        tvTM2.setVisibility(View.VISIBLE);
+                        tvTM3.setVisibility(View.GONE);
+                        tvTM4.setVisibility(View.GONE);
+                        tvTM5.setVisibility(View.GONE);
+                        tvE1.setVisibility(View.VISIBLE);
+                        tvE2.setVisibility(View.VISIBLE);
+                        tvE3.setVisibility(View.GONE);
+                        tvE4.setVisibility(View.GONE);
+                        tvE5.setVisibility(View.GONE);
+                        tvPPP1.setVisibility(View.VISIBLE);
+                        tvPPP2.setVisibility(View.VISIBLE);
+                        tvPPP3.setVisibility(View.GONE);
+                        tvPPP4.setVisibility(View.GONE);
+                        tvPPP5.setVisibility(View.GONE);
+                        tvSL.setVisibility(View.VISIBLE);
+                        sPSL.setVisibility(View.VISIBLE);
+                        break;
+                    case "3":
+                        txtNC1.setVisibility(View.VISIBLE);
+                        txtNC2.setVisibility(View.VISIBLE);
+                        txtNC3.setVisibility(View.VISIBLE);
+                        txtNC4.setVisibility(View.GONE);
+                        txtNC5.setVisibility(View.GONE);
+                        txtD1.setVisibility(View.VISIBLE);
+                        txtD2.setVisibility(View.VISIBLE);
+                        txtD3.setVisibility(View.VISIBLE);
+                        txtD4.setVisibility(View.GONE);
+                        txtD5.setVisibility(View.GONE);
+                        txtTM1.setVisibility(View.VISIBLE);
+                        txtTM2.setVisibility(View.VISIBLE);
+                        txtTM3.setVisibility(View.VISIBLE);
+                        txtTM4.setVisibility(View.GONE);
+                        txtTM5.setVisibility(View.GONE);
+                        sPE1.setVisibility(View.VISIBLE);
+                        sPE2.setVisibility(View.VISIBLE);
+                        sPE3.setVisibility(View.VISIBLE);
+                        sPE4.setVisibility(View.GONE);
+                        sPE5.setVisibility(View.GONE);
+                        tvNC1.setVisibility(View.VISIBLE);
+                        tvNC2.setVisibility(View.VISIBLE);
+                        tvNC3.setVisibility(View.VISIBLE);
+                        tvNC4.setVisibility(View.GONE);
+                        tvNC5.setVisibility(View.GONE);
+                        tvD1.setVisibility(View.VISIBLE);
+                        tvD2.setVisibility(View.VISIBLE);
+                        tvD3.setVisibility(View.VISIBLE);
+                        tvD4.setVisibility(View.GONE);
+                        tvD5.setVisibility(View.GONE);
+                        tvTM1.setVisibility(View.VISIBLE);
+                        tvTM2.setVisibility(View.VISIBLE);
+                        tvTM3.setVisibility(View.VISIBLE);
+                        tvTM4.setVisibility(View.GONE);
+                        tvTM5.setVisibility(View.GONE);
+                        tvE1.setVisibility(View.VISIBLE);
+                        tvE2.setVisibility(View.VISIBLE);
+                        tvE3.setVisibility(View.VISIBLE);
+                        tvE4.setVisibility(View.GONE);
+                        tvE5.setVisibility(View.GONE);
+                        tvPPP1.setVisibility(View.VISIBLE);
+                        tvPPP2.setVisibility(View.VISIBLE);
+                        tvPPP3.setVisibility(View.VISIBLE);
+                        tvPPP4.setVisibility(View.GONE);
+                        tvPPP5.setVisibility(View.GONE);
+                        tvSL.setVisibility(View.VISIBLE);
+                        sPSL.setVisibility(View.VISIBLE);
+                        break;
+                    case "4":
+                        txtNC1.setVisibility(View.VISIBLE);
+                        txtNC2.setVisibility(View.VISIBLE);
+                        txtNC3.setVisibility(View.VISIBLE);
+                        txtNC4.setVisibility(View.VISIBLE);
+                        txtNC5.setVisibility(View.GONE);
+                        txtD1.setVisibility(View.VISIBLE);
+                        txtD2.setVisibility(View.VISIBLE);
+                        txtD3.setVisibility(View.VISIBLE);
+                        txtD4.setVisibility(View.VISIBLE);
+                        txtD5.setVisibility(View.GONE);
+                        txtTM1.setVisibility(View.VISIBLE);
+                        txtTM2.setVisibility(View.VISIBLE);
+                        txtTM3.setVisibility(View.VISIBLE);
+                        txtTM4.setVisibility(View.VISIBLE);
+                        txtTM5.setVisibility(View.GONE);
+                        sPE1.setVisibility(View.VISIBLE);
+                        sPE2.setVisibility(View.VISIBLE);
+                        sPE3.setVisibility(View.VISIBLE);
+                        sPE4.setVisibility(View.VISIBLE);
+                        sPE5.setVisibility(View.GONE);
+                        tvNC1.setVisibility(View.VISIBLE);
+                        tvNC2.setVisibility(View.VISIBLE);
+                        tvNC3.setVisibility(View.VISIBLE);
+                        tvNC4.setVisibility(View.VISIBLE);
+                        tvNC5.setVisibility(View.GONE);
+                        tvD1.setVisibility(View.VISIBLE);
+                        tvD2.setVisibility(View.VISIBLE);
+                        tvD3.setVisibility(View.VISIBLE);
+                        tvD4.setVisibility(View.VISIBLE);
+                        tvD5.setVisibility(View.GONE);
+                        tvTM1.setVisibility(View.VISIBLE);
+                        tvTM2.setVisibility(View.VISIBLE);
+                        tvTM3.setVisibility(View.VISIBLE);
+                        tvTM4.setVisibility(View.VISIBLE);
+                        tvTM5.setVisibility(View.GONE);
+                        tvE1.setVisibility(View.VISIBLE);
+                        tvE2.setVisibility(View.VISIBLE);
+                        tvE3.setVisibility(View.VISIBLE);
+                        tvE4.setVisibility(View.VISIBLE);
+                        tvE5.setVisibility(View.GONE);
+                        tvPPP1.setVisibility(View.VISIBLE);
+                        tvPPP2.setVisibility(View.VISIBLE);
+                        tvPPP3.setVisibility(View.VISIBLE);
+                        tvPPP4.setVisibility(View.VISIBLE);
+                        tvPPP5.setVisibility(View.GONE);
+                        tvSL.setVisibility(View.VISIBLE);
+                        sPSL.setVisibility(View.VISIBLE);
+                        break;
+                    case "5":
+                        txtNC1.setVisibility(View.VISIBLE);
+                        txtNC2.setVisibility(View.VISIBLE);
+                        txtNC3.setVisibility(View.VISIBLE);
+                        txtNC4.setVisibility(View.VISIBLE);
+                        txtNC5.setVisibility(View.VISIBLE);
+                        txtD1.setVisibility(View.VISIBLE);
+                        txtD2.setVisibility(View.VISIBLE);
+                        txtD3.setVisibility(View.VISIBLE);
+                        txtD4.setVisibility(View.VISIBLE);
+                        txtD5.setVisibility(View.VISIBLE);
+                        txtTM1.setVisibility(View.VISIBLE);
+                        txtTM2.setVisibility(View.VISIBLE);
+                        txtTM3.setVisibility(View.VISIBLE);
+                        txtTM4.setVisibility(View.VISIBLE);
+                        txtTM5.setVisibility(View.VISIBLE);
+                        sPE1.setVisibility(View.VISIBLE);
+                        sPE2.setVisibility(View.VISIBLE);
+                        sPE3.setVisibility(View.VISIBLE);
+                        sPE4.setVisibility(View.VISIBLE);
+                        sPE5.setVisibility(View.VISIBLE);
+                        tvNC1.setVisibility(View.VISIBLE);
+                        tvNC2.setVisibility(View.VISIBLE);
+                        tvNC3.setVisibility(View.VISIBLE);
+                        tvNC4.setVisibility(View.VISIBLE);
+                        tvNC5.setVisibility(View.VISIBLE);
+                        tvD1.setVisibility(View.VISIBLE);
+                        tvD2.setVisibility(View.VISIBLE);
+                        tvD3.setVisibility(View.VISIBLE);
+                        tvD4.setVisibility(View.VISIBLE);
+                        tvD5.setVisibility(View.VISIBLE);
+                        tvTM1.setVisibility(View.VISIBLE);
+                        tvTM2.setVisibility(View.VISIBLE);
+                        tvTM3.setVisibility(View.VISIBLE);
+                        tvTM4.setVisibility(View.VISIBLE);
+                        tvTM5.setVisibility(View.VISIBLE);
+                        tvE1.setVisibility(View.VISIBLE);
+                        tvE2.setVisibility(View.VISIBLE);
+                        tvE3.setVisibility(View.VISIBLE);
+                        tvE4.setVisibility(View.VISIBLE);
+                        tvE5.setVisibility(View.VISIBLE);
+                        tvPPP1.setVisibility(View.VISIBLE);
+                        tvPPP2.setVisibility(View.VISIBLE);
+                        tvPPP3.setVisibility(View.VISIBLE);
+                        tvPPP4.setVisibility(View.VISIBLE);
+                        tvPPP5.setVisibility(View.VISIBLE);
+                        tvSL.setVisibility(View.VISIBLE);
+                        sPSL.setVisibility(View.VISIBLE);
+                        break;
                 }
             }
 
@@ -387,12 +704,16 @@ public class infoCasoAdolescente extends AppCompatActivity {
                     tvCV.setVisibility(View.VISIBLE);
                     tvRR.setVisibility(View.VISIBLE);
                     sPRR.setVisibility(View.VISIBLE);
+                    sPVV.setVisibility(View.GONE);
+                    tvVV.setVisibility(View.GONE);
 
                 }
                 else{
                     tvCV.setVisibility(View.GONE);
                     tvRR.setVisibility(View.GONE);
                     sPRR.setVisibility(View.GONE);
+                    tvVV.setVisibility(View.VISIBLE);
+                    sPVV.setVisibility(View.VISIBLE);
                 }
             }
 
@@ -480,6 +801,15 @@ public class infoCasoAdolescente extends AppCompatActivity {
         });
         //endregion
 
+        txtFp.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                showDatePickerDialog(txtFp);
+            }
+
+        });
+
 
         btnGuardarIA=(Button) findViewById(R.id.btnGuardarIA);
         btnGuardarIA.setOnClickListener(new View.OnClickListener() {
@@ -509,11 +839,11 @@ public class infoCasoAdolescente extends AppCompatActivity {
                 r17=txtTM4.getText().toString().toUpperCase();
                 r18=txtTM5.getText().toString().toUpperCase();
 
-                r19=txtE1.getText().toString().toUpperCase();
-                r20=txtE2.getText().toString().toUpperCase();
-                r21=txtE3.getText().toString().toUpperCase();
-                r22=txtE4.getText().toString().toUpperCase();
-                r23=txtE5.getText().toString().toUpperCase();
+                r19=sPE1.getSelectedItem().toString().toUpperCase();
+                r20=sPE2.getSelectedItem().toString().toUpperCase();
+                r21=sPE3.getSelectedItem().toString().toUpperCase();
+                r22=sPE4.getSelectedItem().toString().toUpperCase();
+                r23=sPE5.getSelectedItem().toString().toUpperCase();
 
                 r24=txtEx1.getText().toString().toUpperCase();
                 r25=txtEx1.getText().toString().toUpperCase();
@@ -521,12 +851,14 @@ public class infoCasoAdolescente extends AppCompatActivity {
                 rS1=sPTE.getSelectedItem().toString().toUpperCase();
                 rS2=sPTI.getSelectedItem().toString().toUpperCase();
                 rS3=sPDI.getSelectedItem().toString().toUpperCase();
+                r3_1=txtEspe.getText().toString().toUpperCase();
                 rS4=sPUA.getSelectedItem().toString().toUpperCase();
                 rS5=sPUD.getSelectedItem().toString().toUpperCase();
                 rS6=sPMC.getSelectedItem().toString().toUpperCase();
                 rS7=sPHO.getSelectedItem().toString().toUpperCase();
 
                 rS8=sPTP.getSelectedItem().toString().toUpperCase();
+                rS8_1=sPTPc.getSelectedItem().toString().toUpperCase();
                 rS9=sPSL.getSelectedItem().toString().toUpperCase();
                 rS10=sPVO.getSelectedItem().toString().toUpperCase();
                 rS11=sPVD.getSelectedItem().toString().toUpperCase();
@@ -542,11 +874,11 @@ public class infoCasoAdolescente extends AppCompatActivity {
                 folio = lista1.get(Idx.get(pos)).getAfolio();
                 carpeta=txtCCD.getText().toString();
 
-                db.insertarDatosInformacionCasoA(carpeta,rS1,r1,rS2,r2,rS3,rS4,rS5,rS6,rS7,folio);
-                db.insertarDatosProcesosPenalesA(rS8,rS9,r4,r9,r14,r19,r5,r10,r15,r20,r6,r11,r16,r21,r7,r12,r17,r22,r8,r13,r18,r23,folio);
+                db.insertarDatosInformacionCasoA(carpeta,rS1,r1,rS2,r2,rS3,r3_1,rS4,rS5,rS6,rS7,folio);
+                db.insertarDatosProcesosPenalesA(rS8,rS8_1,rS9,r4,r9,r14,r19,r5,r10,r15,r20,r6,r11,r16,r21,r7,r12,r17,r22,r8,r13,r18,r23,folio);
                 db.insertarDatosVictimaOfendidoA(rS10,rS11,rS12,rS13,rS18,rS14,rS15,folio);
                 db.insertarDatosProcesoLegalA(rS16,r22,rS17,r23,folio);
-                db.updateTable("datos_generales_a", "Acarpetainvestigacion", "SI", folio);
+                db.updateTableA("datos_generales_a", "Acarpetainvestigacion", "SI", folio);
                 Toast.makeText(getApplicationContext(), "Datos Guardados correctamete", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(view.getContext(), MainMenu.class);
                 startActivity(intent);
@@ -571,26 +903,26 @@ public class infoCasoAdolescente extends AppCompatActivity {
         btnICA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!pR){
+                if(!ICA){
                     llICA.setVisibility(View.VISIBLE);
-                    pR=true;
+                    ICA=true;
                 }
                 else{
                     llICA.setVisibility(View.GONE);
-                    pR=false;
+                    ICA=false;
                 }
             }
         });
         btnPP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!pR){
+                if(!PP){
                     llPP.setVisibility(View.VISIBLE);
-                    pR=true;
+                    PP=true;
                 }
                 else{
                     llPP.setVisibility(View.GONE);
-                    pR=false;
+                    PP=false;
                 }
             }
         });
@@ -598,13 +930,13 @@ public class infoCasoAdolescente extends AppCompatActivity {
         btnVO.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!pR){
+                if(!VO){
                     llVO.setVisibility(View.VISIBLE);
-                    pR=true;
+                    VO=true;
                 }
                 else{
                     llVO.setVisibility(View.GONE);
-                    pR=false;
+                    VO=false;
                 }
             }
         });
@@ -612,17 +944,28 @@ public class infoCasoAdolescente extends AppCompatActivity {
         btnPL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!pR){
+                if(!PL){
                     llPL.setVisibility(View.VISIBLE);
-                    pR=true;
+                    PL=true;
                 }
                 else{
                     llPL.setVisibility(View.GONE);
-                    pR=false;
+                    PL=false;
                 }
             }
         });
 
+    }
+    private void showDatePickerDialog(final EditText editText) {
+        DatePickerFragment newFragment = DatePickerFragment.newInstance(new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                // +1 because january is zero
+                final String selectedDate = day + " / " + (month+1) + " / " + year;
+                editText.setText(selectedDate);
+            }
+        });
+        newFragment.show(getSupportFragmentManager(), "datePicker");
     }
     //endregion
     private long backPressedTime = 0;

@@ -2,11 +2,11 @@ package com.sistemas.evaluacion.entidades;
 
 public class datosHistorialEscolarA {
     int id;
-    String aasiste,aconcluyo,anombreact,adireccionact,atelefonoact,anivelact,agrado,anombreant1,alocalidad1,agradoant1,anombreant2,alocalidad2,agradoant2,afolio;
+    String aasiste,aconcluyo,anombreact,adireccionact,atelefonoact,anivelact,agrado,anombreant1,alocalidad1,agradoant1,afolio;
 
     public datosHistorialEscolarA(int id, String aasiste, String aconcluyo, String anombreact, String adireccionact,
                                   String atelefonoact, String anivelact, String agrado, String anombreant1, String alocalidad1,
-                                  String agradoant1, String anombreant2, String alocalidad2, String agradoant2, String afolio) {
+                                  String agradoant1, String afolio) {
         this.id = id;
         this.aasiste = aasiste;
         this.aconcluyo = aconcluyo;
@@ -18,9 +18,6 @@ public class datosHistorialEscolarA {
         this.anombreant1 = anombreant1;
         this.alocalidad1 = alocalidad1;
         this.agradoant1 = agradoant1;
-        this.anombreant2 = anombreant2;
-        this.alocalidad2 = alocalidad2;
-        this.agradoant2 = agradoant2;
         this.afolio = afolio;
     }
 //region set-get
@@ -67,18 +64,6 @@ public class datosHistorialEscolarA {
     public String getAgradoant1() { return agradoant1; }
 
     public void setAgradoant1(String agradoant1) { this.agradoant1 = agradoant1; }
-
-    public String getAnombreant2() { return anombreant2; }
-
-    public void setAnombreant2(String anombreant2) { this.anombreant2 = anombreant2; }
-
-    public String getAlocalidad2() { return alocalidad2; }
-
-    public void setAlocalidad2(String alocalidad2) { this.alocalidad2 = alocalidad2; }
-
-    public String getAgradoant2() { return agradoant2; }
-
-    public void setAgradoant2(String agradoant2) { this.agradoant2 = agradoant2; }
 
     public String getAfolio() { return afolio; }
 
