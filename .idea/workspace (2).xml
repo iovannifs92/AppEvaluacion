@@ -1,0 +1,901 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
+  </component>
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/editar_adolescente.java" line="2479" mnemonic="7" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4bad697c-1642-448a-ace4-45817f8f30da" name="Default Changelist" comment="final creo">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/editar_adolescente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_editar_adolescente.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/MyOpenHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/MyOpenHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/ReporteAdolescentes.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/ReporteAdolescentes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entidades/datosDependientesEconomicosA.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entidades/datosDependientesEconomicosA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entidades/datosFamiliaresA.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entidades/datosFamiliaresA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entidades/datosInformacionCasoA.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entidades/datosInformacionCasoA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entidades/datosObservacionesA.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entidades/datosObservacionesA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entrevista_adolescente.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entrevista_adolescente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/infoCasoAdolescente.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/infoCasoAdolescente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/instrumento_adolescente.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/instrumento_adolescente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/verificacionAdolecentes.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/verificacionAdolecentes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_entrevista_adolescente.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_entrevista_adolescente.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_info_caso_adolescente.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_info_caso_adolescente.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_instrumento_adolescente.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_instrumento_adolescente.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/activity_main_menu_drawer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/activity_main_menu_drawer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tutorial" beforeDir="false" afterPath="$PROJECT_DIR$/../tutorial" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/build/classes/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_29" />
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AppEvaluacionfinal" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/infoCasoAdolescente.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1343">
+              <caret line="98" column="116" selection-start-line="98" selection-start-column="26" selection-end-line="98" selection-end-column="116" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/MyOpenHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="41072">
+              <caret line="2452" column="59" selection-start-line="2452" selection-start-column="59" selection-end-line="2452" selection-end-column="59" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/ConsultaDomicilioA.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1496">
+              <caret line="105" column="78" selection-start-line="105" selection-start-column="78" selection-end-line="105" selection-end-column="78" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/verificacionAdolecentes.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17595">
+              <caret line="1070" column="85" selection-start-line="1070" selection-start-column="85" selection-end-line="1070" selection-end-column="85" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/ReporteAssist.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/instrumento_adolescente.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1955">
+              <caret line="158" column="104" selection-start-line="157" selection-start-column="6" selection-end-line="158" selection-end-column="104" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entidades/datosVerificacionA.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entidades/datosObservacionesA.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/ReporteAdolescentes.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="39">
+              <caret line="1017" column="47" lean-forward="true" selection-start-line="1017" selection-start-column="47" selection-end-line="1017" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entidades/datosEntrevistadorA.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>txtEx1</find>
+      <find>no</find>
+      <find>llVisibility</find>
+      <find>sName</find>
+      <find>pass</find>
+      <find>cargarWebService</find>
+      <find>showinputdialog</find>
+      <find>onclicklis</find>
+      <find>final</find>
+      <find>view</find>
+      <find>TVNO</find>
+      <find>btnAlert</find>
+      <find>.close</find>
+      <find>showInputDialog</find>
+      <find>isEmpty</find>
+      <find>IdxA</find>
+      <find>llControl</find>
+      <find>LinearLayout</find>
+      <find>tvNoRecords</find>
+      <find>llVisibilityA</find>
+      <find>nav_instrumentoA</find>
+      <find>tvTA</find>
+      <find>tvTA1</find>
+      <find>Cursor</find>
+      <find>getReadableDatabase</find>
+      <find>rawQuery</find>
+      <find>sP1a</find>
+      <find>sPTE</find>
+      <find>observaciones</find>
+      <find>verificacion_entrevistado_a</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entidades/datosVictimaOfendidoA.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_verificacion_adolecentes.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entidades/datosConsumoSustanciasA.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entidades/datosGeneralesA.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/verificacionAdolecentes.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entidades/datosDependientesEconomicosA.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entidades/datosFamiliaresA.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/activity_main_menu_drawer.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entidades/datosInformacionCasoA.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entrevista_adolescente.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/MainMenu.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main_menu.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/instrumento_adolescente.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_instrumento_adolescente.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_editar_adolescente.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_consulta_domicilio2.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/editar_adolescente.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_entrevista_adolescente.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_info_caso_adolescente.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/infoCasoAdolescente.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/ConsultaDomicilioA.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entidades/datosObservacionesA.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/MyOpenHelper.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/ReporteAdolescentes.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="782" />
+    <option name="height" value="735" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="CLV1D69F3FF" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2019-12-17T14:57:32.417Z" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
+    <property name="project.structure.last.edited" value="SDK Location" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="android.template.packageName">
+      <recent name="com.sistemas.evaluacion" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4bad697c-1642-448a-ace4-45817f8f30da" name="Default Changelist" comment="" />
+      <created>1574693430248</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1574693430248</updated>
+    </task>
+    <task id="LOCAL-00001" summary="final creo">
+      <created>1574818439110</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1574818439110</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <layout>
+      <window_info id="Captures" order="0" sideWeight="0.5008183" side_tool="true" weight="0.21406959" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49918166" visible="true" weight="0.23676248" />
+      <window_info id="Structure" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Build Variants" order="4" side_tool="true" />
+      <window_info id="Image Layers" order="5" />
+      <window_info id="Designer" order="6" />
+      <window_info id="Resources Explorer" order="7" />
+      <window_info id="Capture Tool" order="8" />
+      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.49848714" weight="0.3289689" />
+      <window_info anchor="bottom" id="Logcat" order="1" weight="0.30114567" />
+      <window_info anchor="bottom" id="TODO" order="2" weight="0.3289689" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49924356" weight="0.3878887" />
+      <window_info anchor="bottom" id="Terminal" order="4" weight="0.3289689" />
+      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.50075644" side_tool="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Version Control" order="6" weight="0.3289689" />
+      <window_info active="true" anchor="bottom" id="Build" order="7" sideWeight="0.49924356" visible="true" weight="0.21931261" />
+      <window_info anchor="bottom" id="Android Profiler" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Find" order="9" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="right" id="Gradle" order="1" sideWeight="0.49918166" weight="0.32980332" />
+      <window_info anchor="right" id="Theme Preview" order="2" />
+      <window_info anchor="right" id="Preview" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Device File Explorer" order="5" sideWeight="0.5008183" side_tool="true" weight="0.3850227" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Captures" order="0" sideWeight="0.5008183" side_tool="true" weight="0.21406959" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49918166" visible="true" weight="0.21406959" />
+      <window_info id="Structure" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Build Variants" order="4" side_tool="true" />
+      <window_info id="Image Layers" order="5" />
+      <window_info id="Designer" order="6" />
+      <window_info id="Resources Explorer" order="7" />
+      <window_info id="Capture Tool" order="8" />
+      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.49848714" weight="0.3289689" />
+      <window_info anchor="bottom" id="Logcat" order="1" weight="0.30114567" />
+      <window_info anchor="bottom" id="TODO" order="2" weight="0.3289689" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49924356" weight="0.3878887" />
+      <window_info anchor="bottom" id="Terminal" order="4" weight="0.3289689" />
+      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.50075644" side_tool="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Version Control" order="6" weight="0.3289689" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49924356" weight="0.21931261" />
+      <window_info anchor="bottom" id="Android Profiler" order="8" />
+      <window_info anchor="bottom" id="Find" order="9" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="right" id="Gradle" order="1" sideWeight="0.49918166" weight="0.32980332" />
+      <window_info anchor="right" id="Theme Preview" order="2" />
+      <window_info anchor="right" id="Preview" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Device File Explorer" order="5" sideWeight="0.5008183" side_tool="true" weight="0.3850227" />
+    </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="final creo" />
+    <option name="LAST_COMMIT_MESSAGE" value="final creo" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/editar_adolescente.java</url>
+          <line>3023</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/MainActivity.java</url>
+          <line>37</line>
+          <properties />
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/verificacion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="178" column="73" selection-start-line="178" selection-start-column="73" selection-end-line="178" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entrevista.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="1660" column="31" selection-start-line="1660" selection-start-column="21" selection-end-line="1660" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="425" column="23" selection-start-line="425" selection-start-column="18" selection-end-line="425" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entidades/datosFamiliares.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-510">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-28/android.jar!/java/lang/reflect/InvocationTargetException.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+          <folding>
+            <element signature="e#363#364#0" expanded="true" />
+            <element signature="e#414#415#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entidades/datosHistorialEscolarA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="63" column="18" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entidades/datosHistorialLaboralA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="67" column="31" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entidades/datosFichaFamiliarA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-204">
+          <caret line="44" column="29" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entidades/datosDependientesEconomicosA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="43" lean-forward="true" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entidades/datosGeneralesA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="29" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/MapsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/fragments/MapsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4652">
+          <caret line="48" column="13" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/ConsultaDomicilio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="98" column="54" selection-start-line="98" selection-start-column="47" selection-end-line="98" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_assist.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entidades/datosResponsablesA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="12" column="37" lean-forward="true" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entidades/datosFamiliaresA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_entrevista.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5746">
+          <caret line="383" column="43" lean-forward="true" selection-start-line="383" selection-start-column="43" selection-end-line="383" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="35" column="48" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/main_menu.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entidades/datosProcesosPenalesA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="42" lean-forward="true" selection-start-column="42" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entidades/datosInformacionCasoA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="71" column="33" lean-forward="true" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
+          <folding>
+            <element signature="e#2119#2120#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_verificacion_adolecentes.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_consultas.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/Consultas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-243" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main_menu.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/activity_main_menu_drawer.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="42" column="45" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_instrumento.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="14" column="41" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_sincronizar_bd.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="21" column="33" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/SincronizarBD.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="112" column="48" selection-start-line="112" selection-start-column="32" selection-end-line="112" selection-end-column="48" />
+          <folding>
+            <element signature="e#3611#3762#0" expanded="true" />
+            <element signature="e#3761#3762#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_instrumento_adolescente.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="410" column="68" lean-forward="true" selection-start-line="410" selection-end-line="411" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_consulta_domicilio2.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="13" column="35" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/Instrumento.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2210">
+          <caret line="166" column="24" selection-start-line="166" selection-start-column="12" selection-end-line="166" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/MainMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2839">
+          <caret line="187" column="36" selection-start-line="187" selection-start-column="36" selection-end-line="187" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_editar_adolescente.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53754">
+          <caret line="3162" column="46" selection-start-line="3162" selection-start-column="46" selection-end-line="3162" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/ConexionSQLiteHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="283" column="5" selection-start-line="283" selection-start-column="5" selection-end-line="283" selection-end-column="5" />
+          <folding>
+            <element signature="e#34#259#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/editar_adolescente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-49279">
+          <caret line="219" column="21" selection-start-line="219" selection-start-column="21" selection-end-line="219" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_info_caso_adolescente.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="74" column="41" selection-start-line="74" selection-start-column="37" selection-end-line="74" selection-end-column="41" />
+          <folding>
+            <element signature="e#2864#2879#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entrevista_adolescente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="946" column="11" lean-forward="true" selection-start-line="915" selection-start-column="7" selection-end-line="946" selection-end-column="11" />
+          <folding>
+            <element signature="e#34#979#0" expanded="true" />
+            <element signature="e#23578#23579#0" expanded="true" />
+            <element signature="e#23616#23617#0" expanded="true" />
+            <element signature="e#24968#24969#0" expanded="true" />
+            <element signature="e#25006#25007#0" expanded="true" />
+            <element signature="e#35796#35797#0" expanded="true" />
+            <element signature="e#35834#35835#0" expanded="true" />
+            <element signature="e#39515#39516#0" expanded="true" />
+            <element signature="e#39553#39554#0" expanded="true" />
+            <element signature="e#41178#41179#0" expanded="true" />
+            <element signature="e#41216#41217#0" expanded="true" />
+            <element signature="e#43597#43598#0" expanded="true" />
+            <element signature="e#43635#43636#0" expanded="true" />
+            <element signature="e#45003#45004#0" expanded="true" />
+            <element signature="e#45041#45042#0" expanded="true" />
+            <element signature="e#53904#53905#0" expanded="true" />
+            <element signature="e#53942#53943#0" expanded="true" />
+            <element signature="e#56648#56649#0" expanded="true" />
+            <element signature="e#56686#56687#0" expanded="true" />
+            <element signature="e#59005#59006#0" expanded="true" />
+            <element signature="e#59043#59044#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_entrevista_adolescente.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="115" column="37" selection-start-line="115" selection-start-column="33" selection-end-line="115" selection-end-column="37" />
+          <folding>
+            <element signature="e#64395#64409#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/infoCasoAdolescente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1343">
+          <caret line="98" column="116" selection-start-line="98" selection-start-column="26" selection-end-line="98" selection-end-column="116" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/MyOpenHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="41072">
+          <caret line="2452" column="59" selection-start-line="2452" selection-start-column="59" selection-end-line="2452" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/ConsultaDomicilioA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1496">
+          <caret line="105" column="78" selection-start-line="105" selection-start-column="78" selection-end-line="105" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/verificacionAdolecentes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17595">
+          <caret line="1070" column="85" selection-start-line="1070" selection-start-column="85" selection-end-line="1070" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/ReporteAssist.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/instrumento_adolescente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1955">
+          <caret line="158" column="104" selection-start-line="157" selection-start-column="6" selection-end-line="158" selection-end-column="104" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entidades/datosVerificacionA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entidades/datosObservacionesA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/entidades/datosEntrevistadorA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sistemas/evaluacion/ReporteAdolescentes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="1017" column="47" lean-forward="true" selection-start-line="1017" selection-start-column="47" selection-end-line="1017" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

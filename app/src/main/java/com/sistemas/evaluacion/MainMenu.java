@@ -2,8 +2,6 @@ package com.sistemas.evaluacion;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -12,12 +10,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.sistemas.evaluacion.entidades.datosGenerales;
 import com.sistemas.evaluacion.entidades.datosEntrevistador;
+import com.sistemas.evaluacion.entidades.datosGenerales;
+import com.github.clans.fab.FloatingActionMenu;
+import com.sistemas.evaluacion.entidades.datosGeneralesA;
 
 import java.util.ArrayList;
 
@@ -26,33 +27,29 @@ public class MainMenu extends AppCompatActivity
 
     //region Variables Globales
     private MyOpenHelper db;
+
     private ArrayList<datosGenerales> lista;
+    private ArrayList<datosGeneralesA> listaA;
+
     private ArrayList<datosEntrevistador> listaEntrevistador;
     public static String entrevistador;
     private TextView tvLista;
+    private TextView tvListaA;
     public String tamaño="";
+    public String tamañoA="";
     ListToCSV convierte=new ListToCSV();
     //endregion
-
+    FloatingActionMenu actionMenu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
-
         //region Navigation Drawer
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();*/
-                Intent intent= new Intent(view.getContext(), entrevista.class);
-                startActivity(intent);
-            }
-        });
+        actionMenu=(FloatingActionMenu)findViewById(R.id.fabPrincipal);
+        actionMenu.setClosedOnTouchOutside(true); //Boton FloatingMenu
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -70,6 +67,12 @@ public class MainMenu extends AppCompatActivity
         tamaño=""+(lista.size());
         tvLista = (TextView) findViewById(R.id.tvLista);
         tvLista.setText(tamaño);
+
+       listaA=db.getdatosGeneralesA();
+       tamañoA=""+(listaA.size());
+       tvListaA = (TextView) findViewById(R.id.tvListaA);
+
+       tvListaA.setText(tamañoA);
 
         //region entrevistador
         listaEntrevistador=db.getEntrevistador();
@@ -96,6 +99,18 @@ public class MainMenu extends AppCompatActivity
 
     }
 
+    public void clicSubMenu1(View View){ //BotonFloatingMenu
+
+        Intent intent= new Intent(this, entrevista.class);
+        startActivity(intent);
+
+    }
+    public void clicSubMenu2(View View){ //BotonFloatingMenu
+
+        Intent intent= new Intent(this, entrevista_adolescente.class);
+        startActivity(intent);
+
+    }
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -137,16 +152,16 @@ public class MainMenu extends AppCompatActivity
 
         Intent intent;
         switch(id){
-            case R.id.nav_reporte_entrevista:
-                intent = new Intent(this, ReporteEntrevista.class);
+            case R.id.nav_reportes:
+                intent = new Intent(this, Reportes.class);
                 startActivity(intent);
                 break;
-            case R.id.nav_car:
-                intent = new Intent(this, ConsultaDomicilio.class);
+            case R.id.nav_consultas:
+                intent = new Intent(this, Consultas.class);
                 startActivity(intent);
                 break;
-            case R.id.nav_verificacion:
-                intent = new Intent(this, verificacion.class);
+            case R.id.nav_verificaciones:
+                intent = new Intent(this, Verificaciones.class);
                 startActivity(intent);
                 break;
             case R.id.nav_assist:
@@ -169,13 +184,21 @@ public class MainMenu extends AppCompatActivity
                 intent = new Intent(this, Instrumento.class);
                 startActivity(intent);
                 break;
+            case R.id.nav_instrumentoA:
+                intent = new Intent(this, instrumento_adolescente.class);
+                startActivity(intent);
+                break;
+            case R.id.nav_editar_adolescente:
+                intent = new Intent(this, editar_adolescente.class);
+                startActivity(intent);
+                break;
             case R.id.nav_qr:
                 intent = new Intent(this, QRVerify.class);
                 startActivity(intent);
                 break;
-            case R.id.nav_investigacion:
-                Intent intent9 = new Intent(this, CarpetaInvestigacion.class);
-                startActivity(intent9);
+            case R.id.nav_Carpetas:
+                intent = new Intent(this, Carpetas.class);
+                startActivity(intent);
                 break;
         }
 

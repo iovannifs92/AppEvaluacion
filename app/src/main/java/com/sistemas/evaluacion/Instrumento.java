@@ -231,6 +231,8 @@ public class Instrumento extends AppCompatActivity implements View.OnClickListen
                     llSpinners.setVisibility(View.VISIBLE);
                     btnGuardarEvaluacion.setVisibility(View.VISIBLE);
 
+
+
                     boolean flag1, flag2, flag3, flag4, flag5, flag6, fakeAddress;
                     v = 0;
                     //region Imposibilidad de arraigo

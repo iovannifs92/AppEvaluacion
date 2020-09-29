@@ -166,6 +166,10 @@ public class TemplatePDF {
             paragraph.add(chunk);
             chunk.setGenericTag(text);
             ct.addElement(paragraph);
+            if(ct.getYLine() < 151) {
+                document.newPage();
+                ct.setYLine(0);
+            }
             if(ct.getYLine() > 0) {
                 rectangle = new Rectangle(pageSize.getLeft() + pageMargin,
                         pageSize.getBottom() + pageMargin,
@@ -173,6 +177,7 @@ public class TemplatePDF {
                         Math.min(ct.getYLine(), pageSize.getTop() - pageMargin));
             }
             else {
+                document.newPage();
                 rectangle = new Rectangle(pageSize.getLeft() + pageMargin,
                         pageSize.getBottom() + pageMargin,
                         pageSize.getRight() - pageMargin,
@@ -251,8 +256,8 @@ public class TemplatePDF {
         }
 
     }
-
-    public void createTable(ArrayList<PdfPCell> imputado, int cols, float[] widths){
+    //splitLate = true hace que el texto de la tabla salga completo
+    public void createTable(ArrayList<PdfPCell> imputado, int cols, float[] widths, boolean splitLate, boolean last){
         try{
             paragraph=new Paragraph();
             paragraph.setFont(fFormatText);
@@ -261,7 +266,8 @@ public class TemplatePDF {
             pdfPTable.setWidths(widths);
             pdfPTable.setWidthPercentage(100);
             pdfPTable.setSpacingBefore(10);
-            pdfPTable.setSplitLate(false);
+
+            pdfPTable.setSplitLate(splitLate);
 
             for (int index=0; index<imputado.size();index++){
                 PdfPCell pdfPCell;
@@ -495,11 +501,13 @@ public class TemplatePDF {
 
                 float prevYLine = ct.getYLine();
 
-                //Lines never used, a table is always fitted in a single page
+                //Lines never used, a table is always fitted in a single page. Counterexample: carpeta de investigacion de adolecentes. Rompe adultos prematuramente
                 /*if(c == 2) {
-                    document.newPage();
-                    ct.setYLine(0);
-                    oldYLine = pageSize.getTop() - pageMargin;
+                    if(last == false) {
+                        document.newPage();
+                        ct.setYLine(0);
+                    }break;
+                    //oldYLine = pageSize.getTop() - pageMargin;
                 }*/
                 if(c == 2){
                     break;
@@ -583,6 +591,7 @@ public class TemplatePDF {
                         Math.min(ct.getYLine(), pageSize.getTop() - pageMargin));
             }
             else {
+                document.newPage();
                 rectangle = new Rectangle(pageSize.getLeft() + pageMargin,
                         pageSize.getBottom() + pageMargin,
                         pageSize.getRight() - pageMargin,

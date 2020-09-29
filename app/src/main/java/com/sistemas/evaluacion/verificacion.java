@@ -71,6 +71,7 @@ public class verificacion extends AppCompatActivity {
             tvP90_otroConsumo, tvP91_otroConsumo, tvP92_otroConsumo, tvP94, tvP95, tvP96, tvP97,
             tvP99, tvP109, tvP110, persona1, persona2, persona3, persona4, personaE1, personaE2,
             personaEstado1, personaEstado2, tvControl;
+
     private TextView tvO1, tvO1_1, tvO1_2, tvO2, tvO3, tvO4, tvO5, tvO6, tvO7, tvO7_1, tvO8, tvO9, tvO10, tvO11, tvO12,
             tvO13, tvO14, tvO15, tvO16, tvO32_1, tvO17, tvO18, tvO19, tvO20, tvO21_1, tvO21, tvO22,
             tvO23, tvO24, tvO25, tvO26, tvO27, tvO28, tvO21_2, tvO21_3, tvO101, tvO102, tvO103, tvO104, tvO105, tvO29, tvO30, tvO31, tvO31_1,
@@ -217,8 +218,8 @@ public class verificacion extends AppCompatActivity {
 
                 final ArrayList<datosVictima> victima;
                 victima = db.getVictima();
-
                 //region Verification beginning
+
                 tvP97 = (TextView) findViewById(R.id.tvP97);
                 tvP97.setText(lista.get(pos).getFolio());
                 //endregion
@@ -236,30 +237,37 @@ public class verificacion extends AppCompatActivity {
                 ctvP1 = (CheckedTextView) findViewById(R.id.ctvP1);
                 tvO1 = (TextView)findViewById(R.id.tvO1);
                 etP1 = (EditText)findViewById(R.id.etP1);
+
                 tvP1_1 = (TextView) findViewById(R.id.tvP1_1);
                 ctvP1_1 = (CheckedTextView) findViewById(R.id.ctvP1_1);
                 tvO1_1 = (TextView)findViewById(R.id.tvO1_1);
                 etP1_1 = (EditText)findViewById(R.id.etP1_1);
+
                 tvP1_2 = (TextView) findViewById(R.id.tvP1_2);
                 ctvP1_2 = (CheckedTextView) findViewById(R.id.ctvP1_2);
                 tvO1_2 = (TextView)findViewById(R.id.tvO1_2);
                 etP1_2 = (EditText)findViewById(R.id.etP1_2);
+
                 tvP2 = (TextView) findViewById(R.id.tvP2);
                 ctvP2 = (CheckedTextView) findViewById(R.id.ctvP2);
                 tvO2 = (TextView)findViewById(R.id.tvO2);
                 etP2 = (EditText)findViewById(R.id.etP2);
+
                 tvP3 = (TextView) findViewById(R.id.tvP3);
                 ctvP3 = (CheckedTextView) findViewById(R.id.ctvP3);
                 tvO3 = (TextView)findViewById(R.id.tvO3);
                 etP3 = (EditText)findViewById(R.id.etP3);
+
                 tvP4 = (TextView) findViewById(R.id.tvP4);
                 ctvP4 = (CheckedTextView) findViewById(R.id.ctvP4);
                 tvO4 = (TextView)findViewById(R.id.tvO4);
                 etP4 = (EditText)findViewById(R.id.etP4);
+
                 tvP5 = (TextView) findViewById(R.id.tvP5);
                 ctvP5 = (CheckedTextView) findViewById(R.id.ctvP5);
                 tvO5 = (TextView)findViewById(R.id.tvO5);
                 etP5 = (EditText)findViewById(R.id.etP5);
+
                 tvP6 = (TextView) findViewById(R.id.tvP6);
                 ctvP6 = (CheckedTextView) findViewById(R.id.ctvP6);
                 tvO6 = (TextView)findViewById(R.id.tvO6);
@@ -7322,8 +7330,8 @@ public class verificacion extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                //Verificación
-                if(position == 0){
+                    //Verificación
+                    if(position == 0){
                     tvP109.setVisibility(View.VISIBLE);
                     etP109.setVisibility(View.VISIBLE);
                     tvP110.setVisibility(View.VISIBLE);

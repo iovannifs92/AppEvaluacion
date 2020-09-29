@@ -5,24 +5,24 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_reporte_entrevista"
+            android:id="@+id/nav_reportes"
             android:icon="@drawable/ic_print_black_24dp"
-            android:title="Reporte Entrevista" />
+            android:title="Reportes" />
 
         <item
-            android:id="@+id/nav_car"
+            android:id="@+id/nav_consultas"
             android:icon="@drawable/ic_directions_black_24dp"
             android:title="Ir a Dirección de Imputado" />
 
         <item
-            android:id="@+id/nav_verificacion"
+            android:id="@+id/nav_verificaciones"
             android:icon="@drawable/ic_playlist_add_check_black_24dp"
-            android:title="Verificación" />
+            android:title="Verificaciónes" />
 
         <item
-            android:id="@+id/nav_investigacion"
+            android:id="@+id/nav_Carpetas"
             android:icon="@drawable/ic_content_paste_black_24dp"
-            android:title="Carpeta de Investigación" />
+            android:title="Carpetas de Investigación" />
 
         <item
             android:id="@+id/nav_assist"
@@ -35,9 +35,19 @@
             android:title="Reporte ASSIST v3.1" />
 
         <item
-            android:id="@+id/nav_instrumento"
+        android:id="@+id/nav_instrumento"
+        android:icon="@drawable/ic_view_stream_rotated_black_24dp"
+        android:title="Evaluación de Riesgo" />
+
+        <item
+            android:id="@+id/nav_instrumentoA"
             android:icon="@drawable/ic_view_stream_rotated_black_24dp"
-            android:title="Evaluación de Riesgo" />
+            android:title="Evaluación de RiesgoA" />
+
+        <item
+            android:id="@+id/nav_editar_adolescente"
+            android:icon="@drawable/ic_view_stream_rotated_black_24dp"
+            android:title="Editar Adolescentes" />
 
         <item
             android:id="@+id/nav_qr"

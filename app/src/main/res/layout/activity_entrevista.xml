@@ -97,6 +97,13 @@
                     android:inputType="textPersonName"
                     android:layout_marginBottom="20dp"/>
 
+                <TextView
+                    android:id="@+id/tvP3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e3" />
+
+
                 <EditText
                     android:id="@+id/etP3"
                     android:layout_width="match_parent"
@@ -106,12 +113,6 @@
                     android:focusable="false"
                     android:clickable="true"
                     android:layout_marginBottom="20dp"/>
-
-                <TextView
-                    android:id="@+id/tvP3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/e3" />
 
                 <TextView
                     android:id="@+id/tvP4"

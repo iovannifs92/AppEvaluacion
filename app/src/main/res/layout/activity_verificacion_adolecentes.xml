@@ -1,0 +1,1175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".verificacionAdolecentes">
+
+    <TextView
+        android:id="@+id/tvControlA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="30dp"
+        android:text="NO HAY REGISTROS PARA MOSTRAR"
+        android:textAlignment="center"
+        tools:ignore="MissingConstraints"/>
+
+    <LinearLayout
+        android:id="@+id/llControlA"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Elija a la persona para verificar su entrevista"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:layout_marginBottom="20dp"/>
+
+        <Spinner
+            android:id="@+id/sPVerifica1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:descendantFocusability="beforeDescendants"
+                android:focusableInTouchMode="true">
+
+                <TextView
+                    android:id="@+id/tvFOLIOA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/e97"
+                    android:background="@color/colorPrimaryDark"
+                    android:textColor="@color/myWhite"
+                    android:textSize="30sp"
+                    android:textAlignment="center"/>
+
+                <TextView
+                    android:id="@+id/e131"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tv2048"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e2048" />
+
+                <Spinner
+                    android:id="@+id/sP2048"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp" />
+
+                <TextView
+                    android:id="@+id/tv2049"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e2049" />
+
+                <EditText
+                    android:id="@+id/txt2049"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tv2050"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e110" />
+
+                <EditText
+                    android:id="@+id/txt2050"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:layout_marginBottom="20dp"/>
+
+
+                <!--DATOS de las personas presentes en la entrevista-->
+                <Button
+                    android:id="@+id/btnDg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="1. DATOS GENERALES DEL IMPUTADO"
+                    android:background="@color/colorPrimaryDark"
+                    android:textColor="@color/myWhite"
+                    android:textSize="30dp"
+                    android:textAlignment="center"/>
+
+                <LinearLayout
+                    android:id="@+id/llDg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:layout_marginBottom="20dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/DatosGA"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:background="@color/colorSecundario2"
+                        android:textAlignment="center"
+                        android:text="@string/e5001"
+                        android:textColor="@color/myWhite"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/tvEa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e138"
+                        />
+
+                    <CheckedTextView
+                        android:id="@+id/ctvA1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:checkMark="@drawable/ic_check_box_black_24dp"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/tvobseA1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Observaciones"/>
+
+                    <EditText
+                        android:id="@+id/txtobseA1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"/>
+                </LinearLayout>
+                <!--endregion-->
+
+                <!--FICHA FAMILIAR-->
+                <Button
+                    android:id="@+id/btnFfa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="2. FICHA FAMILIAR DEL IMPUTADO"
+                    android:background="@color/colorPrimaryDark"
+                    android:textColor="@color/myWhite"
+                    android:textSize="30dp"
+                    android:textAlignment="center"/>
+
+                <LinearLayout
+                    android:id="@+id/llFfa"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:layout_marginBottom="20dp"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:background="@color/colorSecundario2"
+                        android:textAlignment="center"
+                        android:text="DOMICILIO ACTUAL"
+                        android:textColor="@color/myWhite"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/tvCa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e149" />
+
+                    <CheckedTextView
+                        android:id="@+id/ctvA2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:checkMark="@drawable/ic_check_box_black_24dp"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/tvOA2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Observaciones"/>
+
+                    <EditText
+                        android:id="@+id/txtOA2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:id="@+id/tvNOa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e150" />
+
+                    <CheckedTextView
+                        android:id="@+id/ctvA3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:checkMark="@drawable/ic_check_box_black_24dp"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/tvOA3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Observaciones"/>
+
+                    <EditText
+                        android:id="@+id/txtOA3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:id="@+id/tvCOLa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e151" />
+
+                    <CheckedTextView
+                        android:id="@+id/ctvA4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:checkMark="@drawable/ic_check_box_black_24dp"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/tvOA4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Observaciones"/>
+
+                    <EditText
+                        android:id="@+id/txtOA4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:id="@+id/tvCPa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e152" />
+
+                    <CheckedTextView
+                        android:id="@+id/ctvA5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:checkMark="@drawable/ic_check_box_black_24dp"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/tvOA5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Observaciones"/>
+
+                    <EditText
+                        android:id="@+id/txtOA5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:id="@+id/tvMUa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e153" />
+
+                    <CheckedTextView
+                        android:id="@+id/ctvA6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:checkMark="@drawable/ic_check_box_black_24dp"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/tvOA6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Observaciones"/>
+
+                    <EditText
+                        android:id="@+id/txtOA6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:id="@+id/tvEDO2a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e154" />
+
+                    <CheckedTextView
+                        android:id="@+id/ctvA7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:checkMark="@drawable/ic_check_box_black_24dp"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/tvOA7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Observaciones"/>
+
+                    <EditText
+                        android:id="@+id/txtOA7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:id="@+id/tvPa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e155" />
+
+                    <CheckedTextView
+                        android:id="@+id/ctvA8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:checkMark="@drawable/ic_check_box_black_24dp"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/tvOA8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Observaciones"/>
+
+                    <EditText
+                        android:id="@+id/txtOA8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:id="@+id/tvTa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e156" />
+
+                    <CheckedTextView
+                        android:id="@+id/ctvA9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:checkMark="@drawable/ic_check_box_black_24dp"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/tvOA9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Observaciones"/>
+
+                    <EditText
+                        android:id="@+id/txtOA9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:id="@+id/tvDfa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e157"
+                        android:layout_marginBottom="20dp"
+                        />
+
+                    <CheckedTextView
+                        android:id="@+id/ctvA10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:checkMark="@drawable/ic_check_box_black_24dp"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/tvOA10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Observaciones"/>
+
+                    <EditText
+                        android:id="@+id/txtOA10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"/>
+                </LinearLayout>
+                <!-- endregion-->
+
+
+                <!-- DATOS FAMILIARES Y DE LAS PERSONAS CON QUIEN VIVE-->
+                <Button
+                    android:id="@+id/btnVH"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="3. DATOS FAMILIARES PRIMARIOS Y DE LAS PERSONAS CON QUIEN VIVE"
+                    android:background="@color/colorPrimaryDark"
+                    android:textColor="@color/myWhite"
+                    android:textSize="30dp"
+                    android:textAlignment="center"/>
+
+                <LinearLayout
+                    android:id="@+id/llVH"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:layout_marginBottom="20dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/tvRD"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e166" />
+
+                    <CheckedTextView
+                        android:id="@+id/ctvA11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:checkMark="@drawable/ic_check_box_black_24dp"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/tvOA11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Observaciones"/>
+
+                    <EditText
+                        android:id="@+id/txtOA11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:id="@+id/tvCQDFa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e167" />
+
+                    <CheckedTextView
+                        android:id="@+id/ctvA12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:checkMark="@drawable/ic_check_box_black_24dp"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/tvOA12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Observaciones"/>
+
+                    <EditText
+                        android:id="@+id/txtOA12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:id="@+id/tvRDFa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e168" />
+
+                    <CheckedTextView
+                        android:id="@+id/ctvA13"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:checkMark="@drawable/ic_check_box_black_24dp"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/tvOA13"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Observaciones"/>
+
+                    <EditText
+                        android:id="@+id/txtOA13"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:id="@+id/tvLDFa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e169" />
+
+                    <CheckedTextView
+                        android:id="@+id/ctvA14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:checkMark="@drawable/ic_check_box_black_24dp"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/tvOA14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Observaciones"/>
+
+                    <EditText
+                        android:id="@+id/txtOA14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"/>
+                    <!--endregion-->
+                </LinearLayout>
+
+                <!--HISTORIAL ESCOLAR Y LABORAL-->
+                <Button
+                    android:id="@+id/btnCE"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="4. HISTORIAL ESCOLAR Y LABORAL"
+                    android:background="@color/colorPrimaryDark"
+                    android:textColor="@color/myWhite"
+                    android:textSize="30dp"
+                    android:textAlignment="center"/>
+
+                <LinearLayout
+                    android:id="@+id/llCE"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:layout_marginBottom="20dp"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:text="HISTORIAL ESCOLAR"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:background="@color/colorSecundario2"
+                        android:textAlignment="center"
+                        android:textColor="@color/myWhite"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/tvAE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e177"/>
+
+                    <CheckedTextView
+                        android:id="@+id/ctvA15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:checkMark="@drawable/ic_check_box_black_24dp"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/tvOA15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Observaciones"/>
+
+                    <EditText
+                        android:id="@+id/txtOA15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:id="@+id/tvCS"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e178"/>
+
+                    <CheckedTextView
+                        android:id="@+id/ctvA16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:checkMark="@drawable/ic_check_box_black_24dp"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/tvOA16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Observaciones"/>
+
+                    <EditText
+                        android:id="@+id/txtOA16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"/>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:text="HISTORIA LABORAL"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:background="@color/colorSecundario2"
+                        android:textAlignment="center"
+                        android:textColor="@color/myWhite"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/tvTA"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e190"/>
+
+                    <CheckedTextView
+                        android:id="@+id/ctvA17"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:checkMark="@drawable/ic_check_box_black_24dp"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/tvOA17"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Observaciones"/>
+
+                    <EditText
+                        android:id="@+id/txtOA17"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:id="@+id/tvTR"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e191"/>
+
+                    <CheckedTextView
+                        android:id="@+id/ctvA18"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:checkMark="@drawable/ic_check_box_black_24dp"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/tvOA18"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Observaciones"/>
+
+                    <EditText
+                        android:id="@+id/txtOA18"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:text="ACTIVIDAD EXTRAESCOLARES ACTUALES"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:background="@color/colorSecundario2"
+                        android:textAlignment="center"
+                        android:textColor="@color/myWhite"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/tvAEA"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e205"/>
+
+                    <CheckedTextView
+                        android:id="@+id/ctvA19"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:checkMark="@drawable/ic_check_box_black_24dp"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/tvOA19"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Observaciones"/>
+
+                    <EditText
+                        android:id="@+id/txtOA19"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"/>
+                </LinearLayout>
+                <!--endregion-->
+
+                <Button
+                    android:id="@+id/btnIC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="5. CONSIDERACIONES EXCEPCIONALES SOBRE LA PERSONA ADOLESCENTE"
+                    android:background="@color/colorPrimaryDark"
+                    android:textColor="@color/myWhite"
+                    android:textSize="30dp"
+                    android:textAlignment="center"/>
+
+                <LinearLayout
+                    android:id="@+id/llIC"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:layout_marginBottom="20dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/tvEM"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e212"/>
+
+                    <CheckedTextView
+                        android:id="@+id/ctvA20"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:checkMark="@drawable/ic_check_box_black_24dp"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/tvOA20"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Observaciones"/>
+
+                    <EditText
+                        android:id="@+id/txtOA20"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"/>
+
+
+                    <TextView
+                        android:id="@+id/tvSIDA"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e216"/>
+
+                    <CheckedTextView
+                        android:id="@+id/ctvA21"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:checkMark="@drawable/ic_check_box_black_24dp"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/tvOA21"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Observaciones"/>
+
+                    <EditText
+                        android:id="@+id/txtOA21"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:text="@string/e2051"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="22dp"
+                        android:background="@color/colorSecundario2"
+                        android:textAlignment="center"
+                        android:textColor="@color/myWhite"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/alcoholA"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:text="Alcohol"
+                        android:background="@color/colorSecundario2"
+                        android:textColor="@color/myWhite"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/tvA"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e301" />
+
+                    <CheckedTextView
+                        android:id="@+id/ctvA22"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:checkMark="@drawable/ic_check_box_black_24dp"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/tvOA22"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Observaciones"/>
+
+                    <EditText
+                        android:id="@+id/txtOA22"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:id="@+id/TabacoA"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:text="Tabaco"
+                        android:background="@color/colorSecundario2"
+                        android:textColor="@color/myWhite"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/tvT"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e302" />
+
+                    <CheckedTextView
+                        android:id="@+id/ctvA23"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:checkMark="@drawable/ic_check_box_black_24dp"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/tvOA23"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Observaciones"/>
+
+                    <EditText
+                        android:id="@+id/txtOA23"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:id="@+id/MarihuanaA"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:text="Marihuana"
+                        android:background="@color/colorSecundario2"
+                        android:textColor="@color/myWhite"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/tvMAR"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e303" />
+
+                    <CheckedTextView
+                        android:id="@+id/ctvA24"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:checkMark="@drawable/ic_check_box_black_24dp"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/tvOA24"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Observaciones"/>
+
+                    <EditText
+                        android:id="@+id/txtOA24"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:id="@+id/PastillasA"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:text="Pastillas"
+                        android:background="@color/colorSecundario2"
+                        android:textColor="@color/myWhite"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/tvPAS"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e304" />
+
+                    <CheckedTextView
+                        android:id="@+id/ctvA25"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:checkMark="@drawable/ic_check_box_black_24dp"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/tvOA25"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Observaciones"/>
+
+                    <EditText
+                        android:id="@+id/txtOA25"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:id="@+id/SolventesA"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:text="Solventes"
+                        android:background="@color/colorSecundario2"
+                        android:textColor="@color/myWhite"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/tvSOL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e305" />
+
+                    <CheckedTextView
+                        android:id="@+id/ctvA26"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:checkMark="@drawable/ic_check_box_black_24dp"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/tvOA26"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Observaciones"/>
+
+                    <EditText
+                        android:id="@+id/txtOA26"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:id="@+id/MetanfetaminaA"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:text="Metanfetamina"
+                        android:background="@color/colorSecundario2"
+                        android:textColor="@color/myWhite"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/tvMET"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e306" />
+
+                    <CheckedTextView
+                        android:id="@+id/ctvA27"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:checkMark="@drawable/ic_check_box_black_24dp"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/tvOA27"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Observaciones"/>
+
+                    <EditText
+                        android:id="@+id/txtOA27"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:id="@+id/CocainaA"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:text="Cocaina"
+                        android:background="@color/colorSecundario2"
+                        android:textColor="@color/myWhite"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/tvCOCA"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e307" />
+
+                    <CheckedTextView
+                        android:id="@+id/ctvA28"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:checkMark="@drawable/ic_check_box_black_24dp"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/tvOA28"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Observaciones"/>
+
+                    <EditText
+                        android:id="@+id/txtOA28"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:id="@+id/tvSUSF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e3012" />
+
+                    <CheckedTextView
+                        android:id="@+id/ctvA29"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:checkMark="@drawable/ic_check_box_black_24dp"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/tvOA29"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Observaciones"/>
+
+                    <EditText
+                        android:id="@+id/txtOA29"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"/>
+                </LinearLayout>
+                <!--endregion-->
+                <TextView
+                    android:id="@+id/datosFinalesAv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="DATOS FINALES"
+                    android:background="@color/colorPrimaryDark"
+                    android:textColor="@color/myWhite"
+                    android:textSize="30dp"
+                    android:textAlignment="center"/>
+
+
+                <TextView
+                    android:id="@+id/tvOPSv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e2052" />
+
+
+                <EditText
+                    android:id="@+id/txtOPSv"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:ems="10"
+                    android:inputType="textMultiLine"
+                    android:layout_marginBottom="20dp"/>
+
+
+
+                <Button
+                    android:id="@+id/btnPhotoA"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:drawableRight="@drawable/ic_photo_camera_white_30dp"
+                    android:drawablePadding="3dp"
+                    android:text="Añadir Fotografía"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30dp"
+                    android:theme="@style/PrimaryColoredButton" />
+
+                <Button
+                    android:id="@+id/btnGuardarObservacionesA"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:text="Guardar Cambios"
+                    android:theme="@style/PrimaryColoredButton"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30dp"
+                    android:layout_gravity="center"/>
+
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>

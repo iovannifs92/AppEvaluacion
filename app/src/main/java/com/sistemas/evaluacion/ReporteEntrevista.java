@@ -157,13 +157,13 @@ public class ReporteEntrevista extends AppCompatActivity implements View.OnClick
                 templatePDF.addMetaData("FORMATO DE ENTREVISTA", "FOLIO", "SCORPION");
                 templatePDF.addColumnTextTitles("FORMATO DE ENTREVISTA\n", "", fecha + "\n");
 
-                templatePDF.createTable(getHeader(), 2, new float[]{1, 1});
-                templatePDF.createTable(getDatosGenerales(), 4, new float[]{1, 1, 6, 6});
-                templatePDF.createTable(getHabitantes(), 4, new float[]{1, 1, 6, 6});
-                templatePDF.createTable(getHistorialEscolar(), 4, new float[]{1, 1, 6, 6});
-                templatePDF.createTable(getHistorialLaboral(), 4, new float[]{1, 1, 6, 6});
-                templatePDF.createTable(getDatosAbandonoEstado(), 4, new float[]{1, 1, 6, 6});
-                templatePDF.createTable(getDatosSalud(), 4, new float[]{1, 1, 6, 6});
+                templatePDF.createTable(getHeader(), 2, new float[]{1, 1}, false, false);
+                templatePDF.createTable(getDatosGenerales(), 4, new float[]{1, 1, 6, 6}, false, false);
+                templatePDF.createTable(getHabitantes(), 4, new float[]{1, 1, 6, 6}, false, false);
+                templatePDF.createTable(getHistorialEscolar(), 4, new float[]{1, 1, 6, 6}, false, false);
+                templatePDF.createTable(getHistorialLaboral(), 4, new float[]{1, 1, 6, 6}, false, false);
+                templatePDF.createTable(getDatosAbandonoEstado(), 4, new float[]{1, 1, 6, 6}, false, false);
+                templatePDF.createTable(getDatosSalud(), 4, new float[]{1, 1, 6, 6}, false, true);
                 templatePDF.addColumnTextParagraph("OBSERVACIONES FINALES: " + lista.get(pos).getObservacionesF());
                 templatePDF.addColumnTextImgQR();
                 templatePDF.closeDocument();
