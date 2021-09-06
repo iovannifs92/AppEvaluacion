@@ -709,7 +709,7 @@ public class instrumento_adolescente extends AppCompatActivity implements View.O
             case R.id.btnGenerarReporteA:
                 int pos = sPNomAI.getSelectedItemPosition();
                 String folio = lista1.get(IdxA.get(pos)).getAfolio();
-                String Anombre = lista1.get(pos).getAnombre()+" "+ lista1.get(pos).getApaterno()+" "+lista1.get(pos).getAmaterno();
+                String Anombre = lista1.get(IdxA.get(pos)).getAnombre()+" "+ lista1.get(IdxA.get(pos)).getApaterno()+" "+lista1.get(IdxA.get(pos)).getAmaterno();
                 //region Generar Código QR
                 String texto = FOLIOA;
                 String texto1 = Anombre;
@@ -734,7 +734,7 @@ public class instrumento_adolescente extends AppCompatActivity implements View.O
                 templatePDF1.openDocument();
                 templatePDF1.addImgName();
                 templatePDF1.addMetaData("Instrumento de Evaluación", "FOLIO", "SCORPION");
-                templatePDF1.addTitles("INSTRUMENTO PARA LA EVALUACIÓN DE RIESGOS PROCESALES EN ADOLESCENTES",folio, fecha);
+                templatePDF1.addTitles("INSTRUMENTO PARA LA EVALUACIÓN DE RIESGOS PROCESALES EN ADOLESCENTES",folio + "\n" + Anombre, fecha);
                 templatePDF1.createTable(header, getImputado());
                 templatePDF1.createTable(header1, getRecomendaciones());
                 templatePDF1.createTable(header2, getCaso());

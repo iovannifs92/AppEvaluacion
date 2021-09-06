@@ -435,10 +435,12 @@ public class Instrumento extends AppCompatActivity implements View.OnClickListen
             case R.id.btnGenerarReporte:
                 int pos = sName.getSelectedItemPosition();
                 String folio = lista.get(Idx.get(pos)).getFolio();
+                String nombre = lista.get(Idx.get(pos)).getNombre();
                 //region Generar Código QR
                 String texto = folio;
-                if (texto.isEmpty()) return;
-                ByteArrayOutputStream byteArrayOutputStream = QRCode.from(texto).withSize(200, 200).stream();
+                String texto1 = nombre;
+                if (texto.isEmpty() && texto1.isEmpty()) return;
+                ByteArrayOutputStream byteArrayOutputStream = QRCode.from(texto+" "+texto1).withSize(200, 200).stream();
                 FileOutputStream fos;
                 try {
                     fos = new FileOutputStream(Environment.getExternalStorageDirectory() + "/PDF/codigo.png");
@@ -458,7 +460,7 @@ public class Instrumento extends AppCompatActivity implements View.OnClickListen
                 templatePDF.openDocument();
                 templatePDF.addImgName();
                 templatePDF.addMetaData("Instrumento de Evaluación", "FOLIO", "SCORPION");
-                templatePDF.addTitles("INSTRUMENTO DE EVALUACIÓN PARA DELITOS CONTRA LA SALUD PÚBLICA, FEDERALES Y CUYA VÍCTIMA ES LA SOCIEDAD",folio, fecha);
+                templatePDF.addTitles("INSTRUMENTO DE EVALUACIÓN PARA DELITOS CONTRA LA SALUD PÚBLICA, FEDERALES Y CUYA VÍCTIMA ES LA SOCIEDAD",folio + "\n" + nombre, fecha);
                 templatePDF.createTable(header, getImputado());
 
                 //Color the risk
